@@ -1,0 +1,1307 @@
+[
+  {
+    "jobId": "JID87329",
+    "title": "Senior Software Engineer",
+    "company": "Tech Solutions Inc.",
+    "location": "San Francisco, CA",
+    "description": "Develop and maintain software applications using Java and Spring Boot.",
+    "requirements": [
+      "3+ years of experience",
+      "BSc in Computer Science"
+    ],
+    "salaryRange": {
+      "min": 120000,
+      "max": 150000
+    },
+    "postingDate": "2024-06-29T14:30:00Z"
+  },
+  {
+    "jobId": "JID52957",
+    "title": "Data Scientist",
+    "company": "Quantum Analytics",
+    "description": "Analyze large datasets to identify trends and insights.",
+    "requirements": [
+      "PhD in Statistics",
+      "Experience with Python"
+    ],
+    "postingDate": "2024-06-28T09:00:00Z"
+  },
+  {
+    "jobId": "JID28395",
+    "title": "Marketing Manager",
+    "company": "Sunrise Brands",
+    "location": "New York, NY",
+    "description": "Develop and implement marketing strategies to increase brand awareness.",
+    "salaryRange": {
+      "min": 90000,
+      "max": 120000
+    },
+    "postingDate": "2024-06-27T16:45:00Z"
+  },
+  {
+    "jobId": "JID95723",
+    "title": "Project Manager",
+    "company": "Global Infrastructure Corp.",
+    "description": "Oversee project timelines and budgets.",
+    "requirements": [
+      "PMP certification"
+    ],
+    "postingDate": "2024-06-26T11:20:00Z"
+  },
+  {
+    "jobId": "JID19482",
+    "title": "Financial Analyst",
+    "company": "Emerald Investments",
+    "location": "London, UK",
+    "description": "Conduct financial analysis and reporting.",
+    "requirements": [
+      "CFA Level 1"
+    ],
+    "salaryRange": {
+      "min": 70000,
+      "max": 90000
+    },
+    "postingDate": "2024-06-25T18:00:00Z"
+  },
+  {
+    "jobId": "JID62935",
+    "title": "UX Designer",
+    "company": "Innovative Designs",
+    "description": "Design user-friendly interfaces for web and mobile applications.",
+    "requirements": [
+      "Portfolio of design work"
+    ],
+    "postingDate": "2024-06-24T10:35:00Z"
+  },
+  {
+    "jobId": "JID48279",
+    "title": "Mechanical Engineer",
+    "company": "Advanced Manufacturing",
+    "location": "Detroit, MI",
+    "description": "Design and develop mechanical systems.",
+    "requirements": [
+      "PE license"
+    ],
+    "salaryRange": {
+      "min": 80000,
+      "max": 110000
+    },
+    "postingDate": "2024-06-23T15:15:00Z"
+  },
+  {
+    "jobId": "JID39582",
+    "title": "Sales Representative",
+    "company": "Dynamic Sales Solutions",
+    "description": "Generate leads and close sales deals.",
+    "postingDate": "2024-06-22T08:50:00Z"
+  },
+  {
+    "jobId": "JID72945",
+    "title": "Human Resources Specialist",
+    "company": "PeopleFirst HR",
+    "location": "Chicago, IL",
+    "description": "Manage employee relations and recruitment.",
+    "requirements": [
+      "SHRM certification"
+    ],
+    "salaryRange": {
+      "min": 60000,
+      "max": 80000
+    },
+    "postingDate": "2024-06-21T13:30:00Z"
+  },
+  {
+    "jobId": "JID84729",
+    "title": "Cybersecurity Analyst",
+    "company": "SecureNet Systems",
+    "description": "Protect computer systems from cyber threats.",
+    "requirements": [
+      "CISSP certification"
+    ],
+    "postingDate": "2024-06-20T17:05:00Z"
+  },
+  {
+    "jobId": "JID19583",
+    "title": "Content Writer",
+    "company": "Creative Content Agency",
+    "location": "Remote",
+    "description": "Create engaging content for various platforms.",
+    "postingDate": "2024-06-19T09:20:00Z"
+  },
+  {
+    "jobId": "JID52837",
+    "title": "Operations Manager",
+    "company": "Efficient Operations Solutions",
+    "description": "Oversee daily operations and improve efficiency.",
+    "requirements": [
+      "Lean Six Sigma certification"
+    ],
+    "salaryRange": {
+      "min": 100000,
+      "max": 130000
+    },
+    "postingDate": "2024-06-18T12:45:00Z"
+  },
+  {
+    "jobId": "JID94728",
+    "title": "Customer Service Representative",
+    "company": "CustomerFocus Inc.",
+    "location": "Phoenix, AZ",
+    "description": "Provide excellent customer service and resolve customer issues.",
+    "postingDate": "2024-06-17T16:10:00Z"
+  },
+  {
+    "jobId": "JID28495",
+    "title": "Research Scientist",
+    "company": "Scientific Innovations",
+    "description": "Conduct scientific research and experiments.",
+    "requirements": [
+      "PhD in relevant field"
+    ],
+    "salaryRange": {
+      "min": 110000,
+      "max": 140000
+    },
+    "postingDate": "2024-06-16T08:35:00Z"
+  },
+  {
+    "jobId": "JID63925",
+    "title": "Software Developer",
+    "company": "Code Masters",
+    "location": "Austin, TX",
+    "description": "Develop software applications using various programming languages.",
+    "requirements": [
+      "2+ years of experience"
+    ],
+    "postingDate": "2024-06-15T11:00:00Z"
+  },
+  {
+    "jobId": "JID49382",
+    "title": "Electrical Engineer",
+    "company": "Power Systems Inc.",
+    "description": "Design and develop electrical systems.",
+    "requirements": [
+      "PE license"
+    ],
+    "salaryRange": {
+      "min": 90000,
+      "max": 120000
+    },
+    "postingDate": "2024-06-14T14:25:00Z"
+  },
+  {
+    "jobId": "JID38592",
+    "title": "Business Analyst",
+    "company": "Strategic Business Solutions",
+    "description": "Analyze business processes and identify areas for improvement.",
+    "requirements": [
+      "CBAP certification"
+    ],
+    "postingDate": "2024-06-13T17:50:00Z"
+  },
+  {
+    "jobId": "JID73945",
+    "title": "Marketing Specialist",
+    "company": "Brand Builders",
+    "location": "Los Angeles, CA",
+    "description": "Develop and execute marketing campaigns.",
+    "salaryRange": {
+      "min": 70000,
+      "max": 100000
+    },
+    "postingDate": "2024-06-12T09:15:00Z"
+  },
+  {
+    "jobId": "JID85729",
+    "title": "Network Engineer",
+    "company": "Connected Networks",
+    "description": "Design and maintain network infrastructure.",
+    "requirements": [
+      "CCNA certification"
+    ],
+    "postingDate": "2024-06-11T11:40:00Z"
+  },
+  {
+    "jobId": "JID18583",
+    "title": "Technical Writer",
+    "company": "TechDocs Inc.",
+    "location": "Seattle, WA",
+    "description": "Create technical documentation for software products.",
+    "requirements": [
+      "Experience with API documentation"
+    ],
+    "salaryRange": {
+      "min": 80000,
+      "max": 110000
+    },
+    "postingDate": "2024-06-10T15:05:00Z"
+  },
+  {
+    "jobId": "JID87329",
+    "title": "Software Engineer III",
+    "company": "Tech Solutions Inc.",
+    "description": "Develop and maintain software applications using Java and Spring Boot.  Collaborate with cross-functional teams to deliver high-quality products.",
+    "location": "Austin, TX",
+    "requirements": [
+      "Java",
+      "Spring Boot",
+      "Agile"
+    ],
+    "salaryRange": {
+      "min": 90000,
+      "max": 120000
+    },
+    "postingDate": "2023-10-26T14:30:00Z"
+  },
+  {
+    "jobId": "JID52984",
+    "title": "Data Scientist",
+    "company": "Quantum Analytics",
+    "description": "Build predictive models and conduct data analysis to drive business decisions. Experience with Python and machine learning algorithms required.",
+    "location": "Remote",
+    "requirements": [
+      "Python",
+      "Machine Learning",
+      "Statistical Modeling"
+    ],
+    "salaryRange": {
+      "min": 110000,
+      "max": 150000
+    },
+    "postingDate": "2023-10-27T09:15:00Z"
+  },
+  {
+    "jobId": "JID18475",
+    "title": "Marketing Manager",
+    "company": "GreenLeaf Industries",
+    "description": "Develop and execute marketing campaigns to increase brand awareness and drive customer engagement. Proven track record in digital marketing is a must.",
+    "requirements": [
+      "Digital Marketing",
+      "SEO/SEM",
+      "Social Media Marketing"
+    ],
+    "postingDate": "2023-10-27T16:45:00Z"
+  },
+  {
+    "jobId": "JID96452",
+    "title": "Project Manager",
+    "company": "Sunrise Builders",
+    "description": "Oversee construction projects from initiation to completion, ensuring they are delivered on time and within budget. Strong leadership and communication skills required.",
+    "location": "Denver, CO",
+    "requirements": [
+      "PMP Certification",
+      "Construction Management",
+      "Budget Management"
+    ],
+    "postingDate": "2023-10-28T11:00:00Z"
+  },
+  {
+    "jobId": "JID27583",
+    "title": "Financial Analyst",
+    "company": "Goldman Sachs",
+    "description": "Analyze financial data and provide insights to support investment decisions. Advanced Excel skills and knowledge of financial modeling are essential.",
+    "location": "New York, NY",
+    "requirements": [
+      "Financial Modeling",
+      "Excel",
+      "Data Analysis"
+    ],
+    "salaryRange": {
+      "min": 75000,
+      "max": 100000
+    },
+    "postingDate": "2023-10-28T17:30:00Z"
+  },
+  {
+    "jobId": "JID63910",
+    "title": "Sales Representative",
+    "company": "BlueSky Technologies",
+    "description": "Generate new business opportunities and manage client relationships. Excellent communication and negotiation skills are a must.",
+    "requirements": [
+      "Sales Experience",
+      "CRM Software",
+      "Negotiation Skills"
+    ],
+    "postingDate": "2023-10-29T08:45:00Z"
+  },
+  {
+    "jobId": "JID41827",
+    "title": "Human Resources Specialist",
+    "company": "People First Solutions",
+    "description": "Manage employee relations, recruitment, and onboarding processes. Strong knowledge of HR policies and procedures is required.",
+    "location": "Chicago, IL",
+    "requirements": [
+      "HR Certification",
+      "Employee Relations",
+      "Recruitment"
+    ],
+    "salaryRange": {
+      "min": 60000,
+      "max": 80000
+    },
+    "postingDate": "2023-10-29T15:15:00Z"
+  },
+  {
+    "jobId": "JID75294",
+    "title": "Graphic Designer",
+    "company": "Creative Visions Studio",
+    "description": "Create visually appealing designs for marketing materials and websites. Proficiency in Adobe Creative Suite is required.",
+    "requirements": [
+      "Adobe Photoshop",
+      "Adobe Illustrator",
+      "Web Design"
+    ],
+    "postingDate": "2023-10-30T10:30:00Z"
+  },
+  {
+    "jobId": "JID38615",
+    "title": "Content Writer",
+    "company": "Wordsmith Media",
+    "description": "Create engaging and informative content for blogs, articles, and social media. Excellent writing and editing skills are essential.",
+    "location": "Remote",
+    "requirements": [
+      "Writing Skills",
+      "SEO Writing",
+      "Content Strategy"
+    ],
+    "salaryRange": {
+      "min": 50000,
+      "max": 70000
+    },
+    "postingDate": "2023-10-30T18:00:00Z"
+  },
+  {
+    "jobId": "JID19762",
+    "title": "Customer Service Representative",
+    "company": "Happy Customers Inc.",
+    "description": "Provide excellent customer support and resolve customer inquiries. Strong communication and problem-solving skills are a must.",
+    "requirements": [
+      "Customer Service Experience",
+      "Communication Skills",
+      "Problem-solving"
+    ],
+    "postingDate": "2023-10-31T09:00:00Z"
+  },
+  {
+    "jobId": "JID84539",
+    "title": "Web Developer",
+    "company": "E-Solutions Inc.",
+    "description": "Develop and maintain websites using HTML, CSS, and JavaScript. Experience with responsive design is a plus.",
+    "location": "San Francisco, CA",
+    "requirements": [
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ],
+    "salaryRange": {
+      "min": 80000,
+      "max": 110000
+    },
+    "postingDate": "2023-10-31T16:30:00Z"
+  },
+  {
+    "jobId": "JID26904",
+    "title": "Network Engineer",
+    "company": "NetConnect Solutions",
+    "description": "Design, implement, and maintain network infrastructure. Strong knowledge of networking protocols is required.",
+    "requirements": [
+      "Network Engineering",
+      "Cisco CCNA",
+      "Network Security"
+    ],
+    "postingDate": "2023-11-01T11:45:00Z"
+  },
+  {
+    "jobId": "JID53178",
+    "title": "Business Analyst",
+    "company": "Strategic Insights",
+    "description": "Analyze business processes and identify areas for improvement. Strong analytical and problem-solving skills are essential.",
+    "location": "Seattle, WA",
+    "requirements": [
+      "Business Analysis",
+      "Process Improvement",
+      "Data Analysis"
+    ],
+    "salaryRange": {
+      "min": 70000,
+      "max": 95000
+    },
+    "postingDate": "2023-11-01T18:15:00Z"
+  },
+  {
+    "jobId": "JID90623",
+    "title": "Software Tester",
+    "company": "Quality Assurance Pros",
+    "description": "Test software applications to ensure quality and identify bugs. Experience with testing tools and methodologies is required.",
+    "requirements": [
+      "Software Testing",
+      "Test Automation",
+      "QA Methodologies"
+    ],
+    "postingDate": "2023-11-02T08:30:00Z"
+  },
+  {
+    "jobId": "JID47851",
+    "title": "UX Designer",
+    "company": "User-Centric Design",
+    "description": "Design user-friendly interfaces for web and mobile applications. Strong understanding of user experience principles is required.",
+    "location": "Los Angeles, CA",
+    "requirements": [
+      "UX Design",
+      "User Research",
+      "Prototyping"
+    ],
+    "salaryRange": {
+      "min": 95000,
+      "max": 125000
+    },
+    "postingDate": "2023-11-02T15:00:00Z"
+  },
+  {
+    "jobId": "JID72386",
+    "title": "DevOps Engineer",
+    "company": "Agile Solutions Inc.",
+    "description": "Automate software development and deployment processes. Experience with CI/CD tools and cloud platforms is essential.",
+    "location": "Remote",
+    "requirements": [
+      "DevOps",
+      "CI/CD",
+      "Cloud Computing"
+    ],
+    "salaryRange": {
+      "min": 100000,
+      "max": 140000
+    },
+    "postingDate": "2023-11-03T10:15:00Z"
+  },
+  {
+    "jobId": "JID31079",
+    "title": "Data Engineer",
+    "company": "Data Solutions",
+    "description": "Build and maintain data pipelines for data warehousing and analytics. Experience with big data technologies is required.",
+    "requirements": [
+      "Data Engineering",
+      "Big Data",
+      "ETL"
+    ],
+    "postingDate": "2023-11-03T17:45:00Z"
+  },
+  {
+    "jobId": "JID65420",
+    "title": "Cloud Architect",
+    "company": "Cloud Innovations",
+    "description": "Design and implement cloud-based solutions. Strong knowledge of cloud platforms and architecture is required.",
+    "location": "Boston, MA",
+    "requirements": [
+      "Cloud Architecture",
+      "AWS/Azure/GCP",
+      "Cloud Security"
+    ],
+    "salaryRange": {
+      "min": 120000,
+      "max": 160000
+    },
+    "postingDate": "2023-11-04T09:30:00Z"
+  },
+  {
+    "jobId": "JID18957",
+    "title": "Product Manager",
+    "company": "Innovative Products Inc.",
+    "description": "Define product strategy and roadmap. Strong understanding of product development lifecycle is required.",
+    "requirements": [
+      "Product Management",
+      "Market Research",
+      "Product Strategy"
+    ],
+    "postingDate": "2023-11-04T16:00:00Z"
+  },
+  {
+    "jobId": "JID83246",
+    "title": "Security Analyst",
+    "company": "Secure Systems Inc.",
+    "description": "Monitor network security and implement security measures. Strong knowledge of security protocols and best practices is required.",
+    "location": "Washington, DC",
+    "requirements": [
+      "Security Analysis",
+      "Network Security",
+      "Cybersecurity"
+    ],
+    "salaryRange": {
+      "min": 85000,
+      "max": 115000
+    },
+    "postingDate": "2023-11-05T11:15:00Z"
+  },
+  {
+    "jobId": "J-87654",
+    "title": "Senior Software Engineer",
+    "company": "Tech Solutions Inc.",
+    "description": "Develop and maintain software applications.",
+    "location": "San Francisco, CA",
+    "requirements": [
+      "Java",
+      "Python",
+      "AWS"
+    ],
+    "salaryRange": {
+      "min": 120000,
+      "max": 150000
+    },
+    "postingDate": "2024-08-29T14:30:00Z"
+  },
+  {
+    "jobId": "J-92345",
+    "title": "Data Scientist",
+    "company": "Data Insights Ltd.",
+    "description": "Analyze large datasets and build predictive models.",
+    "location": "New York, NY",
+    "requirements": [
+      "Python",
+      "R",
+      "Machine Learning"
+    ],
+    "salaryRange": {
+      "min": 100000,
+      "max": 130000
+    },
+    "postingDate": "2024-08-28T09:00:00Z"
+  },
+  {
+    "jobId": "J-10928",
+    "title": "Project Manager",
+    "company": "Global Projects Corp.",
+    "description": "Manage project timelines and resources.",
+    "location": "London, UK",
+    "requirements": [
+      "PMP Certification",
+      "Agile Methodology"
+    ],
+    "postingDate": "2024-08-27T16:45:00Z"
+  },
+  {
+    "jobId": "J-34567",
+    "title": "Marketing Specialist",
+    "company": "Creative Marketing Agency",
+    "description": "Develop and execute marketing campaigns.",
+    "location": "Remote",
+    "requirements": [
+      "SEO",
+      "Social Media Marketing"
+    ],
+    "postingDate": "2024-08-26T11:20:00Z"
+  },
+  {
+    "jobId": "J-78901",
+    "title": "Sales Representative",
+    "company": "Innovative Sales Solutions",
+    "description": "Generate leads and close deals.",
+    "location": "Chicago, IL",
+    "requirements": [
+      "Sales Experience",
+      "CRM Software"
+    ],
+    "salaryRange": {
+      "min": 80000,
+      "max": 110000
+    },
+    "postingDate": "2024-08-25T10:15:00Z"
+  },
+  {
+    "jobId": "J-23456",
+    "title": "Human Resources Manager",
+    "company": "People Management Group",
+    "description": "Oversee HR operations and employee relations.",
+    "location": "Los Angeles, CA",
+    "requirements": [
+      "HR Certification",
+      "Employee Relations Experience"
+    ],
+    "postingDate": "2024-08-24T13:50:00Z"
+  },
+  {
+    "jobId": "J-67890",
+    "title": "Financial Analyst",
+    "company": "Finance Experts Inc.",
+    "description": "Analyze financial data and prepare reports.",
+    "location": "Toronto, Canada",
+    "requirements": [
+      "Financial Modeling",
+      "Accounting"
+    ],
+    "salaryRange": {
+      "min": 90000,
+      "max": 120000
+    },
+    "postingDate": "2024-08-23T15:35:00Z"
+  },
+  {
+    "jobId": "J-54321",
+    "title": "Customer Service Representative",
+    "company": "Customer Support Center",
+    "description": "Provide excellent customer service.",
+    "location": "Remote",
+    "requirements": [
+      "Communication Skills",
+      "Problem-Solving"
+    ],
+    "postingDate": "2024-08-22T08:40:00Z"
+  },
+  {
+    "jobId": "J-89012",
+    "title": "Operations Manager",
+    "company": "Efficient Operations Ltd.",
+    "description": "Manage daily operations and improve efficiency.",
+    "location": "Sydney, Australia",
+    "requirements": [
+      "Operations Management Experience",
+      "Process Improvement"
+    ],
+    "postingDate": "2024-08-21T17:05:00Z"
+  },
+  {
+    "jobId": "J-45678",
+    "title": "Web Developer",
+    "company": "Web Design Studio",
+    "description": "Design and develop websites.",
+    "location": "Berlin, Germany",
+    "requirements": [
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ],
+    "salaryRange": {
+      "min": 70000,
+      "max": 100000
+    },
+    "postingDate": "2024-08-20T12:25:00Z"
+  },
+  {
+    "jobId": "JD-9213",
+    "title": "Cloud Architect",
+    "company": "Cloud Solutions Provider",
+    "description": "Design and implement cloud infrastructure.",
+    "location": "Seattle, WA",
+    "requirements": [
+      "AWS",
+      "Azure",
+      "Cloud Security"
+    ],
+    "salaryRange": {
+      "min": 130000,
+      "max": 160000
+    },
+    "postingDate": "2024-08-19T09:50:00Z"
+  },
+  {
+    "jobId": "JD-1846",
+    "title": "UX/UI Designer",
+    "company": "User Experience Design Agency",
+    "description": "Design user-friendly interfaces.",
+    "location": "Amsterdam, Netherlands",
+    "requirements": [
+      "UX Design Principles",
+      "UI Design Tools"
+    ],
+    "postingDate": "2024-08-18T14:10:00Z"
+  },
+  {
+    "jobId": "JD-7392",
+    "title": "DevOps Engineer",
+    "company": "Software Development Company",
+    "description": "Automate software development and deployment processes.",
+    "location": "Remote",
+    "requirements": [
+      "CI/CD",
+      "Automation Tools"
+    ],
+    "salaryRange": {
+      "min": 110000,
+      "max": 140000
+    },
+    "postingDate": "2024-08-17T11:35:00Z"
+  },
+  {
+    "jobId": "JD-2658",
+    "title": "Network Engineer",
+    "company": "Network Solutions Provider",
+    "description": "Manage and maintain network infrastructure.",
+    "location": "Dallas, TX",
+    "requirements": [
+      "Networking Protocols",
+      "Network Security"
+    ],
+    "postingDate": "2024-08-16T16:00:00Z"
+  },
+  {
+    "jobId": "JD-4017",
+    "title": "Business Analyst",
+    "company": "Business Consulting Firm",
+    "description": "Analyze business processes and identify improvements.",
+    "location": "London, UK",
+    "requirements": [
+      "Business Analysis Techniques",
+      "Data Analysis"
+    ],
+    "salaryRange": {
+      "min": 95000,
+      "max": 125000
+    },
+    "postingDate": "2024-08-15T10:45:00Z"
+  },
+  {
+    "jobId": "JI-5927",
+    "title": "Technical Writer",
+    "company": "Technical Documentation Company",
+    "description": "Write technical documentation for software products.",
+    "location": "Remote",
+    "requirements": [
+      "Technical Writing Skills",
+      "Software Documentation Experience"
+    ],
+    "postingDate": "2024-08-14T13:20:00Z"
+  },
+  {
+    "jobId": "JI-8143",
+    "title": "Product Manager",
+    "company": "Technology Product Company",
+    "description": "Manage product development and strategy.",
+    "location": "San Francisco, CA",
+    "requirements": [
+      "Product Management Experience",
+      "Market Research"
+    ],
+    "salaryRange": {
+      "min": 125000,
+      "max": 155000
+    },
+    "postingDate": "2024-08-13T08:55:00Z"
+  },
+  {
+    "jobId": "JI-2769",
+    "title": "Software Tester",
+    "company": "Quality Assurance Company",
+    "description": "Test software applications and identify bugs.",
+    "location": "Bangalore, India",
+    "requirements": [
+      "Software Testing Methodologies",
+      "Test Automation"
+    ],
+    "postingDate": "2024-08-12T15:15:00Z"
+  },
+  {
+    "jobId": "JI-6304",
+    "title": "Database Administrator",
+    "company": "Database Management Company",
+    "description": "Manage and maintain database systems.",
+    "location": "Chicago, IL",
+    "requirements": [
+      "SQL",
+      "Database Administration Experience"
+    ],
+    "salaryRange": {
+      "min": 105000,
+      "max": 135000
+    },
+    "postingDate": "2024-08-11T11:05:00Z"
+  },
+  {
+    "jobId": "JI-9451",
+    "title": "Cybersecurity Analyst",
+    "company": "Cybersecurity Solutions Provider",
+    "description": "Protect computer systems and networks from cyber threats.",
+    "location": "Washington, D.C.",
+    "requirements": [
+      "Cybersecurity Certifications",
+      "Security Analysis Experience"
+    ],
+    "postingDate": "2024-08-10T17:30:00Z"
+  },
+  {
+    "jobId": "JID87392",
+    "title": "Senior Software Engineer",
+    "company": "TechSolutions Inc.",
+    "description": "Develop and maintain software applications.",
+    "location": "San Francisco, CA",
+    "requirements": [
+      "Java",
+      "Spring",
+      "Agile"
+    ],
+    "salaryRange": {
+      "min": 120000,
+      "max": 150000
+    },
+    "postingDate": "2024-07-24T14:30:00Z"
+  },
+  {
+    "jobId": "JID52874",
+    "title": "Data Scientist",
+    "company": "Data Insights Co.",
+    "description": "Analyze large datasets and build predictive models.",
+    "location": "New York, NY",
+    "requirements": [
+      "Python",
+      "R",
+      "Machine Learning"
+    ],
+    "postingDate": "2024-07-23T09:15:00Z"
+  },
+  {
+    "jobId": "JID19538",
+    "title": "Marketing Manager",
+    "company": "Brand Innovations",
+    "description": "Develop and execute marketing campaigns.",
+    "requirements": [
+      "SEO",
+      "Content Marketing",
+      "Social Media"
+    ],
+    "salaryRange": {
+      "min": 90000,
+      "max": 120000
+    }
+  },
+  {
+    "jobId": "JID64923",
+    "title": "Project Manager",
+    "company": "Project Dynamics",
+    "description": "Manage project timelines and resources.",
+    "location": "Austin, TX",
+    "requirements": [
+      "Agile",
+      "PMP Certification"
+    ],
+    "postingDate": "2024-07-22T16:45:00Z"
+  },
+  {
+    "jobId": "JID28475",
+    "title": "UX Designer",
+    "company": "User Experience Group",
+    "description": "Design user-centered interfaces.",
+    "requirements": [
+      "Figma",
+      "User Research"
+    ],
+    "salaryRange": {
+      "min": 80000,
+      "max": 110000
+    }
+  },
+  {
+    "jobId": "JID91628",
+    "title": "Financial Analyst",
+    "company": "Finance Experts",
+    "description": "Analyze financial data and create reports.",
+    "location": "Chicago, IL",
+    "requirements": [
+      "Excel",
+      "Financial Modeling"
+    ],
+    "postingDate": "2024-07-21T11:00:00Z"
+  },
+  {
+    "jobId": "JID37581",
+    "title": "Sales Representative",
+    "company": "Sales Powerhouse",
+    "description": "Generate leads and close deals.",
+    "requirements": [
+      "Sales Experience",
+      "CRM"
+    ],
+    "salaryRange": {
+      "min": 60000,
+      "max": 90000
+    }
+  },
+  {
+    "jobId": "JID72946",
+    "title": "Customer Service Representative",
+    "company": "Customer Focus Inc.",
+    "description": "Provide excellent customer support.",
+    "location": "Remote",
+    "requirements": [
+      "Communication Skills"
+    ],
+    "postingDate": "2024-07-20T13:30:00Z"
+  },
+  {
+    "jobId": "JID48193",
+    "title": "Human Resources Manager",
+    "company": "Talent Acquisition Group",
+    "description": "Manage employee relations and recruitment.",
+    "requirements": [
+      "HR Certification"
+    ],
+    "salaryRange": {
+      "min": 100000,
+      "max": 130000
+    }
+  },
+  {
+    "jobId": "JID05278",
+    "title": "Operations Manager",
+    "company": "Operational Excellence",
+    "description": "Oversee daily operations and improve efficiency.",
+    "location": "Seattle, WA",
+    "requirements": [
+      "Operations Management"
+    ],
+    "postingDate": "2024-07-19T08:45:00Z"
+  },
+  {
+    "jobId": "JID82649",
+    "title": "Content Writer",
+    "company": "Creative Content Agency",
+    "description": "Create engaging and informative content.",
+    "requirements": [
+      "Writing Skills",
+      "SEO"
+    ],
+    "salaryRange": {
+      "min": 50000,
+      "max": 80000
+    }
+  },
+  {
+    "jobId": "JID19475",
+    "title": "Web Developer",
+    "company": "Web Solutions Inc.",
+    "description": "Develop and maintain websites.",
+    "location": "Los Angeles, CA",
+    "requirements": [
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ],
+    "postingDate": "2024-07-18T15:15:00Z"
+  },
+  {
+    "jobId": "JID53826",
+    "title": "Graphic Designer",
+    "company": "Visual Design Studio",
+    "description": "Create visually appealing designs.",
+    "requirements": [
+      "Adobe Creative Suite"
+    ],
+    "salaryRange": {
+      "min": 70000,
+      "max": 100000
+    }
+  },
+  {
+    "jobId": "JID96174",
+    "title": "Business Analyst",
+    "company": "Business Solutions Co.",
+    "description": "Analyze business processes and recommend improvements.",
+    "location": "Denver, CO",
+    "requirements": [
+      "Business Analysis"
+    ],
+    "postingDate": "2024-07-17T10:30:00Z"
+  },
+  {
+    "jobId": "JID27589",
+    "title": "Product Manager",
+    "company": "Product Innovation Group",
+    "description": "Manage product development and strategy.",
+    "requirements": [
+      "Product Management"
+    ],
+    "salaryRange": {
+      "min": 110000,
+      "max": 140000
+    }
+  },
+  {
+    "jobId": "JID68312",
+    "title": "Software Engineer",
+    "company": "Coding Wizards",
+    "description": "Write and test code for software applications.",
+    "location": "Remote",
+    "requirements": [
+      "Python",
+      "Java"
+    ],
+    "postingDate": "2024-07-16T17:00:00Z"
+  },
+  {
+    "jobId": "JID41957",
+    "title": "Data Analyst",
+    "company": "Data Analytics Inc.",
+    "description": "Collect, clean, and analyze data.",
+    "requirements": [
+      "SQL",
+      "Data Visualization"
+    ],
+    "salaryRange": {
+      "min": 65000,
+      "max": 95000
+    }
+  },
+  {
+    "jobId": "JID75283",
+    "title": "Marketing Specialist",
+    "company": "Marketing Masters",
+    "description": "Support marketing campaigns and initiatives.",
+    "location": "Boston, MA",
+    "requirements": [
+      "Social Media Marketing"
+    ],
+    "postingDate": "2024-07-15T12:45:00Z"
+  },
+  {
+    "jobId": "JID39618",
+    "title": "Project Coordinator",
+    "company": "Project Management Pros",
+    "description": "Support project managers and track progress.",
+    "requirements": [
+      "Project Management"
+    ],
+    "salaryRange": {
+      "min": 55000,
+      "max": 85000
+    }
+  },
+  {
+    "jobId": "JID84725",
+    "title": "UX Researcher",
+    "company": "User Research Experts",
+    "description": "Conduct user research and gather insights.",
+    "location": "San Diego, CA",
+    "requirements": [
+      "User Research",
+      "Qualitative Research"
+    ],
+    "postingDate": "2024-07-14T09:00:00Z"
+  },
+  {
+    "jobId": "JID87329",
+    "title": "Senior Software Engineer",
+    "company": "Tech Solutions Inc.",
+    "description": "Develop and maintain software applications using Java and Spring Boot.",
+    "location": "San Francisco, CA",
+    "requirements": [
+      "Java",
+      "Spring Boot",
+      "RESTful APIs"
+    ],
+    "salaryRange": {
+      "min": 120000,
+      "max": 160000
+    },
+    "postingDate": "2024-03-15T14:30:00Z"
+  },
+  {
+    "jobId": "JID29574",
+    "title": "Data Scientist",
+    "company": "Quant Analytics",
+    "description": "Build predictive models and analyze large datasets.",
+    "location": "New York, NY",
+    "requirements": [
+      "Python",
+      "R",
+      "Machine Learning"
+    ],
+    "salaryRange": {
+      "min": 100000,
+      "max": 140000
+    }
+  },
+  {
+    "jobId": "JID18462",
+    "title": "Marketing Manager",
+    "company": "Retail Giant Corp.",
+    "description": "Develop and execute marketing campaigns.",
+    "requirements": [
+      "Marketing Strategy",
+      "Digital Marketing",
+      "Social Media Marketing"
+    ]
+  },
+  {
+    "jobId": "JID75293",
+    "title": "Project Manager",
+    "company": "Construction Co.",
+    "description": "Oversee construction projects from start to finish.",
+    "location": "Chicago, IL",
+    "requirements": [
+      "Project Management",
+      "Construction Management"
+    ],
+    "postingDate": "2024-03-22T09:00:00Z"
+  },
+  {
+    "jobId": "JID48106",
+    "title": "Financial Analyst",
+    "company": "Investment Firm",
+    "description": "Analyze financial data and make investment recommendations.",
+    "requirements": [
+      "Financial Modeling",
+      "Valuation"
+    ],
+    "salaryRange": {
+      "min": 80000,
+      "max": 120000
+    }
+  },
+  {
+    "jobId": "JID96418",
+    "title": "Human Resources Manager",
+    "company": "Manufacturing Plant",
+    "description": "Manage human resources functions.",
+    "location": "Dallas, TX",
+    "requirements": [
+      "HR Management",
+      "Recruiting"
+    ],
+    "postingDate": "2024-03-29T16:45:00Z"
+  },
+  {
+    "jobId": "JID30752",
+    "title": "Sales Representative",
+    "company": "Software Solutions",
+    "description": "Sell software products to businesses.",
+    "requirements": [
+      "Sales",
+      "Business Development"
+    ]
+  },
+  {
+    "jobId": "JID61927",
+    "title": "Customer Service Representative",
+    "company": "Telecommunications Company",
+    "description": "Provide customer support.",
+    "location": "Los Angeles, CA",
+    "requirements": [
+      "Customer Service",
+      "Communication"
+    ],
+    "salaryRange": {
+      "min": 40000,
+      "max": 60000
+    }
+  },
+  {
+    "jobId": "JID82045",
+    "title": "Operations Manager",
+    "company": "Logistics Company",
+    "description": "Manage warehouse operations.",
+    "requirements": [
+      "Operations Management",
+      "Logistics"
+    ],
+    "postingDate": "2024-04-05T11:15:00Z"
+  },
+  {
+    "jobId": "JID53169",
+    "title": "IT Support Specialist",
+    "company": "Technology Services",
+    "description": "Provide IT support to employees.",
+    "location": "Seattle, WA",
+    "requirements": [
+      "IT Support",
+      "Troubleshooting"
+    ]
+  },
+  {
+    "jobId": "JID24831",
+    "title": "Graphic Designer",
+    "company": "Advertising Agency",
+    "description": "Design marketing materials.",
+    "requirements": [
+      "Graphic Design",
+      "Adobe Creative Suite"
+    ]
+  },
+  {
+    "jobId": "JID75904",
+    "title": "Content Writer",
+    "company": "Media Company",
+    "description": "Write articles and blog posts.",
+    "location": "Boston, MA",
+    "postingDate": "2024-04-12T13:30:00Z"
+  },
+  {
+    "jobId": "JID16078",
+    "title": "Web Developer",
+    "company": "E-commerce Company",
+    "description": "Develop and maintain websites.",
+    "requirements": [
+      "Web Development",
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ],
+    "salaryRange": {
+      "min": 70000,
+      "max": 110000
+    }
+  },
+  {
+    "jobId": "JID47253",
+    "title": "Accountant",
+    "company": "Finance Department",
+    "description": "Manage financial records.",
+    "location": "Houston, TX",
+    "requirements": [
+      "Accounting",
+      "Finance"
+    ]
+  },
+  {
+    "jobId": "JID98361",
+    "title": "Nurse",
+    "company": "Hospital",
+    "description": "Provide patient care.",
+    "postingDate": "2024-04-19T08:45:00Z"
+  },
+  {
+    "jobId": "JID39476",
+    "title": "Teacher",
+    "company": "School District",
+    "description": "Educate students.",
+    "location": "Phoenix, AZ",
+    "requirements": [
+      "Teaching",
+      "Education"
+    ]
+  },
+  {
+    "jobId": "JID80529",
+    "title": "Engineer",
+    "company": "Engineering Firm",
+    "description": "Design and build structures.",
+    "requirements": [
+      "Engineering",
+      "Design"
+    ]
+  },
+  {
+    "jobId": "JID21684",
+    "title": "Scientist",
+    "company": "Research Laboratory",
+    "description": "Conduct scientific research.",
+    "location": "San Diego, CA",
+    "salaryRange": {
+      "min": 90000,
+      "max": 130000
+    }
+  },
+  {
+    "jobId": "JID62730",
+    "title": "Analyst",
+    "company": "Consulting Firm",
+    "description": "Analyze data and provide recommendations.",
+    "postingDate": "2024-04-26T15:00:00Z"
+  },
+  {
+    "jobId": "JID53817",
+    "title": "Manager",
+    "company": "Management Company",
+    "description": "Manage a team of employees.",
+    "requirements": [
+      "Management",
+      "Leadership"
+    ]
+  }
+]

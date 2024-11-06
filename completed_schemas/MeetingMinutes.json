@@ -1,0 +1,54 @@
+{
+  "type": "object",
+  "properties": {
+    "meetingDate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "attendees": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "agendaItems": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "topic": {
+            "type": "string"
+          },
+          "discussion": {
+            "type": "string"
+          },
+          "decisions": {
+            "type": "string"
+          },
+          "actionItems": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "assignedTo": {
+                  "type": "string"
+                },
+                "dueDate": {
+                  "type": "string",
+                  "format": "date"
+                },
+                "description": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "meetingDate",
+    "attendees"
+  ]
+}

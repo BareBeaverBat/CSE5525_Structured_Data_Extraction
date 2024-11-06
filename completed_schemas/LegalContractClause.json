@@ -1,0 +1,37 @@
+{
+  "type": "object",
+  "properties": {
+    "contractId": {
+      "type": "string"
+    },
+    "clauseNumber": {
+      "type": "integer"
+    },
+    "clauseHeading": {
+      "type": "string"
+    },
+    "clauseText": {
+      "type": "string"
+    },
+    "effectiveDate": {
+      "type": "string",
+      "format": "date"
+    },
+    "partiesInvolved": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "keyTerms": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "contractId",
+    "clauseText"
+  ]
+}

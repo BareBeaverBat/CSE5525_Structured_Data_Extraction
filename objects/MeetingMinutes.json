@@ -1,0 +1,1367 @@
+[
+  {
+    "meetingDate": "2024-03-15T09:00:00Z",
+    "attendees": [
+      "Dr. Anya Sharma",
+      "James O'Connell"
+    ],
+    "agendaItems": [
+      {
+        "topic": "Project Alpha progress",
+        "discussion": "Reviewed Q1 milestones.",
+        "actionItems": [
+          {
+            "assignedTo": "James O'Connell",
+            "dueDate": "2024-03-22",
+            "description": "Finalize slide deck for investor presentation."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "meetingDate": "2024-03-01T14:30:00Z",
+    "attendees": [
+      "Lena M\u00fcller",
+      "David Chen",
+      "Kenji Tanaka"
+    ],
+    "agendaItems": [
+      {
+        "topic": "New marketing campaign",
+        "discussion": "Brainstormed campaign ideas for the upcoming quarter.",
+        "decisions": "Focus on social media engagement.",
+        "actionItems": [
+          {
+            "assignedTo": "Lena M\u00fcller",
+            "dueDate": "2024-03-08",
+            "description": "Draft a social media content calendar."
+          },
+          {
+            "assignedTo": "David Chen",
+            "dueDate": "2024-03-08",
+            "description": "Research competitor campaigns."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "meetingDate": "2024-02-10T11:00:00Z",
+    "attendees": [
+      "Isabella Rossi",
+      "Omar Hassan"
+    ],
+    "agendaItems": [
+      {
+        "topic": "Budget review",
+        "discussion": "Discussed budget allocation for Q2 2024."
+      }
+    ]
+  },
+  {
+    "meetingDate": "2024-01-25T15:00:00Z",
+    "attendees": [
+      "Emily Carter",
+      "Sophia Garcia",
+      "Michael Rodriguez",
+      "Kevin Lee"
+    ],
+    "agendaItems": [
+      {
+        "topic": "Product launch strategy",
+        "discussion": "Finalized the launch strategy for our new mobile app."
+      }
+    ]
+  },
+  {
+    "meetingDate": "2023-12-18T10:00:00Z",
+    "attendees": [
+      "Maria Hernandez",
+      "Daniel Wilson"
+    ],
+    "agendaItems": [
+      {
+        "topic": "Customer feedback analysis",
+        "discussion": "Analyzed customer feedback and identified areas for improvement."
+      }
+    ]
+  },
+  {
+    "meetingDate": "2024-04-22T13:30:00Z",
+    "attendees": [
+      "Chloe Dubois",
+      "Pierre Leclerc"
+    ],
+    "agendaItems": [
+      {
+        "topic": "Sales performance Q1 2024",
+        "discussion": "Reviewed sales performance and identified top performing regions.",
+        "decisions": "Increase marketing efforts in underperforming regions."
+      }
+    ]
+  },
+  {
+    "meetingDate": "2024-05-10T09:00:00Z",
+    "attendees": [
+      "Evelyn Smith",
+      "Noah Johnson"
+    ],
+    "agendaItems": [
+      {
+        "topic": "New product development",
+        "discussion": "Brainstormed ideas for new product features."
+      }
+    ]
+  },
+  {
+    "meetingDate": "2024-06-03T14:00:00Z",
+    "attendees": [
+      "Avery Williams",
+      "Jackson Brown"
+    ],
+    "agendaItems": [
+      {
+        "topic": "Competitor analysis",
+        "discussion": "Analyzed competitor strategies and identified potential threats and opportunities."
+      }
+    ]
+  },
+  {
+    "meetingDate": "2024-07-15T11:30:00Z",
+    "attendees": [
+      "Scarlett Jones",
+      "Aiden Davis"
+    ],
+    "agendaItems": [
+      {
+        "topic": "Team building activities",
+        "discussion": "Planned team building activities for Q3 2024."
+      }
+    ]
+  },
+  {
+    "meetingDate": "2024-08-20T16:00:00Z",
+    "attendees": [
+      "Victoria Miller",
+      "Liam Wilson"
+    ],
+    "agendaItems": [
+      {
+        "topic": "Performance review process",
+        "discussion": "Reviewed and updated the performance review process."
+      }
+    ]
+  },
+  {
+    "meetingDate": "2024-09-05T10:30:00Z",
+    "attendees": [
+      "Grace Moore",
+      "Benjamin Taylor"
+    ],
+    "agendaItems": [
+      {
+        "topic": "Diversity and inclusion training",
+        "discussion": "Planned diversity and inclusion training for all employees."
+      }
+    ]
+  },
+  {
+    "meetingDate": "2024-10-12T15:00:00Z",
+    "attendees": [
+      "Harper Anderson",
+      "Alexander Thomas"
+    ],
+    "agendaItems": [
+      {
+        "topic": "Employee engagement survey results",
+        "discussion": "Reviewed employee engagement survey results and identified areas for improvement."
+      }
+    ]
+  },
+  {
+    "meetingDate": "2024-11-19T11:00:00Z",
+    "attendees": [
+      "Amelia Jackson",
+      "Daniel White"
+    ],
+    "agendaItems": [
+      {
+        "topic": "New office space planning",
+        "discussion": "Discussed plans for the new office space."
+      }
+    ]
+  },
+  {
+    "meetingDate": "2024-12-02T14:30:00Z",
+    "attendees": [
+      "Charlotte Harris",
+      "Matthew Martin"
+    ],
+    "agendaItems": [
+      {
+        "topic": "Holiday party planning",
+        "discussion": "Planned the annual holiday party."
+      }
+    ]
+  },
+  {
+    "meetingDate": "2023-11-20T09:00:00Z",
+    "attendees": [
+      "Mia Thompson",
+      "Henry Garcia"
+    ],
+    "agendaItems": [
+      {
+        "topic": "Corporate social responsibility initiatives",
+        "discussion": "Discussed new corporate social responsibility initiatives."
+      }
+    ]
+  },
+  {
+    "meetingDate": "2023-10-27T13:00:00Z",
+    "attendees": [
+      "Eleanor Perez",
+      "James Robinson"
+    ],
+    "agendaItems": [
+      {
+        "topic": "Website redesign project",
+        "discussion": "Reviewed the progress of the website redesign project."
+      }
+    ]
+  },
+  {
+    "meetingDate": "2023-09-15T16:30:00Z",
+    "attendees": [
+      "Abigail Clark",
+      "Joseph Lewis"
+    ],
+    "agendaItems": [
+      {
+        "topic": "Marketing budget review",
+        "discussion": "Reviewed the marketing budget for Q4 2023."
+      }
+    ]
+  },
+  {
+    "meetingDate": "2023-08-08T11:30:00Z",
+    "attendees": [
+      "Elizabeth Hall",
+      "David Walker"
+    ],
+    "agendaItems": [
+      {
+        "topic": "New hire onboarding process",
+        "discussion": "Improved the new hire onboarding process."
+      }
+    ]
+  },
+  {
+    "meetingDate": "2023-07-22T10:00:00Z",
+    "attendees": [
+      "Sofia Young",
+      "Andrew Allen"
+    ],
+    "agendaItems": [
+      {
+        "topic": "Sales training program",
+        "discussion": "Developed a new sales training program."
+      }
+    ]
+  },
+  {
+    "meetingDate": "2023-06-05T15:30:00Z",
+    "attendees": [
+      "Evelyn King",
+      "Jackson Wright"
+    ],
+    "agendaItems": [
+      {
+        "topic": "Customer service improvement plan",
+        "discussion": "Created a customer service improvement plan."
+      }
+    ]
+  },
+  {
+    "meetingDate": "2024-03-15T09:00:00Z",
+    "attendees": [
+      "Dr. Anya Sharma",
+      "David Miller",
+      "Emily Carter"
+    ],
+    "agendaItems": [
+      {
+        "topic": "Project Alpha - Phase 2",
+        "discussion": "Reviewed progress on user interface development.",
+        "decisions": "Approved budget increase for additional testing resources.",
+        "actionItems": [
+          {
+            "assignedTo": "David Miller",
+            "dueDate": "2024-03-22",
+            "description": "Finalize user stories for sprint 3"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "meetingDate": "2024-03-22T14:30:00Z",
+    "attendees": [
+      "James Lee",
+      "Maria Rodriguez",
+      "Kevin Chen",
+      "Sarah Williams"
+    ],
+    "agendaItems": [
+      {
+        "topic": "Marketing Campaign Q2",
+        "discussion": "Brainstormed new strategies for social media engagement."
+      },
+      {
+        "topic": "Sales Performance Review",
+        "discussion": "Discussed sales figures for the previous quarter.",
+        "decisions": "Implement new sales incentive program."
+      }
+    ]
+  },
+  {
+    "meetingDate": "2024-04-05T11:00:00Z",
+    "attendees": [
+      "Michael Brown",
+      "Jessica Garcia",
+      "Christopher Wilson"
+    ],
+    "agendaItems": [
+      {
+        "topic": "New Product Development",
+        "discussion": "Reviewed competitor analysis and identified potential market gaps.",
+        "actionItems": [
+          {
+            "assignedTo": "Jessica Garcia",
+            "dueDate": "2024-04-12",
+            "description": "Conduct customer surveys to validate product concept"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "meetingDate": "2024-04-12T10:00:00Z",
+    "attendees": [
+      "Ashley Davis",
+      "Matthew Taylor"
+    ],
+    "agendaItems": [
+      {
+        "topic": "Budget Planning FY24",
+        "decisions": "Approved budget allocation for IT infrastructure upgrades."
+      }
+    ]
+  },
+  {
+    "meetingDate": "2024-04-19T15:00:00Z",
+    "attendees": [
+      "Brian Anderson",
+      "Angela Martinez"
+    ],
+    "agendaItems": [
+      {
+        "topic": "Customer Support Improvements",
+        "discussion": "Analyzed customer feedback data and identified areas for improvement."
+      }
+    ]
+  },
+  {
+    "meetingDate": "2024-04-26T13:30:00Z",
+    "attendees": [
+      "David Garcia",
+      "Linda Rodriguez"
+    ],
+    "agendaItems": [
+      {
+        "topic": "Strategic Partnerships",
+        "discussion": "Explored potential partnerships with complementary businesses.",
+        "decisions": "Initiate contact with Company X to discuss collaboration opportunities."
+      }
+    ]
+  },
+  {
+    "meetingDate": "2024-05-03T11:00:00Z",
+    "attendees": [
+      "Elizabeth Wilson",
+      "Daniel Taylor"
+    ],
+    "agendaItems": [
+      {
+        "topic": "Employee Training Program",
+        "discussion": "Reviewed the effectiveness of current training programs.",
+        "actionItems": [
+          {
+            "assignedTo": "Daniel Taylor",
+            "dueDate": "2024-05-10",
+            "description": "Develop a proposal for a new leadership training program"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "meetingDate": "2024-05-10T09:30:00Z",
+    "attendees": [
+      "Kevin Anderson",
+      "Barbara Thomas"
+    ],
+    "agendaItems": [
+      {
+        "topic": "Office Relocation Plan",
+        "decisions": "Finalized the timeline and budget for the office relocation."
+      }
+    ]
+  },
+  {
+    "meetingDate": "2024-05-17T14:00:00Z",
+    "attendees": [
+      "Steven Jackson",
+      "Kimberly White"
+    ],
+    "agendaItems": [
+      {
+        "topic": "Website Redesign Project",
+        "discussion": "Reviewed the latest design mockups and provided feedback."
+      }
+    ]
+  },
+  {
+    "meetingDate": "2024-05-24T10:30:00Z",
+    "attendees": [
+      "Joseph Harris",
+      "Patricia Clark"
+    ],
+    "agendaItems": [
+      {
+        "topic": "Community Outreach Initiatives",
+        "discussion": "Discussed opportunities to engage with the local community.",
+        "decisions": "Sponsor a local charity event."
+      }
+    ]
+  },
+  {
+    "meetingDate": "2023-11-15T13:00:00Z",
+    "attendees": [
+      "John Smith",
+      "Alice Johnson",
+      "Bob Williams"
+    ],
+    "agendaItems": [
+      {
+        "topic": "Project Gamma Launch",
+        "discussion": "Discussed the marketing strategy for the upcoming product launch."
+      }
+    ]
+  },
+  {
+    "meetingDate": "2023-12-01T10:30:00Z",
+    "attendees": [
+      "Eva Garcia",
+      "David Lee"
+    ],
+    "agendaItems": [
+      {
+        "topic": "Annual Budget Review",
+        "decisions": "Approved the budget for the next fiscal year."
+      }
+    ]
+  },
+  {
+    "meetingDate": "2024-01-15T15:00:00Z",
+    "attendees": [
+      "Michael Rodriguez",
+      "Sarah Chen"
+    ],
+    "agendaItems": [
+      {
+        "topic": "Employee Performance Evaluations",
+        "discussion": "Reviewed the performance evaluation process and made recommendations for improvements."
+      }
+    ]
+  },
+  {
+    "meetingDate": "2024-02-01T11:00:00Z",
+    "attendees": [
+      "Kevin Wilson",
+      "Jessica Anderson"
+    ],
+    "agendaItems": [
+      {
+        "topic": "New Office Space",
+        "discussion": "Toured potential new office spaces and discussed lease terms."
+      }
+    ]
+  },
+  {
+    "meetingDate": "2024-02-15T09:30:00Z",
+    "attendees": [
+      "Christopher Taylor",
+      "Ashley Martinez"
+    ],
+    "agendaItems": [
+      {
+        "topic": "Company Retreat Planning",
+        "decisions": "Finalized the location and agenda for the company retreat."
+      }
+    ]
+  },
+  {
+    "meetingDate": "2024-03-01T14:00:00Z",
+    "attendees": [
+      "Daniel Jackson",
+      "Angela White"
+    ],
+    "agendaItems": [
+      {
+        "topic": "Customer Service Training",
+        "discussion": "Reviewed customer service metrics and identified areas for training."
+      }
+    ]
+  },
+  {
+    "meetingDate": "2024-06-07T11:00:00Z",
+    "attendees": [
+      "Ethan Miller",
+      "Olivia Davis"
+    ],
+    "agendaItems": [
+      {
+        "topic": "Summer Internship Program",
+        "discussion": "Reviewed applications and selected candidates for the summer internship program."
+      }
+    ]
+  },
+  {
+    "meetingDate": "2024-06-14T15:30:00Z",
+    "attendees": [
+      "Alexander Wilson",
+      "Mia Garcia"
+    ],
+    "agendaItems": [
+      {
+        "topic": "Company Picnic",
+        "decisions": "Finalized the date, time, and location for the company picnic."
+      }
+    ]
+  },
+  {
+    "meetingDate": "2024-06-21T10:00:00Z",
+    "attendees": [
+      "James Thomas",
+      "Abigail Rodriguez"
+    ],
+    "agendaItems": [
+      {
+        "topic": "New Employee Onboarding",
+        "discussion": "Reviewed the onboarding process and made recommendations for improvements."
+      }
+    ]
+  },
+  {
+    "meetingDate": "2024-06-28T13:30:00Z",
+    "attendees": [
+      "William Clark",
+      "Charlotte Lewis"
+    ],
+    "agendaItems": [
+      {
+        "topic": "Team Building Activities",
+        "discussion": "Brainstormed ideas for team building activities to improve morale."
+      }
+    ]
+  },
+  {
+    "meetingDate": "2024-03-15T09:00:00Z",
+    "attendees": [
+      "Anika Howard",
+      "Miles Carter",
+      "Eloise Reynolds"
+    ]
+  },
+  {
+    "meetingDate": "2024-03-02T14:30:00Z",
+    "attendees": [
+      "Jaxon Walker",
+      "Lily Thompson",
+      "Caleb Moore",
+      "Evelyn Lewis"
+    ],
+    "agendaItems": [
+      {
+        "topic": "Project X Launch",
+        "discussion": "Discussed marketing strategies for the upcoming launch.",
+        "actionItems": [
+          {
+            "assignedTo": "Lily Thompson",
+            "dueDate": "2024-03-09",
+            "description": "Finalize marketing materials."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "meetingDate": "2024-02-19T11:00:00Z",
+    "attendees": [
+      "Muhammad Ali",
+      "Aurora Cooper",
+      "Oliver Mitchell"
+    ],
+    "agendaItems": [
+      {
+        "topic": "Budget Review",
+        "discussion": "Reviewed Q1 budget performance.",
+        "decisions": "Increase budget for R&D."
+      }
+    ]
+  },
+  {
+    "meetingDate": "2024-04-22T13:00:00Z",
+    "attendees": [
+      "Theodore Bell",
+      "Chloe King",
+      "Daniel Wright",
+      "Olivia Baker",
+      "William Green"
+    ],
+    "agendaItems": [
+      {
+        "topic": "New Product Development",
+        "discussion": "Brainstormed ideas for a new software product."
+      }
+    ]
+  },
+  {
+    "meetingDate": "2024-03-29T15:30:00Z",
+    "attendees": [
+      "Amelia Kelly",
+      "Henry Adams",
+      "Harper Campbell"
+    ],
+    "agendaItems": [
+      {
+        "topic": "Sales Performance",
+        "decisions": "Implement new sales incentive program."
+      }
+    ]
+  },
+  {
+    "meetingDate": "2024-04-05T10:00:00Z",
+    "attendees": [
+      "Mia Phillips",
+      "Samuel Roberts",
+      "Avery Turner"
+    ],
+    "agendaItems": [
+      {
+        "topic": "Customer Feedback",
+        "discussion": "Addressed customer feedback regarding recent product updates."
+      }
+    ]
+  },
+  {
+    "meetingDate": "2024-02-26T16:00:00Z",
+    "attendees": [
+      "Jackson Parker",
+      "Scarlett Evans",
+      "Elijah Collins"
+    ],
+    "agendaItems": [
+      {
+        "topic": "Competitor Analysis",
+        "decisions": "Focus on developing unique features to differentiate from competitors."
+      }
+    ]
+  },
+  {
+    "meetingDate": "2024-03-08T12:30:00Z",
+    "attendees": [
+      "Abigail Edwards",
+      "David Perez",
+      "Sofia Peterson"
+    ],
+    "agendaItems": [
+      {
+        "topic": "Team Building Activities",
+        "actionItems": [
+          {
+            "assignedTo": "David Perez",
+            "dueDate": "2024-03-15",
+            "description": "Organize team building event."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "meetingDate": "2024-04-12T09:30:00Z",
+    "attendees": [
+      "Victoria Long",
+      "James Rodriguez",
+      "Charlotte Murphy"
+    ],
+    "agendaItems": [
+      {
+        "topic": "Recruitment Strategy",
+        "decisions": "Increase recruitment efforts for software engineers."
+      }
+    ]
+  },
+  {
+    "meetingDate": "2024-03-19T14:00:00Z",
+    "attendees": [
+      "Christopher Brooks",
+      "Emily Foster",
+      "Anthony Hill",
+      "Grace Wood"
+    ],
+    "agendaItems": [
+      {
+        "topic": "Project Timeline Review",
+        "discussion": "Revised project timeline to account for unexpected delays."
+      }
+    ]
+  },
+  {
+    "meetingDate": "2024-04-26T11:30:00Z",
+    "attendees": [
+      "Joseph Jenkins",
+      "Madison Reed",
+      "Lincoln Barnes"
+    ],
+    "agendaItems": [
+      {
+        "topic": "Marketing Campaign Analysis",
+        "discussion": "Analyzed the effectiveness of recent marketing campaigns."
+      }
+    ]
+  },
+  {
+    "meetingDate": "2024-02-12T15:00:00Z",
+    "attendees": [
+      "David Henderson",
+      "Sofia Ross",
+      "Jackson Price"
+    ],
+    "agendaItems": [
+      {
+        "topic": "Product Roadmap Planning",
+        "decisions": "Prioritize development of core features for the next product release."
+      }
+    ]
+  },
+  {
+    "meetingDate": "2023-12-28T10:30:00Z",
+    "attendees": [
+      "Kevin Sanders",
+      "Ava Coleman",
+      "Jack Morgan"
+    ],
+    "agendaItems": [
+      {
+        "topic": "Holiday Party Planning",
+        "actionItems": [
+          {
+            "assignedTo": "Ava Coleman",
+            "dueDate": "2024-01-05",
+            "description": "Send out invitations for the holiday party."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "meetingDate": "2024-04-19T13:30:00Z",
+    "attendees": [
+      "John Russell",
+      "Ella Powell",
+      "Owen Bryant"
+    ],
+    "agendaItems": [
+      {
+        "topic": "Employee Training Program",
+        "decisions": "Implement new employee training program to enhance skills."
+      }
+    ]
+  },
+  {
+    "meetingDate": "2024-03-22T09:00:00Z",
+    "attendees": [
+      "Alexander Griffin",
+      "Abigail Rivera",
+      "Mateo Stewart",
+      "Mia Perry"
+    ],
+    "agendaItems": [
+      {
+        "topic": "Office Relocation Plans",
+        "discussion": "Discussed plans for relocating to a new office space."
+      }
+    ]
+  },
+  {
+    "meetingDate": "2024-01-05T14:30:00Z",
+    "attendees": [
+      "Jonathan Alexander",
+      "Katherine Anderson",
+      "Daniel Thomas"
+    ],
+    "agendaItems": [
+      {
+        "topic": "New Year's Resolutions",
+        "discussion": "Shared individual and team goals for the new year."
+      }
+    ]
+  },
+  {
+    "meetingDate": "2024-03-01T11:00:00Z",
+    "attendees": [
+      "Christian Young",
+      "Avery Scott",
+      "Elizabeth Hughes"
+    ],
+    "agendaItems": [
+      {
+        "topic": "Performance Review Process",
+        "decisions": "Revise performance review process to provide more frequent feedback."
+      }
+    ]
+  },
+  {
+    "meetingDate": "2024-04-08T16:00:00Z",
+    "attendees": [
+      "Landon Simmons",
+      "Scarlett Ward",
+      "Grayson Morris"
+    ],
+    "agendaItems": [
+      {
+        "topic": "Customer Support Improvements",
+        "discussion": "Explored strategies for improving customer support response times."
+      }
+    ]
+  },
+  {
+    "meetingDate": "2024-04-15T12:30:00Z",
+    "attendees": [
+      "Evelyn Flores",
+      "Isaac Reed",
+      "Victoria Washington"
+    ],
+    "agendaItems": [
+      {
+        "topic": "Social Media Strategy",
+        "decisions": "Increase social media presence to engage with target audience."
+      }
+    ]
+  },
+  {
+    "meetingDate": "2024-03-15T09:00:00Z",
+    "attendees": [
+      "Anika Howard",
+      "Jayden Lee",
+      "Jordan Taylor"
+    ]
+  },
+  {
+    "meetingDate": "2024-01-05T14:30:00Z",
+    "attendees": [
+      "Benjamin Wilson",
+      "Olivia Garcia",
+      "Daniel Thomas"
+    ],
+    "agendaItems": [
+      {
+        "topic": "Project Alpha",
+        "discussion": "Reviewed progress on phase 1."
+      }
+    ]
+  },
+  {
+    "meetingDate": "2023-12-22T11:00:00Z",
+    "attendees": [
+      "Mia Rodriguez",
+      "Jackson Miller",
+      "Chloe Martinez",
+      "David Anderson"
+    ],
+    "agendaItems": [
+      {
+        "topic": "Budget Review Q4",
+        "decisions": "Approved budget allocation for 2024."
+      }
+    ]
+  },
+  {
+    "meetingDate": "2024-02-09T13:00:00Z",
+    "attendees": [
+      "Alexander Hernandez",
+      "Evelyn Garcia"
+    ],
+    "agendaItems": [
+      {
+        "topic": "Marketing Campaign",
+        "discussion": "Discussed potential target demographics.",
+        "actionItems": [
+          {
+            "assignedTo": "Evelyn Garcia",
+            "dueDate": "2024-02-16",
+            "description": "Prepare a market analysis report."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "meetingDate": "2024-03-01T15:00:00Z",
+    "attendees": [
+      "Avery Davis",
+      "Sofia Wilson",
+      "Noah Moore"
+    ],
+    "agendaItems": [
+      {
+        "topic": "New Product Launch",
+        "decisions": "Set launch date for April 15th."
+      }
+    ]
+  },
+  {
+    "meetingDate": "2023-11-15T10:30:00Z",
+    "attendees": [
+      "Liam Taylor",
+      "Abigail Hernandez",
+      "James Garcia"
+    ],
+    "agendaItems": [
+      {
+        "topic": "Sales Performance Q3",
+        "discussion": "Analyzed sales figures and identified key growth areas."
+      }
+    ]
+  },
+  {
+    "meetingDate": "2024-02-22T16:00:00Z",
+    "attendees": [
+      "Harper Anderson",
+      "Elijah Thomas",
+      "Amelia Jackson"
+    ],
+    "agendaItems": [
+      {
+        "topic": "Customer Feedback",
+        "decisions": "Implement new customer service initiatives."
+      }
+    ]
+  },
+  {
+    "meetingDate": "2023-12-08T14:00:00Z",
+    "attendees": [
+      "Lucas White",
+      "Mia Moore",
+      "Jackson Martin"
+    ],
+    "agendaItems": [
+      {
+        "topic": "Competitor Analysis",
+        "discussion": "Identified key competitors and their strategies."
+      }
+    ]
+  },
+  {
+    "meetingDate": "2024-01-19T11:30:00Z",
+    "attendees": [
+      "Victoria Taylor",
+      "Logan Anderson"
+    ],
+    "agendaItems": [
+      {
+        "topic": "Strategic Planning",
+        "decisions": "Defined company goals for the next fiscal year."
+      }
+    ]
+  },
+  {
+    "meetingDate": "2024-03-29T13:30:00Z",
+    "attendees": [
+      "Sophia Hernandez",
+      "Benjamin Garcia",
+      "Jackson Harris"
+    ],
+    "agendaItems": [
+      {
+        "topic": "Team Building",
+        "discussion": "Planned team building activities for the quarter."
+      }
+    ]
+  },
+  {
+    "meetingDate": "2023-10-26T09:30:00Z",
+    "attendees": [
+      "Ethan Davis",
+      "Olivia Wilson",
+      "Daniel Martin"
+    ],
+    "agendaItems": [
+      {
+        "topic": "Financial Reporting",
+        "decisions": "Reviewed financial reports for the previous month."
+      }
+    ]
+  },
+  {
+    "meetingDate": "2024-02-16T15:30:00Z",
+    "attendees": [
+      "Isabella Rodriguez",
+      "Alexander Moore"
+    ],
+    "agendaItems": [
+      {
+        "topic": "Product Development",
+        "discussion": "Brainstormed new product ideas and features."
+      }
+    ]
+  },
+  {
+    "meetingDate": "2023-11-09T12:00:00Z",
+    "attendees": [
+      "Michael Thomas",
+      "Abigail Anderson",
+      "William Jackson"
+    ],
+    "agendaItems": [
+      {
+        "topic": "Marketing Strategy",
+        "decisions": "Approved new marketing campaign for social media."
+      }
+    ]
+  },
+  {
+    "meetingDate": "2024-03-08T10:00:00Z",
+    "attendees": [
+      "Charlotte Harris",
+      "Aiden Wilson",
+      "James Davis"
+    ],
+    "agendaItems": [
+      {
+        "topic": "Sales Training",
+        "discussion": "Discussed sales training programs for new employees."
+      }
+    ]
+  },
+  {
+    "meetingDate": "2024-01-26T14:00:00Z",
+    "attendees": [
+      "Amelia Martinez",
+      "Elijah Garcia",
+      "Daniel White"
+    ],
+    "agendaItems": [
+      {
+        "topic": "Customer Support",
+        "decisions": "Implemented new customer support ticketing system."
+      }
+    ]
+  },
+  {
+    "meetingDate": "2023-12-15T16:30:00Z",
+    "attendees": [
+      "Harper Moore",
+      "Lucas Jackson",
+      "Victoria Anderson"
+    ],
+    "agendaItems": [
+      {
+        "topic": "Technology Updates",
+        "discussion": "Reviewed new software updates and their impact on workflows."
+      }
+    ]
+  },
+  {
+    "meetingDate": "2024-02-02T11:00:00Z",
+    "attendees": [
+      "Evelyn Thomas",
+      "Benjamin Harris"
+    ],
+    "agendaItems": [
+      {
+        "topic": "Project Beta",
+        "decisions": "Approved project budget and timeline."
+      }
+    ]
+  },
+  {
+    "meetingDate": "2024-03-22T13:00:00Z",
+    "attendees": [
+      "Avery Davis",
+      "Sofia Wilson",
+      "Noah Moore",
+      "Mia Rodriguez",
+      "Jackson Miller"
+    ],
+    "agendaItems": [
+      {
+        "topic": "New Office Location",
+        "discussion": "Discussed potential office locations in the city center."
+      }
+    ]
+  },
+  {
+    "meetingDate": "2023-11-23T15:30:00Z",
+    "attendees": [
+      "Liam Taylor",
+      "Abigail Hernandez",
+      "James Garcia",
+      "Anika Howard",
+      "Jayden Lee"
+    ],
+    "agendaItems": [
+      {
+        "topic": "Company Culture",
+        "decisions": "Organized company-wide events to improve employee morale."
+      }
+    ]
+  },
+  {
+    "meetingDate": "2024-03-15T09:00:00Z",
+    "attendees": [
+      "Ken Adams",
+      "Alice Johnson",
+      "Bob Williams"
+    ]
+  },
+  {
+    "meetingDate": "2024-01-22T14:30:00Z",
+    "attendees": [
+      "Sarah Lee",
+      "David Chen"
+    ],
+    "agendaItems": [
+      {
+        "topic": "Project Alpha progress report",
+        "discussion": "Reviewed the current status of Project Alpha. Discussed challenges and potential solutions.",
+        "decisions": "Agreed to reallocate resources to address critical bottlenecks.",
+        "actionItems": [
+          {
+            "assignedTo": "Sarah Lee",
+            "dueDate": "2024-01-30",
+            "description": "Finalize resource allocation plan."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "meetingDate": "2023-11-08T10:00:00Z",
+    "attendees": [
+      "Emily Davis",
+      "Frank Brown",
+      "George Wilson",
+      "Helen Taylor"
+    ]
+  },
+  {
+    "meetingDate": "2024-04-02T13:00:00Z",
+    "attendees": [
+      "Ivy Anderson",
+      "Jack Miller"
+    ],
+    "agendaItems": [
+      {
+        "topic": "Budget Review Q2 2024",
+        "discussion": "Reviewed the budget performance for Q2. Identified areas of overspending and potential cost-saving measures."
+      },
+      {
+        "topic": "New Marketing Campaign",
+        "discussion": "Brainstormed ideas for the upcoming marketing campaign.",
+        "decisions": "Approved the proposed campaign strategy."
+      }
+    ]
+  },
+  {
+    "meetingDate": "2023-12-19T11:00:00Z",
+    "attendees": [
+      "Kevin Garcia",
+      "Linda Rodriguez",
+      "Michael Martinez"
+    ]
+  },
+  {
+    "meetingDate": "2024-02-28T15:30:00Z",
+    "attendees": [
+      "Nancy Clark",
+      "Oscar Lewis",
+      "Paul Robinson"
+    ],
+    "agendaItems": [
+      {
+        "topic": "Client Onboarding Process",
+        "discussion": "Discussed ways to improve the client onboarding process.",
+        "actionItems": [
+          {
+            "assignedTo": "Nancy Clark",
+            "dueDate": "2024-03-15",
+            "description": "Draft a revised onboarding checklist."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "meetingDate": "2024-05-10T09:30:00Z",
+    "attendees": [
+      "Quentin Young",
+      "Rebecca King",
+      "Samuel Wright"
+    ]
+  },
+  {
+    "meetingDate": "2023-09-27T14:00:00Z",
+    "attendees": [
+      "Tina Scott",
+      "Victor Green",
+      "Walter Nelson"
+    ],
+    "agendaItems": [
+      {
+        "topic": "Sales Performance Review",
+        "discussion": "Analyzed the sales performance for the past quarter. Identified top performing products and regions.",
+        "decisions": "Set new sales targets for the next quarter."
+      }
+    ]
+  },
+  {
+    "meetingDate": "2024-06-17T10:30:00Z",
+    "attendees": [
+      "Ursula Baker",
+      "Vincent Perez",
+      "Xavier Campbell"
+    ]
+  },
+  {
+    "meetingDate": "2023-08-14T13:30:00Z",
+    "attendees": [
+      "Yvonne Edwards",
+      "Zachary Mitchell",
+      "Abigail Allen"
+    ],
+    "agendaItems": [
+      {
+        "topic": "Product Development Roadmap",
+        "discussion": "Reviewed the product development roadmap for the next year. Prioritized upcoming features and functionalities."
+      }
+    ]
+  },
+  {
+    "meetingDate": "2024-07-24T11:30:00Z",
+    "attendees": [
+      "Brianna Young",
+      "Christopher King",
+      "David Wright"
+    ]
+  },
+  {
+    "meetingDate": "2023-10-31T15:00:00Z",
+    "attendees": [
+      "Elizabeth Scott",
+      "Frederick Green",
+      "George Nelson"
+    ],
+    "agendaItems": [
+      {
+        "topic": "Customer Service Improvement Initiatives",
+        "discussion": "Discussed strategies to enhance customer service and satisfaction.",
+        "actionItems": [
+          {
+            "assignedTo": "Elizabeth Scott",
+            "dueDate": "2023-11-15",
+            "description": "Develop a customer feedback survey."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "meetingDate": "2024-08-07T09:00:00Z",
+    "attendees": [
+      "Grace Baker",
+      "Henry Perez",
+      "Isaac Campbell"
+    ]
+  },
+  {
+    "meetingDate": "2023-07-05T14:30:00Z",
+    "attendees": [
+      "Jessica Edwards",
+      "Jonathan Mitchell",
+      "Katherine Allen"
+    ],
+    "agendaItems": [
+      {
+        "topic": "Competitive Analysis",
+        "discussion": "Analyzed the strengths and weaknesses of key competitors. Identified opportunities to gain a competitive advantage."
+      }
+    ]
+  },
+  {
+    "meetingDate": "2024-09-12T10:00:00Z",
+    "attendees": [
+      "Kylie Young",
+      "Logan King",
+      "Madison Wright"
+    ]
+  },
+  {
+    "meetingDate": "2023-05-29T13:00:00Z",
+    "attendees": [
+      "Mackenzie Scott",
+      "Nathan Green",
+      "Olivia Nelson"
+    ],
+    "agendaItems": [
+      {
+        "topic": "Marketing Budget Allocation",
+        "discussion": "Discussed the allocation of marketing budget across different channels.",
+        "decisions": "Approved the proposed budget allocation plan."
+      }
+    ]
+  },
+  {
+    "meetingDate": "2024-10-19T11:00:00Z",
+    "attendees": [
+      "Sophia Baker",
+      "William Perez",
+      "Alexander Campbell"
+    ]
+  },
+  {
+    "meetingDate": "2023-06-21T15:30:00Z",
+    "attendees": [
+      "Avery Edwards",
+      "Benjamin Mitchell",
+      "Chloe Allen"
+    ],
+    "agendaItems": [
+      {
+        "topic": "Website Redesign Project",
+        "discussion": "Reviewed the progress of the website redesign project. Discussed design mockups and functionalities."
+      }
+    ]
+  },
+  {
+    "meetingDate": "2024-11-26T09:30:00Z",
+    "attendees": [
+      "Daniella Young",
+      "Ethan King",
+      "Faith Wright"
+    ]
+  }
+]
