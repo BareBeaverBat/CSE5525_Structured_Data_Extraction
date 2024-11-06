@@ -1,3 +1,63 @@
 [
-
+    {
+        "product": {
+            "name": "SoundBlaster ZxR"
+        },
+        "impact_level": "major",
+        "system_state": {
+            "os": "Windows 11",
+            "browser": "Firefox"
+        }
+    }, {
+    "product": {
+        "name": "Logitech G915 TKL",
+        "model": "Tactile"
+    },
+    "error_codes": ["404", "401"],
+    "impact_level": "blocking",
+    "system_state": {
+        "os": "macOS Ventura",
+        "connected_devices": ["Mouse", "Keyboard"]
+    },
+    "reproduction": {
+        "reproducible": true,
+        "frequency": "always"
+    }
+}, {
+    "product": {
+        "name": "Audio-Technica ATH-M50x"
+    },
+    "impact_level": "minor",
+    "system_state": {
+        "os": "iOS 16.1"
+    }
+}, {
+    "product": {
+        "name": "Elgato Stream Deck",
+        "model": "MK.2",
+        "version": "1.0.3"
+    },
+    "error_codes": ["0x0001"],
+    "system_state": {
+        "connected_devices": ["Webcam"]
+    },
+    "reproduction": {
+        "reproducible": false
+    }
+}, {
+    "product": {
+        "name": "BenQ EX3210U",
+        "model": "IPS"
+    },
+    "impact_level": "cosmetic",
+    "system_state": {
+        "os": "Windows 10",
+        "browser": "Chrome",
+        "connected_devices": ["Webcam"]
+    },
+    "reproduction": {
+        "reproducible": true,
+        "frequency": "sometimes"
+    }
+}
 ]
