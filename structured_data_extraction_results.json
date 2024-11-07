@@ -1,0 +1,369 @@
+[
+  {
+    "test_number": 1,
+    "original_schema": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "type": "object",
+      "properties": {
+        "symptoms": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "duration_days": {
+                "type": "integer"
+              },
+              "severity": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 10
+              },
+              "frequency": {
+                "type": "string",
+                "enum": [
+                  "constant",
+                  "intermittent",
+                  "occasional",
+                  "first_occurrence"
+                ]
+              }
+            },
+            "required": [
+              "name"
+            ]
+          }
+        },
+        "medications": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "dosage": {
+                "type": "string"
+              },
+              "frequency": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "name"
+            ]
+          }
+        },
+        "allergies": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "family_history_flags": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "diabetes",
+              "heart_disease",
+              "cancer",
+              "asthma",
+              "hypertension",
+              "other"
+            ]
+          }
+        }
+      }
+    },
+    "original_text": "Patient Visit Notes\nDate: October 15, 2023\nDr. Sarah Chen\nPatient presents with complaints of headache and fatigue. The headache has been occurring intermittently for the past 3 days, with patient rating pain at 6/10. Patient describes the headache as primarily affecting the frontal region, with no accompanying visual disturbances. The fatigue has been constant for approximately one week, rated at 4/10 severity, and is most noticeable in the afternoons.\nPatient has been self-managing symptoms with over-the-counter ibuprofen 200mg as needed, reporting moderate relief when taken.\nReview of allergies confirms known sensitivities to pollen and dust mites. Patient uses air purifiers at home to help manage environmental allergies.\nPatient maintains good sleep hygiene with regular 7-hour sleep schedule and stays well-hydrated. Regular exercise routine includes 30-minute walks three times per week.\nPlan:\n\nContinue current ibuprofen regimen as needed\nRecommended keeping a symptom diary to track headache triggers\nFollow-up in two weeks if symptoms persist\nEncouraged to maintain current exercise routine\n\nNext appointment scheduled for October 29th at 2:30 PM.",
+    "gpt_model_output": "[\n    {\n        \"symptoms\": [\n            {\n                \"name\": \"headache\",\n                \"duration_days\": 3,\n                \"severity\": 6,\n                \"frequency\": \"intermittent\"\n            },\n            {\n                \"name\": \"fatigue\",\n                \"duration_days\": 7,\n                \"severity\": 4,\n                \"frequency\": \"constant\"\n            }\n        ],\n        \"medications\": [\n            {\n                \"name\": \"ibuprofen\",\n                \"dosage\": \"200mg\",\n                \"frequency\": \"as needed\"\n            }\n        ],\n        \"allergies\": [\n            \"pollen\",\n            \"dust mites\"\n        ],\n        \"family_history_flags\": [\n            \"hypertension\"\n        ]\n    },\n    {\n        \"symptoms\": [\n            {\n                \"name\": \"nausea\",\n                \"duration_days\": 2,\n                \"severity\": 5,\n                \"frequency\": \"occasional\"\n            },\n            {\n                \"name\": \"dizziness\",\n                \"duration_days\": 1,\n                \"severity\": 7,\n                \"frequency\": \"first_occurrence\"\n            }\n        ],\n        \"medications\": [\n            {\n                \"name\": \"ondansetron\",\n                \"dosage\": \"4mg\",\n                \"frequency\": \"as needed\"\n            }\n        ],\n        \"allergies\": [\n            \"shellfish\"\n        ],\n        \"family_history_flags\": [\n            \"diabetes\",\n            \"cancer\"\n        ]\n    },\n    {\n        \"symptoms\": [\n            {\n                \"name\": \"cough\",\n                \"duration_days\": 5,\n                \"severity\": 3,\n                \"frequency\": \"constant\"\n            },\n            {\n                \"name\": \"sore throat\",\n                \"duration_days\": 4,\n                \"severity\": 5,\n                \"frequency\": \"intermittent\"\n            }\n        ],\n        \"medications\": [\n            {\n                \"name\": \"acetaminophen\",\n                \"dosage\": \"500mg\",\n                \"frequency\": \"every 6 hours\"\n            }\n        ],\n        \"allergies\": [],\n        \"family_history_flags\": [\n            \"asthma\"\n        ]\n    },\n    {\n        \"symptoms\": [\n            {\n                \"name\": \"joint pain\",\n                \"duration_days\": 10,\n                \"severity\": 8,\n                \"frequency\": \"constant\"\n            }\n        ],\n        \"medications\": [\n            {\n                \"name\": \"naproxen\",\n                \"dosage\": \"250mg\",\n                \"frequency\": \"twice daily\"\n            }\n        ],\n        \"allergies\": [\n            \"latex\"\n        ],\n        \"family_history_flags\": [\n            \"heart_disease\"\n        ]\n    },\n    {\n        \"symptoms\": [\n            {\n                \"name\": \"fever\",\n                \"duration_days\": 2,\n                \"severity\": 9,\n                \"frequency\": \"first_occurrence\"\n            },\n            {\n                \"name\": \"chills\",\n                \"duration_days\": 2,\n                \"severity\": 7,\n                \"frequency\": \"constant\"\n            }\n        ],\n        \"medications\": [\n            {\n                \"name\": \"ibuprofen\",\n                \"dosage\": \"400mg\",\n                \"frequency\": \"every 8 hours\"\n            }\n        ],\n        \"allergies\": [],\n        \"family_history_flags\": [\n            \"other\"\n        ]\n    }\n]",
+    "gpt_model_correct": false,
+    "differences": [
+      {
+        "expected": {
+          "symptoms": [
+            {
+              "name": "headache",
+              "duration_days": 3,
+              "severity": 6,
+              "frequency": "intermittent"
+            },
+            {
+              "name": "fatigue",
+              "duration_days": 7,
+              "severity": 4,
+              "frequency": "constant"
+            }
+          ],
+          "medications": [
+            {
+              "name": "ibuprofen",
+              "dosage": "200mg",
+              "frequency": "as needed"
+            }
+          ],
+          "allergies": [
+            "pollen",
+            "dust mites"
+          ]
+        },
+        "actual": {
+          "symptoms": [
+            {
+              "name": "headache",
+              "duration_days": 3,
+              "severity": 6,
+              "frequency": "intermittent"
+            },
+            {
+              "name": "fatigue",
+              "duration_days": 7,
+              "severity": 4,
+              "frequency": "constant"
+            }
+          ],
+          "medications": [
+            {
+              "name": "ibuprofen",
+              "dosage": "200mg",
+              "frequency": "as needed"
+            }
+          ],
+          "allergies": [
+            "pollen",
+            "dust mites"
+          ],
+          "family_history_flags": [
+            "hypertension"
+          ]
+        }
+      },
+      {
+        "expected": {
+          "symptoms": [
+            {
+              "name": "cough",
+              "duration_days": 14,
+              "severity": 7,
+              "frequency": "occasional"
+            },
+            {
+              "name": "shortness of breath",
+              "duration_days": 5,
+              "severity": 8,
+              "frequency": "intermittent"
+            },
+            {
+              "name": "chest pain",
+              "severity": 5,
+              "frequency": "first_occurrence"
+            }
+          ],
+          "medications": [
+            {
+              "name": "albuterol inhaler",
+              "dosage": "2 puffs every 4-6 hours",
+              "frequency": "as needed"
+            },
+            {
+              "name": "prednisone",
+              "dosage": "20mg",
+              "frequency": "once daily"
+            }
+          ],
+          "family_history_flags": [
+            "asthma",
+            "hypertension"
+          ]
+        },
+        "actual": {
+          "symptoms": [
+            {
+              "name": "nausea",
+              "duration_days": 2,
+              "severity": 5,
+              "frequency": "occasional"
+            },
+            {
+              "name": "dizziness",
+              "duration_days": 1,
+              "severity": 7,
+              "frequency": "first_occurrence"
+            }
+          ],
+          "medications": [
+            {
+              "name": "ondansetron",
+              "dosage": "4mg",
+              "frequency": "as needed"
+            }
+          ],
+          "allergies": [
+            "shellfish"
+          ],
+          "family_history_flags": [
+            "diabetes",
+            "cancer"
+          ]
+        }
+      },
+      {
+        "expected": {
+          "symptoms": [
+            {
+              "name": "nausea",
+              "duration_days": 2,
+              "severity": 6,
+              "frequency": "occasional"
+            }
+          ],
+          "medications": [
+            {
+              "name": "ondansetron",
+              "dosage": "4mg",
+              "frequency": "every 8 hours as needed"
+            }
+          ],
+          "allergies": [
+            "penicillin"
+          ]
+        },
+        "actual": {
+          "symptoms": [
+            {
+              "name": "cough",
+              "duration_days": 5,
+              "severity": 3,
+              "frequency": "constant"
+            },
+            {
+              "name": "sore throat",
+              "duration_days": 4,
+              "severity": 5,
+              "frequency": "intermittent"
+            }
+          ],
+          "medications": [
+            {
+              "name": "acetaminophen",
+              "dosage": "500mg",
+              "frequency": "every 6 hours"
+            }
+          ],
+          "allergies": [],
+          "family_history_flags": [
+            "asthma"
+          ]
+        }
+      },
+      {
+        "expected": {
+          "symptoms": [
+            {
+              "name": "joint pain",
+              "duration_days": 30,
+              "severity": 7,
+              "frequency": "constant"
+            },
+            {
+              "name": "stiffness",
+              "duration_days": 30,
+              "severity": 6,
+              "frequency": "constant"
+            }
+          ],
+          "medications": [
+            {
+              "name": "methotrexate",
+              "dosage": "10mg",
+              "frequency": "once weekly"
+            },
+            {
+              "name": "folic acid",
+              "dosage": "1mg",
+              "frequency": "once daily"
+            }
+          ],
+          "family_history_flags": [
+            "diabetes",
+            "heart_disease",
+            "cancer"
+          ]
+        },
+        "actual": {
+          "symptoms": [
+            {
+              "name": "joint pain",
+              "duration_days": 10,
+              "severity": 8,
+              "frequency": "constant"
+            }
+          ],
+          "medications": [
+            {
+              "name": "naproxen",
+              "dosage": "250mg",
+              "frequency": "twice daily"
+            }
+          ],
+          "allergies": [
+            "latex"
+          ],
+          "family_history_flags": [
+            "heart_disease"
+          ]
+        }
+      },
+      {
+        "expected": {
+          "symptoms": [
+            {
+              "name": "rash",
+              "duration_days": 5,
+              "severity": 4,
+              "frequency": "constant"
+            }
+          ],
+          "allergies": [
+            "latex",
+            "shellfish",
+            "peanuts"
+          ],
+          "family_history_flags": [
+            "other"
+          ]
+        },
+        "actual": {
+          "symptoms": [
+            {
+              "name": "fever",
+              "duration_days": 2,
+              "severity": 9,
+              "frequency": "first_occurrence"
+            },
+            {
+              "name": "chills",
+              "duration_days": 2,
+              "severity": 7,
+              "frequency": "constant"
+            }
+          ],
+          "medications": [
+            {
+              "name": "ibuprofen",
+              "dosage": "400mg",
+              "frequency": "every 8 hours"
+            }
+          ],
+          "allergies": [],
+          "family_history_flags": [
+            "other"
+          ]
+        }
+      }
+    ]
+  }
+]
