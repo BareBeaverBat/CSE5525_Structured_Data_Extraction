@@ -98,7 +98,7 @@ def compare_dicts(expected, actual):
 
 # Create a timestamp for the output file
 timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
-output_file_path = os.path.join(parent_dir, 'Third Year', 'Speech and Language', f'test_results_{timestamp}.txt')
+output_file_path = os.path.join(parent_dir, 'Third Year', 'Speech and Language','CSE5525_Structured_Data_Extraction', f'test_results_{timestamp}.txt')
 
 # Run the tests and save results to file
 with open(output_file_path, 'w') as output_file:
