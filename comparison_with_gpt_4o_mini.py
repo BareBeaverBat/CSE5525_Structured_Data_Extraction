@@ -1,74 +1,53 @@
-from openai import OpenAI
 import json
+from openai import OpenAI
+import os
 
 # API setup for OpenAI (API key is required)
-client = OpenAI(api_key="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")  # Replace with your actual API key
+client = OpenAI(api_key="api key")  # Replace with your actual API key
 
 # System instruction guiding structured data extraction
 SYSTEM_INSTRUCTION = """
-You are an expert in generating JSON objects. You receive a JSON schema and respond with a list of {BATCH_SIZE} JSON objects based on the JSON schema. Each object should include between 2 and 20 facts with diverse, realistic content and vary in which optional fields are filled. Ensure that optional fields are selectively included or omitted to create unique, authentic records, avoiding generic labels like 'Product 1', '[Company Name]', or 'email1@example.com.' Use natural, dynamic values without duplication. Output only the JSON objects with no explanations, placeholders, or additional text."
+You are an expert in generating JSON objects. You receive a JSON schema and respond with a list of 1 JSON objects based on the JSON schema. Each object should include between 2 and 20 facts with diverse, realistic content and vary in which optional fields are filled. Ensure that optional fields are selectively included or omitted to create unique, authentic records, avoiding generic labels like 'Product 1', '[Company Name]', or 'email1@example.com.' Use natural, dynamic values without duplication. Output only the JSON objects with no explanations, placeholders, or additional text."
 """
+
+# Function to dynamically load the schema from the json_schemas folder
+def load_schema_from_file(file_path):
+    """Load JSON schema from a file using relative path."""
+    with open(file_path, 'r') as f:
+        return json.load(f)
+
+# Function to read the text from the specified JSON file
+def load_text_from_file(file_path):
+    """Load the first text entry from the JSON file."""
+    with open(file_path, 'r') as f:
+        texts = json.load(f)
+    return texts[0]  # Assuming you want the first text
+
+# Get the current working directory (where the script is located)
+current_dir = os.path.dirname(os.path.abspath(__file__))
+
+# Go up three directory levels to reach the "OSU" directory
+parent_dir = os.path.dirname(os.path.dirname(os.path.dirname(current_dir)))
+
+# Construct the path to the schema and text files
+schema_file_path = os.path.join(parent_dir, 'Third Year', 'Speech and Language', 'json_schemas', '0_healthcare__patient_visit_notes.json')
+text_file_path = os.path.join(parent_dir, 'Third Year', 'Speech and Language', 'text_passages', 'claude', '0_healthcare__patient_visit_notes__texts.json')
+
+# Print the paths for debugging
+print(f"Attempting to open schema file: {schema_file_path}")
+print(f"Attempting to open text file: {text_file_path}")
+
+# Load the schema from the file
+schema = load_schema_from_file(schema_file_path)
+
+# Load the first text from the JSON file
+text = load_text_from_file(text_file_path)
 
 # Sample data to test the models: list of dicts with 'schema' and 'text'
 data_pairs = [
     {
-        "schema": {  # Change $schema to schema here
-            "$schema": "http://json-schema.org/draft-07/schema#",
-            "type": "object",
-            "properties": {
-                "symptoms": {
-                    "type": "array",
-                    "items": {
-                        "type": "object",
-                        "properties": {
-                            "name": { "type": "string" },
-                            "duration_days": { "type": "integer" },
-                            "severity": {
-                                "type": "integer",
-                                "minimum": 1,
-                                "maximum": 10
-                            },
-                            "frequency": {
-                                "type": "string",
-                                "enum": ["constant", "intermittent", "occasional", "first_occurrence"]
-                            }
-                        },
-                        "required": ["name"]
-                    }
-                },
-                "medications": {
-                    "type": "array",
-                    "items": {
-                        "type": "object",
-                        "properties": {
-                            "name": { "type": "string" },
-                            "dosage": { "type": "string" },
-                            "frequency": { "type": "string" }
-                        },
-                        "required": ["name"]
-                    }
-                },
-                "allergies": {
-                    "type": "array",
-                    "items": { "type": "string" }
-                },
-                "family_history_flags": {
-                    "type": "array",
-                    "items": {
-                        "type": "string",
-                        "enum": [
-                            "diabetes",
-                            "heart_disease",
-                            "cancer",
-                            "asthma",
-                            "hypertension",
-                            "other"
-                        ]
-                    }
-                }
-            }
-        },
-        "text": "Patient Visit Notes\nDate: October 15, 2023\nDr. Sarah Chen\nPatient presents with complaints of headache and fatigue. The headache has been occurring intermittently for the past 3 days, with patient rating pain at 6/10. Patient describes the headache as primarily affecting the frontal region, with no accompanying visual disturbances. The fatigue has been constant for approximately one week, rated at 4/10 severity, and is most noticeable in the afternoons.\nPatient has been self-managing symptoms with over-the-counter ibuprofen 200mg as needed, reporting moderate relief when taken.\nReview of allergies confirms known sensitivities to pollen and dust mites. Patient uses air purifiers at home to help manage environmental allergies.\nPatient maintains good sleep hygiene with regular 7-hour sleep schedule and stays well-hydrated. Regular exercise routine includes 30-minute walks three times per week.\nPlan:\n\nContinue current ibuprofen regimen as needed\nRecommended keeping a symptom diary to track headache triggers\nFollow-up in two weeks if symptoms persist\nEncouraged to maintain current exercise routine\n\nNext appointment scheduled for October 29th at 2:30 PM."
+        "schema": schema,  # Use the loaded schema here
+        "text": text  # Use the first text from the loaded file
     },
 ]
 
@@ -190,4 +169,3 @@ for result in results:
     print("GPT Model Output:", result['gpt_model_output'])
     print("Is GPT Output Correct:", result['gpt_model_correct'])
     print("Differences:", result['differences'])
-
