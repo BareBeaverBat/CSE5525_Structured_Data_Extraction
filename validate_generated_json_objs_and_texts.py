@@ -125,8 +125,9 @@ def validate_generated_objects_texts(was_claude_generated: bool, schema_idx: int
         extracted_objects.append(extracted_obj)
         logger.debug(f"Using {"Gemini" if was_claude_generated else "Claude"}, extracted {passage_idx}'th object from text passage for scenario {scenario_domain} - {scenario_texts_label}:"
                      f"\n {json.dumps(extracted_obj, indent=4)}")
-        time.sleep(60)
-        
+        if was_claude_generated:
+            time.sleep(30)
+
     assert len(extracted_objects) == len(ground_truth_objects)
     logger.info(f"Successfully extracted objects from text passages for scenario {scenario_domain} - {scenario_texts_label}:"
                 f"\n {json.dumps(extracted_objects, indent=4)}")
