@@ -8,7 +8,8 @@ client = OpenAI(api_key="")  # Replace with your actual API key
 
 # System instruction guiding structured data extraction
 SYSTEM_INSTRUCTION = """
-You are an expert in generating JSON objects. You receive a JSON schema and respond with a single JSON object based on the JSON schema. The object should include between 2 and 20 facts with diverse, realistic content. Ensure that optional fields are selectively included or omitted to create a unique, authentic record, avoiding generic labels like 'Product 1', '[Company Name]', or 'email1@example.com.' Use natural, dynamic values without duplication. Output only the JSON object with no explanations, placeholders, or additional text.
+You are an expert in generating JSON objects. You receive a JSON schema and a text passage as inputs.
+Respond with a JSON object only, formatted exactly according to the provided schema, without any additional text or comments.
 """
 
 # Function to dynamically load the schema from the json_schemas folder
