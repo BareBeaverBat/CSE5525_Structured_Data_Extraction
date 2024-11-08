@@ -3,7 +3,7 @@ from openai import OpenAI
 import os
 
 # API setup for OpenAI (API key is required)
-client = OpenAI(api_key="api key")  # Replace with your actual API key
+client = OpenAI(api_key="")  # Replace with your actual API key
 
 # System instruction guiding structured data extraction
 SYSTEM_INSTRUCTION = """
