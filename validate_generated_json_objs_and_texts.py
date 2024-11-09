@@ -18,9 +18,8 @@ logger = create_logger(__name__)
 scenario_domains: list[str] = []
 scenario_text_passage_descriptions: list[str] = []
 
-scenario_details_regex = r"(\d+)_([a-zA-Z0-9]+(_[a-zA-Z0-9]+)*)__(\w+).json"
-# todo schema_index_regex so each loading script can double check that it's adding the things to their respective list in the correct order
-
+scenario_details_regex = r"^(\d+)_([a-zA-Z0-9]+(_[a-zA-Z0-9]+)*)__(\w+).json"
+scenario_idx_regex = r"^(\d+)"
 
 schemas: list[dict[str, Any]] = []
 
@@ -32,39 +31,70 @@ gemini_text_passages: list[list[str]] = []
 
 for schema_filenm in sorted(os.listdir(schemas_path)):
     scenario_dtls_match = re.match(scenario_details_regex, schema_filenm)
-    assert scenario_dtls_match is not None
+    if scenario_dtls_match is None:
+        logger.warning(f"schema file {schema_filenm} doesn't match the expected naming convention, skipping it")
+        continue
+    scenario_idx = int(scenario_dtls_match.group(1))
+    assert scenario_idx == len(scenario_domains)
     scenario_domains.append(scenario_dtls_match.group(2))
+    assert scenario_idx == len(scenario_text_passage_descriptions)
     scenario_text_passage_descriptions.append(scenario_dtls_match.group(4))
     
+    assert scenario_idx == len(schemas)
     with open(schemas_path / schema_filenm) as schema_file:
         curr_schema = json.load(schema_file)
         schemas.append(curr_schema)
 
 for claude_obj_filenm in sorted(os.listdir(claude_objs_path)):
+    scenario_idx_match = re.match(scenario_idx_regex, claude_obj_filenm)
+    if scenario_idx_match is None:
+        logger.warning(f"claude objects file {claude_obj_filenm} doesn't match the expected naming convention, skipping it")
+        continue
+    scenario_idx = int(scenario_idx_match.group(1))
+    assert scenario_idx == len(claude_objects)
     with open(claude_objs_path / claude_obj_filenm) as claude_objs_file:
         curr_schema_claude_objs = json.load(claude_objs_file)
         assert isinstance(curr_schema_claude_objs, list)
         claude_objects.append(curr_schema_claude_objs)
 
 for gemini_obj_filenm in sorted(os.listdir(gemini_objs_path)):
+    scenario_idx_match = re.match(scenario_idx_regex, gemini_obj_filenm)
+    if scenario_idx_match is None:
+        logger.warning(f"gemini objects file {gemini_obj_filenm} doesn't match the expected naming convention, skipping it")
+        continue
+    scenario_idx = int(scenario_idx_match.group(1))
+    assert scenario_idx == len(gemini_objects)
     with open(gemini_objs_path / gemini_obj_filenm) as gemini_objs_file:
         curr_schema_gemini_objs = json.load(gemini_objs_file)
         assert isinstance(curr_schema_gemini_objs, list)
         gemini_objects.append(curr_schema_gemini_objs)
 
 for claude_texts_filenm in sorted(os.listdir(claude_texts_path)):
+    scenario_idx_match = re.match(scenario_idx_regex, claude_texts_filenm)
+    if scenario_idx_match is None:
+        logger.warning(f"claude texts file {claude_texts_filenm} doesn't match the expected naming convention, skipping it")
+        continue
+    scenario_idx = int(scenario_idx_match.group(1))
+    assert scenario_idx == len(claude_text_passages)
     with open(claude_texts_path / claude_texts_filenm) as claude_texts_file:
         curr_schema_claude_texts = json.load(claude_texts_file)
         assert isinstance(curr_schema_claude_texts, list)
         claude_text_passages.append(curr_schema_claude_texts)
 
 for gemini_texts_filenm in sorted(os.listdir(gemini_texts_path)):
+    scenario_idx_match = re.match(scenario_idx_regex, gemini_texts_filenm)
+    if scenario_idx_match is None:
+        logger.warning(f"gemini texts file {gemini_texts_filenm} doesn't match the expected naming convention, skipping it")
+        continue
+    scenario_idx = int(scenario_idx_match.group(1))
+    assert scenario_idx == len(gemini_text_passages)
     with open(gemini_texts_path / gemini_texts_filenm) as gemini_texts_file:
         curr_schema_gemini_texts = json.load(gemini_texts_file)
         assert isinstance(curr_schema_gemini_texts, list)
         gemini_text_passages.append(curr_schema_gemini_texts)
 
-assert len(scenario_domains) == len(scenario_text_passage_descriptions) == len(schemas) == len(claude_objects) == len(claude_text_passages) == len(gemini_objects) == len(gemini_text_passages)
+assert (len(scenario_domains) == len(scenario_text_passage_descriptions) == len(schemas) == len(claude_objects)
+        == len(claude_text_passages) == len(gemini_objects) == len(gemini_text_passages))
 
 google_genai.configure(api_key=os.environ[google_api_key_env])
 google_generation_config={"response_mime_type": "application/json", "temperature": 0, "max_output_tokens": 4096}
@@ -77,13 +107,13 @@ def validate_generated_objects_texts(was_claude_generated: bool, schema_idx: int
     schema = schemas[schema_idx]
     scenario_domain = scenario_domains[schema_idx]
     scenario_texts_label = scenario_text_passage_descriptions[schema_idx]
-    logger.debug(f"Validating {"Claude" if was_claude_generated else "Gemini"}-generated objects and text passages for scenario {scenario_domain} - {scenario_texts_label} with the model {google_model_specifier if was_claude_generated else anthropic_model_specifier}")
+    logger.info(f"Validating {"Claude" if was_claude_generated else "Gemini"}-generated objects and text passages for scenario {scenario_domain} - {scenario_texts_label} with the model {google_model_specifier if was_claude_generated else anthropic_model_specifier}")
     assert len(ground_truth_objects) == len(text_passages)
     
     structured_extraction_sys_prompt = d(f"""
     Here is a JSON schema:
     ```json
-    {schema}
+    {json.dumps(schema)}
     ```
     
     This describes the pieces of information that someone might want to extract in a structured way from text passages in the scenario "{scenario_domain}- {scenario_texts_label}".
@@ -93,6 +123,8 @@ def validate_generated_objects_texts(was_claude_generated: bool, schema_idx: int
     
     Please only output the JSON object with no explanations, json-wrapping markdown syntax, etc.
     """)
+    #TODO test whether this reconstruction-for-validation is more reliable if we let it CoT analyze things and
+    # add a little client-side logic to grab just the JSON part of the output
     
     google_client = google_genai.GenerativeModel(
         google_model_specifier, safety_settings=safety_types.HarmBlockThreshold.BLOCK_ONLY_HIGH,
@@ -123,8 +155,9 @@ def validate_generated_objects_texts(was_claude_generated: bool, schema_idx: int
         
         extracted_obj = json.loads(json_output_text)
         extracted_objects.append(extracted_obj)
-        logger.debug(f"Using {"Gemini" if was_claude_generated else "Claude"}, extracted {passage_idx}'th object from text passage for scenario {scenario_domain} - {scenario_texts_label}:"
-                     f"\n {json.dumps(extracted_obj, indent=4)}")
+        logger.debug(f"Using {"Gemini" if was_claude_generated else "Claude"}, extracted an object of structured data from the {passage_idx}'th {"Claude" if was_claude_generated else "Gemini"}-generated text passage for scenario {scenario_domain} - {scenario_texts_label}:"
+                     f"\n{json.dumps(extracted_obj, indent=4)}")
+        #on free tier, gemini api is rate-limited to 2 requests per 60 seconds
         if was_claude_generated:
             time.sleep(30)
 
@@ -138,6 +171,7 @@ def validate_generated_objects_texts(was_claude_generated: bool, schema_idx: int
 def main():
     start_schema_idx = 0
     schema_idx_excl_bound = len(schemas)
+    logger.debug(f"Validating generated objects and text passages for scenarios {scenario_domains[start_schema_idx]} - {scenario_text_passage_descriptions[start_schema_idx]} to {scenario_domains[schema_idx_excl_bound - 1]} - {scenario_text_passage_descriptions[schema_idx_excl_bound - 1]}")
     for i in range(start_schema_idx, schema_idx_excl_bound):
         validate_generated_objects_texts(was_claude_generated=False, schema_idx=i)
         validate_generated_objects_texts(was_claude_generated=True, schema_idx=i)
