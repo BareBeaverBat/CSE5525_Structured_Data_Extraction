@@ -2,10 +2,15 @@ import json
 from openai import OpenAI
 import os
 import datetime
+from logging_setup import create_logger
+
+# Set up the logger
+logger = create_logger(__name__)
 
 # Retrieve the API key from the environment variable
 api_key = os.getenv("OPENAI_API_KEY")
 if api_key is None:
+    logger.error("API key for OpenAI is not set in environment variable 'OPENAI_API_KEY'.")
     raise ValueError("API key for OpenAI is not set in environment variable 'OPENAI_API_KEY'.")
 
 # API setup for OpenAI using the environment variable
@@ -20,18 +25,21 @@ Respond with a JSON object only, formatted exactly according to the provided sch
 # Function to dynamically load the schema from the json_schemas folder
 def load_schema_from_file(file_path):
     """Load JSON schema from a file using relative path."""
+    logger.info(f"Loading schema from file: {file_path}")
     with open(file_path, 'r') as f:
         return json.load(f)
 
 # Function to read the text from the specified JSON file
 def load_text_from_file(file_path):
     """Load all text entries from the JSON file."""
+    logger.info(f"Loading text from file: {file_path}")
     with open(file_path, 'r') as f:
         return json.load(f)
 
 # Function to load the expected schema
 def load_expected_schema(file_path):
     """Load all objects from the expected schema JSON file."""
+    logger.info(f"Loading expected schema from file: {file_path}")
     with open(file_path, 'r') as f:
         return json.load(f)
 
@@ -46,10 +54,10 @@ schema_file_path = os.path.join(parent_dir, 'Third Year', 'Speech and Language',
 text_file_path = os.path.join(parent_dir, 'Third Year', 'Speech and Language', 'text_passages', 'claude', '0_healthcare__patient_visit_notes__texts.json')
 expected_schema_file_path = os.path.join(parent_dir, 'Third Year', 'Speech and Language', 'json_objects', 'claude', '0_healthcare__patient_visit_notes__objs.json')
 
-# Print the paths for debugging
-print(f"Attempting to open schema file: {schema_file_path}")
-print(f"Attempting to open text file: {text_file_path}")
-print(f"Attempting to open expected schema file: {expected_schema_file_path}")
+# Log file paths for debugging
+logger.info(f"Attempting to open schema file: {schema_file_path}")
+logger.info(f"Attempting to open text file: {text_file_path}")
+logger.info(f"Attempting to open expected schema file: {expected_schema_file_path}")
 
 # Load the schema, texts, and expected schemas
 schema = load_schema_from_file(schema_file_path)
@@ -60,15 +68,22 @@ expected_schemas = load_expected_schema(expected_schema_file_path)
 def call_gpt_model(schema, text):
     formatted_schema = json.dumps(schema, indent=2)
     
-    response = client.chat.completions.create(
-        model="gpt-4o-mini",  # or "gpt-4" if you have access
-        messages=[
-            {"role": "system", "content": SYSTEM_INSTRUCTION},
-            {"role": "user", "content": f"Schema:\n{formatted_schema}\n\nText:\n{text}"}
-        ],
-        temperature=0.0
-    )
-    return response.choices[0].message.content
+    try:
+        response = client.chat.completions.create(
+            model="gpt-4o-mini",  # or "gpt-4" if you have access
+            messages=[{
+                "role": "system", 
+                "content": SYSTEM_INSTRUCTION
+            }, {
+                "role": "user", 
+                "content": f"Schema:\n{formatted_schema}\n\nText:\n{text}"
+            }],
+            temperature=0.0
+        )
+        return response.choices[0].message.content
+    except Exception as e:
+        logger.error(f"Error calling GPT model: {e}")
+        raise
 
 def compare_values(expected, actual):
     if isinstance(expected, str) and isinstance(actual, str):
@@ -144,10 +159,10 @@ output_file_path = os.path.join(parent_dir, 'Third Year', 'Speech and Language',
 all_test_accuracies = []
 with open(output_file_path, 'w') as output_file:
     for i, (text, expected_schema) in enumerate(zip(texts, expected_schemas), 1):
-        print(f"\nRunning test {i}:")
-        gpt_output = call_gpt_model(schema, text)
-
+        logger.info(f"\nRunning test {i}:")
         try:
+            gpt_output = call_gpt_model(schema, text)
+
             gpt_json = json.loads(gpt_output)
             
             differences, accuracy_per_field, total_accuracy = compare_dicts(expected_schema, gpt_json)
@@ -169,28 +184,23 @@ with open(output_file_path, 'w') as output_file:
             output_file.write("\n")
 
             # Print results to console
-            print(f"Test {i} Results:")
-            print("Is GPT Output Correct:", is_gpt_correct)
-            print("Differences:")
+            logger.info(f"Test {i} Results:")
+            logger.info(f"Is GPT Output Correct: {is_gpt_correct}")
+            logger.info(f"Differences:")
             for diff in differences:
-                print(f"- {diff}")
+                logger.info(f"- {diff}")
             
-            print("\nField Accuracy Breakdown:")
+            logger.info(f"\nField Accuracy Breakdown:")
             for field, accuracy in accuracy_per_field.items():
-                print(f"  {field}: {accuracy * 100:.2f}%")
-            
-            print(f"\nTotal accuracy for this test: {total_accuracy * 100:.2f}%\n")
+                logger.info(f"  {field}: {accuracy * 100:.2f}%")
+
+            logger.info(f"\nTotal accuracy for this test: {total_accuracy * 100:.2f}%\n")
         except Exception as e:
-            print(f"An error occurred: {e}")
-            import traceback
-            print(traceback.format_exc())
+            logger.error(f"An error occurred: {e}")
+            logger.error("Traceback:\n" + str(e))
         finally:
-            print("Results have been saved to:", output_file_path)
+            print(f"Results have been saved to: {output_file_path}")
 
     # Calculate and write grand total accuracy
     grand_total_accuracy = sum(all_test_accuracies) / len(all_test_accuracies) if all_test_accuracies else 0.0
-    grand_total_accuracy_str = f"\nGrand Total Accuracy across all tests: {grand_total_accuracy * 100:.2f}%"
-    output_file.write(grand_total_accuracy_str)
-    print(grand_total_accuracy_str)
-
-print(f"Results have been saved to: {output_file_path}")
+    logger.info(f"Grand total accuracy: {grand_total_accuracy * 100:.2f}%")

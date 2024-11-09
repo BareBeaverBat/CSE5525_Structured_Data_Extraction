@@ -50,5 +50,3 @@ Field accuracy breakdown:
 
 Total accuracy for this test: 100.00%
 
-
-Grand Total Accuracy across all tests: 96.67%
