@@ -1,0 +1,54 @@
+Test 1 Results:
+Differences found:
+
+Field accuracy breakdown:
+  symptoms: 100.00%
+  medications: 100.00%
+  allergies: 100.00%
+
+Total accuracy for this test: 100.00%
+
+Test 2 Results:
+Differences found:
+- Value mismatch for key 'medications[0].dosage': Expected '2 puffs every 4-6 hours', got '2 puffs'
+- Value mismatch for key 'medications[0].frequency': Expected 'as needed', got 'every 4-6 hours as needed'
+
+Field accuracy breakdown:
+  symptoms: 100.00%
+  medications: 50.00%
+  family_history_flags: 100.00%
+
+Total accuracy for this test: 83.33%
+
+Test 3 Results:
+Differences found:
+
+Field accuracy breakdown:
+  symptoms: 100.00%
+  medications: 100.00%
+  allergies: 100.00%
+
+Total accuracy for this test: 100.00%
+
+Test 4 Results:
+Differences found:
+
+Field accuracy breakdown:
+  symptoms: 100.00%
+  medications: 100.00%
+  family_history_flags: 100.00%
+
+Total accuracy for this test: 100.00%
+
+Test 5 Results:
+Differences found:
+
+Field accuracy breakdown:
+  symptoms: 100.00%
+  allergies: 100.00%
+  family_history_flags: 100.00%
+
+Total accuracy for this test: 100.00%
+
+
+Grand Total Accuracy across all tests: 96.67%
