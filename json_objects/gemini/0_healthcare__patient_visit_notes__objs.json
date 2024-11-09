@@ -1,0 +1,91 @@
+[
+    {
+        "symptoms": [
+            {
+                "name": "Headache",
+                "duration_days": 3,
+                "severity": 7,
+                "frequency": "intermittent"
+            }, {
+                "name": "Fatigue"
+            }
+        ],
+        "medications": [
+            {
+                "name": "Ibuprofen",
+                "dosage": "200mg",
+                "frequency": "as needed"
+            }
+        ],
+        "allergies": ["Penicillin"],
+        "family_history_flags": ["diabetes", "heart_disease"]
+    }, {
+    "symptoms": [
+        {
+            "name": "Cough",
+            "duration_days": 5
+        }
+    ],
+    "medications": [
+        {
+            "name": "Cough syrup"
+        }
+    ],
+    "allergies": []
+}, {
+    "symptoms": [
+        {
+            "name": "Runny nose",
+            "severity": 3,
+            "frequency": "constant"
+        }, {
+            "name": "Sore throat",
+            "duration_days": 2,
+            "frequency": "constant"
+        }, {
+            "name": "Sneezing",
+            "frequency": "occasional"
+        }
+    ],
+    "medications": [],
+    "family_history_flags": ["asthma"]
+}, {
+    "symptoms": [
+        {
+            "name": "Muscle ache",
+            "duration_days": 1,
+            "severity": 5,
+            "frequency": "first_occurrence"
+        }
+    ],
+    "medications": [
+        {
+            "name": "Acetaminophen",
+            "dosage": "500mg",
+            "frequency": "every 4 hours"
+        }
+    ],
+    "allergies": ["Dust mites", "Pollen"]
+}, {
+    "symptoms": [
+        {
+            "name": "Back pain",
+            "duration_days": 30,
+            "severity": 8,
+            "frequency": "constant"
+        }, {
+            "name": "Numbness in legs",
+            "duration_days": 15,
+            "frequency": "intermittent"
+        }
+    ],
+    "medications": [
+        {
+            "name": "Gabapentin",
+            "dosage": "300mg",
+            "frequency": "three times daily"
+        }
+    ],
+    "family_history_flags": ["hypertension"]
+}
+]

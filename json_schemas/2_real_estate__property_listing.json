@@ -1,0 +1,30 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+        "bedrooms": { "type": "integer" },
+        "bathrooms": { "type": ["integer", "string"] },
+        "square_footage": { "type": "integer" },
+        "property_type": {
+            "type": "string",
+            "enum": ["house", "condo", "townhouse", "apartment", "land"]
+        },
+        "amenities": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "enum": ["pool", "garage", "fireplace", "central_ac", "balcony"]
+            }
+        },
+        "listing_price": { "type": "integer" },
+        "location": {
+            "type": "object",
+            "properties": {
+                "city": { "type": "string" },
+                "state": { "type": "string" },
+                "zip_code": { "type": "string" }
+            },
+            "required": ["city", "state", "zip_code"]
+        }
+    }
+}

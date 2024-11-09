@@ -1,0 +1,138 @@
+[
+    {
+        "symptoms": [
+            {
+                "name": "headache",
+                "duration_days": 3,
+                "severity": 6,
+                "frequency": "intermittent"
+            },
+            {
+                "name": "fatigue",
+                "duration_days": 7,
+                "severity": 4,
+                "frequency": "constant"
+            }
+        ],
+        "medications": [
+            {
+                "name": "ibuprofen",
+                "dosage": "200mg",
+                "frequency": "as needed"
+            }
+        ],
+        "allergies": [
+            "pollen",
+            "dust mites"
+        ]
+    },
+    {
+        "symptoms": [
+            {
+                "name": "cough",
+                "duration_days": 14,
+                "severity": 7,
+                "frequency": "occasional"
+            },
+            {
+                "name": "shortness of breath",
+                "duration_days": 5,
+                "severity": 8,
+                "frequency": "intermittent"
+            },
+            {
+                "name": "chest pain",
+                "severity": 5,
+                "frequency": "first_occurrence"
+            }
+        ],
+        "medications": [
+            {
+                "name": "albuterol inhaler",
+                "dosage": "2 puffs every 4-6 hours",
+                "frequency": "as needed"
+            },
+            {
+                "name": "prednisone",
+                "dosage": "20mg",
+                "frequency": "once daily"
+            }
+        ],
+        "family_history_flags": [
+            "asthma",
+            "hypertension"
+        ]
+    },
+    {
+        "symptoms": [
+            {
+                "name": "nausea",
+                "duration_days": 2,
+                "severity": 6,
+                "frequency": "occasional"
+            }
+        ],
+        "medications": [
+            {
+                "name": "ondansetron",
+                "dosage": "4mg",
+                "frequency": "every 8 hours as needed"
+            }
+        ],
+        "allergies": [
+            "penicillin"
+        ]
+    },
+    {
+        "symptoms": [
+            {
+                "name": "joint pain",
+                "duration_days": 30,
+                "severity": 7,
+                "frequency": "constant"
+            },
+            {
+                "name": "stiffness",
+                "duration_days": 30,
+                "severity": 6,
+                "frequency": "constant"
+            }
+        ],
+        "medications": [
+            {
+                "name": "methotrexate",
+                "dosage": "10mg",
+                "frequency": "once weekly"
+            },
+            {
+                "name": "folic acid",
+                "dosage": "1mg",
+                "frequency": "once daily"
+            }
+        ],
+        "family_history_flags": [
+            "diabetes",
+            "heart_disease",
+            "cancer"
+        ]
+    },
+    {
+        "symptoms": [
+            {
+                "name": "rash",
+                "duration_days": 5,
+                "severity": 4,
+                "frequency": "constant"
+            }
+        ],
+        "allergies": [
+            "latex",
+            "shellfish",
+            "peanuts"
+        ],
+        "family_history_flags": [
+            "other"
+        ]
+    }
+]
+

@@ -1,0 +1,55 @@
+[
+    {
+        "bedrooms": 3,
+        "bathrooms": 2,
+        "square_footage": 1800,
+        "property_type": "house",
+        "amenities": ["pool", "garage", "fireplace"],
+        "listing_price": 350000,
+        "location": {
+            "city": "Austin",
+            "state": "TX",
+            "zip_code": "78704"
+        }
+    }, {
+    "bathrooms": "2.5",
+    "property_type": "condo",
+    "listing_price": 275000,
+    "location": {
+        "city": "Denver",
+        "state": "CO",
+        "zip_code": "80202"
+    }
+}, {
+    "bedrooms": 2,
+    "bathrooms": 1,
+    "square_footage": 900,
+    "property_type": "apartment",
+    "listing_price": 1500,
+    "location": {
+        "city": "New York",
+        "state": "NY",
+        "zip_code": "10001"
+    }
+}, {
+    "bedrooms": 4,
+    "bathrooms": 3,
+    "square_footage": 2500,
+    "property_type": "townhouse",
+    "amenities": ["central_ac", "balcony"],
+    "listing_price": 600000,
+    "location": {
+        "city": "San Francisco",
+        "state": "CA",
+        "zip_code": "94105"
+    }
+}, {
+    "property_type": "land",
+    "listing_price": 100000,
+    "location": {
+        "city": "Boise",
+        "state": "ID",
+        "zip_code": "83702"
+    }
+}
+]
