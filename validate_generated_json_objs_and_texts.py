@@ -1,180 +1,116 @@
 import json
 import os
-import re
 import time
-from typing import Any
+from typing import Any, Optional
 
 import anthropic
 import google.generativeai as google_genai
-from google.generativeai.generative_models import safety_types
+from anthropic import Anthropic
+from google.generativeai.generative_models import safety_types, GenerativeModel
+from jsonschema.validators import Draft202012Validator
 
 from constants import schemas_path, claude_objs_path, gemini_objs_path, claude_texts_path, gemini_texts_path, \
-    google_api_key_env, anthropic_api_key_env, google_model_specifier, anthropic_model_specifier
+    google_api_key_env, anthropic_api_key_env, google_model_specifier, anthropic_model_specifier, \
+    google_object_reconstruction_sys_prompt, anthropic_object_reconstruction_sys_prompt, \
+    is_google_api_key_using_free_tier, anthropic_reconstruction_temp, google_reconstruction_temp
+from data_loading import load_scenarios, load_one_models_objects, load_one_models_text_passages
 from logging_setup import create_logger
-from misc_util_funcs import d
+from misc_util_funcs import d, extract_json_doc_from_output
 
 logger = create_logger(__name__)
 
-scenario_domains: list[str] = []
-scenario_text_passage_descriptions: list[str] = []
-
-scenario_details_regex = r"^(\d+)_([a-zA-Z0-9]+(_[a-zA-Z0-9]+)*)__(\w+).json"
-scenario_idx_regex = r"^(\d+)"
-
-schemas: list[dict[str, Any]] = []
-
-claude_objects: list[list[dict[str, Any]]] = []
-claude_text_passages: list[list[str]] = []
-
-gemini_objects: list[list[dict[str, Any]]] = []
-gemini_text_passages: list[list[str]] = []
-
-for schema_filenm in sorted(os.listdir(schemas_path)):
-    scenario_dtls_match = re.match(scenario_details_regex, schema_filenm)
-    if scenario_dtls_match is None:
-        logger.warning(f"schema file {schema_filenm} doesn't match the expected naming convention, skipping it")
-        continue
-    scenario_idx = int(scenario_dtls_match.group(1))
-    assert scenario_idx == len(scenario_domains)
-    scenario_domains.append(scenario_dtls_match.group(2))
-    assert scenario_idx == len(scenario_text_passage_descriptions)
-    scenario_text_passage_descriptions.append(scenario_dtls_match.group(4))
-    
-    assert scenario_idx == len(schemas)
-    with open(schemas_path / schema_filenm) as schema_file:
-        curr_schema = json.load(schema_file)
-        schemas.append(curr_schema)
-
-for claude_obj_filenm in sorted(os.listdir(claude_objs_path)):
-    scenario_idx_match = re.match(scenario_idx_regex, claude_obj_filenm)
-    if scenario_idx_match is None:
-        logger.warning(f"claude objects file {claude_obj_filenm} doesn't match the expected naming convention, skipping it")
-        continue
-    scenario_idx = int(scenario_idx_match.group(1))
-    assert scenario_idx == len(claude_objects)
-    with open(claude_objs_path / claude_obj_filenm) as claude_objs_file:
-        curr_schema_claude_objs = json.load(claude_objs_file)
-        assert isinstance(curr_schema_claude_objs, list)
-        claude_objects.append(curr_schema_claude_objs)
-
-for gemini_obj_filenm in sorted(os.listdir(gemini_objs_path)):
-    scenario_idx_match = re.match(scenario_idx_regex, gemini_obj_filenm)
-    if scenario_idx_match is None:
-        logger.warning(f"gemini objects file {gemini_obj_filenm} doesn't match the expected naming convention, skipping it")
-        continue
-    scenario_idx = int(scenario_idx_match.group(1))
-    assert scenario_idx == len(gemini_objects)
-    with open(gemini_objs_path / gemini_obj_filenm) as gemini_objs_file:
-        curr_schema_gemini_objs = json.load(gemini_objs_file)
-        assert isinstance(curr_schema_gemini_objs, list)
-        gemini_objects.append(curr_schema_gemini_objs)
-
-for claude_texts_filenm in sorted(os.listdir(claude_texts_path)):
-    scenario_idx_match = re.match(scenario_idx_regex, claude_texts_filenm)
-    if scenario_idx_match is None:
-        logger.warning(f"claude texts file {claude_texts_filenm} doesn't match the expected naming convention, skipping it")
-        continue
-    scenario_idx = int(scenario_idx_match.group(1))
-    assert scenario_idx == len(claude_text_passages)
-    with open(claude_texts_path / claude_texts_filenm) as claude_texts_file:
-        curr_schema_claude_texts = json.load(claude_texts_file)
-        assert isinstance(curr_schema_claude_texts, list)
-        claude_text_passages.append(curr_schema_claude_texts)
-
-for gemini_texts_filenm in sorted(os.listdir(gemini_texts_path)):
-    scenario_idx_match = re.match(scenario_idx_regex, gemini_texts_filenm)
-    if scenario_idx_match is None:
-        logger.warning(f"gemini texts file {gemini_texts_filenm} doesn't match the expected naming convention, skipping it")
-        continue
-    scenario_idx = int(scenario_idx_match.group(1))
-    assert scenario_idx == len(gemini_text_passages)
-    with open(gemini_texts_path / gemini_texts_filenm) as gemini_texts_file:
-        curr_schema_gemini_texts = json.load(gemini_texts_file)
-        assert isinstance(curr_schema_gemini_texts, list)
-        gemini_text_passages.append(curr_schema_gemini_texts)
-
-assert (len(scenario_domains) == len(scenario_text_passage_descriptions) == len(schemas) == len(claude_objects)
-        == len(claude_text_passages) == len(gemini_objects) == len(gemini_text_passages))
-
-google_genai.configure(api_key=os.environ[google_api_key_env])
-google_generation_config={"response_mime_type": "application/json", "temperature": 0, "max_output_tokens": 4096}
-
-anthropic_client = anthropic.Anthropic(api_key=os.environ[anthropic_api_key_env])
-
-def validate_generated_objects_texts(was_claude_generated: bool, schema_idx: int):
-    ground_truth_objects: list[dict[str, Any]] = gemini_objects[schema_idx] if was_claude_generated else claude_objects[schema_idx]
-    text_passages: list[str] = gemini_text_passages[schema_idx] if was_claude_generated else claude_text_passages[schema_idx]
-    schema = schemas[schema_idx]
-    scenario_domain = scenario_domains[schema_idx]
-    scenario_texts_label = scenario_text_passage_descriptions[schema_idx]
-    logger.info(f"Validating {"Claude" if was_claude_generated else "Gemini"}-generated objects and text passages for scenario {scenario_domain} - {scenario_texts_label} with the model {google_model_specifier if was_claude_generated else anthropic_model_specifier}")
+def validate_generated_objects_texts(
+        google_client: Optional[GenerativeModel], anthropic_client: Optional[Anthropic], schema_idx: int, schema: dict[str,Any], scenario_domain: str,
+        scenario_texts_label: str, ground_truth_objects: list[dict[str, Any]], text_passages: list[str]):
+    assert (google_client is not None) ^ (anthropic_client is not None)#XOR- exactly one of them should be defined0
+    was_claude_generated: bool = anthropic_client is None
+    src_model_nm = "Claude" if was_claude_generated else "Gemini"
+    reconstructor_model = google_model_specifier if was_claude_generated else anthropic_model_specifier
+    logger.info(f"Validating {src_model_nm}-generated objects and text passages for scenario {scenario_domain} - {scenario_texts_label} with the model {reconstructor_model}")
     assert len(ground_truth_objects) == len(text_passages)
-    
-    structured_extraction_sys_prompt = d(f"""
-    Here is a JSON schema:
-    ```json
-    {json.dumps(schema)}
-    ```
-    
-    This describes the pieces of information that someone might want to extract in a structured way from text passages in the scenario "{scenario_domain}- {scenario_texts_label}".
-    
-    Below, there will be a {scenario_texts_label} text passage. You must create a JSON object that follows the given schema and captures all schema-relevant information that is actually present in the text passage.
-    If there is no mention of anything related to a given schema key in the text, don't include that schema key in the JSON object. For example, if the schema has an array-type key and the text actually indicates that the correct number of entries for that array-type field is 0, then include that key, but simply omit that key if the text says nothing at all that's related to that array-type key.
-    
-    Please only output the JSON object with no explanations, json-wrapping markdown syntax, etc.
-    """)
-    #TODO test whether this reconstruction-for-validation is more reliable if we let it CoT analyze things and
-    # add a little client-side logic to grab just the JSON part of the output
-    
-    google_client = google_genai.GenerativeModel(
-        google_model_specifier, safety_settings=safety_types.HarmBlockThreshold.BLOCK_ONLY_HIGH,
-        system_instruction=structured_extraction_sys_prompt, generation_config=google_generation_config)
-    
     
     extracted_objects: list[dict[str, Any]] = []
     
     for passage_idx, passage in enumerate(text_passages):
         user_prompt = d(f"""
+        Here is a JSON schema for the domain {scenario_domain}:
+        ```json
+        {schema}
+        ```
         Here is the {scenario_texts_label} text passage.
         ```
         {passage}
         ```
+        Please create a JSON object that obeys the given schema and captures all schema-relevant information that is actually present in  or that is definitely implied by the text passage, following the above instructions while doing so.
         """)
         
-        json_output_text: str
+        resp_text: str
         
         if was_claude_generated:
             google_resp = google_client.generate_content(user_prompt)
-            json_output_text = google_resp.text
+            resp_text = google_resp.text
+            if is_google_api_key_using_free_tier:
+                time.sleep(30)#on free tier, gemini api is rate-limited to 2 requests per 60 seconds
         else:
             anthropic_resp = anthropic_client.messages.create(
-                system=structured_extraction_sys_prompt, max_tokens=4096, temperature=0, model= anthropic_model_specifier,
-                messages=[{"role": "user", "content": user_prompt}]
-            )
-            json_output_text = anthropic_resp.content[0].text
+                system=anthropic_object_reconstruction_sys_prompt, max_tokens=4096, temperature=anthropic_reconstruction_temp,
+                model= anthropic_model_specifier, messages=[{"role": "user", "content": user_prompt}])
+            resp_text = anthropic_resp.content[0].text
         
-        extracted_obj = json.loads(json_output_text)
+        extracted_obj, obj_gen_analysis = extract_json_doc_from_output(resp_text, is_obj_vs_arr=True)
+        if extracted_obj is None:
+            logger.error(f"Failed to extract an object of structured data from the {passage_idx}'th {src_model_nm}-generated text passage for scenario {schema_idx} {scenario_domain} - {scenario_texts_label}\nPassage:\n{passage}\nResponse:\n{resp_text}")
+        else:
+            schema_validator = Draft202012Validator(schema, format_checker=Draft202012Validator.FORMAT_CHECKER)
+            if schema_validator.is_valid(extracted_obj):
+                logger.debug(f"Using {reconstructor_model}, extracted an object of structured data from the {passage_idx}'th {src_model_nm}-generated text passage for scenario {scenario_domain} - {scenario_texts_label}:\n"
+                             f"{json.dumps(extracted_obj, indent=4)}")
+            else:
+                logger.error(f"The object reconstructed with {reconstructor_model} from {src_model_nm}'s {passage_idx}th passage for schema index {schema_idx} failed schema validation\nSchema:{schema}\nObject:{extracted_obj}\nErrors:{"; ".join([str(err) for err in schema_validator.iter_errors(extracted_obj)])}")
         extracted_objects.append(extracted_obj)
-        logger.debug(f"Using {"Gemini" if was_claude_generated else "Claude"}, extracted an object of structured data from the {passage_idx}'th {"Claude" if was_claude_generated else "Gemini"}-generated text passage for scenario {scenario_domain} - {scenario_texts_label}:"
-                     f"\n{json.dumps(extracted_obj, indent=4)}")
-        #on free tier, gemini api is rate-limited to 2 requests per 60 seconds
-        if was_claude_generated:
-            time.sleep(30)
 
     assert len(extracted_objects) == len(ground_truth_objects)
-    logger.info(f"Successfully extracted objects from text passages for scenario {scenario_domain} - {scenario_texts_label}:"
-                f"\n {json.dumps(extracted_objects, indent=4)}")
+    logger.info(f"Successfully extracted objects from {src_model_nm}-generated text passages for scenario {scenario_domain} - {scenario_texts_label}")
     #TODO use validation function to compare extracted_objects and ground_truth_objects
     
 
 
 def main():
+    scenario_domains, scenario_text_passage_descriptions, schemas = load_scenarios(schemas_path)
+
+    claude_objects = load_one_models_objects(claude_objs_path)
+    claude_text_passages = load_one_models_text_passages(claude_texts_path)
+    
+    gemini_objects = load_one_models_objects(gemini_objs_path)
+    gemini_text_passages = load_one_models_text_passages(gemini_texts_path)
+    
+    assert (len(scenario_domains) == len(scenario_text_passage_descriptions) == len(schemas) == len(claude_objects)
+            == len(claude_text_passages) == len(gemini_objects) == len(gemini_text_passages))
+    
+    google_genai.configure(api_key=os.environ[google_api_key_env])
+    google_generation_config={"temperature": google_reconstruction_temp, "max_output_tokens": 4096}
+    
+    google_client = google_genai.GenerativeModel(
+        google_model_specifier, safety_settings=safety_types.HarmBlockThreshold.BLOCK_ONLY_HIGH,
+        system_instruction=google_object_reconstruction_sys_prompt, generation_config=google_generation_config)
+    
+    anthropic_client = anthropic.Anthropic(api_key=os.environ[anthropic_api_key_env])
+
     start_schema_idx = 0
     schema_idx_excl_bound = len(schemas)
     logger.debug(f"Validating generated objects and text passages for scenarios {scenario_domains[start_schema_idx]} - {scenario_text_passage_descriptions[start_schema_idx]} to {scenario_domains[schema_idx_excl_bound - 1]} - {scenario_text_passage_descriptions[schema_idx_excl_bound - 1]}")
-    for i in range(start_schema_idx, schema_idx_excl_bound):
-        validate_generated_objects_texts(was_claude_generated=False, schema_idx=i)
-        validate_generated_objects_texts(was_claude_generated=True, schema_idx=i)
+    for was_claude_generated in [True, False]:
+        for scenario_idx in range(start_schema_idx, schema_idx_excl_bound):
+            ground_truth_objects: list[dict[str, Any]] = gemini_objects[scenario_idx] if was_claude_generated else claude_objects[scenario_idx]
+            text_passages: list[str] = gemini_text_passages[scenario_idx] if was_claude_generated else claude_text_passages[scenario_idx]
+            schema = schemas[scenario_idx]
+            scenario_domain = scenario_domains[scenario_idx]
+            scenario_texts_label = scenario_text_passage_descriptions[scenario_idx]
+            
+            google_client_to_use = google_client if was_claude_generated else None
+            anthropic_client_to_use = None if was_claude_generated else anthropic_client
+            validate_generated_objects_texts(google_client_to_use, anthropic_client_to_use, scenario_idx, schema,
+                                             scenario_domain, scenario_texts_label, ground_truth_objects, text_passages)
 
 if __name__ == "__main__":
     main()
