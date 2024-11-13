@@ -35,7 +35,7 @@ def validate_generated_objects_texts(
         user_prompt = d(f"""
         Here is a JSON schema for the domain {scenario_domain}:
         ```json
-        {schema}
+        {json.dumps(schema)}
         ```
         Here is the {scenario_texts_label} text passage.
         ```
@@ -63,16 +63,15 @@ def validate_generated_objects_texts(
         else:
             schema_validator = Draft202012Validator(schema, format_checker=Draft202012Validator.FORMAT_CHECKER)
             if schema_validator.is_valid(extracted_obj):
-                logger.debug(f"Using {reconstructor_model}, extracted an object of structured data from the {passage_idx}'th {src_model_nm}-generated text passage for scenario {scenario_domain} - {scenario_texts_label}:\n"
-                             f"{json.dumps(extracted_obj, indent=4)}")
+                logger.debug(f"Using {reconstructor_model}, extracted an object of structured data from the {passage_idx}'th {src_model_nm}-generated text passage for scenario {scenario_domain} - {scenario_texts_label}:\n{json.dumps(extracted_obj, indent=4)}\nAnalysis:\n{obj_gen_analysis}")
             else:
-                logger.error(f"The object reconstructed with {reconstructor_model} from {src_model_nm}'s {passage_idx}th passage for schema index {schema_idx} failed schema validation\nSchema:{schema}\nObject:{extracted_obj}\nErrors:{"; ".join([str(err) for err in schema_validator.iter_errors(extracted_obj)])}")
+                logger.error(f"The object reconstructed with {reconstructor_model} from {src_model_nm}'s {passage_idx}th passage for schema index {schema_idx} failed schema validation\nSchema:{json.dumps(schema, indent=4)}\nObject:{json.dumps(extracted_obj, indent=4)}\nErrors:{"; ".join([str(err) for err in schema_validator.iter_errors(extracted_obj)])};\nAnalysis:\n{obj_gen_analysis}")
         extracted_objects.append(extracted_obj)
 
     assert len(extracted_objects) == len(ground_truth_objects)
     logger.info(f"Successfully extracted objects from {src_model_nm}-generated text passages for scenario {scenario_domain} - {scenario_texts_label}")
     #TODO use validation function to compare extracted_objects and ground_truth_objects
-    
+
 
 
 def main():

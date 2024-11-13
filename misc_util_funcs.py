@@ -1,11 +1,14 @@
 import json
 import re
+from re import Pattern, Match
 import textwrap
 from json import JSONDecodeError
+from typing import Optional
 
 from logging_setup import create_logger
 
 logger = create_logger(__name__)
+
 
 def d(multi_line_str: str) -> str:
     """
@@ -16,6 +19,19 @@ def d(multi_line_str: str) -> str:
     """
     return textwrap.dedent(multi_line_str).strip()
 
+
+def find_last_re_match(regex: Pattern, text: str, start_pos: int = 0) -> Optional[Match]:
+    """
+    Finds the last match of the given regex in the given text
+    :param regex: the compiled regex pattern to search for
+    :param text: the text to search in
+    :param start_pos: the starting position in the text to search from
+    :return: the last match of the regex in the text, or None if no matches
+    """
+    matches = list(regex.finditer(text, start_pos))
+    return matches[-1] if matches else None
+
+
 def extract_json_doc_from_output(model_output: str, is_obj_vs_arr: bool)-> (list | dict | None, str):
     """
     Extracts the single JSON document from the model output (which might also contain other text like CoT analysis)
@@ -25,21 +41,20 @@ def extract_json_doc_from_output(model_output: str, is_obj_vs_arr: bool)-> (list
     """
     json_output: str
     rest_of_output: str
-    json_doc_start_char = "{" if is_obj_vs_arr else "["
-    json_doc_end_char = "}" if is_obj_vs_arr else "]"
     json_start_idx: int
     json_end_idx: int
     
-    proper_doc_start_pattern = re.compile(f"```json\\s*{json_doc_start_char}")
-    imperfect_doc_start_pattern = re.compile(f"```\\s*{json_doc_start_char}")
-    doc_start_matches = proper_doc_start_pattern.findall(model_output)
-    if doc_start_matches:
-        json_start_idx = doc_start_matches[-1].end()-1
+    json_doc_start_char = "{" if is_obj_vs_arr else "["
+    proper_doc_start_pattern = re.compile(r"```json\s*\{" if is_obj_vs_arr else r"```json\s*\[")
+    imperfect_doc_start_pattern = re.compile(r"```\s*\{" if is_obj_vs_arr else r"```\s*\[")
+    doc_start_match = find_last_re_match(proper_doc_start_pattern, model_output)
+    if doc_start_match:
+        json_start_idx = doc_start_match.end()-1
     else:
         logger.debug(f"model output didn't use the ideal disambiguated start pattern for a json document within its output, relying on finding a generic markdown code block in the response")
-        doc_start_matches = imperfect_doc_start_pattern.findall(model_output)
-        if doc_start_matches:
-            json_start_idx = doc_start_matches[-1].end()-1
+        doc_start_match = find_last_re_match(imperfect_doc_start_pattern, model_output)
+        if doc_start_match:
+            json_start_idx = doc_start_match.end()-1
         else:#note that, if the model fails to use a markdown code block, we can only salvage things if there's exactly one JSON document in the output
             logger.debug(f"model output didn't use a clearly disambiguated start pattern for a json document within its output, relying on the current scenario's expected start-of-json-document character {json_doc_start_char}")
             json_start_idx = model_output.find(json_doc_start_char)
@@ -49,10 +64,11 @@ def extract_json_doc_from_output(model_output: str, is_obj_vs_arr: bool)-> (list
     json_output = model_output[json_start_idx:]
     rest_of_output = model_output[:json_start_idx]
     
+    json_doc_end_char = "}" if is_obj_vs_arr else "]"
     proper_doc_end_pattern = re.compile(f"{json_doc_end_char}\\s*```")
-    doc_end_matches = proper_doc_end_pattern.findall(json_output, json_start_idx)
-    if doc_end_matches:
-        json_end_idx = doc_end_matches[-1].start()+1
+    doc_end_match = find_last_re_match(proper_doc_end_pattern, json_output, json_start_idx)
+    if doc_end_match:
+        json_end_idx = doc_end_match.start()+1
     else:
         logger.debug(f"model output didn't use the ideal disambiguated end pattern for a json document within its output, relying on the current scenario's expected end-of-json-document character {json_doc_end_char}")
         json_end_idx = json_output.rfind(json_doc_end_char)+1

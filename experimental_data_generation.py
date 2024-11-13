@@ -100,8 +100,9 @@ def generate_json_objs(google_client: Optional[GenerativeModel], anthropic_clien
         schema_validator = Draft202012Validator(schema, format_checker=Draft202012Validator.FORMAT_CHECKER)
         for obj_idx, obj in enumerate(generated_objects):
             if not schema_validator.is_valid(obj):
-                logger.error(f"{model_nm}-generated object {obj_idx} for schema index {schema_idx} failed schema validation\nSchema:{schema}\nObject:{obj}\nErrors:{"; ".join([str(err) for err in schema_validator.iter_errors(obj)])}")
+                logger.error(f"{model_nm}-generated object {obj_idx} for schema index {schema_idx} failed schema validation\nSchema:{schema}\nObject:{json.dumps(obj, indent=4)}\nErrors:{"; ".join([str(err) for err in schema_validator.iter_errors(obj)])}")
                 increment_obj_gen_problem_count(should_use_claude)
+    logger.debug(f"Using {model_nm}, generated {len(generated_objects)} objects for scenario {scenario_domain} - {scenario_texts_label}:\n{json.dumps(generated_objects, indent=4)}\n\nAnalysis of object generation:\n{obj_gen_analysis}")
     
     return generated_objects
 
@@ -122,7 +123,7 @@ def generate_text_passages(google_client: Optional[GenerativeModel], anthropic_c
     This describes the pieces of information that someone might want to extract in a structured way from "{scenario_texts_label}" text passages.
     Here is a JSON object that follows that schema:
     ```json
-    $schema_instance
+    ${{schema_generated_json_instance}}
     ```
     
     Please generate a “{scenario_texts_label}” free-text document that includes the JSON object's details, following the above instructions while doing so.
@@ -136,7 +137,7 @@ def generate_text_passages(google_client: Optional[GenerativeModel], anthropic_c
             logger.debug(f"With {model_nm}, skipping text passage generation for {obj_idx}th of {len(json_objs)} objects for schema index {schema_idx} because that object's generation seems to have gone awry")
             continue
         
-        user_prompt = user_prompt_template.substitute(schema_instance=(json.dumps(obj)))
+        user_prompt = user_prompt_template.safe_substitute(schema_generated_json_instance=(json.dumps(obj)))
         resp_text: str
         
         if should_use_claude:
@@ -212,10 +213,10 @@ def main():
             
             with open((claude_objs_path if should_use_claude else gemini_objs_path)
                       / f"{scenario_idx}_{scenario_domain}__{scenario_texts_label}__objs.json", "w") as objs_file:
-                json.dump(json_objs, objs_file)
+                json.dump(json_objs, objs_file, indent=4)
             with open((claude_texts_path if should_use_claude else gemini_texts_path)
                       / f"{scenario_idx}_{scenario_domain}__{scenario_texts_label}__texts.json", "w") as texts_file:
-                json.dump(text_passages, texts_file)
+                json.dump(text_passages, texts_file, indent=4)
             
             
     num_objs_generated_with_gemini = (last_scenario_idx-first_scenario_idx+1) * google_obj_gen_group_size
