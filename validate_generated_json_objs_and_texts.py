@@ -1,7 +1,7 @@
 import json
 import os
 import time
-from typing import Any, Optional
+from typing import Any, Optional, Callable
 
 import anthropic
 import google.generativeai as google_genai
@@ -21,7 +21,8 @@ logger = create_logger(__name__)
 
 def validate_generated_objects_texts(
         google_client: Optional[GenerativeModel], anthropic_client: Optional[Anthropic], schema_idx: int, schema: dict[str,Any], scenario_domain: str,
-        scenario_texts_label: str, ground_truth_objects: list[dict[str, Any]], text_passages: list[str]):
+        scenario_texts_label: str, ground_truth_objects: list[dict[str, Any]], text_passages: list[str],
+        increment_problem_counter: Callable[[bool], None]):
     assert (google_client is not None) ^ (anthropic_client is not None)#XOR- exactly one of them should be defined0
     was_claude_generated: bool = anthropic_client is None
     src_model_nm = "Claude" if was_claude_generated else "Gemini"
@@ -60,12 +61,14 @@ def validate_generated_objects_texts(
         extracted_obj, obj_gen_analysis = extract_json_doc_from_output(resp_text, is_obj_vs_arr=True)
         if extracted_obj is None:
             logger.error(f"Failed to extract an object of structured data from the {passage_idx}'th {src_model_nm}-generated text passage for scenario {schema_idx} {scenario_domain} - {scenario_texts_label}\nPassage:\n{passage}\nResponse:\n{resp_text}")
+            increment_problem_counter(was_claude_generated)
         else:
             schema_validator = Draft202012Validator(schema, format_checker=Draft202012Validator.FORMAT_CHECKER)
             if schema_validator.is_valid(extracted_obj):
                 logger.debug(f"Using {reconstructor_model}, extracted an object of structured data from the {passage_idx}'th {src_model_nm}-generated text passage for scenario {scenario_domain} - {scenario_texts_label}:\n{json.dumps(extracted_obj, indent=4)}\nAnalysis:\n{obj_gen_analysis}")
             else:
                 logger.error(f"The object reconstructed with {reconstructor_model} from {src_model_nm}'s {passage_idx}th passage for schema index {schema_idx} failed schema validation\nSchema:{json.dumps(schema, indent=4)}\nObject:{json.dumps(extracted_obj, indent=4)}\nErrors:{"; ".join([str(err) for err in schema_validator.iter_errors(extracted_obj)])};\nAnalysis:\n{obj_gen_analysis}")
+                increment_problem_counter(was_claude_generated)
         extracted_objects.append(extracted_obj)
 
     assert len(extracted_objects) == len(ground_truth_objects)
@@ -75,6 +78,17 @@ def validate_generated_objects_texts(
 
 
 def main():
+    reconstruction_from_gemini_texts_problem_count = 0
+    reconstruction_from_claude_texts_problem_count = 0
+    def increment_reconstruction_problem_count(was_claude_generated_text_passage: bool):
+        if was_claude_generated_text_passage:
+            nonlocal reconstruction_from_claude_texts_problem_count
+            reconstruction_from_claude_texts_problem_count += 1
+        else:
+            nonlocal reconstruction_from_gemini_texts_problem_count
+            reconstruction_from_gemini_texts_problem_count += 1
+    
+    
     scenario_domains, scenario_text_passage_descriptions, schemas = load_scenarios(schemas_path)
 
     claude_objects = load_one_models_objects(claude_objs_path)
@@ -109,7 +123,11 @@ def main():
             google_client_to_use = google_client if was_claude_generated else None
             anthropic_client_to_use = None if was_claude_generated else anthropic_client
             validate_generated_objects_texts(google_client_to_use, anthropic_client_to_use, scenario_idx, schema,
-                                             scenario_domain, scenario_texts_label, ground_truth_objects, text_passages)
+                                             scenario_domain, scenario_texts_label, ground_truth_objects, text_passages,
+                                             increment_reconstruction_problem_count)
+    logger.info(f"Problems encountered with object reconstruction from text passages:\n"
+                f"When Claude was extracting from Gemini-generated text passages: {reconstruction_from_gemini_texts_problem_count};\n"
+                f"When Gemini was extracting from Claude-generated text passages: {reconstruction_from_claude_texts_problem_count}")
 
 if __name__ == "__main__":
     main()
