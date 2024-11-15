@@ -1,5 +1,6 @@
 import json
 import os
+import statistics
 import time
 from typing import Any, Optional, Callable
 
@@ -14,6 +15,7 @@ from constants import schemas_path, claude_objs_path, gemini_objs_path, claude_t
     google_object_reconstruction_sys_prompt, anthropic_object_reconstruction_sys_prompt, \
     is_google_api_key_using_free_tier, anthropic_reconstruction_temp, google_reconstruction_temp
 from data_loading import load_scenarios, load_one_models_objects, load_one_models_text_passages
+from json_obj_comparison import evaluate_extraction
 from logging_setup import create_logger
 from misc_util_funcs import d, extract_json_doc_from_output
 
@@ -22,7 +24,7 @@ logger = create_logger(__name__)
 def validate_generated_objects_texts(
         google_client: Optional[GenerativeModel], anthropic_client: Optional[Anthropic], schema_idx: int, schema: dict[str,Any], scenario_domain: str,
         scenario_texts_label: str, ground_truth_objects: list[dict[str, Any]], text_passages: list[str],
-        increment_problem_counter: Callable[[bool], None]):
+        increment_problem_counter: Callable[[bool], None]) -> float:
     assert (google_client is not None) ^ (anthropic_client is not None)#XOR- exactly one of them should be defined0
     was_claude_generated: bool = anthropic_client is None
     src_model_nm = "Claude" if was_claude_generated else "Gemini"
@@ -73,7 +75,17 @@ def validate_generated_objects_texts(
 
     assert len(extracted_objects) == len(ground_truth_objects)
     logger.info(f"Successfully extracted objects from {src_model_nm}-generated text passages for scenario {scenario_domain} - {scenario_texts_label}")
-    #TODO use validation function to compare extracted_objects and ground_truth_objects
+    
+    extraction_qualities = []
+    
+    for obj_idx, (extracted_obj, ground_truth_obj) in enumerate(zip(extracted_objects, ground_truth_objects)):
+        extraction_quality, expected_fact_recall, hallucination_count, differences = evaluate_extraction(extracted_obj, ground_truth_obj)
+        if (1.0-extraction_quality) > 1e-8:#floating point effective-equality comparison
+            logger.error(f"Extraction quality for {src_model_nm}'s {obj_idx}th object for scenario {schema_idx} {scenario_domain} - {scenario_texts_label} is {extraction_quality}, expected fact recall is {expected_fact_recall}, hallucination count is {hallucination_count}, and differences are {differences}")
+            increment_problem_counter(was_claude_generated)
+        extraction_qualities.append(extraction_quality)
+    
+    return statistics.mean(extraction_qualities)
 
 
 
@@ -112,6 +124,9 @@ def main():
     start_schema_idx = 0
     schema_idx_excl_bound = len(schemas)
     logger.debug(f"Validating generated objects and text passages for scenarios {scenario_domains[start_schema_idx]} - {scenario_text_passage_descriptions[start_schema_idx]} to {scenario_domains[schema_idx_excl_bound - 1]} - {scenario_text_passage_descriptions[schema_idx_excl_bound - 1]}")
+    
+    extraction_qualities_for_gemini_generated_texts: dict[int, float] = {}
+    extraction_qualities_for_claude_generated_texts: dict[int, float] = {}
     for was_claude_generated in [True, False]:
         for scenario_idx in range(start_schema_idx, schema_idx_excl_bound):
             ground_truth_objects: list[dict[str, Any]] = gemini_objects[scenario_idx] if was_claude_generated else claude_objects[scenario_idx]
@@ -122,12 +137,20 @@ def main():
             
             google_client_to_use = google_client if was_claude_generated else None
             anthropic_client_to_use = None if was_claude_generated else anthropic_client
-            validate_generated_objects_texts(google_client_to_use, anthropic_client_to_use, scenario_idx, schema,
-                                             scenario_domain, scenario_texts_label, ground_truth_objects, text_passages,
-                                             increment_reconstruction_problem_count)
+            avg_extraction_quality_for_one_models_scenario_data = validate_generated_objects_texts(
+                google_client_to_use, anthropic_client_to_use, scenario_idx, schema, scenario_domain,
+                scenario_texts_label, ground_truth_objects, text_passages, increment_reconstruction_problem_count)
+            if was_claude_generated:
+                extraction_qualities_for_claude_generated_texts[scenario_idx] = avg_extraction_quality_for_one_models_scenario_data
+            else:
+                extraction_qualities_for_gemini_generated_texts[scenario_idx] = avg_extraction_quality_for_one_models_scenario_data
     logger.info(f"Problems encountered with object reconstruction from text passages:\n"
                 f"When Claude was extracting from Gemini-generated text passages: {reconstruction_from_gemini_texts_problem_count};\n"
                 f"When Gemini was extracting from Claude-generated text passages: {reconstruction_from_claude_texts_problem_count}")
+    for scenario_idx in range(start_schema_idx, schema_idx_excl_bound):
+        logger.info(f"Extraction quality for scenario {scenario_domains[scenario_idx]} - {scenario_text_passage_descriptions[scenario_idx]}:\n"
+                    f"from texts generated by Claude: {extraction_qualities_for_claude_generated_texts[scenario_idx]};\n"
+                    f"from texts generated by Gemini: {extraction_qualities_for_gemini_generated_texts[scenario_idx]}")
 
 if __name__ == "__main__":
     main()

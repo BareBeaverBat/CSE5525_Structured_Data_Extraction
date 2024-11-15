@@ -1,5 +1,6 @@
 import json
 import os
+import statistics
 import time
 from string import Template
 from typing import Any, Optional, Callable
@@ -16,7 +17,8 @@ from constants import schemas_path, anthropic_api_key_env, google_model_specifie
     google_text_passage_generation_sys_prompt, is_google_api_key_using_free_tier, \
     anthropic_text_passage_generation_sys_prompt, anthropic_obj_gen_group_size, google_obj_gen_group_size, \
     google_generation_temp, anthropic_generation_temp, google_reconstruction_temp, \
-    google_object_reconstruction_sys_prompt, claude_objs_path, gemini_objs_path, gemini_texts_path, claude_texts_path
+    google_object_reconstruction_sys_prompt, claude_objs_path, gemini_objs_path, gemini_texts_path, claude_texts_path, \
+    google_api_key_env
 from data_loading import load_scenarios
 from logging_setup import create_logger
 from misc_util_funcs import d, extract_text_passage_from_output, extract_json_doc_from_output
@@ -171,6 +173,7 @@ def main():
     google_generation_config_for_data_gen={"temperature": google_generation_temp, "max_output_tokens": 8192}
     google_generation_config_for_reconstruction={"temperature": google_reconstruction_temp, "max_output_tokens": 4096}
     
+    google_genai.configure(api_key=os.environ[google_api_key_env])
     google_client_for_obj_gen = google_genai.GenerativeModel(
         google_model_specifier, generation_config=google_generation_config_for_data_gen,
         safety_settings=safety_types.HarmBlockThreshold.BLOCK_ONLY_HIGH,
@@ -185,45 +188,60 @@ def main():
     
     anthropic_client = anthropic.Anthropic(api_key=os.environ[anthropic_api_key_env])
     
+    extraction_qualities_for_gemini_generated_texts: dict[int, float] = {}
+    extraction_qualities_for_claude_generated_texts: dict[int, float] = {}
+    
     #teammates- you can temporarily edit these 2 numbers if you only want to work on certain schemas
     first_scenario_idx = 0
-    last_scenario_idx = len(schemas)-1 if schemas else 0
-    for should_use_claude in [True, False]:
-        for scenario_idx in range(first_scenario_idx, last_scenario_idx):
+    schema_idx_excl_bound = len(schemas)
+    for should_generate_with_claude in [True, False]:
+        for scenario_idx in range(first_scenario_idx, schema_idx_excl_bound):
             schema = schemas[scenario_idx]
             scenario_domain = scenario_domains[scenario_idx]
             scenario_texts_label = scenario_text_passage_descriptions[scenario_idx]
             
-            google_client_to_use_for_obj_gen = None if should_use_claude else google_client_for_obj_gen
-            google_client_to_use_for_text_gen = None if should_use_claude else google_client_for_text_gen
-            google_client_to_use_for_reconstruction = None if should_use_claude else google_client_for_reconstruction
-            anthropic_client_to_use = anthropic_client if should_use_claude else None
-            json_objs = generate_json_objs(google_client_to_use_for_obj_gen, anthropic_client_to_use, scenario_idx,
+            google_client_to_use_for_obj_gen = None if should_generate_with_claude else google_client_for_obj_gen
+            google_client_to_use_for_text_gen = None if should_generate_with_claude else google_client_for_text_gen
+            google_client_to_use_for_reconstruction = google_client_for_reconstruction if should_generate_with_claude else None
+            anthropic_client_to_use_for_gen = anthropic_client if should_generate_with_claude else None
+            anthropic_client_to_use_for_reconstruction = None if should_generate_with_claude else anthropic_client
+            json_objs = generate_json_objs(google_client_to_use_for_obj_gen, anthropic_client_to_use_for_gen, scenario_idx,
                                            schema, scenario_domain, scenario_texts_label, increment_obj_gen_problem_count)
-            text_passages = generate_text_passages(google_client_to_use_for_text_gen, anthropic_client_to_use,
+            text_passages = generate_text_passages(google_client_to_use_for_text_gen, anthropic_client_to_use_for_gen,
                                                    scenario_idx, schema, scenario_domain, scenario_texts_label,
                                                    json_objs, increment_text_gen_problem_count)
-            validate_generated_objects_texts(google_client_to_use_for_reconstruction, anthropic_client_to_use,
-                                             scenario_idx, schema, scenario_domain, scenario_texts_label, json_objs,
-                                             text_passages, increment_reconstruction_problem_count)
+            avg_extraction_quality_for_one_models_scenario_data = validate_generated_objects_texts(
+                google_client_to_use_for_reconstruction, anthropic_client_to_use_for_reconstruction, scenario_idx, schema, scenario_domain,
+                scenario_texts_label, json_objs, text_passages, increment_reconstruction_problem_count)
             
-            with open((claude_objs_path if should_use_claude else gemini_objs_path)
+            logger.info(f"Extraction quality for {scenario_domain} - {scenario_texts_label} when original object and text passage were generated by {"Claude" if should_generate_with_claude else "Gemini"}:\n{avg_extraction_quality_for_one_models_scenario_data}")
+            if should_generate_with_claude:
+                extraction_qualities_for_claude_generated_texts[scenario_idx] = avg_extraction_quality_for_one_models_scenario_data
+            else:
+                extraction_qualities_for_gemini_generated_texts[scenario_idx] = avg_extraction_quality_for_one_models_scenario_data
+            
+            with open((claude_objs_path if should_generate_with_claude else gemini_objs_path)
                       / f"{scenario_idx}_{scenario_domain}__{scenario_texts_label}__objs.json", "w") as objs_file:
                 json.dump(json_objs, objs_file, indent=4)
-            with open((claude_texts_path if should_use_claude else gemini_texts_path)
+            with open((claude_texts_path if should_generate_with_claude else gemini_texts_path)
                       / f"{scenario_idx}_{scenario_domain}__{scenario_texts_label}__texts.json", "w") as texts_file:
                 json.dump(text_passages, texts_file, indent=4)
             
-            
-    num_objs_generated_with_gemini = (last_scenario_idx-first_scenario_idx+1) * google_obj_gen_group_size
-    num_objs_generated_with_claude = (last_scenario_idx-first_scenario_idx+1) * anthropic_obj_gen_group_size
+    num_objs_generated_with_gemini = (schema_idx_excl_bound-first_scenario_idx) * google_obj_gen_group_size
+    num_objs_generated_with_claude = (schema_idx_excl_bound-first_scenario_idx) * anthropic_obj_gen_group_size
     logger.info(f"\nProblems encountered with Gemini (out of {num_objs_generated_with_gemini} objects & as many passages):\n"
                 f"object generation: {gemini_obj_gen_problem_count}; text passage generation: {gemini_text_gen_problem_count}\n"
                 f"Problems encountered with Claude (out of {num_objs_generated_with_claude} objects & as many passages):\n"
                 f"object generation: {claude_obj_gen_problem_count}; text passage generation: {claude_text_gen_problem_count}\n"
                 f"Problems encountered with object reconstruction from text passages:\n"
                 f"When Claude was extracting from Gemini-generated text passages: {reconstruction_from_gemini_texts_problem_count};\n"
-                f"When Gemini was extracting from Claude-generated text passages: {reconstruction_from_claude_texts_problem_count}")
+                f"When Gemini was extracting from Claude-generated text passages: {reconstruction_from_claude_texts_problem_count}\n"
+                f"Extraction qualities averaged across scenarios for texts made by Gemini: {statistics.mean(list(extraction_qualities_for_gemini_generated_texts.values()))};\n"
+                f"Extraction qualities averaged across scenarios for texts made by Claude: {statistics.mean(list(extraction_qualities_for_claude_generated_texts.values()))}")
+    for scenario_idx in range(first_scenario_idx, schema_idx_excl_bound):
+        logger.info(f"Extraction quality for scenario {scenario_domains[scenario_idx]} - {scenario_text_passage_descriptions[scenario_idx]}:\n"
+                    f"from texts generated by Claude: {extraction_qualities_for_claude_generated_texts[scenario_idx]};\n"
+                    f"from texts generated by Gemini: {extraction_qualities_for_gemini_generated_texts[scenario_idx]}")
 
 if __name__ == "__main__":
     main()
