@@ -100,7 +100,7 @@ def compare_lists_from_json(expected_list: list, actual_list: list, path:str) ->
                     actual_dup_idxs_matched_to_missed_nondup.add(j)
                     total_num_correctly_extracted_pieces_of_info += 1
                     total_num_hallucinated_pieces_of_info += actual_dup_val_count - 1
-                    differences.append(f"Expected value {missed_nondup_val} was present in the actual array but had {actual_dup_val_count} copies in the actual array (rather than 1)")
+                    differences.append(f"Expected value {missed_nondup_val} was present in the actual array at path {path} but had {actual_dup_val_count} copies in the actual array (rather than 1)")
                     break
         
         missed_nondup_vals = [missed_nondup_vals[i] for i in range(len(missed_nondup_vals)) if i not in missed_nondup_idxs_matched_to_actual_dup]
@@ -119,7 +119,7 @@ def compare_lists_from_json(expected_list: list, actual_list: list, path:str) ->
                     expected_dup_idxs_matched_to_excess_nondup.add(i)
                     excess_nondup_idxs_matched_to_expected_dup.add(j)
                     total_num_correctly_extracted_pieces_of_info += 1
-                    differences.append(f"Expected value {expected_dup_val_value} was present in the actual array just once but had {expected_dup_val_count} copies in the expected array")
+                    differences.append(f"at path {path}, Expected value {expected_dup_val_value} was present in the actual array just once but had {expected_dup_val_count} copies in the expected array")
                     break
         
         expected_dup_vals = [expected_dup_vals[i] for i in range(len(expected_dup_vals)) if i not in expected_dup_idxs_matched_to_excess_nondup]
@@ -149,9 +149,9 @@ def compare_lists_from_json(expected_list: list, actual_list: list, path:str) ->
                     total_num_correctly_extracted_pieces_of_info += min(expected_dup_val_count, actual_dup_val_count)
                     if actual_dup_val_count > expected_dup_val_count:
                         total_num_hallucinated_pieces_of_info += actual_dup_val_count - expected_dup_val_count
-                        differences.append(f"The value {expected_dup_val_value} that was present multiple times in the expected array was present multiple times in the actual array but had {actual_dup_val_count-expected_dup_val_count} too many copies in the actual array")
+                        differences.append(f"The value {expected_dup_val_value} that was present multiple times in the expected array at path {path} was present multiple times in the actual array but had {actual_dup_val_count-expected_dup_val_count} too many copies in the actual array")
                     elif actual_dup_val_count < expected_dup_val_count:
-                        differences.append(f"The value {expected_dup_val_value} that was present multiple times in the expected array was present multiple times in the actual array but had {actual_dup_val_count-expected_dup_val_count} too few copies in the actual array")
+                        differences.append(f"The value {expected_dup_val_value} that was present multiple times in the expected array at path {path} was present multiple times in the actual array but had {actual_dup_val_count-expected_dup_val_count} too few copies in the actual array")
                     break
         
         missing_dup_vals = [expected_dup_vals[i] for i in range(len(expected_dup_vals)) if i not in expected_dup_idxs_matched_to_actual_dup]
@@ -310,7 +310,7 @@ def compare_dicts_from_json(expected: dict, actual: dict, path="") -> (int, int,
                 differences.append(f"Value mismatch for key '{current_path}': Expected '{expected_value}', got '{actual_value}'")
     excess_keys = set(actual.keys()) - set(expected.keys())
     for key in excess_keys:
-        differences.append(f"Excess key '{key}' in actual output")
+        differences.append(f"Excess key '{key}' in actual output at path {path}")
         total_num_hallucinated_pieces_of_info += count_total_pieces_of_info_in_json(actual[key])
 
     return total_num_correctly_extracted_pieces_of_info, total_num_hallucinated_pieces_of_info, differences

@@ -57,6 +57,10 @@ def generate_json_objs(google_client: Optional[GenerativeModel], anthropic_clien
         resp_text: str
         obj_gen_analysis: str
         
+        if retry_idx > 0:
+            logger.debug(f"Retrying generation of JSON objects for scenario {schema_idx} {scenario_domain} - {scenario_texts_label} ({retry_idx} prior attempts)")
+    
+    
         chat_msgs = assemble_chat_msgs(ModelProvider.ANTHROPIC if should_use_claude else ModelProvider.GOOGLE_DEEPMIND,
                                        user_prompt, ai_responses, followup_prompts)
         if should_use_claude:

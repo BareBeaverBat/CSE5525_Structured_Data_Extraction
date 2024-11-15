@@ -23,6 +23,10 @@ def extract_json_doc_from_output(model_output: str, is_obj_vs_arr: bool)-> (list
     json_start_idx: int
     json_end_idx: int
     
+    num_markdown_code_blocks = model_output.count("```")/2
+    if num_markdown_code_blocks != 1:
+        logger.debug(f"model output contained {num_markdown_code_blocks} markdown code blocks, not the expected 1")
+    
     json_doc_start_char = "{" if is_obj_vs_arr else "["
     proper_doc_start_pattern = re.compile(r"```json\s*\{" if is_obj_vs_arr else r"```json\s*\[")
     imperfect_doc_start_pattern = re.compile(r"```\s*\{" if is_obj_vs_arr else r"```\s*\[")
@@ -44,12 +48,12 @@ def extract_json_doc_from_output(model_output: str, is_obj_vs_arr: bool)-> (list
     rest_of_output = model_output[:json_start_idx]
     
     json_doc_end_char = "}" if is_obj_vs_arr else "]"
-    proper_doc_end_pattern = re.compile(f"{json_doc_end_char}\\s*```")
+    proper_doc_end_pattern = re.compile(r"}\s*```" if is_obj_vs_arr else r"]\s*```")
     doc_end_match = find_last_re_match(proper_doc_end_pattern, json_output, json_start_idx)
     if doc_end_match:
         json_end_idx = doc_end_match.start()+1
-    else:
-        logger.debug(f"model output didn't use the ideal disambiguated end pattern for a json document within its output, relying on the current scenario's expected end-of-json-document character {json_doc_end_char}")
+    else:#TODO this branch is being hit when, from logs, it seems like that doesn't make sense; remove printout of model response on next line once this is figured out
+        logger.debug(f"model output didn't use the ideal disambiguated end pattern for a json document within its output (the regex pattern \"{proper_doc_end_pattern}\" failed to match), relying on the current scenario's expected end-of-json-document character {json_doc_end_char}; full model response:\n{model_output}")
         json_end_idx = json_output.rfind(json_doc_end_char)+1
     if json_end_idx == -1:
         logger.warning(f"model output contained opening character for appropriate type of json document ({json_doc_start_char}) but not closing character for that type of json document ({json_doc_end_char}): model_output:\n {model_output}")
@@ -95,7 +99,7 @@ def extract_text_passage_from_output(model_output: str) -> (str|None, str):
     if num_markdown_code_blocks != 1:
         logger.warning(f"model output contained {num_markdown_code_blocks} markdown code blocks, not the expected 1")
     
-    proper_doc_start_pattern = re.compile(r"```[\t ]*\n?[\t ]*")
+    proper_doc_start_pattern = re.compile(r"```(markdown)?[\t ]*\n?[\t ]*")
     doc_start_match = proper_doc_start_pattern.search(model_output)
     if doc_start_match:
         passage_start_idx = doc_start_match.end()

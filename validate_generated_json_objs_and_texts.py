@@ -62,6 +62,9 @@ def validate_generated_objects_texts(
             assert len(ai_responses) == len(followup_prompts)
             resp_text: str
             
+            if retry_idx > 0:
+                logger.debug(f"Retrying extraction of JSON object from the {passage_idx}'th {src_model_nm}-generated text passage for scenario {schema_idx} {scenario_domain} - {scenario_texts_label} ({retry_idx} prior attempts)")
+            
             chat_msgs = assemble_chat_msgs(ModelProvider.GOOGLE_DEEPMIND if was_claude_generated else ModelProvider.ANTHROPIC,
                                            user_prompt, ai_responses, followup_prompts)
             if was_claude_generated:
@@ -109,9 +112,9 @@ def validate_generated_objects_texts(
     
     for obj_idx, (extracted_obj, ground_truth_obj) in enumerate(zip(extracted_objects, ground_truth_objects)):
         if ground_truth_obj is not None:
-            extraction_quality=0.0            
+            extraction_quality=0.0
             if extracted_obj is not None:
-                extraction_quality, expected_fact_recall, hallucination_count, differences = evaluate_extraction(extracted_obj, ground_truth_obj)
+                extraction_quality, expected_fact_recall, hallucination_count, differences = evaluate_extraction(ground_truth_obj, extracted_obj)
                 if (1.0-extraction_quality) > 1e-8:#floating point effective-equality comparison
                     logger.error(f"Extraction quality for {src_model_nm}'s {obj_idx}th object for scenario "
                                  f"{schema_idx} {scenario_domain} - {scenario_texts_label} is {extraction_quality}, "
@@ -165,8 +168,8 @@ def main():
     extraction_qualities_for_claude_generated_texts: dict[int, float] = {}
     for was_claude_generated in [True, False]:
         for scenario_idx in range(start_schema_idx, schema_idx_excl_bound):
-            ground_truth_objects: list[dict[str, Any]] = gemini_objects[scenario_idx] if was_claude_generated else claude_objects[scenario_idx]
-            text_passages: list[str] = gemini_text_passages[scenario_idx] if was_claude_generated else claude_text_passages[scenario_idx]
+            ground_truth_objects: list[dict[str, Any]] = claude_objects[scenario_idx] if was_claude_generated else gemini_objects[scenario_idx]
+            text_passages: list[str] = claude_text_passages[scenario_idx] if was_claude_generated else gemini_text_passages[scenario_idx]
             schema = schemas[scenario_idx]
             scenario_domain = scenario_domains[scenario_idx]
             scenario_texts_label = scenario_text_passage_descriptions[scenario_idx]
