@@ -1,3 +1,4 @@
+from enum import Enum
 from pathlib import Path
 
 from misc_util_funcs import d
@@ -28,6 +29,13 @@ google_reconstruction_temp = anthropic_reconstruction_temp
 
 anthropic_obj_gen_group_size = 5
 google_obj_gen_group_size = 5
+
+max_num_api_calls_for_retry_logic = 3
+
+class ModelProvider(Enum):
+    ANTHROPIC = "claude"
+    GOOGLE_DEEPMIND = "gemini"
+
 
 anthropic_object_generation_sys_prompt = d("""
 You will be given a JSON schema that describes the pieces of information that someone might want to extract in a structured way from text passages in a particular scenario.
