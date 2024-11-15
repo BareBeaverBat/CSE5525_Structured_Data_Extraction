@@ -18,7 +18,8 @@ from constants import schemas_path, claude_objs_path, gemini_objs_path, claude_t
 from data_loading import load_scenarios, load_one_models_objects, load_one_models_text_passages
 from json_obj_comparison import evaluate_extraction
 from logging_setup import create_logger
-from misc_util_funcs import d, extract_json_doc_from_output, assemble_chat_msgs
+from misc_util_funcs import extract_json_doc_from_output, assemble_chat_msgs
+from trivial_util_funcs import d
 
 logger = create_logger(__name__)
 

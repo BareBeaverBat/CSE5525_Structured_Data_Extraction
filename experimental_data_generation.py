@@ -21,7 +21,8 @@ from constants import schemas_path, anthropic_api_key_env, google_model_specifie
     google_api_key_env, max_num_api_calls_for_retry_logic, ModelProvider
 from data_loading import load_scenarios
 from logging_setup import create_logger
-from misc_util_funcs import d, extract_text_passage_from_output, extract_json_doc_from_output, assemble_chat_msgs
+from misc_util_funcs import extract_text_passage_from_output, extract_json_doc_from_output, assemble_chat_msgs
+from trivial_util_funcs import d
 from validate_generated_json_objs_and_texts import validate_generated_objects_texts
 
 logger = create_logger(__name__)

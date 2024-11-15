@@ -1,7 +1,7 @@
 from enum import Enum
 from pathlib import Path
 
-from misc_util_funcs import d
+from trivial_util_funcs import d
 
 claude_folder_nm = "claude"
 gemini_folder_nm = "gemini"
