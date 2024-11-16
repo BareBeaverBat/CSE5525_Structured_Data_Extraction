@@ -29,7 +29,11 @@
         "product": {
             "name": "HP Smart"
         },
-        "impact_level": "minor"
+        "impact_level": "minor",
+        "reproduction": {
+            "reproducible": true,
+            "frequency": "always"
+        }
     },
     {
         "product": {

@@ -5,14 +5,22 @@
         },
         "error_codes": [
             "CS1201"
-        ]
+        ],
+        "reproduction": {
+            "reproducible": true,
+            "frequency": "always"
+        }
     },
     {
         "product": {
             "name": "VideoChat",
             "model": "VC-Pro"
         },
-        "impact_level": "major"
+        "impact_level": "major",
+        "reproduction": {
+            "reproducible": true,
+            "frequency": "often"
+        }
     },
     {
         "product": {
@@ -61,7 +69,8 @@
         },
         "impact_level": "minor",
         "reproduction": {
-            "reproducible": false
+            "reproducible": false,
+            "frequency": "sometimes"
         }
     }
 ]
