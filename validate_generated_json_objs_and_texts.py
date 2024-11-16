@@ -42,12 +42,12 @@ def validate_generated_objects_texts(
             extracted_objects.append(None)
             continue
         user_prompt = d(f"""
-        Here is a JSON schema for the domain {scenario_domain}:
+        Here is a JSON schema for the domain "{scenario_domain}":
         ```json
         {json.dumps(schema)}
         ```
         
-        Here is the {scenario_texts_label} text passage.
+        Here is the "{scenario_texts_label}" text passage.
         ```
         {passage}
         ```

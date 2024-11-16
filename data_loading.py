@@ -28,10 +28,14 @@ def load_scenarios(scenarios_schemas_path: Path, scenario_dtls_regex: Pattern = 
             continue
         scenario_idx = int(scenario_dtls_match.group(1))
         assert scenario_idx == len(scenario_domains)
-        scenario_domains.append(scenario_dtls_match.group(2))
+        scenario_domain_nm = scenario_dtls_match.group(2)
+        scenario_domain_nm = scenario_domain_nm.replace("_", " ")
+        scenario_domains.append(scenario_domain_nm)
         assert scenario_idx == len(scenario_text_passage_descriptions)
-        scenario_text_passage_descriptions.append(scenario_dtls_match.group(4))
-        
+        scenario_text_passage_desc = scenario_dtls_match.group(4)
+        scenario_text_passage_desc = scenario_text_passage_desc.replace("_", " ")
+        scenario_text_passage_descriptions.append(scenario_text_passage_desc)
+
         assert scenario_idx == len(schemas)
         with open(scenarios_schemas_path / schema_filenm) as schema_file:
             curr_schema = json.load(schema_file)

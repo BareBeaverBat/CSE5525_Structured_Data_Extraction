@@ -51,7 +51,7 @@ Partial examples of good responses with JSON objects (omitting CoT analysis and 
 --------------------
 ## Request 1
 
-Here is such a JSON schema for the domain healthcare:
+Here is such a JSON schema for the domain "healthcare":
 ```json
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
@@ -200,7 +200,7 @@ Please generate a JSON array containing diverse JSON objects conforming to that 
 --------------------
 ## Request 2
 
-Here is such a JSON schema for the domain customer service:
+Here is such a JSON schema for the domain "customer service":
 ```json
 {
 "$schema": "http://json-schema.org/draft-07/schema#",
@@ -306,7 +306,7 @@ Partial examples of good responses with JSON objects (omitting CoT analysis and 
 --------------------
 ## Request 1
 
-Here is such a JSON schema for the domain customer service:
+Here is such a JSON schema for the domain "customer service":
 ```json
 {
 "$schema": "http://json-schema.org/draft-07/schema#",
@@ -417,7 +417,7 @@ Please generate a JSON array containing diverse JSON objects conforming to that 
 --------------------
 ## Request 2
 
-Here is such a JSON schema for the domain healthcare:
+Here is such a JSON schema for the domain "healthcare":
 ```json
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
@@ -545,7 +545,7 @@ Partial examples of good responses (omitting CoT analysis for brevity):
 --------------------
 ## Request 1
 
-Here is a JSON schema for the domain customer service:
+Here is a JSON schema for the domain "customer service":
 ```json
 {
 "$schema": "http://json-schema.org/draft-07/schema#",
@@ -628,7 +628,7 @@ I am setting up my SmartThings Hub (Model: GP-U999SJVLGDA) running firmware vers
 
 ## Request 2
 
-Here is a JSON schema for the domain healthcare:
+Here is a JSON schema for the domain "healthcare":
 ```json
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
@@ -723,7 +723,7 @@ Partial examples of good responses (omitting CoT analysis for brevity):
 --------------------
 ## Request 1
 
-Here is a JSON schema for the domain healthcare:
+Here is a JSON schema for the domain "healthcare":
 ```json
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
@@ -860,7 +860,7 @@ Will continue current medication regimen. Patient advised to maintain headache d
 --------------------
 ## Request 2
 
-Here is a JSON schema for the domain customer service:
+Here is a JSON schema for the domain "customer service":
 ```json
 {
 "$schema": "http://json-schema.org/draft-07/schema#",
@@ -954,7 +954,7 @@ Partial examples of good responses (omitting CoT analysis for brevity):
 --------------------
 ## Request 1
 
-Here is a JSON schema for the domain healthcare:
+Here is a JSON schema for the domain "healthcare":
 ```json
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
@@ -1007,7 +1007,7 @@ Here is a JSON schema for the domain healthcare:
 }
 ```
 
-Here is the patient visit notes text passage.
+Here is the "patient visit notes" text passage.
 ```
 Patient visit notes - 2024-03-15 10:00 AM
 
@@ -1049,7 +1049,7 @@ Please create a JSON object that obeys the given schema and captures all schema-
 --------------------
 ## Request 2
 
-Here is a JSON schema for the domain customer service:
+Here is a JSON schema for the domain "customer service":
 ```json
 {
 "$schema": "http://json-schema.org/draft-07/schema#",
@@ -1097,7 +1097,7 @@ Here is a JSON schema for the domain customer service:
 }
 ```
 
-Here is the support ticket description text passage.
+Here is the "support ticket description" text passage.
 ```
 I am experiencing significant issues with my Dell Precision Touchpad (Model DL4872, version 10.3.302.13). The touchpad periodically becomes completely unresponsive, which is severely impacting my ability to work effectively. When this occurs, the system logs error code TPD-1044. 
 
@@ -1144,7 +1144,7 @@ Partial examples of good responses (omitting CoT analysis for brevity):
 --------------------
 ## Request 1
 
-Here is a JSON schema for the domain customer service:
+Here is a JSON schema for the domain "customer service":
 ```json
 {
 "$schema": "http://json-schema.org/draft-07/schema#",
@@ -1192,7 +1192,7 @@ Here is a JSON schema for the domain customer service:
 }
 ```
 
-Here is the support ticket description text passage.
+Here is the "support ticket description" text passage.
 ```
 I am experiencing a critical issue with my Arctis Nova Pro headset (Model 61486, firmware version 2.4.3). The headset is completely unusable due to a series of errors that appear every time I try to use it.
 
@@ -1241,7 +1241,7 @@ Please create a JSON object that obeys the given schema and captures all schema-
 --------------------
 ## Request 2
 
-Here is a JSON schema for the domain healthcare:
+Here is a JSON schema for the domain "healthcare":
 ```json
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
@@ -1294,7 +1294,7 @@ Here is a JSON schema for the domain healthcare:
 }
 ```
 
-Here is the patient visit notes text passage.
+Here is the "patient visit notes" text passage.
 ```
 PATIENT VISIT NOTES
 

@@ -40,7 +40,7 @@ def generate_json_objs(google_client: Optional[GenerativeModel], anthropic_clien
     generated_objects: list[Optional[dict[str,Any]]] = []
     
     user_prompt = d(f"""
-    Here is such a JSON schema for the domain {scenario_domain}:
+    Here is such a JSON schema for the domain "{scenario_domain}":
     ```json
     {json.dumps(schema)}
     ```
@@ -133,7 +133,7 @@ def generate_text_passages(google_client: Optional[GenerativeModel], anthropic_c
     logger.info(f"Generating text passages with {model_nm} for scenario {scenario_domain} - {scenario_texts_label}")
     
     user_prompt_template = Template(d(f"""
-    Here is a JSON schema for the domain {scenario_domain}:
+    Here is a JSON schema for the domain "{scenario_domain}":
     ```json
     {json.dumps(schema)}
     ```
