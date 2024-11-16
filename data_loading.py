@@ -12,7 +12,7 @@ from logging_setup import create_logger
 logger = create_logger(__name__)
 
 scenario_details_regex = r"^(\d+)_([a-zA-Z0-9]+(_[a-zA-Z0-9]+)*)__(\w+).json"
-scenario_idx_regex = r"^(\d+)"
+scenario_idx_regex = r"^(\d+)_"
 
 
 def load_scenarios(scenarios_schemas_path: Path, scenario_dtls_regex: Pattern = scenario_details_regex) -> Tuple[List[str], List[str], List[dict[str, Any]]]:
@@ -21,7 +21,11 @@ def load_scenarios(scenarios_schemas_path: Path, scenario_dtls_regex: Pattern = 
 
     schemas: list[dict[str, Any]] = []
     
-    for schema_filenm in sorted(os.listdir(scenarios_schemas_path)):
+    def schema_file_name_sorting_key(file_nm: str) -> int:
+        match = re.match(scenario_dtls_regex, file_nm)
+        return int(match.group(1)) if match else 0
+    
+    for schema_filenm in sorted(os.listdir(scenarios_schemas_path), key=schema_file_name_sorting_key):
         scenario_dtls_match = re.match(scenario_dtls_regex, schema_filenm)
         if scenario_dtls_match is None:
             logger.warning(f"schema file {schema_filenm} doesn't match the expected naming convention, skipping it")
@@ -79,8 +83,8 @@ def load_text_passages_for_one_model_and_scenario(path_of_one_models_texts: Path
         with open(path_of_one_models_texts / texts_filenm) as file_of_one_model_texts_for_one_schema:
             curr_schema_texts = json.load(file_of_one_model_texts_for_one_schema)
         assert isinstance(curr_schema_texts, list)
-        if any(not isinstance(text, str) or text is not None for text in curr_schema_texts):
-            logger.warning(f"all text passages in {texts_filenm} should be strings or null!")
+        if any(not isinstance(text, str) and text is not None for text in curr_schema_texts):
+            logger.warning(f"all text passages in {texts_filenm} should be strings or null in the path {path_of_one_models_texts}!")
         if None in curr_schema_texts:
             logger.warning(f"there are null text passages in {path_of_one_models_texts}/{texts_filenm}")
         return curr_schema_texts

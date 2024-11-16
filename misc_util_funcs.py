@@ -56,8 +56,8 @@ def extract_json_doc_from_output(model_output: str, is_obj_vs_arr: bool)-> (list
     doc_end_match = find_last_re_match(proper_doc_end_pattern, json_output, json_start_idx)
     if doc_end_match:
         json_end_idx = doc_end_match.start()+1
-    else:#TODO this branch is being hit when, from logs, it seems like that doesn't make sense; remove printout of model response on next line once this is figured out
-        logger.debug(f"model output didn't use the ideal disambiguated end pattern for a json document within its output (the regex pattern \"{proper_doc_end_pattern}\" failed to match), relying on the current scenario's expected end-of-json-document character {json_doc_end_char}; full model response:\n{model_output}")
+    else:
+        logger.debug(f"model output didn't use the ideal disambiguated end pattern for a json document within its output (the regex pattern \"{proper_doc_end_pattern}\" failed to match), relying on the current scenario's expected end-of-json-document character {json_doc_end_char}")
         json_end_idx = json_output.rfind(json_doc_end_char)+1
     if json_end_idx == -1:
         logger.warning(f"model output contained opening character for appropriate type of json document ({json_doc_start_char}) but not closing character for that type of json document ({json_doc_end_char}): model_output:\n {model_output}")

@@ -3,6 +3,7 @@ import os
 import statistics
 from string import Template
 from typing import Any, Optional, Callable
+from datetime import datetime as dt
 
 import anthropic
 import google.generativeai as google_genai
@@ -30,13 +31,30 @@ logger = create_logger(__name__)
 
 def generate_json_objs(google_client: Optional[GenerativeModel], anthropic_client: Optional[Anthropic], schema_idx: int,
                        schema: dict[str,Any], scenario_domain: str, scenario_texts_label: str,
-                       increment_problem_counter: Callable[[bool], None], target_num_objs: int) -> list[Optional[dict[str, Any]]]:
+                       increment_problem_counter: Callable[[bool], None], target_num_objs: int
+                       ) -> (list[Optional[dict[str, Any]]], list[str], dict[int, int]):
+    """
+    
+    :param google_client:
+    :param anthropic_client:
+    :param schema_idx:
+    :param schema:
+    :param scenario_domain:
+    :param scenario_texts_label:
+    :param increment_problem_counter:
+    :param target_num_objs:
+    :return: list of generated objects, list of analysis strings for each object generations, and mapping from object
+    index to analysis string index (since an analysis string goes with a particular API call and a typical API call
+    will produce more than 1 schema-compliant object)
+    """
     assert (google_client is not None) ^ (anthropic_client is not None)#XOR- exactly one of them should be defined
     should_use_claude: bool = google_client is None
     model_nm = "Claude" if should_use_claude else "Gemini"
     logger.info(f"Generating {target_num_objs} objects with {model_nm} for scenario {scenario_domain} - {scenario_texts_label}")
     
     generated_objects: list[Optional[dict[str,Any]]] = []
+    obj_gen_analysis_strs: list[str] = []
+    obj_idx_to_analysis_idx: dict[int, int] = {}
     
     user_prompt = d(f"""
     Here is such a JSON schema for the domain "{scenario_domain}":
@@ -49,10 +67,10 @@ def generate_json_objs(google_client: Optional[GenerativeModel], anthropic_clien
     
     ai_responses: list[str] = []
     followup_prompts: list[str] = []
+    resp_text: str = ""
     
     for retry_idx in range(max_num_api_calls_for_retry_logic):
         assert len(ai_responses) == len(followup_prompts)
-        resp_text: str
         obj_gen_analysis: str
         
         if retry_idx > 0:
@@ -83,11 +101,15 @@ def generate_json_objs(google_client: Optional[GenerativeModel], anthropic_clien
             for obj_idx, obj in enumerate(curr_generated_objects):
                 if schema_validator.is_valid(obj):
                     generated_objects.append(obj)
+                    #this will become a valid analysis string index right after this for loop over current-round objects
+                    obj_idx_to_analysis_idx[len(generated_objects)-1] = len(obj_gen_analysis_strs)
                     valid_idxs_in_curr_round.append(obj_idx)
                 else:
                     schema_validation_errs = "; ".join([str(err) for err in schema_validator.iter_errors(obj)])
                     logger.warning(f"{model_nm}-generated object {obj_idx} for schema index {schema_idx} failed schema validation\nSchema:{schema}\nObject:{json.dumps(obj, indent=4)}\nErrors:{schema_validation_errs}")
                     schema_validation_feedback_msgs.append(f"The {obj_idx}th object from the most recent round failed schema validation:\nHere is the object:\n{json.dumps(obj)}\nHere are the schema validation errors:\n{schema_validation_errs}")
+            if valid_idxs_in_curr_round:
+                obj_gen_analysis_strs.append(obj_gen_analysis)
             if schema_validation_feedback_msgs:
                 error_feedback += f"Some of the objects just generated failed to follow the schema:\n--------------\n{"\n---------------\n".join(schema_validation_feedback_msgs)}"
             logger.debug(f"Using {model_nm}, generated {len(curr_generated_objects)} objects for scenario {scenario_domain} - {scenario_texts_label}:\nValid indexes within this round were: {valid_idxs_in_curr_round}\n{json.dumps(curr_generated_objects, indent=4)}\n\nAnalysis of object generation:\n{obj_gen_analysis}\n\nGlobal case ids of objects: {", ".join([f"case id {model_nm}-{schema_idx}-{new_obj_idx}" for new_obj_idx in range(num_objs_b4_curr_round, len(generated_objects))])}")
@@ -106,16 +128,19 @@ def generate_json_objs(google_client: Optional[GenerativeModel], anthropic_clien
         num_none_fillers = target_num_objs - len(generated_objects)
         logger.error(f"Exceeded retry limit when generating json objects with {model_nm} for schema index {schema_idx}; only successfully created {len(generated_objects)} objects that conformed to the schema, so adding {num_none_fillers} None objects to fill the gap")
         increment_problem_counter(should_use_claude)
-        generated_objects.extend([None] * num_none_fillers)
+        obj_gen_analysis_strs.append(resp_text)
+        for obj_idx in range(len(generated_objects), target_num_objs):
+            generated_objects.append(None)
+            obj_idx_to_analysis_idx[obj_idx] = len(obj_gen_analysis_strs)-1
     
     logger.debug(f"Using {model_nm}, generated {len(generated_objects)} objects for scenario {scenario_domain} - {scenario_texts_label}:\n{json.dumps(generated_objects, indent=4)}")
     
-    return generated_objects
+    return generated_objects, obj_gen_analysis_strs, obj_idx_to_analysis_idx
 
 def generate_text_passages(google_client: Optional[GenerativeModel], anthropic_client: Optional[Anthropic],
                            schema_idx: int, schema: dict[str,Any], scenario_domain: str, scenario_texts_label: str,
                            json_objs: list[Optional[dict[str,Any]]], increment_problem_counter: Callable[[bool], None]
-                           ) -> list[Optional[str]]:
+                           ) -> (list[Optional[str]], list[str]):
     assert (google_client is not None) ^ (anthropic_client is not None)#XOR- exactly one of them should be defined
     should_use_claude: bool = google_client is None
     model_nm = "Claude" if should_use_claude else "Gemini"
@@ -136,7 +161,8 @@ def generate_text_passages(google_client: Optional[GenerativeModel], anthropic_c
     Please generate a “{scenario_texts_label}” free-text document that includes the JSON object's details, following the above instructions while doing so.
     """))
     
-    text_passages = []
+    text_passages: list[Optional[str]] = []
+    text_creation_analyses: list[str] = []
     
     for obj_idx, obj in enumerate(json_objs):
         if obj is None:
@@ -157,11 +183,13 @@ def generate_text_passages(google_client: Optional[GenerativeModel], anthropic_c
         else:
             logger.debug(f"Using {model_nm}, generated a text passage from the {obj_idx}'th object for scenario {scenario_domain} - {scenario_texts_label} (case id {model_nm}-{schema_idx}-{obj_idx}):\n{text_passage}\n\nAnalysis of text generation:\n{text_gen_analysis}")
         text_passages.append(text_passage)
+        text_creation_analyses.append(text_gen_analysis)
     
-    return text_passages
+    return text_passages, text_creation_analyses
 
 
 def main():
+    run_start_ts = dt.now()
     
     gemini_obj_gen_problem_count = 0
     gemini_text_gen_problem_count = 0
@@ -218,12 +246,13 @@ def main():
     extraction_qualities_for_gemini_generated_texts: dict[int, float] = {}
     extraction_qualities_for_claude_generated_texts: dict[int, float] = {}
     
-    #TODO declare list for reports on validation failure cases for different model/scenario pairs
+    validation_failure_reports: list[str] = []
     
     #teammates- you can temporarily edit these 2 numbers if you only want to work on certain schemas
     first_scenario_idx = 0
-    schema_idx_excl_bound = len(schemas)#TODO try running with this set to just 5
+    schema_idx_excl_bound = 5#len(schemas)#TODO try running with this set to just 5
     for should_generate_with_claude in [True, False]:
+        src_model_nm = "Claude" if should_generate_with_claude else "Gemini"
         for scenario_idx in range(first_scenario_idx, schema_idx_excl_bound):
             schema = schemas[scenario_idx]
             scenario_domain = scenario_domains[scenario_idx]
@@ -236,7 +265,6 @@ def main():
             
             json_objs: list[dict[str,Any]] = load_objects_for_one_model_and_scenario(curr_objs_folder, schema,
                                                                                      scenario_idx) or []
-            
             text_passages: list[str] = load_text_passages_for_one_model_and_scenario(curr_texts_folder, scenario_idx
                                                                                      ) or []
             assert len(json_objs) == len(text_passages)
@@ -248,39 +276,54 @@ def main():
             google_client_to_use_for_reconstruction = google_client_for_reconstruction if should_generate_with_claude else None
             anthropic_client_to_use_for_gen = anthropic_client if should_generate_with_claude else None
             anthropic_client_to_use_for_reconstruction = None if should_generate_with_claude else anthropic_client
-            #TODO this returns list of analysis strings and mapping from obj idx to analysis string idx
-            new_json_objs = generate_json_objs(google_client_to_use_for_obj_gen, anthropic_client_to_use_for_gen,
-                                               scenario_idx, schema, scenario_domain, scenario_texts_label,
-                                               increment_obj_gen_problem_count, num_objs_needed_for_case)
-            #TODO this returns list of analysis strings
-            new_text_passages = generate_text_passages(google_client_to_use_for_text_gen, anthropic_client_to_use_for_gen,
-                                                   scenario_idx, schema, scenario_domain, scenario_texts_label,
-                                                   new_json_objs, increment_text_gen_problem_count)
-            logger.info(f"Starting auto-validation of {num_objs_needed_for_case} {"Claude" if should_generate_with_claude else "Gemini"}-generated objects and text passages for scenario {scenario_idx} \"{scenario_domain}\" - \"{scenario_texts_label}\"")
-            #TODO this returns extraction analysis strings and full details for extraction evaluations
-            avg_extraction_quality_for_one_models_scenario_data = validate_generated_objects_texts(
-                google_client_to_use_for_reconstruction, anthropic_client_to_use_for_reconstruction, scenario_idx, schema, scenario_domain,
-                scenario_texts_label, new_json_objs, new_text_passages, increment_reconstruction_problem_count)
+            new_json_objs, obj_gen_analyses, new_obj_to_analysis_map = generate_json_objs(
+                google_client_to_use_for_obj_gen, anthropic_client_to_use_for_gen, scenario_idx, schema, scenario_domain,
+                scenario_texts_label, increment_obj_gen_problem_count, num_objs_needed_for_case)
+            new_text_passages, text_gen_analyses = generate_text_passages(
+                google_client_to_use_for_text_gen, anthropic_client_to_use_for_gen, scenario_idx, schema,
+                scenario_domain, scenario_texts_label, new_json_objs, increment_text_gen_problem_count)
+            logger.info(f"Starting auto-validation of {num_objs_needed_for_case} {src_model_nm}-generated objects and text passages for scenario {scenario_idx} \"{scenario_domain}\" - \"{scenario_texts_label}\"")
+            (avg_extraction_quality_for_case, val_failed_objs, val_failed_extraction_analyses,
+             val_failed_extraction_qualities, val_failed_fact_recalls, val_failed_hallucination_counts,
+             val_failed_extraction_differences) = validate_generated_objects_texts(
+                google_client_to_use_for_reconstruction, anthropic_client_to_use_for_reconstruction, scenario_idx,
+                schema, scenario_domain, scenario_texts_label, new_json_objs, new_text_passages,
+                increment_reconstruction_problem_count)
             
-            logger.info(f"Extraction quality for {scenario_domain} - {scenario_texts_label} when original object and text passage were generated by {"Claude" if should_generate_with_claude else "Gemini"}:\n{avg_extraction_quality_for_one_models_scenario_data}")
+            logger.info(f"Extraction quality for {scenario_idx} {scenario_domain} - {scenario_texts_label} was {avg_extraction_quality_for_case} when original object and text passage were generated by {src_model_nm}")
             if should_generate_with_claude:
-                extraction_qualities_for_claude_generated_texts[scenario_idx] = avg_extraction_quality_for_one_models_scenario_data
+                extraction_qualities_for_claude_generated_texts[scenario_idx] = avg_extraction_quality_for_case
             else:
-                extraction_qualities_for_gemini_generated_texts[scenario_idx] = avg_extraction_quality_for_one_models_scenario_data
-            
-            #TODO add to json_objs and text_passages _only_ the ones that passed validation
-            json_objs.extend(new_json_objs)
-            text_passages.extend(new_text_passages)
+                extraction_qualities_for_gemini_generated_texts[scenario_idx] = avg_extraction_quality_for_case
+
+            validation_passed_new_json_objs = [new_json_objs[obj_idx] for obj_idx in range(len(new_json_objs))
+                                               if obj_idx not in val_failed_objs]
+            validation_passed_new_text_passages = [new_text_passages[obj_idx] for obj_idx in range(len(new_text_passages))
+                                                   if obj_idx not in val_failed_objs]
+            json_objs.extend(validation_passed_new_json_objs)
+            text_passages.extend(validation_passed_new_text_passages)
             
             with open(curr_case_objs_path, "w") as objs_file:
                 json.dump(json_objs, objs_file, indent=4)
             with open(curr_case_texts_path, "w") as texts_file:
                 json.dump(text_passages, texts_file, indent=4)
             
-            #TODO create (and add to list) a unified report on each case that didn't pass validation, with the original
-            # object (and associated analysis string), text passage (and its analysis string), and reconstruction (with
-            # its analysis string and the extraction evaluation)
-            
+            for failed_obj_idx in val_failed_objs:
+                validation_failure_reports.append(
+                    f"# Object {failed_obj_idx} for scenario {scenario_idx} \"{scenario_domain}\" - \"{scenario_texts_label}\" failed validation:\n"
+                    f"case id {src_model_nm}-{scenario_idx}-{failed_obj_idx}\nNote that object index is within current run\n"
+                    f"## New object:\n```json\n{json.dumps(new_json_objs[failed_obj_idx], indent=4)}\n```\n"
+                    f"## Extracted object:\n```json\n{json.dumps(val_failed_objs[failed_obj_idx], indent=4)}\n```\n"
+                    f"## Extraction Evaluation\n"
+                    f"Extraction quality: {val_failed_extraction_qualities[failed_obj_idx]:.4f} ;"
+                    f"Fact recall: {val_failed_fact_recalls[failed_obj_idx]:.4f}; "
+                    f"Hallucination count: {val_failed_hallucination_counts[failed_obj_idx]}\n"
+                    f"Extraction differences: {val_failed_extraction_differences[failed_obj_idx]}"
+                    f"## Text passage:\n{new_text_passages[failed_obj_idx]}\n"
+                    f"## Analysis of object generation:\n{obj_gen_analyses[new_obj_to_analysis_map[failed_obj_idx]]}\n"
+                    f"## Analysis of text generation:\n{text_gen_analyses[failed_obj_idx]}\n"
+                    f"## Analysis of extraction:\n{val_failed_extraction_analyses[failed_obj_idx]}"
+                )
             
     num_objs_generated_with_gemini = (schema_idx_excl_bound-first_scenario_idx) * google_obj_gen_group_size
     num_objs_generated_with_claude = (schema_idx_excl_bound-first_scenario_idx) * anthropic_obj_gen_group_size
@@ -297,7 +340,11 @@ def main():
         logger.info(f"Extraction quality for scenario {scenario_domains[scenario_idx]} - {scenario_text_passage_descriptions[scenario_idx]}:\n"
                     f"from texts generated by Claude: {extraction_qualities_for_claude_generated_texts[scenario_idx]};\n"
                     f"from texts generated by Gemini: {extraction_qualities_for_gemini_generated_texts[scenario_idx]}")
-    #TODO write to a separate file the list of reports on validation failures for different model/scenario pairs
+    
+    with open(f"validation_failures_report_{run_start_ts.isoformat()}.md", "w") as validation_failures_file:
+        validation_failures_file.write(
+            "\n\n----------------------------\n----------------------------\n\n".join(validation_failure_reports))
+    
 
 if __name__ == "__main__":
     main()
