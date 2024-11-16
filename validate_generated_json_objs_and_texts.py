@@ -67,7 +67,7 @@ def validate_generated_objects_texts(
     
     extraction_qualities = []
     
-    for obj_idx, ground_truth_obj, passage in enumerate(zip(ground_truth_objects, text_passages)):
+    for obj_idx, (ground_truth_obj, passage) in enumerate(zip(ground_truth_objects, text_passages)):
         if passage is None:
             val_failed_extracted_objs[obj_idx] = None
             val_failed_extraction_analyses[obj_idx] = ("No text passage was generated for this object" if
