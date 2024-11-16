@@ -1,8 +1,12 @@
 import json
 import re
+import time
 from json import JSONDecodeError
 
-from constants import ModelProvider
+from anthropic import Anthropic
+from google.generativeai import GenerativeModel
+
+from constants import ModelProvider, is_google_api_key_using_free_tier
 from logging_setup import create_logger
 from trivial_util_funcs import find_last_re_match
 
@@ -124,16 +128,31 @@ def extract_text_passage_from_output(model_output: str) -> (str|None, str):
     
     return text_passage, rest_of_output
 
-
-def assemble_chat_msgs(model_choice: ModelProvider, initial_prompt: str, ai_responses: list[str],
-                       followup_prompts: list[str]) -> list[dict[str, str]]:
-    ai_role = "assistant" if model_choice == ModelProvider.ANTHROPIC else \
-        "model" if model_choice == ModelProvider.GOOGLE_DEEPMIND else "PLACEHOLDER_AI_ROLE"
-    msg_body_key = "content" if model_choice == ModelProvider.ANTHROPIC else \
-        "parts" if model_choice == ModelProvider.GOOGLE_DEEPMIND else "PLACEHOLDER_MSG_BODY_KEY"
-    chat_msgs = [{"role": "user", msg_body_key: initial_prompt}]
-    for ai_resp, followup_prompt in zip(ai_responses, followup_prompts):
-        chat_msgs.append({"role": ai_role, msg_body_key: ai_resp})
-        chat_msgs.append({"role": "user", msg_body_key: followup_prompt})
-        
-    return chat_msgs
+def generate_with_model(model_choice: ModelProvider, initial_prompt: str, ai_responses: list[str],
+                        followup_prompts: list[str], google_client: GenerativeModel, anthropic_client: Anthropic,
+                        anthropic_sys_prompt: str, anthropic_max_tokens: int, anthropic_temp: float,
+                        anthropic_model_choice: str) -> str:
+    resp_text: str
+    
+    if model_choice == ModelProvider.ANTHROPIC:
+        chat_msgs = [{"role": "user", "content": initial_prompt}]
+        for ai_resp, followup_prompt in zip(ai_responses, followup_prompts):
+            chat_msgs.append({"role": "assistant", "content": ai_resp})
+            chat_msgs.append({"role": "user", "content": followup_prompt})
+        anthropic_resp = anthropic_client.messages.create(
+            system=anthropic_sys_prompt, max_tokens=anthropic_max_tokens, temperature=anthropic_temp,
+            model= anthropic_model_choice, messages=chat_msgs)
+        resp_text = anthropic_resp.content[0].text
+    elif model_choice == ModelProvider.GOOGLE_DEEPMIND:
+        chat_msgs = [{"role": "user", "parts": initial_prompt}]
+        for ai_resp, followup_prompt in zip(ai_responses, followup_prompts):
+            chat_msgs.append({"role": "model", "parts": ai_resp})
+            chat_msgs.append({"role": "user", "parts": followup_prompt})
+        google_resp = google_client.generate_content(chat_msgs)
+        resp_text = google_resp.text
+        if is_google_api_key_using_free_tier:
+            time.sleep(30)#on free tier, gemini api is rate-limited to 2 requests per 60 seconds
+    else:
+        raise ValueError(f"model_choice must be a value from the ModelProvider enum, but it was {model_choice}")
+    
+    return resp_text

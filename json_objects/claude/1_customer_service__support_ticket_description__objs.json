@@ -1,22 +1,25 @@
 [
     {
         "product": {
-            "name": "Acme Accounting Pro",
-            "model": "X500",
-            "version": "2.3.1"
+            "name": "Arctis Nova Pro",
+            "model": "61486",
+            "version": "2.4.3"
         },
-        "error_codes": ["ERR_DATABASE_CONNECT", "ERR_INVALID_LICENSE"],
-        "impact_level": "major",
+        "error_codes": [
+            "AUD-442",
+            "DRV-891",
+            "USB-127"
+        ],
+        "impact_level": "blocking",
         "system_state": {
-            "os": "Windows 10",
-            "browser": "Chrome 89"
-        }
-    },
-    {
-        "product": {
-            "name": "Vortex Video Editor"
+            "os": "Windows 11",
+            "browser": "Chrome 114.0.5735",
+            "connected_devices": [
+                "Arctis Nova Pro",
+                "Logitech G502",
+                "Dell U2719D"
+            ]
         },
-        "impact_level": "minor",
         "reproduction": {
             "reproducible": true,
             "frequency": "always"
@@ -24,41 +27,53 @@
     },
     {
         "product": {
-            "name": "Zephyr Project Management",
-            "version": "1.5.2"
+            "name": "HP Smart"
         },
-        "error_codes": ["500", "503"],
-        "impact_level": "blocking",
+        "impact_level": "minor"
+    },
+    {
+        "product": {
+            "name": "SmartThings Hub",
+            "model": "GP-U999SJVLGDA",
+            "version": "43.6"
+        },
         "system_state": {
-            "os": "macOS 11.2.3",
-            "browser": "Safari 14.0.3",
-            "connected_devices": ["Epson WF-7720", "Logitech C920 Webcam"]
-        },
-        "reproduction": {
-            "reproducible": false
+            "connected_devices": [
+                "Yale Lock YRD226",
+                "Ecobee Thermostat",
+                "Philips Hue Bridge",
+                "Ring Doorbell Pro",
+                "Samsung TV"
+            ]
         }
     },
     {
         "product": {
-            "name": "Luminous Photo Organizer",
-            "model": "Professional"
+            "name": "Dell Precision Touchpad",
+            "model": "DL4872",
+            "version": "10.3.302.13"
         },
-        "impact_level": "cosmetic",
-        "system_state": {
-            "os": "Ubuntu 20.04"
-        }
-    },
-    {
-        "product": {
-            "name": "Quasar Analytics Dashboard",
-            "version": "3.2.0"
-        },
-        "error_codes": ["QAD-4112"],
+        "error_codes": [
+            "TPD-1044"
+        ],
         "impact_level": "major",
         "reproduction": {
             "reproducible": true,
-            "frequency": "often"
+            "frequency": "sometimes"
+        }
+    },
+    {
+        "product": {
+            "name": "Keychron K3",
+            "version": "2"
+        },
+        "impact_level": "minor",
+        "system_state": {
+            "os": "macOS 13.4"
+        },
+        "reproduction": {
+            "reproducible": false,
+            "frequency": "once"
         }
     }
 ]
-

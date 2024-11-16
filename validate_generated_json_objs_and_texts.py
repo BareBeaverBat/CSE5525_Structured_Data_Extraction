@@ -1,7 +1,6 @@
 import json
 import os
 import statistics
-import time
 from typing import Any, Optional, Callable
 
 import anthropic
@@ -10,15 +9,16 @@ from anthropic import Anthropic
 from google.generativeai.generative_models import safety_types, GenerativeModel
 from jsonschema.validators import Draft202012Validator
 
-from constants import schemas_path, claude_objs_path, gemini_objs_path, claude_texts_path, gemini_texts_path, \
-    google_api_key_env, anthropic_api_key_env, google_model_specifier, anthropic_model_specifier, \
+from constants import schemas_path, claude_objs_path, gemini_objs_path, claude_texts_path, google_api_key_env, \
+    anthropic_api_key_env, google_model_specifier, anthropic_model_specifier, \
     google_object_reconstruction_sys_prompt, anthropic_object_reconstruction_sys_prompt, \
-    is_google_api_key_using_free_tier, anthropic_reconstruction_temp, google_reconstruction_temp, \
-    max_num_api_calls_for_retry_logic, ModelProvider
-from data_loading import load_scenarios, load_one_models_objects, load_one_models_text_passages
+    anthropic_reconstruction_temp, google_reconstruction_temp, \
+    max_num_api_calls_for_retry_logic, ModelProvider, gemini_texts_path
+from data_loading import load_scenarios, load_objects_for_one_model_and_scenario, \
+    load_text_passages_for_one_model_and_scenario
 from json_obj_comparison import evaluate_extraction
 from logging_setup import create_logger
-from misc_util_funcs import extract_json_doc_from_output, assemble_chat_msgs
+from misc_util_funcs import extract_json_doc_from_output, generate_with_model
 from trivial_util_funcs import d
 
 logger = create_logger(__name__)
@@ -27,7 +27,9 @@ def validate_generated_objects_texts(
         google_client: Optional[GenerativeModel], anthropic_client: Optional[Anthropic], schema_idx: int, schema: dict[str,Any], scenario_domain: str,
         scenario_texts_label: str, ground_truth_objects: list[Optional[dict[str, Any]]], text_passages: list[Optional[str]],
         increment_problem_counter: Callable[[bool], None]) -> float:
-    assert (google_client is not None) ^ (anthropic_client is not None)#XOR- exactly one of them should be defined0
+    #TODO modify this to also return list of indices of objects that were extracted incorrectly, their extraction
+    # analysis strings, and their extraction evaluation details
+    assert (google_client is not None) ^ (anthropic_client is not None)#XOR- exactly one of them should be defined
     was_claude_generated: bool = anthropic_client is None
     src_model_nm = "Claude" if was_claude_generated else "Gemini"
     reconstructor_model = google_model_specifier if was_claude_generated else anthropic_model_specifier
@@ -41,71 +43,14 @@ def validate_generated_objects_texts(
         if passage is None:
             extracted_objects.append(None)
             continue
-        user_prompt = d(f"""
-        Here is a JSON schema for the domain "{scenario_domain}":
-        ```json
-        {json.dumps(schema)}
-        ```
-        
-        Here is the "{scenario_texts_label}" text passage.
-        ```
-        {passage}
-        ```
-        
-        Please create a JSON object that obeys the given schema and captures all schema-relevant information that is actually present in or that is definitely implied by the text passage, following the above instructions while doing so.
-        """)
-        
-        
-        #TODO next commit, extract this inner for loop to helper method
-        ai_responses: list[str] = []
-        followup_prompts: list[str] = []
-        resp_text: str = ""
-        for retry_idx in range(max_num_api_calls_for_retry_logic):
-            assert len(ai_responses) == len(followup_prompts)
-            
-            if retry_idx > 0:
-                logger.debug(f"Retrying extraction of JSON object from the {passage_idx}'th {src_model_nm}-generated text passage for scenario {schema_idx} {scenario_domain} - {scenario_texts_label} ({retry_idx} prior attempts)")
-            
-            chat_msgs = assemble_chat_msgs(ModelProvider.GOOGLE_DEEPMIND if was_claude_generated else ModelProvider.ANTHROPIC,
-                                           user_prompt, ai_responses, followup_prompts)
-            if was_claude_generated:
-                google_resp = google_client.generate_content(chat_msgs)
-                resp_text = google_resp.text
-                if is_google_api_key_using_free_tier:
-                    time.sleep(30)#on free tier, gemini api is rate-limited to 2 requests per 60 seconds
-            else:
-                anthropic_resp = anthropic_client.messages.create(
-                    system=anthropic_object_reconstruction_sys_prompt, max_tokens=4096, temperature=anthropic_reconstruction_temp,
-                    model= anthropic_model_specifier, messages=chat_msgs)
-                resp_text = anthropic_resp.content[0].text
-        
-            curr_extracted_obj, obj_gen_analysis, json_doc_problem_explanation = \
-                extract_json_doc_from_output(resp_text, is_obj_vs_arr=True)
-            
-            error_feedback: str
-            
-            if curr_extracted_obj is None:
-                logger.warning(f"Failed to extract an object of structured data from the {passage_idx}'th {src_model_nm}-generated text passage for scenario {schema_idx} {scenario_domain} - {scenario_texts_label}\nPassage:\n{passage}\nResponse:\n{resp_text}")
-                error_feedback = f"The response was not formatted as instructed, and so the JSON document could not be extracted from it. Details:\n{json_doc_problem_explanation}"
-            else:
-                schema_validator = Draft202012Validator(schema, format_checker=Draft202012Validator.FORMAT_CHECKER)
-                if schema_validator.is_valid(curr_extracted_obj):
-                    logger.debug(f"Using {reconstructor_model}, extracted an object of structured data from the {passage_idx}'th {src_model_nm}-generated text passage for scenario {scenario_domain} - {scenario_texts_label} (case id {schema_idx}-{passage_idx}):\n{json.dumps(curr_extracted_obj, indent=4)}\nAnalysis:\n{obj_gen_analysis}")
-                    extracted_objects.append(curr_extracted_obj)
-                    extraction_analyses.append(obj_gen_analysis)
-                    break
-                else:
-                    schema_validation_errs = "; ".join([str(err) for err in schema_validator.iter_errors(curr_extracted_obj)])
-                    logger.warning(f"The object reconstructed with {reconstructor_model} from {src_model_nm}'s {passage_idx}th passage for schema index {schema_idx} failed schema validation\nSchema:{json.dumps(schema, indent=4)}\nObject:{json.dumps(curr_extracted_obj, indent=4)}\nErrors:{schema_validation_errs};\nAnalysis:\n{obj_gen_analysis}")
-                    error_feedback = f"The created object did not conform to the schema. Details:\n{schema_validation_errs}"
-            
-            ai_responses.append(resp_text)
-            followup_prompts.append(f"There were problems with that output:\n{error_feedback}\nPlease try again, following the system-prompt and original-user-prompt instructions.")
-        else:
-            logger.error(f"Failed to extract a schema-compliant object of structured data from the {passage_idx}'th {src_model_nm}-generated text passage for scenario {schema_idx} {scenario_domain} - {scenario_texts_label}, even after {max_num_api_calls_for_retry_logic} tries\nPassage:\n{passage}")
+        extracted_obj, extracted_obj_analysis = reconstruct_obj_from_passage_with_retry(
+            anthropic_client, google_client, passage, passage_idx, reconstructor_model, scenario_domain,
+            scenario_texts_label, schema, schema_idx, src_model_nm, was_claude_generated)
+        if extracted_obj is None:
             increment_problem_counter(was_claude_generated)
-            extracted_objects.append(None)
-            extraction_analyses.append(resp_text)
+        #todo move the evaluation of the extraction to here instead of separate for loop- simplifies things
+        extracted_objects.append(extracted_obj)
+        extraction_analyses.append(extracted_obj_analysis)
 
     assert len(extracted_objects) == len(ground_truth_objects)
     logger.info(f"Successfully extracted objects from {src_model_nm}-generated text passages for scenario {scenario_domain} - {scenario_texts_label}")
@@ -119,7 +64,7 @@ def validate_generated_objects_texts(
                 extraction_quality, expected_fact_recall, hallucination_count, differences = evaluate_extraction(ground_truth_obj, extracted_obj)
                 if (1.0-extraction_quality) > 1e-8:#floating point effective-equality comparison
                     logger.error(f"Extraction quality is {extraction_quality} for {src_model_nm}'s {obj_idx}th object "
-                                 f"for scenario {schema_idx} {scenario_domain} - {scenario_texts_label} (case id {schema_idx}-{obj_idx}), "
+                                 f"for scenario {schema_idx} {scenario_domain} - {scenario_texts_label} (case id {src_model_nm}-{schema_idx}-{obj_idx}), "
                                  f"expected fact recall is {expected_fact_recall}, hallucination count is {hallucination_count}, "
                                  f"and differences are {differences}\n"
                                  f"Original object:\n{json.dumps(ground_truth_obj, indent=4)}\n"
@@ -130,6 +75,62 @@ def validate_generated_objects_texts(
             extraction_qualities.append(extraction_quality)
     
     return statistics.mean(extraction_qualities)
+
+
+def reconstruct_obj_from_passage_with_retry(
+        anthropic_client: Anthropic, google_client: GenerativeModel, passage: str, passage_idx: int,
+        reconstructor_model: str, scenario_domain: str, scenario_texts_label: str, schema: dict[str, Any],
+        schema_idx: int, src_model_nm: str, was_claude_generated: bool) -> tuple[Optional[dict[str, Any]], str]:
+    user_prompt = d(f"""
+        Here is a JSON schema for the domain "{scenario_domain}":
+        ```json
+        {json.dumps(schema)}
+        ```
+        
+        Here is the "{scenario_texts_label}" text passage.
+        ```
+        {passage}
+        ```
+        
+        Please create a JSON object that obeys the given schema and captures all schema-relevant information that is actually present in or that is definitely implied by the text passage, following the above instructions while doing so.
+        """)
+    ai_responses: list[str] = []
+    followup_prompts: list[str] = []
+    resp_text: str = ""
+    for retry_idx in range(max_num_api_calls_for_retry_logic):
+        assert len(ai_responses) == len(followup_prompts)
+        
+        if retry_idx > 0:
+            logger.debug(f"Retrying extraction of JSON object from the {passage_idx}'th {src_model_nm}-generated text passage for scenario {schema_idx} {scenario_domain} - {scenario_texts_label} ({retry_idx} prior attempts)")
+        
+        resp_text = generate_with_model(
+            ModelProvider.GOOGLE_DEEPMIND if was_claude_generated else ModelProvider.ANTHROPIC, user_prompt,
+            ai_responses, followup_prompts, google_client, anthropic_client, anthropic_object_reconstruction_sys_prompt,
+            4096, anthropic_reconstruction_temp, anthropic_model_specifier)
+        
+        curr_extracted_obj, obj_gen_analysis, json_doc_problem_explanation = \
+            extract_json_doc_from_output(resp_text, is_obj_vs_arr=True)
+        error_feedback: str
+        
+        if curr_extracted_obj is None:
+            logger.warning(f"Failed to extract an object of structured data from the {passage_idx}'th {src_model_nm}-generated text passage for scenario {schema_idx} {scenario_domain} - {scenario_texts_label}\nPassage:\n{passage}\nResponse:\n{resp_text}")
+            error_feedback = f"The response was not formatted as instructed, and so the JSON document could not be extracted from it. Details:\n{json_doc_problem_explanation}"
+        else:
+            schema_validator = Draft202012Validator(schema, format_checker=Draft202012Validator.FORMAT_CHECKER)
+            if schema_validator.is_valid(curr_extracted_obj):
+                logger.debug(f"Using {reconstructor_model}, extracted an object of structured data from the {passage_idx}'th {src_model_nm}-generated text passage for scenario {scenario_domain} - {scenario_texts_label} (case id {src_model_nm}-{schema_idx}-{passage_idx}):\n{json.dumps(curr_extracted_obj, indent=4)}\nAnalysis:\n{obj_gen_analysis}")
+                return curr_extracted_obj, obj_gen_analysis
+            else:
+                schema_validation_errs = "; ".join(
+                    [str(err) for err in schema_validator.iter_errors(curr_extracted_obj)])
+                logger.warning(f"The object reconstructed with {reconstructor_model} from {src_model_nm}'s {passage_idx}th passage for schema index {schema_idx} failed schema validation\nSchema:{json.dumps(schema, indent=4)}\nObject:{json.dumps(curr_extracted_obj, indent=4)}\nErrors:{schema_validation_errs};\nAnalysis:\n{obj_gen_analysis}")
+                error_feedback = f"The created object did not conform to the schema. Details:\n{schema_validation_errs}"
+        
+        ai_responses.append(resp_text)
+        followup_prompts.append(f"There were problems with that output:\n{error_feedback}\nPlease try again, following the system-prompt and original-user-prompt instructions.")
+    
+    logger.error(f"Failed to extract a schema-compliant object of structured data from the {passage_idx}'th {src_model_nm}-generated text passage for scenario {schema_idx} {scenario_domain} - {scenario_texts_label}, even after {max_num_api_calls_for_retry_logic} tries\nPassage:\n{passage}")
+    return None, resp_text
 
 
 def main():
@@ -145,14 +146,7 @@ def main():
     
     scenario_domains, scenario_text_passage_descriptions, schemas = load_scenarios(schemas_path)
 
-    claude_objects = load_one_models_objects(claude_objs_path, schemas)
-    claude_text_passages = load_one_models_text_passages(claude_texts_path)
-    
-    gemini_objects = load_one_models_objects(gemini_objs_path, schemas)
-    gemini_text_passages = load_one_models_text_passages(gemini_texts_path)
-    
-    assert (len(scenario_domains) == len(scenario_text_passage_descriptions) == len(schemas) == len(claude_objects)
-            == len(claude_text_passages) == len(gemini_objects) == len(gemini_text_passages))
+    assert (len(scenario_domains) == len(scenario_text_passage_descriptions) == len(schemas))
     
     google_genai.configure(api_key=os.environ[google_api_key_env])
     google_generation_config={"temperature": google_reconstruction_temp, "max_output_tokens": 4096}
@@ -171,11 +165,16 @@ def main():
     extraction_qualities_for_claude_generated_texts: dict[int, float] = {}
     for was_claude_generated in [True, False]:
         for scenario_idx in range(start_schema_idx, schema_idx_excl_bound):
-            ground_truth_objects: list[dict[str, Any]] = claude_objects[scenario_idx] if was_claude_generated else gemini_objects[scenario_idx]
-            text_passages: list[str] = claude_text_passages[scenario_idx] if was_claude_generated else gemini_text_passages[scenario_idx]
             schema = schemas[scenario_idx]
             scenario_domain = scenario_domains[scenario_idx]
             scenario_texts_label = scenario_text_passage_descriptions[scenario_idx]
+    
+            ground_truth_objects: list[dict[str, Any]] = (
+                load_objects_for_one_model_and_scenario(claude_objs_path, schema, scenario_idx) if was_claude_generated
+                else load_objects_for_one_model_and_scenario(gemini_objs_path, schema, scenario_idx))
+            text_passages: list[str] = (
+                load_text_passages_for_one_model_and_scenario(claude_texts_path, scenario_idx) if was_claude_generated
+                else load_text_passages_for_one_model_and_scenario(gemini_texts_path, scenario_idx))
             
             google_client_to_use = google_client if was_claude_generated else None
             anthropic_client_to_use = None if was_claude_generated else anthropic_client

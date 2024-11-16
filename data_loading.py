@@ -3,7 +3,7 @@ import os
 import re
 from pathlib import Path
 from re import Pattern
-from typing import Tuple, List, Any
+from typing import Tuple, List, Any, Optional
 
 from jsonschema.validators import Draft202012Validator
 
@@ -45,49 +45,45 @@ def load_scenarios(scenarios_schemas_path: Path, scenario_dtls_regex: Pattern = 
     logger.info(f"Loaded {len(schemas)} scenarios")
     return scenario_domains, scenario_text_passage_descriptions, schemas
 
+def is_not_target_scenario(folder_path: Path, file_nm: str, target_scenario_idx: int) -> bool:
+    scenario_idx_match = re.match(scenario_idx_regex, file_nm)
+    if scenario_idx_match is None:
+        logger.warning(f"in folder {folder_path}, generated file {file_nm} doesn't match the expected naming convention, skipping it")
+        return True
+    scenario_idx = int(scenario_idx_match.group(1))
+    return scenario_idx != target_scenario_idx
 
-def load_one_models_objects(path_of_one_models_objects: Path, schemas: list[dict[str, Any]]) -> list[list[dict[str, Any]]]:
-    curr_model_objects: list[list[dict[str, Any]]] = []
-
+def load_objects_for_one_model_and_scenario(path_of_one_models_objects: Path, schema: dict[str, Any],
+                                            target_scenario_idx) -> Optional[list[dict[str, Any]]]:
     for obj_filenm in sorted(os.listdir(path_of_one_models_objects)):
-        scenario_idx_match = re.match(scenario_idx_regex, obj_filenm)
-        if scenario_idx_match is None:
-            logger.warning(f"in folder {path_of_one_models_objects}, generated objects file {obj_filenm} doesn't match the expected naming convention, skipping it")
+        if is_not_target_scenario(path_of_one_models_objects, obj_filenm, target_scenario_idx):
             continue
-        scenario_idx = int(scenario_idx_match.group(1))
-        assert scenario_idx == len(curr_model_objects)
-        assert scenario_idx < len(schemas)
         with open(path_of_one_models_objects / obj_filenm) as file_of_one_model_objs_for_one_schema:
-            curr_schema_curr_model_objs = json.load(file_of_one_model_objs_for_one_schema)
-        assert isinstance(curr_schema_curr_model_objs, list)
-        schema_validator = Draft202012Validator(schemas[scenario_idx], format_checker=Draft202012Validator.FORMAT_CHECKER)
-        for obj in curr_schema_curr_model_objs:
+            curr_model_objs = json.load(file_of_one_model_objs_for_one_schema)
+        assert isinstance(curr_model_objs, list)
+        schema_validator = Draft202012Validator(schema, format_checker=Draft202012Validator.FORMAT_CHECKER)
+        for obj in curr_model_objs:
             assert isinstance(obj, dict)
             schema_validator.validate(obj)
-        curr_model_objects.append(curr_schema_curr_model_objs)
+        return curr_model_objs
     
-    logger.info(f"Loaded {len(curr_model_objects)} scenarios' json objects from the model-specific folder {path_of_one_models_objects}")
-    return curr_model_objects
+    logger.warning(f"Failed to find a file of json objects for scenario {target_scenario_idx} from the model-specific folder {path_of_one_models_objects}")
+    return None
 
 
-def load_one_models_text_passages(path_of_one_models_texts: Path) -> list[list[str]]:
-    curr_model_text_passages: list[list[str]] = []
-
+def load_text_passages_for_one_model_and_scenario(path_of_one_models_texts: Path, target_scenario_idx: int
+                                                  ) -> Optional[list[str]]:
     for texts_filenm in sorted(os.listdir(path_of_one_models_texts)):
-        scenario_idx_match = re.match(scenario_idx_regex, texts_filenm)
-        if scenario_idx_match is None:
-            logger.warning(f"in folder {path_of_one_models_texts}, generated texts file {texts_filenm} doesn't match the expected naming convention, skipping it")
+        if is_not_target_scenario(path_of_one_models_texts, texts_filenm, target_scenario_idx):
             continue
-        scenario_idx = int(scenario_idx_match.group(1))
-        assert scenario_idx == len(curr_model_text_passages)
         with open(path_of_one_models_texts / texts_filenm) as file_of_one_model_texts_for_one_schema:
             curr_schema_texts = json.load(file_of_one_model_texts_for_one_schema)
         assert isinstance(curr_schema_texts, list)
-        if not all(isinstance(text, str) or text is None for text in curr_schema_texts):
+        if any(not isinstance(text, str) or text is not None for text in curr_schema_texts):
             logger.warning(f"all text passages in {texts_filenm} should be strings or null!")
         if None in curr_schema_texts:
-            logger.warning(f"there are null text passages in {path_of_one_models_texts}/{texts_filenm}, skipping it")
-        curr_model_text_passages.append(curr_schema_texts)
+            logger.warning(f"there are null text passages in {path_of_one_models_texts}/{texts_filenm}")
+        return curr_schema_texts
     
-    logger.info(f"Loaded {len(curr_model_text_passages)} scenarios' text passages from the model-specific folder {path_of_one_models_texts}")
-    return curr_model_text_passages
+    logger.warning(f"Failed to find a file of text passages for scenario {target_scenario_idx} from the model-specific folder {path_of_one_models_texts}")
+    return None
