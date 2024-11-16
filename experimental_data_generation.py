@@ -76,6 +76,7 @@ def generate_json_objs(google_client: Optional[GenerativeModel], anthropic_clien
         
         curr_generated_objects, obj_gen_analysis, json_doc_problem_explanation = \
             extract_json_doc_from_output(resp_text, is_obj_vs_arr=False)
+        valid_idxs_in_curr_round: list[int] = []
         
         error_feedback: str = ""
         schema_validation_feedback_msgs: list[str] = []
@@ -84,7 +85,8 @@ def generate_json_objs(google_client: Optional[GenerativeModel], anthropic_clien
             logger.warning(f"Failed to extract JSON objects from {model_nm} output for schema index {schema_idx}")#model response will've been printed out already by the find-json-doc-substring-of-model-output method
             error_feedback = f"The response was not formatted as instructed, and so the JSON document could not be extracted from it. Details:\n{json_doc_problem_explanation}"
         else:
-            expected_num_objs_for_curr_round = target_num_objs-len(generated_objects)
+            num_objs_b4_curr_round = len(generated_objects)
+            expected_num_objs_for_curr_round = target_num_objs-num_objs_b4_curr_round
             if len(curr_generated_objects) != expected_num_objs_for_curr_round:
                 logger.warning(f"{model_nm} generated {len(curr_generated_objects)} objects instead of the expected {expected_num_objs_for_curr_round} for schema index {schema_idx}\nResponse:{resp_text}")
                 error_feedback = f"There were not enough objects generated; only {len(curr_generated_objects)} were found when {target_num_objs-len(generated_objects)} were asked for.\n"
@@ -92,13 +94,14 @@ def generate_json_objs(google_client: Optional[GenerativeModel], anthropic_clien
             for obj_idx, obj in enumerate(curr_generated_objects):
                 if schema_validator.is_valid(obj):
                     generated_objects.append(obj)
+                    valid_idxs_in_curr_round.append(obj_idx)
                 else:
                     schema_validation_errs = "; ".join([str(err) for err in schema_validator.iter_errors(obj)])
                     logger.warning(f"{model_nm}-generated object {obj_idx} for schema index {schema_idx} failed schema validation\nSchema:{schema}\nObject:{json.dumps(obj, indent=4)}\nErrors:{schema_validation_errs}")
                     schema_validation_feedback_msgs.append(f"The {obj_idx}th object from the most recent round failed schema validation:\nHere is the object:\n{json.dumps(obj)}\nHere are the schema validation errors:\n{schema_validation_errs}")
             if schema_validation_feedback_msgs:
                 error_feedback += f"Some of the objects just generated failed to follow the schema:\n--------------\n{"\n---------------\n".join(schema_validation_feedback_msgs)}"
-            logger.debug(f"Using {model_nm}, generated {len(curr_generated_objects)} objects for scenario {scenario_domain} - {scenario_texts_label}:\n{json.dumps(curr_generated_objects, indent=4)}\n\nAnalysis of object generation:\n{obj_gen_analysis}")
+            logger.debug(f"Using {model_nm}, generated {len(curr_generated_objects)} objects for scenario {scenario_domain} - {scenario_texts_label}:\nValid indexes within this round were: {valid_idxs_in_curr_round}\n{json.dumps(curr_generated_objects, indent=4)}\n\nAnalysis of object generation:\n{obj_gen_analysis}\n\nGlobal case ids of objects: {", ".join([f"case id {schema_idx}-{new_obj_idx}" for new_obj_idx in range(num_objs_b4_curr_round, len(generated_objects))])}")
         if len(generated_objects) == target_num_objs:
             break
         
@@ -171,7 +174,7 @@ def generate_text_passages(google_client: Optional[GenerativeModel], anthropic_c
             logger.error(f"Failed to extract text passage from {model_nm} output for {obj_idx}th of {len(json_objs)} objects for schema index {schema_idx}\nResponse:{resp_text}")
             increment_problem_counter(should_use_claude)
         else:
-            logger.debug(f"Using {model_nm}, generated a text passage from the {obj_idx}'th object for scenario {scenario_domain} - {scenario_texts_label}:\n{text_passage}\n\nAnalysis of text generation:\n{text_gen_analysis}")
+            logger.debug(f"Using {model_nm}, generated a text passage from the {obj_idx}'th object for scenario {scenario_domain} - {scenario_texts_label} (case id {schema_idx}-{obj_idx}):\n{text_passage}\n\nAnalysis of text generation:\n{text_gen_analysis}")
         text_passages.append(text_passage)
     
     return text_passages

@@ -48,7 +48,7 @@ def extract_json_doc_from_output(model_output: str, is_obj_vs_arr: bool)-> (list
     rest_of_output = model_output[:json_start_idx]
     
     json_doc_end_char = "}" if is_obj_vs_arr else "]"
-    proper_doc_end_pattern = re.compile(r"}\s*```" if is_obj_vs_arr else r"]\s*```")
+    proper_doc_end_pattern = re.compile(r"\}\s*```" if is_obj_vs_arr else r"\]\s*```")
     doc_end_match = find_last_re_match(proper_doc_end_pattern, json_output, json_start_idx)
     if doc_end_match:
         json_end_idx = doc_end_match.start()+1

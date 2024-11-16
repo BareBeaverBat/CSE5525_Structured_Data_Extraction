@@ -35,6 +35,7 @@ def validate_generated_objects_texts(
     assert len(ground_truth_objects) == len(text_passages)
     
     extracted_objects: list[Optional[dict[str, Any]]] = []
+    extraction_analyses: list[str] = []
     
     for passage_idx, passage in enumerate(text_passages):
         if passage is None:
@@ -45,22 +46,22 @@ def validate_generated_objects_texts(
         ```json
         {json.dumps(schema)}
         ```
+        
         Here is the {scenario_texts_label} text passage.
         ```
         {passage}
         ```
-        Please create a JSON object that obeys the given schema and captures all schema-relevant information that is actually present in  or that is definitely implied by the text passage, following the above instructions while doing so.
+        
+        Please create a JSON object that obeys the given schema and captures all schema-relevant information that is actually present in or that is definitely implied by the text passage, following the above instructions while doing so.
         """)
         
         
         #TODO next commit, extract this inner for loop to helper method
         ai_responses: list[str] = []
         followup_prompts: list[str] = []
-        
-        extracted_object: Optional[dict[str, Any]] = None
+        resp_text: str = ""
         for retry_idx in range(max_num_api_calls_for_retry_logic):
             assert len(ai_responses) == len(followup_prompts)
-            resp_text: str
             
             if retry_idx > 0:
                 logger.debug(f"Retrying extraction of JSON object from the {passage_idx}'th {src_model_nm}-generated text passage for scenario {schema_idx} {scenario_domain} - {scenario_texts_label} ({retry_idx} prior attempts)")
@@ -89,8 +90,9 @@ def validate_generated_objects_texts(
             else:
                 schema_validator = Draft202012Validator(schema, format_checker=Draft202012Validator.FORMAT_CHECKER)
                 if schema_validator.is_valid(curr_extracted_obj):
-                    logger.debug(f"Using {reconstructor_model}, extracted an object of structured data from the {passage_idx}'th {src_model_nm}-generated text passage for scenario {scenario_domain} - {scenario_texts_label}:\n{json.dumps(curr_extracted_obj, indent=4)}\nAnalysis:\n{obj_gen_analysis}")
-                    extracted_object = curr_extracted_obj
+                    logger.debug(f"Using {reconstructor_model}, extracted an object of structured data from the {passage_idx}'th {src_model_nm}-generated text passage for scenario {scenario_domain} - {scenario_texts_label} (case id {schema_idx}-{passage_idx}):\n{json.dumps(curr_extracted_obj, indent=4)}\nAnalysis:\n{obj_gen_analysis}")
+                    extracted_objects.append(curr_extracted_obj)
+                    extraction_analyses.append(obj_gen_analysis)
                     break
                 else:
                     schema_validation_errs = "; ".join([str(err) for err in schema_validator.iter_errors(curr_extracted_obj)])
@@ -102,8 +104,8 @@ def validate_generated_objects_texts(
         else:
             logger.error(f"Failed to extract a schema-compliant object of structured data from the {passage_idx}'th {src_model_nm}-generated text passage for scenario {schema_idx} {scenario_domain} - {scenario_texts_label}, even after {max_num_api_calls_for_retry_logic} tries\nPassage:\n{passage}")
             increment_problem_counter(was_claude_generated)
-        
-        extracted_objects.append(extracted_object)
+            extracted_objects.append(None)
+            extraction_analyses.append(resp_text)
 
     assert len(extracted_objects) == len(ground_truth_objects)
     logger.info(f"Successfully extracted objects from {src_model_nm}-generated text passages for scenario {scenario_domain} - {scenario_texts_label}")
@@ -116,13 +118,14 @@ def validate_generated_objects_texts(
             if extracted_obj is not None:
                 extraction_quality, expected_fact_recall, hallucination_count, differences = evaluate_extraction(ground_truth_obj, extracted_obj)
                 if (1.0-extraction_quality) > 1e-8:#floating point effective-equality comparison
-                    logger.error(f"Extraction quality for {src_model_nm}'s {obj_idx}th object for scenario "
-                                 f"{schema_idx} {scenario_domain} - {scenario_texts_label} is {extraction_quality}, "
+                    logger.error(f"Extraction quality is {extraction_quality} for {src_model_nm}'s {obj_idx}th object "
+                                 f"for scenario {schema_idx} {scenario_domain} - {scenario_texts_label} (case id {schema_idx}-{obj_idx}), "
                                  f"expected fact recall is {expected_fact_recall}, hallucination count is {hallucination_count}, "
                                  f"and differences are {differences}\n"
                                  f"Original object:\n{json.dumps(ground_truth_obj, indent=4)}\n"
                                  f"Extracted object:\n{json.dumps(extracted_obj, indent=4)}\n"
-                                 f"Text passage:\n{text_passages[obj_idx]}")
+                                 f"Text passage:\n{text_passages[obj_idx]}\n"
+                                 f"Extraction analysis:\n{extraction_analyses[obj_idx]}")
                     increment_problem_counter(was_claude_generated)
             extraction_qualities.append(extraction_quality)
     
