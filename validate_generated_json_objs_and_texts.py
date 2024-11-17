@@ -13,7 +13,7 @@ from constants import schemas_path, claude_objs_path, gemini_objs_path, claude_t
     anthropic_api_key_env, google_model_specifier, anthropic_model_specifier, \
     google_object_reconstruction_sys_prompt, anthropic_object_reconstruction_sys_prompt, \
     anthropic_reconstruction_temp, google_reconstruction_temp, \
-    max_num_api_calls_for_retry_logic, ModelProvider, gemini_texts_path
+    max_num_api_calls_for_schema_validation_retry_logic, ModelProvider, gemini_texts_path
 from data_loading import load_scenarios, load_objects_for_one_model_and_scenario, \
     load_text_passages_for_one_model_and_scenario
 from json_obj_comparison import evaluate_extraction
@@ -133,7 +133,7 @@ def reconstruct_obj_from_passage_with_retry(
     ai_responses: list[str] = []
     followup_prompts: list[str] = []
     resp_text: str = ""
-    for retry_idx in range(max_num_api_calls_for_retry_logic):
+    for retry_idx in range(max_num_api_calls_for_schema_validation_retry_logic):
         assert len(ai_responses) == len(followup_prompts)
         
         if retry_idx > 0:
@@ -155,7 +155,9 @@ def reconstruct_obj_from_passage_with_retry(
             schema_validator = Draft202012Validator(schema, format_checker=Draft202012Validator.FORMAT_CHECKER)
             if schema_validator.is_valid(curr_extracted_obj):
                 logger.debug(f"Using {reconstructor_model}, extracted an object of structured data from the {passage_idx}'th {src_model_nm}-generated text passage for scenario {scenario_domain} - {scenario_texts_label} (case id {src_model_nm}-{schema_idx}-{passage_idx}):\n{json.dumps(curr_extracted_obj, indent=4)}\nAnalysis:\n{obj_gen_analysis}")
-                return curr_extracted_obj, obj_gen_analysis
+                all_attempts_analysis = ("\n".join([f"AI:\n{prior_ai_resp}\n\nFeedback:\n{prior_followup_prompt}" for prior_ai_resp, prior_followup_prompt in zip(ai_responses, followup_prompts)])
+                                          + ("\nAI final turn:" if ai_responses else "") + obj_gen_analysis)
+                return curr_extracted_obj, all_attempts_analysis
             else:
                 schema_validation_errs = "; ".join(
                     [str(err) for err in schema_validator.iter_errors(curr_extracted_obj)])
@@ -165,7 +167,7 @@ def reconstruct_obj_from_passage_with_retry(
         ai_responses.append(resp_text)
         followup_prompts.append(f"There were problems with that output:\n{error_feedback}\nPlease try again, following the system-prompt and original-user-prompt instructions.")
     
-    logger.error(f"Failed to extract a schema-compliant object of structured data from the {passage_idx}'th {src_model_nm}-generated text passage for scenario {schema_idx} {scenario_domain} - {scenario_texts_label}, even after {max_num_api_calls_for_retry_logic} tries\nPassage:\n{passage}")
+    logger.error(f"Failed to extract a schema-compliant object of structured data from the {passage_idx}'th {src_model_nm}-generated text passage for scenario {schema_idx} {scenario_domain} - {scenario_texts_label}, even after {max_num_api_calls_for_schema_validation_retry_logic} tries\nPassage:\n{passage}")
     return None, resp_text
 
 

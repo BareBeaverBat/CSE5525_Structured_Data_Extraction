@@ -3,6 +3,7 @@ from dataclasses import dataclass, field
 from queue import PriorityQueue
 from typing import Union
 from collections import Counter
+from us import states
 from logging_setup import create_logger
 
 logger = create_logger(__name__)
@@ -35,12 +36,59 @@ def separate_duplicates_in_primitive_list(primitive_list: list[PrimitiveJsonVal]
     unique_vals = [val for val, count in counts.items() if count == 1]
     return unique_vals, duplicates
 
-def compare_values_from_json(expected, actual, path: str) -> bool:
+def is_singular_plural_match(expected: str, actual: str) -> bool:
+    """
+    Determine whether two strings represent singular and plural forms of the same word.
+
+    Args:
+        expected (str): The expected string
+        actual (str): The actual string
+
+    Returns:
+        bool: True if the strings are singular/plural forms of the same word, False otherwise.
+    """
+    # Define common pluralization rules
+    def is_plural_of_singular(singular, plural):
+        return (
+                singular + 's' == plural
+                or (singular.endswith('y') and plural == singular[:-1] + 'ies')
+                or (singular.endswith(('s', 'sh', 'ch', 'x', 'z')) and plural == singular + 'es')
+                or (singular.endswith('f') and plural == singular[:-1] + 'ves')
+                or (singular.endswith('fe') and plural == singular[:-2] + 'ves')
+        )
+    
+    # Check both directions since either string could be singular or plural
+    return is_plural_of_singular(expected, actual) or is_plural_of_singular(actual, expected)
+
+def compare_values_from_json(expected: PrimitiveJsonVal, actual: PrimitiveJsonVal, path: str) -> bool:
     assert not isinstance(expected, dict) and not isinstance(actual, dict), f"compare_values should only be called with non-dict values; path: {path}"
     assert not isinstance(expected, list) and not isinstance(actual, list), f"compare_values should only be called with non-list values; path: {path}"
-    if isinstance(expected, str) and isinstance(actual, str):
-        return expected.lower() == actual.lower()
-    return expected == actual
+    if expected == actual:
+        return True
+    is_expected_str = isinstance(expected, str)
+    is_actual_str = isinstance(actual, str)
+    if is_expected_str and is_actual_str:
+        lc_expected = expected.lower()
+        lc_actual = actual.lower()
+        if lc_expected == lc_actual:
+            return True
+        if is_singular_plural_match(lc_expected, lc_actual):
+            logger.debug(f"expected and actual values at path {path} were singular/plural matches: {expected} and {actual}")
+            return True
+        if states.lookup(expected) == states.lookup(actual):
+            logger.debug(f"expected and actual values at path {path} were state names: {expected} and {actual}")
+            return True
+    elif (isinstance(expected, int) and is_actual_str) or (is_expected_str and isinstance(actual, int)):
+        curr_str_val: str = actual if is_actual_str else expected
+        curr_int_val: int = expected if is_actual_str else actual
+        try:
+            if int(curr_str_val) == curr_int_val:
+                logger.debug(f"expected and actual values at path {path} were effectively equal after parsing int from str: {expected} and {actual}")
+                return True
+        except ValueError:
+            pass
+    
+    return False
 
 def compare_lists_from_json(expected_list: list, actual_list: list, path:str) -> (int, int, list[str]):
     """

@@ -18,7 +18,7 @@ from constants import schemas_path, anthropic_api_key_env, google_model_specifie
     anthropic_text_passage_generation_sys_prompt, anthropic_obj_gen_group_size, google_obj_gen_group_size, \
     google_generation_temp, anthropic_generation_temp, google_reconstruction_temp, \
     google_object_reconstruction_sys_prompt, claude_objs_path, gemini_objs_path, gemini_texts_path, claude_texts_path, \
-    google_api_key_env, max_num_api_calls_for_retry_logic, ModelProvider
+    google_api_key_env, max_num_api_calls_for_schema_validation_retry_logic, ModelProvider
 from data_loading import load_scenarios, load_objects_for_one_model_and_scenario, \
     load_text_passages_for_one_model_and_scenario
 from logging_setup import create_logger
@@ -69,7 +69,7 @@ def generate_json_objs(google_client: Optional[GenerativeModel], anthropic_clien
     followup_prompts: list[str] = []
     resp_text: str = ""
     
-    for retry_idx in range(max_num_api_calls_for_retry_logic):
+    for retry_idx in range(max_num_api_calls_for_schema_validation_retry_logic):
         assert len(ai_responses) == len(followup_prompts)
         obj_gen_analysis: str
         
@@ -246,11 +246,17 @@ def main():
     extraction_qualities_for_gemini_generated_texts: dict[int, float] = {}
     extraction_qualities_for_claude_generated_texts: dict[int, float] = {}
     
-    validation_failure_reports: list[str] = []
-    
     #teammates- you can temporarily edit these 2 numbers if you only want to work on certain schemas
     first_scenario_idx = 0
     schema_idx_excl_bound = 5#len(schemas)#TODO try running with this set to just 5
+    validation_report_filenm = f"validation_failures_report_{run_start_ts.isoformat()
+                                    .replace(":", "_").replace(".", "_")}.md"
+    with open(validation_report_filenm, "w") as validation_failures_file:
+        validation_failures_file.write(f"Validation failures report for data generation run starting at {run_start_ts.isoformat()}  \n"
+                                       f"Going from scenario {first_scenario_idx} ({scenario_domains[first_scenario_idx]} - {scenario_text_passage_descriptions[first_scenario_idx]})  \n"
+                                       f"through scenario {schema_idx_excl_bound-1} ({scenario_domains[schema_idx_excl_bound-1]} - {scenario_text_passage_descriptions[schema_idx_excl_bound-1]})  \n"
+                                       f"Google model specifier: {google_model_specifier}  \nAnthropic model specifier: {anthropic_model_specifier}\n\n")
+    
     for should_generate_with_claude in [True, False]:
         src_model_nm = "Claude" if should_generate_with_claude else "Gemini"
         for scenario_idx in range(first_scenario_idx, schema_idx_excl_bound):
@@ -259,9 +265,9 @@ def main():
             scenario_texts_label = scenario_text_passage_descriptions[scenario_idx]
             
             curr_objs_folder = claude_objs_path if should_generate_with_claude else gemini_objs_path
-            curr_case_objs_path = curr_objs_folder / f"{scenario_idx}_{scenario_domain}__{scenario_texts_label}__objs.json"
+            curr_case_objs_path = curr_objs_folder / (f"{scenario_idx}_{scenario_domain}__{scenario_texts_label}__objs.json".replace(" ", "_"))
             curr_texts_folder = claude_texts_path if should_generate_with_claude else gemini_texts_path
-            curr_case_texts_path = curr_texts_folder / f"{scenario_idx}_{scenario_domain}__{scenario_texts_label}__texts.json"
+            curr_case_texts_path = curr_texts_folder / (f"{scenario_idx}_{scenario_domain}__{scenario_texts_label}__texts.json".replace(" ", "_"))
             
             json_objs: list[dict[str,Any]] = load_objects_for_one_model_and_scenario(curr_objs_folder, schema,
                                                                                      scenario_idx) or []
@@ -270,7 +276,9 @@ def main():
             assert len(json_objs) == len(text_passages)
             num_objs_needed_for_case = (anthropic_obj_gen_group_size if should_generate_with_claude
                                         else google_obj_gen_group_size) - len(json_objs)
-        
+            if num_objs_needed_for_case <= 0:
+                logger.info(f"Skipping generation of objects and text passages for scenario {scenario_idx} \"{scenario_domain}\" - \"{scenario_texts_label}\" because the needed number of objects has already been generated")
+                continue
             google_client_to_use_for_obj_gen = None if should_generate_with_claude else google_client_for_obj_gen
             google_client_to_use_for_text_gen = None if should_generate_with_claude else google_client_for_text_gen
             google_client_to_use_for_reconstruction = google_client_for_reconstruction if should_generate_with_claude else None
@@ -308,22 +316,23 @@ def main():
             with open(curr_case_texts_path, "w") as texts_file:
                 json.dump(text_passages, texts_file, indent=4)
             
-            for failed_obj_idx in val_failed_objs:
-                validation_failure_reports.append(
-                    f"# Object {failed_obj_idx} for scenario {scenario_idx} \"{scenario_domain}\" - \"{scenario_texts_label}\" failed validation:\n"
-                    f"case id {src_model_nm}-{scenario_idx}-{failed_obj_idx}\nNote that object index is within current run\n"
-                    f"## New object:\n```json\n{json.dumps(new_json_objs[failed_obj_idx], indent=4)}\n```\n"
-                    f"## Extracted object:\n```json\n{json.dumps(val_failed_objs[failed_obj_idx], indent=4)}\n```\n"
-                    f"## Extraction Evaluation\n"
-                    f"Extraction quality: {val_failed_extraction_qualities[failed_obj_idx]:.4f} ;"
-                    f"Fact recall: {val_failed_fact_recalls[failed_obj_idx]:.4f}; "
-                    f"Hallucination count: {val_failed_hallucination_counts[failed_obj_idx]}\n"
-                    f"Extraction differences: {val_failed_extraction_differences[failed_obj_idx]}"
-                    f"## Text passage:\n{new_text_passages[failed_obj_idx]}\n"
-                    f"## Analysis of object generation:\n{obj_gen_analyses[new_obj_to_analysis_map[failed_obj_idx]]}\n"
-                    f"## Analysis of text generation:\n{text_gen_analyses[failed_obj_idx]}\n"
-                    f"## Analysis of extraction:\n{val_failed_extraction_analyses[failed_obj_idx]}"
-                )
+            with open(validation_report_filenm, "a", encoding="utf-8") as validation_failures_file:
+                for failed_obj_idx in val_failed_objs:
+                    validation_failures_file.write("\n----------------------------\n----------------------------\n\n"
+                        f"# Object {failed_obj_idx} for scenario {scenario_idx} \"{scenario_domain}\" - \"{scenario_texts_label}\" failed validation:\n"
+                        f"case id {src_model_nm}-{scenario_idx}-{failed_obj_idx}  \nNote that object index is within current run\n"
+                        f"## New object:\n```json\n{json.dumps(new_json_objs[failed_obj_idx], indent=4)}\n```\n"
+                        f"## Extracted object:\n```json\n{json.dumps(val_failed_objs[failed_obj_idx], indent=4)}\n```\n"
+                        f"## Extraction Evaluation\n"
+                        f"Extraction quality: {val_failed_extraction_qualities[failed_obj_idx]:.4f} ;"
+                        f"Fact recall: {val_failed_fact_recalls[failed_obj_idx]:.4f}; "
+                        f"Hallucination count: {val_failed_hallucination_counts[failed_obj_idx]}  \n"
+                        f"Extraction differences: {val_failed_extraction_differences[failed_obj_idx]}\n"
+                        f"## Text passage:\n{new_text_passages[failed_obj_idx]}\n"
+                        f"## Analysis of object generation:\n{obj_gen_analyses[new_obj_to_analysis_map[failed_obj_idx]]}\n"
+                        f"## Analysis of text generation:\n{text_gen_analyses[failed_obj_idx]}\n"
+                        f"## Analysis of extraction:\n{val_failed_extraction_analyses[failed_obj_idx]}"
+                    )
             
     num_objs_generated_with_gemini = (schema_idx_excl_bound-first_scenario_idx) * google_obj_gen_group_size
     num_objs_generated_with_claude = (schema_idx_excl_bound-first_scenario_idx) * anthropic_obj_gen_group_size
@@ -340,11 +349,6 @@ def main():
         logger.info(f"Extraction quality for scenario {scenario_domains[scenario_idx]} - {scenario_text_passage_descriptions[scenario_idx]}:\n"
                     f"from texts generated by Claude: {extraction_qualities_for_claude_generated_texts[scenario_idx]};\n"
                     f"from texts generated by Gemini: {extraction_qualities_for_gemini_generated_texts[scenario_idx]}")
-    
-    with open(f"validation_failures_report_{run_start_ts.isoformat()}.md", "w") as validation_failures_file:
-        validation_failures_file.write(
-            "\n\n----------------------------\n----------------------------\n\n".join(validation_failure_reports))
-    
 
 if __name__ == "__main__":
     main()

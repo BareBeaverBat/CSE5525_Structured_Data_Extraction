@@ -27,10 +27,13 @@ google_generation_temp = anthropic_generation_temp
 anthropic_reconstruction_temp = 0.0
 google_reconstruction_temp = anthropic_reconstruction_temp
 
-anthropic_obj_gen_group_size = 10#20 TODO switch to 20 once done with prompt tweaking
+anthropic_obj_gen_group_size = 15#20 TODO switch to 20 once done with prompt tweaking
 google_obj_gen_group_size = anthropic_obj_gen_group_size
 
-max_num_api_calls_for_retry_logic = 3
+max_num_api_calls_for_schema_validation_retry_logic = 3
+
+max_num_api_calls_for_anthropic_overloaded_retry_logic = 5
+
 
 class ModelProvider(Enum):
     ANTHROPIC = "claude"
@@ -539,6 +542,7 @@ You should start your response by discussing the typical structure of the given 
 You should then analyze what fields from the schema are missing from the given object and how you can ensure that the text passage doesn't contain any information relevant to those missing fields.
 You would then write a first draft of the text document (NOT in a markdown code block).
 Please then review it to double check for any details that are relevant to the schema but not present in the json object. This includes cases where the text document says something that implies the value for a schema key is `null` or `[]` while the json object simply didn't mention that key from the schema.
+Please also review it to ensure that every detail in the json object is included without loss of information in the text passage.
 Finally, you would provide the final (possibly revised) free-text document inside a markdown code block to separate it from your analysis of the problem.
 
 Partial examples of good responses (omitting CoT analysis for brevity):
@@ -717,6 +721,7 @@ You should start your response by discussing the typical structure of the given 
 You should then analyze what fields from the schema are missing from the given object and how you can ensure that the text passage doesn't contain any information relevant to those missing fields.
 You would then write a first draft of the text document (NOT in a markdown code block).
 Please then review it to double check for any details that are relevant to the schema but not present in the json object. This includes cases where the text document says something that implies the value for a schema key is `null` or `[]` while the json object simply didn't mention that key from the schema.
+Please also review it to ensure that every detail in the json object is included without loss of information in the text passage.
 Finally, you would provide the final (possibly revised) free-text document inside a markdown code block to separate it from your analysis of the problem.
 
 Partial examples of good responses (omitting CoT analysis for brevity):
