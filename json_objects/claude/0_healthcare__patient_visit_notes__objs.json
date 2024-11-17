@@ -114,5 +114,288 @@
         "family_history_flags": [
             "asthma"
         ]
+    },
+    {
+        "symptoms": [
+            {
+                "name": "joint pain",
+                "duration_days": 14,
+                "severity": 7,
+                "frequency": "intermittent"
+            },
+            {
+                "name": "fatigue",
+                "duration_days": 10,
+                "severity": 5,
+                "frequency": "constant"
+            }
+        ],
+        "medications": [
+            {
+                "name": "naproxen",
+                "dosage": "500mg",
+                "frequency": "twice daily"
+            },
+            {
+                "name": "vitamin D3",
+                "dosage": "2000 IU",
+                "frequency": "daily"
+            }
+        ],
+        "allergies": [
+            "shellfish",
+            "ibuprofen",
+            "wool"
+        ],
+        "family_history_flags": [
+            "diabetes",
+            "heart_disease",
+            "cancer"
+        ]
+    },
+    {
+        "medications": [
+            {
+                "name": "levothyroxine"
+            }
+        ]
+    },
+    {
+        "symptoms": [
+            {
+                "name": "seasonal allergies",
+                "frequency": "intermittent"
+            }
+        ],
+        "allergies": [
+            "ragweed",
+            "birch pollen",
+            "dust mites",
+            "cat dander"
+        ],
+        "family_history_flags": [
+            "asthma",
+            "other",
+            "hypertension"
+        ]
+    },
+    {
+        "symptoms": [
+            {
+                "name": "acid reflux",
+                "frequency": "occasional"
+            }
+        ],
+        "medications": [
+            {
+                "name": "omeprazole",
+                "dosage": "20mg",
+                "frequency": "daily"
+            },
+            {
+                "name": "ranitidine",
+                "frequency": "as needed"
+            },
+            {
+                "name": "calcium carbonate",
+                "dosage": "500mg"
+            }
+        ]
+    },
+    {
+        "symptoms": [
+            {
+                "name": "joint pain",
+                "duration_days": 14,
+                "severity": 7,
+                "frequency": "constant"
+            },
+            {
+                "name": "fatigue",
+                "severity": 5,
+                "frequency": "intermittent"
+            }
+        ],
+        "medications": [
+            {
+                "name": "naproxen",
+                "dosage": "500mg",
+                "frequency": "twice daily"
+            },
+            {
+                "name": "vitamin D3",
+                "dosage": "2000 IU",
+                "frequency": "daily"
+            }
+        ],
+        "allergies": [
+            "shellfish",
+            "ibuprofen"
+        ],
+        "family_history_flags": [
+            "diabetes",
+            "heart_disease"
+        ]
+    },
+    {
+        "medications": [
+            {
+                "name": "levothyroxine",
+                "dosage": "75mcg",
+                "frequency": "daily"
+            },
+            {
+                "name": "sertraline",
+                "dosage": "50mg",
+                "frequency": "daily"
+            },
+            {
+                "name": "lisinopril",
+                "dosage": "10mg",
+                "frequency": "daily"
+            }
+        ],
+        "family_history_flags": [
+            "hypertension",
+            "diabetes",
+            "cancer"
+        ]
+    },
+    {
+        "allergies": [
+            "penicillin",
+            "sulfa drugs",
+            "latex",
+            "peanuts"
+        ],
+        "family_history_flags": [
+            "asthma",
+            "other"
+        ]
+    },
+    {
+        "medications": [
+            {
+                "name": "metformin",
+                "dosage": "1000mg",
+                "frequency": "twice daily with meals"
+            },
+            {
+                "name": "glipizide",
+                "dosage": "5mg",
+                "frequency": "before breakfast"
+            },
+            {
+                "name": "januvia",
+                "dosage": "100mg",
+                "frequency": "daily"
+            },
+            {
+                "name": "jardiance",
+                "dosage": "25mg",
+                "frequency": "daily"
+            }
+        ],
+        "allergies": [
+            "contrast dye"
+        ]
+    },
+    {
+        "symptoms": [
+            {
+                "name": "lower back pain",
+                "severity": 8,
+                "frequency": "intermittent"
+            },
+            {
+                "name": "numbness in left leg",
+                "frequency": "occasional"
+            }
+        ],
+        "family_history_flags": [
+            "other"
+        ]
+    },
+    {
+        "symptoms": [
+            {
+                "name": "lower back pain",
+                "duration_days": 1,
+                "severity": 9,
+                "frequency": "first_occurrence"
+            }
+        ],
+        "medications": [
+            {
+                "name": "cyclobenzaprine",
+                "dosage": "10mg",
+                "frequency": "three times daily"
+            }
+        ]
+    },
+    {
+        "symptoms": [
+            {
+                "name": "migraine",
+                "duration_days": 3,
+                "severity": 8,
+                "frequency": "intermittent"
+            },
+            {
+                "name": "nausea",
+                "duration_days": 2,
+                "frequency": "occasional"
+            },
+            {
+                "name": "photophobia",
+                "severity": 7,
+                "frequency": "intermittent"
+            }
+        ]
+    },
+    {
+        "symptoms": [
+            {
+                "name": "chronic fatigue",
+                "duration_days": 45,
+                "severity": 7,
+                "frequency": "constant"
+            },
+            {
+                "name": "joint pain",
+                "duration_days": 30,
+                "severity": 6,
+                "frequency": "intermittent"
+            },
+            {
+                "name": "muscle weakness",
+                "duration_days": 14,
+                "severity": 5,
+                "frequency": "constant"
+            }
+        ],
+        "medications": [
+            {
+                "name": "duloxetine",
+                "dosage": "30mg",
+                "frequency": "twice daily"
+            },
+            {
+                "name": "naproxen",
+                "dosage": "500mg",
+                "frequency": "as needed"
+            }
+        ],
+        "allergies": [
+            "ibuprofen",
+            "shellfish",
+            "peanuts"
+        ],
+        "family_history_flags": [
+            "diabetes",
+            "heart_disease",
+            "cancer"
+        ]
     }
+
 ]
