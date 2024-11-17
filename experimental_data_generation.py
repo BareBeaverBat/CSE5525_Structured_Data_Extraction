@@ -248,7 +248,7 @@ def main():
     
     #teammates- you can temporarily edit these 2 numbers if you only want to work on certain schemas
     first_scenario_idx = 0
-    schema_idx_excl_bound = 5#len(schemas)#TODO try running with this set to just 5
+    schema_idx_excl_bound = len(schemas)
     validation_report_filenm = f"validation_failures_report_{run_start_ts.isoformat()
                                     .replace(":", "_").replace(".", "_")}.md"
     with open(validation_report_filenm, "w") as validation_failures_file:
@@ -256,6 +256,14 @@ def main():
                                        f"Going from scenario {first_scenario_idx} ({scenario_domains[first_scenario_idx]} - {scenario_text_passage_descriptions[first_scenario_idx]})  \n"
                                        f"through scenario {schema_idx_excl_bound-1} ({scenario_domains[schema_idx_excl_bound-1]} - {scenario_text_passage_descriptions[schema_idx_excl_bound-1]})  \n"
                                        f"Google model specifier: {google_model_specifier}  \nAnthropic model specifier: {anthropic_model_specifier}\n\n")
+    
+    
+    target_num_objs_for_gemini_by_scenario: dict[int,int] = {}
+    target_num_objs_for_claude_by_scenario: dict[int,int] = {}
+    num_objs_generated_with_gemini_by_scenario: dict[int,int] = {}
+    num_objs_generated_with_claude_by_scenario: dict[int,int] = {}
+    num_valid_objs_generated_with_gemini_by_scenario: dict[int,int] = {}
+    num_valid_objs_generated_with_claude_by_scenario: dict[int,int] = {}
     
     for should_generate_with_claude in [True, False]:
         src_model_nm = "Claude" if should_generate_with_claude else "Gemini"
@@ -279,6 +287,12 @@ def main():
             if num_objs_needed_for_case <= 0:
                 logger.info(f"Skipping generation of objects and text passages for scenario {scenario_idx} \"{scenario_domain}\" - \"{scenario_texts_label}\" because the needed number of objects has already been generated")
                 continue
+            
+            if should_generate_with_claude:
+                target_num_objs_for_claude_by_scenario[scenario_idx] = num_objs_needed_for_case
+            else:
+                target_num_objs_for_gemini_by_scenario[scenario_idx] = num_objs_needed_for_case
+            
             google_client_to_use_for_obj_gen = None if should_generate_with_claude else google_client_for_obj_gen
             google_client_to_use_for_text_gen = None if should_generate_with_claude else google_client_for_text_gen
             google_client_to_use_for_reconstruction = google_client_for_reconstruction if should_generate_with_claude else None
@@ -290,6 +304,13 @@ def main():
             new_text_passages, text_gen_analyses = generate_text_passages(
                 google_client_to_use_for_text_gen, anthropic_client_to_use_for_gen, scenario_idx, schema,
                 scenario_domain, scenario_texts_label, new_json_objs, increment_text_gen_problem_count)
+            
+            num_objs_and_texts_generated = sum([1 for text in new_text_passages if text is not None])
+            if should_generate_with_claude:
+                num_objs_generated_with_claude_by_scenario[scenario_idx] = num_objs_and_texts_generated
+            else:
+                num_objs_generated_with_gemini_by_scenario[scenario_idx] = num_objs_and_texts_generated
+            
             logger.info(f"Starting auto-validation of {num_objs_needed_for_case} {src_model_nm}-generated objects and text passages for scenario {scenario_idx} \"{scenario_domain}\" - \"{scenario_texts_label}\"")
             (avg_extraction_quality_for_case, val_failed_objs, val_failed_extraction_analyses,
              val_failed_extraction_qualities, val_failed_fact_recalls, val_failed_hallucination_counts,
@@ -316,6 +337,11 @@ def main():
             with open(curr_case_texts_path, "w") as texts_file:
                 json.dump(text_passages, texts_file, indent=4)
             
+            if should_generate_with_claude:
+                num_valid_objs_generated_with_claude_by_scenario[scenario_idx] = len(validation_passed_new_json_objs)
+            else:
+                num_valid_objs_generated_with_gemini_by_scenario[scenario_idx] = len(validation_passed_new_json_objs)
+            
             with open(validation_report_filenm, "a", encoding="utf-8") as validation_failures_file:
                 for failed_obj_idx in val_failed_objs:
                     validation_failures_file.write("\n----------------------------\n----------------------------\n\n"
@@ -333,22 +359,29 @@ def main():
                         f"## Analysis of text generation:\n{text_gen_analyses[failed_obj_idx]}\n"
                         f"## Analysis of extraction:\n{val_failed_extraction_analyses[failed_obj_idx]}"
                     )
-            
-    num_objs_generated_with_gemini = (schema_idx_excl_bound-first_scenario_idx) * google_obj_gen_group_size
-    num_objs_generated_with_claude = (schema_idx_excl_bound-first_scenario_idx) * anthropic_obj_gen_group_size
-    logger.info(f"\nProblems encountered with Gemini (out of {num_objs_generated_with_gemini} objects & as many passages):\n"
+    target_num_objs_for_gemini = sum(target_num_objs_for_gemini_by_scenario.values())
+    target_num_objs_for_claude = sum(target_num_objs_for_claude_by_scenario.values())
+    num_objs_generated_with_gemini =sum(num_objs_generated_with_gemini_by_scenario.values())
+    num_objs_generated_with_claude = sum(num_objs_generated_with_claude_by_scenario.values())
+    num_valid_objs_generated_with_gemini =sum(num_valid_objs_generated_with_gemini_by_scenario.values())
+    num_valid_objs_generated_with_claude = sum(num_valid_objs_generated_with_claude_by_scenario.values())
+    logger.info(f"\nProblems encountered with Gemini (out of {num_objs_generated_with_gemini} actually-generated objects & as many passages, where the goal had been {target_num_objs_for_gemini}):\n"
                 f"object generation: {gemini_obj_gen_problem_count}; text passage generation: {gemini_text_gen_problem_count}\n"
-                f"Problems encountered with Claude (out of {num_objs_generated_with_claude} objects & as many passages):\n"
+                f"Problems encountered with Claude (out of {num_objs_generated_with_claude} actually-generated objects & as many passages, where the goal had been {target_num_objs_for_claude}):\n"
                 f"object generation: {claude_obj_gen_problem_count}; text passage generation: {claude_text_gen_problem_count}\n"
                 f"Problems encountered with object reconstruction from text passages:\n"
                 f"When Claude was extracting from Gemini-generated text passages: {reconstruction_from_gemini_texts_problem_count};\n"
                 f"When Gemini was extracting from Claude-generated text passages: {reconstruction_from_claude_texts_problem_count}\n"
                 f"Extraction qualities averaged across scenarios for texts made by Gemini: {statistics.mean(list(extraction_qualities_for_gemini_generated_texts.values()))};\n"
-                f"Extraction qualities averaged across scenarios for texts made by Claude: {statistics.mean(list(extraction_qualities_for_claude_generated_texts.values()))}")
+                f"Extraction qualities averaged across scenarios for texts made by Claude: {statistics.mean(list(extraction_qualities_for_claude_generated_texts.values()))}\n"
+                f"Number of valid objects generated by Gemini: {num_valid_objs_generated_with_gemini}; "
+                f"Number of valid objects generated by Claude: {num_valid_objs_generated_with_claude}")
     for scenario_idx in range(first_scenario_idx, schema_idx_excl_bound):
         logger.info(f"Extraction quality for scenario {scenario_domains[scenario_idx]} - {scenario_text_passage_descriptions[scenario_idx]}:\n"
                     f"from texts generated by Claude: {extraction_qualities_for_claude_generated_texts[scenario_idx]};\n"
-                    f"from texts generated by Gemini: {extraction_qualities_for_gemini_generated_texts[scenario_idx]}")
+                    f"from texts generated by Gemini: {extraction_qualities_for_gemini_generated_texts[scenario_idx]}\n"
+                    f"Number of valid objects generated by Gemini: {num_valid_objs_generated_with_gemini_by_scenario[scenario_idx]} out of {num_objs_generated_with_gemini_by_scenario[scenario_idx]} total objects generated by Gemini for that scenario (and where the target number of objects was {target_num_objs_for_gemini_by_scenario[scenario_idx]})\n"
+                    f"Number of valid objects generated by Claude: {num_valid_objs_generated_with_claude_by_scenario[scenario_idx]} out of {num_objs_generated_with_claude_by_scenario[scenario_idx]} total objects generated by Claude for that scenario (and where the target number of objects was {target_num_objs_for_claude_by_scenario[scenario_idx]})")
 
 if __name__ == "__main__":
     main()

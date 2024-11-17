@@ -137,7 +137,7 @@ def generate_with_model(model_choice: ModelProvider, initial_prompt: str, ai_res
                         followup_prompts: list[str], google_client: GenerativeModel, anthropic_client: Anthropic,
                         anthropic_sys_prompt: str, anthropic_max_tokens: int, anthropic_temp: float,
                         anthropic_model_choice: str) -> str:
-    resp_text: str
+    resp_text: str = "Model failed to generate a response"
     
     if model_choice == ModelProvider.ANTHROPIC:
         chat_msgs = [{"role": "user", "content": initial_prompt}]
@@ -181,11 +181,15 @@ def generate_with_model(model_choice: ModelProvider, initial_prompt: str, ai_res
         for attempt_idx in range(max_num_api_calls_for_google_refusals_retry_logic):
             google_resp = google_client.generate_content(
                 chat_msgs, generation_config=None if temp_to_use is None else google_genai.GenerationConfig(temperature=temp_to_use))
-            if google_resp.parts:
+            if google_resp.candidates and google_resp.parts:
                 resp_text = google_resp.text
                 break
             else:
-                logger.warning(f"Google API call failed to return any parts; prompt feedback was {google_resp.prompt_feedback}; retrying (attempt {attempt_idx+1}/{max_num_api_calls_for_google_refusals_retry_logic})")
+                logger.warning(f"Google API call failed to return any parts; finish reason was "
+                               f"{google_resp.candidates[0].finish_reason if google_resp.candidates else "not provided because no candidate completion"}; "
+                               f"prompt was rejected for reason {google_resp.prompt_feedback.block_reason}; safety ratings: "
+                               f"{"; ".join([f"(categ={safety_rating.category}, harm_prob={safety_rating.probability}, caused_block={safety_rating.blocked})" for safety_rating in google_resp.prompt_feedback.safety_ratings])}; "
+                               f"retrying (attempt {attempt_idx+1}/{max_num_api_calls_for_google_refusals_retry_logic})")
                 if temp_to_use is None:
                     temp_to_use = 0.3
                 else:
