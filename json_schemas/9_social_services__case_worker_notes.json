@@ -1,0 +1,94 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+        "assistance_needs": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "category": {
+                        "type": "string",
+                        "enum": [
+                            "housing",
+                            "food",
+                            "healthcare",
+                            "childcare",
+                            "transportation",
+                            "employment",
+                            "education",
+                            "mental_health",
+                            "substance_treatment",
+                            "legal"
+                        ]
+                    },
+                    "urgency": {
+                        "type": "string",
+                        "enum": ["immediate", "short_term", "ongoing"]
+                    }
+                },
+                "required": ["category"]
+            }
+        },
+        "household": {
+            "type": "object",
+            "properties": {
+                "total_members": { "type": "integer" },
+                "composition": {
+                    "type": "object",
+                    "properties": {
+                        "adults": { "type": "integer" },
+                        "children_under_18": { "type": "integer" },
+                        "seniors_over_65": { "type": "integer" }
+                    }
+                },
+                "housing_status": {
+                    "type": "string",
+                    "enum": ["stable", "temporary", "at_risk", "homeless"]
+                }
+            }
+        },
+        "income_sources": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "enum": [
+                    "employment",
+                    "disability",
+                    "social_security",
+                    "pension",
+                    "unemployment",
+                    "snap",
+                    "tanf",
+                    "child_support",
+                    "none"
+                ]
+            }
+        },
+        "risk_factors": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "enum": [
+                            "domestic_violence",
+                            "eviction_risk",
+                            "utility_shutoff",
+                            "medical_crisis",
+                            "food_insecurity",
+                            "isolation",
+                            "transport_barrier"
+                        ]
+                    },
+                    "timeframe": {
+                        "type": "string",
+                        "enum": ["current", "imminent", "potential"]
+                    }
+                },
+                "required": ["type"]
+            }
+        }
+    }
+}

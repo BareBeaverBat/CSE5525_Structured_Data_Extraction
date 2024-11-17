@@ -3,6 +3,7 @@ from dataclasses import dataclass, field
 from queue import PriorityQueue
 from typing import Union
 from collections import Counter
+from us import states
 from logging_setup import create_logger
 
 logger = create_logger(__name__)
@@ -35,12 +36,61 @@ def separate_duplicates_in_primitive_list(primitive_list: list[PrimitiveJsonVal]
     unique_vals = [val for val, count in counts.items() if count == 1]
     return unique_vals, duplicates
 
-def compare_values_from_json(expected, actual, path: str) -> bool:
+def is_singular_plural_match(expected: str, actual: str) -> bool:
+    """
+    Determine whether two strings represent singular and plural forms of the same word.
+
+    Args:
+        expected (str): The expected string
+        actual (str): The actual string
+
+    Returns:
+        bool: True if the strings are singular/plural forms of the same word, False otherwise.
+    """
+    # Define common pluralization rules
+    def is_plural_of_singular(singular, plural):
+        return (
+                singular + 's' == plural
+                or (singular.endswith('y') and plural == singular[:-1] + 'ies')
+                or (singular.endswith(('s', 'sh', 'ch', 'x', 'z')) and plural == singular + 'es')
+                or (singular.endswith('f') and plural == singular[:-1] + 'ves')
+                or (singular.endswith('fe') and plural == singular[:-2] + 'ves')
+        )
+    
+    # Check both directions since either string could be singular or plural
+    return is_plural_of_singular(expected, actual) or is_plural_of_singular(actual, expected)
+
+def compare_values_from_json(expected: PrimitiveJsonVal, actual: PrimitiveJsonVal, path: str) -> bool:
     assert not isinstance(expected, dict) and not isinstance(actual, dict), f"compare_values should only be called with non-dict values; path: {path}"
     assert not isinstance(expected, list) and not isinstance(actual, list), f"compare_values should only be called with non-list values; path: {path}"
-    if isinstance(expected, str) and isinstance(actual, str):
-        return expected.lower() == actual.lower()
-    return expected == actual
+    if expected == actual:
+        return True
+    is_expected_str = isinstance(expected, str)
+    is_actual_str = isinstance(actual, str)
+    if is_expected_str and is_actual_str:
+        lc_expected = expected.lower()
+        lc_actual = actual.lower()
+        if lc_expected == lc_actual:
+            return True
+        if is_singular_plural_match(lc_expected, lc_actual):
+            logger.debug(f"expected and actual values at path {path} were singular/plural matches: {expected} and {actual}")
+            return True
+        if states.lookup(expected) == states.lookup(actual):
+            logger.debug(f"expected and actual values at path {path} were state names: {expected} and {actual}")
+            return True
+    elif (isinstance(expected, int) and is_actual_str) or (is_expected_str and isinstance(actual, int)):
+        curr_str_val: str = actual if is_actual_str else expected
+        curr_int_val: int = expected if is_actual_str else actual
+        try:
+            if int(curr_str_val) == curr_int_val:
+                logger.debug(f"expected and actual values at path {path} were effectively equal after parsing int from str: {expected} and {actual}")
+                return True
+        except ValueError:
+            pass
+    elif (isinstance(expected, float) or isinstance(actual, float)) and isinstance(expected, (int, float)) and isinstance(actual, (int, float)):
+        if abs(expected - actual) < 1e-6:
+            return True
+    return False
 
 def compare_lists_from_json(expected_list: list, actual_list: list, path:str) -> (int, int, list[str]):
     """
@@ -100,7 +150,7 @@ def compare_lists_from_json(expected_list: list, actual_list: list, path:str) ->
                     actual_dup_idxs_matched_to_missed_nondup.add(j)
                     total_num_correctly_extracted_pieces_of_info += 1
                     total_num_hallucinated_pieces_of_info += actual_dup_val_count - 1
-                    differences.append(f"Expected value {missed_nondup_val} was present in the actual array but had {actual_dup_val_count} copies in the actual array (rather than 1)")
+                    differences.append(f"Expected value {missed_nondup_val} was present in the actual array at path {path} but had {actual_dup_val_count} copies in the actual array (rather than 1)")
                     break
         
         missed_nondup_vals = [missed_nondup_vals[i] for i in range(len(missed_nondup_vals)) if i not in missed_nondup_idxs_matched_to_actual_dup]
@@ -119,7 +169,7 @@ def compare_lists_from_json(expected_list: list, actual_list: list, path:str) ->
                     expected_dup_idxs_matched_to_excess_nondup.add(i)
                     excess_nondup_idxs_matched_to_expected_dup.add(j)
                     total_num_correctly_extracted_pieces_of_info += 1
-                    differences.append(f"Expected value {expected_dup_val_value} was present in the actual array just once but had {expected_dup_val_count} copies in the expected array")
+                    differences.append(f"at path {path}, Expected value {expected_dup_val_value} was present in the actual array just once but had {expected_dup_val_count} copies in the expected array")
                     break
         
         expected_dup_vals = [expected_dup_vals[i] for i in range(len(expected_dup_vals)) if i not in expected_dup_idxs_matched_to_excess_nondup]
@@ -149,9 +199,9 @@ def compare_lists_from_json(expected_list: list, actual_list: list, path:str) ->
                     total_num_correctly_extracted_pieces_of_info += min(expected_dup_val_count, actual_dup_val_count)
                     if actual_dup_val_count > expected_dup_val_count:
                         total_num_hallucinated_pieces_of_info += actual_dup_val_count - expected_dup_val_count
-                        differences.append(f"The value {expected_dup_val_value} that was present multiple times in the expected array was present multiple times in the actual array but had {actual_dup_val_count-expected_dup_val_count} too many copies in the actual array")
+                        differences.append(f"The value {expected_dup_val_value} that was present multiple times in the expected array at path {path} was present multiple times in the actual array but had {actual_dup_val_count-expected_dup_val_count} too many copies in the actual array")
                     elif actual_dup_val_count < expected_dup_val_count:
-                        differences.append(f"The value {expected_dup_val_value} that was present multiple times in the expected array was present multiple times in the actual array but had {actual_dup_val_count-expected_dup_val_count} too few copies in the actual array")
+                        differences.append(f"The value {expected_dup_val_value} that was present multiple times in the expected array at path {path} was present multiple times in the actual array but had {actual_dup_val_count-expected_dup_val_count} too few copies in the actual array")
                     break
         
         missing_dup_vals = [expected_dup_vals[i] for i in range(len(expected_dup_vals)) if i not in expected_dup_idxs_matched_to_actual_dup]
@@ -310,7 +360,7 @@ def compare_dicts_from_json(expected: dict, actual: dict, path="") -> (int, int,
                 differences.append(f"Value mismatch for key '{current_path}': Expected '{expected_value}', got '{actual_value}'")
     excess_keys = set(actual.keys()) - set(expected.keys())
     for key in excess_keys:
-        differences.append(f"Excess key '{key}' in actual output")
+        differences.append(f"Excess key '{key}' in actual output at path {path}")
         total_num_hallucinated_pieces_of_info += count_total_pieces_of_info_in_json(actual[key])
 
     return total_num_correctly_extracted_pieces_of_info, total_num_hallucinated_pieces_of_info, differences

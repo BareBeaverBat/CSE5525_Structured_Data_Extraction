@@ -1,20 +1,33 @@
 [
     {
         "product": {
-            "name": "Acme Accounting Pro",
-            "model": "X500",
-            "version": "2.3.1"
+            "name": "Arctis Nova Pro",
+            "model": "61486",
+            "version": "2.4.3"
         },
-        "error_codes": ["ERR_DATABASE_CONNECT", "ERR_INVALID_LICENSE"],
-        "impact_level": "major",
+        "error_codes": [
+            "AUD-442",
+            "DRV-891",
+            "USB-127"
+        ],
+        "impact_level": "blocking",
         "system_state": {
-            "os": "Windows 10",
-            "browser": "Chrome 89"
+            "os": "Windows 11",
+            "browser": "Chrome 114.0.5735",
+            "connected_devices": [
+                "Arctis Nova Pro",
+                "Logitech G502",
+                "Dell U2719D"
+            ]
+        },
+        "reproduction": {
+            "reproducible": true,
+            "frequency": "always"
         }
     },
     {
         "product": {
-            "name": "Vortex Video Editor"
+            "name": "HP Smart"
         },
         "impact_level": "minor",
         "reproduction": {
@@ -24,41 +37,255 @@
     },
     {
         "product": {
-            "name": "Zephyr Project Management",
-            "version": "1.5.2"
+            "name": "SmartThings Hub",
+            "model": "GP-U999SJVLGDA",
+            "version": "43.6"
         },
-        "error_codes": ["500", "503"],
-        "impact_level": "blocking",
         "system_state": {
-            "os": "macOS 11.2.3",
-            "browser": "Safari 14.0.3",
-            "connected_devices": ["Epson WF-7720", "Logitech C920 Webcam"]
+            "connected_devices": [
+                "Yale Lock YRD226",
+                "Ecobee Thermostat",
+                "Philips Hue Bridge",
+                "Ring Doorbell Pro",
+                "Samsung TV"
+            ]
+        }
+    },
+    {
+        "product": {
+            "name": "Dell Precision Touchpad",
+            "model": "DL4872",
+            "version": "10.3.302.13"
+        },
+        "error_codes": [
+            "TPD-1044"
+        ],
+        "impact_level": "major",
+        "reproduction": {
+            "reproducible": true,
+            "frequency": "sometimes"
+        }
+    },
+    {
+        "product": {
+            "name": "Keychron K3",
+            "version": "2"
+        },
+        "impact_level": "minor",
+        "system_state": {
+            "os": "macOS 13.4"
         },
         "reproduction": {
-            "reproducible": false
+            "reproducible": false,
+            "frequency": "once"
         }
     },
     {
         "product": {
-            "name": "Luminous Photo Organizer",
-            "model": "Professional"
+            "name": "HomeSense Hub",
+            "model": "HS-500",
+            "version": "3.2.1"
         },
-        "impact_level": "cosmetic",
-        "system_state": {
-            "os": "Ubuntu 20.04"
-        }
-    },
-    {
-        "product": {
-            "name": "Quasar Analytics Dashboard",
-            "version": "3.2.0"
-        },
-        "error_codes": ["QAD-4112"],
+        "error_codes": [
+            "HUB_CONN_LOST",
+            "DEVICE_SYNC_ERR",
+            "AUTH_FAILURE"
+        ],
         "impact_level": "major",
+        "system_state": {
+            "os": "Windows 11",
+            "browser": "Chrome 114",
+            "connected_devices": [
+                "Smart Lock",
+                "Thermostat",
+                "Motion Sensor",
+                "Door Bell"
+            ]
+        },
         "reproduction": {
             "reproducible": true,
             "frequency": "often"
         }
+    },
+    {
+        "product": {
+            "name": "SoundFlow Mini"
+        },
+        "impact_level": "minor",
+        "reproduction": {
+            "reproducible": false,
+            "frequency": "once"
+        }
+    },
+    {
+        "product": {
+            "name": "Philips Hue Bridge",
+            "model": "BSB002"
+        },
+        "system_state": {
+            "os": "iOS 16.5",
+            "connected_devices": [
+                "Hue White Bulb",
+                "Hue Color Bulb",
+                "Hue Lightstrip"
+            ]
+        },
+        "impact_level": "major"
+    },
+    {
+        "product": {
+            "name": "Figma Desktop",
+            "version": "116.7.9"
+        },
+        "impact_level": "major",
+        "system_state": {
+            "os": "macOS 13.4",
+            "browser": "Chrome 116.0.5845.96"
+        },
+        "reproduction": {
+            "reproducible": true,
+            "frequency": "often"
+        }
+    },
+    {
+        "product": {
+            "name": "AirFlow Pro TWS",
+            "model": "AF-200",
+            "version": "2.1.3"
+        },
+        "error_codes": [
+            "BT-404",
+            "CONN-201",
+            "SYNC-102"
+        ],
+        "impact_level": "major",
+        "system_state": {
+            "os": "iOS 16.5",
+            "browser": "Safari 16.5",
+            "connected_devices": [
+                "iPhone 13",
+                "MacBook Pro",
+                "Apple Watch"
+            ]
+        },
+        "reproduction": {
+            "reproducible": true,
+            "frequency": "often"
+        }
+    },
+    {
+        "product": {
+            "name": "TabGuard Privacy Extension",
+            "version": "1.2.0"
+        },
+        "impact_level": "minor",
+        "system_state": {
+            "os": "Windows 11",
+            "browser": "Chrome 114.0.5735.198"
+        },
+        "reproduction": {
+            "reproducible": true,
+            "frequency": "sometimes"
+        }
+    },
+    {
+        "product": {
+            "name": "SmartLife Hub",
+            "model": "SL-500",
+            "version": "3.0.1"
+        },
+        "impact_level": "blocking",
+        "reproduction": {
+            "reproducible": true,
+            "frequency": "always"
+        }
+    },
+    {
+        "product": {
+            "name": "TaskSync Mobile",
+            "version": "4.2.1"
+        },
+        "error_codes": [
+            "SYNC-404",
+            "AUTH-201",
+            "DB-503",
+            "NET-102"
+        ],
+        "reproduction": {
+            "reproducible": false,
+            "frequency": "once"
+        }
+    },
+    {
+        "product": {
+            "name": "NetGear Orbi",
+            "model": "RBK752",
+            "version": "3.6.7.3"
+        },
+        "error_codes": [
+            "NW_DISCONNECT",
+            "AUTH_FAILURE",
+            "DHCP_ERROR",
+            "DNS_TIMEOUT"
+        ],
+        "impact_level": "blocking",
+        "system_state": {
+            "os": "Windows 11",
+            "connected_devices": [
+                "iPhone 13",
+                "MacBook Pro",
+                "Samsung TV",
+                "Ring Doorbell",
+                "Nest Thermostat"
+            ]
+        },
+        "reproduction": {
+            "reproducible": true,
+            "frequency": "always"
+        }
+    },
+    {
+        "product": {
+            "name": "Strava Runner"
+        },
+        "impact_level": "minor",
+        "reproduction": {
+            "reproducible": true,
+            "frequency": "sometimes"
+        }
+    },
+    {
+        "product": {
+            "name": "SecureView Camera"
+        },
+        "error_codes": [
+            "CAM-552"
+        ],
+        "impact_level": "major",
+        "reproduction": {
+            "reproducible": true,
+            "frequency": "always"
+        }
+    },
+    {
+        "product": {
+            "name": "LaserJet Pro"
+        },
+        "impact_level": "cosmetic",
+        "system_state": {
+            "os": "macOS 13.4",
+            "connected_devices": [
+                "HP LaserJet Pro",
+                "iPad Air",
+                "iPhone 12",
+                "MacBook Air"
+            ]
+        },
+        "reproduction": {
+            "reproducible": true,
+            "frequency": "always"
+        }
     }
-]
 
+
+]
