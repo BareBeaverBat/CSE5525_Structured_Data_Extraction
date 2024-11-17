@@ -33,7 +33,7 @@ google_obj_gen_group_size = anthropic_obj_gen_group_size
 max_num_api_calls_for_schema_validation_retry_logic = 3
 
 max_num_api_calls_for_anthropic_overloaded_retry_logic = 5
-
+max_num_api_calls_for_google_refusals_retry_logic = 5
 
 class ModelProvider(Enum):
     ANTHROPIC = "claude"

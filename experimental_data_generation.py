@@ -113,7 +113,7 @@ def generate_json_objs(google_client: Optional[GenerativeModel], anthropic_clien
             if schema_validation_feedback_msgs:
                 error_feedback += f"Some of the objects just generated failed to follow the schema:\n--------------\n{"\n---------------\n".join(schema_validation_feedback_msgs)}"
             logger.debug(f"Using {model_nm}, generated {len(curr_generated_objects)} objects for scenario {scenario_domain} - {scenario_texts_label}:\nValid indexes within this round were: {valid_idxs_in_curr_round}\n{json.dumps(curr_generated_objects, indent=4)}\n\nAnalysis of object generation:\n{obj_gen_analysis}\n\nGlobal case ids of objects: {", ".join([f"case id {model_nm}-{schema_idx}-{new_obj_idx}" for new_obj_idx in range(num_objs_b4_curr_round, len(generated_objects))])}")
-        if len(generated_objects) == target_num_objs:
+        if len(generated_objects) >= target_num_objs:
             break
         
         remaining_obj_quota = target_num_objs - len(generated_objects)

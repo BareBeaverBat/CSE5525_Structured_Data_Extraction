@@ -2,13 +2,15 @@ import json
 import re
 import time
 from json import JSONDecodeError
+from typing import Optional
 
 import anthropic
 from anthropic import Anthropic
+import google.generativeai as google_genai
 from google.generativeai import GenerativeModel
 
 from constants import ModelProvider, is_google_api_key_using_free_tier, \
-    max_num_api_calls_for_anthropic_overloaded_retry_logic
+    max_num_api_calls_for_anthropic_overloaded_retry_logic, max_num_api_calls_for_google_refusals_retry_logic
 from logging_setup import create_logger
 from trivial_util_funcs import find_last_re_match
 
@@ -173,10 +175,23 @@ def generate_with_model(model_choice: ModelProvider, initial_prompt: str, ai_res
         for ai_resp, followup_prompt in zip(ai_responses, followup_prompts):
             chat_msgs.append({"role": "model", "parts": ai_resp})
             chat_msgs.append({"role": "user", "parts": followup_prompt})
-        google_resp = google_client.generate_content(chat_msgs)
-        resp_text = google_resp.text
-        if is_google_api_key_using_free_tier:
-            time.sleep(30)#on free tier, gemini api is rate-limited to 2 requests per 60 seconds
+        
+        temp_to_use: Optional[float] = None
+        
+        for attempt_idx in range(max_num_api_calls_for_google_refusals_retry_logic):
+            google_resp = google_client.generate_content(
+                chat_msgs, generation_config=None if temp_to_use is None else google_genai.GenerationConfig(temperature=temp_to_use))
+            if google_resp.parts:
+                resp_text = google_resp.text
+                break
+            else:
+                logger.warning(f"Google API call failed to return any parts; prompt feedback was {google_resp.prompt_feedback}; retrying (attempt {attempt_idx+1}/{max_num_api_calls_for_google_refusals_retry_logic})")
+                if temp_to_use is None:
+                    temp_to_use = 0.3
+                else:
+                    temp_to_use+=0.2
+            if is_google_api_key_using_free_tier:
+                time.sleep(30)#on free tier, gemini api is rate-limited to 2 requests per 60 seconds
     else:
         raise ValueError(f"model_choice must be a value from the ModelProvider enum, but it was {model_choice}")
     

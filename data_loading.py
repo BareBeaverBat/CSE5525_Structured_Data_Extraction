@@ -71,7 +71,7 @@ def load_objects_for_one_model_and_scenario(path_of_one_models_objects: Path, sc
             schema_validator.validate(obj)
         return curr_model_objs
     
-    logger.warning(f"Failed to find a file of json objects for scenario {target_scenario_idx} from the model-specific folder {path_of_one_models_objects}")
+    logger.info(f"Failed to find a file of json objects for scenario {target_scenario_idx} from the model-specific folder {path_of_one_models_objects}")
     return None
 
 
@@ -89,5 +89,5 @@ def load_text_passages_for_one_model_and_scenario(path_of_one_models_texts: Path
             logger.warning(f"there are null text passages in {path_of_one_models_texts}/{texts_filenm}")
         return curr_schema_texts
     
-    logger.warning(f"Failed to find a file of text passages for scenario {target_scenario_idx} from the model-specific folder {path_of_one_models_texts}")
+    logger.info(f"Failed to find a file of text passages for scenario {target_scenario_idx} from the model-specific folder {path_of_one_models_texts}")
     return None
