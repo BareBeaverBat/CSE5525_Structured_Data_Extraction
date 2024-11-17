@@ -1,0 +1,17 @@
+[
+    {
+        "product_name": "Hiking Backpack",
+        "product_id": "HB-TREK50",
+        "star_rating": 5,
+        "product_features": {
+            "positive": [
+                "Durable",
+                "Waterproof",
+                "Large capacity"
+            ],
+            "negative": [
+                "Heavy"
+            ]
+        }
+    }
+]

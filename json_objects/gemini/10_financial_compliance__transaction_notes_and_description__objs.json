@@ -1,0 +1,26 @@
+[
+    {
+        "transaction": {
+            "category": "transfer",
+            "method": "wire",
+            "amount_usd": 1000000.0,
+            "cross_border": true
+        },
+        "parties": [
+            {
+                "name": "Offshore Account",
+                "role": "beneficiary"
+            },
+            {
+                "name": "David Red",
+                "role": "originator"
+            }
+        ],
+        "risk_flags": [
+            {
+                "type": "high_risk_jurisdiction",
+                "severity": "high"
+            }
+        ]
+    }
+]

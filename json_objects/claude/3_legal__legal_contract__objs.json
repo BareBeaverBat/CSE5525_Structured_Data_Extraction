@@ -130,5 +130,62 @@
         "clauses": {
             "termination_clause": "Termination upon mutual agreement"
         }
+    },
+    {
+        "signing_date": "2023-08-15",
+        "parties": [
+            "Acme Software Inc.",
+            "John Martinez"
+        ],
+        "clauses": {
+            "confidentiality_clause": "Employee shall maintain strict confidentiality of all proprietary information for 5 years post-employment"
+        }
+    },
+    {
+        "signing_date": "2023-06-01",
+        "parties": [
+            "Riverside Holdings LLC",
+            "Brighton Manufacturing Co.",
+            "Western Capital Partners",
+            "Summit Ventures"
+        ],
+        "governing_law": "State of Delaware",
+        "clauses": {
+            "termination_clause": "Agreement may be terminated with 90 days written notice",
+            "confidentiality_clause": "All transaction details to remain confidential for 10 years",
+            "payment_amount": 8500000.0
+        }
+    },
+    {
+        "signing_date": "2023-09-30",
+        "parties": [
+            "Global Analytics Ltd",
+            "DataTech Solutions"
+        ],
+        "clauses": {
+            "termination_clause": "Either party may terminate with 30 days notice; immediate termination allowed for material breach",
+            "payment_amount": 75000.0
+        }
+    },
+    {
+        "signing_date": "2023-07-12",
+        "parties": [
+            "Green Valley Farms",
+            "Natural Foods Cooperative",
+            "Organic Distribution Inc."
+        ]
+    },
+    {
+        "signing_date": "2023-11-15",
+        "parties": [
+            "European Imports GmbH",
+            "American Distribution Corp",
+            "Pacific Logistics Ltd"
+        ],
+        "governing_law": "State of New York",
+        "clauses": {
+            "termination_clause": "60 days notice required for termination",
+            "payment_amount": 450000.0
+        }
     }
 ]

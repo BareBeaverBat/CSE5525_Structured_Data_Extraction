@@ -1,0 +1,207 @@
+[
+    {
+        "incident_type": "theft",
+        "location": {
+            "city": "Denver"
+        },
+        "estimated_damages": 500
+    },
+    {
+        "incident_type": "fire",
+        "location": {
+            "street_address": "123 Main St",
+            "city": "Austin",
+            "state": "TX",
+            "zip_code": "78704"
+        },
+        "police_report_filed": true
+    },
+    {
+        "incident_date": "2024-07-26",
+        "incident_type": "accident",
+        "estimated_damages": 2500,
+        "witnesses": [
+            {
+                "name": "John Doe"
+            }
+        ]
+    },
+    {
+        "incident_date": "2024-07-25",
+        "incident_type": "flood",
+        "location": {
+            "street_address": "456 Elm St",
+            "city": "Miami",
+            "state": "FL",
+            "zip_code": "33139"
+        },
+        "estimated_damages": 15000,
+        "police_report_filed": false,
+        "witnesses": [
+            {
+                "name": "Jane Smith",
+                "phone": "555-123-4567"
+            },
+            {
+                "name": "Peter Jones",
+                "email": "peter.jones@example.com"
+            }
+        ]
+    },
+    {
+        "incident_type": "accident",
+        "location": {
+            "city": "Seattle",
+            "state": "WA"
+        },
+        "police_report_filed": true,
+        "estimated_damages": 100
+    },
+    {
+        "incident_date": "2024-07-23",
+        "incident_type": "theft",
+        "location": {
+            "street_address": "101 Pine St",
+            "city": "San Francisco",
+            "state": "CA",
+            "zip_code": "94107"
+        },
+        "estimated_damages": 3000
+    },
+    {
+        "incident_type": "fire",
+        "estimated_damages": 10000,
+        "witnesses": [
+            {
+                "name": "Sarah Lee",
+                "phone": "555-987-6543"
+            }
+        ]
+    },
+    {
+        "incident_date": "2024-07-22",
+        "incident_type": "flood",
+        "location": {
+            "street_address": "222 Maple St"
+        },
+        "police_report_filed": false,
+        "witnesses": [
+            {
+                "name": "David Brown",
+                "email": "david.brown@example.com"
+            }
+        ]
+    },
+    {
+        "incident_date": "2024-07-21",
+        "incident_type": "accident",
+        "location": {
+            "street_address": "333 Cedar St",
+            "city": "Dallas",
+            "state": "TX",
+            "zip_code": "75201"
+        },
+        "estimated_damages": 5000,
+        "police_report_filed": true,
+        "witnesses": [
+            {
+                "name": "Emily Wilson",
+                "phone": "555-876-5432",
+                "email": "emily.wilson@example.com"
+            }
+        ]
+    },
+    {
+        "incident_date": "2024-07-20",
+        "incident_type": "fire"
+    },
+    {
+        "incident_type": "theft",
+        "location": {
+            "street_address": "444 Birch St",
+            "city": "Atlanta",
+            "state": "GA"
+        },
+        "police_report_filed": false,
+        "witnesses": [
+            {
+                "name": "Michael Garcia"
+            },
+            {
+                "name": "Jessica Rodriguez"
+            }
+        ]
+    },
+    {
+        "incident_date": "2024-07-19",
+        "incident_type": "accident",
+        "estimated_damages": 7500,
+        "police_report_filed": true
+    },
+    {
+        "incident_date": "2024-07-18",
+        "incident_type": "other",
+        "location": {
+            "street_address": "555 Willow St",
+            "city": "Phoenix",
+            "state": "AZ",
+            "zip_code": "85001"
+        },
+        "estimated_damages": 20000
+    },
+    {
+        "incident_date": "2024-07-17",
+        "incident_type": "fire",
+        "location": {
+            "city": "Philadelphia"
+        },
+        "estimated_damages": 1000,
+        "witnesses": [
+            {
+                "name": "Ashley Martinez",
+                "phone": "555-765-4321"
+            },
+            {
+                "name": "Christopher Anderson"
+            }
+        ]
+    },
+    {
+        "incident_type": "theft",
+        "police_report_filed": true,
+        "witnesses": [
+            {
+                "name": "Matthew Taylor",
+                "phone": "555-654-3210",
+                "email": "matthew.taylor@example.com"
+            }
+        ]
+    },
+    {
+        "incident_date": "2024-07-16",
+        "incident_type": "flood",
+        "location": {
+            "street_address": "666 Oak St",
+            "city": "Houston",
+            "state": "TX",
+            "zip_code": "77002"
+        },
+        "estimated_damages": 500,
+        "witnesses": [
+            {
+                "name": "Angela Hernandez"
+            },
+            {
+                "name": "Joshua Thomas",
+                "phone": "555-543-2109"
+            }
+        ]
+    },
+    {
+        "incident_date": "2024-07-15",
+        "incident_type": "accident",
+        "location": {
+            "zip_code": "90210"
+        }
+    }
+]
