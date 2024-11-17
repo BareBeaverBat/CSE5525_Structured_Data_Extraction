@@ -27,7 +27,7 @@ google_generation_temp = anthropic_generation_temp
 anthropic_reconstruction_temp = 0.0
 google_reconstruction_temp = anthropic_reconstruction_temp
 
-anthropic_obj_gen_group_size = 15#20 TODO switch to 20 once done with prompt tweaking
+anthropic_obj_gen_group_size = 20
 google_obj_gen_group_size = anthropic_obj_gen_group_size
 
 max_num_api_calls_for_schema_validation_retry_logic = 3

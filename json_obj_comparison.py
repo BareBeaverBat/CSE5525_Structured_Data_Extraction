@@ -87,7 +87,9 @@ def compare_values_from_json(expected: PrimitiveJsonVal, actual: PrimitiveJsonVa
                 return True
         except ValueError:
             pass
-    
+    elif (isinstance(expected, float) or isinstance(actual, float)) and isinstance(expected, (int, float)) and isinstance(actual, (int, float)):
+        if abs(expected - actual) < 1e-6:
+            return True
     return False
 
 def compare_lists_from_json(expected_list: list, actual_list: list, path:str) -> (int, int, list[str]):
