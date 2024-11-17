@@ -1,0 +1,178 @@
+[
+    {
+        "education": [
+            {
+                "degree_type": "BS",
+                "institution": "University of California, Berkeley"
+            }
+        ],
+        "previous_roles": [
+            {
+                "title": "Software Engineer",
+                "company": "Google"
+            }
+        ]
+    },
+    {
+        "skills": [
+            "Java",
+            "Python",
+            "C++",
+            "SQL",
+            "JavaScript"
+        ]
+    },
+    {
+        "experience_years": 10,
+        "previous_roles": [
+            {
+                "title": "Senior Software Engineer",
+                "company": "Amazon",
+                "start_month": 6,
+                "start_year": 2013,
+                "end_month": 12,
+                "end_year": 2020
+            },
+            {
+                "title": "Software Engineer II",
+                "company": "Microsoft",
+                "start_month": 1,
+                "start_year": 2021,
+                "end_month": null,
+                "end_year": null
+            }
+        ]
+    },
+    {
+        "education": [
+            {
+                "degree_type": "BS",
+                "major": "Computer Science",
+                "institution": "Stanford University"
+            },
+            {
+                "degree_type": "MS",
+                "major": "Artificial Intelligence",
+                "institution": "Massachusetts Institute of Technology"
+            }
+        ]
+    },
+    {
+        "contact_info": {
+            "email": "john.doe@email.com",
+            "phone": "555-123-4567"
+        }
+    },
+    {
+        "skills": [
+            "Project Management",
+            "Agile",
+            "Scrum"
+        ],
+        "experience_years": 5
+    },
+    {
+        "skills": [
+            "Web Development",
+            "HTML",
+            "CSS",
+            "JavaScript"
+        ],
+        "education": [
+            {
+                "degree_type": "BS",
+                "institution": "California State University, Long Beach"
+            }
+        ],
+        "contact_info": {
+            "email": "peter.pan@email.com",
+            "phone": "555-111-2222"
+        }
+    },
+    {
+        "experience_years": 2,
+        "previous_roles": [
+            {
+                "title": "Junior Developer",
+                "company": "Startup Inc."
+            }
+        ],
+        "education": [
+            {
+                "degree_type": "BS",
+                "institution": "University of Washington"
+            }
+        ],
+        "contact_info": {
+            "email": "alice.wonderland@email.com",
+            "phone": "555-333-4444"
+        }
+    },
+    {
+        "skills": [
+            "Java",
+            "Spring Boot"
+        ],
+        "experience_years": 6,
+        "previous_roles": [
+            {
+                "title": "Backend Engineer",
+                "company": "Tech Company"
+            }
+        ]
+    },
+    {
+        "previous_roles": [
+            {
+                "title": "Marketing Manager",
+                "company": "Marketing Firm"
+            },
+            {
+                "title": "Sales Representative",
+                "company": "Sales Company"
+            },
+            {
+                "title": "Product Manager",
+                "company": "Product Company"
+            }
+        ]
+    },
+    {
+        "previous_roles": [
+            {
+                "title": "Project Manager",
+                "company": "Project Company",
+                "start_month": 1,
+                "start_year": 2020,
+                "end_month": 12,
+                "end_year": 2022
+            }
+        ]
+    },
+    {
+        "education": [
+            {
+                "degree_type": "BA",
+                "institution": "University of California, Los Angeles"
+            },
+            {
+                "degree_type": "MA",
+                "institution": "University of California, San Diego"
+            }
+        ],
+        "contact_info": {
+            "email": "multi.degree@email.com",
+            "phone": "555-121-3434"
+        }
+    },
+    {
+        "skills": [
+            "Go",
+            "Rust",
+            "C++",
+            "Assembly",
+            "COBOL"
+        ],
+        "experience_years": 20
+    }
+]

@@ -285,7 +285,45 @@
             "reproducible": true,
             "frequency": "always"
         }
+    },
+    {
+        "product": {
+            "name": "Razer DeathAdder Elite",
+            "model": "RZ01-02010100",
+            "version": "1.03"
+        },
+        "error_codes": [
+            "DRV_ERR_456",
+            "CONN_TIMEOUT",
+            "USB_DETECT_FAIL"
+        ],
+        "impact_level": "major",
+        "system_state": {
+            "os": "Windows 11 Pro",
+            "connected_devices": [
+                "Razer BlackWidow Keyboard",
+                "Dell P2419H Monitor",
+                "Logitech HD Webcam"
+            ]
+        },
+        "reproduction": {
+            "reproducible": true,
+            "frequency": "often"
+        }
+    },
+    {
+        "product": {
+            "name": "Workspace Portal",
+            "version": "2.4.1"
+        },
+        "system_state": {
+            "os": "macOS Ventura",
+            "browser": "Chrome 114.0.5735.198"
+        },
+        "reproduction": {
+            "reproducible": true,
+            "frequency": "always"
+        },
+        "impact_level": "minor"
     }
-
-
 ]

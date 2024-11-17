@@ -396,6 +396,88 @@
             "heart_disease",
             "cancer"
         ]
+    },
+    {
+        "symptoms": [
+            {
+                "name": "joint pain",
+                "duration_days": 90,
+                "severity": 7,
+                "frequency": "intermittent"
+            },
+            {
+                "name": "fatigue",
+                "duration_days": 120,
+                "severity": 5,
+                "frequency": "constant"
+            },
+            {
+                "name": "morning stiffness",
+                "duration_days": 90,
+                "severity": 6,
+                "frequency": "intermittent"
+            }
+        ],
+        "medications": [
+            {
+                "name": "methotrexate",
+                "dosage": "15mg",
+                "frequency": "weekly"
+            },
+            {
+                "name": "folic acid",
+                "dosage": "1mg",
+                "frequency": "daily"
+            }
+        ],
+        "allergies": [
+            "ibuprofen",
+            "shellfish"
+        ],
+        "family_history_flags": [
+            "diabetes",
+            "cancer"
+        ]
+    },
+    {
+        "symptoms": [
+            {
+                "name": "sore throat",
+                "duration_days": 3
+            }
+        ],
+        "medications": [
+            {
+                "name": "acetaminophen"
+            }
+        ]
+    },
+    {
+        "medications": [
+            {
+                "name": "levothyroxine",
+                "dosage": "75mcg",
+                "frequency": "daily"
+            },
+            {
+                "name": "vitamin D3",
+                "dosage": "2000IU",
+                "frequency": "daily"
+            },
+            {
+                "name": "calcium citrate",
+                "dosage": "500mg",
+                "frequency": "twice daily"
+            }
+        ],
+        "allergies": [
+            "tetracycline"
+        ],
+        "family_history_flags": [
+            "diabetes",
+            "heart_disease",
+            "cancer",
+            "hypertension"
+        ]
     }
-
 ]

@@ -1,0 +1,118 @@
+[
+    {
+        "incident_type": [
+            "theft"
+        ]
+    },
+    {
+        "incident_type": [
+            "assault"
+        ],
+        "location": {
+            "type": "street"
+        },
+        "weapons": [
+            {
+                "type": "firearm",
+                "quantity": 2
+            },
+            {
+                "type": "knife",
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "incident_type": [
+            "traffic"
+        ],
+        "vehicles": [
+            {
+                "type": "car",
+                "color": "red",
+                "damage": [
+                    "front"
+                ]
+            }
+        ]
+    },
+    {
+        "incident_type": [
+            "burglary"
+        ],
+        "location": {
+            "type": "business",
+            "indoor_outdoor": "indoor",
+            "floor_level": 3
+        }
+    },
+    {
+        "incident_type": [
+            "assault"
+        ],
+        "location": {
+            "type": "residence",
+            "indoor_outdoor": "indoor"
+        },
+        "weapons": [
+            {
+                "type": "firearm"
+            },
+            {
+                "type": "knife"
+            }
+        ]
+    },
+    {
+        "location": {
+            "type": "public_space",
+            "indoor_outdoor": "outdoor"
+        },
+        "incident_type": [
+            "assault",
+            "vandalism"
+        ],
+        "weapons": [
+            {
+                "type": "blunt_object",
+                "quantity": 1
+            },
+            {
+                "type": "other",
+                "quantity": 1
+            }
+        ],
+        "vehicles": [
+            {
+                "type": "car"
+            },
+            {
+                "type": "truck"
+            }
+        ]
+    },
+    {
+        "location": {
+            "type": "business",
+            "indoor_outdoor": "both"
+        },
+        "incident_type": [
+            "vandalism"
+        ]
+    },
+    {
+        "incident_type": [
+            "traffic"
+        ],
+        "vehicles": [
+            {
+                "type": "car",
+                "damage": [
+                    "front",
+                    "driver_side",
+                    "rear"
+                ]
+            }
+        ]
+    }
+]

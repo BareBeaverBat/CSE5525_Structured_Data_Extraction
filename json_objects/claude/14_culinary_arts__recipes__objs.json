@@ -1,0 +1,288 @@
+[
+    {
+        "dish_name": "Mediterranean Grilled Salmon",
+        "ingredients": [
+            {
+                "name": "salmon fillet",
+                "quantity": 6,
+                "unit": "ounces"
+            },
+            {
+                "name": "olive oil",
+                "quantity": 2,
+                "unit": "tablespoons"
+            },
+            {
+                "name": "lemon juice",
+                "quantity": 1,
+                "unit": "tablespoon"
+            },
+            {
+                "name": "garlic",
+                "quantity": 2,
+                "unit": "cloves"
+            },
+            {
+                "name": "oregano",
+                "quantity": 1,
+                "unit": "teaspoon"
+            }
+        ],
+        "instructions": [
+            "Marinate salmon in olive oil, lemon juice, and herbs",
+            "Preheat grill to medium-high heat",
+            "Grill salmon for 4-5 minutes per side",
+            "Rest for 5 minutes before serving"
+        ],
+        "cuisine": "Mediterranean",
+        "preparation_time_minutes": 10,
+        "cooking_time_minutes": 12,
+        "nutritional_information": {
+            "calories": 320,
+            "protein_grams": 34.5,
+            "carbohydrates_grams": 2.1,
+            "fat_grams": 21.3
+        }
+    },
+    {
+        "dish_name": "Kimchi Tacos",
+        "ingredients": [
+            {
+                "name": "corn tortillas",
+                "quantity": 8,
+                "unit": "pieces"
+            },
+            {
+                "name": "kimchi",
+                "quantity": 2,
+                "unit": "cups"
+            },
+            {
+                "name": "bulgogi beef",
+                "quantity": 1,
+                "unit": "pound"
+            },
+            {
+                "name": "sesame oil",
+                "quantity": 1,
+                "unit": "tablespoon"
+            }
+        ],
+        "instructions": [
+            "Marinate beef in bulgogi sauce",
+            "Grill beef until caramelized",
+            "Warm tortillas",
+            "Assemble tacos with beef and kimchi",
+            "Drizzle with sesame oil"
+        ],
+        "cuisine": "Korean-Mexican Fusion"
+    },
+    {
+        "dish_name": "Chocolate Avocado Mousse",
+        "ingredients": [
+            {
+                "name": "avocado",
+                "quantity": 2,
+                "unit": "large"
+            },
+            {
+                "name": "cocoa powder",
+                "quantity": 0.5,
+                "unit": "cup"
+            },
+            {
+                "name": "maple syrup",
+                "quantity": 0.25,
+                "unit": "cup"
+            }
+        ],
+        "dietary_restrictions": [
+            "vegan",
+            "gluten-free",
+            "dairy-free"
+        ],
+        "nutritional_information": {
+            "calories": 180,
+            "protein_grams": 3.2,
+            "carbohydrates_grams": 19.5,
+            "fat_grams": 12.3
+        }
+    },
+    {
+        "dish_name": "Quick Tuna Wrap",
+        "ingredients": [
+            {
+                "name": "tuna",
+                "quantity": 5,
+                "unit": "ounces"
+            },
+            {
+                "name": "tortilla",
+                "quantity": 1,
+                "unit": "large"
+            },
+            {
+                "name": "mayo",
+                "quantity": 2,
+                "unit": "tablespoons"
+            }
+        ],
+        "preparation_time_minutes": 5
+    },
+    {
+        "dish_name": "Sourdough Bread",
+        "ingredients": [
+            {
+                "name": "bread flour",
+                "quantity": 500,
+                "unit": "grams"
+            },
+            {
+                "name": "sourdough starter",
+                "quantity": 100,
+                "unit": "grams"
+            },
+            {
+                "name": "salt",
+                "quantity": 10,
+                "unit": "grams"
+            },
+            {
+                "name": "water",
+                "quantity": 350,
+                "unit": "milliliters"
+            }
+        ],
+        "instructions": [
+            "Mix ingredients and autolyse for 30 minutes",
+            "Perform 4 sets of stretch and folds",
+            "Bulk ferment for 4-6 hours",
+            "Shape and cold proof overnight",
+            "Bake in Dutch oven at 450\u00b0F"
+        ],
+        "preparation_time_minutes": 300,
+        "cooking_time_minutes": 45
+    },
+    {
+        "dish_name": "Matcha Latte",
+        "ingredients": [
+            {
+                "name": "matcha powder",
+                "quantity": 1.5,
+                "unit": "teaspoons"
+            },
+            {
+                "name": "oat milk",
+                "quantity": 8,
+                "unit": "ounces"
+            }
+        ],
+        "dietary_restrictions": [
+            "vegan",
+            "dairy-free"
+        ]
+    },
+    {
+        "dish_name": "Bruschetta",
+        "ingredients": [
+            {
+                "name": "tomatoes",
+                "quantity": 4,
+                "unit": "medium"
+            },
+            {
+                "name": "basil",
+                "quantity": 0.25,
+                "unit": "cup"
+            },
+            {
+                "name": "garlic",
+                "quantity": 2,
+                "unit": "cloves"
+            }
+        ],
+        "cuisine": "Italian"
+    },
+    {
+        "dish_name": "One-Pot Chicken Rice",
+        "ingredients": [
+            {
+                "name": "chicken thighs",
+                "quantity": 1.5,
+                "unit": "pounds"
+            },
+            {
+                "name": "rice",
+                "quantity": 2,
+                "unit": "cups"
+            },
+            {
+                "name": "chicken broth",
+                "quantity": 4,
+                "unit": "cups"
+            }
+        ],
+        "cooking_time_minutes": 45,
+        "preparation_time_minutes": 10,
+        "dietary_restrictions": [
+            "gluten-free"
+        ]
+    },
+    {
+        "dish_name": "Street Corn",
+        "ingredients": [
+            {
+                "name": "corn",
+                "quantity": 4,
+                "unit": "ears"
+            },
+            {
+                "name": "mayo",
+                "quantity": 0.25,
+                "unit": "cup"
+            },
+            {
+                "name": "cotija cheese",
+                "quantity": 0.5,
+                "unit": "cup"
+            }
+        ],
+        "cuisine": "Mexican"
+    },
+    {
+        "dish_name": "Wedding Cake",
+        "ingredients": [
+            {
+                "name": "cake flour",
+                "quantity": 6,
+                "unit": "cups"
+            },
+            {
+                "name": "butter",
+                "quantity": 2,
+                "unit": "pounds"
+            },
+            {
+                "name": "eggs",
+                "quantity": 12,
+                "unit": "large"
+            },
+            {
+                "name": "vanilla extract",
+                "quantity": 2,
+                "unit": "tablespoons"
+            }
+        ],
+        "instructions": [
+            "Cream butter and sugar until fluffy",
+            "Add eggs one at a time",
+            "Alternate adding flour and milk",
+            "Divide between prepared pans",
+            "Bake at 350\u00b0F",
+            "Cool completely before frosting",
+            "Stack and decorate layers"
+        ],
+        "preparation_time_minutes": 120,
+        "cooking_time_minutes": 35
+    }
+]

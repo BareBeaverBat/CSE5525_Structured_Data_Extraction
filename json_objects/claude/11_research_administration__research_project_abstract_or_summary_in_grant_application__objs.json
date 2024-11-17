@@ -1,0 +1,262 @@
+[
+    {
+        "research_methods": [
+            "data_analysis",
+            "simulation"
+        ],
+        "equipment_needs": [
+            {
+                "name": "high-performance computing cluster",
+                "duration_months": 6,
+                "shared_resource": true
+            }
+        ],
+        "data_collection": {
+            "data_types": [
+                "genomic"
+            ],
+            "sample_size": 5000,
+            "data_frequency": "once"
+        }
+    },
+    {
+        "research_methods": [
+            "survey",
+            "interviews"
+        ],
+        "data_collection": {
+            "data_types": [
+                "survey_responses"
+            ],
+            "sample_size": 2500,
+            "data_frequency": "quarterly"
+        },
+        "timeline": {
+            "total_duration_months": 24,
+            "key_milestones": [
+                {
+                    "name": "survey deployment",
+                    "month": 1
+                },
+                {
+                    "name": "interim analysis",
+                    "month": 12
+                },
+                {
+                    "name": "final data collection",
+                    "month": 20
+                }
+            ]
+        }
+    },
+    {
+        "research_methods": [
+            "clinical_trial"
+        ],
+        "study_population": {
+            "age_range": {
+                "min": 18,
+                "max": 65
+            },
+            "special_populations": [
+                "immunocompromised"
+            ]
+        },
+        "timeline": {
+            "total_duration_months": 36,
+            "key_milestones": [
+                {
+                    "name": "enrollment completion",
+                    "month": 6
+                },
+                {
+                    "name": "treatment phase",
+                    "month": 12
+                },
+                {
+                    "name": "follow-up completion",
+                    "month": 30
+                }
+            ]
+        }
+    },
+    {
+        "research_methods": [
+            "field_study",
+            "interviews"
+        ],
+        "study_population": {
+            "age_range": {
+                "min": 65,
+                "max": 90
+            },
+            "special_populations": [
+                "elderly"
+            ]
+        },
+        "data_collection": {
+            "data_types": [
+                "survey_responses"
+            ],
+            "sample_size": 150,
+            "data_frequency": "monthly"
+        }
+    },
+    {
+        "research_methods": [
+            "survey",
+            "interviews",
+            "field_study"
+        ],
+        "data_collection": {
+            "data_types": [
+                "survey_responses"
+            ],
+            "sample_size": 800,
+            "data_frequency": "monthly"
+        }
+    },
+    {
+        "research_methods": [
+            "simulation"
+        ],
+        "equipment_needs": [
+            {
+                "name": "quantum simulator",
+                "duration_months": 3,
+                "shared_resource": true
+            }
+        ],
+        "timeline": {
+            "total_duration_months": 6,
+            "key_milestones": [
+                {
+                    "name": "model validation",
+                    "month": 2
+                },
+                {
+                    "name": "final simulation",
+                    "month": 5
+                }
+            ]
+        }
+    },
+    {
+        "research_methods": [
+            "clinical_trial",
+            "survey"
+        ],
+        "study_population": {
+            "age_range": {
+                "min": 5,
+                "max": 17
+            },
+            "special_populations": [
+                "children"
+            ]
+        },
+        "data_collection": {
+            "data_types": [
+                "clinical_measurements",
+                "survey_responses"
+            ],
+            "sample_size": 300,
+            "data_frequency": "weekly"
+        },
+        "timeline": {
+            "total_duration_months": 48
+        }
+    },
+    {
+        "research_methods": [
+            "survey"
+        ],
+        "study_population": {
+            "special_populations": [
+                "rare_disease"
+            ]
+        },
+        "data_collection": {
+            "data_types": [
+                "survey_responses"
+            ],
+            "sample_size": 50,
+            "data_frequency": "once"
+        }
+    },
+    {
+        "research_methods": [
+            "data_analysis"
+        ],
+        "data_collection": {
+            "data_types": [
+                "clinical_measurements",
+                "genomic"
+            ],
+            "sample_size": 10000,
+            "data_frequency": "once"
+        }
+    },
+    {
+        "research_methods": [
+            "clinical_trial",
+            "experiment"
+        ],
+        "data_collection": {
+            "data_types": [
+                "clinical_measurements",
+                "genomic"
+            ],
+            "sample_size": 450,
+            "data_frequency": "weekly"
+        },
+        "study_population": {
+            "age_range": {
+                "min": 40,
+                "max": 75
+            }
+        }
+    },
+    {
+        "research_methods": [
+            "survey",
+            "interviews"
+        ],
+        "data_collection": {
+            "data_types": [
+                "survey_responses"
+            ],
+            "sample_size": 30,
+            "data_frequency": "once"
+        }
+    },
+    {
+        "research_methods": [
+            "survey"
+        ],
+        "data_collection": {
+            "data_types": [
+                "survey_responses"
+            ],
+            "sample_size": 50000,
+            "data_frequency": "once"
+        },
+        "timeline": {
+            "total_duration_months": 18,
+            "key_milestones": [
+                {
+                    "name": "pilot survey",
+                    "month": 2
+                },
+                {
+                    "name": "main survey launch",
+                    "month": 6
+                },
+                {
+                    "name": "data collection complete",
+                    "month": 12
+                }
+            ]
+        }
+    }
+]

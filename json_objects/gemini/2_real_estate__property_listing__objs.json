@@ -190,5 +190,76 @@
             "state": "CO",
             "zip_code": "80301"
         }
+    },
+    {
+        "bedrooms": 3,
+        "bathrooms": 2,
+        "square_footage": 1500,
+        "property_type": "house",
+        "listing_price": 350000,
+        "location": {
+            "city": "Austin",
+            "state": "TX",
+            "zip_code": "78704"
+        }
+    },
+    {
+        "bedrooms": 4,
+        "bathrooms": 3,
+        "square_footage": 2200,
+        "property_type": "townhouse",
+        "amenities": [
+            "pool",
+            "garage"
+        ],
+        "listing_price": 600000,
+        "location": {
+            "city": "San Diego",
+            "state": "CA",
+            "zip_code": "92101"
+        }
+    },
+    {
+        "bedrooms": 5,
+        "bathrooms": 4,
+        "square_footage": 4000,
+        "property_type": "house",
+        "amenities": [
+            "pool",
+            "garage",
+            "fireplace",
+            "central_ac"
+        ],
+        "listing_price": 1500000,
+        "location": {
+            "city": "Miami",
+            "state": "FL",
+            "zip_code": "33101"
+        }
+    },
+    {
+        "square_footage": 50000,
+        "property_type": "land",
+        "listing_price": 250000,
+        "location": {
+            "city": "Boise",
+            "state": "ID",
+            "zip_code": "83702"
+        }
+    },
+    {
+        "bedrooms": 2,
+        "bathrooms": "2.5",
+        "square_footage": 1200,
+        "property_type": "condo",
+        "amenities": [
+            "balcony"
+        ],
+        "listing_price": 450000,
+        "location": {
+            "city": "Chicago",
+            "state": "IL",
+            "zip_code": "60601"
+        }
     }
 ]

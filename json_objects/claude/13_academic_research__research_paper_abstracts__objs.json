@@ -1,0 +1,18 @@
+[
+    {
+        "research_area": "physics",
+        "methodology": "computational",
+        "data_sources": [
+            {
+                "name": "Quantum Computing Simulator",
+                "type": "simulated",
+                "url": "https://quantum-sim.org"
+            },
+            {
+                "name": "Error Rate Measurements",
+                "type": "private",
+                "url": "https://quantum-lab.org/data"
+            }
+        ]
+    }
+]
