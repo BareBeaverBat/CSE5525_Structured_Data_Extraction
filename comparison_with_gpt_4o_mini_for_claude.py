@@ -194,13 +194,12 @@ with open(output_file_path, 'w') as output_file:
             for field, accuracy in accuracy_per_field.items():
                 logger.info(f"  {field}: {accuracy * 100:.2f}%")
 
-            logger.info(f"\nTotal accuracy for this test: {total_accuracy * 100:.2f}%\n")
-        except Exception as e:
-            logger.error(f"An error occurred: {e}")
-            logger.error("Traceback:\n" + str(e))
-        finally:
-            print(f"Results have been saved to: {output_file_path}")
+            logger.info(f"Total Accuracy: {total_accuracy * 100:.2f}%")
 
-    # Calculate and write grand total accuracy
-    grand_total_accuracy = sum(all_test_accuracies) / len(all_test_accuracies) if all_test_accuracies else 0.0
-    logger.info(f"Grand total accuracy: {grand_total_accuracy * 100:.2f}%")
+        except Exception as e:
+            logger.error(f"Error running test {i}: {e}")
+            output_file.write(f"Error running test {i}: {e}\n")
+
+# Log the overall accuracy
+average_accuracy = sum(all_test_accuracies) / len(all_test_accuracies)
+logger.info(f"\nOverall Accuracy: {average_accuracy * 100:.2f}%")

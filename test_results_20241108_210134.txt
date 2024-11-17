@@ -1,0 +1,10 @@
+Test 1 Results:
+Differences found:
+
+Field accuracy breakdown:
+  symptoms: 100.00%
+  medications: 100.00%
+  allergies: 100.00%
+
+Total accuracy for this test: 100.00%
+
