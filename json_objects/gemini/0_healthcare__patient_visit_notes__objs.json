@@ -83,5 +83,92 @@
         "family_history_flags": [
             "asthma"
         ]
+    },
+    {
+        "symptoms": [
+            {
+                "name": "Headache"
+            }
+        ]
+    },
+    {
+        "allergies": [
+            "Penicillin",
+            "Latex",
+            "Shellfish"
+        ]
+    },
+    {
+        "family_history_flags": [
+            "diabetes",
+            "heart_disease",
+            "cancer"
+        ]
+    },
+    {
+        "symptoms": [
+            {
+                "name": "Fatigue",
+                "duration_days": 30,
+                "severity": 7,
+                "frequency": "constant"
+            }
+        ],
+        "medications": [
+            {
+                "name": "Vitamin D",
+                "dosage": "1000 IU",
+                "frequency": "daily"
+            }
+        ]
+    },
+    {
+        "medications": [
+            {
+                "name": "Lisinopril"
+            },
+            {
+                "name": "Metformin"
+            }
+        ],
+        "family_history_flags": [
+            "hypertension",
+            "diabetes"
+        ]
+    },
+    {
+        "symptoms": [
+            {
+                "name": "Nausea",
+                "severity": 4
+            }
+        ],
+        "medications": [
+            {
+                "name": "Ondansetron"
+            }
+        ],
+        "allergies": [
+            "Nickel"
+        ]
+    },
+    {
+        "symptoms": [
+            {
+                "name": "Dizziness",
+                "frequency": "occasional"
+            }
+        ],
+        "medications": [
+            {
+                "name": "Hydrochlorothiazide"
+            }
+        ],
+        "allergies": [
+            "Peanuts"
+        ],
+        "family_history_flags": [
+            "asthma"
+        ]
     }
 ]
