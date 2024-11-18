@@ -68,7 +68,7 @@
         "error_codes": [
             "IMG-001"
         ],
-        "impact_level": "major"
+        "impact_level": "blocking"
     },
     {
         "product": {
@@ -124,7 +124,7 @@
         "error_codes": [
             "AUTH-FAIL"
         ],
-        "impact_level": "major",
+        "impact_level": "blocking",
         "system_state": {
             "os": "iOS",
             "connected_devices": [
