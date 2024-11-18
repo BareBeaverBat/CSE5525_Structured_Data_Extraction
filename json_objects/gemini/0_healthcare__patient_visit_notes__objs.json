@@ -15,7 +15,8 @@
                 "name": "Ibuprofen"
             }
         ],
-        "allergies": []
+        "allergies": [],
+        "family_history_flags": []
     },
     {
         "symptoms": [

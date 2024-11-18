@@ -55,7 +55,10 @@
         "parties": [
             "Summit Construction",
             "Valley Architecture"
-        ]
+        ],
+        "clauses": {
+            "termination_clause": "Termination upon mutual agreement"
+        }
     },
     {
         "clauses": {
