@@ -1,0 +1,807 @@
+[
+  {
+    "symptoms": [
+      {
+        "name": "seasonal allergies",
+        "frequency": "intermittent"
+      }
+    ],
+    "allergies": [
+      "ragweed",
+      "birch pollen",
+      "dust mites",
+      "cat dander"
+    ],
+    "family_history_flags": [
+      "asthma",
+      "other",
+      "hypertension"
+    ]
+  },
+  {
+    "symptoms": [
+      {
+        "name": "migraine",
+        "duration_days": 3,
+        "severity": 8,
+        "frequency": "intermittent"
+      },
+      {
+        "name": "nausea",
+        "duration_days": 2,
+        "frequency": "occasional"
+      },
+      {
+        "name": "photophobia",
+        "severity": 7,
+        "frequency": "intermittent"
+      }
+    ]
+  },
+  {
+    "symptoms": [
+      {
+        "name": "lower back pain",
+        "severity": 8,
+        "frequency": "intermittent"
+      },
+      {
+        "name": "numbness in left leg",
+        "frequency": "occasional"
+      }
+    ],
+    "family_history_flags": [
+      "other"
+    ]
+  },
+  {
+    "transaction": {
+      "category": "transfer",
+      "method": "wire",
+      "amount_usd": 1250000.0
+    },
+    "parties": [
+      {
+        "name": "Oakwood Investment Partners",
+        "role": "originator",
+        "entity_type": "business"
+      },
+      {
+        "name": "First Republic Bank",
+        "role": "intermediary",
+        "entity_type": "business"
+      }
+    ],
+    "purpose_indicators": [
+      "investment"
+    ]
+  },
+  {
+    "transaction": {
+      "category": "transfer",
+      "method": "wire",
+      "amount_usd": 15000000.0
+    },
+    "parties": [
+      {
+        "name": "Mergers & Co",
+        "role": "intermediary",
+        "entity_type": "business"
+      },
+      {
+        "name": "Strategic Buyers LLC",
+        "role": "originator",
+        "entity_type": "business"
+      }
+    ],
+    "purpose_indicators": [
+      "investment"
+    ]
+  },
+  {
+    "research_methods": [
+      "clinical_trial",
+      "survey"
+    ],
+    "study_population": {
+      "age_range": {
+        "min": 5,
+        "max": 17
+      },
+      "special_populations": [
+        "children"
+      ]
+    },
+    "data_collection": {
+      "data_types": [
+        "clinical_measurements",
+        "survey_responses"
+      ],
+      "sample_size": 300,
+      "data_frequency": "weekly"
+    },
+    "timeline": {
+      "total_duration_months": 48
+    }
+  },
+  {
+    "research_methods": [
+      "survey"
+    ],
+    "study_population": {
+      "special_populations": [
+        "rare_disease"
+      ]
+    },
+    "data_collection": {
+      "data_types": [
+        "survey_responses"
+      ],
+      "sample_size": 50,
+      "data_frequency": "once"
+    }
+  },
+  {
+    "teams": {
+      "home": "Los Angeles Lakers",
+      "away": "Portland Trail Blazers"
+    },
+    "plays": [
+      {
+        "time_remaining": "0:05",
+        "quarter": 4,
+        "player": "LeBron James",
+        "play_type": "foul"
+      }
+    ]
+  },
+  {
+    "dish_name": "Chocolate Avocado Mousse",
+    "ingredients": [
+      {
+        "name": "avocado",
+        "quantity": 2,
+        "unit": "large"
+      },
+      {
+        "name": "cocoa powder",
+        "quantity": 0.5,
+        "unit": "cup"
+      },
+      {
+        "name": "maple syrup",
+        "quantity": 0.25,
+        "unit": "cup"
+      }
+    ],
+    "dietary_restrictions": [
+      "vegan",
+      "gluten-free",
+      "dairy-free"
+    ],
+    "nutritional_information": {
+      "calories": 180,
+      "protein_grams": 3.2,
+      "carbohydrates_grams": 19.5,
+      "fat_grams": 12.3
+    }
+  },
+  {
+    "product": {
+      "name": "HP Smart"
+    },
+    "impact_level": "minor",
+    "reproduction": {
+      "reproducible": true,
+      "frequency": "always"
+    }
+  },
+  {
+    "product": {
+      "name": "NetGear Orbi",
+      "model": "RBK752",
+      "version": "3.6.7.3"
+    },
+    "error_codes": [
+      "NW_DISCONNECT",
+      "AUTH_FAILURE",
+      "DHCP_ERROR",
+      "DNS_TIMEOUT"
+    ],
+    "impact_level": "blocking",
+    "system_state": {
+      "os": "Windows 11",
+      "connected_devices": [
+        "iPhone 13",
+        "MacBook Pro",
+        "Samsung TV",
+        "Ring Doorbell",
+        "Nest Thermostat"
+      ]
+    },
+    "reproduction": {
+      "reproducible": true,
+      "frequency": "always"
+    }
+  },
+  {
+    "product": {
+      "name": "Arctis Nova Pro",
+      "model": "61486",
+      "version": "2.4.3"
+    },
+    "error_codes": [
+      "AUD-442",
+      "DRV-891",
+      "USB-127"
+    ],
+    "impact_level": "blocking",
+    "system_state": {
+      "os": "Windows 11",
+      "browser": "Chrome 114.0.5735",
+      "connected_devices": [
+        "Arctis Nova Pro",
+        "Logitech G502",
+        "Dell U2719D"
+      ]
+    },
+    "reproduction": {
+      "reproducible": true,
+      "frequency": "always"
+    }
+  },
+  {
+    "bedrooms": 3,
+    "property_type": "house",
+    "amenities": [
+      "garage",
+      "central_ac"
+    ],
+    "location": {
+      "city": "Minneapolis",
+      "state": "MN",
+      "zip_code": "55405"
+    }
+  },
+  {
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "square_footage": 1200,
+    "property_type": "condo",
+    "listing_price": 449000,
+    "location": {
+      "city": "Boston",
+      "state": "MA",
+      "zip_code": "02116"
+    }
+  },
+  {
+    "bedrooms": 5,
+    "bathrooms": "4.5",
+    "square_footage": 4250,
+    "property_type": "house",
+    "amenities": [
+      "pool",
+      "garage",
+      "fireplace",
+      "central_ac",
+      "balcony"
+    ],
+    "listing_price": 1250000,
+    "location": {
+      "city": "Westport",
+      "state": "CT",
+      "zip_code": "06880"
+    }
+  },
+  {
+    "signing_date": "2023-07-12",
+    "parties": [
+      "Green Valley Farms",
+      "Natural Foods Cooperative",
+      "Organic Distribution Inc."
+    ]
+  },
+  {
+    "signing_date": "2023-11-01",
+    "parties": [
+      "Riverside Healthcare",
+      "MedTech Solutions"
+    ],
+    "governing_law": "State of California",
+    "clauses": {
+      "confidentiality_clause": "Perpetual confidentiality requirement"
+    }
+  },
+  {
+    "parties": [
+      "Urban Development Corp",
+      "City Planning Associates"
+    ],
+    "clauses": {
+      "termination_clause": "60 days written notice required"
+    }
+  },
+  {
+    "skills": [
+      "C++",
+      "CUDA",
+      "Computer Vision",
+      "Machine Learning",
+      "Parallel Computing",
+      "OpenCV",
+      "TensorFlow",
+      "System Architecture",
+      "Performance Optimization",
+      "Linux",
+      "Docker",
+      "AWS"
+    ],
+    "experience_years": 12,
+    "education": [
+      {
+        "degree_type": "MS",
+        "major": "Computer Engineering",
+        "institution": "Georgia Tech"
+      }
+    ],
+    "previous_roles": [
+      {
+        "title": "Senior Software Engineer",
+        "company": "NVIDIA",
+        "start_month": 4,
+        "start_year": 2011,
+        "end_month": null,
+        "end_year": null
+      }
+    ]
+  },
+  {
+    "skills": [
+      "Data Science",
+      "Machine Learning",
+      "SQL",
+      "Python",
+      "Spark",
+      "Hadoop"
+    ],
+    "experience_years": 7,
+    "education": [
+      {
+        "degree_type": "MS",
+        "major": "Data Science",
+        "institution": "Georgia Tech"
+      },
+      {
+        "degree_type": "BS",
+        "major": "Statistics",
+        "institution": "University of Michigan"
+      }
+    ],
+    "previous_roles": [
+      {
+        "title": "Senior Data Scientist",
+        "company": "Twitter",
+        "start_month": 4,
+        "start_year": 2020,
+        "end_month": null,
+        "end_year": null
+      },
+      {
+        "title": "Data Scientist",
+        "company": "LinkedIn",
+        "start_month": 7,
+        "start_year": 2016,
+        "end_month": 3,
+        "end_year": 2020
+      }
+    ]
+  },
+  {
+    "incident_type": "other",
+    "estimated_damages": 12400.0
+  },
+  {
+    "incident_date": "2023-10-25",
+    "incident_type": "accident",
+    "location": {
+      "city": "Phoenix",
+      "state": "AZ"
+    },
+    "estimated_damages": 4300.0
+  },
+  {
+    "incident_date": "2023-10-30",
+    "incident_type": "theft",
+    "witnesses": [
+      {
+        "name": "Emma Davis",
+        "phone": "303-555-2345"
+      }
+    ]
+  },
+  {
+    "location": {
+      "type": "business",
+      "indoor_outdoor": "indoor"
+    },
+    "incident_type": [
+      "theft"
+    ],
+    "weapons": [
+      {
+        "type": "firearm",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "location": {
+      "type": "residence",
+      "indoor_outdoor": "indoor",
+      "floor_level": 3
+    },
+    "incident_type": [
+      "domestic",
+      "noise"
+    ]
+  },
+  {
+    "project_specs": {
+      "total_square_feet": 12000,
+      "floors": 1,
+      "occupancy_count": 400
+    },
+    "usage": [
+      "public"
+    ],
+    "timeline": {
+      "duration_months": 8,
+      "phases": 2
+    }
+  },
+  {
+    "project_specs": {
+      "total_square_feet": 15000,
+      "floors": 2,
+      "occupancy_count": 250
+    },
+    "usage": [
+      "public"
+    ],
+    "timeline": {
+      "duration_months": 12,
+      "phases": 2
+    }
+  },
+  {
+    "project_specs": {
+      "total_square_feet": 85000,
+      "floors": 8,
+      "occupancy_count": 1200,
+      "lot_coverage_percentage": 45.2
+    },
+    "usage": [
+      "commercial"
+    ],
+    "utilities": {
+      "water": {
+        "required": true,
+        "gallons_per_day": 9000
+      },
+      "electrical": {
+        "required": true,
+        "amperage": 600
+      },
+      "gas": true
+    }
+  },
+  {
+    "assistance_needs": [
+      {
+        "category": "substance_treatment",
+        "urgency": "immediate"
+      },
+      {
+        "category": "childcare",
+        "urgency": "immediate"
+      }
+    ],
+    "household": {
+      "total_members": 3,
+      "composition": {
+        "adults": 1,
+        "children_under_18": 2
+      }
+    },
+    "income_sources": [
+      "tanf",
+      "snap"
+    ]
+  },
+  {
+    "household": {
+      "total_members": 7,
+      "composition": {
+        "adults": 4,
+        "children_under_18": 2,
+        "seniors_over_65": 1
+      },
+      "housing_status": "stable"
+    },
+    "income_sources": [
+      "employment",
+      "social_security",
+      "pension",
+      "snap"
+    ]
+  },
+  {
+    "symptoms": [
+      {
+        "name": "Nausea",
+        "severity": 4
+      }
+    ],
+    "medications": [
+      {
+        "name": "Ondansetron"
+      }
+    ],
+    "allergies": [
+      "Nickel"
+    ]
+  },
+  {
+    "symptoms": [
+      {
+        "name": "Headache"
+      },
+      {
+        "name": "Fatigue"
+      }
+    ]
+  },
+  {
+    "medications": [
+      {
+        "name": "Lisinopril"
+      },
+      {
+        "name": "Metformin"
+      }
+    ],
+    "family_history_flags": [
+      "hypertension",
+      "diabetes"
+    ]
+  },
+  {
+    "research_methods": [
+      "data_analysis"
+    ],
+    "data_collection": {
+      "data_types": [
+        "clinical_measurements"
+      ]
+    }
+  },
+  {
+    "research_area": "chemistry",
+    "methodology": "quantitative",
+    "data_sources": [
+      {
+        "name": "Chemical compound database",
+        "type": "public"
+      }
+    ]
+  },
+  {
+    "product": {
+      "name": "CloudSync"
+    },
+    "error_codes": [
+      "CS1201"
+    ],
+    "reproduction": {
+      "reproducible": true,
+      "frequency": "always"
+    }
+  },
+  {
+    "bedrooms": 0,
+    "bathrooms": 1,
+    "square_footage": 450,
+    "property_type": "apartment",
+    "listing_price": 900000,
+    "location": {
+      "city": "New York",
+      "state": "NY",
+      "zip_code": "10001"
+    }
+  },
+  {
+    "property_type": "land",
+    "location": {
+      "city": "Elko",
+      "state": "NV",
+      "zip_code": "89801"
+    }
+  },
+  {
+    "property_type": "land",
+    "listing_price": 500000,
+    "location": {
+      "city": "Aspen",
+      "state": "CO",
+      "zip_code": "81611"
+    }
+  },
+  {
+    "signing_date": "2023-05-20",
+    "parties": [
+      "Alpha Aeronautics",
+      "Beta Biotech"
+    ],
+    "clauses": {
+      "confidentiality_clause": "Standard NDA applies."
+    }
+  },
+  {
+    "signing_date": "2023-10-29",
+    "parties": [
+      "Omicron Operations",
+      "Pi Productions",
+      "Rho Resources"
+    ],
+    "governing_law": "Illinois"
+  },
+  {
+    "skills": [
+      "Web Development",
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ],
+    "education": [
+      {
+        "degree_type": "BS",
+        "institution": "California State University, Long Beach"
+      }
+    ],
+    "contact_info": {
+      "email": "peter.pan@email.com",
+      "phone": "555-111-2222"
+    }
+  },
+  {
+    "education": [
+      {
+        "degree_type": "BS",
+        "institution": "University of California, Berkeley"
+      }
+    ],
+    "previous_roles": [
+      {
+        "title": "Software Engineer",
+        "company": "Google"
+      }
+    ]
+  },
+  {
+    "incident_date": "2024-07-22",
+    "incident_type": "flood",
+    "location": {
+      "street_address": "222 Maple St"
+    },
+    "police_report_filed": false,
+    "witnesses": [
+      {
+        "name": "David Brown",
+        "email": "david.brown@example.com"
+      }
+    ]
+  },
+  {
+    "incident_date": "2024-07-21",
+    "incident_type": "accident",
+    "location": {
+      "street_address": "333 Cedar St",
+      "city": "Dallas",
+      "state": "TX",
+      "zip_code": "75201"
+    },
+    "estimated_damages": 5000,
+    "police_report_filed": true,
+    "witnesses": [
+      {
+        "name": "Emily Wilson",
+        "phone": "555-876-5432",
+        "email": "emily.wilson@example.com"
+      }
+    ]
+  },
+  {
+    "incident_type": [
+      "assault"
+    ],
+    "location": {
+      "type": "residence",
+      "indoor_outdoor": "indoor"
+    },
+    "weapons": [
+      {
+        "type": "firearm"
+      },
+      {
+        "type": "knife"
+      }
+    ]
+  },
+  {
+    "project_specs": {
+      "total_square_feet": 9000,
+      "floors": 4,
+      "occupancy_count": 40,
+      "lot_coverage_percentage": 80
+    },
+    "usage": [
+      "mixed"
+    ],
+    "utilities": {
+      "water": {
+        "required": true,
+        "gallons_per_day": 1000
+      },
+      "electrical": {
+        "required": true,
+        "amperage": 600
+      },
+      "gas": false
+    },
+    "timeline": {
+      "phases": 5
+    }
+  },
+  {
+    "project_specs": {
+      "total_square_feet": 1200,
+      "floors": 1
+    }
+  },
+  {
+    "usage": [
+      "agricultural"
+    ],
+    "utilities": {
+      "water": {
+        "required": true,
+        "gallons_per_day": 2000
+      },
+      "electrical": {
+        "required": true,
+        "amperage": 100
+      },
+      "gas": false
+    },
+    "timeline": {
+      "duration_months": 9,
+      "phases": 3
+    }
+  },
+  {
+    "assistance_needs": [
+      {
+        "category": "mental_health",
+        "urgency": "ongoing"
+      },
+      {
+        "category": "substance_treatment",
+        "urgency": "ongoing"
+      }
+    ],
+    "income_sources": [
+      "none"
+    ]
+  }
+]
