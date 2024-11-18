@@ -2,20 +2,60 @@
   {
     "symptoms": [
       {
-        "name": "seasonal allergies",
+        "name": "migraine headache",
+        "duration_days": 3,
+        "severity": 8,
         "frequency": "intermittent"
+      },
+      {
+        "name": "nausea",
+        "duration_days": 2,
+        "severity": 6,
+        "frequency": "occasional"
+      }
+    ],
+    "medications": [
+      {
+        "name": "sumatriptan",
+        "dosage": "100mg",
+        "frequency": "as needed"
+      },
+      {
+        "name": "ondansetron",
+        "dosage": "4mg",
+        "frequency": "twice daily"
       }
     ],
     "allergies": [
-      "ragweed",
-      "birch pollen",
-      "dust mites",
-      "cat dander"
+      "penicillin",
+      "sulfa drugs",
+      "latex"
     ],
     "family_history_flags": [
-      "asthma",
-      "other",
-      "hypertension"
+      "diabetes",
+      "hypertension",
+      "cancer"
+    ]
+  },
+  {
+    "medications": [
+      {
+        "name": "lisinopril",
+        "dosage": "10mg",
+        "frequency": "daily"
+      },
+      {
+        "name": "metformin",
+        "dosage": "500mg"
+      },
+      {
+        "name": "aspirin",
+        "frequency": "daily"
+      }
+    ],
+    "allergies": [
+      "shellfish",
+      "iodine"
     ]
   },
   {
@@ -39,89 +79,82 @@
     ]
   },
   {
-    "symptoms": [
+    "transaction": {
+      "category": "payment",
+      "method": "ach",
+      "amount_usd": 12475.5
+    },
+    "parties": [
       {
-        "name": "lower back pain",
-        "severity": 8,
-        "frequency": "intermittent"
+        "name": "Blue Cross Insurance",
+        "role": "intermediary",
+        "entity_type": "business"
       },
       {
-        "name": "numbness in left leg",
-        "frequency": "occasional"
+        "name": "City Hospital",
+        "role": "beneficiary",
+        "entity_type": "business"
       }
     ],
-    "family_history_flags": [
-      "other"
+    "purpose_indicators": [
+      "goods_services"
     ]
   },
   {
     "transaction": {
       "category": "transfer",
       "method": "wire",
-      "amount_usd": 1250000.0
+      "amount_usd": 2750000.0,
+      "cross_border": true
     },
     "parties": [
       {
-        "name": "Oakwood Investment Partners",
+        "name": "Global Ventures AG",
         "role": "originator",
         "entity_type": "business"
       },
       {
-        "name": "First Republic Bank",
-        "role": "intermediary",
-        "entity_type": "business"
-      }
-    ],
-    "purpose_indicators": [
-      "investment"
-    ]
-  },
-  {
-    "transaction": {
-      "category": "transfer",
-      "method": "wire",
-      "amount_usd": 15000000.0
-    },
-    "parties": [
-      {
-        "name": "Mergers & Co",
+        "name": "CitiFirst Bank",
         "role": "intermediary",
         "entity_type": "business"
       },
       {
-        "name": "Strategic Buyers LLC",
-        "role": "originator",
+        "name": "Asia Trading Corporation",
+        "role": "beneficiary",
         "entity_type": "business"
       }
     ],
-    "purpose_indicators": [
-      "investment"
+    "risk_flags": [
+      {
+        "type": "high_risk_jurisdiction",
+        "severity": "medium"
+      },
+      {
+        "type": "rapid_movement",
+        "severity": "high"
+      }
     ]
   },
   {
     "research_methods": [
-      "clinical_trial",
-      "survey"
+      "field_study",
+      "interviews"
     ],
     "study_population": {
       "age_range": {
-        "min": 5,
-        "max": 17
+        "min": 65,
+        "max": 90
       },
       "special_populations": [
-        "children"
+        "elderly"
       ]
     },
     "data_collection": {
       "data_types": [
-        "clinical_measurements",
         "survey_responses"
       ],
-      "sample_size": 300,
-      "data_frequency": "weekly"
-    },
-    "timeline": {
-      "total_duration_months": 48
+      "sample_size": 150,
+      "data_frequency": "monthly"
     }
   },
   {
@@ -143,164 +176,158 @@
   },
   {
     "teams": {
-      "home": "Los Angeles Lakers",
-      "away": "Portland Trail Blazers"
+      "home": "Charlotte Hornets",
+      "away": "Minnesota Timberwolves"
     },
     "plays": [
       {
-        "time_remaining": "0:05",
-        "quarter": 4,
-        "player": "LeBron James",
-        "play_type": "foul"
+        "time_remaining": "6:15",
+        "quarter": 3,
+        "player": "LaMelo Ball",
+        "play_type": "turnover"
       }
     ]
   },
   {
-    "dish_name": "Chocolate Avocado Mousse",
+    "dish_name": "Sourdough Bread",
     "ingredients": [
       {
-        "name": "avocado",
-        "quantity": 2,
-        "unit": "large"
+        "name": "bread flour",
+        "quantity": 500,
+        "unit": "grams"
       },
       {
-        "name": "cocoa powder",
-        "quantity": 0.5,
-        "unit": "cup"
+        "name": "sourdough starter",
+        "quantity": 100,
+        "unit": "grams"
       },
       {
-        "name": "maple syrup",
-        "quantity": 0.25,
-        "unit": "cup"
+        "name": "salt",
+        "quantity": 10,
+        "unit": "grams"
+      },
+      {
+        "name": "water",
+        "quantity": 350,
+        "unit": "milliliters"
       }
     ],
-    "dietary_restrictions": [
-      "vegan",
-      "gluten-free",
-      "dairy-free"
+    "instructions": [
+      "Mix ingredients and autolyse for 30 minutes",
+      "Perform 4 sets of stretch and folds",
+      "Bulk ferment for 4-6 hours",
+      "Shape and cold proof overnight",
+      "Bake in Dutch oven at 450\u00b0F"
     ],
-    "nutritional_information": {
-      "calories": 180,
-      "protein_grams": 3.2,
-      "carbohydrates_grams": 19.5,
-      "fat_grams": 12.3
-    }
+    "preparation_time_minutes": 300,
+    "cooking_time_minutes": 45
   },
   {
     "product": {
-      "name": "HP Smart"
+      "name": "Keychron K3",
+      "version": "2"
     },
     "impact_level": "minor",
+    "system_state": {
+      "os": "macOS 13.4"
+    },
     "reproduction": {
-      "reproducible": true,
-      "frequency": "always"
+      "reproducible": false,
+      "frequency": "once"
     }
   },
   {
     "product": {
-      "name": "NetGear Orbi",
-      "model": "RBK752",
-      "version": "3.6.7.3"
+      "name": "HomeSense Hub",
+      "model": "HS-500",
+      "version": "3.2.1"
     },
     "error_codes": [
-      "NW_DISCONNECT",
-      "AUTH_FAILURE",
-      "DHCP_ERROR",
-      "DNS_TIMEOUT"
+      "HUB_CONN_LOST",
+      "DEVICE_SYNC_ERR",
+      "AUTH_FAILURE"
     ],
-    "impact_level": "blocking",
+    "impact_level": "major",
     "system_state": {
       "os": "Windows 11",
+      "browser": "Chrome 114",
+      "connected_devices": [
+        "Smart Lock",
+        "Thermostat",
+        "Motion Sensor",
+        "Door Bell"
+      ]
+    },
+    "reproduction": {
+      "reproducible": true,
+      "frequency": "often"
+    }
+  },
+  {
+    "product": {
+      "name": "AirFlow Pro TWS",
+      "model": "AF-200",
+      "version": "2.1.3"
+    },
+    "error_codes": [
+      "BT-404",
+      "CONN-201",
+      "SYNC-102"
+    ],
+    "impact_level": "major",
+    "system_state": {
+      "os": "iOS 16.5",
+      "browser": "Safari 16.5",
       "connected_devices": [
         "iPhone 13",
         "MacBook Pro",
-        "Samsung TV",
-        "Ring Doorbell",
-        "Nest Thermostat"
+        "Apple Watch"
       ]
     },
     "reproduction": {
       "reproducible": true,
-      "frequency": "always"
-    }
-  },
-  {
-    "product": {
-      "name": "Arctis Nova Pro",
-      "model": "61486",
-      "version": "2.4.3"
-    },
-    "error_codes": [
-      "AUD-442",
-      "DRV-891",
-      "USB-127"
-    ],
-    "impact_level": "blocking",
-    "system_state": {
-      "os": "Windows 11",
-      "browser": "Chrome 114.0.5735",
-      "connected_devices": [
-        "Arctis Nova Pro",
-        "Logitech G502",
-        "Dell U2719D"
-      ]
-    },
-    "reproduction": {
-      "reproducible": true,
-      "frequency": "always"
+      "frequency": "often"
     }
   },
   {
     "bedrooms": 3,
-    "property_type": "house",
+    "bathrooms": "2.5",
+    "square_footage": 1850,
+    "property_type": "townhouse",
     "amenities": [
-      "garage",
-      "central_ac"
+      "garage"
     ],
+    "listing_price": 575000,
     "location": {
-      "city": "Minneapolis",
-      "state": "MN",
-      "zip_code": "55405"
-    }
-  },
-  {
-    "bedrooms": 2,
-    "bathrooms": 2,
-    "square_footage": 1200,
-    "property_type": "condo",
-    "listing_price": 449000,
-    "location": {
-      "city": "Boston",
-      "state": "MA",
-      "zip_code": "02116"
+      "city": "Arlington",
+      "state": "VA",
+      "zip_code": "22201"
     }
   },
   {
     "bedrooms": 5,
-    "bathrooms": "4.5",
-    "square_footage": 4250,
+    "bathrooms": 3,
+    "square_footage": 3600,
     "property_type": "house",
     "amenities": [
-      "pool",
-      "garage",
       "fireplace",
       "central_ac",
-      "balcony"
+      "garage"
     ],
-    "listing_price": 1250000,
     "location": {
-      "city": "Westport",
-      "state": "CT",
-      "zip_code": "06880"
+      "city": "Austin",
+      "state": "Texas",
+      "zip_code": "78731"
     }
   },
   {
-    "signing_date": "2023-07-12",
-    "parties": [
-      "Green Valley Farms",
-      "Natural Foods Cooperative",
-      "Organic Distribution Inc."
-    ]
+    "property_type": "land",
+    "listing_price": 85000,
+    "location": {
+      "city": "Prescott",
+      "state": "AZ",
+      "zip_code": "86301"
+    }
   },
   {
     "signing_date": "2023-11-01",
@@ -314,172 +341,156 @@
     }
   },
   {
+    "signing_date": "2023-12-01",
     "parties": [
-      "Urban Development Corp",
-      "City Planning Associates"
+      "Lakeside Manufacturing",
+      "Oceanview Logistics",
+      "Mountain Storage"
     ],
-    "clauses": {
-      "termination_clause": "60 days written notice required"
-    }
+    "governing_law": "State of New York"
   },
   {
-    "skills": [
-      "C++",
-      "CUDA",
-      "Computer Vision",
-      "Machine Learning",
-      "Parallel Computing",
-      "OpenCV",
-      "TensorFlow",
-      "System Architecture",
-      "Performance Optimization",
-      "Linux",
-      "Docker",
-      "AWS"
-    ],
-    "experience_years": 12,
-    "education": [
-      {
-        "degree_type": "MS",
-        "major": "Computer Engineering",
-        "institution": "Georgia Tech"
-      }
-    ],
-    "previous_roles": [
-      {
-        "title": "Senior Software Engineer",
-        "company": "NVIDIA",
-        "start_month": 4,
-        "start_year": 2011,
-        "end_month": null,
-        "end_year": null
-      }
+    "signing_date": "2023-07-12",
+    "parties": [
+      "Green Valley Farms",
+      "Natural Foods Cooperative",
+      "Organic Distribution Inc."
     ]
   },
   {
     "skills": [
-      "Data Science",
-      "Machine Learning",
-      "SQL",
-      "Python",
-      "Spark",
-      "Hadoop"
+      "Product Management",
+      "Agile",
+      "Stakeholder Management",
+      "Technical Communication",
+      "Data Analysis"
     ],
-    "experience_years": 7,
+    "experience_years": 6,
     "education": [
       {
         "degree_type": "MS",
-        "major": "Data Science",
-        "institution": "Georgia Tech"
-      },
-      {
-        "degree_type": "BS",
-        "major": "Statistics",
-        "institution": "University of Michigan"
+        "major": "Information Systems",
+        "institution": "Carnegie Mellon University"
       }
     ],
     "previous_roles": [
       {
-        "title": "Senior Data Scientist",
-        "company": "Twitter",
+        "title": "Senior Product Manager",
+        "company": "Spotify",
         "start_month": 4,
         "start_year": 2020,
         "end_month": null,
         "end_year": null
       },
       {
-        "title": "Data Scientist",
-        "company": "LinkedIn",
+        "title": "Product Manager",
+        "company": "Microsoft",
         "start_month": 7,
-        "start_year": 2016,
+        "start_year": 2017,
         "end_month": 3,
         "end_year": 2020
       }
     ]
   },
   {
+    "education": [
+      {
+        "degree_type": "PhD",
+        "major": "Molecular Biology",
+        "institution": "Stanford University"
+      },
+      {
+        "degree_type": "MS",
+        "major": "Biotechnology",
+        "institution": "Johns Hopkins University"
+      },
+      {
+        "degree_type": "BS",
+        "major": "Biology",
+        "institution": "UCLA"
+      }
+    ],
+    "skills": [
+      "CRISPR",
+      "PCR",
+      "Cell Culture",
+      "Protein Analysis",
+      "R Programming",
+      "Scientific Writing"
+    ],
+    "contact_info": {
+      "email": "james.wilson@stanford.edu",
+      "phone": "650-555-0199"
+    }
+  },
+  {
     "incident_type": "other",
     "estimated_damages": 12400.0
   },
   {
-    "incident_date": "2023-10-25",
+    "incident_date": "2023-09-12",
+    "incident_type": "flood",
+    "location": {
+      "city": "Houston",
+      "state": "TX",
+      "zip_code": "77002"
+    }
+  },
+  {
+    "incident_date": "2023-10-15",
     "incident_type": "accident",
     "location": {
-      "city": "Phoenix",
-      "state": "AZ"
+      "city": "Miami",
+      "state": "FL"
     },
-    "estimated_damages": 4300.0
-  },
-  {
-    "incident_date": "2023-10-30",
-    "incident_type": "theft",
     "witnesses": [
       {
-        "name": "Emma Davis",
-        "phone": "303-555-2345"
+        "name": "Maria Rodriguez",
+        "email": "mrodriguez@yahoo.com"
       }
     ]
   },
   {
     "location": {
-      "type": "business",
-      "indoor_outdoor": "indoor"
+      "type": "vehicle",
+      "indoor_outdoor": "both"
     },
     "incident_type": [
-      "theft"
+      "assault"
     ],
-    "weapons": [
+    "vehicles": [
       {
-        "type": "firearm",
-        "quantity": 1
+        "type": "truck",
+        "color": "blue",
+        "damage": [
+          "none"
+        ]
       }
     ]
   },
   {
     "location": {
-      "type": "residence",
-      "indoor_outdoor": "indoor",
-      "floor_level": 3
+      "type": "street",
+      "indoor_outdoor": "outdoor"
     },
     "incident_type": [
-      "domestic",
-      "noise"
+      "traffic"
+    ],
+    "vehicles": [
+      {
+        "type": "car",
+        "color": "silver",
+        "damage": [
+          "front",
+          "driver_side"
+        ]
+      }
     ]
   },
   {
     "project_specs": {
-      "total_square_feet": 12000,
-      "floors": 1,
-      "occupancy_count": 400
-    },
-    "usage": [
-      "public"
-    ],
-    "timeline": {
-      "duration_months": 8,
-      "phases": 2
-    }
-  },
-  {
-    "project_specs": {
-      "total_square_feet": 15000,
-      "floors": 2,
-      "occupancy_count": 250
-    },
-    "usage": [
-      "public"
-    ],
-    "timeline": {
-      "duration_months": 12,
-      "phases": 2
-    }
-  },
-  {
-    "project_specs": {
-      "total_square_feet": 85000,
-      "floors": 8,
-      "occupancy_count": 1200,
-      "lot_coverage_percentage": 45.2
+      "total_square_feet": 15600,
+      "lot_coverage_percentage": 55.8
     },
     "usage": [
       "commercial"
@@ -487,14 +498,68 @@
     "utilities": {
       "water": {
         "required": true,
-        "gallons_per_day": 9000
+        "gallons_per_day": 3500
       },
       "electrical": {
         "required": true,
-        "amperage": 600
+        "amperage": 300
       },
       "gas": true
     }
+  },
+  {
+    "project_specs": {
+      "total_square_feet": 2400,
+      "floors": 2
+    },
+    "usage": [
+      "residential"
+    ],
+    "utilities": {
+      "water": {
+        "required": true,
+        "gallons_per_day": 450
+      }
+    }
+  },
+  {
+    "project_specs": {
+      "total_square_feet": 5200,
+      "lot_coverage_percentage": 32.5
+    },
+    "usage": [
+      "agricultural"
+    ],
+    "utilities": {
+      "water": {
+        "required": true,
+        "gallons_per_day": 800
+      }
+    }
+  },
+  {
+    "assistance_needs": [
+      {
+        "category": "healthcare",
+        "urgency": "immediate"
+      }
+    ],
+    "household": {
+      "total_members": 2,
+      "composition": {
+        "seniors_over_65": 2
+      }
+    },
+    "risk_factors": [
+      {
+        "type": "medical_crisis",
+        "timeframe": "current"
+      },
+      {
+        "type": "isolation",
+        "timeframe": "current"
+      }
+    ]
   },
   {
     "assistance_needs": [
@@ -520,104 +585,102 @@
     ]
   },
   {
-    "household": {
-      "total_members": 7,
-      "composition": {
-        "adults": 4,
-        "children_under_18": 2,
-        "seniors_over_65": 1
-      },
-      "housing_status": "stable"
-    },
-    "income_sources": [
-      "employment",
-      "social_security",
-      "pension",
-      "snap"
-    ]
-  },
-  {
-    "symptoms": [
-      {
-        "name": "Nausea",
-        "severity": 4
-      }
-    ],
     "medications": [
       {
-        "name": "Ondansetron"
+        "name": "Metformin",
+        "dosage": "500mg",
+        "frequency": "Twice daily"
+      },
+      {
+        "name": "Lisinopril",
+        "dosage": "10mg",
+        "frequency": "Once daily"
       }
     ],
     "allergies": [
-      "Nickel"
+      "Sulfa drugs"
+    ],
+    "family_history_flags": [
+      "hypertension"
+    ]
+  },
+  {
+    "allergies": [
+      "Penicillin",
+      "Peanuts",
+      "Dust mites"
+    ],
+    "family_history_flags": [
+      "diabetes",
+      "heart_disease"
     ]
   },
   {
     "symptoms": [
       {
-        "name": "Headache"
-      },
-      {
-        "name": "Fatigue"
-      }
-    ]
-  },
-  {
-    "medications": [
-      {
-        "name": "Lisinopril"
-      },
-      {
-        "name": "Metformin"
+        "name": "Dizziness",
+        "frequency": "occasional"
       }
     ],
+    "medications": [
+      {
+        "name": "Hydrochlorothiazide"
+      }
+    ],
+    "allergies": [
+      "Peanuts"
+    ],
     "family_history_flags": [
-      "hypertension",
-      "diabetes"
+      "asthma"
     ]
   },
   {
     "research_methods": [
-      "data_analysis"
+      "interviews",
+      "survey"
+    ],
+    "equipment_needs": [
+      {
+        "name": "Video Conferencing Software"
+      }
     ],
     "data_collection": {
       "data_types": [
-        "clinical_measurements"
-      ]
+        "survey_responses"
+      ],
+      "sample_size": 2000,
+      "data_frequency": "once"
     }
   },
   {
     "research_area": "chemistry",
-    "methodology": "quantitative",
+    "methodology": "computational",
     "data_sources": [
       {
-        "name": "Chemical compound database",
-        "type": "public"
+        "name": "NIST database",
+        "type": "public",
+        "url": "https://nist.gov/data"
+      },
+      {
+        "name": "Proprietary lab data",
+        "type": "private"
       }
     ]
   },
   {
     "product": {
-      "name": "CloudSync"
+      "name": "MusicStreamer+"
     },
     "error_codes": [
-      "CS1201"
+      "MS-PLAYBACK-ERR"
     ],
+    "impact_level": "blocking",
     "reproduction": {
       "reproducible": true,
-      "frequency": "always"
-    }
-  },
-  {
-    "bedrooms": 0,
-    "bathrooms": 1,
-    "square_footage": 450,
-    "property_type": "apartment",
-    "listing_price": 900000,
-    "location": {
-      "city": "New York",
-      "state": "NY",
-      "zip_code": "10001"
+      "frequency": "sometimes"
+    },
+    "system_state": {
+      "browser": "Chrome 114"
     }
   },
   {
@@ -629,164 +692,186 @@
     }
   },
   {
-    "property_type": "land",
-    "listing_price": 500000,
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "square_footage": 1500,
+    "property_type": "house",
+    "listing_price": 350000,
     "location": {
-      "city": "Aspen",
-      "state": "CO",
-      "zip_code": "81611"
+      "city": "Austin",
+      "state": "TX",
+      "zip_code": "78704"
     }
   },
   {
-    "signing_date": "2023-05-20",
-    "parties": [
-      "Alpha Aeronautics",
-      "Beta Biotech"
+    "bedrooms": 5,
+    "bathrooms": 4,
+    "square_footage": 4000,
+    "property_type": "house",
+    "amenities": [
+      "pool",
+      "garage",
+      "fireplace",
+      "central_ac"
     ],
+    "listing_price": 1500000,
+    "location": {
+      "city": "Miami",
+      "state": "FL",
+      "zip_code": "33101"
+    }
+  },
+  {
+    "signing_date": "2024-06-21",
     "clauses": {
-      "confidentiality_clause": "Standard NDA applies."
+      "termination_clause": "Immediate termination for cause.",
+      "confidentiality_clause": "Information is confidential and proprietary.",
+      "payment_amount": 75000
     }
   },
   {
-    "signing_date": "2023-10-29",
     "parties": [
-      "Omicron Operations",
-      "Pi Productions",
-      "Rho Resources"
+      "Acme Inc.",
+      "Beta Ltd."
     ],
-    "governing_law": "Illinois"
+    "governing_law": "California"
   },
   {
     "skills": [
-      "Web Development",
-      "HTML",
-      "CSS",
-      "JavaScript"
+      "Java",
+      "Spring Boot"
     ],
+    "experience_years": 6,
+    "previous_roles": [
+      {
+        "title": "Backend Engineer",
+        "company": "Tech Company"
+      }
+    ]
+  },
+  {
     "education": [
       {
-        "degree_type": "BS",
-        "institution": "California State University, Long Beach"
+        "degree_type": "BA",
+        "institution": "University of California, Los Angeles"
+      },
+      {
+        "degree_type": "MA",
+        "institution": "University of California, San Diego"
       }
     ],
     "contact_info": {
-      "email": "peter.pan@email.com",
-      "phone": "555-111-2222"
+      "email": "multi.degree@email.com",
+      "phone": "555-121-3434"
     }
   },
   {
-    "education": [
-      {
-        "degree_type": "BS",
-        "institution": "University of California, Berkeley"
-      }
-    ],
-    "previous_roles": [
-      {
-        "title": "Software Engineer",
-        "company": "Google"
-      }
-    ]
-  },
-  {
-    "incident_date": "2024-07-22",
+    "incident_date": "2024-07-25",
     "incident_type": "flood",
     "location": {
-      "street_address": "222 Maple St"
+      "street_address": "456 Elm St",
+      "city": "Miami",
+      "state": "FL",
+      "zip_code": "33139"
     },
+    "estimated_damages": 15000,
     "police_report_filed": false,
     "witnesses": [
       {
-        "name": "David Brown",
-        "email": "david.brown@example.com"
+        "name": "Jane Smith",
+        "phone": "555-123-4567"
+      },
+      {
+        "name": "Peter Jones",
+        "email": "peter.jones@example.com"
       }
     ]
   },
   {
-    "incident_date": "2024-07-21",
     "incident_type": "accident",
     "location": {
-      "street_address": "333 Cedar St",
-      "city": "Dallas",
-      "state": "TX",
-      "zip_code": "75201"
+      "city": "Seattle",
+      "state": "WA"
     },
-    "estimated_damages": 5000,
     "police_report_filed": true,
-    "witnesses": [
-      {
-        "name": "Emily Wilson",
-        "phone": "555-876-5432",
-        "email": "emily.wilson@example.com"
-      }
-    ]
+    "estimated_damages": 100
   },
   {
-    "incident_type": [
-      "assault"
-    ],
     "location": {
-      "type": "residence",
-      "indoor_outdoor": "indoor"
+      "type": "public_space",
+      "indoor_outdoor": "outdoor"
     },
+    "incident_type": [
+      "assault",
+      "vandalism"
+    ],
     "weapons": [
       {
-        "type": "firearm"
+        "type": "blunt_object",
+        "quantity": 1
       },
       {
-        "type": "knife"
+        "type": "other",
+        "quantity": 1
+      }
+    ],
+    "vehicles": [
+      {
+        "type": "car"
+      },
+      {
+        "type": "truck"
       }
     ]
   },
   {
     "project_specs": {
-      "total_square_feet": 9000,
-      "floors": 4,
-      "occupancy_count": 40,
-      "lot_coverage_percentage": 80
+      "total_square_feet": 3000,
+      "floors": 2,
+      "occupancy_count": 10,
+      "lot_coverage_percentage": 50
     },
     "usage": [
-      "mixed"
+      "residential",
+      "commercial"
     ],
     "utilities": {
       "water": {
         "required": true,
-        "gallons_per_day": 1000
-      },
-      "electrical": {
-        "required": true,
-        "amperage": 600
-      },
-      "gas": false
-    },
-    "timeline": {
-      "phases": 5
-    }
-  },
-  {
-    "project_specs": {
-      "total_square_feet": 1200,
-      "floors": 1
+        "gallons_per_day": 500
+      }
     }
   },
   {
     "usage": [
-      "agricultural"
+      "public"
     ],
     "utilities": {
       "water": {
         "required": true,
-        "gallons_per_day": 2000
+        "gallons_per_day": 750
+      },
+      "gas": true
+    },
+    "timeline": {
+      "duration_months": 12,
+      "phases": 4
+    }
+  },
+  {
+    "usage": [
+      "industrial"
+    ],
+    "utilities": {
+      "water": {
+        "required": true,
+        "gallons_per_day": 500
       },
       "electrical": {
         "required": true,
-        "amperage": 100
+        "amperage": 200
       },
-      "gas": false
-    },
-    "timeline": {
-      "duration_months": 9,
-      "phases": 3
+      "gas": true
     }
   },
   {

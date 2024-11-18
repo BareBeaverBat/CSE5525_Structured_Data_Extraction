@@ -41,7 +41,6 @@ def stratified_sampling(strata, sizes):
     current_index = 0  # Track global index across strata
     for stratum_index, stratum in enumerate(strata):
         stratum_size = len(stratum)
-        print(stratum_size)
         remaining_sizes = {k: v for k, v in sizes.items()}
         
         stratum_indices = list(range(stratum_size))
