@@ -1,0 +1,716 @@
+[
+  {
+    "research_methods": [
+      "clinical_trial"
+    ],
+    "study_population": {
+      "age_range": {
+        "min": 18,
+        "max": 65
+      },
+      "special_populations": [
+        "immunocompromised"
+      ]
+    },
+    "timeline": {
+      "total_duration_months": 36,
+      "key_milestones": [
+        {
+          "name": "enrollment completion",
+          "month": 6
+        },
+        {
+          "name": "treatment phase",
+          "month": 12
+        },
+        {
+          "name": "follow-up completion",
+          "month": 30
+        }
+      ]
+    }
+  },
+  {
+    "research_methods": [
+      "data_analysis"
+    ],
+    "data_collection": {
+      "data_types": [
+        "clinical_measurements",
+        "genomic"
+      ],
+      "sample_size": 10000,
+      "data_frequency": "once"
+    }
+  },
+  {
+    "teams": {
+      "home": "Milwaukee Bucks",
+      "away": "Phoenix Suns"
+    },
+    "plays": [
+      {
+        "time_remaining": "4:15",
+        "quarter": 3,
+        "player": "Giannis Antetokounmpo",
+        "play_type": "shot",
+        "outcome": "made",
+        "court_location": "freethrow"
+      }
+    ]
+  },
+  {
+    "dish_name": "Wedding Cake",
+    "ingredients": [
+      {
+        "name": "cake flour",
+        "quantity": 6,
+        "unit": "cups"
+      },
+      {
+        "name": "butter",
+        "quantity": 2,
+        "unit": "pounds"
+      },
+      {
+        "name": "eggs",
+        "quantity": 12,
+        "unit": "large"
+      },
+      {
+        "name": "vanilla extract",
+        "quantity": 2,
+        "unit": "tablespoons"
+      }
+    ],
+    "instructions": [
+      "Cream butter and sugar until fluffy",
+      "Add eggs one at a time",
+      "Alternate adding flour and milk",
+      "Divide between prepared pans",
+      "Bake at 350\u00b0F",
+      "Cool completely before frosting",
+      "Stack and decorate layers"
+    ],
+    "preparation_time_minutes": 120,
+    "cooking_time_minutes": 35
+  },
+  {
+    "product": {
+      "name": "HP Smart"
+    },
+    "impact_level": "minor",
+    "reproduction": {
+      "reproducible": true,
+      "frequency": "always"
+    }
+  },
+  {
+    "product": {
+      "name": "SmartLife Hub",
+      "model": "SL-500",
+      "version": "3.0.1"
+    },
+    "impact_level": "blocking",
+    "reproduction": {
+      "reproducible": true,
+      "frequency": "always"
+    }
+  },
+  {
+    "product": {
+      "name": "TaskSync Mobile",
+      "version": "4.2.1"
+    },
+    "error_codes": [
+      "SYNC-404",
+      "AUTH-201",
+      "DB-503",
+      "NET-102"
+    ],
+    "reproduction": {
+      "reproducible": false,
+      "frequency": "once"
+    }
+  },
+  {
+    "property_type": "house",
+    "amenities": [
+      "pool"
+    ],
+    "location": {
+      "city": "Las Vegas",
+      "state": "NV",
+      "zip_code": "89134"
+    }
+  },
+  {
+    "bedrooms": 3,
+    "bathrooms": "2.5",
+    "property_type": "townhouse",
+    "amenities": [
+      "garage",
+      "balcony"
+    ],
+    "listing_price": 679000,
+    "location": {
+      "city": "Seattle",
+      "state": "WA",
+      "zip_code": "98112"
+    }
+  },
+  {
+    "bedrooms": 1,
+    "bathrooms": "1",
+    "square_footage": 750,
+    "property_type": "apartment",
+    "listing_price": 289000,
+    "location": {
+      "city": "Portland",
+      "state": "OR",
+      "zip_code": "97209"
+    }
+  },
+  {
+    "signing_date": "2023-11-15",
+    "parties": [
+      "European Imports GmbH",
+      "American Distribution Corp",
+      "Pacific Logistics Ltd"
+    ],
+    "governing_law": "State of New York",
+    "clauses": {
+      "termination_clause": "60 days notice required for termination",
+      "payment_amount": 450000.0
+    }
+  },
+  {
+    "signing_date": "2023-12-01",
+    "parties": [
+      "Lakeside Manufacturing",
+      "Oceanview Logistics",
+      "Mountain Storage"
+    ],
+    "governing_law": "State of New York"
+  },
+  {
+    "signing_date": "2023-07-12",
+    "parties": [
+      "Green Valley Farms",
+      "Natural Foods Cooperative",
+      "Organic Distribution Inc."
+    ]
+  },
+  {
+    "skills": [
+      "Business Development",
+      "Fundraising",
+      "Product Strategy",
+      "Leadership"
+    ],
+    "experience_years": 8,
+    "education": [
+      {
+        "degree_type": "MBA",
+        "institution": "Harvard Business School"
+      },
+      {
+        "degree_type": "BS",
+        "major": "Engineering",
+        "institution": "Cornell University"
+      }
+    ],
+    "previous_roles": [
+      {
+        "title": "Founder & CEO",
+        "company": "InnovateTech",
+        "start_month": 1,
+        "start_year": 2019,
+        "end_month": null,
+        "end_year": null
+      },
+      {
+        "title": "Product Manager",
+        "company": "Amazon",
+        "start_month": 6,
+        "start_year": 2015,
+        "end_month": 12,
+        "end_year": 2018
+      }
+    ]
+  },
+  {
+    "skills": [
+      "Team Leadership",
+      "Strategic Planning",
+      "Product Strategy",
+      "Agile Management"
+    ],
+    "experience_years": 15,
+    "previous_roles": [
+      {
+        "title": "Senior Engineering Manager",
+        "company": "Microsoft",
+        "start_month": 3,
+        "start_year": 2019,
+        "end_month": null,
+        "end_year": null
+      },
+      {
+        "title": "Engineering Manager",
+        "company": "Amazon",
+        "start_month": 8,
+        "start_year": 2015,
+        "end_month": 2,
+        "end_year": 2019
+      },
+      {
+        "title": "Senior Software Engineer",
+        "company": "Intel",
+        "start_month": 6,
+        "start_year": 2008,
+        "end_month": 7,
+        "end_year": 2015
+      }
+    ],
+    "contact_info": {
+      "email": "michael.rodriguez@domain.com"
+    }
+  },
+  {
+    "incident_type": "theft",
+    "location": {
+      "street_address": "1584 Pine Street",
+      "city": "Seattle",
+      "state": "WA",
+      "zip_code": "98101"
+    },
+    "police_report_filed": true
+  },
+  {
+    "incident_date": "2023-11-14",
+    "incident_type": "other",
+    "location": {
+      "street_address": "445 Mountain View",
+      "city": "Denver",
+      "state": "CO",
+      "zip_code": "80202"
+    },
+    "estimated_damages": 9800.0,
+    "police_report_filed": false
+  },
+  {
+    "incident_type": "flood",
+    "estimated_damages": 89000.0,
+    "police_report_filed": false
+  },
+  {
+    "location": {
+      "type": "business",
+      "indoor_outdoor": "indoor"
+    },
+    "incident_type": [
+      "assault"
+    ],
+    "weapons": [
+      {
+        "type": "blunt_object",
+        "quantity": 1
+      },
+      {
+        "type": "knife",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "location": {
+      "type": "public_space",
+      "indoor_outdoor": "outdoor"
+    },
+    "incident_type": [
+      "vandalism"
+    ]
+  },
+  {
+    "project_specs": {
+      "total_square_feet": 2800
+    },
+    "usage": [
+      "commercial"
+    ],
+    "utilities": {
+      "water": {
+        "required": true,
+        "gallons_per_day": 1500
+      },
+      "gas": true
+    }
+  },
+  {
+    "project_specs": {
+      "total_square_feet": 5200,
+      "lot_coverage_percentage": 32.5
+    },
+    "usage": [
+      "agricultural"
+    ],
+    "utilities": {
+      "water": {
+        "required": true,
+        "gallons_per_day": 800
+      }
+    }
+  },
+  {
+    "project_specs": {
+      "total_square_feet": 8500,
+      "lot_coverage_percentage": 28.3
+    },
+    "usage": [
+      "agricultural"
+    ],
+    "timeline": {
+      "duration_months": 4,
+      "phases": 1
+    }
+  },
+  {
+    "assistance_needs": [
+      {
+        "category": "healthcare",
+        "urgency": "immediate"
+      }
+    ],
+    "household": {
+      "total_members": 2,
+      "composition": {
+        "adults": 1,
+        "seniors_over_65": 1
+      }
+    },
+    "risk_factors": [
+      {
+        "type": "medical_crisis",
+        "timeframe": "current"
+      }
+    ]
+  },
+  {
+    "assistance_needs": [
+      {
+        "category": "food",
+        "urgency": "ongoing"
+      },
+      {
+        "category": "employment",
+        "urgency": "short_term"
+      }
+    ],
+    "household": {
+      "total_members": 5,
+      "composition": {
+        "adults": 2,
+        "children_under_18": 3
+      },
+      "housing_status": "stable"
+    },
+    "income_sources": [
+      "snap",
+      "tanf"
+    ]
+  },
+  {
+    "medications": [
+      {
+        "name": "Lisinopril"
+      },
+      {
+        "name": "Metformin"
+      }
+    ],
+    "family_history_flags": [
+      "hypertension",
+      "diabetes"
+    ]
+  },
+  {
+    "symptoms": [
+      {
+        "name": "Dizziness",
+        "frequency": "occasional"
+      }
+    ],
+    "medications": [
+      {
+        "name": "Hydrochlorothiazide"
+      }
+    ],
+    "allergies": [
+      "Peanuts"
+    ],
+    "family_history_flags": [
+      "asthma"
+    ]
+  },
+  {
+    "symptoms": [
+      {
+        "name": "Headache"
+      }
+    ]
+  },
+  {
+    "research_methods": [
+      "experiment",
+      "data_analysis"
+    ],
+    "data_collection": {
+      "data_types": [
+        "sensor",
+        "clinical_measurements"
+      ],
+      "data_frequency": "continuous"
+    },
+    "study_population": {
+      "age_range": {
+        "min": 20,
+        "max": 60
+      }
+    }
+  },
+  {
+    "research_area": "physics",
+    "methodology": "mixed_methods",
+    "data_sources": [
+      {
+        "name": "Telescope observations",
+        "type": "public"
+      }
+    ],
+    "funding_sources": [
+      "Space agency grant"
+    ]
+  },
+  {
+    "product": {
+      "name": "Smart Thermostat"
+    },
+    "error_codes": [
+      "ST-E001",
+      "ST-E003",
+      "ST-COMM-ERR"
+    ],
+    "impact_level": "minor",
+    "system_state": {
+      "os": "Android 12"
+    }
+  },
+  {
+    "square_footage": 50000,
+    "property_type": "land",
+    "listing_price": 250000,
+    "location": {
+      "city": "Boise",
+      "state": "ID",
+      "zip_code": "83702"
+    }
+  },
+  {
+    "bedrooms": 2,
+    "bathrooms": "2.5",
+    "square_footage": 1200,
+    "property_type": "condo",
+    "amenities": [
+      "balcony"
+    ],
+    "listing_price": 450000,
+    "location": {
+      "city": "Chicago",
+      "state": "IL",
+      "zip_code": "60601"
+    }
+  },
+  {
+    "bedrooms": 4,
+    "bathrooms": 3,
+    "square_footage": 2500,
+    "property_type": "house",
+    "amenities": [
+      "pool",
+      "garage",
+      "fireplace"
+    ],
+    "listing_price": 2500000,
+    "location": {
+      "city": "Dallas",
+      "state": "TX",
+      "zip_code": "75201"
+    }
+  },
+  {
+    "signing_date": "2023-08-12",
+    "parties": [
+      "Mu Materials",
+      "Nu Networks"
+    ],
+    "clauses": {
+      "payment_amount": 100000
+    }
+  },
+  {
+    "signing_date": "2024-08-05",
+    "clauses": {
+      "payment_amount": 5000
+    }
+  },
+  {
+    "experience_years": 10,
+    "previous_roles": [
+      {
+        "title": "Senior Software Engineer",
+        "company": "Amazon",
+        "start_month": 6,
+        "start_year": 2013,
+        "end_month": 12,
+        "end_year": 2020
+      },
+      {
+        "title": "Software Engineer II",
+        "company": "Microsoft",
+        "start_month": 1,
+        "start_year": 2021,
+        "end_month": null,
+        "end_year": null
+      }
+    ]
+  },
+  {
+    "education": [
+      {
+        "degree_type": "BS",
+        "major": "Computer Science",
+        "institution": "Stanford University"
+      },
+      {
+        "degree_type": "MS",
+        "major": "Artificial Intelligence",
+        "institution": "Massachusetts Institute of Technology"
+      }
+    ]
+  },
+  {
+    "incident_date": "2024-07-19",
+    "incident_type": "accident",
+    "estimated_damages": 7500,
+    "police_report_filed": true
+  },
+  {
+    "incident_date": "2024-07-17",
+    "incident_type": "fire",
+    "location": {
+      "city": "Philadelphia"
+    },
+    "estimated_damages": 1000,
+    "witnesses": [
+      {
+        "name": "Ashley Martinez",
+        "phone": "555-765-4321"
+      },
+      {
+        "name": "Christopher Anderson"
+      }
+    ]
+  },
+  {
+    "incident_type": [
+      "assault"
+    ],
+    "location": {
+      "type": "residence",
+      "indoor_outdoor": "indoor"
+    },
+    "weapons": [
+      {
+        "type": "firearm"
+      },
+      {
+        "type": "knife"
+      }
+    ]
+  },
+  {
+    "project_specs": {
+      "total_square_feet": 3000,
+      "floors": 2,
+      "occupancy_count": 10,
+      "lot_coverage_percentage": 50
+    },
+    "usage": [
+      "residential",
+      "commercial"
+    ],
+    "utilities": {
+      "water": {
+        "required": true,
+        "gallons_per_day": 500
+      }
+    }
+  },
+  {
+    "project_specs": {
+      "total_square_feet": 11000,
+      "floors": 2,
+      "occupancy_count": 10,
+      "lot_coverage_percentage": 45
+    },
+    "usage": [
+      "residential"
+    ],
+    "utilities": {
+      "water": {
+        "required": true,
+        "gallons_per_day": 300
+      },
+      "electrical": {
+        "required": true,
+        "amperage": 150
+      }
+    },
+    "timeline": {
+      "duration_months": 8,
+      "phases": 4
+    }
+  },
+  {
+    "usage": [
+      "public"
+    ],
+    "utilities": {
+      "water": {
+        "required": true,
+        "gallons_per_day": 750
+      },
+      "gas": true
+    },
+    "timeline": {
+      "duration_months": 12,
+      "phases": 4
+    }
+  },
+  {
+    "assistance_needs": [
+      {
+        "category": "housing",
+        "urgency": "ongoing"
+      },
+      {
+        "category": "food",
+        "urgency": "ongoing"
+      }
+    ],
+    "household": {
+      "housing_status": "stable"
+    }
+  }
+]

@@ -1,0 +1,468 @@
+[
+    {
+        "skills": [
+            "Strategic Planning",
+            "Team Leadership",
+            "Operations Management",
+            "Budget Planning"
+        ],
+        "experience_years": 15,
+        "education": [
+            {
+                "degree_type": "MBA",
+                "institution": "Northwestern University"
+            }
+        ],
+        "previous_roles": [
+            {
+                "title": "Senior Operations Director",
+                "company": "Global Logistics Inc",
+                "start_month": 3,
+                "start_year": 2018,
+                "end_month": null,
+                "end_year": null
+            },
+            {
+                "title": "Operations Manager",
+                "company": "Swift Transport Solutions",
+                "start_month": 8,
+                "start_year": 2012,
+                "end_month": 2,
+                "end_year": 2018
+            }
+        ],
+        "contact_info": {
+            "email": "sarah.martinez@outlook.com"
+        }
+    },
+    {
+        "education": [
+            {
+                "degree_type": "PhD",
+                "major": "Molecular Biology",
+                "institution": "Stanford University"
+            },
+            {
+                "degree_type": "MS",
+                "major": "Biotechnology",
+                "institution": "Johns Hopkins University"
+            },
+            {
+                "degree_type": "BS",
+                "major": "Biology",
+                "institution": "UCLA"
+            }
+        ],
+        "skills": [
+            "CRISPR",
+            "PCR",
+            "Cell Culture",
+            "Protein Analysis",
+            "R Programming",
+            "Scientific Writing"
+        ],
+        "contact_info": {
+            "email": "james.wilson@stanford.edu",
+            "phone": "650-555-0199"
+        }
+    },
+    {
+        "skills": [
+            "Project Management",
+            "Content Strategy",
+            "Digital Marketing",
+            "Sales"
+        ],
+        "experience_years": 8,
+        "previous_roles": [
+            {
+                "title": "Digital Marketing Manager",
+                "company": "TechStart Solutions",
+                "start_month": 1,
+                "start_year": 2021,
+                "end_month": null,
+                "end_year": null
+            },
+            {
+                "title": "Sales Representative",
+                "company": "Medical Supplies Co",
+                "start_month": 6,
+                "start_year": 2015,
+                "end_month": 12,
+                "end_year": 2020
+            }
+        ]
+    },
+    {
+        "skills": [
+            "C++",
+            "CUDA",
+            "Computer Vision",
+            "Machine Learning",
+            "Parallel Computing",
+            "OpenCV",
+            "TensorFlow",
+            "System Architecture",
+            "Performance Optimization",
+            "Linux",
+            "Docker",
+            "AWS"
+        ],
+        "experience_years": 12,
+        "education": [
+            {
+                "degree_type": "MS",
+                "major": "Computer Engineering",
+                "institution": "Georgia Tech"
+            }
+        ],
+        "previous_roles": [
+            {
+                "title": "Senior Software Engineer",
+                "company": "NVIDIA",
+                "start_month": 4,
+                "start_year": 2011,
+                "end_month": null,
+                "end_year": null
+            }
+        ]
+    },
+    {
+        "skills": [
+            "Brand Strategy",
+            "Social Media Marketing",
+            "Content Creation",
+            "Analytics",
+            "Team Leadership"
+        ],
+        "experience_years": 10,
+        "education": [
+            {
+                "degree_type": "MBA",
+                "major": "Marketing",
+                "institution": "NYU Stern"
+            },
+            {
+                "degree_type": "BA",
+                "major": "Communications",
+                "institution": "Boston University"
+            }
+        ],
+        "previous_roles": [
+            {
+                "title": "Marketing Director",
+                "company": "Urban Lifestyle Brands",
+                "start_month": 3,
+                "start_year": 2019,
+                "end_month": null,
+                "end_year": null
+            }
+        ],
+        "contact_info": {
+            "email": "emma.thompson@urbanbrands.com"
+        }
+    },
+    {
+        "skills": [
+            "SQL",
+            "Python",
+            "Tableau",
+            "Excel"
+        ],
+        "experience_years": 3,
+        "education": [
+            {
+                "degree_type": "BS",
+                "major": "Statistics",
+                "institution": "UC Davis"
+            }
+        ],
+        "previous_roles": [
+            {
+                "title": "Data Analyst",
+                "company": "HealthTech Solutions",
+                "start_month": 7,
+                "start_year": 2020,
+                "end_month": null,
+                "end_year": null
+            }
+        ],
+        "contact_info": {
+            "email": "michael.zhang@healthtech.com"
+        }
+    },
+    {
+        "skills": [
+            "Business Development",
+            "Fundraising",
+            "Product Strategy",
+            "Leadership"
+        ],
+        "experience_years": 8,
+        "education": [
+            {
+                "degree_type": "MBA",
+                "institution": "Harvard Business School"
+            },
+            {
+                "degree_type": "BS",
+                "major": "Engineering",
+                "institution": "Cornell University"
+            }
+        ],
+        "previous_roles": [
+            {
+                "title": "Founder & CEO",
+                "company": "InnovateTech",
+                "start_month": 1,
+                "start_year": 2019,
+                "end_month": null,
+                "end_year": null
+            },
+            {
+                "title": "Product Manager",
+                "company": "Amazon",
+                "start_month": 6,
+                "start_year": 2015,
+                "end_month": 12,
+                "end_year": 2018
+            }
+        ]
+    },
+    {
+        "skills": [
+            "Product Management",
+            "Agile",
+            "Stakeholder Management",
+            "Technical Communication",
+            "Data Analysis"
+        ],
+        "experience_years": 6,
+        "education": [
+            {
+                "degree_type": "MS",
+                "major": "Information Systems",
+                "institution": "Carnegie Mellon University"
+            }
+        ],
+        "previous_roles": [
+            {
+                "title": "Senior Product Manager",
+                "company": "Spotify",
+                "start_month": 4,
+                "start_year": 2020,
+                "end_month": null,
+                "end_year": null
+            },
+            {
+                "title": "Product Manager",
+                "company": "Microsoft",
+                "start_month": 7,
+                "start_year": 2017,
+                "end_month": 3,
+                "end_year": 2020
+            }
+        ]
+    },
+    {
+        "skills": [
+            "Java",
+            "HTML/CSS",
+            "SQL"
+        ],
+        "education": [
+            {
+                "degree_type": "BS",
+                "major": "Computer Science",
+                "institution": "Purdue University"
+            }
+        ],
+        "previous_roles": [
+            {
+                "title": "Software Engineering Intern",
+                "company": "Local Tech Solutions",
+                "start_month": 5,
+                "start_year": 2023,
+                "end_month": 8,
+                "end_year": 2023
+            }
+        ],
+        "contact_info": {
+            "email": "tyler.brown@gmail.com",
+            "phone": "317-555-0144"
+        }
+    },
+    {
+        "skills": [
+            "Strategy Consulting",
+            "Financial Analysis",
+            "Change Management",
+            "Presentations"
+        ],
+        "experience_years": 7,
+        "education": [
+            {
+                "degree_type": "MBA",
+                "institution": "Columbia Business School"
+            }
+        ],
+        "previous_roles": [
+            {
+                "title": "Management Consultant",
+                "company": "McKinsey & Company",
+                "start_month": 8,
+                "start_year": 2019,
+                "end_month": null,
+                "end_year": null
+            },
+            {
+                "title": "Associate Consultant",
+                "company": "Bain & Company",
+                "start_month": 9,
+                "start_year": 2016,
+                "end_month": 7,
+                "end_year": 2019
+            }
+        ]
+    },
+    {
+        "skills": [
+            "Python",
+            "JavaScript",
+            "React",
+            "Docker",
+            "Git"
+        ],
+        "experience_years": 2,
+        "education": [
+            {
+                "degree_type": "BS",
+                "major": "Computer Science",
+                "institution": "University of Washington"
+            }
+        ],
+        "previous_roles": [
+            {
+                "title": "Junior Software Engineer",
+                "company": "Tableau",
+                "start_month": 6,
+                "start_year": 2021,
+                "end_month": null,
+                "end_year": null
+            }
+        ],
+        "contact_info": {
+            "email": "sarah.chen@domain.net",
+            "phone": "206-555-0199"
+        }
+    },
+    {
+        "skills": [
+            "Team Leadership",
+            "Strategic Planning",
+            "Product Strategy",
+            "Agile Management"
+        ],
+        "experience_years": 15,
+        "previous_roles": [
+            {
+                "title": "Senior Engineering Manager",
+                "company": "Microsoft",
+                "start_month": 3,
+                "start_year": 2019,
+                "end_month": null,
+                "end_year": null
+            },
+            {
+                "title": "Engineering Manager",
+                "company": "Amazon",
+                "start_month": 8,
+                "start_year": 2015,
+                "end_month": 2,
+                "end_year": 2019
+            },
+            {
+                "title": "Senior Software Engineer",
+                "company": "Intel",
+                "start_month": 6,
+                "start_year": 2008,
+                "end_month": 7,
+                "end_year": 2015
+            }
+        ],
+        "contact_info": {
+            "email": "michael.rodriguez@domain.com"
+        }
+    },
+    {
+        "education": [
+            {
+                "degree_type": "BS",
+                "major": "Marketing",
+                "institution": "Boston University"
+            }
+        ],
+        "skills": [
+            "Social Media Marketing",
+            "Content Creation",
+            "Adobe Creative Suite",
+            "SEO",
+            "Google Analytics"
+        ],
+        "previous_roles": [
+            {
+                "title": "Marketing Intern",
+                "company": "HubSpot",
+                "start_month": 6,
+                "start_year": 2023,
+                "end_month": 8,
+                "end_year": 2023
+            }
+        ],
+        "contact_info": {
+            "email": "emma.patel@domain.com",
+            "phone": "617-555-0143"
+        }
+    },
+    {
+        "skills": [
+            "Data Science",
+            "Machine Learning",
+            "SQL",
+            "Python",
+            "Spark",
+            "Hadoop"
+        ],
+        "experience_years": 7,
+        "education": [
+            {
+                "degree_type": "MS",
+                "major": "Data Science",
+                "institution": "Georgia Tech"
+            },
+            {
+                "degree_type": "BS",
+                "major": "Statistics",
+                "institution": "University of Michigan"
+            }
+        ],
+        "previous_roles": [
+            {
+                "title": "Senior Data Scientist",
+                "company": "Twitter",
+                "start_month": 4,
+                "start_year": 2020,
+                "end_month": null,
+                "end_year": null
+            },
+            {
+                "title": "Data Scientist",
+                "company": "LinkedIn",
+                "start_month": 7,
+                "start_year": 2016,
+                "end_month": 3,
+                "end_year": 2020
+            }
+        ]
+    }
+]

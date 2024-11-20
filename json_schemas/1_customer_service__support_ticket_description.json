@@ -1,0 +1,44 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+        "product": {
+            "type": "object",
+            "properties": {
+                "name": { "type": "string" },
+                "model": { "type": "string" },
+                "version": { "type": "string" }
+            },
+            "required": ["name"]
+        },
+        "error_codes": {
+            "type": "array",
+            "items": { "type": "string" }
+        },
+        "impact_level": {
+            "type": "string",
+            "enum": ["blocking", "major", "minor", "cosmetic"]
+        },
+        "system_state": {
+            "type": "object",
+            "properties": {
+                "os": { "type": "string" },
+                "browser": { "type": "string" },
+                "connected_devices": {
+                    "type": "array",
+                    "items": { "type": "string" }
+                }
+            }
+        },
+        "reproduction": {
+            "type": "object",
+            "properties": {
+                "reproducible": { "type": "boolean" },
+                "frequency": {
+                    "type": "string",
+                    "enum": ["always", "often", "sometimes", "once"]
+                }
+            }
+        }
+    }
+}

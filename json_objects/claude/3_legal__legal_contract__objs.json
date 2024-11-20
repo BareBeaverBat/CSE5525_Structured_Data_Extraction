@@ -1,0 +1,191 @@
+[
+    {
+        "signing_date": "2023-10-15",
+        "parties": [
+            "Acme Industries Ltd",
+            "GlobalTech Solutions",
+            "Midwest Distribution Co"
+        ],
+        "governing_law": "State of Delaware",
+        "clauses": {
+            "termination_clause": "30 days written notice required",
+            "confidentiality_clause": "5 year non-disclosure period",
+            "payment_amount": 250000.0
+        }
+    },
+    {
+        "signing_date": "2023-08-22",
+        "parties": [
+            "Johnson Consulting",
+            "DataFlow Analytics"
+        ]
+    },
+    {
+        "signing_date": "2023-11-01",
+        "parties": [
+            "Riverside Healthcare",
+            "MedTech Solutions"
+        ],
+        "governing_law": "State of California",
+        "clauses": {
+            "confidentiality_clause": "Perpetual confidentiality requirement"
+        }
+    },
+    {
+        "governing_law": "Province of Ontario",
+        "clauses": {
+            "termination_clause": "Immediate termination for material breach"
+        }
+    },
+    {
+        "signing_date": "2023-09-30",
+        "parties": [
+            "Eastern Electronics",
+            "Western Wholesale",
+            "Northern Networks",
+            "Southern Systems",
+            "Central Computing"
+        ],
+        "clauses": {
+            "payment_amount": 1750000.0
+        }
+    },
+    {
+        "clauses": {
+            "confidentiality_clause": "10 year non-disclosure period",
+            "payment_amount": 75000.0
+        }
+    },
+    {
+        "signing_date": "2023-12-01",
+        "parties": [
+            "Lakeside Manufacturing",
+            "Oceanview Logistics",
+            "Mountain Storage"
+        ],
+        "governing_law": "State of New York"
+    },
+    {
+        "signing_date": "2023-10-01",
+        "clauses": {
+            "payment_amount": 42500.0
+        }
+    },
+    {
+        "signing_date": "2023-11-15",
+        "parties": [
+            "Forest Products Inc",
+            "Green Energy Solutions"
+        ],
+        "governing_law": "State of Washington",
+        "clauses": {
+            "termination_clause": "90 days notice required",
+            "confidentiality_clause": "3 year non-disclosure period"
+        }
+    },
+    {
+        "parties": [
+            "Urban Development Corp",
+            "City Planning Associates"
+        ],
+        "clauses": {
+            "termination_clause": "60 days written notice required"
+        }
+    },
+    {
+        "parties": [
+            "Quantum Computing Ltd",
+            "Neural Networks Inc"
+        ],
+        "clauses": {
+            "confidentiality_clause": "7 year non-disclosure period"
+        }
+    },
+    {
+        "signing_date": "2023-08-01",
+        "parties": [
+            "Independent Contractor Smith"
+        ],
+        "governing_law": "State of Texas"
+    },
+    {
+        "signing_date": "2023-09-15",
+        "parties": [
+            "Cloud Services Pro",
+            "Data Storage Solutions"
+        ],
+        "clauses": {
+            "termination_clause": "45 days notice required",
+            "confidentiality_clause": "2 year non-disclosure period",
+            "payment_amount": 125000.0
+        }
+    },
+    {
+        "signing_date": "2023-11-30",
+        "parties": [
+            "Harbor Shipping",
+            "Coastal Logistics",
+            "Bay Area Transport"
+        ],
+        "clauses": {
+            "termination_clause": "Termination upon mutual agreement"
+        }
+    },
+    {
+        "signing_date": "2023-08-15",
+        "parties": [
+            "Acme Software Inc.",
+            "John Martinez"
+        ],
+        "clauses": {
+            "confidentiality_clause": "Employee shall maintain strict confidentiality of all proprietary information for 5 years post-employment"
+        }
+    },
+    {
+        "signing_date": "2023-06-01",
+        "parties": [
+            "Riverside Holdings LLC",
+            "Brighton Manufacturing Co.",
+            "Western Capital Partners",
+            "Summit Ventures"
+        ],
+        "governing_law": "State of Delaware",
+        "clauses": {
+            "termination_clause": "Agreement may be terminated with 90 days written notice",
+            "confidentiality_clause": "All transaction details to remain confidential for 10 years",
+            "payment_amount": 8500000.0
+        }
+    },
+    {
+        "signing_date": "2023-09-30",
+        "parties": [
+            "Global Analytics Ltd",
+            "DataTech Solutions"
+        ],
+        "clauses": {
+            "termination_clause": "Either party may terminate with 30 days notice; immediate termination allowed for material breach",
+            "payment_amount": 75000.0
+        }
+    },
+    {
+        "signing_date": "2023-07-12",
+        "parties": [
+            "Green Valley Farms",
+            "Natural Foods Cooperative",
+            "Organic Distribution Inc."
+        ]
+    },
+    {
+        "signing_date": "2023-11-15",
+        "parties": [
+            "European Imports GmbH",
+            "American Distribution Corp",
+            "Pacific Logistics Ltd"
+        ],
+        "governing_law": "State of New York",
+        "clauses": {
+            "termination_clause": "60 days notice required for termination",
+            "payment_amount": 450000.0
+        }
+    }
+]

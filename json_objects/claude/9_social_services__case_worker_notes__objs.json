@@ -1,0 +1,336 @@
+[
+    {
+        "assistance_needs": [
+            {
+                "category": "housing",
+                "urgency": "immediate"
+            },
+            {
+                "category": "food",
+                "urgency": "immediate"
+            }
+        ],
+        "household": {
+            "total_members": 3,
+            "composition": {
+                "adults": 1,
+                "children_under_18": 2
+            },
+            "housing_status": "at_risk"
+        },
+        "income_sources": [
+            "employment",
+            "snap"
+        ],
+        "risk_factors": [
+            {
+                "type": "eviction_risk",
+                "timeframe": "imminent"
+            },
+            {
+                "type": "food_insecurity",
+                "timeframe": "current"
+            }
+        ]
+    },
+    {
+        "assistance_needs": [
+            {
+                "category": "healthcare",
+                "urgency": "ongoing"
+            },
+            {
+                "category": "transportation",
+                "urgency": "ongoing"
+            }
+        ],
+        "household": {
+            "total_members": 1,
+            "composition": {
+                "seniors_over_65": 1
+            },
+            "housing_status": "stable"
+        },
+        "risk_factors": [
+            {
+                "type": "isolation",
+                "timeframe": "current"
+            },
+            {
+                "type": "transport_barrier",
+                "timeframe": "current"
+            }
+        ]
+    },
+    {
+        "household": {
+            "total_members": 7,
+            "composition": {
+                "adults": 4,
+                "children_under_18": 2,
+                "seniors_over_65": 1
+            },
+            "housing_status": "stable"
+        },
+        "income_sources": [
+            "employment",
+            "social_security",
+            "pension",
+            "snap"
+        ]
+    },
+    {
+        "assistance_needs": [
+            {
+                "category": "mental_health",
+                "urgency": "immediate"
+            },
+            {
+                "category": "substance_treatment",
+                "urgency": "immediate"
+            },
+            {
+                "category": "housing",
+                "urgency": "immediate"
+            }
+        ],
+        "household": {
+            "total_members": 1,
+            "composition": {
+                "adults": 1
+            },
+            "housing_status": "homeless"
+        }
+    },
+    {
+        "assistance_needs": [
+            {
+                "category": "childcare",
+                "urgency": "short_term"
+            },
+            {
+                "category": "healthcare",
+                "urgency": "ongoing"
+            }
+        ],
+        "household": {
+            "total_members": 4,
+            "composition": {
+                "adults": 2,
+                "children_under_18": 2
+            }
+        },
+        "income_sources": [
+            "employment"
+        ]
+    },
+    {
+        "assistance_needs": [
+            {
+                "category": "housing",
+                "urgency": "immediate"
+            },
+            {
+                "category": "legal",
+                "urgency": "immediate"
+            }
+        ],
+        "risk_factors": [
+            {
+                "type": "domestic_violence",
+                "timeframe": "current"
+            }
+        ]
+    },
+    {
+        "assistance_needs": [
+            {
+                "category": "healthcare",
+                "urgency": "ongoing"
+            },
+            {
+                "category": "transportation",
+                "urgency": "ongoing"
+            },
+            {
+                "category": "childcare",
+                "urgency": "ongoing"
+            }
+        ],
+        "household": {
+            "total_members": 4,
+            "composition": {
+                "adults": 2,
+                "children_under_18": 2
+            }
+        },
+        "income_sources": [
+            "disability",
+            "snap"
+        ]
+    },
+    {
+        "assistance_needs": [
+            {
+                "category": "healthcare",
+                "urgency": "immediate"
+            }
+        ],
+        "household": {
+            "total_members": 2,
+            "composition": {
+                "seniors_over_65": 2
+            }
+        },
+        "risk_factors": [
+            {
+                "type": "medical_crisis",
+                "timeframe": "current"
+            },
+            {
+                "type": "isolation",
+                "timeframe": "current"
+            }
+        ]
+    },
+    {
+        "assistance_needs": [
+            {
+                "category": "housing",
+                "urgency": "immediate"
+            },
+            {
+                "category": "employment",
+                "urgency": "short_term"
+            },
+            {
+                "category": "education",
+                "urgency": "ongoing"
+            }
+        ],
+        "household": {
+            "total_members": 1,
+            "composition": {
+                "adults": 1
+            },
+            "housing_status": "temporary"
+        }
+    },
+    {
+        "assistance_needs": [
+            {
+                "category": "substance_treatment",
+                "urgency": "immediate"
+            },
+            {
+                "category": "childcare",
+                "urgency": "immediate"
+            }
+        ],
+        "household": {
+            "total_members": 3,
+            "composition": {
+                "adults": 1,
+                "children_under_18": 2
+            }
+        },
+        "income_sources": [
+            "tanf",
+            "snap"
+        ]
+    },
+    {
+        "assistance_needs": [
+            {
+                "category": "housing",
+                "urgency": "immediate"
+            },
+            {
+                "category": "healthcare",
+                "urgency": "ongoing"
+            },
+            {
+                "category": "mental_health",
+                "urgency": "ongoing"
+            }
+        ],
+        "household": {
+            "total_members": 1,
+            "composition": {
+                "adults": 1
+            },
+            "housing_status": "homeless"
+        },
+        "income_sources": [
+            "none"
+        ]
+    },
+    {
+        "assistance_needs": [
+            {
+                "category": "legal",
+                "urgency": "short_term"
+            },
+            {
+                "category": "childcare",
+                "urgency": "ongoing"
+            }
+        ],
+        "household": {
+            "total_members": 3,
+            "composition": {
+                "adults": 1,
+                "children_under_18": 2
+            }
+        },
+        "income_sources": [
+            "employment",
+            "child_support"
+        ]
+    },
+    {
+        "assistance_needs": [
+            {
+                "category": "healthcare",
+                "urgency": "immediate"
+            }
+        ],
+        "household": {
+            "total_members": 2,
+            "composition": {
+                "adults": 1,
+                "seniors_over_65": 1
+            }
+        },
+        "risk_factors": [
+            {
+                "type": "medical_crisis",
+                "timeframe": "current"
+            }
+        ]
+    },
+    {
+        "assistance_needs": [
+            {
+                "category": "food",
+                "urgency": "ongoing"
+            },
+            {
+                "category": "employment",
+                "urgency": "short_term"
+            }
+        ],
+        "household": {
+            "total_members": 5,
+            "composition": {
+                "adults": 2,
+                "children_under_18": 3
+            },
+            "housing_status": "stable"
+        },
+        "income_sources": [
+            "snap",
+            "tanf"
+        ]
+    }
+]

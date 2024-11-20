@@ -1,0 +1,76 @@
+[
+    {
+        "product": {
+            "name": "CloudSync"
+        },
+        "error_codes": [
+            "CS1201"
+        ],
+        "reproduction": {
+            "reproducible": true,
+            "frequency": "always"
+        }
+    },
+    {
+        "product": {
+            "name": "VideoChat",
+            "model": "VC-Pro"
+        },
+        "impact_level": "major",
+        "reproduction": {
+            "reproducible": true,
+            "frequency": "often"
+        }
+    },
+    {
+        "product": {
+            "name": "Smart Thermostat"
+        },
+        "error_codes": [
+            "ST-E001",
+            "ST-E003",
+            "ST-COMM-ERR"
+        ],
+        "impact_level": "minor",
+        "system_state": {
+            "os": "Android 12"
+        }
+    },
+    {
+        "product": {
+            "name": "MusicStreamer+"
+        },
+        "error_codes": [
+            "MS-PLAYBACK-ERR"
+        ],
+        "impact_level": "blocking",
+        "reproduction": {
+            "reproducible": true,
+            "frequency": "sometimes"
+        },
+        "system_state": {
+            "browser": "Chrome 114"
+        }
+    },
+    {
+        "product": {
+            "name": "Home Security System",
+            "model": "HSS-2000",
+            "version": "2.5.3"
+        },
+        "system_state": {
+            "os": "iOS 16.2",
+            "browser": "Safari",
+            "connected_devices": [
+                "Main Camera",
+                "Back Door Sensor",
+                "Motion Sensor - Living Room"
+            ]
+        },
+        "impact_level": "minor",
+        "reproduction": {
+            "reproducible": false,
+            "frequency": "sometimes"
+        }
+    }
+]

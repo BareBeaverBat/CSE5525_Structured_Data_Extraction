@@ -1,0 +1,76 @@
+[
+    {
+        "research_area": "chemistry",
+        "methodology": "computational",
+        "data_sources": [
+            {
+                "name": "NIST database",
+                "type": "public",
+                "url": "https://nist.gov/data"
+            },
+            {
+                "name": "Proprietary lab data",
+                "type": "private"
+            }
+        ]
+    },
+    {
+        "research_area": "medicine",
+        "methodology": "quantitative",
+        "data_sources": [
+            {
+                "name": "Patient records",
+                "type": "private"
+            },
+            {
+                "name": "Clinical trial data",
+                "type": "public",
+                "url": "https://clinicaltrials.gov"
+            },
+            {
+                "name": "Health survey dataset",
+                "type": "public"
+            }
+        ]
+    },
+    {
+        "research_area": "physics",
+        "methodology": "mixed_methods",
+        "data_sources": [
+            {
+                "name": "Telescope observations",
+                "type": "public"
+            }
+        ],
+        "funding_sources": [
+            "Space agency grant"
+        ]
+    },
+    {
+        "research_area": "chemistry",
+        "methodology": "quantitative",
+        "data_sources": [
+            {
+                "name": "Chemical compound database",
+                "type": "public"
+            }
+        ]
+    },
+    {
+        "research_area": "social_sciences",
+        "methodology": "qualitative",
+        "funding_sources": [
+            "Social science research council"
+        ]
+    },
+    {
+        "research_area": "mathematics",
+        "methodology": "computational",
+        "data_sources": [
+            {
+                "name": "Mathematical software library",
+                "type": "public"
+            }
+        ]
+    }
+]

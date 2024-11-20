@@ -1,0 +1,169 @@
+[
+    {
+        "incident_date": "2023-11-15",
+        "incident_type": "fire",
+        "location": {
+            "street_address": "742 Maple Grove",
+            "city": "Burlington",
+            "state": "VT",
+            "zip_code": "05401"
+        },
+        "estimated_damages": 157000.0,
+        "police_report_filed": true,
+        "witnesses": [
+            {
+                "name": "Marcus Chen",
+                "phone": "802-555-0123",
+                "email": "mchen@vermontu.edu"
+            },
+            {
+                "name": "Sarah O'Brien",
+                "phone": "802-555-0145",
+                "email": "sarahob@gmail.com"
+            }
+        ]
+    },
+    {
+        "incident_type": "theft",
+        "location": {
+            "street_address": "1584 Pine Street",
+            "city": "Seattle",
+            "state": "WA",
+            "zip_code": "98101"
+        },
+        "police_report_filed": true
+    },
+    {
+        "incident_date": "2023-10-28",
+        "incident_type": "accident",
+        "estimated_damages": 3200.0,
+        "witnesses": [
+            {
+                "name": "David Thompson",
+                "phone": "206-555-9876"
+            }
+        ]
+    },
+    {
+        "incident_date": "2023-09-12",
+        "incident_type": "flood",
+        "location": {
+            "city": "Houston",
+            "state": "TX",
+            "zip_code": "77002"
+        }
+    },
+    {
+        "incident_type": "other",
+        "estimated_damages": 12400.0
+    },
+    {
+        "incident_type": "fire",
+        "location": {
+            "street_address": "935 Oak Lane",
+            "city": "Sacramento",
+            "state": "CA",
+            "zip_code": "95814"
+        },
+        "estimated_damages": 45600.0
+    },
+    {
+        "incident_date": "2023-11-02",
+        "incident_type": "theft",
+        "location": {
+            "street_address": "467 Elm Street",
+            "city": "Chicago",
+            "state": "IL",
+            "zip_code": "60601"
+        },
+        "estimated_damages": 8900.0,
+        "police_report_filed": true
+    },
+    {
+        "incident_date": "2023-10-15",
+        "incident_type": "accident",
+        "location": {
+            "city": "Miami",
+            "state": "FL"
+        },
+        "witnesses": [
+            {
+                "name": "Maria Rodriguez",
+                "email": "mrodriguez@yahoo.com"
+            }
+        ]
+    },
+    {
+        "incident_type": "flood",
+        "estimated_damages": 89000.0,
+        "police_report_filed": false
+    },
+    {
+        "incident_date": "2023-11-01",
+        "incident_type": "fire"
+    },
+    {
+        "incident_date": "2023-10-30",
+        "incident_type": "theft",
+        "witnesses": [
+            {
+                "name": "Emma Davis",
+                "phone": "303-555-2345"
+            }
+        ]
+    },
+    {
+        "incident_type": "accident",
+        "police_report_filed": true
+    },
+    {
+        "incident_type": "other",
+        "location": {
+            "street_address": "892 Highland Ave",
+            "city": "Atlanta",
+            "state": "GA",
+            "zip_code": "30308"
+        }
+    },
+    {
+        "incident_date": "2023-11-05",
+        "incident_type": "fire",
+        "witnesses": [
+            {
+                "name": "Thomas Anderson",
+                "phone": "415-555-8901",
+                "email": "tanderson@gmail.com"
+            }
+        ]
+    },
+    {
+        "incident_date": "2023-11-12",
+        "incident_type": "theft",
+        "estimated_damages": 5600.0
+    },
+    {
+        "incident_date": "2023-10-25",
+        "incident_type": "accident",
+        "location": {
+            "city": "Phoenix",
+            "state": "AZ"
+        },
+        "estimated_damages": 4300.0
+    },
+    {
+        "incident_type": "flood",
+        "police_report_filed": true
+    },
+    {
+        "incident_date": "2023-11-14",
+        "incident_type": "other",
+        "location": {
+            "street_address": "445 Mountain View",
+            "city": "Denver",
+            "state": "CO",
+            "zip_code": "80202"
+        },
+        "estimated_damages": 9800.0,
+        "police_report_filed": false
+    }
+]

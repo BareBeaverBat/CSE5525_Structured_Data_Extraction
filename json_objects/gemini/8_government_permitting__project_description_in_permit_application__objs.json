@@ -1,0 +1,338 @@
+[
+    {
+        "usage": [
+            "residential"
+        ]
+    },
+    {
+        "project_specs": {
+            "total_square_feet": 1200,
+            "floors": 1
+        }
+    },
+    {
+        "usage": [
+            "commercial"
+        ],
+        "utilities": {
+            "water": {
+                "required": true
+            },
+            "electrical": {
+                "required": true
+            }
+        }
+    },
+    {
+        "usage": [
+            "industrial"
+        ],
+        "utilities": {
+            "water": {
+                "required": true,
+                "gallons_per_day": 500
+            },
+            "electrical": {
+                "required": true,
+                "amperage": 200
+            },
+            "gas": true
+        }
+    },
+    {
+        "project_specs": {
+            "total_square_feet": 5000,
+            "floors": 2,
+            "occupancy_count": 10,
+            "lot_coverage_percentage": 60
+        },
+        "timeline": {
+            "duration_months": 12,
+            "phases": 4
+        }
+    },
+    {
+        "usage": [
+            "residential",
+            "commercial"
+        ],
+        "timeline": {
+            "duration_months": 6,
+            "phases": 2
+        }
+    },
+    {
+        "project_specs": {
+            "total_square_feet": 2500,
+            "floors": 1,
+            "occupancy_count": 5,
+            "lot_coverage_percentage": 40
+        }
+    },
+    {
+        "usage": [
+            "residential"
+        ],
+        "utilities": {
+            "water": {
+                "required": true,
+                "gallons_per_day": 250
+            },
+            "electrical": {
+                "required": true,
+                "amperage": 100
+            },
+            "gas": false
+        }
+    },
+    {
+        "usage": [
+            "commercial"
+        ],
+        "timeline": {
+            "duration_months": 18,
+            "phases": 6
+        }
+    },
+    {
+        "project_specs": {
+            "total_square_feet": 7500,
+            "floors": 3,
+            "occupancy_count": 20,
+            "lot_coverage_percentage": 75
+        },
+        "usage": [
+            "mixed",
+            "residential"
+        ],
+        "timeline": {
+            "duration_months": 24
+        }
+    },
+    {
+        "usage": [
+            "industrial"
+        ],
+        "project_specs": {
+            "total_square_feet": 10000,
+            "floors": 1,
+            "occupancy_count": 50,
+            "lot_coverage_percentage": 50
+        },
+        "utilities": {
+            "water": {
+                "required": true,
+                "gallons_per_day": 1000
+            },
+            "electrical": {
+                "required": true,
+                "amperage": 400
+            },
+            "gas": true
+        }
+    },
+    {
+        "usage": [
+            "agricultural"
+        ],
+        "utilities": {
+            "water": {
+                "required": true,
+                "gallons_per_day": 2000
+            },
+            "electrical": {
+                "required": true,
+                "amperage": 100
+            },
+            "gas": false
+        },
+        "timeline": {
+            "duration_months": 9,
+            "phases": 3
+        }
+    },
+    {
+        "project_specs": {
+            "total_square_feet": 3000,
+            "floors": 2,
+            "occupancy_count": 10,
+            "lot_coverage_percentage": 50
+        },
+        "usage": [
+            "residential",
+            "commercial"
+        ],
+        "utilities": {
+            "water": {
+                "required": true,
+                "gallons_per_day": 500
+            }
+        }
+    },
+    {
+        "usage": [
+            "public"
+        ],
+        "utilities": {
+            "water": {
+                "required": true,
+                "gallons_per_day": 750
+            },
+            "gas": true
+        },
+        "timeline": {
+            "duration_months": 12,
+            "phases": 4
+        }
+    },
+    {
+        "project_specs": {
+            "total_square_feet": 4000,
+            "floors": 2,
+            "occupancy_count": 15,
+            "lot_coverage_percentage": 60
+        },
+        "usage": [
+            "residential"
+        ],
+        "utilities": {
+            "water": {
+                "required": true,
+                "gallons_per_day": 600
+            },
+            "electrical": {
+                "required": true,
+                "amperage": 300
+            },
+            "gas": true
+        },
+        "timeline": {
+            "duration_months": 15
+        }
+    },
+    {
+        "project_specs": {
+            "total_square_feet": 6000,
+            "floors": 3,
+            "occupancy_count": 25,
+            "lot_coverage_percentage": 70
+        },
+        "usage": [
+            "commercial"
+        ],
+        "utilities": {
+            "water": {
+                "required": true,
+                "gallons_per_day": 800
+            },
+            "electrical": {
+                "required": true,
+                "amperage": 400
+            }
+        },
+        "timeline": {
+            "duration_months": 18,
+            "phases": 6
+        }
+    },
+    {
+        "project_specs": {
+            "total_square_feet": 8000,
+            "floors": 1,
+            "occupancy_count": 30
+        },
+        "usage": [
+            "industrial"
+        ],
+        "utilities": {
+            "water": {
+                "required": true,
+                "gallons_per_day": 900
+            },
+            "electrical": {
+                "required": true,
+                "amperage": 500
+            },
+            "gas": true
+        },
+        "timeline": {
+            "duration_months": 21,
+            "phases": 7
+        }
+    },
+    {
+        "project_specs": {
+            "total_square_feet": 9000,
+            "floors": 4,
+            "occupancy_count": 40,
+            "lot_coverage_percentage": 80
+        },
+        "usage": [
+            "mixed"
+        ],
+        "utilities": {
+            "water": {
+                "required": true,
+                "gallons_per_day": 1000
+            },
+            "electrical": {
+                "required": true,
+                "amperage": 600
+            },
+            "gas": false
+        },
+        "timeline": {
+            "phases": 5
+        }
+    },
+    {
+        "project_specs": {
+            "total_square_feet": 11000,
+            "floors": 2,
+            "occupancy_count": 10,
+            "lot_coverage_percentage": 45
+        },
+        "usage": [
+            "residential"
+        ],
+        "utilities": {
+            "water": {
+                "required": true,
+                "gallons_per_day": 300
+            },
+            "electrical": {
+                "required": true,
+                "amperage": 150
+            }
+        },
+        "timeline": {
+            "duration_months": 8,
+            "phases": 4
+        }
+    },
+    {
+        "project_specs": {
+            "total_square_feet": 500,
+            "floors": 1,
+            "lot_coverage_percentage": 25
+        },
+        "usage": [
+            "residential"
+        ],
+        "utilities": {
+            "water": {
+                "required": true,
+                "gallons_per_day": 100
+            },
+            "electrical": {
+                "required": true,
+                "amperage": 50
+            },
+            "gas": true
+        },
+        "timeline": {
+            "duration_months": 3,
+            "phases": 1
+        }
+    }
+]

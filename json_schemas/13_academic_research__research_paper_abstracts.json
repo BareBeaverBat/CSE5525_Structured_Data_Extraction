@@ -1,0 +1,51 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+        "research_area": {
+            "type": "string",
+            "enum": [
+                "computer_science",
+                "biology",
+                "physics",
+                "chemistry",
+                "engineering",
+                "social_sciences",
+                "humanities",
+                "mathematics",
+                "medicine",
+                "other"
+            ]
+        },
+        "methodology": {
+            "type": "string",
+            "enum": [
+                "experimental",
+                "theoretical",
+                "computational",
+                "qualitative",
+                "quantitative",
+                "mixed_methods"
+            ]
+        },
+        "key_findings": {
+            "type": "array",
+            "items": { "type": "string" }
+        },
+        "data_sources": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "name": { "type": "string" },
+                    "type": { "type": "string", "enum": ["public", "private", "simulated"] },
+                    "url": { "type": "string", "format": "uri" }
+                }
+            }
+        },
+        "funding_sources": {
+            "type": "array",
+            "items": { "type": "string" }
+        }
+    }
+}

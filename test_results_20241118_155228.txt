@@ -1,0 +1,36 @@
+Test 1 Results:
+Differences found:
+
+Field accuracy breakdown:
+  research_methods: 100.00%
+  study_population.age_range.min: 100.00%
+  study_population.age_range.max: 100.00%
+  study_population.special_populations: 100.00%
+  timeline.total_duration_months: 100.00%
+  timeline.key_milestones: 33.33%
+
+Total accuracy for this test: 88.89%
+
+Test 2 Results:
+Differences found:
+
+Field accuracy breakdown:
+  research_methods: 100.00%
+  data_collection.data_types: 0.00%
+  data_collection.sample_size: 100.00%
+  data_collection.data_frequency: 100.00%
+
+Total accuracy for this test: 75.00%
+
+Test 3 Results:
+Differences found:
+- Value mismatch for key 'teams.home': Expected 'Milwaukee Bucks', got 'Bucks'
+- Value mismatch for key 'teams.away': Expected 'Phoenix Suns', got 'Suns'
+
+Field accuracy breakdown:
+  teams.home: 0.00%
+  teams.away: 0.00%
+  plays: 0.00%
+
+Total accuracy for this test: 0.00%
+

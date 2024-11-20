@@ -1,0 +1,1591 @@
+Test 1 Results:
+Differences found:
+
+Field accuracy breakdown:
+  medications: 100.00%
+  family_history_flags: 100.00%
+
+Total accuracy for this test: 100.00%
+
+Test 2 Results:
+Differences found:
+
+Field accuracy breakdown:
+  symptoms: 100.00%
+  medications: 100.00%
+
+Total accuracy for this test: 100.00%
+
+Test 3 Results:
+Differences found:
+
+Field accuracy breakdown:
+  medications: 100.00%
+  allergies: 100.00%
+
+Total accuracy for this test: 100.00%
+
+Test 4 Results:
+Differences found:
+
+Field accuracy breakdown:
+  allergies: 100.00%
+  family_history_flags: 100.00%
+
+Total accuracy for this test: 100.00%
+
+Test 5 Results:
+Differences found:
+
+Field accuracy breakdown:
+  medications: 100.00%
+
+Total accuracy for this test: 100.00%
+
+Test 6 Results:
+Differences found:
+
+Field accuracy breakdown:
+  symptoms: 100.00%
+  family_history_flags: 100.00%
+
+Total accuracy for this test: 100.00%
+
+Test 7 Results:
+Differences found:
+
+Field accuracy breakdown:
+  symptoms: 100.00%
+  family_history_flags: 100.00%
+
+Total accuracy for this test: 100.00%
+
+Test 8 Results:
+Differences found:
+
+Field accuracy breakdown:
+  symptoms: 100.00%
+  medications: 100.00%
+  allergies: 100.00%
+  family_history_flags: 100.00%
+
+Total accuracy for this test: 100.00%
+
+Test 9 Results:
+Differences found:
+- Length mismatch for purpose_indicators: Expected 1, got 0
+
+Field accuracy breakdown:
+  transaction.category: 100.00%
+  transaction.method: 100.00%
+  transaction.amount_usd: 100.00%
+  parties: 100.00%
+  risk_flags: 100.00%
+  purpose_indicators: 0.00%
+
+Total accuracy for this test: 83.33%
+
+Test 10 Results:
+Differences found:
+- Value mismatch for key 'parties[1].name': Expected 'American Distributors Inc', got 'American Distributors Inc.'
+
+Field accuracy breakdown:
+  transaction.category: 100.00%
+  transaction.method: 100.00%
+  transaction.amount_usd: 100.00%
+  transaction.cross_border: 100.00%
+  parties: 50.00%
+  purpose_indicators: 100.00%
+
+Total accuracy for this test: 91.67%
+
+Test 11 Results:
+Differences found:
+
+Field accuracy breakdown:
+  transaction.category: 100.00%
+  transaction.method: 100.00%
+  transaction.amount_usd: 100.00%
+  transaction.cross_border: 100.00%
+  parties: 100.00%
+  risk_flags: 100.00%
+
+Total accuracy for this test: 100.00%
+
+Test 12 Results:
+Differences found:
+
+Field accuracy breakdown:
+  transaction.category: 100.00%
+  transaction.method: 100.00%
+  transaction.amount_usd: 100.00%
+  parties: 100.00%
+  purpose_indicators: 100.00%
+
+Total accuracy for this test: 100.00%
+
+Test 13 Results:
+Differences found:
+- Value mismatch for key 'parties[1].entity_type': Expected 'business', got 'institution'
+- Length mismatch for purpose_indicators: Expected 1, got 2
+
+Field accuracy breakdown:
+  transaction.category: 100.00%
+  transaction.method: 100.00%
+  transaction.amount_usd: 100.00%
+  transaction.cross_border: 100.00%
+  parties: 50.00%
+  purpose_indicators: 0.00%
+
+Total accuracy for this test: 75.00%
+
+Test 14 Results:
+Differences found:
+- Value mismatch for key 'parties[0].name': Expected 'Mergers & Co', got 'Strategic Buyers LLC'
+- Value mismatch for key 'parties[0].role': Expected 'intermediary', got 'originator'
+- Value mismatch for key 'parties[1].name': Expected 'Strategic Buyers LLC', got 'Mergers & Co'
+- Value mismatch for key 'parties[1].role': Expected 'originator', got 'intermediary'
+
+Field accuracy breakdown:
+  transaction.category: 100.00%
+  transaction.method: 100.00%
+  transaction.amount_usd: 100.00%
+  parties: 0.00%
+  purpose_indicators: 100.00%
+
+Total accuracy for this test: 80.00%
+
+Test 15 Results:
+Differences found:
+
+Field accuracy breakdown:
+  research_methods: 100.00%
+  data_collection.data_types: 100.00%
+  data_collection.sample_size: 100.00%
+  data_collection.data_frequency: 100.00%
+
+Total accuracy for this test: 100.00%
+
+Test 16 Results:
+Differences found:
+
+Field accuracy breakdown:
+  research_methods: 100.00%
+  data_collection.data_types: 100.00%
+  data_collection.sample_size: 100.00%
+  data_collection.data_frequency: 100.00%
+  study_population.age_range.min: 100.00%
+  study_population.age_range.max: 100.00%
+
+Total accuracy for this test: 100.00%
+
+Test 17 Results:
+Differences found:
+- Missing key 'research_methods' in actual output
+- Missing key 'data_collection' in actual output
+
+Field accuracy breakdown:
+  research_methods: 0.00%
+  data_collection: 0.00%
+
+Total accuracy for this test: 0.00%
+
+Test 18 Results:
+Differences found:
+- Length mismatch for study_population.special_populations: Expected 1, got 0
+
+Field accuracy breakdown:
+  research_methods: 100.00%
+  study_population.special_populations: 0.00%
+  data_collection.data_types: 100.00%
+  data_collection.sample_size: 100.00%
+  data_collection.data_frequency: 100.00%
+
+Total accuracy for this test: 80.00%
+
+Test 19 Results:
+Differences found:
+- Value mismatch for key 'teams.home': Expected 'Golden State Warriors', got 'Warriors'
+- Value mismatch for key 'teams.away': Expected 'Milwaukee Bucks', got 'Bucks'
+- Missing key 'plays[0].time_remaining' in actual output
+- Value mismatch for key 'plays[0].player': Expected 'Klay Thompson', got 'Thompson'
+
+Field accuracy breakdown:
+  teams.home: 0.00%
+  teams.away: 0.00%
+  plays: 0.00%
+
+Total accuracy for this test: 0.00%
+
+Test 20 Results:
+Differences found:
+- Value mismatch for key 'teams.home': Expected 'Portland Trail Blazers', got 'Blazers'
+- Value mismatch for key 'teams.away': Expected 'Sacramento Kings', got 'Kings'
+- Missing key 'plays[0].time_remaining' in actual output
+
+Field accuracy breakdown:
+  teams.home: 0.00%
+  teams.away: 0.00%
+  plays: 0.00%
+
+Total accuracy for this test: 0.00%
+
+Test 21 Results:
+Differences found:
+- Value mismatch for key 'teams.home': Expected 'Dallas Mavericks', got 'Mavericks'
+- Value mismatch for key 'teams.away': Expected 'Los Angeles Clippers', got 'Clippers'
+- Missing key 'plays[0].time_remaining' in actual output
+- Value mismatch for key 'plays[0].player': Expected 'Luka Doncic', got 'Doncic'
+- Missing key 'plays[1].time_remaining' in actual output
+
+Field accuracy breakdown:
+  teams.home: 0.00%
+  teams.away: 0.00%
+  plays: 0.00%
+
+Total accuracy for this test: 0.00%
+
+Test 22 Results:
+Differences found:
+- Value mismatch for key 'cuisine': Expected 'Korean-Mexican Fusion', got 'Korean-Mexican'
+
+Field accuracy breakdown:
+  dish_name: 100.00%
+  ingredients: 100.00%
+  instructions: 100.00%
+  cuisine: 0.00%
+
+Total accuracy for this test: 75.00%
+
+Test 23 Results:
+Differences found:
+- Value mismatch for key 'ingredients[0].name': Expected 'avocado', got 'avocados'
+
+Field accuracy breakdown:
+  dish_name: 100.00%
+  ingredients: 66.67%
+  dietary_restrictions: 100.00%
+  nutritional_information.calories: 100.00%
+  nutritional_information.protein_grams: 100.00%
+  nutritional_information.carbohydrates_grams: 100.00%
+  nutritional_information.fat_grams: 100.00%
+
+Total accuracy for this test: 95.24%
+
+Test 24 Results:
+Differences found:
+- Value mismatch for key 'dish_name': Expected 'Sourdough Bread', got 'Classic Sourdough Bread'
+
+Field accuracy breakdown:
+  dish_name: 0.00%
+  ingredients: 100.00%
+  instructions: 100.00%
+  preparation_time_minutes: 100.00%
+  cooking_time_minutes: 100.00%
+
+Total accuracy for this test: 80.00%
+
+Test 25 Results:
+Differences found:
+- Value mismatch for key 'dish_name': Expected 'Street Corn', got 'Mexican Street Corn (Elote)'
+- Value mismatch for key 'ingredients[1].name': Expected 'mayo', got 'mayonnaise'
+
+Field accuracy breakdown:
+  dish_name: 0.00%
+  ingredients: 66.67%
+  cuisine: 100.00%
+
+Total accuracy for this test: 55.56%
+
+Test 26 Results:
+Differences found:
+- Value mismatch for key 'system_state.browser': Expected 'Chrome 114.0.5735', got 'Chrome'
+- Mismatch in system_state.connected_devices[0]: Expected 'Arctis Nova Pro', got 'Arctis Nova Pro headset'
+- Mismatch in system_state.connected_devices[1]: Expected 'Logitech G502', got 'Logitech G502 mouse'
+- Mismatch in system_state.connected_devices[2]: Expected 'Dell U2719D', got 'Dell U2719D monitor'
+
+Field accuracy breakdown:
+  product.name: 100.00%
+  product.model: 100.00%
+  product.version: 100.00%
+  error_codes: 100.00%
+  impact_level: 100.00%
+  system_state.os: 100.00%
+  system_state.browser: 0.00%
+  system_state.connected_devices: 0.00%
+  reproduction.reproducible: 100.00%
+  reproduction.frequency: 100.00%
+
+Total accuracy for this test: 80.00%
+
+Test 27 Results:
+Differences found:
+
+Field accuracy breakdown:
+  product.name: 100.00%
+  impact_level: 100.00%
+  reproduction.reproducible: 100.00%
+  reproduction.frequency: 100.00%
+
+Total accuracy for this test: 100.00%
+
+Test 28 Results:
+Differences found:
+
+Field accuracy breakdown:
+  product.name: 100.00%
+  product.version: 100.00%
+  impact_level: 100.00%
+  system_state.os: 100.00%
+  system_state.browser: 100.00%
+  reproduction.reproducible: 100.00%
+  reproduction.frequency: 100.00%
+
+Total accuracy for this test: 100.00%
+
+Test 29 Results:
+Differences found:
+- Value mismatch for key 'system_state.browser': Expected 'Chrome 114.0.5735.198', got 'Chrome version 114.0.5735.198'
+
+Field accuracy breakdown:
+  product.name: 100.00%
+  product.version: 100.00%
+  system_state.os: 100.00%
+  system_state.browser: 0.00%
+  reproduction.reproducible: 100.00%
+  reproduction.frequency: 100.00%
+  impact_level: 100.00%
+
+Total accuracy for this test: 85.71%
+
+Test 30 Results:
+Differences found:
+- Value mismatch for key 'system_state.browser': Expected 'Chrome 114.0.5735.198', got 'Chrome'
+- Value mismatch for key 'reproduction.frequency': Expected 'sometimes', got 'often'
+
+Field accuracy breakdown:
+  product.name: 100.00%
+  product.version: 100.00%
+  impact_level: 100.00%
+  system_state.os: 100.00%
+  system_state.browser: 0.00%
+  reproduction.reproducible: 100.00%
+  reproduction.frequency: 0.00%
+
+Total accuracy for this test: 71.43%
+
+Test 31 Results:
+Differences found:
+
+Field accuracy breakdown:
+  product.name: 100.00%
+  product.model: 100.00%
+  system_state.os: 100.00%
+  system_state.connected_devices: 100.00%
+  impact_level: 100.00%
+
+Total accuracy for this test: 100.00%
+
+Test 32 Results:
+Differences found:
+- Value mismatch for key 'system_state.browser': Expected 'Chrome 114', got 'Chrome'
+
+Field accuracy breakdown:
+  product.name: 100.00%
+  product.model: 100.00%
+  product.version: 100.00%
+  error_codes: 100.00%
+  impact_level: 100.00%
+  system_state.os: 100.00%
+  system_state.browser: 0.00%
+  system_state.connected_devices: 100.00%
+  reproduction.reproducible: 100.00%
+  reproduction.frequency: 100.00%
+
+Total accuracy for this test: 90.00%
+
+Test 33 Results:
+Differences found:
+- Mismatch in amenities[1]: Expected 'garage', got 'fireplace'
+- Mismatch in amenities[2]: Expected 'fireplace', got 'central_ac'
+- Mismatch in amenities[4]: Expected 'central_ac', got 'garage'
+
+Field accuracy breakdown:
+  bedrooms: 100.00%
+  bathrooms: 100.00%
+  square_footage: 100.00%
+  property_type: 100.00%
+  amenities: 40.00%
+  listing_price: 100.00%
+  location.city: 100.00%
+  location.state: 100.00%
+  location.zip_code: 100.00%
+
+Total accuracy for this test: 93.33%
+
+Test 34 Results:
+Differences found:
+- Mismatch in amenities[0]: Expected 'central_ac', got 'balcony'
+- Mismatch in amenities[1]: Expected 'balcony', got 'central_ac'
+- Missing key 'location.state' in actual output
+
+Field accuracy breakdown:
+  bedrooms: 100.00%
+  bathrooms: 100.00%
+  property_type: 100.00%
+  amenities: 0.00%
+  listing_price: 100.00%
+  location.city: 100.00%
+  location.state: 0.00%
+  location.zip_code: 100.00%
+
+Total accuracy for this test: 75.00%
+
+Test 35 Results:
+Differences found:
+- Value mismatch for key 'location.state': Expected 'AZ', got 'Arizona'
+
+Field accuracy breakdown:
+  property_type: 100.00%
+  listing_price: 100.00%
+  location.city: 100.00%
+  location.state: 0.00%
+  location.zip_code: 100.00%
+
+Total accuracy for this test: 80.00%
+
+Test 36 Results:
+Differences found:
+
+Field accuracy breakdown:
+  bedrooms: 100.00%
+  bathrooms: 100.00%
+  square_footage: 100.00%
+  property_type: 100.00%
+  amenities: 100.00%
+  listing_price: 100.00%
+  location.city: 100.00%
+  location.state: 100.00%
+  location.zip_code: 100.00%
+
+Total accuracy for this test: 100.00%
+
+Test 37 Results:
+Differences found:
+
+Field accuracy breakdown:
+  square_footage: 100.00%
+  property_type: 100.00%
+  listing_price: 100.00%
+  location.city: 100.00%
+  location.state: 100.00%
+  location.zip_code: 100.00%
+
+Total accuracy for this test: 100.00%
+
+Test 38 Results:
+Differences found:
+
+Field accuracy breakdown:
+  square_footage: 100.00%
+  property_type: 100.00%
+  location.city: 100.00%
+  location.state: 100.00%
+  location.zip_code: 100.00%
+
+Total accuracy for this test: 100.00%
+
+Test 39 Results:
+Differences found:
+- Mismatch in amenities[0]: Expected 'garage', got 'central_ac'
+- Mismatch in amenities[2]: Expected 'central_ac', got 'balcony'
+- Mismatch in amenities[3]: Expected 'balcony', got 'garage'
+
+Field accuracy breakdown:
+  bedrooms: 100.00%
+  bathrooms: 100.00%
+  property_type: 100.00%
+  amenities: 25.00%
+  listing_price: 100.00%
+  location.city: 100.00%
+  location.state: 100.00%
+  location.zip_code: 100.00%
+
+Total accuracy for this test: 90.62%
+
+Test 40 Results:
+Differences found:
+- Value mismatch for key 'bathrooms': Expected '2', got '2'
+
+Field accuracy breakdown:
+  bedrooms: 100.00%
+  bathrooms: 0.00%
+  square_footage: 100.00%
+  property_type: 100.00%
+  listing_price: 100.00%
+  location.city: 100.00%
+  location.state: 100.00%
+  location.zip_code: 100.00%
+
+Total accuracy for this test: 87.50%
+
+Test 41 Results:
+Differences found:
+- Value mismatch for key 'clauses.confidentiality_clause': Expected '7 year non-disclosure period', got 'The Parties agree to maintain strict confidentiality of all information exchanged under this Agreement for a period of seven (7) years from disclosure. During this non-disclosure period, neither party shall disclose any confidential information to any third party without prior written consent.'
+
+Field accuracy breakdown:
+  parties: 100.00%
+  clauses.confidentiality_clause: 0.00%
+
+Total accuracy for this test: 50.00%
+
+Test 42 Results:
+Differences found:
+- Value mismatch for key 'clauses.termination_clause': Expected '90 days notice required', got 'Either Party may terminate this Agreement by providing ninety (90) days written notice to the other Party. Such notice shall be provided in writing and delivered via certified mail to the address specified herein.'
+- Value mismatch for key 'clauses.confidentiality_clause': Expected '3 year non-disclosure period', got 'All confidential information shared between the Parties shall be kept strictly confidential for a period of three (3) years from the date of disclosure. This includes, but is not limited to, trade secrets, customer lists, pricing information, and technical specifications.'
+
+Field accuracy breakdown:
+  signing_date: 100.00%
+  parties: 100.00%
+  governing_law: 100.00%
+  clauses.termination_clause: 0.00%
+  clauses.confidentiality_clause: 0.00%
+
+Total accuracy for this test: 60.00%
+
+Test 43 Results:
+Differences found:
+
+Field accuracy breakdown:
+  signing_date: 100.00%
+  parties: 100.00%
+  governing_law: 100.00%
+
+Total accuracy for this test: 100.00%
+
+Test 44 Results:
+Differences found:
+- Value mismatch for key 'clauses.termination_clause': Expected '45 days notice required', got 'Either party may terminate this Agreement by providing forty-five (45) days written notice to the other party.'
+- Value mismatch for key 'clauses.confidentiality_clause': Expected '2 year non-disclosure period', got 'Both parties agree to maintain the confidentiality of all information exchanged under this Agreement for a period of two (2) years from the date of disclosure.'
+
+Field accuracy breakdown:
+  signing_date: 100.00%
+  parties: 100.00%
+  clauses.termination_clause: 0.00%
+  clauses.confidentiality_clause: 0.00%
+  clauses.payment_amount: 100.00%
+
+Total accuracy for this test: 60.00%
+
+Test 45 Results:
+Differences found:
+- Value mismatch for key 'clauses.termination_clause': Expected 'Immediate termination for material breach', got 'Either party may terminate this Agreement immediately upon written notice in the event of a material breach by the other party.'
+
+Field accuracy breakdown:
+  governing_law: 100.00%
+  clauses.termination_clause: 0.00%
+
+Total accuracy for this test: 50.00%
+
+Test 46 Results:
+Differences found:
+- Value mismatch for key 'governing_law': Expected 'State of California', got 'California'
+- Value mismatch for key 'clauses.confidentiality_clause': Expected 'Perpetual confidentiality requirement', got 'The parties agree that all information shared between them, including but not limited to technical specifications, patient data, business processes, and proprietary methodologies, shall be kept strictly confidential. This confidentiality obligation shall survive the termination or expiration of this Agreement and shall remain in effect in perpetuity.'
+
+Field accuracy breakdown:
+  signing_date: 100.00%
+  parties: 100.00%
+  governing_law: 0.00%
+  clauses.confidentiality_clause: 0.00%
+
+Total accuracy for this test: 50.00%
+
+Test 47 Results:
+Differences found:
+- Value mismatch for key 'clauses.termination_clause': Expected '60 days written notice required', got 'Either Party may terminate this Agreement by providing sixty (60) days written notice to the other Party.'
+
+Field accuracy breakdown:
+  parties: 100.00%
+  clauses.termination_clause: 0.00%
+
+Total accuracy for this test: 50.00%
+
+Test 48 Results:
+Differences found:
+
+Field accuracy breakdown:
+  education: 100.00%
+  skills: 100.00%
+  contact_info.email: 100.00%
+  contact_info.phone: 100.00%
+
+Total accuracy for this test: 100.00%
+
+Test 49 Results:
+Differences found:
+- Length mismatch for skills: Expected 5, got 3
+- Missing key 'previous_roles[0].end_month' in actual output
+- Missing key 'previous_roles[0].end_year' in actual output
+
+Field accuracy breakdown:
+  skills: 0.00%
+  experience_years: 100.00%
+  education: 100.00%
+  previous_roles: 0.00%
+  contact_info.email: 100.00%
+  contact_info.phone: 100.00%
+
+Total accuracy for this test: 66.67%
+
+Test 50 Results:
+Differences found:
+
+Field accuracy breakdown:
+  skills: 100.00%
+  education: 100.00%
+  previous_roles: 100.00%
+  contact_info.email: 100.00%
+  contact_info.phone: 100.00%
+
+Total accuracy for this test: 100.00%
+
+Test 51 Results:
+Differences found:
+- Missing key 'previous_roles[0].end_month' in actual output
+- Missing key 'previous_roles[0].end_year' in actual output
+
+Field accuracy breakdown:
+  skills: 100.00%
+  experience_years: 100.00%
+  education: 100.00%
+  previous_roles: 50.00%
+
+Total accuracy for this test: 87.50%
+
+Test 52 Results:
+Differences found:
+- Missing key 'previous_roles[0].end_month' in actual output
+- Missing key 'previous_roles[0].end_year' in actual output
+
+Field accuracy breakdown:
+  skills: 100.00%
+  experience_years: 100.00%
+  previous_roles: 50.00%
+
+Total accuracy for this test: 83.33%
+
+Test 53 Results:
+Differences found:
+
+Field accuracy breakdown:
+  incident_date: 100.00%
+  incident_type: 100.00%
+
+Total accuracy for this test: 100.00%
+
+Test 54 Results:
+Differences found:
+- Value mismatch for key 'location.state': Expected 'VT', got 'Vermont'
+
+Field accuracy breakdown:
+  incident_date: 100.00%
+  incident_type: 100.00%
+  location.street_address: 100.00%
+  location.city: 100.00%
+  location.state: 0.00%
+  location.zip_code: 100.00%
+  estimated_damages: 100.00%
+  police_report_filed: 100.00%
+  witnesses: 100.00%
+
+Total accuracy for this test: 88.89%
+
+Test 55 Results:
+Differences found:
+
+Field accuracy breakdown:
+  incident_date: 100.00%
+  incident_type: 100.00%
+  estimated_damages: 100.00%
+  witnesses: 100.00%
+
+Total accuracy for this test: 100.00%
+
+Test 56 Results:
+Differences found:
+
+Field accuracy breakdown:
+  incident_type: 100.00%
+  estimated_damages: 100.00%
+
+Total accuracy for this test: 100.00%
+
+Test 57 Results:
+Differences found:
+
+Field accuracy breakdown:
+  incident_date: 100.00%
+  incident_type: 100.00%
+  witnesses: 100.00%
+
+Total accuracy for this test: 100.00%
+
+Test 58 Results:
+Differences found:
+
+Field accuracy breakdown:
+  incident_type: 100.00%
+  location.street_address: 100.00%
+  location.city: 100.00%
+  location.state: 100.00%
+  location.zip_code: 100.00%
+
+Total accuracy for this test: 100.00%
+
+Test 59 Results:
+Differences found:
+- Value mismatch for key 'location.state': Expected 'FL', got 'Florida'
+
+Field accuracy breakdown:
+  incident_date: 100.00%
+  incident_type: 100.00%
+  location.city: 100.00%
+  location.state: 0.00%
+  witnesses: 100.00%
+
+Total accuracy for this test: 80.00%
+
+Test 60 Results:
+Differences found:
+- Missing key 'location.type' in actual output
+- Missing key 'location.indoor_outdoor' in actual output
+- Missing key 'location.floor_level' in actual output
+- Missing key 'weapons' in actual output
+
+Field accuracy breakdown:
+  location.type: 0.00%
+  location.indoor_outdoor: 0.00%
+  location.floor_level: 0.00%
+  incident_type: 100.00%
+  weapons: 0.00%
+
+Total accuracy for this test: 20.00%
+
+Test 61 Results:
+Differences found:
+
+Field accuracy breakdown:
+  location.type: 100.00%
+  location.indoor_outdoor: 100.00%
+  incident_type: 100.00%
+
+Total accuracy for this test: 100.00%
+
+Test 62 Results:
+Differences found:
+- Missing key 'location.type' in actual output
+- Missing key 'location.indoor_outdoor' in actual output
+- Type mismatch for key 'incident_type': Expected list, got <class 'str'>
+- Missing key 'vehicles' in actual output
+
+Field accuracy breakdown:
+  location.type: 0.00%
+  location.indoor_outdoor: 0.00%
+  incident_type: 0.00%
+  vehicles: 0.00%
+
+Total accuracy for this test: 0.00%
+
+Test 63 Results:
+Differences found:
+
+Field accuracy breakdown:
+  location.type: 100.00%
+  location.indoor_outdoor: 100.00%
+  location.floor_level: 100.00%
+  incident_type: 100.00%
+
+Total accuracy for this test: 100.00%
+
+Test 64 Results:
+Differences found:
+
+Field accuracy breakdown:
+  location.type: 100.00%
+  location.indoor_outdoor: 100.00%
+  vehicles: 100.00%
+
+Total accuracy for this test: 100.00%
+
+Test 65 Results:
+Differences found:
+- Value mismatch for key 'location.type': Expected 'vehicle', got 'business'
+
+Field accuracy breakdown:
+  location.type: 0.00%
+  location.indoor_outdoor: 100.00%
+  incident_type: 100.00%
+  vehicles: 100.00%
+
+Total accuracy for this test: 75.00%
+
+Test 66 Results:
+Differences found:
+
+Field accuracy breakdown:
+  project_specs.total_square_feet: 100.00%
+  project_specs.floors: 100.00%
+  usage: 100.00%
+  utilities.water.required: 100.00%
+  utilities.water.gallons_per_day: 100.00%
+  utilities.electrical.required: 100.00%
+  utilities.electrical.amperage: 100.00%
+  utilities.gas: 100.00%
+
+Total accuracy for this test: 100.00%
+
+Test 67 Results:
+Differences found:
+
+Field accuracy breakdown:
+  project_specs.total_square_feet: 100.00%
+  project_specs.floors: 100.00%
+  project_specs.occupancy_count: 100.00%
+  usage: 100.00%
+  utilities.water.required: 100.00%
+  utilities.water.gallons_per_day: 100.00%
+  utilities.electrical.required: 100.00%
+  utilities.electrical.amperage: 100.00%
+  utilities.gas: 100.00%
+
+Total accuracy for this test: 100.00%
+
+Test 68 Results:
+Differences found:
+
+Field accuracy breakdown:
+  project_specs.total_square_feet: 100.00%
+  project_specs.floors: 100.00%
+  usage: 100.00%
+  timeline.duration_months: 100.00%
+
+Total accuracy for this test: 100.00%
+
+Test 69 Results:
+Differences found:
+
+Field accuracy breakdown:
+  project_specs.total_square_feet: 100.00%
+  project_specs.floors: 100.00%
+  project_specs.occupancy_count: 100.00%
+  usage: 100.00%
+  timeline.duration_months: 100.00%
+  timeline.phases: 100.00%
+
+Total accuracy for this test: 100.00%
+
+Test 70 Results:
+Differences found:
+
+Field accuracy breakdown:
+  project_specs.total_square_feet: 100.00%
+  project_specs.floors: 100.00%
+  usage: 100.00%
+  utilities.water.required: 100.00%
+  utilities.water.gallons_per_day: 100.00%
+  utilities.electrical.required: 100.00%
+  utilities.electrical.amperage: 100.00%
+  utilities.gas: 100.00%
+
+Total accuracy for this test: 100.00%
+
+Test 71 Results:
+Differences found:
+
+Field accuracy breakdown:
+  project_specs.total_square_feet: 100.00%
+  project_specs.floors: 100.00%
+  project_specs.occupancy_count: 100.00%
+  project_specs.lot_coverage_percentage: 100.00%
+  usage: 100.00%
+  utilities.electrical.required: 100.00%
+  utilities.electrical.amperage: 100.00%
+
+Total accuracy for this test: 100.00%
+
+Test 72 Results:
+Differences found:
+
+Field accuracy breakdown:
+  project_specs.total_square_feet: 100.00%
+  project_specs.floors: 100.00%
+  project_specs.occupancy_count: 100.00%
+  usage: 100.00%
+  timeline.duration_months: 100.00%
+  timeline.phases: 100.00%
+
+Total accuracy for this test: 100.00%
+
+Test 73 Results:
+Differences found:
+
+Field accuracy breakdown:
+  household.total_members: 100.00%
+  household.composition.adults: 100.00%
+  household.composition.children_under_18: 100.00%
+  household.composition.seniors_over_65: 100.00%
+  household.housing_status: 100.00%
+  income_sources: 100.00%
+
+Total accuracy for this test: 100.00%
+
+Test 74 Results:
+Differences found:
+
+Field accuracy breakdown:
+  assistance_needs: 100.00%
+  household.total_members: 100.00%
+  household.composition.adults: 100.00%
+  household.composition.children_under_18: 100.00%
+  income_sources: 100.00%
+
+Total accuracy for this test: 100.00%
+
+Test 75 Results:
+Differences found:
+
+Field accuracy breakdown:
+  assistance_needs: 100.00%
+  household.total_members: 100.00%
+  household.composition.seniors_over_65: 100.00%
+  risk_factors: 100.00%
+
+Total accuracy for this test: 100.00%
+
+Test 76 Results:
+Differences found:
+
+Field accuracy breakdown:
+  assistance_needs: 100.00%
+  household.total_members: 100.00%
+  household.composition.seniors_over_65: 100.00%
+  household.housing_status: 100.00%
+  risk_factors: 100.00%
+
+Total accuracy for this test: 100.00%
+
+Test 77 Results:
+Differences found:
+- Value mismatch for key 'assistance_needs[0].category': Expected 'legal', got 'childcare'
+- Value mismatch for key 'assistance_needs[0].urgency': Expected 'short_term', got 'ongoing'
+- Value mismatch for key 'assistance_needs[1].category': Expected 'childcare', got 'legal'
+- Value mismatch for key 'assistance_needs[1].urgency': Expected 'ongoing', got 'short_term'
+
+Field accuracy breakdown:
+  assistance_needs: 0.00%
+  household.total_members: 100.00%
+  household.composition.adults: 100.00%
+  household.composition.children_under_18: 100.00%
+  income_sources: 100.00%
+
+Total accuracy for this test: 80.00%
+
+Test 78 Results:
+Differences found:
+
+Field accuracy breakdown:
+  allergies: 100.00%
+  family_history_flags: 100.00%
+
+Total accuracy for this test: 100.00%
+
+Test 79 Results:
+Differences found:
+
+Field accuracy breakdown:
+  medications: 100.00%
+
+Total accuracy for this test: 100.00%
+
+Test 80 Results:
+Differences found:
+
+Field accuracy breakdown:
+  symptoms: 100.00%
+
+Total accuracy for this test: 100.00%
+
+Test 81 Results:
+Differences found:
+- Value mismatch for key 'medications[0].frequency': Expected 'Every 4 hours', got 'every 4 hours as needed'
+
+Field accuracy breakdown:
+  symptoms: 100.00%
+  medications: 0.00%
+  allergies: 100.00%
+  family_history_flags: 100.00%
+
+Total accuracy for this test: 75.00%
+
+Test 82 Results:
+Differences found:
+- Value mismatch for key 'medications[0].dosage': Expected '2 puffs', got '2 puffs as needed'
+
+Field accuracy breakdown:
+  symptoms: 100.00%
+  medications: 0.00%
+  allergies: 100.00%
+  family_history_flags: 100.00%
+
+Total accuracy for this test: 75.00%
+
+Test 83 Results:
+Differences found:
+
+Field accuracy breakdown:
+  symptoms: 100.00%
+
+Total accuracy for this test: 100.00%
+
+Test 84 Results:
+Differences found:
+
+Field accuracy breakdown:
+  symptoms: 100.00%
+  medications: 100.00%
+  allergies: 100.00%
+
+Total accuracy for this test: 100.00%
+
+Test 85 Results:
+Differences found:
+- Mismatch in research_methods[0]: Expected 'interviews', got 'survey'
+- Mismatch in research_methods[1]: Expected 'survey', got 'interviews'
+
+Field accuracy breakdown:
+  research_methods: 0.00%
+  equipment_needs: 100.00%
+  data_collection.data_types: 100.00%
+  data_collection.sample_size: 100.00%
+  data_collection.data_frequency: 100.00%
+
+Total accuracy for this test: 80.00%
+
+Test 86 Results:
+Differences found:
+
+Field accuracy breakdown:
+  research_methods: 100.00%
+  equipment_needs: 100.00%
+
+Total accuracy for this test: 100.00%
+
+Test 87 Results:
+Differences found:
+
+Field accuracy breakdown:
+  research_area: 100.00%
+  methodology: 100.00%
+  funding_sources: 100.00%
+
+Total accuracy for this test: 100.00%
+
+Test 88 Results:
+Differences found:
+
+Field accuracy breakdown:
+  research_area: 100.00%
+  methodology: 100.00%
+  data_sources: 100.00%
+
+Total accuracy for this test: 100.00%
+
+Test 89 Results:
+Differences found:
+- Value mismatch for key 'ingredients[0].unit': Expected 'cakes', got 'pieces'
+
+Field accuracy breakdown:
+  dish_name: 100.00%
+  ingredients: 0.00%
+  dietary_restrictions: 100.00%
+  nutritional_information.calories: 100.00%
+  nutritional_information.protein_grams: 100.00%
+  nutritional_information.carbohydrates_grams: 100.00%
+  nutritional_information.fat_grams: 100.00%
+
+Total accuracy for this test: 85.71%
+
+Test 90 Results:
+Differences found:
+- Value mismatch for key 'product.name': Expected 'VideoChat', got 'VideoChat VC-Pro'
+- Value mismatch for key 'product.model': Expected 'VC-Pro', got ''
+
+Field accuracy breakdown:
+  product.name: 0.00%
+  product.model: 0.00%
+  impact_level: 100.00%
+  reproduction.reproducible: 100.00%
+  reproduction.frequency: 100.00%
+
+Total accuracy for this test: 60.00%
+
+Test 91 Results:
+Differences found:
+
+Field accuracy breakdown:
+  product.name: 100.00%
+  product.model: 100.00%
+  product.version: 100.00%
+  system_state.os: 100.00%
+  system_state.browser: 100.00%
+  system_state.connected_devices: 100.00%
+  impact_level: 100.00%
+  reproduction.reproducible: 100.00%
+  reproduction.frequency: 100.00%
+
+Total accuracy for this test: 100.00%
+
+Test 92 Results:
+Differences found:
+
+Field accuracy breakdown:
+  property_type: 100.00%
+  listing_price: 100.00%
+  location.city: 100.00%
+  location.state: 100.00%
+  location.zip_code: 100.00%
+
+Total accuracy for this test: 100.00%
+
+Test 93 Results:
+Differences found:
+- Value mismatch for key 'bathrooms': Expected '3', got '3'
+
+Field accuracy breakdown:
+  bedrooms: 100.00%
+  bathrooms: 0.00%
+  square_footage: 100.00%
+  property_type: 100.00%
+  amenities: 100.00%
+  listing_price: 100.00%
+  location.city: 100.00%
+  location.state: 100.00%
+  location.zip_code: 100.00%
+
+Total accuracy for this test: 88.89%
+
+Test 94 Results:
+Differences found:
+
+Field accuracy breakdown:
+  bedrooms: 100.00%
+  bathrooms: 100.00%
+  square_footage: 100.00%
+  property_type: 100.00%
+  listing_price: 100.00%
+  location.city: 100.00%
+  location.state: 100.00%
+  location.zip_code: 100.00%
+
+Total accuracy for this test: 100.00%
+
+Test 95 Results:
+Differences found:
+
+Field accuracy breakdown:
+  bedrooms: 100.00%
+  bathrooms: 100.00%
+  square_footage: 100.00%
+  property_type: 100.00%
+  amenities: 100.00%
+  location.city: 100.00%
+  location.state: 100.00%
+  location.zip_code: 100.00%
+
+Total accuracy for this test: 100.00%
+
+Test 96 Results:
+Differences found:
+- Value mismatch for key 'bathrooms': Expected '1', got '1'
+
+Field accuracy breakdown:
+  bedrooms: 100.00%
+  bathrooms: 0.00%
+  square_footage: 100.00%
+  property_type: 100.00%
+  amenities: 100.00%
+  listing_price: 100.00%
+  location.city: 100.00%
+  location.state: 100.00%
+  location.zip_code: 100.00%
+
+Total accuracy for this test: 88.89%
+
+Test 97 Results:
+Differences found:
+
+Field accuracy breakdown:
+  bedrooms: 100.00%
+  bathrooms: 100.00%
+  square_footage: 100.00%
+  property_type: 100.00%
+  listing_price: 100.00%
+  location.city: 100.00%
+  location.state: 100.00%
+  location.zip_code: 100.00%
+
+Total accuracy for this test: 100.00%
+
+Test 98 Results:
+Differences found:
+
+Field accuracy breakdown:
+  bedrooms: 100.00%
+  bathrooms: 100.00%
+  square_footage: 100.00%
+  property_type: 100.00%
+  amenities: 100.00%
+  listing_price: 100.00%
+  location.city: 100.00%
+  location.state: 100.00%
+  location.zip_code: 100.00%
+
+Total accuracy for this test: 100.00%
+
+Test 99 Results:
+Differences found:
+
+Field accuracy breakdown:
+  parties: 100.00%
+  governing_law: 100.00%
+
+Total accuracy for this test: 100.00%
+
+Test 100 Results:
+Differences found:
+- Value mismatch for key 'clauses.termination_clause': Expected 'Termination upon mutual agreement.', got 'This Agreement may be terminated upon mutual agreement of the parties.'
+- Value mismatch for key 'clauses.confidentiality_clause': Expected 'Standard confidentiality applies.', got 'Standard confidentiality applies. Both parties agree not to disclose any confidential information obtained during the course of this agreement to any third party.'
+
+Field accuracy breakdown:
+  signing_date: 100.00%
+  parties: 100.00%
+  clauses.termination_clause: 0.00%
+  clauses.confidentiality_clause: 0.00%
+  clauses.payment_amount: 100.00%
+
+Total accuracy for this test: 60.00%
+
+Test 101 Results:
+Differences found:
+
+Field accuracy breakdown:
+  signing_date: 100.00%
+  parties: 100.00%
+
+Total accuracy for this test: 100.00%
+
+Test 102 Results:
+Differences found:
+
+Field accuracy breakdown:
+  signing_date: 100.00%
+  parties: 100.00%
+  clauses.confidentiality_clause: 100.00%
+
+Total accuracy for this test: 100.00%
+
+Test 103 Results:
+Differences found:
+- Length mismatch for parties: Expected 1, got 2
+
+Field accuracy breakdown:
+  signing_date: 100.00%
+  parties: 0.00%
+  clauses.confidentiality_clause: 100.00%
+
+Total accuracy for this test: 66.67%
+
+Test 104 Results:
+Differences found:
+
+Field accuracy breakdown:
+  contact_info.email: 100.00%
+  contact_info.phone: 100.00%
+
+Total accuracy for this test: 100.00%
+
+Test 105 Results:
+Differences found:
+
+Field accuracy breakdown:
+  skills: 100.00%
+  experience_years: 100.00%
+
+Total accuracy for this test: 100.00%
+
+Test 106 Results:
+Differences found:
+
+Field accuracy breakdown:
+  previous_roles: 100.00%
+
+Total accuracy for this test: 100.00%
+
+Test 107 Results:
+Differences found:
+- Value mismatch for key 'education[0].degree_type': Expected 'BA', got 'MA'
+- Value mismatch for key 'education[0].institution': Expected 'University of California, Los Angeles', got 'University of California, San Diego'
+- Value mismatch for key 'education[1].degree_type': Expected 'MA', got 'BA'
+- Value mismatch for key 'education[1].institution': Expected 'University of California, San Diego', got 'University of California, Los Angeles'
+
+Field accuracy breakdown:
+  education: 0.00%
+  contact_info.email: 100.00%
+  contact_info.phone: 100.00%
+
+Total accuracy for this test: 66.67%
+
+Test 108 Results:
+Differences found:
+
+Field accuracy breakdown:
+  experience_years: 100.00%
+  previous_roles: 100.00%
+  education: 100.00%
+  contact_info.email: 100.00%
+  contact_info.phone: 100.00%
+
+Total accuracy for this test: 100.00%
+
+Test 109 Results:
+Differences found:
+
+Field accuracy breakdown:
+  incident_date: 100.00%
+  incident_type: 100.00%
+  location.zip_code: 100.00%
+
+Total accuracy for this test: 100.00%
+
+Test 110 Results:
+Differences found:
+
+Field accuracy breakdown:
+  incident_type: 100.00%
+  estimated_damages: 100.00%
+  witnesses: 100.00%
+
+Total accuracy for this test: 100.00%
+
+Test 111 Results:
+Differences found:
+
+Field accuracy breakdown:
+  incident_date: 100.00%
+  incident_type: 100.00%
+  location.street_address: 100.00%
+  police_report_filed: 100.00%
+  witnesses: 100.00%
+
+Total accuracy for this test: 100.00%
+
+Test 112 Results:
+Differences found:
+
+Field accuracy breakdown:
+  incident_date: 100.00%
+  incident_type: 100.00%
+  location.street_address: 100.00%
+  location.city: 100.00%
+  location.state: 100.00%
+  location.zip_code: 100.00%
+  estimated_damages: 100.00%
+
+Total accuracy for this test: 100.00%
+
+Test 113 Results:
+Differences found:
+
+Field accuracy breakdown:
+  incident_type: 100.00%
+  location.city: 100.00%
+  estimated_damages: 100.00%
+
+Total accuracy for this test: 100.00%
+
+Test 114 Results:
+Differences found:
+
+Field accuracy breakdown:
+  incident_date: 100.00%
+  incident_type: 100.00%
+  location.street_address: 100.00%
+  location.city: 100.00%
+  location.state: 100.00%
+  location.zip_code: 100.00%
+  estimated_damages: 100.00%
+  witnesses: 100.00%
+
+Total accuracy for this test: 100.00%
+
+Test 115 Results:
+Differences found:
+- Type mismatch for key 'incident_type': Expected list, got <class 'str'>
+
+Field accuracy breakdown:
+  incident_type: 0.00%
+
+Total accuracy for this test: 0.00%
+
+Test 116 Results:
+Differences found:
+- Type mismatch for key 'incident_type': Expected list, got <class 'str'>
+- Missing key 'vehicles' in actual output
+
+Field accuracy breakdown:
+  incident_type: 0.00%
+  vehicles: 0.00%
+
+Total accuracy for this test: 0.00%
+
+Test 117 Results:
+Differences found:
+- Missing key 'location.type' in actual output
+- Missing key 'location.indoor_outdoor' in actual output
+
+Field accuracy breakdown:
+  location.type: 0.00%
+  location.indoor_outdoor: 0.00%
+  incident_type: 100.00%
+
+Total accuracy for this test: 33.33%
+
+Test 118 Results:
+Differences found:
+
+Field accuracy breakdown:
+  usage: 100.00%
+  utilities.water.required: 100.00%
+  utilities.electrical.required: 100.00%
+
+Total accuracy for this test: 100.00%
+
+Test 119 Results:
+Differences found:
+
+Field accuracy breakdown:
+  project_specs.total_square_feet: 100.00%
+  project_specs.floors: 100.00%
+  project_specs.lot_coverage_percentage: 100.00%
+  usage: 100.00%
+  utilities.water.required: 100.00%
+  utilities.water.gallons_per_day: 100.00%
+  utilities.electrical.required: 100.00%
+  utilities.electrical.amperage: 100.00%
+  utilities.gas: 100.00%
+  timeline.duration_months: 100.00%
+  timeline.phases: 100.00%
+
+Total accuracy for this test: 100.00%
+
+Test 120 Results:
+Differences found:
+
+Field accuracy breakdown:
+  usage: 100.00%
+  utilities.water.required: 100.00%
+  utilities.water.gallons_per_day: 100.00%
+  utilities.electrical.required: 100.00%
+  utilities.electrical.amperage: 100.00%
+  utilities.gas: 100.00%
+  timeline.duration_months: 100.00%
+  timeline.phases: 100.00%
+
+Total accuracy for this test: 100.00%
+
+Test 121 Results:
+Differences found:
+
+Field accuracy breakdown:
+  project_specs.total_square_feet: 100.00%
+  project_specs.floors: 100.00%
+  project_specs.occupancy_count: 100.00%
+  project_specs.lot_coverage_percentage: 100.00%
+
+Total accuracy for this test: 100.00%
+
+Test 122 Results:
+Differences found:
+
+Field accuracy breakdown:
+  project_specs.total_square_feet: 100.00%
+  project_specs.floors: 100.00%
+  project_specs.occupancy_count: 100.00%
+  project_specs.lot_coverage_percentage: 100.00%
+  usage: 100.00%
+  utilities.water.required: 100.00%
+  utilities.water.gallons_per_day: 100.00%
+  utilities.electrical.required: 100.00%
+  utilities.electrical.amperage: 100.00%
+  utilities.gas: 100.00%
+  timeline.phases: 100.00%
+
+Total accuracy for this test: 100.00%
+
+Test 123 Results:
+Differences found:
+
+Field accuracy breakdown:
+  usage: 100.00%
+  utilities.water.required: 100.00%
+  utilities.water.gallons_per_day: 100.00%
+  utilities.electrical.required: 100.00%
+  utilities.electrical.amperage: 100.00%
+  utilities.gas: 100.00%
+
+Total accuracy for this test: 100.00%
+
+Test 124 Results:
+Differences found:
+
+Field accuracy breakdown:
+  usage: 100.00%
+
+Total accuracy for this test: 100.00%
+
+Test 125 Results:
+Differences found:
+
+Field accuracy breakdown:
+  project_specs.total_square_feet: 100.00%
+  project_specs.floors: 100.00%
+  project_specs.occupancy_count: 100.00%
+  project_specs.lot_coverage_percentage: 100.00%
+  usage: 100.00%
+  utilities.water.required: 100.00%
+  utilities.water.gallons_per_day: 100.00%
+  utilities.electrical.required: 100.00%
+  utilities.electrical.amperage: 100.00%
+  utilities.gas: 100.00%
+  timeline.duration_months: 100.00%
+
+Total accuracy for this test: 100.00%
+
+Test 126 Results:
+Differences found:
+
+Field accuracy breakdown:
+  assistance_needs: 100.00%
+  risk_factors: 100.00%
+
+Total accuracy for this test: 100.00%
+
+Test 127 Results:
+Differences found:
+
+Field accuracy breakdown:
+  income_sources: 100.00%
+  assistance_needs: 100.00%
+
+Total accuracy for this test: 100.00%
+

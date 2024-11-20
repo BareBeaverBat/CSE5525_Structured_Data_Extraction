@@ -1,0 +1,86 @@
+[
+    {
+        "research_methods": [
+            "experiment",
+            "data_analysis"
+        ],
+        "data_collection": {
+            "data_types": [
+                "sensor",
+                "clinical_measurements"
+            ],
+            "data_frequency": "continuous"
+        },
+        "study_population": {
+            "age_range": {
+                "min": 20,
+                "max": 60
+            }
+        }
+    },
+    {
+        "research_methods": [
+            "interviews",
+            "field_study"
+        ],
+        "equipment_needs": [
+            {
+                "name": "Audio Recorders"
+            }
+        ]
+    },
+    {
+        "research_methods": [
+            "survey"
+        ],
+        "data_collection": {
+            "data_types": [
+                "survey_responses"
+            ],
+            "sample_size": 1000,
+            "data_frequency": "once"
+        }
+    },
+    {
+        "research_methods": [
+            "interviews",
+            "survey"
+        ],
+        "equipment_needs": [
+            {
+                "name": "Video Conferencing Software"
+            }
+        ],
+        "data_collection": {
+            "data_types": [
+                "survey_responses"
+            ],
+            "sample_size": 2000,
+            "data_frequency": "once"
+        }
+    },
+    {
+        "research_methods": [
+            "data_analysis"
+        ],
+        "timeline": {
+            "total_duration_months": 6,
+            "key_milestones": [
+                {
+                    "name": "Analysis Complete",
+                    "month": 6
+                }
+            ]
+        }
+    },
+    {
+        "research_methods": [
+            "data_analysis"
+        ],
+        "data_collection": {
+            "data_types": [
+                "clinical_measurements"
+            ]
+        }
+    }
+]

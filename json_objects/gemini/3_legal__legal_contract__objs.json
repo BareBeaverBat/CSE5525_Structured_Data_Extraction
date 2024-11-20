@@ -1,0 +1,126 @@
+[
+    {
+        "parties": [
+            "Acme Inc.",
+            "Beta Ltd."
+        ],
+        "governing_law": "California"
+    },
+    {
+        "signing_date": "2023-06-10",
+        "parties": [
+            "Epsilon Enterprises",
+            "Zeta Holdings"
+        ],
+        "clauses": {
+            "termination_clause": "Termination upon mutual agreement.",
+            "confidentiality_clause": "Standard confidentiality applies.",
+            "payment_amount": 50000
+        }
+    },
+    {
+        "signing_date": "2024-01-05",
+        "parties": [
+            "Eta Solutions"
+        ]
+    },
+    {
+        "signing_date": "2023-09-22",
+        "governing_law": "Delaware"
+    },
+    {
+        "signing_date": "2024-04-18",
+        "parties": [
+            "Theta Innovations",
+            "Iota Industries"
+        ],
+        "governing_law": "New York",
+        "clauses": {
+            "termination_clause": "Termination for breach of contract.",
+            "confidentiality_clause": "Strict confidentiality agreement."
+        }
+    },
+    {
+        "signing_date": "2023-12-01",
+        "parties": [
+            "Kappa Kreations"
+        ],
+        "governing_law": "Florida",
+        "clauses": {
+            "termination_clause": "60 days notice required for termination.",
+            "payment_amount": 25000
+        }
+    },
+    {
+        "signing_date": "2023-08-12",
+        "parties": [
+            "Mu Materials",
+            "Nu Networks"
+        ],
+        "clauses": {
+            "payment_amount": 100000
+        }
+    },
+    {
+        "signing_date": "2024-05-09",
+        "parties": [
+            "Xi Corp"
+        ],
+        "clauses": {
+            "termination_clause": "Termination subject to arbitration."
+        }
+    },
+    {
+        "signing_date": "2023-10-29",
+        "parties": [
+            "Omicron Operations",
+            "Pi Productions",
+            "Rho Resources"
+        ],
+        "governing_law": "Illinois"
+    },
+    {
+        "signing_date": "2024-06-21",
+        "clauses": {
+            "termination_clause": "Immediate termination for cause.",
+            "confidentiality_clause": "Information is confidential and proprietary.",
+            "payment_amount": 75000
+        }
+    },
+    {
+        "signing_date": "2023-07-18",
+        "parties": [
+            "Sigma Systems"
+        ],
+        "clauses": {
+            "confidentiality_clause": "Non-disclosure agreement in effect."
+        }
+    },
+    {
+        "signing_date": "2024-08-05",
+        "clauses": {
+            "payment_amount": 5000
+        }
+    },
+    {
+        "signing_date": "2023-11-27",
+        "parties": [
+            "Phi Pharmaceuticals",
+            "Chi Chemicals",
+            "Psi Psychology"
+        ],
+        "clauses": {
+            "termination_clause": "Termination with 90 days notice."
+        }
+    },
+    {
+        "signing_date": "2023-05-20",
+        "parties": [
+            "Alpha Aeronautics",
+            "Beta Biotech"
+        ],
+        "clauses": {
+            "confidentiality_clause": "Standard NDA applies."
+        }
+    }
+]

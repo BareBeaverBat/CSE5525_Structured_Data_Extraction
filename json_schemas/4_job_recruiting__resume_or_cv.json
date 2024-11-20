@@ -1,0 +1,50 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+        "skills": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "experience_years": { "type": "integer" },
+        "education": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "degree_type": {
+                        "type": "string",
+                        "enum": ["BS", "BA", "MS", "MA", "PhD", "MBA"]
+                    },
+                    "major": { "type": "string" },
+                    "institution": { "type": "string" }
+                },
+                "required": ["degree_type", "institution"]
+            }
+        },
+        "previous_roles": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "title": { "type": "string" },
+                    "company": { "type": "string" },
+                    "start_month": { "type": "integer", "minimum": 1, "maximum": 12 },
+                    "start_year": { "type": "integer", "minimum": 1900 },
+                    "end_month": { "type": ["integer", "null"], "minimum": 1, "maximum": 12 },
+                    "end_year": { "type": ["integer", "null"], "minimum": 1900 }
+                },
+                "required": ["title", "company"]
+            }
+        },
+        "contact_info": {
+            "type": "object",
+            "properties": {
+                "email": { "type": "string", "format": "email" },
+                "phone": { "type": "string" }
+            }
+        }
+    }
+}

@@ -1,0 +1,268 @@
+[
+    {
+        "property_type": "townhouse",
+        "listing_price": 425000,
+        "location": {
+            "city": "Raleigh",
+            "state": "NC",
+            "zip_code": "27605"
+        }
+    },
+    {
+        "bedrooms": 2,
+        "bathrooms": "1.5",
+        "property_type": "apartment",
+        "square_footage": 1050,
+        "amenities": [
+            "central_ac"
+        ],
+        "location": {
+            "city": "Denver",
+            "state": "CO",
+            "zip_code": "80202"
+        }
+    },
+    {
+        "bedrooms": 3,
+        "bathrooms": 2,
+        "square_footage": 1850,
+        "property_type": "house",
+        "location": {
+            "city": "Sacramento",
+            "state": "CA",
+            "zip_code": "95818"
+        }
+    },
+    {
+        "bedrooms": 3,
+        "bathrooms": "2.5",
+        "property_type": "townhouse",
+        "amenities": [
+            "garage",
+            "balcony"
+        ],
+        "listing_price": 679000,
+        "location": {
+            "city": "Seattle",
+            "state": "WA",
+            "zip_code": "98112"
+        }
+    },
+    {
+        "property_type": "house",
+        "amenities": [
+            "pool"
+        ],
+        "location": {
+            "city": "Las Vegas",
+            "state": "NV",
+            "zip_code": "89134"
+        }
+    },
+    {
+        "bedrooms": 3,
+        "property_type": "house",
+        "amenities": [
+            "garage",
+            "central_ac"
+        ],
+        "location": {
+            "city": "Minneapolis",
+            "state": "MN",
+            "zip_code": "55405"
+        }
+    },
+    {
+        "bedrooms": 3,
+        "bathrooms": "2.5",
+        "property_type": "townhouse",
+        "amenities": [
+            "garage",
+            "fireplace",
+            "central_ac",
+            "balcony"
+        ],
+        "listing_price": 525000,
+        "location": {
+            "city": "Charlotte",
+            "state": "NC",
+            "zip_code": "28205"
+        }
+    },
+    {
+        "bedrooms": 4,
+        "bathrooms": 2,
+        "square_footage": 2850,
+        "property_type": "house",
+        "amenities": [
+            "pool",
+            "garage",
+            "fireplace",
+            "balcony",
+            "central_ac"
+        ],
+        "listing_price": 789000,
+        "location": {
+            "city": "Scottsdale",
+            "state": "Arizona",
+            "zip_code": "85254"
+        }
+    },
+    {
+        "bedrooms": 1,
+        "bathrooms": 1,
+        "property_type": "condo",
+        "location": {
+            "city": "Portland",
+            "state": "Oregon",
+            "zip_code": "97209"
+        }
+    },
+    {
+        "bedrooms": 5,
+        "bathrooms": 3,
+        "square_footage": 3600,
+        "property_type": "house",
+        "amenities": [
+            "fireplace",
+            "central_ac",
+            "garage"
+        ],
+        "location": {
+            "city": "Austin",
+            "state": "Texas",
+            "zip_code": "78731"
+        }
+    },
+    {
+        "square_footage": 12000,
+        "property_type": "land",
+        "listing_price": 185000,
+        "location": {
+            "city": "Bend",
+            "state": "Oregon",
+            "zip_code": "97701"
+        }
+    },
+    {
+        "bedrooms": 1,
+        "bathrooms": 1,
+        "square_footage": 750,
+        "property_type": "condo",
+        "amenities": [
+            "balcony",
+            "fireplace",
+            "central_ac",
+            "pool",
+            "garage"
+        ],
+        "listing_price": 299000,
+        "location": {
+            "city": "Tampa",
+            "state": "Florida",
+            "zip_code": "33609"
+        }
+    },
+    {
+        "bedrooms": 1,
+        "bathrooms": 1,
+        "property_type": "apartment",
+        "listing_price": 225000,
+        "location": {
+            "city": "Nashville",
+            "state": "TN",
+            "zip_code": "37203"
+        }
+    },
+    {
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "square_footage": 1200,
+        "property_type": "condo",
+        "listing_price": 449000,
+        "location": {
+            "city": "Boston",
+            "state": "MA",
+            "zip_code": "02116"
+        }
+    },
+    {
+        "square_footage": 8500,
+        "property_type": "land",
+        "location": {
+            "city": "Sedona",
+            "state": "Arizona",
+            "zip_code": "86336"
+        }
+    },
+    {
+        "property_type": "land",
+        "listing_price": 85000,
+        "location": {
+            "city": "Prescott",
+            "state": "AZ",
+            "zip_code": "86301"
+        }
+    },
+    {
+        "bedrooms": 5,
+        "bathrooms": "4.5",
+        "square_footage": 4250,
+        "property_type": "house",
+        "amenities": [
+            "pool",
+            "garage",
+            "fireplace",
+            "central_ac",
+            "balcony"
+        ],
+        "listing_price": 1250000,
+        "location": {
+            "city": "Westport",
+            "state": "CT",
+            "zip_code": "06880"
+        }
+    },
+    {
+        "bedrooms": 2,
+        "bathrooms": "2",
+        "property_type": "condo",
+        "amenities": [
+            "central_ac",
+            "balcony"
+        ],
+        "listing_price": 425000,
+        "location": {
+            "city": "Cambridge",
+            "state": "MA",
+            "zip_code": "02138"
+        }
+    },
+    {
+        "bedrooms": 3,
+        "bathrooms": "2.5",
+        "square_footage": 1850,
+        "property_type": "townhouse",
+        "amenities": [
+            "garage"
+        ],
+        "listing_price": 575000,
+        "location": {
+            "city": "Arlington",
+            "state": "VA",
+            "zip_code": "22201"
+        }
+    },
+    {
+        "bedrooms": 1,
+        "bathrooms": "1",
+        "square_footage": 750,
+        "property_type": "apartment",
+        "listing_price": 289000,
+        "location": {
+            "city": "Portland",
+            "state": "OR",
+            "zip_code": "97209"
+        }
+    }
+]
