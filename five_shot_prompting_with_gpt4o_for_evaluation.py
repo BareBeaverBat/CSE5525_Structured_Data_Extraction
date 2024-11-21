@@ -104,17 +104,24 @@ Schema:
       }
     }
   }
-Text: "PATIENT VISIT NOTES\n\nChief Complaint:\nPatient presents with complaint of sore throat.\n\nPhysical Examination:\nGeneral appearance is well-kept. Vital signs within normal limits. Physical examination performed.\n\nAssessment & Plan:\n1. Sore throat\n   - Patient advised to take acetaminophen for symptom management\n   - Adequate hydration recommended\n   - Gargle with warm salt water as needed\n   - Follow-up recommended if symptoms persist or worsen"
+Text: "Patient presents for follow-up regarding ongoing allergy management. Reports experiencing intermittent seasonal allergies. Known allergies include ragweed, birch pollen, dust mites, and cat dander. Family medical history is significant for asthma, hypertension, and inflammatory bowel disease. Patient appears comfortable during examination. We discussed environmental modification strategies and avoiding known allergens. Patient was provided with educational materials about allergen avoidance techniques and understanding seasonal patterns. Will follow up as needed if symptoms worsen or new concerns arise."
 JSON object: {
     "symptoms": [
       {
-        "name": "sore throat"
+        "name": "seasonal allergies",
+        "frequency": "intermittent"
       }
     ],
-    "medications": [
-      {
-        "name": "acetaminophen"
-      }
+    "allergies": [
+      "ragweed",
+      "birch pollen",
+      "dust mites",
+      "cat dander"
+    ],
+    "family_history_flags": [
+      "asthma",
+      "other",
+      "hypertension"
     ]
   }
 
@@ -198,49 +205,18 @@ Schema:
     }
   }
 
-Text: "Patient presents with multiple ongoing symptoms, primarily reporting chronic fatigue that has persisted for over 6 weeks (45 days). The fatigue is constant and rated as 7/10 in severity, significantly impacting daily activities. Additionally, patient reports intermittent joint pain (6/10 severity) for the past month, and constant muscle weakness (5/10 severity) that began 2 weeks ago.\n\nCurrent medications include duloxetine 30mg taken twice daily and naproxen 500mg taken as needed for pain management. Patient has known allergies to ibuprofen, shellfish, and peanuts. Family history is significant for diabetes, heart disease, and cancer.\n\nPatient appears alert and oriented during the visit, though visibly fatigued. Vital signs are within normal limits. We discussed potential underlying causes for the symptom complex and developed a treatment plan. Will order comprehensive blood work to rule out underlying conditions. Follow-up scheduled in two weeks to review test results and assess response to current medication regimen. Patient was advised to maintain a symptom diary and record any notable changes in severity or frequency of symptoms."
+Text: "Patient presents with a sore throat that started three days ago. They have been taking acetaminophen for symptom relief. Patient reports adequate fluid intake and rest. Physical examination shows mild erythema of the posterior pharynx without exudates. Lymph nodes are not enlarged. Temperature is 98.6\u00b0F. Advised to continue current management with rest and hydration. Will follow up if symptoms worsen or fail to improve within the next few days."
 JSON object: {
     "symptoms": [
       {
-        "name": "chronic fatigue",
-        "duration_days": 45,
-        "severity": 7,
-        "frequency": "constant"
-      },
-      {
-        "name": "joint pain",
-        "duration_days": 30,
-        "severity": 6,
-        "frequency": "intermittent"
-      },
-      {
-        "name": "muscle weakness",
-        "duration_days": 14,
-        "severity": 5,
-        "frequency": "constant"
+        "name": "sore throat",
+        "duration_days": 3
       }
     ],
     "medications": [
       {
-        "name": "duloxetine",
-        "dosage": "30mg",
-        "frequency": "twice daily"
-      },
-      {
-        "name": "naproxen",
-        "dosage": "500mg",
-        "frequency": "as needed"
+        "name": "acetaminophen"
       }
-    ],
-    "allergies": [
-      "ibuprofen",
-      "shellfish",
-      "peanuts"
-    ],
-    "family_history_flags": [
-      "diabetes",
-      "heart_disease",
-      "cancer"
     ]
   }
 
@@ -323,40 +299,28 @@ Schema:
       }
     }
   }
-Text: "Patient presents today with complaints of joint pain and fatigue. The joint pain began two weeks ago and has been constant, rating it as 7/10 in severity. The fatigue is intermittent with moderate severity (5/10). Patient reports the joint pain is affecting daily activities and sleep quality.\n\nCurrently taking naproxen 500mg twice daily for pain management and vitamin D3 2000 IU daily as a supplement. Known allergies to shellfish and ibuprofen. Family history significant for diabetes and heart disease.\n\nPatient appears well-groomed and in mild distress during examination. Vital signs within normal limits. Will continue current medication regimen and schedule follow-up in two weeks to assess response to treatment. Patient advised on proper sleep hygiene and gentle stretching exercises as tolerated."
+Text: "Patient presents today with complaints of shortness of breath and cough. The shortness of breath started 5 days ago and occurs occasionally, with the patient rating it as 6 out of 10 in severity. The cough is a symptom that the patient mentions but provides no additional details about its severity or when it started. \n\nThe patient is currently using albuterol inhaler, 90mcg, which they take every 4-6 hours as needed for symptom relief.\n\nFamily history is significant for asthma.\n\nVitals are stable. Lung examination reveals some mild wheezing in the upper lobes. Will continue current management with albuterol and follow up in two weeks."
 JSON object: {
     "symptoms": [
       {
-        "name": "joint pain",
-        "duration_days": 14,
-        "severity": 7,
-        "frequency": "constant"
+        "name": "shortness of breath",
+        "duration_days": 5,
+        "severity": 6,
+        "frequency": "occasional"
       },
       {
-        "name": "fatigue",
-        "severity": 5,
-        "frequency": "intermittent"
+        "name": "cough"
       }
     ],
     "medications": [
       {
-        "name": "naproxen",
-        "dosage": "500mg",
-        "frequency": "twice daily"
-      },
-      {
-        "name": "vitamin D3",
-        "dosage": "2000 IU",
-        "frequency": "daily"
+        "name": "albuterol",
+        "dosage": "90mcg",
+        "frequency": "every 4-6 hours as needed"
       }
     ],
-    "allergies": [
-      "shellfish",
-      "ibuprofen"
-    ],
     "family_history_flags": [
-      "diabetes",
-      "heart_disease"
+      "asthma"
     ]
   }
 
@@ -366,45 +330,7 @@ Schema:
     "$schema": "http://json-schema.org/draft-07/schema#",
     "type": "object",
     "properties": {
-      "transaction": {
-        "type": "object",
-        "properties": {
-          "category": {
-            "type": "string",
-            "enum": [
-              "transfer",
-              "payment",
-              "deposit",
-              "withdrawal",
-              "exchange",
-              "fee",
-              "other"
-            ]
-          },
-          "method": {
-            "type": "string",
-            "enum": [
-              "wire",
-              "ach",
-              "check",
-              "cash",
-              "crypto",
-              "other"
-            ]
-          },
-          "amount_usd": {
-            "type": "number",
-            "minimum": 0
-          },
-          "cross_border": {
-            "type": "boolean"
-          }
-        },
-        "required": [
-          "amount_usd"
-        ]
-      },
-      "parties": {
+      "symptoms": {
         "type": "array",
         "items": {
           "type": "object",
@@ -412,99 +338,90 @@ Schema:
             "name": {
               "type": "string"
             },
-            "role": {
-              "type": "string",
-              "enum": [
-                "originator",
-                "beneficiary",
-                "intermediary"
-              ]
+            "duration_days": {
+              "type": "integer"
             },
-            "entity_type": {
+            "severity": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 10
+            },
+            "frequency": {
               "type": "string",
               "enum": [
-                "individual",
-                "business",
-                "government",
-                "ngo"
+                "constant",
+                "intermittent",
+                "occasional",
+                "first_occurrence"
               ]
             }
           },
           "required": [
-            "name",
-            "role"
+            "name"
           ]
         }
       },
-      "purpose_indicators": {
-        "type": "array",
-        "items": {
-          "type": "string",
-          "enum": [
-            "payroll",
-            "goods_services",
-            "investment",
-            "real_estate",
-            "personal",
-            "charity",
-            "loan_related",
-            "other"
-          ]
-        }
-      },
-      "risk_flags": {
+      "medications": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "type": {
-              "type": "string",
-              "enum": [
-                "structured",
-                "high_risk_jurisdiction",
-                "unusual_pattern",
-                "rapid_movement",
-                "shell_company",
-                "restricted_entity",
-                "sanctions_program",
-                "restricted_goods"
-              ]
+            "name": {
+              "type": "string"
             },
-            "severity": {
-              "type": "string",
-              "enum": [
-                "low",
-                "medium",
-                "high"
-              ]
+            "dosage": {
+              "type": "string"
+            },
+            "frequency": {
+              "type": "string"
             }
-          }
+          },
+          "required": [
+            "name"
+          ]
+        }
+      },
+      "allergies": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "family_history_flags": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "enum": [
+            "diabetes",
+            "heart_disease",
+            "cancer",
+            "asthma",
+            "hypertension",
+            "other"
+          ]
         }
       }
     }
   }
-Text: "A wire payment in the amount of $50,000.00 has been processed with McKinsey & Company as the beneficiary. The payment is for goods and services provided by McKinsey. While this transaction amount shows some variance from usual patterns, this has been reviewed and determined to be of minimal concern. All documentation has been collected and verified according to standard procedures."
+Text: "Patient presents today with complaints of intermittent migraines over the past 3 days, rating pain intensity at 8/10. Associated symptoms include occasional nausea over the past 2 days and intermittent sensitivity to light (photophobia) rated at 7/10. Patient reports the symptoms are interfering with their ability to work and perform daily activities. Patient appears in mild distress during examination, wearing sunglasses in the office. Neurological examination performed, showing no focal deficits. Discussed lifestyle triggers and stress management techniques. Will schedule follow-up in two weeks to assess response to treatment plan."
 JSON object: {
-    "transaction": {
-      "category": "payment",
-      "method": "wire",
-      "amount_usd": 50000.0
-    },
-    "parties": [
+    "symptoms": [
       {
-        "name": "McKinsey & Company",
-        "role": "beneficiary",
-        "entity_type": "business"
-      }
-    ],
-    "risk_flags": [
+        "name": "migraine",
+        "duration_days": 3,
+        "severity": 8,
+        "frequency": "intermittent"
+      },
       {
-        "type": "unusual_pattern",
-        "severity": "low"
+        "name": "nausea",
+        "duration_days": 2,
+        "frequency": "occasional"
+      },
+      {
+        "name": "photophobia",
+        "severity": 7,
+        "frequency": "intermittent"
       }
-    ],
-    "purpose_indicators": [
-      "goods_services"
     ]
   }
 
@@ -514,45 +431,7 @@ Schema:
     "$schema": "http://json-schema.org/draft-07/schema#",
     "type": "object",
     "properties": {
-      "transaction": {
-        "type": "object",
-        "properties": {
-          "category": {
-            "type": "string",
-            "enum": [
-              "transfer",
-              "payment",
-              "deposit",
-              "withdrawal",
-              "exchange",
-              "fee",
-              "other"
-            ]
-          },
-          "method": {
-            "type": "string",
-            "enum": [
-              "wire",
-              "ach",
-              "check",
-              "cash",
-              "crypto",
-              "other"
-            ]
-          },
-          "amount_usd": {
-            "type": "number",
-            "minimum": 0
-          },
-          "cross_border": {
-            "type": "boolean"
-          }
-        },
-        "required": [
-          "amount_usd"
-        ]
-      },
-      "parties": {
+      "symptoms": {
         "type": "array",
         "items": {
           "type": "object",
@@ -560,96 +439,113 @@ Schema:
             "name": {
               "type": "string"
             },
-            "role": {
-              "type": "string",
-              "enum": [
-                "originator",
-                "beneficiary",
-                "intermediary"
-              ]
+            "duration_days": {
+              "type": "integer"
             },
-            "entity_type": {
+            "severity": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 10
+            },
+            "frequency": {
               "type": "string",
               "enum": [
-                "individual",
-                "business",
-                "government",
-                "ngo"
+                "constant",
+                "intermittent",
+                "occasional",
+                "first_occurrence"
               ]
             }
           },
           "required": [
-            "name",
-            "role"
+            "name"
           ]
         }
       },
-      "purpose_indicators": {
-        "type": "array",
-        "items": {
-          "type": "string",
-          "enum": [
-            "payroll",
-            "goods_services",
-            "investment",
-            "real_estate",
-            "personal",
-            "charity",
-            "loan_related",
-            "other"
-          ]
-        }
-      },
-      "risk_flags": {
+      "medications": {
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "type": {
-              "type": "string",
-              "enum": [
-                "structured",
-                "high_risk_jurisdiction",
-                "unusual_pattern",
-                "rapid_movement",
-                "shell_company",
-                "restricted_entity",
-                "sanctions_program",
-                "restricted_goods"
-              ]
+            "name": {
+              "type": "string"
             },
-            "severity": {
-              "type": "string",
-              "enum": [
-                "low",
-                "medium",
-                "high"
-              ]
+            "dosage": {
+              "type": "string"
+            },
+            "frequency": {
+              "type": "string"
             }
-          }
+          },
+          "required": [
+            "name"
+          ]
+        }
+      },
+      "allergies": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "family_history_flags": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "enum": [
+            "diabetes",
+            "heart_disease",
+            "cancer",
+            "asthma",
+            "hypertension",
+            "other"
+          ]
         }
       }
     }
   }
   
-Text: "ACH payment processed from Summit Manufacturing Ltd to Western Supply Co in the amount of $5,249.99. The payment was initiated by Summit Manufacturing Ltd as the originating business entity, with Western Supply Co as the receiving business entity. Transaction was processed through standard ACH channels with complete routing information. All required documentation was collected and verified prior to processing."
+Text: "Patient presents for follow-up of rheumatologic symptoms. Primary concerns include intermittent joint pain rated 7/10 in severity that started approximately 3 months ago, affecting multiple joints symmetrically. Patient also reports constant fatigue for the past 4 months (5/10 severity) that impacts daily activities, particularly in the afternoon. Morning stiffness (6/10 severity) has been present for 3 months, occurring intermittently and typically lasting about an hour after waking.\n\nCurrent medications include methotrexate 15mg weekly and folic acid 1mg daily, both started at previous visit. Medication compliance has been good with no missed doses.\n\nMedical history includes known allergies to ibuprofen and shellfish. Family history is significant for diabetes and cancer.\n\nPhysical examination shows mild synovitis in several MCP joints bilaterally. Range of motion is slightly decreased in affected joints. Vital signs are stable with BP 118/76, HR 72, temp 98.6\u00b0F.\n\nAssessment: Symptoms showing early response to current medication regimen. Will continue current doses and monitor for improvement.\n\nPlan:\n1. Continue current medications unchanged\n2. Return for follow-up in 6 weeks\n3. Complete scheduled lab work prior to next visit\n4. Call if symptoms worsen or new symptoms develop"
 JSON object: {
-    "transaction": {
-      "category": "payment",
-      "method": "ach",
-      "amount_usd": 5249.99
-    },
-    "parties": [
+    "symptoms": [
       {
-        "name": "Summit Manufacturing Ltd",
-        "role": "originator",
-        "entity_type": "business"
+        "name": "joint pain",
+        "duration_days": 90,
+        "severity": 7,
+        "frequency": "intermittent"
       },
       {
-        "name": "Western Supply Co",
-        "role": "beneficiary",
-        "entity_type": "business"
+        "name": "fatigue",
+        "duration_days": 120,
+        "severity": 5,
+        "frequency": "constant"
+      },
+      {
+        "name": "morning stiffness",
+        "duration_days": 90,
+        "severity": 6,
+        "frequency": "intermittent"
       }
+    ],
+    "medications": [
+      {
+        "name": "methotrexate",
+        "dosage": "15mg",
+        "frequency": "weekly"
+      },
+      {
+        "name": "folic acid",
+        "dosage": "1mg",
+        "frequency": "daily"
+      }
+    ],
+    "allergies": [
+      "ibuprofen",
+      "shellfish"
+    ],
+    "family_history_flags": [
+      "diabetes",
+      "cancer"
     ]
   }
 
@@ -684,9 +580,9 @@ current_dir = os.path.dirname(os.path.abspath(__file__))
 parent_dir = os.path.dirname(os.path.dirname(os.path.dirname(current_dir)))
 
 # Construct the path to the schema, text, and expected schema files
-schema_file_path = os.path.join(parent_dir, 'Third Year', 'Speech and Language','CSE5525_Structured_Data_Extraction','datasets' , 'fewshot_schema.json')
-text_file_path = os.path.join(parent_dir, 'Third Year', 'Speech and Language','CSE5525_Structured_Data_Extraction','datasets' , 'fewshot_text_passages.json')
-test_obj = os.path.join(parent_dir, 'Third Year', 'Speech and Language','CSE5525_Structured_Data_Extraction','datasets' , 'fewshot_objs.json')
+schema_file_path = os.path.join(parent_dir, 'Third Year', 'Speech and Language','CSE5525_Structured_Data_Extraction','datasets' , 'validation_schema.json')
+text_file_path = os.path.join(parent_dir, 'Third Year', 'Speech and Language','CSE5525_Structured_Data_Extraction','datasets' , 'validation_text_passages.json')
+test_obj = os.path.join(parent_dir, 'Third Year', 'Speech and Language','CSE5525_Structured_Data_Extraction','datasets' , 'validation_objs.json')
 
 # Log file paths for debugging
 logger.info(f"Attempting to open schema file: {schema_file_path}")
@@ -697,6 +593,11 @@ logger.info(f"Attempting to open expected schema file: {test_obj}")
 schema = load_schema_from_file(schema_file_path)
 texts = load_text_from_file(text_file_path)
 expected_schemas = load_expected_schema(test_obj)
+
+# Skip the first five entries in all three files becuase they are given as the examples for prompting
+schema = schema[5:]
+texts = texts[5:]
+expected_schemas = expected_schemas[5:]
 
 # Function to call GPT model with system instruction only
 def call_gpt_model(schema, text):

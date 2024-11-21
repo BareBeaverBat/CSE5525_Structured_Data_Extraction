@@ -50,9 +50,9 @@ current_dir = os.path.dirname(os.path.abspath(__file__))
 parent_dir = os.path.dirname(os.path.dirname(os.path.dirname(current_dir)))
 
 # Construct the path to the schema, text, and expected schema files
-schema_file_path = os.path.join(parent_dir, 'Third Year', 'Speech and Language','CSE5525_Structured_Data_Extraction','datasets' , 'test_schema.json')
-text_file_path = os.path.join(parent_dir, 'Third Year', 'Speech and Language','CSE5525_Structured_Data_Extraction','datasets' , 'test_text_passages.json')
-test_obj = os.path.join(parent_dir, 'Third Year', 'Speech and Language','CSE5525_Structured_Data_Extraction','datasets' , 'test_objs.json')
+schema_file_path = os.path.join(parent_dir, 'Third Year', 'Speech and Language','CSE5525_Structured_Data_Extraction','datasets' , 'validation_schema.json')
+text_file_path = os.path.join(parent_dir, 'Third Year', 'Speech and Language','CSE5525_Structured_Data_Extraction','datasets' , 'validation_text_passages.json')
+test_obj = os.path.join(parent_dir, 'Third Year', 'Speech and Language','CSE5525_Structured_Data_Extraction','datasets' , 'validation_objs.json')
 
 # Log file paths for debugging
 logger.info(f"Attempting to open schema file: {schema_file_path}")
@@ -70,7 +70,7 @@ def call_gpt_model(schema, text):
     
     try:
         response = client.chat.completions.create(
-            model="gpt-4o",  
+            model="gpt-4o-mini",  
             messages=[{
                 "role": "system", 
                 "content": SYSTEM_INSTRUCTION
