@@ -51,6 +51,16 @@
         }
     },
     {
+        "signing_date": "2023-07-15",
+        "parties": [
+            "Summit Construction",
+            "Valley Architecture"
+        ],
+        "clauses": {
+            "termination_clause": "Termination upon mutual agreement"
+        }
+    },
+    {
         "clauses": {
             "confidentiality_clause": "10 year non-disclosure period",
             "payment_amount": 75000.0

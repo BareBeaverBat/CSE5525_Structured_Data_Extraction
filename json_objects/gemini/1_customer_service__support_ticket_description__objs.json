@@ -1,6 +1,144 @@
 [
     {
         "product": {
+            "name": "Cloud Storage Sync"
+        },
+        "impact_level": "blocking",
+        "reproduction": {
+            "reproducible": true,
+            "frequency": "always"
+        }
+    },
+    {
+        "product": {
+            "name": "Video Conferencing App",
+            "model": "Desktop",
+            "version": "2.5.1"
+        },
+        "impact_level": "major",
+        "reproduction": {
+            "reproducible": true,
+            "frequency": "always"
+        }
+    },
+    {
+        "product": {
+            "name": "Smart Thermostat"
+        },
+        "error_codes": [
+            "TH-001",
+            "TH-003",
+            "NET-ERR"
+        ]
+    },
+    {
+        "product": {
+            "name": "Wireless Headphones"
+        },
+        "impact_level": "blocking",
+        "reproduction": {
+            "reproducible": true,
+            "frequency": "always"
+        }
+    },
+    {
+        "product": {
+            "name": "Smart Home Hub"
+        },
+        "impact_level": "blocking",
+        "system_state": {
+            "os": "Linux",
+            "browser": "Chromium",
+            "connected_devices": [
+                "Smart Bulb 1",
+                "Smart Bulb 2",
+                "Smart Lock"
+            ]
+        },
+        "reproduction": {
+            "reproducible": true,
+            "frequency": "always"
+        }
+    },
+    {
+        "product": {
+            "name": "Photo Editing Software",
+            "model": "Pro"
+        },
+        "error_codes": [
+            "IMG-001"
+        ],
+        "impact_level": "blocking"
+    },
+    {
+        "product": {
+            "name": "Music Streaming Service"
+        },
+        "error_codes": [
+            "PLAY-002"
+        ],
+        "impact_level": "blocking",
+        "system_state": {
+            "os": "Windows 11",
+            "browser": "Firefox"
+        },
+        "reproduction": {
+            "reproducible": true,
+            "frequency": "always"
+        }
+    },
+    {
+        "product": {
+            "name": "File Backup Utility",
+            "version": "1.0.5"
+        },
+        "impact_level": "minor",
+        "reproduction": {
+            "reproducible": false,
+            "frequency": "once"
+        }
+    },
+    {
+        "product": {
+            "name": "VPN Service",
+            "model": "Premium",
+            "version": "3.2.0"
+        },
+        "error_codes": [
+            "CONN-ERR"
+        ],
+        "impact_level": "cosmetic",
+        "system_state": {
+            "os": "macOS",
+            "browser": "Safari"
+        },
+        "reproduction": {
+            "reproducible": true,
+            "frequency": "sometimes"
+        }
+    },
+    {
+        "product": {
+            "name": "Online Gaming Platform"
+        },
+        "error_codes": [
+            "AUTH-FAIL"
+        ],
+        "impact_level": "blocking",
+        "system_state": {
+            "os": "iOS",
+            "connected_devices": [
+                "bluetooth headset",
+                "game controller"
+            ]
+        },
+        "reproduction": {
+            "reproducible": true,
+            "frequency": "often"
+        }
+    },
+    {
+        "product": {
             "name": "CloudSync"
         },
         "error_codes": [

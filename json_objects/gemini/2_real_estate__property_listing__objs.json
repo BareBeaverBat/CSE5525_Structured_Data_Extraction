@@ -8,6 +8,18 @@
         }
     },
     {
+        "bedrooms": 3,
+        "bathrooms": 2,
+        "square_footage": 1500,
+        "property_type": "house",
+        "listing_price": 675000,
+        "location": {
+            "city": "Austin",
+            "state": "TX",
+            "zip_code": "78704"
+        }
+    },
+    {
         "bedrooms": 2,
         "bathrooms": 1,
         "square_footage": 850,
@@ -157,6 +169,18 @@
             "city": "San Francisco",
             "state": "CA",
             "zip_code": "94101"
+        }
+    },
+    {
+        "bedrooms": 4,
+        "bathrooms": 3,
+        "square_footage": 2200,
+        "property_type": "house",
+        "listing_price": 2200000,
+        "location": {
+            "city": "Portland",
+            "state": "OR",
+            "zip_code": "97201"
         }
     },
     {

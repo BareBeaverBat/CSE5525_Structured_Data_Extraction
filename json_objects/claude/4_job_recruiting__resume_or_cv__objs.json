@@ -1,6 +1,44 @@
 [
     {
         "skills": [
+            "Python",
+            "JavaScript",
+            "React",
+            "Git"
+        ],
+        "experience_years": 2,
+        "education": [
+            {
+                "degree_type": "BS",
+                "major": "Computer Science",
+                "institution": "University of Washington"
+            }
+        ],
+        "previous_roles": [
+            {
+                "title": "Junior Software Engineer",
+                "company": "Cascade Technologies",
+                "start_month": 6,
+                "start_year": 2021,
+                "end_month": null,
+                "end_year": null
+            },
+            {
+                "title": "Software Engineering Intern",
+                "company": "Bluefin Solutions",
+                "start_month": 5,
+                "start_year": 2020,
+                "end_month": 8,
+                "end_year": 2020
+            }
+        ],
+        "contact_info": {
+            "email": "david.chen@gmail.com",
+            "phone": "206-555-0123"
+        }
+    },
+    {
+        "skills": [
             "Strategic Planning",
             "Team Leadership",
             "Operations Management",
@@ -129,6 +167,88 @@
     },
     {
         "skills": [
+            "B2B Sales",
+            "Account Management",
+            "CRM"
+        ],
+        "experience_years": 7,
+        "education": [
+            {
+                "degree_type": "BA",
+                "major": "Business Administration",
+                "institution": "Michigan State University"
+            }
+        ],
+        "previous_roles": [
+            {
+                "title": "Regional Sales Manager",
+                "company": "Enterprise Solutions Ltd",
+                "start_month": 9,
+                "start_year": 2020,
+                "end_month": null,
+                "end_year": null
+            },
+            {
+                "title": "Account Executive",
+                "company": "DataTech Systems",
+                "start_month": 3,
+                "start_year": 2018,
+                "end_month": 8,
+                "end_year": 2020
+            },
+            {
+                "title": "Sales Representative",
+                "company": "Office Solutions Inc",
+                "start_month": 6,
+                "start_year": 2016,
+                "end_month": 2,
+                "end_year": 2018
+            }
+        ]
+    },
+    {
+        "skills": [
+            "Machine Learning",
+            "Statistical Analysis",
+            "Python",
+            "Research Design",
+            "Grant Writing",
+            "Publication"
+        ],
+        "experience_years": 6,
+        "education": [
+            {
+                "degree_type": "PhD",
+                "major": "Computer Science",
+                "institution": "Massachusetts Institute of Technology"
+            },
+            {
+                "degree_type": "BS",
+                "major": "Mathematics",
+                "institution": "California Institute of Technology"
+            }
+        ],
+        "previous_roles": [
+            {
+                "title": "Research Scientist",
+                "company": "Google Research",
+                "start_month": 1,
+                "start_year": 2022,
+                "end_month": null,
+                "end_year": null
+            },
+            {
+                "title": "Research Assistant",
+                "company": "MIT Computer Science and Artificial Intelligence Laboratory (CSAIL)",
+                "start_month": 9,
+                "start_year": 2017,
+                "end_month": 12,
+                "end_year": 2021
+            }
+        ]
+    },
+    {
+        "skills": [
             "Brand Strategy",
             "Social Media Marketing",
             "Content Creation",
@@ -231,6 +351,38 @@
     },
     {
         "skills": [
+            "UI Design",
+            "Figma",
+            "Adobe Creative Suite",
+            "Prototyping",
+            "User Research"
+        ],
+        "experience_years": 3,
+        "previous_roles": [
+            {
+                "title": "UI Designer",
+                "company": "Design Studio X",
+                "start_month": 9,
+                "start_year": 2022,
+                "end_month": null,
+                "end_year": null
+            },
+            {
+                "title": "UI/UX Designer",
+                "company": "Creative Agency Co",
+                "start_month": 3,
+                "start_year": 2021,
+                "end_month": 8,
+                "end_year": 2022
+            }
+        ],
+        "contact_info": {
+            "email": "alex.design@gmail.com",
+            "phone": "415-555-0177"
+        }
+    },
+    {
+        "skills": [
             "Product Management",
             "Agile",
             "Stakeholder Management",
@@ -322,6 +474,35 @@
                 "start_year": 2016,
                 "end_month": 7,
                 "end_year": 2019
+            }
+        ]
+    },
+    {
+        "skills": [
+            "Distributed Systems",
+            "Kubernetes",
+            "Go programming",
+            "System Design",
+            "Cloud Architecture",
+            "Microservices"
+        ],
+        "experience_years": 15,
+        "previous_roles": [
+            {
+                "title": "Principal Engineer",
+                "company": "Netflix",
+                "start_month": 1,
+                "start_year": 2015,
+                "end_month": null,
+                "end_year": null
+            },
+            {
+                "title": "Senior Software Engineer",
+                "company": "LinkedIn",
+                "start_month": 3,
+                "start_year": 2010,
+                "end_month": 12,
+                "end_year": 2014
             }
         ]
     },
