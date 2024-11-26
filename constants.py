@@ -1,3 +1,4 @@
+import os
 from enum import Enum
 from pathlib import Path
 
@@ -16,7 +17,7 @@ claude_texts_path = texts_path / claude_folder_nm
 gemini_texts_path = texts_path / gemini_folder_nm
 
 google_api_key_env = "GOOGLE_DEEPMIND_API_KEY"
-is_google_api_key_using_free_tier = True#change this to False in local copy of code when using a paid API key, b/c otherwise activities with Gemini will be very slow
+is_google_api_key_using_free_tier = os.environ["GOOGLE_DEEPMIND_API_KEY_IS_FREE_TIER"] == "True"
 anthropic_api_key_env = "ANTHROPIC_API_KEY"
 
 google_model_specifier = "gemini-1.5-pro-002"
