@@ -1,39 +1,81 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "type": "object",
-    "properties": {
-        "dish_name": { "type": "string" },
-        "ingredients": {
-            "type": "array",
-            "items": {
-                "type": "object",
-                "properties": {
-                    "name": { "type": "string" },
-                    "quantity": { "type": ["integer", "number"] },
-                    "unit": { "type": "string" }
-                },
-                "required": ["name", "quantity"]
-            }
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "dish_name": {
+      "type": "string"
+    },
+    "ingredients": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "quantity": {
+            "type": [
+              "integer",
+              "number"
+            ]
+          },
+          "unit": {
+            "type": "string"
+          }
         },
-        "instructions": {
-            "type": "array",
-            "items": { "type": "string" }
+        "required": [
+          "name",
+          "quantity"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "instructions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "cuisine": {
+      "type": "string"
+    },
+    "dietary_restrictions": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "vegan",
+          "vegetarian",
+          "gluten-free",
+          "dairy-free",
+          "nut-free"
+        ]
+      }
+    },
+    "preparation_time_minutes": {
+      "type": "integer"
+    },
+    "cooking_time_minutes": {
+      "type": "integer"
+    },
+    "nutritional_information": {
+      "type": "object",
+      "properties": {
+        "calories": {
+          "type": "integer"
         },
-        "cuisine": { "type": "string" },
-        "dietary_restrictions": {
-            "type": "array",
-            "items": { "type": "string", "enum": ["vegan", "vegetarian", "gluten-free", "dairy-free", "nut-free"] }
+        "protein_grams": {
+          "type": "number"
         },
-        "preparation_time_minutes": { "type": "integer" },
-        "cooking_time_minutes": { "type": "integer" },
-        "nutritional_information": {
-            "type": "object",
-            "properties": {
-                "calories": { "type": "integer" },
-                "protein_grams": { "type": "number" },
-                "carbohydrates_grams": { "type": "number" },
-                "fat_grams": { "type": "number" }
-            }
+        "carbohydrates_grams": {
+          "type": "number"
+        },
+        "fat_grams": {
+          "type": "number"
         }
+      },
+      "additionalProperties": false
     }
+  },
+  "additionalProperties": false
 }

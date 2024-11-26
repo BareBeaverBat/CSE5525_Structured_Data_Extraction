@@ -1,61 +1,85 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "type": "object",
-    "properties": {
-        "project_specs": {
-            "type": "object",
-            "properties": {
-                "total_square_feet": { "type": "number" },
-                "floors": { "type": "integer" },
-                "occupancy_count": { "type": "integer" },
-                "lot_coverage_percentage": { "type": "number" }
-            }
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "project_specs": {
+      "type": "object",
+      "properties": {
+        "total_square_feet": {
+          "type": "number"
         },
-        "usage": {
-            "type": "array",
-            "items": {
-                "type": "string",
-                "enum": [
-                    "residential",
-                    "commercial",
-                    "industrial",
-                    "mixed",
-                    "agricultural",
-                    "public"
-                ]
-            }
+        "floors": {
+          "type": "integer"
         },
-        "utilities": {
-            "type": "object",
-            "properties": {
-                "water": {
-                    "type": "object",
-                    "properties": {
-                        "required": { "type": "boolean" },
-                        "gallons_per_day": { "type": "number" }
-                    }
-                },
-                "electrical": {
-                    "type": "object",
-                    "properties": {
-                        "required": { "type": "boolean" },
-                        "amperage": { "type": "number" }
-                    }
-                },
-                "gas": {
-                    "type": "boolean"
-                }
-            }
+        "occupancy_count": {
+          "type": "integer"
         },
-        "timeline": {
-            "type": "object",
-            "properties": {
-                "duration_months": { "type": "integer" },
-                "phases": {
-                    "type": "integer",
-                    "minimum": 1
-                }
-            }
+        "lot_coverage_percentage": {
+          "type": "number"
         }
+      },
+      "additionalProperties": false
+    },
+    "usage": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "residential",
+          "commercial",
+          "industrial",
+          "mixed",
+          "agricultural",
+          "public"
+        ]
+      }
+    },
+    "utilities": {
+      "type": "object",
+      "properties": {
+        "water": {
+          "type": "object",
+          "properties": {
+            "required": {
+              "type": "boolean"
+            },
+            "gallons_per_day": {
+              "type": "number"
+            }
+          },
+          "additionalProperties": false
+        },
+        "electrical": {
+          "type": "object",
+          "properties": {
+            "required": {
+              "type": "boolean"
+            },
+            "amperage": {
+              "type": "number"
+            }
+          },
+          "additionalProperties": false
+        },
+        "gas": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "timeline": {
+      "type": "object",
+      "properties": {
+        "duration_months": {
+          "type": "integer"
+        },
+        "phases": {
+          "type": "integer",
+          "minimum": 1
+        }
+      },
+      "additionalProperties": false
     }
+  },
+  "additionalProperties": false
 }

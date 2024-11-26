@@ -3,7 +3,6 @@ Evaluating and improving smallish language models for the purpose of extracting 
 
 agenda
 - fix some dataset issues
-  - add `"additionalProperties": false` to every object-type part of every one of the schemas!
   - remove "experience_years" from the schema, json objects, and text passages of "4_job_recruiting__resume_or_cv" case because the correct value would change every year
     - or at least there would be ambiguity about whether to infer the real number of years of experience from the earliest start date in the text passage and what the model 'thought' the current/'Present' year was
     - For example, some of the objects that initially failed auto-validation did so because the text passage generation didn't explicitly state the number of years of experience, but the model doing the extraction/reconstruction said "well, I know when their first position started, I 'know' the present time is at least _, and I can see an unbroken chain of employment from that start point to 'Present', so I can calculate total years of experience"
@@ -33,7 +32,10 @@ agenda
     - 0 shot vs 1 shot vs 3 shot vs 5 shot vs 10 shot vs 20 shot vs 50 shot prompting
     - whether different models struggled with different scenarios
     - whether source model (gemini vs claude) was a significant factor for some or all models, and if so whether they all had the same preference
-  - if we have time, implement self-consistency and measure its effectiveness?
+  - if we have time, test how much of a difference it makes for the evaluation code to (first 2 are already implemented in generation code and would be easy to add):
+    - allow CoT (extracting from a json-type markdown code block)
+    - automatically validate the response for json-schema-compliance and reprompt if it fails that check
+    - make several queries (3? 5? 10?) and use self-consistency to assemble a final result object field by field
 
 
 # To set the environment variables

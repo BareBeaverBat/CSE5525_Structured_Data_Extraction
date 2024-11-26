@@ -1,92 +1,125 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "type": "object",
-    "properties": {
-        "transaction": {
-            "type": "object",
-            "properties": {
-                "category": {
-                    "type": "string",
-                    "enum": [
-                        "transfer",
-                        "payment",
-                        "deposit",
-                        "withdrawal",
-                        "exchange",
-                        "fee",
-                        "other"
-                    ]
-                },
-                "method": {
-                    "type": "string",
-                    "enum": ["wire", "ach", "check", "cash", "crypto", "other"]
-                },
-                "amount_usd": {
-                    "type": "number",
-                    "minimum": 0
-                },
-                "cross_border": { "type": "boolean" }
-            },
-            "required": ["amount_usd"]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "transaction": {
+      "type": "object",
+      "properties": {
+        "category": {
+          "type": "string",
+          "enum": [
+            "transfer",
+            "payment",
+            "deposit",
+            "withdrawal",
+            "exchange",
+            "fee",
+            "other"
+          ]
         },
-        "parties": {
-            "type": "array",
-            "items": {
-                "type": "object",
-                "properties": {
-                    "name": { "type": "string" },
-                    "role": {
-                        "type": "string",
-                        "enum": ["originator", "beneficiary", "intermediary"]
-                    },
-                    "entity_type": {
-                        "type": "string",
-                        "enum": ["individual", "business", "government", "ngo"]
-                    }
-                },
-                "required": ["name", "role"]
-            }
+        "method": {
+          "type": "string",
+          "enum": [
+            "wire",
+            "ach",
+            "check",
+            "cash",
+            "crypto",
+            "other"
+          ]
         },
-        "purpose_indicators": {
-            "type": "array",
-            "items": {
-                "type": "string",
-                "enum": [
-                    "payroll",
-                    "goods_services",
-                    "investment",
-                    "real_estate",
-                    "personal",
-                    "charity",
-                    "loan_related",
-                    "other"
-                ]
-            }
+        "amount_usd": {
+          "type": "number",
+          "minimum": 0
         },
-        "risk_flags": {
-            "type": "array",
-            "items": {
-                "type": "object",
-                "properties": {
-                    "type": {
-                        "type": "string",
-                        "enum": [
-                            "structured",
-                            "high_risk_jurisdiction",
-                            "unusual_pattern",
-                            "rapid_movement",
-                            "shell_company",
-                            "restricted_entity",
-                            "sanctions_program",
-                            "restricted_goods"
-                        ]
-                    },
-                    "severity": {
-                        "type": "string",
-                        "enum": ["low", "medium", "high"]
-                    }
-                }
-            }
+        "cross_border": {
+          "type": "boolean"
         }
+      },
+      "required": [
+        "amount_usd"
+      ],
+      "additionalProperties": false
+    },
+    "parties": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "role": {
+            "type": "string",
+            "enum": [
+              "originator",
+              "beneficiary",
+              "intermediary"
+            ]
+          },
+          "entity_type": {
+            "type": "string",
+            "enum": [
+              "individual",
+              "business",
+              "government",
+              "ngo"
+            ]
+          }
+        },
+        "required": [
+          "name",
+          "role"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "purpose_indicators": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "payroll",
+          "goods_services",
+          "investment",
+          "real_estate",
+          "personal",
+          "charity",
+          "loan_related",
+          "other"
+        ]
+      }
+    },
+    "risk_flags": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "structured",
+              "high_risk_jurisdiction",
+              "unusual_pattern",
+              "rapid_movement",
+              "shell_company",
+              "restricted_entity",
+              "sanctions_program",
+              "restricted_goods"
+            ]
+          },
+          "severity": {
+            "type": "string",
+            "enum": [
+              "low",
+              "medium",
+              "high"
+            ]
+          }
+        },
+        "additionalProperties": false
+      }
     }
+  },
+  "additionalProperties": false
 }
