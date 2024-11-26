@@ -3,13 +3,13 @@ Evaluating and improving smallish language models for the purpose of extracting 
 
 agenda
 - fix some dataset issues
-  - remove "experience_years" from the schema, json objects, and text passages of "4_job_recruiting__resume_or_cv" case because the correct value would change every year
-    - or at least there would be ambiguity about whether to infer the real number of years of experience from the earliest start date in the text passage and what the model 'thought' the current/'Present' year was
-    - For example, some of the objects that initially failed auto-validation did so because the text passage generation didn't explicitly state the number of years of experience, but the model doing the extraction/reconstruction said "well, I know when their first position started, I 'know' the present time is at least _, and I can see an unbroken chain of employment from that start point to 'Present', so I can calculate total years of experience"
-      - inconsistent behavior around when the model 'thinks' the current date is, maybe related to when the end of the pre-training data window was? sometimes vague talk that seems to assume "2023 or maybe later?", sometimes a confident and wrong (but less off in an absolute sense) assertion that the date is in "July 2024", etc.
   - models apparently interpreted "termination clause" field for legal contract as something to be summarized/approximated, but imo it should be marked somehow as verbatim
     - maybe the system prompts can explain a special flag/suffix for json fields that should be treated that way
     - maybe simply the suffix "_verbatim"
+  - at least gemini-produced data has a lot of obviously-fake and/or insufficiently-diverse data (e.g. "Jane Doe" or "John Doe" being used as a name and being used repeatedly, phone numbers starting with 555-, "email.com" as an email domain name, etc.)
+    - experiment with effects of increasing gemini generation temperature to 1.5 or 2?
+    - try tweaking object generation prompt
+    - look more closely at claude and gemini data to see how widespread this is and whether there are other such problems
 - process the examples from the big (260ish) review file
 - maybe another round of data generation?
 - update/upgrade the dataset splitting code to 

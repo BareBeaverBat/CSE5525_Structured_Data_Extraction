@@ -23,7 +23,6 @@
         ]
     },
     {
-        "experience_years": 10,
         "previous_roles": [
             {
                 "title": "Senior Software Engineer",
@@ -90,7 +89,6 @@
         }
     },
     {
-        "experience_years": 2,
         "previous_roles": [
             {
                 "title": "Junior Developer",
@@ -113,7 +111,6 @@
             "Java",
             "Spring Boot"
         ],
-        "experience_years": 6,
         "previous_roles": [
             {
                 "title": "Backend Engineer",

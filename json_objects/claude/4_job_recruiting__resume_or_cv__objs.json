@@ -6,7 +6,6 @@
             "React",
             "Git"
         ],
-        "experience_years": 2,
         "education": [
             {
                 "degree_type": "BS",
@@ -44,7 +43,6 @@
             "Operations Management",
             "Budget Planning"
         ],
-        "experience_years": 15,
         "education": [
             {
                 "degree_type": "MBA",
@@ -111,7 +109,6 @@
             "Digital Marketing",
             "Sales"
         ],
-        "experience_years": 8,
         "previous_roles": [
             {
                 "title": "Digital Marketing Manager",
@@ -146,7 +143,6 @@
             "Docker",
             "AWS"
         ],
-        "experience_years": 12,
         "education": [
             {
                 "degree_type": "MS",
@@ -171,7 +167,6 @@
             "Account Management",
             "CRM"
         ],
-        "experience_years": 7,
         "education": [
             {
                 "degree_type": "BA",
@@ -215,7 +210,6 @@
             "Grant Writing",
             "Publication"
         ],
-        "experience_years": 6,
         "education": [
             {
                 "degree_type": "PhD",
@@ -255,7 +249,6 @@
             "Analytics",
             "Team Leadership"
         ],
-        "experience_years": 10,
         "education": [
             {
                 "degree_type": "MBA",
@@ -289,7 +282,6 @@
             "Tableau",
             "Excel"
         ],
-        "experience_years": 3,
         "education": [
             {
                 "degree_type": "BS",
@@ -318,7 +310,6 @@
             "Product Strategy",
             "Leadership"
         ],
-        "experience_years": 8,
         "education": [
             {
                 "degree_type": "MBA",
@@ -357,7 +348,6 @@
             "Prototyping",
             "User Research"
         ],
-        "experience_years": 3,
         "previous_roles": [
             {
                 "title": "UI Designer",
@@ -389,7 +379,6 @@
             "Technical Communication",
             "Data Analysis"
         ],
-        "experience_years": 6,
         "education": [
             {
                 "degree_type": "MS",
@@ -451,7 +440,6 @@
             "Change Management",
             "Presentations"
         ],
-        "experience_years": 7,
         "education": [
             {
                 "degree_type": "MBA",
@@ -486,7 +474,6 @@
             "Cloud Architecture",
             "Microservices"
         ],
-        "experience_years": 15,
         "previous_roles": [
             {
                 "title": "Principal Engineer",
@@ -514,7 +501,6 @@
             "Docker",
             "Git"
         ],
-        "experience_years": 2,
         "education": [
             {
                 "degree_type": "BS",
@@ -544,7 +530,6 @@
             "Product Strategy",
             "Agile Management"
         ],
-        "experience_years": 15,
         "previous_roles": [
             {
                 "title": "Senior Engineering Manager",
@@ -614,7 +599,6 @@
             "Spark",
             "Hadoop"
         ],
-        "experience_years": 7,
         "education": [
             {
                 "degree_type": "MS",

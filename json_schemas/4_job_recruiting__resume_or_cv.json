@@ -8,9 +8,6 @@
         "type": "string"
       }
     },
-    "experience_years": {
-      "type": "integer"
-    },
     "education": {
       "type": "array",
       "items": {
