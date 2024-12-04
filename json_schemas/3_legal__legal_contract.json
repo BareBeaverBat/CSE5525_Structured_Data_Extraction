@@ -18,10 +18,10 @@
     "clauses": {
       "type": "object",
       "properties": {
-        "termination_clause": {
+        "termination_clause_verbatim": {
           "type": "string"
         },
-        "confidentiality_clause": {
+        "confidentiality_clause_verbatim": {
           "type": "string"
         },
         "payment_amount": {

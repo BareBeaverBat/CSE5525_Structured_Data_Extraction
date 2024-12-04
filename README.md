@@ -6,16 +6,21 @@ agenda
   - models apparently interpreted "termination clause" field for legal contract as something to be summarized/approximated, but imo it should be marked somehow as verbatim
     - maybe the system prompts can explain a special flag/suffix for json fields that should be treated that way
     - maybe simply the suffix "_verbatim"
+    - update system prompts to explain how this flag should affect behavior in text passage generation and object extraction
+    - review all previously-accepted records for scenario ids 3/13/14 and a) update field names in JSON plus b) double check that the text passage contains the exact text string from the verbatim-marked JSON field
   - at least gemini-produced data has a lot of obviously-fake and/or insufficiently-diverse data (e.g. "Jane Doe" or "John Doe" being used as a name and being used repeatedly, phone numbers starting with 555-, "email.com" as an email domain name, etc.)
-    - experiment with effects of increasing gemini generation temperature to 1.5 or 2?
-    - try tweaking object generation prompt
-    - look more closely at claude and gemini data to see how widespread this is and whether there are other such problems
-- process the examples from the big (260ish) review file
-- maybe another round of data generation?
+    - ?experiment with effects of increasing gemini generation temperature to 1.5 or 2?
+    - ?try tweaking object generation prompt
+    - ?look more closely at claude and gemini data to see how widespread this is and whether there are other such problems
+- ??process the examples from the big (260ish) review file
+  - need to watch out for (tweaking both json object and text passage as necessary)
+    - scenario id 4: 'experience_years' in flagged-for-review records
+    - scenario ids 3/13/14: the addition of "_verbatim" suffix to some field names
+- ?maybe another round of data generation?
 - update/upgrade the dataset splitting code to 
   - use existing data loading/checking code, 
   - reserve some scenarios for only validation/test or only test sets, 
-  - maybe include training split in addition to fewshot/validation/test
+  - ~~maybe include training split in addition to fewshot/validation/test~~
   - double check whether the split is evenly including gemini-vs-claude-generated data in each partition
   - ideally, restructure how it stores the splits so that it 
     - doesn't repeat each schema string dozens of times and 

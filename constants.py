@@ -536,6 +536,7 @@ Please generate a JSON array containing diverse JSON objects conforming to that 
 --------------------
 """)
 
+#TODO explain how to handle "_verbatim" suffix in schema field names
 anthropic_text_passage_generation_sys_prompt = d("""
 You will be given a JSON schema that describes the pieces of information that someone might want to extract in a structured way from text passages in a particular scenario. You will also be given a JSON object that follows that schema, and you will be asked to create a free-text document of the appropriate type from that JSON object. The free-text document must a) contain all information from the given object, b) contain no information that is relevant to the given schema but is not in the given object, and c) is otherwise filled out with plausible and coherent content. It should contain at least a few details that are context-appropriate, not relevant to the given schema, and not found in the given object.
 It should NOT contain any obviously-fake, placeholder, or subtly-but-detectably-fake data like [Customer Name]
@@ -946,7 +947,7 @@ My Smart Thermostat is showing multiple error codes and not working correctly. T
 --------------------
 """)
 
-
+#TODO explain how to handle "_verbatim" suffix in schema field names
 anthropic_object_reconstruction_sys_prompt = d("""
 You will be given a JSON schema that describes the pieces of information that someone might want to extract in a structured way from text passages in a particular scenario. You will also be given a text passage of that scenario’s type, and you will be asked to create a JSON object that follows the given schema and captures all schema-relevant information that is in the text passage.
 If there is no mention of anything related to a given schema key in the text, don't include that schema key in the JSON object. For example, if the schema has an array-type key and the text actually indicates that the correct number of entries for that array-type field is 0, then include that key, but simply omit that key if the text says nothing at all that's related to that array-type key.

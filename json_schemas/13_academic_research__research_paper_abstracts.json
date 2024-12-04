@@ -28,7 +28,7 @@
         "mixed_methods"
       ]
     },
-    "key_findings": {
+    "key_findings_verbatim": {
       "type": "array",
       "items": {
         "type": "string"
@@ -58,7 +58,7 @@
         "additionalProperties": false
       }
     },
-    "funding_sources": {
+    "funding_sources_verbatim": {
       "type": "array",
       "items": {
         "type": "string"
