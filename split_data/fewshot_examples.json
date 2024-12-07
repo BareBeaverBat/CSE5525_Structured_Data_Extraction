@@ -1,0 +1,1100 @@
+[
+  {
+    "text_passage": "Contract\n\nThis Contract is entered into on May 9, 2024, by and between Xi Corp (hereinafter referred to as \"Xi Corp\").\n\nTermination: This agreement may be terminated subject to arbitration.\n\nIN WITNESS WHEREOF, the parties have executed this Contract as of the date first written above.",
+    "object": {
+      "signing_date": "2024-05-09",
+      "parties": [
+        "Xi Corp"
+      ],
+      "clauses": {
+        "termination_clause_verbatim": "This agreement may be terminated subject to arbitration."
+      }
+    },
+    "scenario_id": "3_legal__legal contract",
+    "was_claude_vs_gemini_generated": false
+  },
+  {
+    "text_passage": "Studio Apartment in the Heart of New York City - $900,000!\n\nThis charming studio apartment offers a unique opportunity to own a piece of Manhattan.  Located in the coveted 10001 zip code, you'll be steps away from world-class dining, shopping, and entertainment.  With 450 square feet of cleverly designed living space, this cozy apartment features one bathroom and is perfect for a busy individual or couple looking for a pied-\u00e0-terre.  Don't miss out on this exceptional opportunity to experience the best of city living.",
+    "object": {
+      "bedrooms": 0,
+      "bathrooms": 1,
+      "square_footage": 450,
+      "property_type": "apartment",
+      "listing_price": 900000,
+      "location": {
+        "city": "New York",
+        "state": "NY",
+        "zip_code": "10001"
+      }
+    },
+    "scenario_id": "2_real estate__property listing",
+    "was_claude_vs_gemini_generated": false
+  },
+  {
+    "text_passage": "A wire payment in the amount of $50,000.00 has been processed with McKinsey & Company as the beneficiary. The payment is for goods and services provided by McKinsey. While this transaction amount shows some variance from usual patterns, this has been reviewed and determined to be of minimal concern. All documentation has been collected and verified according to standard procedures.",
+    "object": {
+      "transaction": {
+        "category": "payment",
+        "method": "wire",
+        "amount_usd": 50000.0
+      },
+      "parties": [
+        {
+          "name": "McKinsey & Company",
+          "role": "beneficiary",
+          "entity_type": "business"
+        }
+      ],
+      "risk_flags": [
+        {
+          "type": "unusual_pattern",
+          "severity": "low"
+        }
+      ],
+      "purpose_indicators": [
+        "goods_services"
+      ]
+    },
+    "scenario_id": "10_financial compliance__transaction notes and description",
+    "was_claude_vs_gemini_generated": true
+  },
+  {
+    "text_passage": "Wire transfer initiated by Oakwood Investment Partners for investment purposes, routed through First Republic Bank as the intermediary institution. The transaction amount is USD 1,250,000.00. Standard processing procedures have been followed, with all required documentation received and verified. The transfer was processed during normal business hours and recorded in the standard transaction log. Transaction documentation has been reviewed and archived according to internal procedures.",
+    "object": {
+      "transaction": {
+        "category": "transfer",
+        "method": "wire",
+        "amount_usd": 1250000.0
+      },
+      "parties": [
+        {
+          "name": "Oakwood Investment Partners",
+          "role": "originator",
+          "entity_type": "business"
+        },
+        {
+          "name": "First Republic Bank",
+          "role": "intermediary",
+          "entity_type": "business"
+        }
+      ],
+      "purpose_indicators": [
+        "investment"
+      ]
+    },
+    "scenario_id": "10_financial compliance__transaction notes and description",
+    "was_claude_vs_gemini_generated": true
+  },
+  {
+    "text_passage": "We propose to construct an agricultural facility totaling 8,500 square feet in size. The structure will occupy 28.3% of the available lot area and will be dedicated exclusively to agricultural use. The construction project will be completed in a single phase with an anticipated duration of 4 months. The design prioritizes efficient use of space for agricultural operations while maintaining compliance with local building codes and setback requirements. The layout has been optimized to accommodate seasonal agricultural activities and provide adequate circulation space.",
+    "object": {
+      "project_specs": {
+        "total_square_feet": 8500,
+        "lot_coverage_percentage": 28.3
+      },
+      "usage": [
+        "agricultural"
+      ],
+      "timeline": {
+        "duration_months": 4,
+        "phases": 1
+      }
+    },
+    "scenario_id": "8_government permitting__project description in permit application",
+    "was_claude_vs_gemini_generated": true
+  },
+  {
+    "text_passage": "Jane Doe\n555-121-3434 | multi.degree@email.com\n\n\nEducation\n\nUniversity of California, San Diego\nMA\n\nUniversity of California, Los Angeles\nBA",
+    "object": {
+      "education": [
+        {
+          "degree_type": "BA",
+          "institution": "University of California, Los Angeles"
+        },
+        {
+          "degree_type": "MA",
+          "institution": "University of California, San Diego"
+        }
+      ],
+      "contact_info": {
+        "email": "multi.degree@email.com",
+        "phone": "555-121-3434"
+      }
+    },
+    "scenario_id": "4_job recruiting__resume or cv",
+    "was_claude_vs_gemini_generated": false
+  },
+  {
+    "text_passage": "Responded to a call regarding an incident on the second floor of the building. Upon arrival, I observed the scene was contained within an indoor area. A gray passenger car was present at the location, showing visible damage to both the rear section and along the driver's side of the vehicle. I documented the damage with photographs and conducted an initial assessment of the scene. The building's second floor was accessible and well-lit during the investigation. Building occupants were cooperative during the preliminary information gathering process.",
+    "object": {
+      "location": {
+        "type": "other",
+        "indoor_outdoor": "indoor",
+        "floor_level": 2
+      },
+      "vehicles": [
+        {
+          "type": "car",
+          "color": "gray",
+          "damage": [
+            "rear",
+            "driver_side"
+          ]
+        }
+      ]
+    },
+    "scenario_id": "7_law enforcement__incident report",
+    "was_claude_vs_gemini_generated": true
+  },
+  {
+    "text_passage": "Met with the Martinez family today for routine check-in. The household consists of 7 members living together in a stable housing arrangement. The family includes 4 working-age adults, 2 school-age children, and one grandmother. The household maintains multiple income streams, including employment income from working adults, social security benefits, pension payments, and SNAP assistance for food expenses. The home appeared well-maintained, and family members seemed comfortable and settled. The children were doing homework at the kitchen table during our meeting. Family reports satisfaction with current living arrangements and demonstrates good resource management across multiple income sources.",
+    "object": {
+      "household": {
+        "total_members": 7,
+        "composition": {
+          "adults": 4,
+          "children_under_18": 2,
+          "seniors_over_65": 1
+        },
+        "housing_status": "stable"
+      },
+      "income_sources": [
+        "employment",
+        "social_security",
+        "pension",
+        "snap"
+      ]
+    },
+    "scenario_id": "9_social services__case worker notes",
+    "was_claude_vs_gemini_generated": true
+  },
+  {
+    "text_passage": "The Mavericks have possession with 6:45 left in the second quarter. Doncic loses control of the ball, and Paul George comes up with the steal for the Clippers just two seconds later at 6:43. The crowd groans as the Clippers look to capitalize on the mistake.",
+    "object": {
+      "teams": {
+        "home": "Dallas Mavericks",
+        "away": "Los Angeles Clippers"
+      },
+      "plays": [
+        {
+          "time_remaining_mm_ss": "6:45",
+          "quarter": 2,
+          "player": "Luka Doncic",
+          "play_type": "turnover"
+        },
+        {
+          "time_remaining_mm_ss": "6:43",
+          "quarter": 2,
+          "player": "Paul George",
+          "play_type": "steal"
+        }
+      ]
+    },
+    "scenario_id": "12_sports analytics__basketball game play by play commentary",
+    "was_claude_vs_gemini_generated": true
+  },
+  {
+    "text_passage": "PATIENT VISIT NOTES\n\n\nMedications:\n- Metformin 500mg twice daily\n- Lisinopril 10mg once daily\n\n\nAllergies:\nSulfa drugs\n\n\n\nFamily History:\nHypertension\n\n\nPhysical Examination:\nThe patient is alert and oriented.  Vital signs are stable, and physical examination reveals no acute distress.  No abnormalities were noted during today's visit.\n\n\n\nAssessment and Plan:\nDiscussed continuing the current medication regimen.  Advised the patient to maintain a healthy lifestyle and schedule a follow-up appointment in six months for routine health maintenance.  Encouraged the patient to reach out if they have any questions or concerns before their next visit.\n",
+    "object": {
+      "medications": [
+        {
+          "name": "Metformin",
+          "dosage": "500mg",
+          "frequency": "Twice daily"
+        },
+        {
+          "name": "Lisinopril",
+          "dosage": "10mg",
+          "frequency": "Once daily"
+        }
+      ],
+      "allergies": [
+        "Sulfa drugs"
+      ],
+      "family_history_flags": [
+        "hypertension"
+      ]
+    },
+    "scenario_id": "0_healthcare__patient visit notes",
+    "was_claude_vs_gemini_generated": false
+  },
+  {
+    "text_passage": "CONTRACT\n\nThis Agreement (the \"Agreement\") is made and entered into as of June 21, 2024, by and between the parties identified below.\n\n1. Payment: For services rendered, the total payment shall be $75,000.00.  The timing and method of payment will be further detailed in a separate payment schedule agreed upon by the parties.\n\n2. Confidentiality:  Information shared between the parties during the term of this agreement is confidential and proprietary.\n\n3. Termination: This Agreement may be terminated immediately for cause. Specific events constituting \"cause\" will be defined in an appendix to this Agreement.\n\n4. Entire Agreement. This document, along with the aforementioned payment schedule and appendix, constitutes the entire agreement between the parties and supersedes all prior or contemporaneous communications, representations, and agreements, whether written or oral.\n\n5. Notices.  All notices under this Agreement shall be in writing and addressed to the parties at the addresses listed below their signatures.\n\n\n[Signature blocks for parties would be here]",
+    "object": {
+      "signing_date": "2024-06-21",
+      "clauses": {
+        "termination_clause_verbatim": "This Agreement may be terminated immediately for cause. Specific events constituting \"cause\" will be defined in an appendix to this Agreement.",
+        "confidentiality_clause_verbatim": "Information shared between the parties during the term of this agreement is confidential and proprietary.",
+        "payment_amount": 75000
+      }
+    },
+    "scenario_id": "3_legal__legal contract",
+    "was_claude_vs_gemini_generated": false
+  },
+  {
+    "text_passage": "At approximately 9:45 PM, I responded to a reported assault at Johnson's Convenience Store. Upon arrival, I found the incident had occurred inside the business. The suspect had wielded both a knife and a metal pipe during the assault. The store clerk was receiving medical attention from paramedics for injuries sustained during the incident. Several customers who witnessed the event provided statements. The scene was secured and evidence was collected, including surveillance footage from the store's security system. CSI unit photographed the scene and collected physical evidence for processing. Store employees are cooperating with the investigation and will provide a copy of the security footage.",
+    "object": {
+      "location": {
+        "type": "business",
+        "indoor_outdoor": "indoor"
+      },
+      "incident_type": [
+        "assault"
+      ],
+      "weapons": [
+        {
+          "type": "blunt_object",
+          "quantity": 1
+        },
+        {
+          "type": "knife",
+          "quantity": 1
+        }
+      ]
+    },
+    "scenario_id": "7_law enforcement__incident report",
+    "was_claude_vs_gemini_generated": true
+  },
+  {
+    "text_passage": "International Wire Transfer of $1,000,000 USD\n\nThis transaction involves a cross-border wire transfer of $1,000,000 USD from David Red to Offshore Account.  A high-risk flag has been raised due to the beneficiary being located in a high-risk jurisdiction. This poses a significant risk and requires further review.  Additional details regarding this transaction are pending.",
+    "object": {
+      "transaction": {
+        "category": "transfer",
+        "method": "wire",
+        "amount_usd": 1000000.0,
+        "cross_border": true
+      },
+      "parties": [
+        {
+          "name": "Offshore Account",
+          "role": "beneficiary"
+        },
+        {
+          "name": "David Red",
+          "role": "originator"
+        }
+      ],
+      "risk_flags": [
+        {
+          "type": "high_risk_jurisdiction",
+          "severity": "high"
+        }
+      ]
+    },
+    "scenario_id": "10_financial compliance__transaction notes and description",
+    "was_claude_vs_gemini_generated": false
+  },
+  {
+    "text_passage": "Rice Cakes\n\nThis recipe is as simple as it gets, perfect for a quick and easy snack or light meal.\n\nIngredients:\n* 2 Rice Cakes\n\nThis recipe is:\n* Vegan\n* Vegetarian\n* Gluten-Free\n* Dairy-Free\n* Nut-Free\n\nNutritional Information (per serving, based on 2 rice cakes):\n* Calories: 70\n* Protein: 1g\n* Carbohydrates: 15g\n* Fat: 0.5g\n\nServing suggestion:  Enjoy plain or top with your favorite spread! You can try them with avocado, hummus, tomato, everything bagel seasoning, etc. They pair well with a glass of juice!\n",
+    "object": {
+      "dish_name": "Rice Cakes",
+      "ingredients": [
+        {
+          "name": "Rice Cakes",
+          "quantity": 2,
+          "unit": "cakes"
+        }
+      ],
+      "dietary_restrictions": [
+        "vegan",
+        "vegetarian",
+        "gluten-free",
+        "dairy-free",
+        "nut-free"
+      ],
+      "nutritional_information": {
+        "calories": 70,
+        "protein_grams": 1,
+        "carbohydrates_grams": 15,
+        "fat_grams": 0.5
+      }
+    },
+    "scenario_id": "14_culinary arts__recipes",
+    "was_claude_vs_gemini_generated": false
+  },
+  {
+    "text_passage": "I am writing to report a fire that occurred on November 5th, 2023. The fire started in the early afternoon, and I immediately called the fire department. They responded quickly and were able to contain the blaze. My neighbor, Thomas Anderson, witnessed the incident and can be reached at 415-555-8901 or tanderson@gmail.com for any additional information needed. The fire department conducted their investigation and provided me with a detailed report of their findings. I have photos of the aftermath and am awaiting an assessment from a professional cleaning service.",
+    "object": {
+      "incident_date": "2023-11-05",
+      "incident_type": "fire",
+      "witnesses": [
+        {
+          "name": "Thomas Anderson",
+          "phone": "415-555-8901",
+          "email": "tanderson@gmail.com"
+        }
+      ]
+    },
+    "scenario_id": "6_insurance__insurance claim description from policy holder",
+    "was_claude_vs_gemini_generated": true
+  },
+  {
+    "text_passage": "INCIDENT REPORT\n\nDate: 2024-03-08\nTime: 23:57\n\nLocation: Incident occurred on Elm Street.\n\nNature of Incident: Assault\n\nResponding officers were dispatched to a report of an assault on Elm Street. Upon arrival, officers encountered two individuals involved in an altercation. The suspects were found in possession of two firearms and one knife. The victims stated that they had been threatened and assaulted by the perpetrators.  One victim sustained minor injuries and refused medical transport. Witnesses corroborated the victims' account of the events. The suspects were apprehended and taken into custody without further incident.",
+    "object": {
+      "incident_type": [
+        "assault"
+      ],
+      "location": {
+        "type": "street"
+      },
+      "weapons": [
+        {
+          "type": "firearm",
+          "quantity": 2
+        },
+        {
+          "type": "knife",
+          "quantity": 1
+        }
+      ]
+    },
+    "scenario_id": "7_law enforcement__incident report",
+    "was_claude_vs_gemini_generated": false
+  },
+  {
+    "text_passage": "Patient seen today for routine follow-up visit. Currently taking levothyroxine 75mcg daily, sertraline 50mg daily, and lisinopril 10mg daily, all as prescribed. Medication compliance is good with no reported side effects. Patient reports family history significant for hypertension, diabetes, and cancer. Vital signs taken today are within normal range. Blood pressure well-controlled on current medication regimen. Patient engaged in detailed discussion about preventive care and importance of regular monitoring given family history risk factors. Encouraged continuation of current healthy lifestyle practices including regular exercise and balanced diet. Follow-up appointment scheduled for 3 months.",
+    "object": {
+      "medications": [
+        {
+          "name": "levothyroxine",
+          "dosage": "75mcg",
+          "frequency": "daily"
+        },
+        {
+          "name": "sertraline",
+          "dosage": "50mg",
+          "frequency": "daily"
+        },
+        {
+          "name": "lisinopril",
+          "dosage": "10mg",
+          "frequency": "daily"
+        }
+      ],
+      "family_history_flags": [
+        "hypertension",
+        "diabetes",
+        "cancer"
+      ]
+    },
+    "scenario_id": "0_healthcare__patient visit notes",
+    "was_claude_vs_gemini_generated": true
+  },
+  {
+    "text_passage": "Luxury Downtown Living - Your Private Oasis Awaits!\n\nExperience the epitome of San Francisco living in this stunning 1-bedroom, 1-bathroom apartment located in the heart of the city (94101). Boasting 600 square feet of beautifully designed living space, this unit offers the perfect blend of comfort and convenience. Enjoy an array of luxurious amenities including a sparkling pool, secure garage parking, a cozy fireplace for those chilly San Francisco evenings, refreshing central AC, and a private balcony with breathtaking city views. Priced at $1,100,000.  Contact us today to schedule a viewing!",
+    "object": {
+      "bedrooms": 1,
+      "bathrooms": 1,
+      "square_footage": 600,
+      "property_type": "apartment",
+      "amenities": [
+        "pool",
+        "garage",
+        "fireplace",
+        "central_ac",
+        "balcony"
+      ],
+      "listing_price": 1100000,
+      "location": {
+        "city": "San Francisco",
+        "state": "CA",
+        "zip_code": "94101"
+      }
+    },
+    "scenario_id": "2_real estate__property listing",
+    "was_claude_vs_gemini_generated": false
+  },
+  {
+    "text_passage": "Met with client today for regular check-in. Client lives in a stable housing situation with their family of five, including two adults and three children. Currently receiving SNAP and TANF benefits, but expressed interest in finding employment opportunities to supplement household income. We discussed job search strategies and potential employment resources - this will be a focus area for the next few months. Client also indicated ongoing challenges with ensuring adequate food for the family despite current SNAP benefits. We reviewed local food pantry schedules and additional nutrition assistance programs. Client appeared well-organized and motivated to engage with services. Children were present during visit and appeared well-cared for.",
+    "object": {
+      "assistance_needs": [
+        {
+          "category": "food",
+          "urgency": "ongoing"
+        },
+        {
+          "category": "employment",
+          "urgency": "short_term"
+        }
+      ],
+      "household": {
+        "total_members": 5,
+        "composition": {
+          "adults": 2,
+          "children_under_18": 3
+        },
+        "housing_status": "stable"
+      },
+      "income_sources": [
+        "snap",
+        "tanf"
+      ]
+    },
+    "scenario_id": "9_social services__case worker notes",
+    "was_claude_vs_gemini_generated": true
+  },
+  {
+    "text_passage": "We propose construction of a new two-story public facility totaling 15,000 square feet, designed to accommodate up to 250 occupants. The building will serve as a community resource, with construction planned over a 12-month period divided into two distinct phases. The first phase will focus on foundation and structural elements, while the second phase will encompass interior finishing and site work. The design prioritizes accessibility and efficient space utilization to serve our community's needs. The building's layout incorporates flexible spaces to accommodate various public functions and includes appropriate emergency exits and gathering areas. Landscaping will include native plants to enhance the property's aesthetic appeal while minimizing maintenance requirements.",
+    "object": {
+      "project_specs": {
+        "total_square_feet": 15000,
+        "floors": 2,
+        "occupancy_count": 250
+      },
+      "usage": [
+        "public"
+      ],
+      "timeline": {
+        "duration_months": 12,
+        "phases": 2
+      }
+    },
+    "scenario_id": "8_government permitting__project description in permit application",
+    "was_claude_vs_gemini_generated": true
+  },
+  {
+    "text_passage": "Charming 3-bedroom house in the heart of Sacramento offers comfortable living in a desirable neighborhood. With 2 full bathrooms and 1,850 square feet of living space, this home in ZIP code 95818 provides ample room for family life. The well-maintained property features an open floor plan with plenty of natural light. Located in a quiet residential area with easy access to downtown Sacramento's amenities, parks, and shopping. Beautiful mature trees line the street, and the neighborhood features wide sidewalks perfect for evening strolls. Contact us today to schedule a viewing of this wonderful California home.",
+    "object": {
+      "bedrooms": 3,
+      "bathrooms": 2,
+      "square_footage": 1850,
+      "property_type": "house",
+      "location": {
+        "city": "Sacramento",
+        "state": "CA",
+        "zip_code": "95818"
+      }
+    },
+    "scenario_id": "2_real estate__property listing",
+    "was_claude_vs_gemini_generated": true
+  },
+  {
+    "text_passage": "**John Doe**\n555-123-4567 | john.doe@email.com\n\n**Summary**\n\nA highly motivated and results-oriented individual seeking a challenging and rewarding opportunity to contribute to a dynamic organization.\n\n**Experience**\n\nOpen to new opportunities and eager to contribute my skills and experience to a collaborative team environment.\n\n\n**Education**\n\nCompleted relevant coursework and training.\n\n\n**Skills**\n\nPossesses a strong work ethic and a commitment to continuous learning.\n",
+    "object": {
+      "contact_info": {
+        "email": "john.doe@email.com",
+        "phone": "555-123-4567"
+      }
+    },
+    "scenario_id": "4_job recruiting__resume or cv",
+    "was_claude_vs_gemini_generated": false
+  },
+  {
+    "text_passage": "Charming 3-Bedroom House in the Heart of Atlanta \u2013 $750,000\n\nThis cozy 3-bedroom, 1-bathroom house offers 1200 square feet of comfortable living space in the desirable Atlanta, GA 30301 neighborhood.  With its classic architecture and spacious layout, this home is perfect for first-time homebuyers or those looking to downsize.  The front porch is the perfect spot for your morning cup of coffee, and a beautifully landscaped backyard provides an oasis for relaxation and outdoor entertaining. Don't miss the opportunity to make this charming Atlanta house your new home! Contact us today to schedule a viewing.",
+    "object": {
+      "bedrooms": 3,
+      "bathrooms": 1,
+      "square_footage": 1200,
+      "property_type": "house",
+      "listing_price": 750000,
+      "location": {
+        "city": "Atlanta",
+        "state": "GA",
+        "zip_code": "30301"
+      }
+    },
+    "scenario_id": "2_real estate__property listing",
+    "was_claude_vs_gemini_generated": false
+  },
+  {
+    "text_passage": "Contract for Collaborative Research\n\nThis agreement, entered into on May 20, 2023, by and between Alpha Aeronautics and Beta Biotech (hereinafter referred to as the \"Parties\"), sets forth the terms and conditions for a collaborative research project on bio-inspired flight mechanisms.\n\nConfidentiality:\nStandard NDA applies.\n\nIntellectual Property: All intellectual property developed as part of this project shall be jointly owned by the Parties.\n\nProject Scope: The specific goals, milestones, and deliverables of the collaborative project are detailed in Appendix A, attached hereto and incorporated herein by reference.\n\nRepresentations and Warranties: Both parties enter into this agreement under the premise of mutual collaboration, with the understanding that each party shall operate in good faith and with the intent to jointly achieve project goals.\n\nEntire Agreement: This contract represents the entire agreement between Alpha Aeronautics and Beta Biotech concerning its subject matter and supersedes all prior oral and written communications.\n\n\nIN WITNESS WHEREOF, the parties have caused this Agreement to be executed by their respective duly authorized officers as of the date first written above.\n\n",
+    "object": {
+      "signing_date": "2023-05-20",
+      "parties": [
+        "Alpha Aeronautics",
+        "Beta Biotech"
+      ],
+      "clauses": {
+        "confidentiality_clause_verbatim": "Standard NDA applies."
+      }
+    },
+    "scenario_id": "3_legal__legal contract",
+    "was_claude_vs_gemini_generated": false
+  },
+  {
+    "text_passage": "Charming 2-Bed, 1-Bath Condo in the Heart of Boulder!\n\nThis delightful 900 sq ft condo offers comfortable and convenient living. Featuring 2 bedrooms and 1 bathroom, this unit is perfect for first-time buyers, downsizers, or investors. Enjoy the Colorado sunshine from the shared pool or keep your vehicle safe and sound in the dedicated garage. Located in the desirable 80301 zip code, you'll have easy access to all that Boulder has to offer, including hiking trails, vibrant downtown, and the University of Colorado. Don't miss out on this fantastic opportunity! Listed at $1,600,000.\n",
+    "object": {
+      "bedrooms": 2,
+      "bathrooms": 1,
+      "square_footage": 900,
+      "property_type": "condo",
+      "amenities": [
+        "pool",
+        "garage"
+      ],
+      "listing_price": 1600000,
+      "location": {
+        "city": "Boulder",
+        "state": "CO",
+        "zip_code": "80301"
+      }
+    },
+    "scenario_id": "2_real estate__property listing",
+    "was_claude_vs_gemini_generated": false
+  },
+  {
+    "text_passage": "This clinical trial aims to evaluate the safety and efficacy of a novel therapeutic approach for immunocompromised patients. The study will enroll adult participants between 18 and 65 years of age who meet specific immune function criteria. Our comprehensive three-year investigation will proceed through several carefully planned phases. The initial six months will focus on completing participant enrollment, followed by a treatment phase beginning at month 12. The study will conclude with an extensive follow-up period, with final assessments completed by month 30, allowing for comprehensive data analysis and reporting in the final six months. The findings from this research could significantly impact treatment protocols for immunocompromised individuals and advance our understanding of immune system modulation.",
+    "object": {
+      "research_methods": [
+        "clinical_trial"
+      ],
+      "study_population": {
+        "age_range": {
+          "min": 18,
+          "max": 65
+        },
+        "special_populations": [
+          "immunocompromised"
+        ]
+      },
+      "timeline": {
+        "total_duration_months": 36,
+        "key_milestones": [
+          {
+            "name": "enrollment completion",
+            "month": 6
+          },
+          {
+            "name": "treatment phase",
+            "month": 12
+          },
+          {
+            "name": "follow-up completion",
+            "month": 30
+          }
+        ]
+      }
+    },
+    "scenario_id": "11_research administration__research project abstract or summary in grant application",
+    "was_claude_vs_gemini_generated": true
+  },
+  {
+    "text_passage": "DAVID CHEN\ndavid.chen@gmail.com | 206-555-0123\n\nPROFESSIONAL SUMMARY\nSoftware engineer building web applications and maintaining production systems. Strong foundation in full-stack development with expertise in Python, JavaScript, React, and Git.\n\nPROFESSIONAL EXPERIENCE\n\nJunior Software Engineer\nCascade Technologies\nJune 2021 - Present\n- Contributing to development and maintenance of web applications\n- Collaborating with cross-functional teams on software projects\n- Participating in code reviews and technical documentation\n\nSoftware Engineering Intern\nBluefin Solutions\nMay 2020 - August 2020\n- Assisted in development tasks under senior engineer supervision\n- Participated in daily stand-ups and team meetings\n- Gained hands-on experience with professional software development practices\n\nEDUCATION\n\nBachelor of Science in Computer Science\nUniversity of Washington\n\nTECHNICAL SKILLS\nLanguages & Tools: Python, JavaScript, React, Git",
+    "object": {
+      "skills": [
+        "Python",
+        "JavaScript",
+        "React",
+        "Git"
+      ],
+      "education": [
+        {
+          "degree_type": "BS",
+          "major": "Computer Science",
+          "institution": "University of Washington"
+        }
+      ],
+      "previous_roles": [
+        {
+          "title": "Junior Software Engineer",
+          "company": "Cascade Technologies",
+          "start_month": 6,
+          "start_year": 2021,
+          "end_month": null,
+          "end_year": null
+        },
+        {
+          "title": "Software Engineering Intern",
+          "company": "Bluefin Solutions",
+          "start_month": 5,
+          "start_year": 2020,
+          "end_month": 8,
+          "end_year": 2020
+        }
+      ],
+      "contact_info": {
+        "email": "david.chen@gmail.com",
+        "phone": "206-555-0123"
+      }
+    },
+    "scenario_id": "4_job recruiting__resume or cv",
+    "was_claude_vs_gemini_generated": true
+  },
+  {
+    "text_passage": "Welcome to this stunning 1 bedroom, 1 bathroom condo in the heart of Tampa! Offering 750 square feet of thoughtfully designed living space, this property is a perfect blend of comfort and luxury. Listed at $299,000, this beautiful home features an impressive array of amenities including a private balcony, cozy fireplace, and central AC for year-round comfort. Residents enjoy access to a sparkling community pool and the convenience of a dedicated garage space. Located in the desirable 33609 area of Tampa, Florida, this property offers easy access to shopping, dining, and entertainment. The open-concept layout maximizes the living space, while large windows provide abundant natural light throughout. Don't miss this opportunity to own in one of Tampa's most sought-after neighborhoods!",
+    "object": {
+      "bedrooms": 1,
+      "bathrooms": 1,
+      "square_footage": 750,
+      "property_type": "condo",
+      "amenities": [
+        "balcony",
+        "fireplace",
+        "central_ac",
+        "pool",
+        "garage"
+      ],
+      "listing_price": 299000,
+      "location": {
+        "city": "Tampa",
+        "state": "Florida",
+        "zip_code": "33609"
+      }
+    },
+    "scenario_id": "2_real estate__property listing",
+    "was_claude_vs_gemini_generated": true
+  },
+  {
+    "text_passage": "INCIDENT REPORT\n\nDate: 2024-03-08\nTime: 09:15\n\nLocation: The incident occurred at Joe's 24-Hour Diner, 123 Main Street. The vandalism affected both the interior and exterior of the business.\n\nIncident Type: Vandalism\n\nDetails: Upon arrival, I observed graffiti spray-painted on the exterior wall of the diner and also on an interior wall near the restrooms. The owner, Mr. Joseph \"Joe\" Smith, was present and stated that he closed the diner at 2:00 AM and discovered the damage when he arrived to open this morning. He did not see anyone suspicious around the property during closing. There are no security cameras installed at the diner.\n\nResponding Officer: Officer K. Johnson, Badge #1234",
+    "object": {
+      "location": {
+        "type": "business",
+        "indoor_outdoor": "both"
+      },
+      "incident_type": [
+        "vandalism"
+      ]
+    },
+    "scenario_id": "7_law enforcement__incident report",
+    "was_claude_vs_gemini_generated": false
+  },
+  {
+    "text_passage": "I experienced a minor problem with File Backup Utility version 1.0.5 yesterday. The backup seemed to start normally, but when I checked later, only a small portion of my files had actually been backed up. I've tried running the backup again several times today, and it's working correctly now. The initial failure only seemed to happen the one time.",
+    "object": {
+      "product": {
+        "name": "File Backup Utility",
+        "version": "1.0.5"
+      },
+      "impact_level": "minor",
+      "reproduction": {
+        "reproducible": false,
+        "frequency": "once"
+      }
+    },
+    "scenario_id": "1_customer service__support ticket description",
+    "was_claude_vs_gemini_generated": false
+  },
+  {
+    "text_passage": "Patient presented today for annual wellness visit. Review of medical history confirms multiple allergies: penicillin, sulfa drugs, latex, and peanuts. Family history is significant for asthma on maternal side, and maternal grandmother had rheumatoid arthritis. Patient reports feeling generally well and maintains an active lifestyle with regular exercise. Vital signs within normal limits. No acute concerns reported. Reviewed importance of maintaining updated medical alert bracelet due to multiple allergies. Patient demonstrates good understanding of allergy precautions. Will continue current wellness plan with follow-up in one year unless concerns arise.",
+    "object": {
+      "allergies": [
+        "penicillin",
+        "sulfa drugs",
+        "latex",
+        "peanuts"
+      ],
+      "family_history_flags": [
+        "asthma",
+        "other"
+      ]
+    },
+    "scenario_id": "0_healthcare__patient visit notes",
+    "was_claude_vs_gemini_generated": true
+  },
+  {
+    "text_passage": "I am experiencing a critical issue with my Arctis Nova Pro headset (Model 61486, firmware version 2.4.3). The headset is completely unusable due to a series of errors that appear every time I try to use it.\n\nMy system is running Windows 11 with Chrome browser version 114.0.5735. The connected devices during this issue are my Arctis Nova Pro headset, a Logitech G502 mouse, and a Dell U2719D monitor.\n\nWhen attempting to use the headset, I consistently receive three error codes: AUD-442, DRV-891, and USB-127. This issue is completely blocking my ability to use the product.\n\nI can reproduce this issue 100% of the time - it happens without fail every single time I try to use the headset. I've tried disconnecting and reconnecting the device multiple times, but the behavior remains the same.",
+    "object": {
+      "product": {
+        "name": "Arctis Nova Pro",
+        "model": "61486",
+        "version": "2.4.3"
+      },
+      "error_codes": [
+        "AUD-442",
+        "DRV-891",
+        "USB-127"
+      ],
+      "impact_level": "blocking",
+      "system_state": {
+        "os": "Windows 11",
+        "browser": "Chrome 114.0.5735",
+        "connected_devices": [
+          "Arctis Nova Pro",
+          "Logitech G502",
+          "Dell U2719D"
+        ]
+      },
+      "reproduction": {
+        "reproducible": true,
+        "frequency": "always"
+      }
+    },
+    "scenario_id": "1_customer service__support ticket description",
+    "was_claude_vs_gemini_generated": true
+  },
+  {
+    "text_passage": "This study aims to understand the social support networks and community engagement patterns of older adults in urban environments. Through a combination of field study observations and in-depth interviews, we will examine how seniors navigate and utilize community resources. Our study population consists of 150 adults aged 65 to 90 years old. Participants will complete monthly surveys to track changes in their social engagement patterns and community resource utilization. The research focuses on identifying barriers to community participation and developing recommendations for age-friendly urban planning initiatives. Our findings will inform policy recommendations for creating more inclusive community spaces for elderly residents.",
+    "object": {
+      "research_methods": [
+        "field_study",
+        "interviews"
+      ],
+      "study_population": {
+        "age_range": {
+          "min": 65,
+          "max": 90
+        },
+        "special_populations": [
+          "elderly"
+        ]
+      },
+      "data_collection": {
+        "data_types": [
+          "survey_responses"
+        ],
+        "sample_size": 150,
+        "data_frequency": "monthly"
+      }
+    },
+    "scenario_id": "11_research administration__research project abstract or summary in grant application",
+    "was_claude_vs_gemini_generated": true
+  },
+  {
+    "text_passage": "Quick Tuna Wrap\n\nA simple wrap that takes only 5 minutes to prepare. You'll need 5 ounces of tuna, 2 tablespoons of mayonnaise, and 1 large tortilla. This basic combination makes for a quick and convenient meal that can be enjoyed any time of day.",
+    "object": {
+      "dish_name": "Quick Tuna Wrap",
+      "ingredients": [
+        {
+          "name": "tuna",
+          "quantity": 5,
+          "unit": "ounces"
+        },
+        {
+          "name": "tortilla",
+          "quantity": 1,
+          "unit": "large"
+        },
+        {
+          "name": "mayo",
+          "quantity": 2,
+          "unit": "tablespoons"
+        }
+      ],
+      "preparation_time_minutes": 5
+    },
+    "scenario_id": "14_culinary arts__recipes",
+    "was_claude_vs_gemini_generated": true
+  },
+  {
+    "text_passage": "Beautiful undeveloped land in Prescott, Arizona offers endless possibilities for your dream project. Located in the desirable 86301 zip code area, this property is available for $85,000. Enjoy the natural desert landscape and stunning mountain views. Property is situated in an area with established utilities nearby and good road access. Perfect for those looking to build their custom home or develop for commercial use, subject to local zoning regulations. The gently sloping terrain provides excellent drainage and multiple potential building sites.",
+    "object": {
+      "property_type": "land",
+      "listing_price": 85000,
+      "location": {
+        "city": "Prescott",
+        "state": "AZ",
+        "zip_code": "86301"
+      }
+    },
+    "scenario_id": "2_real estate__property listing",
+    "was_claude_vs_gemini_generated": true
+  },
+  {
+    "text_passage": "COLLABORATIVE DISTRIBUTION AGREEMENT\n\nThis AGREEMENT is made and entered into on this 12th day of July, 2023, by and between Green Valley Farms, a producer of agricultural products (\"GVF\"), Natural Foods Cooperative, a retail food cooperative (\"NFC\"), and Organic Distribution Inc., a logistics service provider (\"ODI\") (collectively referred to as the \"Parties\").\n\nWHEREAS, Green Valley Farms is engaged in the business of agricultural production and seeks to expand its distribution channels;\n\nWHEREAS, Natural Foods Cooperative operates a network of food retail establishments serving health-conscious consumers;\n\nWHEREAS, Organic Distribution Inc. provides logistics and distribution services for agricultural products;\n\nWHEREAS, the Parties wish to establish a collaborative relationship for the distribution of agricultural products to better serve their respective business interests;\n\nNOW, THEREFORE, in consideration of the mutual promises and covenants contained herein, the Parties agree as follows:\n\n1. PURPOSE\nThe purpose of this Agreement is to establish a framework for collaboration among the Parties for the distribution of agricultural products from Green Valley Farms to Natural Foods Cooperative's retail locations through Organic Distribution Inc.'s logistics network.\n\n2. ROLES AND RESPONSIBILITIES\n2.1 Green Valley Farms shall be responsible for producing and preparing agricultural products for distribution.\n2.2 Organic Distribution Inc. shall coordinate and execute the transportation and delivery of products.\n2.3 Natural Foods Cooperative shall receive and retail the products through its network of stores.\n\n3. QUALITY STANDARDS\nThe Parties agree to maintain appropriate quality standards in their respective operations to ensure the delivery of high-quality products to end consumers.\n\nIN WITNESS WHEREOF, the Parties have executed this Agreement as of the date first above written.\n\nGREEN VALLEY FARMS\nBy: _________________\n\nNATURAL FOODS COOPERATIVE\nBy: _________________\n\nORGANIC DISTRIBUTION INC.\nBy: _________________\n\nDate: July 12, 2023",
+    "object": {
+      "signing_date": "2023-07-12",
+      "parties": [
+        "Green Valley Farms",
+        "Natural Foods Cooperative",
+        "Organic Distribution Inc."
+      ]
+    },
+    "scenario_id": "3_legal__legal contract",
+    "was_claude_vs_gemini_generated": true
+  },
+  {
+    "text_passage": "This research employs computational methods to investigate the thermodynamic properties of novel metal-organic frameworks for carbon capture applications.  Leveraging data from the publicly available NIST database (https://nist.gov/data) and proprietary lab data, we developed a high-throughput screening approach using density functional theory. This abstract focuses on the methodology and data sources utilized in the study. Further details on the results and conclusions will be available in the full paper.",
+    "object": {
+      "research_area": "chemistry",
+      "methodology": "computational",
+      "data_sources": [
+        {
+          "name": "NIST database",
+          "type": "public",
+          "url": "https://nist.gov/data"
+        },
+        {
+          "name": "Proprietary lab data",
+          "type": "private"
+        }
+      ]
+    },
+    "scenario_id": "13_academic research__research paper abstracts",
+    "was_claude_vs_gemini_generated": false
+  },
+  {
+    "text_passage": "I returned home to my residence at 1584 Pine Street in Seattle to find that someone had broken in and stolen several items. I immediately contacted the police, who came to my address and filed a report. My home is in downtown Seattle (98101), Washington. I've documented the missing items and am waiting for the police investigation to proceed. I've secured the entry point that was compromised and have been checking local pawn shops as recommended by the investigating officer.",
+    "object": {
+      "incident_type": "theft",
+      "location": {
+        "street_address": "1584 Pine Street",
+        "city": "Seattle",
+        "state": "WA",
+        "zip_code": "98101"
+      },
+      "police_report_filed": true
+    },
+    "scenario_id": "6_insurance__insurance claim description from policy holder",
+    "was_claude_vs_gemini_generated": true
+  },
+  {
+    "text_passage": "Charming 2-bedroom apartment in the heart of Miami! This cozy 850 sq ft unit offers a comfortable living space with 1 bathroom. Located in the vibrant 33131 zip code, this apartment is perfect for city dwellers. Priced at $1,200,000. Contact us today to schedule a viewing!",
+    "object": {
+      "bedrooms": 2,
+      "bathrooms": 1,
+      "square_footage": 850,
+      "property_type": "apartment",
+      "listing_price": 1200000,
+      "location": {
+        "city": "Miami",
+        "state": "FL",
+        "zip_code": "33131"
+      }
+    },
+    "scenario_id": "2_real estate__property listing",
+    "was_claude_vs_gemini_generated": false
+  },
+  {
+    "text_passage": "A wire transfer for $15,000,000.00 was initiated by Strategic Buyers LLC through Mergers & Co as the intermediary firm. This transaction is related to an investment deal. The transfer was processed according to standard operating procedures with all required documentation provided by both business entities. The transaction details have been verified against the investment agreement terms.",
+    "object": {
+      "transaction": {
+        "category": "transfer",
+        "method": "wire",
+        "amount_usd": 15000000.0
+      },
+      "parties": [
+        {
+          "name": "Mergers & Co",
+          "role": "intermediary",
+          "entity_type": "business"
+        },
+        {
+          "name": "Strategic Buyers LLC",
+          "role": "originator",
+          "entity_type": "business"
+        }
+      ],
+      "purpose_indicators": [
+        "investment"
+      ]
+    },
+    "scenario_id": "10_financial compliance__transaction notes and description",
+    "was_claude_vs_gemini_generated": true
+  },
+  {
+    "text_passage": "Tyler Brown\ntyler.brown@gmail.com\n317-555-0144\n\nEDUCATION\nBachelor of Science in Computer Science\nPurdue University\n\nPROFESSIONAL EXPERIENCE\nSoftware Engineering Intern\nLocal Tech Solutions\nMay 2023 - August 2023\n- Contributed to development projects using Java and SQL\n- Collaborated with team members on web development tasks utilizing HTML/CSS\n- Participated in daily stand-ups and code reviews\n\nTECHNICAL SKILLS\n- Java\n- HTML/CSS\n- SQL",
+    "object": {
+      "skills": [
+        "Java",
+        "HTML/CSS",
+        "SQL"
+      ],
+      "education": [
+        {
+          "degree_type": "BS",
+          "major": "Computer Science",
+          "institution": "Purdue University"
+        }
+      ],
+      "previous_roles": [
+        {
+          "title": "Software Engineering Intern",
+          "company": "Local Tech Solutions",
+          "start_month": 5,
+          "start_year": 2023,
+          "end_month": 8,
+          "end_year": 2023
+        }
+      ],
+      "contact_info": {
+        "email": "tyler.brown@gmail.com",
+        "phone": "317-555-0144"
+      }
+    },
+    "scenario_id": "4_job recruiting__resume or cv",
+    "was_claude_vs_gemini_generated": true
+  },
+  {
+    "text_passage": "Subject: Insurance Claim for Property Damage - July 18, 2024\n\nDear [Insurance Company Name],\n\nI am writing to file a claim for property damage that occurred on July 18, 2024, at my property located at 555 Willow St, Phoenix, AZ 85001. The incident was a severe hailstorm that caused significant damage to my roof, windows, and landscaping. I estimate the damages to be around $20,000. I've already contacted a contractor to get an official assessment and quote for the repairs. I have attached photos of the damage as well.\n\n\nPlease let me know what steps I need to take next to process this claim.\n\nSincerely,\n\n[Policy Holder Name]",
+    "object": {
+      "incident_date": "2024-07-18",
+      "incident_type": "other",
+      "location": {
+        "street_address": "555 Willow St",
+        "city": "Phoenix",
+        "state": "AZ",
+        "zip_code": "85001"
+      },
+      "estimated_damages": 20000
+    },
+    "scenario_id": "6_insurance__insurance claim description from policy holder",
+    "was_claude_vs_gemini_generated": false
+  },
+  {
+    "text_passage": "PATIENT VISIT NOTES\n\nChief Complaint: Fatigue\n\nHistory of Present Illness: The patient reports experiencing constant fatigue for the past 30 days. The patient rates the severity of fatigue as a 7 out of 10.  The patient states that the fatigue interferes with daily activities and work.  They are able to perform daily routines but require more rest breaks and experience decreased productivity. The patient denies any fever, chills, or recent infections.\n\nCurrent Medications:\n- Vitamin D 1000 IU daily\n\nPhysical Examination:  The patient is alert and oriented.  Vital signs are within normal limits.  The physical examination is otherwise unremarkable.\n\nAssessment/Plan:  Discussed possible causes of fatigue with the patient, including lifestyle factors and potential underlying medical conditions.  Recommended blood work to assess for any deficiencies or abnormalities. Advised the patient to prioritize sleep hygiene, maintain a balanced diet, and incorporate regular exercise.  Follow up appointment scheduled in 4 weeks to review blood work results and discuss further management.",
+    "object": {
+      "symptoms": [
+        {
+          "name": "Fatigue",
+          "duration_days": 30,
+          "severity": 7,
+          "frequency": "constant"
+        }
+      ],
+      "medications": [
+        {
+          "name": "Vitamin D",
+          "dosage": "1000 IU",
+          "frequency": "daily"
+        }
+      ]
+    },
+    "scenario_id": "0_healthcare__patient visit notes",
+    "was_claude_vs_gemini_generated": false
+  },
+  {
+    "text_passage": "This project will employ data analysis techniques to investigate a timely and relevant research question.  The project is expected to be completed within 6 months, with the final analysis completed by the end of month 6.  This research will contribute significantly to our understanding of a critical issue and has the potential to inform future policy decisions.",
+    "object": {
+      "research_methods": [
+        "data_analysis"
+      ],
+      "timeline": {
+        "total_duration_months": 6,
+        "key_milestones": [
+          {
+            "name": "Analysis Complete",
+            "month": 6
+          }
+        ]
+      }
+    },
+    "scenario_id": "11_research administration__research project abstract or summary in grant application",
+    "was_claude_vs_gemini_generated": false
+  },
+  {
+    "text_passage": "Patient presents with complaints of severe intermittent lower back pain, rating it 8/10 on the pain scale. Also reports occasional numbness in the left leg. Patient notes family history of multiple sclerosis. Physical examination reveals tenderness in the lumbar region with reduced range of motion. Straight leg raise test performed to assess radiculopathy. Patient maintains an active lifestyle but has reduced activities due to pain. Discussion included proper body mechanics and ergonomic recommendations. Will refer to physical therapy for evaluation and treatment. Follow-up appointment scheduled for 3 weeks.",
+    "object": {
+      "symptoms": [
+        {
+          "name": "lower back pain",
+          "severity": 8,
+          "frequency": "intermittent"
+        },
+        {
+          "name": "numbness in left leg",
+          "frequency": "occasional"
+        }
+      ],
+      "family_history_flags": [
+        "other"
+      ]
+    },
+    "scenario_id": "0_healthcare__patient visit notes",
+    "was_claude_vs_gemini_generated": true
+  },
+  {
+    "text_passage": "International wire transfer of USD 2,750,000 initiated by Global Ventures AG, routed through CitiFirst Bank, with Asia Trading Corporation as the beneficiary. Transaction flagged for review due to destination jurisdiction risk profile and the unusually quick movement of funds through multiple accounts. Compliance team has assigned medium severity to jurisdictional concerns and high severity to the velocity pattern. All parties are registered business entities. Standard documentation has been collected and verified for all involved parties, including certified business registrations and authorized signatory information. Transaction monitoring protocols are active.",
+    "object": {
+      "transaction": {
+        "category": "transfer",
+        "method": "wire",
+        "amount_usd": 2750000.0,
+        "cross_border": true
+      },
+      "parties": [
+        {
+          "name": "Global Ventures AG",
+          "role": "originator",
+          "entity_type": "business"
+        },
+        {
+          "name": "CitiFirst Bank",
+          "role": "intermediary",
+          "entity_type": "business"
+        },
+        {
+          "name": "Asia Trading Corporation",
+          "role": "beneficiary",
+          "entity_type": "business"
+        }
+      ],
+      "risk_flags": [
+        {
+          "type": "high_risk_jurisdiction",
+          "severity": "medium"
+        },
+        {
+          "type": "rapid_movement",
+          "severity": "high"
+        }
+      ]
+    },
+    "scenario_id": "10_financial compliance__transaction notes and description",
+    "was_claude_vs_gemini_generated": true
+  },
+  {
+    "text_passage": "This permit application concerns the construction of a single-story building totaling 2,500 square feet. The proposed structure will have an occupancy of 5 people and will cover 40% of the lot. The building will be located on 123 Main Street in Anytown, USA. The design incorporates sustainable building practices with energy-efficient windows and insulation, and we are excited to bring this project to the community. Further details regarding specific aspects of the project will be provided upon request.",
+    "object": {
+      "project_specs": {
+        "total_square_feet": 2500,
+        "floors": 1,
+        "occupancy_count": 5,
+        "lot_coverage_percentage": 40
+      }
+    },
+    "scenario_id": "8_government permitting__project description in permit application",
+    "was_claude_vs_gemini_generated": false
+  },
+  {
+    "text_passage": "On Friday evening at approximately 2145 hours, I responded to a reported theft on Oak Street. The incident occurred outdoors on the public street. The victim reported that their black motorcycle was stolen while they were inside a nearby restaurant. The motorcycle was in perfect condition with no visible damage at the time it was taken. I interviewed the victim and two witnesses who were in the area. The victim provided the motorcycle's registration and insurance information. I conducted a search of the immediate area but was unable to locate the vehicle. Photos of the scene were taken and entered into evidence. The victim was provided with a case number and victim services information.",
+    "object": {
+      "location": {
+        "type": "street",
+        "indoor_outdoor": "outdoor"
+      },
+      "incident_type": [
+        "theft"
+      ],
+      "vehicles": [
+        {
+          "type": "motorcycle",
+          "color": "black",
+          "damage": [
+            "none"
+          ]
+        }
+      ]
+    },
+    "scenario_id": "7_law enforcement__incident report",
+    "was_claude_vs_gemini_generated": true
+  },
+  {
+    "text_passage": "At 2:15 PM, I responded to a reported armed robbery at Johnson's Pharmacy. Upon arrival, I found the suspect had already fled the scene. The incident occurred inside the business near the pharmacy counter. The store clerk reported that a single male suspect displayed a handgun and demanded money from the register. The clerk complied with the demands, and the suspect fled on foot with approximately $300 in cash. No injuries were reported. Several customers were present during the incident and have provided witness statements. Store security cameras were operational at the time of the incident, and footage has been secured as evidence. A description of the suspect has been circulated to nearby units.",
+    "object": {
+      "location": {
+        "type": "business",
+        "indoor_outdoor": "indoor"
+      },
+      "incident_type": [
+        "theft"
+      ],
+      "weapons": [
+        {
+          "type": "firearm",
+          "quantity": 1
+        }
+      ]
+    },
+    "scenario_id": "7_law enforcement__incident report",
+    "was_claude_vs_gemini_generated": true
+  },
+  {
+    "text_passage": "PATIENT VISIT NOTES\n\nChief Complaint:\nRoutine follow-up.\n\nHistory of Present Illness:\nPatient reports overall good health.  No specific concerns at this time.\n\nMedications:\nLisinopril\nMetformin\n\nAllergies:\nNot discussed today.\n\nFamily History:\nHistory of hypertension and diabetes.\n\nPhysical Exam:\nWithin normal limits.\n\nAssessment:\nStable condition.\n\nPlan:\nContinue current medications. Follow up in 6 months.",
+    "object": {
+      "medications": [
+        {
+          "name": "Lisinopril"
+        },
+        {
+          "name": "Metformin"
+        }
+      ],
+      "family_history_flags": [
+        "hypertension",
+        "diabetes"
+      ]
+    },
+    "scenario_id": "0_healthcare__patient visit notes",
+    "was_claude_vs_gemini_generated": false
+  }
+]
