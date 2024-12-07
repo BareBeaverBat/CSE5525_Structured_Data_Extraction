@@ -1,0 +1,302 @@
+[
+  {
+    "skills": [
+      "analytical skills",
+      "problem-solving skills",
+      "software development",
+      "adaptability"
+    ],
+    "experience_years": 0,
+    "education": [
+      {
+        "degree_type": "BS",
+        "major": null,
+        "institution": "University of California, Berkeley"
+      }
+    ],
+    "previous_roles": [
+      {
+        "title": "Software Engineer",
+        "company": "Google",
+        "start_month": null,
+        "start_year": null,
+        "end_month": null,
+        "end_year": null
+      }
+    ],
+    "contact_info": {
+      "email": null,
+      "phone": null
+    }
+  },
+  {
+    "skills": [
+      "Java",
+      "Python",
+      "C++",
+      "SQL",
+      "JavaScript"
+    ],
+    "experience_years": 0,
+    "education": [],
+    "previous_roles": [],
+    "contact_info": {
+      "email": "",
+      "phone": ""
+    }
+  },
+  {
+    "skills": [
+      "software development",
+      "cloud-based platform design",
+      "mentoring",
+      "collaboration",
+      "innovation",
+      "performance optimization"
+    ],
+    "experience_years": 10,
+    "education": [],
+    "previous_roles": [
+      {
+        "title": "Senior Software Engineer",
+        "company": "Amazon",
+        "start_month": 6,
+        "start_year": 2013,
+        "end_month": 12,
+        "end_year": 2020
+      },
+      {
+        "title": "Software Engineer II",
+        "company": "Microsoft",
+        "start_month": 1,
+        "start_year": 2021,
+        "end_month": null,
+        "end_year": null
+      }
+    ],
+    "contact_info": {
+      "email": "",
+      "phone": ""
+    }
+  },
+  {
+    "skills": [
+      "data science",
+      "software engineering"
+    ],
+    "experience_years": 0,
+    "education": [
+      {
+        "degree_type": "MS",
+        "major": "Artificial Intelligence",
+        "institution": "Massachusetts Institute of Technology"
+      },
+      {
+        "degree_type": "BS",
+        "major": "Computer Science",
+        "institution": "Stanford University"
+      }
+    ],
+    "previous_roles": [],
+    "contact_info": {
+      "email": "",
+      "phone": ""
+    }
+  },
+  {
+    "skills": [
+      "strong work ethic",
+      "commitment to continuous learning"
+    ],
+    "experience_years": 0,
+    "education": [],
+    "previous_roles": [],
+    "contact_info": {
+      "email": "john.doe@email.com",
+      "phone": "555-123-4567"
+    }
+  },
+  {
+    "skills": [
+      "Project Management",
+      "Agile",
+      "Scrum"
+    ],
+    "experience_years": 5,
+    "education": [],
+    "previous_roles": [],
+    "contact_info": {}
+  },
+  {
+    "skills": [
+      "Web Development",
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ],
+    "experience_years": null,
+    "education": [
+      {
+        "degree_type": "BS",
+        "major": null,
+        "institution": "California State University, Long Beach"
+      }
+    ],
+    "previous_roles": [],
+    "contact_info": {
+      "email": "peter.pan@email.com",
+      "phone": "555-111-2222"
+    }
+  },
+  {
+    "skills": [],
+    "experience_years": 2,
+    "education": [
+      {
+        "degree_type": "BS",
+        "major": null,
+        "institution": "University of Washington"
+      }
+    ],
+    "previous_roles": [
+      {
+        "title": "Junior Developer",
+        "company": "Startup Inc.",
+        "start_month": null,
+        "start_year": null,
+        "end_month": null,
+        "end_year": null
+      }
+    ],
+    "contact_info": {
+      "email": "alice.wonderland@email.com",
+      "phone": "555-333-4444"
+    }
+  },
+  {
+    "skills": [
+      "Java",
+      "Spring Boot"
+    ],
+    "experience_years": 6,
+    "education": [],
+    "previous_roles": [
+      {
+        "title": "Backend Engineer",
+        "company": "Tech Company",
+        "start_month": null,
+        "start_year": null,
+        "end_month": null,
+        "end_year": null
+      }
+    ],
+    "contact_info": {
+      "email": null,
+      "phone": null
+    }
+  },
+  {
+    "skills": [
+      "marketing",
+      "sales",
+      "product management",
+      "team leadership",
+      "strategy development",
+      "client relationship management"
+    ],
+    "experience_years": 0,
+    "education": [],
+    "previous_roles": [
+      {
+        "title": "Marketing Manager",
+        "company": "Marketing Firm",
+        "start_month": null,
+        "start_year": null,
+        "end_month": null,
+        "end_year": null
+      },
+      {
+        "title": "Sales Representative",
+        "company": "Sales Company",
+        "start_month": null,
+        "start_year": null,
+        "end_month": null,
+        "end_year": null
+      },
+      {
+        "title": "Product Manager",
+        "company": "Product Company",
+        "start_month": null,
+        "start_year": null,
+        "end_month": null,
+        "end_year": null
+      }
+    ],
+    "contact_info": {
+      "email": null,
+      "phone": null
+    }
+  },
+  {
+    "skills": [
+      "Project Management",
+      "Stakeholder Collaboration",
+      "Budget Management",
+      "Timeline Management",
+      "Requirements Gathering"
+    ],
+    "experience_years": 3,
+    "education": [],
+    "previous_roles": [
+      {
+        "title": "Project Manager",
+        "company": "Project Company",
+        "start_month": 1,
+        "start_year": 2020,
+        "end_month": 12,
+        "end_year": 2022
+      }
+    ],
+    "contact_info": {
+      "email": "",
+      "phone": ""
+    }
+  },
+  {
+    "skills": [],
+    "experience_years": 0,
+    "education": [
+      {
+        "degree_type": "MA",
+        "major": null,
+        "institution": "University of California, San Diego"
+      },
+      {
+        "degree_type": "BA",
+        "major": null,
+        "institution": "University of California, Los Angeles"
+      }
+    ],
+    "previous_roles": [],
+    "contact_info": {
+      "email": "multi.degree@email.com",
+      "phone": "555-121-3434"
+    }
+  },
+  {
+    "skills": [
+      "Go",
+      "Rust",
+      "C++",
+      "Assembly",
+      "COBOL"
+    ],
+    "experience_years": 20,
+    "education": [],
+    "previous_roles": [],
+    "contact_info": {
+      "email": "",
+      "phone": ""
+    }
+  }
+]

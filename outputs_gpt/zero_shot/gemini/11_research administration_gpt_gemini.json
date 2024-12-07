@@ -1,0 +1,183 @@
+[
+  {
+    "research_methods": [
+      "experiment",
+      "data_analysis"
+    ],
+    "equipment_needs": [],
+    "data_collection": {
+      "data_types": [
+        "sensor",
+        "clinical_measurements"
+      ],
+      "sample_size": null,
+      "data_frequency": "continuous"
+    },
+    "study_population": {
+      "age_range": {
+        "min": 20,
+        "max": 60
+      },
+      "special_populations": []
+    },
+    "timeline": {
+      "total_duration_months": null,
+      "key_milestones": []
+    }
+  },
+  {
+    "research_methods": [
+      "interviews",
+      "field_study"
+    ],
+    "equipment_needs": [
+      {
+        "name": "audio recorders",
+        "duration_months": 6,
+        "shared_resource": false
+      }
+    ],
+    "data_collection": {
+      "data_types": [
+        "survey_responses"
+      ],
+      "sample_size": 50,
+      "data_frequency": "once"
+    },
+    "study_population": {
+      "age_range": {
+        "min": 18,
+        "max": 65
+      },
+      "special_populations": []
+    },
+    "timeline": {
+      "total_duration_months": 6,
+      "key_milestones": [
+        {
+          "name": "Completion of interviews",
+          "month": 3
+        },
+        {
+          "name": "Data analysis",
+          "month": 5
+        },
+        {
+          "name": "Final report submission",
+          "month": 6
+        }
+      ]
+    }
+  },
+  {
+    "research_methods": [
+      "survey"
+    ],
+    "equipment_needs": [],
+    "data_collection": {
+      "data_types": [
+        "survey_responses"
+      ],
+      "sample_size": 1000,
+      "data_frequency": "once"
+    },
+    "study_population": {
+      "age_range": {
+        "min": 18,
+        "max": 99
+      },
+      "special_populations": []
+    },
+    "timeline": {
+      "total_duration_months": 1,
+      "key_milestones": []
+    }
+  },
+  {
+    "research_methods": [
+      "survey",
+      "interviews"
+    ],
+    "equipment_needs": [
+      {
+        "name": "Video Conferencing Software",
+        "duration_months": 1,
+        "shared_resource": false
+      }
+    ],
+    "data_collection": {
+      "data_types": [
+        "survey_responses"
+      ],
+      "sample_size": 2000,
+      "data_frequency": "once"
+    },
+    "study_population": {
+      "age_range": {
+        "min": 0,
+        "max": 100
+      },
+      "special_populations": []
+    },
+    "timeline": {
+      "total_duration_months": 1,
+      "key_milestones": [
+        {
+          "name": "Survey Administration",
+          "month": 1
+        }
+      ]
+    }
+  },
+  {
+    "research_methods": [
+      "data_analysis"
+    ],
+    "equipment_needs": [],
+    "data_collection": {
+      "data_types": [],
+      "sample_size": 0,
+      "data_frequency": "once"
+    },
+    "study_population": {
+      "age_range": {
+        "min": 0,
+        "max": 0
+      },
+      "special_populations": []
+    },
+    "timeline": {
+      "total_duration_months": 6,
+      "key_milestones": [
+        {
+          "name": "Final analysis completion",
+          "month": 6
+        }
+      ]
+    }
+  },
+  {
+    "research_methods": [
+      "data_analysis"
+    ],
+    "equipment_needs": [],
+    "data_collection": {
+      "data_types": [
+        "clinical_measurements"
+      ],
+      "sample_size": 0,
+      "data_frequency": "once"
+    },
+    "study_population": {
+      "age_range": {
+        "min": 0,
+        "max": 0
+      },
+      "special_populations": []
+    },
+    "timeline": {
+      "total_duration_months": 0,
+      "key_milestones": []
+    }
+  }
+]

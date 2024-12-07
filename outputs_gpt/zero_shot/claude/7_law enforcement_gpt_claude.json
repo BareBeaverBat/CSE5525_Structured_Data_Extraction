@@ -1,0 +1,268 @@
+[
+  {
+    "location": {
+      "type": "residence",
+      "indoor_outdoor": "indoor",
+      "floor_level": 2
+    },
+    "incident_type": [
+      "burglary"
+    ],
+    "weapons": [
+      {
+        "type": "knife",
+        "quantity": 2
+      },
+      {
+        "type": "blunt_object",
+        "quantity": 1
+      }
+    ],
+    "vehicles": []
+  },
+  {
+    "location": {
+      "type": "street",
+      "indoor_outdoor": "outdoor",
+      "floor_level": null
+    },
+    "incident_type": [
+      "traffic"
+    ],
+    "weapons": [],
+    "vehicles": [
+      {
+        "type": "passenger",
+        "color": "silver",
+        "damage": [
+          "front",
+          "driver_side"
+        ]
+      }
+    ]
+  },
+  {
+    "location": {
+      "type": "public_space",
+      "indoor_outdoor": "outdoor",
+      "floor_level": null
+    },
+    "incident_type": [
+      "vandalism"
+    ],
+    "weapons": [],
+    "vehicles": []
+  },
+  {
+    "location": {
+      "type": "business",
+      "indoor_outdoor": "indoor",
+      "floor_level": null
+    },
+    "incident_type": [
+      "theft"
+    ],
+    "weapons": [
+      {
+        "type": "firearm",
+        "quantity": 1
+      }
+    ],
+    "vehicles": []
+  },
+  {
+    "location": {
+      "type": "residence",
+      "indoor_outdoor": "indoor",
+      "floor_level": 3
+    },
+    "incident_type": [
+      "domestic",
+      "noise"
+    ],
+    "weapons": [],
+    "vehicles": []
+  },
+  {
+    "location": {
+      "type": "public_space",
+      "indoor_outdoor": "both",
+      "floor_level": null
+    },
+    "incident_type": [
+      "assault"
+    ],
+    "weapons": [],
+    "vehicles": [
+      {
+        "type": "truck",
+        "color": "blue",
+        "damage": [
+          "none"
+        ]
+      }
+    ]
+  },
+  {
+    "location": {
+      "type": "residence",
+      "indoor_outdoor": "indoor",
+      "floor_level": 4
+    },
+    "incident_type": [
+      "noise"
+    ],
+    "weapons": [],
+    "vehicles": []
+  },
+  {
+    "location": {
+      "type": "business",
+      "indoor_outdoor": "indoor",
+      "floor_level": 5
+    },
+    "incident_type": [
+      "theft",
+      "vandalism"
+    ],
+    "weapons": [],
+    "vehicles": []
+  },
+  {
+    "location": {
+      "type": "street",
+      "indoor_outdoor": "outdoor",
+      "floor_level": null
+    },
+    "incident_type": [
+      "theft"
+    ],
+    "weapons": [],
+    "vehicles": [
+      {
+        "type": "motorcycle",
+        "color": "black",
+        "damage": [
+          "none"
+        ]
+      }
+    ]
+  },
+  {
+    "location": {
+      "type": "residence",
+      "indoor_outdoor": "indoor",
+      "floor_level": 2
+    },
+    "incident_type": [],
+    "weapons": [],
+    "vehicles": [
+      {
+        "type": "car",
+        "color": "gray",
+        "damage": [
+          "rear",
+          "driver_side"
+        ]
+      }
+    ]
+  },
+  {
+    "location": {
+      "type": "residence",
+      "indoor_outdoor": "both",
+      "floor_level": null
+    },
+    "incident_type": [
+      "suspicious_activity"
+    ],
+    "weapons": [],
+    "vehicles": []
+  },
+  {
+    "location": {
+      "type": "business",
+      "indoor_outdoor": "indoor",
+      "floor_level": null
+    },
+    "incident_type": [
+      "assault"
+    ],
+    "weapons": [
+      {
+        "type": "knife",
+        "quantity": 1
+      },
+      {
+        "type": "other",
+        "quantity": 1
+      }
+    ],
+    "vehicles": []
+  },
+  {
+    "location": {
+      "type": "public_space",
+      "indoor_outdoor": "outdoor",
+      "floor_level": null
+    },
+    "incident_type": [],
+    "weapons": [],
+    "vehicles": [
+      {
+        "type": "car",
+        "color": "green",
+        "damage": [
+          "none"
+        ]
+      },
+      {
+        "type": "suv",
+        "color": "silver",
+        "damage": [
+          "none"
+        ]
+      }
+    ]
+  },
+  {
+    "location": {
+      "type": "street",
+      "indoor_outdoor": "both",
+      "floor_level": null
+    },
+    "incident_type": [
+      "domestic"
+    ],
+    "weapons": [],
+    "vehicles": [
+      {
+        "type": "car",
+        "color": "red",
+        "damage": [
+          "none"
+        ]
+      }
+    ]
+  },
+  {
+    "location": {
+      "type": "street",
+      "indoor_outdoor": "outdoor",
+      "floor_level": null
+    },
+    "incident_type": [
+      "traffic"
+    ],
+    "weapons": [],
+    "vehicles": [
+      {
+        "type": "truck",
+        "color": "white",
+        "damage": [
+          "front"
+        ]
+      }
+    ]
+  }
+]

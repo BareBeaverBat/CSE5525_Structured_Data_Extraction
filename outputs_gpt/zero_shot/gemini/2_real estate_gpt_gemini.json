@@ -1,0 +1,285 @@
+[
+  {
+    "bedrooms": 0,
+    "bathrooms": "0",
+    "square_footage": 0,
+    "property_type": "land",
+    "amenities": [],
+    "listing_price": 0,
+    "location": {
+      "city": "Elko",
+      "state": "NV",
+      "zip_code": "89801"
+    }
+  },
+  {
+    "bedrooms": 2,
+    "bathrooms": "1",
+    "square_footage": 850,
+    "property_type": "apartment",
+    "amenities": [],
+    "listing_price": 1200000,
+    "location": {
+      "city": "Miami",
+      "state": "FL",
+      "zip_code": "33131"
+    }
+  },
+  {
+    "bedrooms": 1,
+    "bathrooms": "1",
+    "square_footage": 700,
+    "property_type": "apartment",
+    "amenities": [
+      "balcony"
+    ],
+    "listing_price": null,
+    "location": {
+      "city": "Seattle",
+      "state": "WA",
+      "zip_code": "98101"
+    }
+  },
+  {
+    "bedrooms": 4,
+    "bathrooms": 3,
+    "square_footage": 2500,
+    "property_type": "house",
+    "amenities": [
+      "pool",
+      "garage",
+      "fireplace"
+    ],
+    "listing_price": 2500000,
+    "location": {
+      "city": "Dallas",
+      "state": "TX",
+      "zip_code": "75201"
+    }
+  },
+  {
+    "bedrooms": 2,
+    "bathrooms": "2",
+    "square_footage": 1100,
+    "property_type": "condo",
+    "amenities": [],
+    "listing_price": 1800000,
+    "location": {
+      "city": "San Diego",
+      "state": "CA",
+      "zip_code": "92101"
+    }
+  },
+  {
+    "bedrooms": 0,
+    "bathrooms": "0",
+    "square_footage": 0,
+    "property_type": "land",
+    "amenities": [],
+    "listing_price": 500000,
+    "location": {
+      "city": "Aspen",
+      "state": "CO",
+      "zip_code": "81611"
+    }
+  },
+  {
+    "bedrooms": 5,
+    "bathrooms": 4,
+    "square_footage": 4000,
+    "property_type": "house",
+    "amenities": [
+      "pool",
+      "garage",
+      "fireplace",
+      "central_ac"
+    ],
+    "listing_price": 4500000,
+    "location": {
+      "city": "Los Angeles",
+      "state": "CA",
+      "zip_code": "90001"
+    }
+  },
+  {
+    "bedrooms": 0,
+    "bathrooms": "1",
+    "square_footage": 450,
+    "property_type": "apartment",
+    "amenities": [],
+    "listing_price": 900000,
+    "location": {
+      "city": "New York",
+      "state": "NY",
+      "zip_code": "10001"
+    }
+  },
+  {
+    "bedrooms": 3,
+    "bathrooms": 1,
+    "square_footage": 1200,
+    "property_type": "house",
+    "amenities": [],
+    "listing_price": 750000,
+    "location": {
+      "city": "Atlanta",
+      "state": "GA",
+      "zip_code": "30301"
+    }
+  },
+  {
+    "bedrooms": 2,
+    "bathrooms": "2.5",
+    "square_footage": 1000,
+    "property_type": "condo",
+    "amenities": [],
+    "listing_price": 1500000,
+    "location": {
+      "city": "Chicago",
+      "state": "IL",
+      "zip_code": "60601"
+    }
+  },
+  {
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "square_footage": 1400,
+    "property_type": "townhouse",
+    "amenities": [
+      "garage",
+      "central_ac"
+    ],
+    "listing_price": null,
+    "location": {
+      "city": "Phoenix",
+      "state": "AZ",
+      "zip_code": "85001"
+    }
+  },
+  {
+    "bedrooms": 1,
+    "bathrooms": "1",
+    "square_footage": 600,
+    "property_type": "apartment",
+    "amenities": [
+      "pool",
+      "garage",
+      "fireplace",
+      "central_ac",
+      "balcony"
+    ],
+    "listing_price": 1100000,
+    "location": {
+      "city": "San Francisco",
+      "state": "CA",
+      "zip_code": "94101"
+    }
+  },
+  {
+    "bedrooms": 3,
+    "bathrooms": "2.5",
+    "square_footage": 1600,
+    "property_type": "townhouse",
+    "amenities": [
+      "fireplace",
+      "central_ac"
+    ],
+    "listing_price": 1950000,
+    "location": {
+      "city": "Denver",
+      "state": "CO",
+      "zip_code": "80201"
+    }
+  },
+  {
+    "bedrooms": 2,
+    "bathrooms": "1",
+    "square_footage": 900,
+    "property_type": "condo",
+    "amenities": [
+      "pool",
+      "garage"
+    ],
+    "listing_price": 1600000,
+    "location": {
+      "city": "Boulder",
+      "state": "CO",
+      "zip_code": "80301"
+    }
+  },
+  {
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "square_footage": 1500,
+    "property_type": "house",
+    "amenities": [],
+    "listing_price": 350000,
+    "location": {
+      "city": "Austin",
+      "state": "TX",
+      "zip_code": "78704"
+    }
+  },
+  {
+    "bedrooms": 4,
+    "bathrooms": 3,
+    "square_footage": 2200,
+    "property_type": "townhouse",
+    "amenities": [
+      "pool",
+      "garage"
+    ],
+    "listing_price": 600000,
+    "location": {
+      "city": "San Diego",
+      "state": "CA",
+      "zip_code": "92101"
+    }
+  },
+  {
+    "bedrooms": 5,
+    "bathrooms": 4,
+    "square_footage": 4000,
+    "property_type": "house",
+    "amenities": [
+      "pool",
+      "fireplace",
+      "garage",
+      "central_ac"
+    ],
+    "listing_price": 1500000,
+    "location": {
+      "city": "Miami",
+      "state": "FL",
+      "zip_code": "33101"
+    }
+  },
+  {
+    "bedrooms": 0,
+    "bathrooms": "0",
+    "square_footage": 50000,
+    "property_type": "land",
+    "amenities": [],
+    "listing_price": 250000,
+    "location": {
+      "city": "Boise",
+      "state": "ID",
+      "zip_code": "83702"
+    }
+  },
+  {
+    "bedrooms": 2,
+    "bathrooms": "2.5",
+    "square_footage": 1200,
+    "property_type": "condo",
+    "amenities": [
+      "balcony"
+    ],
+    "listing_price": 450000,
+    "location": {
+      "city": "Chicago",
+      "state": "IL",
+      "zip_code": "60601"
+    }
+  }
+]

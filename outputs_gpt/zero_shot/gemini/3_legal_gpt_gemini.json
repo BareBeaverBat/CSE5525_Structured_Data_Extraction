@@ -1,0 +1,174 @@
+[
+  {
+    "signing_date": null,
+    "parties": [
+      "Acme Inc.",
+      "Beta Ltd."
+    ],
+    "governing_law": "State of California",
+    "clauses": {
+      "termination_clause": null,
+      "confidentiality_clause": null,
+      "payment_amount": null
+    }
+  },
+  {
+    "signing_date": "2023-06-10",
+    "parties": [
+      "Epsilon Enterprises",
+      "Zeta Holdings"
+    ],
+    "governing_law": "",
+    "clauses": {
+      "termination_clause": "This Agreement may be terminated upon mutual agreement of the parties.",
+      "confidentiality_clause": "Standard confidentiality applies. Both parties agree not to disclose any confidential information obtained during the course of this agreement to any third party.",
+      "payment_amount": 50000
+    }
+  },
+  {
+    "signing_date": "2024-01-05",
+    "parties": [
+      "Eta Solutions"
+    ],
+    "governing_law": "",
+    "clauses": {
+      "termination_clause": "",
+      "confidentiality_clause": "",
+      "payment_amount": 0
+    }
+  },
+  {
+    "signing_date": "2023-09-22",
+    "parties": [],
+    "governing_law": "the laws of the State of Delaware",
+    "clauses": {
+      "termination_clause": "",
+      "confidentiality_clause": "",
+      "payment_amount": 0
+    }
+  },
+  {
+    "signing_date": "2024-04-18",
+    "parties": [
+      "Theta Innovations",
+      "Iota Industries"
+    ],
+    "governing_law": "State of New York",
+    "clauses": {
+      "termination_clause": "This Agreement may be terminated for breach of contract.",
+      "confidentiality_clause": "The Parties agree to maintain strict confidentiality regarding the terms and conditions of this Agreement and the nature of their collaborative venture.",
+      "payment_amount": null
+    }
+  },
+  {
+    "signing_date": "2023-12-01",
+    "parties": [
+      "Kappa Kreations"
+    ],
+    "governing_law": "State of Florida",
+    "clauses": {
+      "termination_clause": "This Agreement may be terminated by either party with 60 days notice.",
+      "confidentiality_clause": null,
+      "payment_amount": 25000
+    }
+  },
+  {
+    "signing_date": "2023-08-12",
+    "parties": [
+      "Mu Materials",
+      "Nu Networks"
+    ],
+    "governing_law": "",
+    "clauses": {
+      "termination_clause": "",
+      "confidentiality_clause": "",
+      "payment_amount": 100000
+    }
+  },
+  {
+    "signing_date": "2024-05-09",
+    "parties": [
+      "Xi Corp"
+    ],
+    "governing_law": "",
+    "clauses": {
+      "termination_clause": "This agreement may be terminated subject to arbitration.",
+      "confidentiality_clause": "",
+      "payment_amount": null
+    }
+  },
+  {
+    "signing_date": "2023-10-29",
+    "parties": [
+      "Omicron Operations",
+      "Pi Productions",
+      "Rho Resources"
+    ],
+    "governing_law": "State of Illinois",
+    "clauses": {
+      "termination_clause": "",
+      "confidentiality_clause": "",
+      "payment_amount": 0
+    }
+  },
+  {
+    "signing_date": "2024-06-21",
+    "parties": [],
+    "governing_law": "",
+    "clauses": {
+      "termination_clause": "This Agreement may be terminated immediately for cause. Specific events constituting 'cause' will be defined in an appendix to this Agreement.",
+      "confidentiality_clause": "Information shared between the parties during the term of this agreement is confidential and proprietary.",
+      "payment_amount": 75000.0
+    }
+  },
+  {
+    "signing_date": "2023-07-18",
+    "parties": [
+      "Sigma Systems",
+      "Participants"
+    ],
+    "governing_law": "Not specified",
+    "clauses": {
+      "termination_clause": "Not specified",
+      "confidentiality_clause": "Non-disclosure agreement in effect.",
+      "payment_amount": 0
+    }
+  },
+  {
+    "signing_date": "2024-08-05",
+    "parties": [],
+    "governing_law": "",
+    "clauses": {
+      "termination_clause": "",
+      "confidentiality_clause": "",
+      "payment_amount": 5000
+    }
+  },
+  {
+    "signing_date": "2023-11-27",
+    "parties": [
+      "Phi Pharmaceuticals",
+      "Chi Chemicals",
+      "Psi Psychology"
+    ],
+    "governing_law": "Not specified",
+    "clauses": {
+      "termination_clause": "Either party may terminate this Agreement for any reason with ninety (90) days' written notice to the other parties.",
+      "confidentiality_clause": "Not specified",
+      "payment_amount": 0
+    }
+  },
+  {
+    "signing_date": "2023-05-20",
+    "parties": [
+      "Alpha Aeronautics",
+      "Beta Biotech"
+    ],
+    "governing_law": "Not specified",
+    "clauses": {
+      "termination_clause": "Not specified",
+      "confidentiality_clause": "Standard NDA applies.",
+      "payment_amount": 0
+    }
+  }
+]

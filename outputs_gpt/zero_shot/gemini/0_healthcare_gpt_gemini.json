@@ -1,0 +1,363 @@
+[
+  {
+    "symptoms": [
+      {
+        "name": "headache",
+        "duration_days": null,
+        "severity": null,
+        "frequency": "occasional"
+      },
+      {
+        "name": "fatigue",
+        "duration_days": null,
+        "severity": null,
+        "frequency": "occasional"
+      }
+    ],
+    "medications": [],
+    "allergies": [],
+    "family_history_flags": []
+  },
+  {
+    "symptoms": [
+      {
+        "name": "nausea",
+        "duration_days": 3,
+        "severity": 7,
+        "frequency": "constant"
+      },
+      {
+        "name": "dizziness",
+        "duration_days": 1,
+        "severity": 4,
+        "frequency": "intermittent"
+      },
+      {
+        "name": "blurry vision",
+        "duration_days": 2,
+        "severity": 8,
+        "frequency": "occasional"
+      }
+    ],
+    "medications": [],
+    "allergies": [],
+    "family_history_flags": []
+  },
+  {
+    "symptoms": [],
+    "medications": [
+      {
+        "name": "Lipitor",
+        "dosage": "10mg",
+        "frequency": "daily"
+      },
+      {
+        "name": "Metformin",
+        "dosage": "500mg",
+        "frequency": "twice daily"
+      },
+      {
+        "name": "Aspirin",
+        "dosage": "81mg",
+        "frequency": "daily"
+      }
+    ],
+    "allergies": [],
+    "family_history_flags": []
+  },
+  {
+    "symptoms": [],
+    "medications": [],
+    "allergies": [
+      "Penicillin",
+      "Peanuts",
+      "Dust mites"
+    ],
+    "family_history_flags": [
+      "diabetes",
+      "heart_disease"
+    ]
+  },
+  {
+    "symptoms": [
+      {
+        "name": "shortness of breath",
+        "duration_days": 5,
+        "severity": 6,
+        "frequency": "intermittent"
+      }
+    ],
+    "medications": [
+      {
+        "name": "Albuterol",
+        "dosage": "2 puffs",
+        "frequency": "as needed"
+      }
+    ],
+    "allergies": [
+      "pollen"
+    ],
+    "family_history_flags": [
+      "asthma"
+    ]
+  },
+  {
+    "symptoms": [
+      {
+        "name": "Headache",
+        "duration_days": null,
+        "severity": null,
+        "frequency": "first_occurrence"
+      }
+    ],
+    "medications": [],
+    "allergies": [],
+    "family_history_flags": []
+  },
+  {
+    "symptoms": [],
+    "medications": [],
+    "allergies": [
+      "Penicillin",
+      "Latex",
+      "Shellfish"
+    ],
+    "family_history_flags": []
+  },
+  {
+    "symptoms": [],
+    "medications": [],
+    "allergies": [],
+    "family_history_flags": [
+      "diabetes",
+      "heart_disease",
+      "cancer"
+    ]
+  },
+  {
+    "symptoms": [
+      {
+        "name": "fatigue",
+        "duration_days": 30,
+        "severity": 7,
+        "frequency": "constant"
+      }
+    ],
+    "medications": [
+      {
+        "name": "Vitamin D",
+        "dosage": "1000 IU",
+        "frequency": "daily"
+      }
+    ],
+    "allergies": [],
+    "family_history_flags": []
+  },
+  {
+    "symptoms": [],
+    "medications": [
+      {
+        "name": "Lisinopril",
+        "dosage": "",
+        "frequency": ""
+      },
+      {
+        "name": "Metformin",
+        "dosage": "",
+        "frequency": ""
+      }
+    ],
+    "allergies": [],
+    "family_history_flags": [
+      "hypertension",
+      "diabetes"
+    ]
+  },
+  {
+    "symptoms": [
+      {
+        "name": "Nausea",
+        "duration_days": null,
+        "severity": 4,
+        "frequency": "occasional"
+      }
+    ],
+    "medications": [
+      {
+        "name": "Ondansetron",
+        "dosage": null,
+        "frequency": null
+      }
+    ],
+    "allergies": [
+      "Nickel"
+    ],
+    "family_history_flags": []
+  },
+  {
+    "symptoms": [
+      {
+        "name": "dizziness",
+        "duration_days": null,
+        "severity": null,
+        "frequency": "occasional"
+      }
+    ],
+    "medications": [
+      {
+        "name": "Hydrochlorothiazide",
+        "dosage": null,
+        "frequency": null
+      }
+    ],
+    "allergies": [
+      "peanuts"
+    ],
+    "family_history_flags": [
+      "asthma"
+    ]
+  },
+  {
+    "symptoms": [
+      {
+        "name": "Headache",
+        "duration_days": null,
+        "severity": null,
+        "frequency": null
+      }
+    ],
+    "medications": [],
+    "allergies": [],
+    "family_history_flags": []
+  },
+  {
+    "symptoms": [
+      {
+        "name": "cough",
+        "duration_days": 3,
+        "severity": 4,
+        "frequency": "intermittent"
+      },
+      {
+        "name": "runny nose",
+        "duration_days": 2,
+        "severity": 2,
+        "frequency": "occasional"
+      },
+      {
+        "name": "fatigue",
+        "duration_days": 3,
+        "severity": 7,
+        "frequency": "constant"
+      }
+    ],
+    "medications": [],
+    "allergies": [],
+    "family_history_flags": []
+  },
+  {
+    "symptoms": [],
+    "medications": [
+      {
+        "name": "Ibuprofen",
+        "dosage": "200mg",
+        "frequency": "every 6 hours"
+      },
+      {
+        "name": "Loratadine",
+        "dosage": "10mg",
+        "frequency": "once daily"
+      }
+    ],
+    "allergies": [],
+    "family_history_flags": []
+  },
+  {
+    "symptoms": [],
+    "medications": [],
+    "allergies": [
+      "Penicillin",
+      "Pollen",
+      "Dust mites"
+    ],
+    "family_history_flags": [
+      "diabetes",
+      "heart_disease"
+    ]
+  },
+  {
+    "symptoms": [
+      {
+        "name": "abdominal pain",
+        "duration_days": 5,
+        "severity": 5,
+        "frequency": "constant"
+      },
+      {
+        "name": "nausea",
+        "duration_days": null,
+        "severity": 3,
+        "frequency": "occasional"
+      }
+    ],
+    "medications": [],
+    "allergies": [
+      "latex",
+      "shellfish"
+    ],
+    "family_history_flags": [
+      "cancer"
+    ]
+  },
+  {
+    "symptoms": [],
+    "medications": [
+      {
+        "name": "Metformin",
+        "dosage": "500mg",
+        "frequency": "twice daily"
+      },
+      {
+        "name": "Lisinopril",
+        "dosage": "10mg",
+        "frequency": "once daily"
+      }
+    ],
+    "allergies": [
+      "Sulfa drugs"
+    ],
+    "family_history_flags": [
+      "hypertension"
+    ]
+  },
+  {
+    "symptoms": [
+      {
+        "name": "Fever",
+        "duration_days": 2,
+        "severity": 3,
+        "frequency": "constant"
+      },
+      {
+        "name": "Fatigue",
+        "duration_days": 2,
+        "severity": 2,
+        "frequency": "constant"
+      }
+    ],
+    "medications": [
+      {
+        "name": "Acetaminophen",
+        "dosage": "500mg",
+        "frequency": "every 4 hours as needed"
+      }
+    ],
+    "allergies": [
+      "Peanuts",
+      "Tree nuts"
+    ],
+    "family_history_flags": [
+      "asthma"
+    ]
+  }
+]

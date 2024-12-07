@@ -1,0 +1,537 @@
+[
+  {
+    "symptoms": [
+      {
+        "name": "migraine headache",
+        "duration_days": 3,
+        "severity": 8,
+        "frequency": "intermittent"
+      },
+      {
+        "name": "nausea",
+        "duration_days": 2,
+        "severity": 6,
+        "frequency": "occasional"
+      }
+    ],
+    "medications": [
+      {
+        "name": "Sumatriptan",
+        "dosage": "100mg",
+        "frequency": "as needed"
+      },
+      {
+        "name": "Ondansetron",
+        "dosage": "4mg",
+        "frequency": "twice daily"
+      }
+    ],
+    "allergies": [
+      "Penicillin",
+      "Sulfa drugs",
+      "Latex"
+    ],
+    "family_history_flags": [
+      "diabetes",
+      "hypertension",
+      "cancer"
+    ]
+  },
+  {
+    "symptoms": [
+      {
+        "name": "sore throat",
+        "duration_days": null,
+        "severity": null,
+        "frequency": null
+      }
+    ],
+    "medications": [
+      {
+        "name": "acetaminophen",
+        "dosage": null,
+        "frequency": null
+      }
+    ],
+    "allergies": [],
+    "family_history_flags": []
+  },
+  {
+    "symptoms": [
+      {
+        "name": "joint pain",
+        "duration_days": 14,
+        "severity": 7,
+        "frequency": "constant"
+      },
+      {
+        "name": "fatigue",
+        "duration_days": 14,
+        "severity": 5,
+        "frequency": "constant"
+      },
+      {
+        "name": "fever",
+        "duration_days": 7,
+        "severity": 4,
+        "frequency": "intermittent"
+      }
+    ],
+    "medications": [],
+    "allergies": [],
+    "family_history_flags": [
+      "diabetes",
+      "heart_disease"
+    ]
+  },
+  {
+    "symptoms": [],
+    "medications": [
+      {
+        "name": "Lisinopril",
+        "dosage": "10mg",
+        "frequency": "daily"
+      },
+      {
+        "name": "Metformin",
+        "dosage": "500mg",
+        "frequency": "daily"
+      },
+      {
+        "name": "Aspirin",
+        "dosage": "daily",
+        "frequency": "daily"
+      }
+    ],
+    "allergies": [
+      "Shellfish",
+      "Iodine"
+    ],
+    "family_history_flags": []
+  },
+  {
+    "symptoms": [
+      {
+        "name": "shortness of breath",
+        "duration_days": 5,
+        "severity": 6,
+        "frequency": "occasional"
+      },
+      {
+        "name": "cough"
+      }
+    ],
+    "medications": [
+      {
+        "name": "albuterol inhaler",
+        "dosage": "90mcg",
+        "frequency": "every 4-6 hours as needed"
+      }
+    ],
+    "allergies": [],
+    "family_history_flags": [
+      "asthma"
+    ]
+  },
+  {
+    "symptoms": [
+      {
+        "name": "joint pain",
+        "duration_days": 14,
+        "severity": 7,
+        "frequency": "intermittent"
+      },
+      {
+        "name": "fatigue",
+        "duration_days": 10,
+        "severity": 5,
+        "frequency": "constant"
+      }
+    ],
+    "medications": [
+      {
+        "name": "naproxen",
+        "dosage": "500mg",
+        "frequency": "twice daily"
+      },
+      {
+        "name": "vitamin D3",
+        "dosage": "2000 IU",
+        "frequency": "daily"
+      }
+    ],
+    "allergies": [
+      "shellfish",
+      "ibuprofen",
+      "wool"
+    ],
+    "family_history_flags": [
+      "diabetes",
+      "heart_disease",
+      "cancer"
+    ]
+  },
+  {
+    "symptoms": [],
+    "medications": [
+      {
+        "name": "levothyroxine",
+        "dosage": "",
+        "frequency": ""
+      }
+    ],
+    "allergies": [],
+    "family_history_flags": []
+  },
+  {
+    "symptoms": [
+      {
+        "name": "seasonal allergies",
+        "duration_days": null,
+        "severity": null,
+        "frequency": "intermittent"
+      }
+    ],
+    "medications": [],
+    "allergies": [
+      "ragweed",
+      "birch pollen",
+      "dust mites",
+      "cat dander"
+    ],
+    "family_history_flags": [
+      "asthma",
+      "hypertension"
+    ]
+  },
+  {
+    "symptoms": [
+      {
+        "name": "acid reflux",
+        "duration_days": null,
+        "severity": null,
+        "frequency": "occasional"
+      }
+    ],
+    "medications": [
+      {
+        "name": "omeprazole",
+        "dosage": "20mg",
+        "frequency": "daily"
+      },
+      {
+        "name": "ranitidine",
+        "dosage": "as needed",
+        "frequency": "as needed"
+      },
+      {
+        "name": "calcium carbonate",
+        "dosage": "500mg",
+        "frequency": "supplements"
+      }
+    ],
+    "allergies": [],
+    "family_history_flags": []
+  },
+  {
+    "symptoms": [
+      {
+        "name": "joint pain",
+        "duration_days": 14,
+        "severity": 7,
+        "frequency": "constant"
+      },
+      {
+        "name": "fatigue",
+        "duration_days": 14,
+        "severity": 5,
+        "frequency": "intermittent"
+      }
+    ],
+    "medications": [
+      {
+        "name": "naproxen",
+        "dosage": "500mg",
+        "frequency": "twice daily"
+      },
+      {
+        "name": "vitamin D3",
+        "dosage": "2000 IU",
+        "frequency": "daily"
+      }
+    ],
+    "allergies": [
+      "shellfish",
+      "ibuprofen"
+    ],
+    "family_history_flags": [
+      "diabetes",
+      "heart_disease"
+    ]
+  },
+  {
+    "symptoms": [],
+    "medications": [
+      {
+        "name": "levothyroxine",
+        "dosage": "75mcg",
+        "frequency": "daily"
+      },
+      {
+        "name": "sertraline",
+        "dosage": "50mg",
+        "frequency": "daily"
+      },
+      {
+        "name": "lisinopril",
+        "dosage": "10mg",
+        "frequency": "daily"
+      }
+    ],
+    "allergies": [],
+    "family_history_flags": [
+      "hypertension",
+      "diabetes",
+      "cancer"
+    ]
+  },
+  {
+    "symptoms": [],
+    "medications": [],
+    "allergies": [
+      "penicillin",
+      "sulfa drugs",
+      "latex",
+      "peanuts"
+    ],
+    "family_history_flags": [
+      "asthma"
+    ]
+  },
+  {
+    "symptoms": [],
+    "medications": [
+      {
+        "name": "metformin",
+        "dosage": "1000mg",
+        "frequency": "twice daily with meals"
+      },
+      {
+        "name": "glipizide",
+        "dosage": "5mg",
+        "frequency": "before breakfast"
+      },
+      {
+        "name": "januvia",
+        "dosage": "100mg",
+        "frequency": "daily"
+      },
+      {
+        "name": "jardiance",
+        "dosage": "25mg",
+        "frequency": "daily"
+      }
+    ],
+    "allergies": [
+      "contrast dye"
+    ],
+    "family_history_flags": []
+  },
+  {
+    "symptoms": [
+      {
+        "name": "lower back pain",
+        "duration_days": null,
+        "severity": 8,
+        "frequency": "intermittent"
+      },
+      {
+        "name": "numbness in the left leg",
+        "duration_days": null,
+        "severity": null,
+        "frequency": "occasional"
+      }
+    ],
+    "medications": [],
+    "allergies": [],
+    "family_history_flags": []
+  },
+  {
+    "symptoms": [
+      {
+        "name": "lower back pain",
+        "duration_days": 1,
+        "severity": 9,
+        "frequency": "first_occurrence"
+      }
+    ],
+    "medications": [
+      {
+        "name": "cyclobenzaprine",
+        "dosage": "10mg",
+        "frequency": "three times daily"
+      }
+    ],
+    "allergies": [],
+    "family_history_flags": []
+  },
+  {
+    "symptoms": [
+      {
+        "name": "migraines",
+        "duration_days": 3,
+        "severity": 8,
+        "frequency": "intermittent"
+      },
+      {
+        "name": "nausea",
+        "duration_days": 2,
+        "severity": 5,
+        "frequency": "occasional"
+      },
+      {
+        "name": "sensitivity to light (photophobia)",
+        "duration_days": 3,
+        "severity": 7,
+        "frequency": "intermittent"
+      }
+    ],
+    "medications": [],
+    "allergies": [],
+    "family_history_flags": []
+  },
+  {
+    "symptoms": [
+      {
+        "name": "chronic fatigue",
+        "duration_days": 45,
+        "severity": 7,
+        "frequency": "constant"
+      },
+      {
+        "name": "joint pain",
+        "duration_days": 30,
+        "severity": 6,
+        "frequency": "intermittent"
+      },
+      {
+        "name": "muscle weakness",
+        "duration_days": 14,
+        "severity": 5,
+        "frequency": "constant"
+      }
+    ],
+    "medications": [
+      {
+        "name": "duloxetine",
+        "dosage": "30mg",
+        "frequency": "twice daily"
+      },
+      {
+        "name": "naproxen",
+        "dosage": "500mg",
+        "frequency": "as needed"
+      }
+    ],
+    "allergies": [
+      "ibuprofen",
+      "shellfish",
+      "peanuts"
+    ],
+    "family_history_flags": [
+      "diabetes",
+      "heart_disease",
+      "cancer"
+    ]
+  },
+  {
+    "symptoms": [
+      {
+        "name": "joint pain",
+        "duration_days": 90,
+        "severity": 7,
+        "frequency": "intermittent"
+      },
+      {
+        "name": "fatigue",
+        "duration_days": 120,
+        "severity": 5,
+        "frequency": "constant"
+      },
+      {
+        "name": "morning stiffness",
+        "duration_days": 90,
+        "severity": 6,
+        "frequency": "intermittent"
+      }
+    ],
+    "medications": [
+      {
+        "name": "methotrexate",
+        "dosage": "15mg",
+        "frequency": "weekly"
+      },
+      {
+        "name": "folic acid",
+        "dosage": "1mg",
+        "frequency": "daily"
+      }
+    ],
+    "allergies": [
+      "ibuprofen",
+      "shellfish"
+    ],
+    "family_history_flags": [
+      "diabetes",
+      "cancer"
+    ]
+  },
+  {
+    "symptoms": [
+      {
+        "name": "sore throat",
+        "duration_days": 3,
+        "severity": 5,
+        "frequency": "intermittent"
+      }
+    ],
+    "medications": [
+      {
+        "name": "acetaminophen",
+        "dosage": "as needed",
+        "frequency": "occasional"
+      }
+    ],
+    "allergies": [],
+    "family_history_flags": []
+  },
+  {
+    "symptoms": [],
+    "medications": [
+      {
+        "name": "levothyroxine",
+        "dosage": "75mcg",
+        "frequency": "daily"
+      },
+      {
+        "name": "vitamin D3",
+        "dosage": "2000IU",
+        "frequency": "daily"
+      },
+      {
+        "name": "calcium citrate",
+        "dosage": "500mg",
+        "frequency": "twice daily"
+      }
+    ],
+    "allergies": [
+      "tetracycline"
+    ],
+    "family_history_flags": [
+      "diabetes",
+      "heart_disease",
+      "cancer",
+      "hypertension"
+    ]
+  }
+]

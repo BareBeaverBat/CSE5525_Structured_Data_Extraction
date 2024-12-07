@@ -1,0 +1,52 @@
+[
+  {
+    "dish_name": "Rice Cakes",
+    "ingredients": [
+      {
+        "name": "Rice Cakes",
+        "quantity": 2,
+        "unit": "pieces"
+      }
+    ],
+    "instructions": [
+      "Enjoy plain or top with your favorite spread! You can try them with avocado, hummus, tomato, everything bagel seasoning, etc. They pair well with a glass of juice!"
+    ],
+    "cuisine": "Snack",
+    "dietary_restrictions": [
+      "vegan",
+      "vegetarian",
+      "gluten-free",
+      "dairy-free",
+      "nut-free"
+    ],
+    "preparation_time_minutes": 5,
+    "cooking_time_minutes": 0,
+    "nutritional_information": {
+      "calories": 70,
+      "protein_grams": 1,
+      "carbohydrates_grams": 15,
+      "fat_grams": 0.5
+    }
+  },
+  {
+    "dish_name": "Pancakes",
+    "ingredients": [
+      {
+        "name": "Pancake Mix",
+        "quantity": 1,
+        "unit": "cup"
+      },
+      {
+        "name": "Water",
+        "quantity": 0.75,
+        "unit": "cup"
+      }
+    ],
+    "instructions": [],
+    "cuisine": "American",
+    "dietary_restrictions": [],
+    "preparation_time_minutes": 10,
+    "cooking_time_minutes": 20,
+    "nutritional_information": {}
+  }
+]

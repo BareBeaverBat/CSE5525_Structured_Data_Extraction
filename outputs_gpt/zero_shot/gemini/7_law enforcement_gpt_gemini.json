@@ -1,0 +1,154 @@
+[
+  {
+    "location": {
+      "type": "other",
+      "indoor_outdoor": "both",
+      "floor_level": null
+    },
+    "incident_type": [
+      "theft"
+    ],
+    "weapons": [],
+    "vehicles": []
+  },
+  {
+    "location": {
+      "type": "street",
+      "indoor_outdoor": "outdoor",
+      "floor_level": null
+    },
+    "incident_type": [
+      "assault"
+    ],
+    "weapons": [
+      {
+        "type": "firearm",
+        "quantity": 2
+      },
+      {
+        "type": "knife",
+        "quantity": 1
+      }
+    ],
+    "vehicles": []
+  },
+  {
+    "location": {
+      "type": "vehicle",
+      "indoor_outdoor": "outdoor",
+      "floor_level": null
+    },
+    "incident_type": [
+      "traffic"
+    ],
+    "weapons": [],
+    "vehicles": [
+      {
+        "type": "car",
+        "color": "red",
+        "damage": [
+          "front"
+        ]
+      }
+    ]
+  },
+  {
+    "location": {
+      "type": "business",
+      "indoor_outdoor": "indoor",
+      "floor_level": 3
+    },
+    "incident_type": [
+      "burglary"
+    ],
+    "weapons": [],
+    "vehicles": []
+  },
+  {
+    "location": {
+      "type": "residence",
+      "indoor_outdoor": "indoor",
+      "floor_level": null
+    },
+    "incident_type": [
+      "assault"
+    ],
+    "weapons": [
+      {
+        "type": "firearm",
+        "quantity": 1
+      },
+      {
+        "type": "knife",
+        "quantity": 1
+      }
+    ],
+    "vehicles": []
+  },
+  {
+    "location": {
+      "type": "public_space",
+      "indoor_outdoor": "outdoor"
+    },
+    "incident_type": [
+      "assault",
+      "vandalism"
+    ],
+    "weapons": [
+      {
+        "type": "blunt_object",
+        "quantity": 1
+      },
+      {
+        "type": "other",
+        "quantity": 1
+      }
+    ],
+    "vehicles": [
+      {
+        "type": "car",
+        "color": null,
+        "damage": []
+      },
+      {
+        "type": "truck",
+        "color": null,
+        "damage": []
+      }
+    ]
+  },
+  {
+    "location": {
+      "type": "business",
+      "indoor_outdoor": "both",
+      "floor_level": null
+    },
+    "incident_type": [
+      "vandalism"
+    ],
+    "weapons": [],
+    "vehicles": []
+  },
+  {
+    "location": {
+      "type": "vehicle",
+      "indoor_outdoor": "outdoor",
+      "floor_level": null
+    },
+    "incident_type": [
+      "traffic"
+    ],
+    "weapons": [],
+    "vehicles": [
+      {
+        "type": "car",
+        "color": null,
+        "damage": [
+          "front",
+          "driver_side",
+          "rear"
+        ]
+      }
+    ]
+  }
+]

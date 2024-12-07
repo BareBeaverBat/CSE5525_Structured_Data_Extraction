@@ -1,0 +1,104 @@
+[
+  {
+    "product": {
+      "name": "CloudSync",
+      "model": "",
+      "version": ""
+    },
+    "error_codes": [
+      "CS1201"
+    ],
+    "impact_level": "major",
+    "system_state": {
+      "os": "",
+      "browser": "",
+      "connected_devices": []
+    },
+    "reproduction": {
+      "reproducible": true,
+      "frequency": "always"
+    }
+  },
+  {
+    "product": {
+      "name": "VideoChat",
+      "model": "VC-Pro",
+      "version": ""
+    },
+    "error_codes": [],
+    "impact_level": "major",
+    "system_state": {
+      "os": "",
+      "browser": "",
+      "connected_devices": []
+    },
+    "reproduction": {
+      "reproducible": true,
+      "frequency": "often"
+    }
+  },
+  {
+    "product": {
+      "name": "Smart Thermostat",
+      "model": "",
+      "version": ""
+    },
+    "error_codes": [
+      "ST-E001",
+      "ST-E003",
+      "ST-COMM-ERR"
+    ],
+    "impact_level": "minor",
+    "system_state": {
+      "os": "Android 12",
+      "browser": "",
+      "connected_devices": []
+    },
+    "reproduction": {
+      "reproducible": true,
+      "frequency": "sometimes"
+    }
+  },
+  {
+    "product": {
+      "name": "MusicStreamer+",
+      "model": "",
+      "version": ""
+    },
+    "error_codes": [
+      "MS-PLAYBACK-ERR"
+    ],
+    "impact_level": "blocking",
+    "system_state": {
+      "os": "",
+      "browser": "Chrome 114",
+      "connected_devices": []
+    },
+    "reproduction": {
+      "reproducible": true,
+      "frequency": "sometimes"
+    }
+  },
+  {
+    "product": {
+      "name": "Home Security System",
+      "model": "HSS-2000",
+      "version": "2.5.3"
+    },
+    "error_codes": [],
+    "impact_level": "minor",
+    "system_state": {
+      "os": "iOS 16.2",
+      "browser": "Safari",
+      "connected_devices": [
+        "Main Camera",
+        "Back Door Sensor",
+        "Motion Sensor - Living Room"
+      ]
+    },
+    "reproduction": {
+      "reproducible": false,
+      "frequency": "sometimes"
+    }
+  }
+]

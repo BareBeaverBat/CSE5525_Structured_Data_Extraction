@@ -1,0 +1,374 @@
+[
+  {
+    "transaction": {
+      "category": "payment",
+      "method": "ach",
+      "amount_usd": 5249.99,
+      "cross_border": false
+    },
+    "parties": [
+      {
+        "name": "Summit Manufacturing Ltd",
+        "role": "originator",
+        "entity_type": "business"
+      },
+      {
+        "name": "Western Supply Co",
+        "role": "beneficiary",
+        "entity_type": "business"
+      }
+    ],
+    "purpose_indicators": [],
+    "risk_flags": []
+  },
+  {
+    "transaction": {
+      "category": "transfer",
+      "method": "wire",
+      "amount_usd": 2750000,
+      "cross_border": true
+    },
+    "parties": [
+      {
+        "name": "Global Ventures AG",
+        "role": "originator",
+        "entity_type": "business"
+      },
+      {
+        "name": "CitiFirst Bank",
+        "role": "intermediary",
+        "entity_type": "business"
+      },
+      {
+        "name": "Asia Trading Corporation",
+        "role": "beneficiary",
+        "entity_type": "business"
+      }
+    ],
+    "purpose_indicators": [],
+    "risk_flags": [
+      {
+        "type": "high_risk_jurisdiction",
+        "severity": "medium"
+      },
+      {
+        "type": "unusual_pattern",
+        "severity": "high"
+      }
+    ]
+  },
+  {
+    "transaction": {
+      "category": "deposit",
+      "method": "wire",
+      "amount_usd": 150000,
+      "cross_border": true
+    },
+    "parties": [
+      {
+        "name": "Global Health Initiative",
+        "role": "beneficiary",
+        "entity_type": "ngo"
+      }
+    ],
+    "purpose_indicators": [
+      "charity"
+    ],
+    "risk_flags": []
+  },
+  {
+    "transaction": {
+      "category": "transfer",
+      "method": "wire",
+      "amount_usd": 1250000,
+      "cross_border": false
+    },
+    "parties": [
+      {
+        "name": "Oakwood Investment Partners",
+        "role": "originator",
+        "entity_type": "business"
+      },
+      {
+        "name": "First Republic Bank",
+        "role": "intermediary",
+        "entity_type": "business"
+      }
+    ],
+    "purpose_indicators": [
+      "investment"
+    ],
+    "risk_flags": []
+  },
+  {
+    "transaction": {
+      "category": "payment",
+      "method": "wire",
+      "amount_usd": 4500000,
+      "cross_border": false
+    },
+    "parties": [
+      {
+        "name": "Riverside Properties LLC",
+        "role": "originator",
+        "entity_type": "business"
+      },
+      {
+        "name": "Metro Title Company",
+        "role": "intermediary",
+        "entity_type": "business"
+      },
+      {
+        "name": "Sunset Developments Inc.",
+        "role": "beneficiary",
+        "entity_type": "business"
+      }
+    ],
+    "purpose_indicators": [
+      "real_estate"
+    ],
+    "risk_flags": []
+  },
+  {
+    "transaction": {
+      "category": "payment",
+      "method": "check",
+      "amount_usd": 5000,
+      "cross_border": false
+    },
+    "parties": [
+      {
+        "name": "Robert Wilson",
+        "role": "originator",
+        "entity_type": "individual"
+      },
+      {
+        "name": "Children's Hope Foundation",
+        "role": "beneficiary",
+        "entity_type": "ngo"
+      }
+    ],
+    "purpose_indicators": [
+      "charity"
+    ],
+    "risk_flags": []
+  },
+  {
+    "transaction": {
+      "category": "payment",
+      "method": "wire",
+      "amount_usd": 847650,
+      "cross_border": true
+    },
+    "parties": [
+      {
+        "name": "European Imports GmbH",
+        "role": "originator",
+        "entity_type": "business"
+      },
+      {
+        "name": "American Distributors Inc.",
+        "role": "beneficiary",
+        "entity_type": "business"
+      }
+    ],
+    "purpose_indicators": [
+      "goods_services"
+    ],
+    "risk_flags": []
+  },
+  {
+    "transaction": {
+      "category": "payment",
+      "method": "ach",
+      "amount_usd": 2500,
+      "cross_border": false
+    },
+    "parties": [
+      {
+        "name": "Jennifer Kumar",
+        "role": "originator",
+        "entity_type": "individual"
+      },
+      {
+        "name": "David Thompson",
+        "role": "beneficiary",
+        "entity_type": "individual"
+      }
+    ],
+    "purpose_indicators": [
+      "loan_related"
+    ],
+    "risk_flags": []
+  },
+  {
+    "transaction": {
+      "category": "payment",
+      "method": "wire",
+      "amount_usd": 1750000,
+      "cross_border": false
+    },
+    "parties": [
+      {
+        "name": "Department of Defense",
+        "role": "originator",
+        "entity_type": "government"
+      },
+      {
+        "name": "Advanced Defense Systems Inc",
+        "role": "beneficiary",
+        "entity_type": "business"
+      }
+    ],
+    "purpose_indicators": [
+      "goods_services"
+    ],
+    "risk_flags": []
+  },
+  {
+    "transaction": {
+      "category": "transfer",
+      "method": "wire",
+      "amount_usd": 250000,
+      "cross_border": true
+    },
+    "parties": [
+      {
+        "name": "Middle East Trading Co",
+        "role": "originator",
+        "entity_type": "business"
+      }
+    ],
+    "purpose_indicators": [],
+    "risk_flags": [
+      {
+        "type": "sanctions_program",
+        "severity": "high"
+      },
+      {
+        "type": "high_risk_jurisdiction",
+        "severity": "high"
+      }
+    ]
+  },
+  {
+    "transaction": {
+      "category": "transfer",
+      "method": "wire",
+      "amount_usd": 15000000,
+      "cross_border": false
+    },
+    "parties": [
+      {
+        "name": "Strategic Buyers LLC",
+        "role": "originator",
+        "entity_type": "business"
+      },
+      {
+        "name": "Mergers & Co",
+        "role": "intermediary",
+        "entity_type": "business"
+      }
+    ],
+    "purpose_indicators": [
+      "investment"
+    ],
+    "risk_flags": []
+  },
+  {
+    "transaction": {
+      "category": "payment",
+      "method": "wire",
+      "amount_usd": 35000,
+      "cross_border": true
+    },
+    "parties": [
+      {
+        "name": "Liu Wei",
+        "role": "originator",
+        "entity_type": "individual"
+      },
+      {
+        "name": "Stanford University",
+        "role": "beneficiary",
+        "entity_type": "business"
+      }
+    ],
+    "purpose_indicators": [
+      "personal"
+    ],
+    "risk_flags": []
+  },
+  {
+    "transaction": {
+      "category": "payment",
+      "method": "ach",
+      "amount_usd": 12475.5,
+      "cross_border": false
+    },
+    "parties": [
+      {
+        "name": "Blue Cross Insurance",
+        "role": "intermediary",
+        "entity_type": "business"
+      },
+      {
+        "name": "City Hospital",
+        "role": "beneficiary",
+        "entity_type": "business"
+      }
+    ],
+    "purpose_indicators": [
+      "goods_services"
+    ],
+    "risk_flags": []
+  },
+  {
+    "transaction": {
+      "category": "payment",
+      "method": "wire",
+      "amount_usd": 50000,
+      "cross_border": false
+    },
+    "parties": [
+      {
+        "name": "McKinsey & Company",
+        "role": "beneficiary",
+        "entity_type": "business"
+      }
+    ],
+    "purpose_indicators": [
+      "goods_services"
+    ],
+    "risk_flags": [
+      {
+        "type": "unusual_pattern",
+        "severity": "low"
+      }
+    ]
+  },
+  {
+    "transaction": {
+      "category": "withdrawal",
+      "method": "wire",
+      "amount_usd": 500000,
+      "cross_border": false
+    },
+    "parties": [
+      {
+        "name": "Hedge Fund Alpha",
+        "role": "originator",
+        "entity_type": "business"
+      }
+    ],
+    "purpose_indicators": [
+      "investment"
+    ],
+    "risk_flags": [
+      {
+        "type": "rapid_movement",
+        "severity": "medium"
+      }
+    ]
+  }
+]

@@ -1,0 +1,134 @@
+[
+  {
+    "assistance_needs": [
+      {
+        "category": "housing",
+        "urgency": "ongoing"
+      },
+      {
+        "category": "food",
+        "urgency": "ongoing"
+      }
+    ],
+    "household": {
+      "total_members": 1,
+      "composition": {
+        "adults": 1,
+        "children_under_18": 0,
+        "seniors_over_65": 0
+      },
+      "housing_status": "stable"
+    },
+    "income_sources": [],
+    "risk_factors": []
+  },
+  {
+    "assistance_needs": [
+      {
+        "category": "housing",
+        "urgency": "immediate"
+      }
+    ],
+    "household": {
+      "total_members": 1,
+      "composition": {
+        "adults": 1,
+        "children_under_18": 0,
+        "seniors_over_65": 0
+      },
+      "housing_status": "homeless"
+    },
+    "income_sources": [],
+    "risk_factors": []
+  },
+  {
+    "assistance_needs": [
+      {
+        "category": "childcare",
+        "urgency": "short_term"
+      }
+    ],
+    "household": {
+      "total_members": 1,
+      "composition": {
+        "adults": 1,
+        "children_under_18": 0,
+        "seniors_over_65": 0
+      },
+      "housing_status": "stable"
+    },
+    "income_sources": [
+      "employment",
+      "child_support",
+      "social_security"
+    ],
+    "risk_factors": []
+  },
+  {
+    "assistance_needs": [
+      {
+        "category": "mental_health",
+        "urgency": "ongoing"
+      },
+      {
+        "category": "substance_treatment",
+        "urgency": "ongoing"
+      }
+    ],
+    "household": {
+      "total_members": 1,
+      "composition": {
+        "adults": 1,
+        "children_under_18": 0,
+        "seniors_over_65": 0
+      },
+      "housing_status": "stable"
+    },
+    "income_sources": [
+      "none"
+    ],
+    "risk_factors": []
+  },
+  {
+    "assistance_needs": [
+      {
+        "category": "healthcare",
+        "urgency": "immediate"
+      }
+    ],
+    "household": null,
+    "income_sources": null,
+    "risk_factors": [
+      {
+        "type": "medical_crisis",
+        "timeframe": "current"
+      }
+    ]
+  },
+  {
+    "assistance_needs": [
+      {
+        "category": "mental_health",
+        "urgency": "ongoing"
+      }
+    ],
+    "household": {
+      "total_members": 1,
+      "composition": {
+        "adults": 1,
+        "children_under_18": 0,
+        "seniors_over_65": 0
+      },
+      "housing_status": "stable"
+    },
+    "income_sources": [
+      "none"
+    ],
+    "risk_factors": [
+      {
+        "type": "isolation",
+        "timeframe": "current"
+      }
+    ]
+  }
+]

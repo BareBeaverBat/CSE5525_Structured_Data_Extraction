@@ -1,0 +1,412 @@
+[
+  {
+    "product": {
+      "name": "Arctis Nova Pro",
+      "model": "61486",
+      "version": "2.4.3"
+    },
+    "error_codes": [
+      "AUD-442",
+      "DRV-891",
+      "USB-127"
+    ],
+    "impact_level": "blocking",
+    "system_state": {
+      "os": "Windows 11",
+      "browser": "Chrome 114.0.5735",
+      "connected_devices": [
+        "Arctis Nova Pro headset",
+        "Logitech G502 mouse",
+        "Dell U2719D monitor"
+      ]
+    },
+    "reproduction": {
+      "reproducible": true,
+      "frequency": "always"
+    }
+  },
+  {
+    "product": {
+      "name": "HP Smart",
+      "model": "",
+      "version": ""
+    },
+    "error_codes": [],
+    "impact_level": "minor",
+    "system_state": {
+      "os": "",
+      "browser": "",
+      "connected_devices": []
+    },
+    "reproduction": {
+      "reproducible": true,
+      "frequency": "often"
+    }
+  },
+  {
+    "product": {
+      "name": "SmartThings Hub",
+      "model": "GP-U999SJVLGDA",
+      "version": "43.6"
+    },
+    "error_codes": [],
+    "impact_level": "major",
+    "system_state": {
+      "os": "unknown",
+      "browser": "unknown",
+      "connected_devices": [
+        "Yale Lock YRD226",
+        "Ecobee Thermostat",
+        "Philips Hue Bridge",
+        "Ring Doorbell Pro",
+        "Samsung TV"
+      ]
+    },
+    "reproduction": {
+      "reproducible": true,
+      "frequency": "often"
+    }
+  },
+  {
+    "product": {
+      "name": "Dell Precision Touchpad",
+      "model": "DL4872",
+      "version": "10.3.302.13"
+    },
+    "error_codes": [
+      "TPD-1044"
+    ],
+    "impact_level": "major",
+    "system_state": {
+      "os": "unknown",
+      "browser": "unknown",
+      "connected_devices": []
+    },
+    "reproduction": {
+      "reproducible": true,
+      "frequency": "sometimes"
+    }
+  },
+  {
+    "product": {
+      "name": "Keychron K3",
+      "model": null,
+      "version": "Version 2"
+    },
+    "error_codes": [],
+    "impact_level": "minor",
+    "system_state": {
+      "os": "macOS 13.4",
+      "browser": null,
+      "connected_devices": []
+    },
+    "reproduction": {
+      "reproducible": false,
+      "frequency": "once"
+    }
+  },
+  {
+    "product": {
+      "name": "HomeSense Hub",
+      "model": "HS-500",
+      "version": "3.2.1"
+    },
+    "error_codes": [
+      "HUB_CONN_LOST",
+      "DEVICE_SYNC_ERR",
+      "AUTH_FAILURE"
+    ],
+    "impact_level": "major",
+    "system_state": {
+      "os": "Windows 11",
+      "browser": "Chrome 114",
+      "connected_devices": [
+        "Smart Lock",
+        "Thermostat",
+        "Motion Sensor",
+        "Door Bell"
+      ]
+    },
+    "reproduction": {
+      "reproducible": true,
+      "frequency": "often"
+    }
+  },
+  {
+    "product": {
+      "name": "SoundFlow Mini",
+      "model": "",
+      "version": ""
+    },
+    "error_codes": [],
+    "impact_level": "minor",
+    "system_state": {
+      "os": "",
+      "browser": "",
+      "connected_devices": []
+    },
+    "reproduction": {
+      "reproducible": false,
+      "frequency": "once"
+    }
+  },
+  {
+    "product": {
+      "name": "Philips Hue Bridge",
+      "model": "BSB002",
+      "version": ""
+    },
+    "error_codes": [],
+    "impact_level": "major",
+    "system_state": {
+      "os": "iOS 16.5",
+      "browser": "",
+      "connected_devices": [
+        "Hue White Bulb",
+        "Hue Color Bulb",
+        "Hue Lightstrip"
+      ]
+    },
+    "reproduction": {
+      "reproducible": true,
+      "frequency": "always"
+    }
+  },
+  {
+    "product": {
+      "name": "Figma Desktop",
+      "model": "",
+      "version": "116.7.9"
+    },
+    "error_codes": [],
+    "impact_level": "major",
+    "system_state": {
+      "os": "macOS 13.4",
+      "browser": "Chrome 116.0.5845.96",
+      "connected_devices": []
+    },
+    "reproduction": {
+      "reproducible": true,
+      "frequency": "often"
+    }
+  },
+  {
+    "product": {
+      "name": "AirFlow Pro TWS",
+      "model": "AF-200",
+      "version": "2.1.3"
+    },
+    "error_codes": [
+      "BT-404",
+      "CONN-201",
+      "SYNC-102"
+    ],
+    "impact_level": "major",
+    "system_state": {
+      "os": "iOS 16.5",
+      "browser": "Safari 16.5",
+      "connected_devices": [
+        "iPhone 13",
+        "MacBook Pro",
+        "Apple Watch"
+      ]
+    },
+    "reproduction": {
+      "reproducible": true,
+      "frequency": "often"
+    }
+  },
+  {
+    "product": {
+      "name": "TabGuard Privacy Extension",
+      "model": "",
+      "version": "1.2.0"
+    },
+    "error_codes": [],
+    "impact_level": "minor",
+    "system_state": {
+      "os": "Windows 11",
+      "browser": "Chrome 114.0.5735.198",
+      "connected_devices": []
+    },
+    "reproduction": {
+      "reproducible": true,
+      "frequency": "sometimes"
+    }
+  },
+  {
+    "product": {
+      "name": "SmartLife Hub",
+      "model": "SL-500",
+      "version": "3.0.1"
+    },
+    "error_codes": [],
+    "impact_level": "blocking",
+    "system_state": {
+      "os": "unknown",
+      "browser": "unknown",
+      "connected_devices": []
+    },
+    "reproduction": {
+      "reproducible": true,
+      "frequency": "always"
+    }
+  },
+  {
+    "product": {
+      "name": "TaskSync Mobile",
+      "model": "",
+      "version": "4.2.1"
+    },
+    "error_codes": [
+      "SYNC-404",
+      "AUTH-201",
+      "DB-503",
+      "NET-102"
+    ],
+    "impact_level": "major",
+    "system_state": {
+      "os": "",
+      "browser": "",
+      "connected_devices": []
+    },
+    "reproduction": {
+      "reproducible": false,
+      "frequency": "once"
+    }
+  },
+  {
+    "product": {
+      "name": "NetGear Orbi",
+      "model": "RBK752",
+      "version": "3.6.7.3"
+    },
+    "error_codes": [
+      "NW_DISCONNECT",
+      "AUTH_FAILURE",
+      "DHCP_ERROR",
+      "DNS_TIMEOUT"
+    ],
+    "impact_level": "blocking",
+    "system_state": {
+      "os": "Windows 11",
+      "browser": null,
+      "connected_devices": [
+        "iPhone 13",
+        "MacBook Pro",
+        "Samsung TV",
+        "Ring Doorbell",
+        "Nest Thermostat"
+      ]
+    },
+    "reproduction": {
+      "reproducible": true,
+      "frequency": "always"
+    }
+  },
+  {
+    "product": {
+      "name": "Strava Runner",
+      "model": "",
+      "version": ""
+    },
+    "error_codes": [],
+    "impact_level": "minor",
+    "system_state": {
+      "os": "",
+      "browser": "",
+      "connected_devices": []
+    },
+    "reproduction": {
+      "reproducible": true,
+      "frequency": "sometimes"
+    }
+  },
+  {
+    "product": {
+      "name": "SecureView Camera",
+      "model": "",
+      "version": ""
+    },
+    "error_codes": [
+      "CAM-552"
+    ],
+    "impact_level": "major",
+    "system_state": {
+      "os": "",
+      "browser": "",
+      "connected_devices": []
+    },
+    "reproduction": {
+      "reproducible": true,
+      "frequency": "always"
+    }
+  },
+  {
+    "product": {
+      "name": "LaserJet Pro",
+      "model": "",
+      "version": ""
+    },
+    "error_codes": [],
+    "impact_level": "cosmetic",
+    "system_state": {
+      "os": "macOS 13.4",
+      "browser": "",
+      "connected_devices": [
+        "HP LaserJet Pro printer",
+        "iPad Air",
+        "iPhone 12",
+        "MacBook Air"
+      ]
+    },
+    "reproduction": {
+      "reproducible": true,
+      "frequency": "often"
+    }
+  },
+  {
+    "product": {
+      "name": "Razer DeathAdder Elite",
+      "model": "RZ01-02010100",
+      "version": "1.03"
+    },
+    "error_codes": [
+      "DRV_ERR_456",
+      "CONN_TIMEOUT",
+      "USB_DETECT_FAIL"
+    ],
+    "impact_level": "major",
+    "system_state": {
+      "os": "Windows 11 Pro",
+      "browser": null,
+      "connected_devices": [
+        "Razer BlackWidow Keyboard",
+        "Dell P2419H Monitor",
+        "Logitech HD Webcam"
+      ]
+    },
+    "reproduction": {
+      "reproducible": true,
+      "frequency": "often"
+    }
+  },
+  {
+    "product": {
+      "name": "Workspace Portal",
+      "model": "",
+      "version": "2.4.1"
+    },
+    "error_codes": [],
+    "impact_level": "minor",
+    "system_state": {
+      "os": "macOS Ventura",
+      "browser": "Chrome 114.0.5735.198",
+      "connected_devices": []
+    },
+    "reproduction": {
+      "reproducible": true,
+      "frequency": "always"
+    }
+  }
+]

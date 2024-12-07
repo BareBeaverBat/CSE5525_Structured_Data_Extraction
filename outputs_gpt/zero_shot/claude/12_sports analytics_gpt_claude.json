@@ -1,0 +1,137 @@
+[
+  {
+    "teams": {
+      "home": "Bucks",
+      "away": "Suns"
+    },
+    "plays": [
+      {
+        "time_remaining_mm_ss": "4:15",
+        "quarter": 3,
+        "player": "Giannis Antetokounmpo",
+        "play_type": "shot",
+        "outcome": "made",
+        "court_location": "freethrow"
+      }
+    ]
+  },
+  {
+    "teams": {
+      "home": "Nuggets",
+      "away": "Nets"
+    },
+    "plays": [
+      {
+        "time_remaining_mm_ss": "9:55",
+        "quarter": 1,
+        "player": "Aaron Gordon",
+        "play_type": "steal",
+        "outcome": null,
+        "court_location": null,
+        "assist_by": null
+      },
+      {
+        "time_remaining_mm_ss": "9:52",
+        "quarter": 1,
+        "player": "Aaron Gordon",
+        "play_type": "shot",
+        "outcome": "made",
+        "court_location": "paint",
+        "assist_by": null
+      }
+    ]
+  },
+  {
+    "teams": {
+      "home": "Mavericks",
+      "away": "Clippers"
+    },
+    "plays": [
+      {
+        "time_remaining_mm_ss": "6:45",
+        "quarter": 2,
+        "player": "Doncic",
+        "play_type": "turnover",
+        "outcome": "missed",
+        "court_location": null,
+        "assist_by": null
+      },
+      {
+        "time_remaining_mm_ss": "6:43",
+        "quarter": 2,
+        "player": "Paul George",
+        "play_type": "steal",
+        "outcome": null,
+        "court_location": null,
+        "assist_by": null
+      }
+    ]
+  },
+  {
+    "teams": {
+      "home": "Blazers",
+      "away": "Kings"
+    },
+    "plays": [
+      {
+        "time_remaining_mm_ss": "5:20",
+        "quarter": 3,
+        "player": "Damian Lillard",
+        "play_type": "shot",
+        "outcome": "made",
+        "court_location": "3pt",
+        "assist_by": "Anfernee Simons"
+      }
+    ]
+  },
+  {
+    "teams": {
+      "home": "Hornets",
+      "away": "Timberwolves"
+    },
+    "plays": [
+      {
+        "time_remaining_mm_ss": "6:15",
+        "quarter": 3,
+        "player": "LaMelo Ball",
+        "play_type": "turnover",
+        "outcome": null,
+        "court_location": null,
+        "assist_by": null
+      }
+    ]
+  },
+  {
+    "teams": {
+      "home": "Los Angeles Lakers",
+      "away": "Portland Trail Blazers"
+    },
+    "plays": [
+      {
+        "time_remaining_mm_ss": "00:05",
+        "quarter": 4,
+        "player": "LeBron James",
+        "play_type": "foul",
+        "outcome": null,
+        "court_location": null,
+        "assist_by": null
+      }
+    ]
+  },
+  {
+    "teams": {
+      "home": "Bucks",
+      "away": "Warriors"
+    },
+    "plays": [
+      {
+        "time_remaining_mm_ss": "9:15",
+        "quarter": 2,
+        "player": "Thompson",
+        "play_type": "shot",
+        "outcome": "missed",
+        "court_location": "3pt"
+      }
+    ]
+  }
+]

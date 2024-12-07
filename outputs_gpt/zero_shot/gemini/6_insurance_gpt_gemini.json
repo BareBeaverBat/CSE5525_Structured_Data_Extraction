@@ -1,0 +1,297 @@
+[
+  {
+    "incident_date": "2023-10-01",
+    "incident_type": "theft",
+    "location": {
+      "street_address": "",
+      "city": "Denver",
+      "state": "",
+      "zip_code": ""
+    },
+    "estimated_damages": 500,
+    "police_report_filed": false,
+    "witnesses": []
+  },
+  {
+    "incident_date": "2023-10-01",
+    "incident_type": "fire",
+    "location": {
+      "street_address": "123 Main St",
+      "city": "Austin",
+      "state": "TX",
+      "zip_code": "78704"
+    },
+    "estimated_damages": 0,
+    "police_report_filed": true,
+    "witnesses": []
+  },
+  {
+    "incident_date": "2024-07-26",
+    "incident_type": "accident",
+    "location": {
+      "street_address": "Elm Street",
+      "city": "",
+      "state": "",
+      "zip_code": ""
+    },
+    "estimated_damages": 2500,
+    "police_report_filed": false,
+    "witnesses": [
+      {
+        "name": "John Doe",
+        "phone": "",
+        "email": ""
+      }
+    ]
+  },
+  {
+    "incident_date": "2024-07-25",
+    "incident_type": "flood",
+    "location": {
+      "street_address": "456 Elm St",
+      "city": "Miami",
+      "state": "FL",
+      "zip_code": "33139"
+    },
+    "estimated_damages": 15000,
+    "police_report_filed": false,
+    "witnesses": [
+      {
+        "name": "Jane Smith",
+        "phone": "555-123-4567",
+        "email": null
+      },
+      {
+        "name": "Peter Jones",
+        "phone": null,
+        "email": "peter.jones@example.com"
+      }
+    ]
+  },
+  {
+    "incident_date": "2023-10-01",
+    "incident_type": "accident",
+    "location": {
+      "street_address": "",
+      "city": "Seattle",
+      "state": "WA",
+      "zip_code": ""
+    },
+    "estimated_damages": 100,
+    "police_report_filed": true,
+    "witnesses": []
+  },
+  {
+    "incident_date": "2024-07-23",
+    "incident_type": "theft",
+    "location": {
+      "street_address": "101 Pine St",
+      "city": "San Francisco",
+      "state": "CA",
+      "zip_code": "94107"
+    },
+    "estimated_damages": 3000,
+    "police_report_filed": false,
+    "witnesses": []
+  },
+  {
+    "incident_date": "2023-10-01",
+    "incident_type": "fire",
+    "location": {
+      "street_address": "123 Main St",
+      "city": "Anytown",
+      "state": "CA",
+      "zip_code": "12345"
+    },
+    "estimated_damages": 10000,
+    "police_report_filed": false,
+    "witnesses": [
+      {
+        "name": "Sarah Lee",
+        "phone": "555-987-6543",
+        "email": "sarah.lee@example.com"
+      }
+    ]
+  },
+  {
+    "incident_date": "2024-07-22",
+    "incident_type": "flood",
+    "location": {
+      "street_address": "222 Maple St",
+      "city": "",
+      "state": "",
+      "zip_code": ""
+    },
+    "estimated_damages": 0,
+    "police_report_filed": false,
+    "witnesses": [
+      {
+        "name": "David Brown",
+        "phone": "",
+        "email": "david.brown@example.com"
+      }
+    ]
+  },
+  {
+    "incident_date": "2024-07-21",
+    "incident_type": "accident",
+    "location": {
+      "street_address": "333 Cedar St",
+      "city": "Dallas",
+      "state": "TX",
+      "zip_code": "75201"
+    },
+    "estimated_damages": 5000,
+    "police_report_filed": true,
+    "witnesses": [
+      {
+        "name": "Emily Wilson",
+        "phone": "555-876-5432",
+        "email": "emily.wilson@example.com"
+      }
+    ]
+  },
+  {
+    "incident_date": "2024-07-20",
+    "incident_type": "fire",
+    "location": {
+      "street_address": "Not provided",
+      "city": "Not provided",
+      "state": "Not provided",
+      "zip_code": "Not provided"
+    },
+    "estimated_damages": 0,
+    "police_report_filed": false,
+    "witnesses": []
+  },
+  {
+    "incident_date": "2023-10-02",
+    "incident_type": "theft",
+    "location": {
+      "street_address": "444 Birch St",
+      "city": "Atlanta",
+      "state": "GA",
+      "zip_code": ""
+    },
+    "estimated_damages": 20000,
+    "police_report_filed": false,
+    "witnesses": [
+      {
+        "name": "Michael Garcia",
+        "phone": "",
+        "email": ""
+      },
+      {
+        "name": "Jessica Rodriguez",
+        "phone": "",
+        "email": ""
+      }
+    ]
+  },
+  {
+    "incident_date": "2024-07-19",
+    "incident_type": "accident",
+    "location": {
+      "street_address": "Intersection of Elm and Main",
+      "city": "",
+      "state": "",
+      "zip_code": ""
+    },
+    "estimated_damages": 7500,
+    "police_report_filed": true,
+    "witnesses": []
+  },
+  {
+    "incident_date": "2024-07-18",
+    "incident_type": "other",
+    "location": {
+      "street_address": "555 Willow St",
+      "city": "Phoenix",
+      "state": "AZ",
+      "zip_code": "85001"
+    },
+    "estimated_damages": 20000,
+    "police_report_filed": false,
+    "witnesses": []
+  },
+  {
+    "incident_date": "2024-07-17",
+    "incident_type": "fire",
+    "location": {
+      "street_address": "Apartment 3B",
+      "city": "Philadelphia",
+      "state": "PA",
+      "zip_code": ""
+    },
+    "estimated_damages": 1000,
+    "police_report_filed": false,
+    "witnesses": [
+      {
+        "name": "Ashley Martinez",
+        "phone": "555-765-4321",
+        "email": ""
+      },
+      {
+        "name": "Christopher Anderson",
+        "phone": "",
+        "email": ""
+      }
+    ]
+  },
+  {
+    "incident_date": "2023-10-01",
+    "incident_type": "theft",
+    "location": {
+      "street_address": "",
+      "city": "",
+      "state": "",
+      "zip_code": ""
+    },
+    "estimated_damages": 0,
+    "police_report_filed": true,
+    "witnesses": [
+      {
+        "name": "Matthew Taylor",
+        "phone": "555-654-3210",
+        "email": "matthew.taylor@example.com"
+      }
+    ]
+  },
+  {
+    "incident_date": "2024-07-16",
+    "incident_type": "flood",
+    "location": {
+      "street_address": "666 Oak St",
+      "city": "Houston",
+      "state": "TX",
+      "zip_code": "77002"
+    },
+    "estimated_damages": 500,
+    "police_report_filed": false,
+    "witnesses": [
+      {
+        "name": "Angela Hernandez",
+        "phone": null,
+        "email": null
+      },
+      {
+        "name": "Joshua Thomas",
+        "phone": "555-543-2109",
+        "email": null
+      }
+    ]
+  },
+  {
+    "incident_date": "2024-07-15",
+    "incident_type": "accident",
+    "location": {
+      "street_address": "",
+      "city": "",
+      "state": "",
+      "zip_code": "90210"
+    },
+    "estimated_damages": 0,
+    "police_report_filed": false,
+    "witnesses": []
+  }
+]

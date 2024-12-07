@@ -1,0 +1,20 @@
+[
+  {
+    "product_features": {
+      "positive": [
+        "incredibly durable",
+        "totally waterproof",
+        "large capacity",
+        "performed flawlessly",
+        "kept everything dry"
+      ],
+      "negative": [
+        "a bit heavy"
+      ]
+    },
+    "star_rating": 5,
+    "purchase_date": null,
+    "product_name": "HB-TREK50 Hiking Backpack",
+    "product_id": "HB-TREK50"
+  }
+]

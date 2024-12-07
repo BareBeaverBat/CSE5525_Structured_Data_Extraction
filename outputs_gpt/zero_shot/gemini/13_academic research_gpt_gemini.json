@@ -1,0 +1,113 @@
+[
+  {
+    "research_area": "chemistry",
+    "methodology": "computational",
+    "key_findings": [],
+    "data_sources": [
+      {
+        "name": "NIST database",
+        "type": "public",
+        "url": "https://nist.gov/data"
+      },
+      {
+        "name": "proprietary lab data",
+        "type": "private",
+        "url": ""
+      }
+    ],
+    "funding_sources": []
+  },
+  {
+    "research_area": "medicine",
+    "methodology": "quantitative",
+    "key_findings": [
+      "Determined long-term efficacy of the novel treatment",
+      "Assessed safety compared to standard care",
+      "Identified potential predictors of treatment success"
+    ],
+    "data_sources": [
+      {
+        "name": "Private Healthcare Provider Patient Records",
+        "type": "private",
+        "url": null
+      },
+      {
+        "name": "Registered Clinical Trial",
+        "type": "public",
+        "url": "https://clinicaltrials.gov"
+      },
+      {
+        "name": "Public Health Survey Dataset",
+        "type": "public",
+        "url": null
+      }
+    ],
+    "funding_sources": []
+  },
+  {
+    "research_area": "physics",
+    "methodology": "mixed_methods",
+    "key_findings": [
+      "Exploration of the distribution and behavior of dark matter in galactic clusters",
+      "Combination of theoretical modeling with observational data analysis",
+      "Implications for understanding cosmological evolution and structure formation"
+    ],
+    "data_sources": [
+      {
+        "name": "Telescope Observations",
+        "type": "public",
+        "url": "http://example.com/telescope-observations"
+      }
+    ],
+    "funding_sources": [
+      "Space agency grant"
+    ]
+  },
+  {
+    "research_area": "chemistry",
+    "methodology": "quantitative",
+    "key_findings": [
+      "Investigation of properties of novel organic compounds",
+      "Exploration of various molecular structures",
+      "Understanding of fundamental principles governing chemical reactions"
+    ],
+    "data_sources": [
+      {
+        "name": "Chemical Compound Database",
+        "type": "public",
+        "url": "http://example.com/chemical-compound-database"
+      }
+    ],
+    "funding_sources": []
+  },
+  {
+    "research_area": "social_sciences",
+    "methodology": "qualitative",
+    "key_findings": [
+      "Social media usage contributes to political polarization in marginalized communities.",
+      "Online echo chambers significantly influence political discourse.",
+      "Identity formation is affected by social media interactions."
+    ],
+    "data_sources": [],
+    "funding_sources": [
+      "Social science research council"
+    ]
+  },
+  {
+    "research_area": "mathematics",
+    "methodology": "computational",
+    "key_findings": [
+      "Development of efficient algorithms for Diophantine equations",
+      "Focus on high-dimensional cases",
+      "Advancements in computational number theory"
+    ],
+    "data_sources": [
+      {
+        "name": "Mathematical Software Library",
+        "type": "public",
+        "url": "http://example.com/software-library"
+      }
+    ],
+    "funding_sources": []
+  }
+]

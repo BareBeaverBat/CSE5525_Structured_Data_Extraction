@@ -1,0 +1,29 @@
+[
+  {
+    "transaction": {
+      "category": "transfer",
+      "method": "wire",
+      "amount_usd": 1000000,
+      "cross_border": true
+    },
+    "parties": [
+      {
+        "name": "David Red",
+        "role": "originator",
+        "entity_type": "individual"
+      },
+      {
+        "name": "Offshore Account",
+        "role": "beneficiary",
+        "entity_type": "individual"
+      }
+    ],
+    "purpose_indicators": [],
+    "risk_flags": [
+      {
+        "type": "high_risk_jurisdiction",
+        "severity": "high"
+      }
+    ]
+  }
+]
