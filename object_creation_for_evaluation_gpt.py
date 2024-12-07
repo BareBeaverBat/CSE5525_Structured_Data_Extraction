@@ -17,7 +17,7 @@ text_passages = []
 
 # Retrieve the API key from the environment variable
 # api_key = os.getenv("OPENAI_API_KEY")
-api_key = "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"
+api_key = "openAI KEY"
 
 if api_key is None:
     logger.error("API key for OpenAI is not set in environment variable 'OPENAI_API_KEY'.")
