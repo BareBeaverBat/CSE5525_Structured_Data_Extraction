@@ -50,6 +50,8 @@ flattened_scenario_id_gemini = [item for sublist in scenario_id_gemini for item 
 dataset = []
 
 for i in range(len(flattened_text_passages_claude)):
+    # Add the claude vs gemini generated flag(True for claude, False for gemini)
+    
     dataset.append({"text_passage": flattened_text_passages_claude[i], "object": flattened_objects_claude[i], "scenario_id": flattened_scenario_id_claude[i], "was_claude_vs_gemini_generated": True})
 
 for i in range(len(flattened_text_passages_gemini)):
