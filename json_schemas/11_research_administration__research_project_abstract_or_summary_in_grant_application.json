@@ -1,107 +1,137 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "type": "object",
-    "properties": {
-        "research_methods": {
-            "type": "array",
-            "items": {
-                "type": "string",
-                "enum": [
-                    "survey",
-                    "experiment",
-                    "field_study",
-                    "simulation",
-                    "data_analysis",
-                    "interviews",
-                    "clinical_trial"
-                ]
-            }
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "research_methods": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "survey",
+          "experiment",
+          "field_study",
+          "simulation",
+          "data_analysis",
+          "interviews",
+          "clinical_trial"
+        ]
+      }
+    },
+    "equipment_needs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "duration_months": {
+            "type": "integer"
+          },
+          "shared_resource": {
+            "type": "boolean"
+          }
         },
-        "equipment_needs": {
-            "type": "array",
-            "items": {
-                "type": "object",
-                "properties": {
-                    "name": { "type": "string" },
-                    "duration_months": { "type": "integer" },
-                    "shared_resource": { "type": "boolean" }
-                },
-                "required": ["name"]
-            }
+        "required": [
+          "name"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "data_collection": {
+      "type": "object",
+      "properties": {
+        "data_types": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "genomic",
+              "imaging",
+              "sensor",
+              "survey_responses",
+              "clinical_measurements",
+              "environmental_readings"
+            ]
+          }
         },
-        "data_collection": {
-            "type": "object",
-            "properties": {
-                "data_types": {
-                    "type": "array",
-                    "items": {
-                        "type": "string",
-                        "enum": [
-                            "genomic",
-                            "imaging",
-                            "sensor",
-                            "survey_responses",
-                            "clinical_measurements",
-                            "environmental_readings"
-                        ]
-                    }
-                },
-                "sample_size": { "type": "integer" },
-                "data_frequency": {
-                    "type": "string",
-                    "enum": [
-                        "continuous",
-                        "daily",
-                        "weekly",
-                        "monthly",
-                        "quarterly",
-                        "once"
-                    ]
-                }
-            }
+        "sample_size": {
+          "type": "integer"
         },
-        "study_population": {
-            "type": "object",
-            "properties": {
-                "age_range": {
-                    "type": "object",
-                    "properties": {
-                        "min": { "type": "integer" },
-                        "max": { "type": "integer" }
-                    }
-                },
-                "special_populations": {
-                    "type": "array",
-                    "items": {
-                        "type": "string",
-                        "enum": [
-                            "children",
-                            "elderly",
-                            "pregnant",
-                            "immunocompromised",
-                            "rare_disease",
-                            "healthy_volunteers"
-                        ]
-                    }
-                }
-            }
-        },
-        "timeline": {
-            "type": "object",
-            "properties": {
-                "total_duration_months": { "type": "integer" },
-                "key_milestones": {
-                    "type": "array",
-                    "items": {
-                        "type": "object",
-                        "properties": {
-                            "name": { "type": "string" },
-                            "month": { "type": "integer" }
-                        },
-                        "required": ["name", "month"]
-                    }
-                }
-            }
+        "data_frequency": {
+          "type": "string",
+          "enum": [
+            "continuous",
+            "daily",
+            "weekly",
+            "monthly",
+            "quarterly",
+            "once"
+          ]
         }
+      },
+      "additionalProperties": false
+    },
+    "study_population": {
+      "type": "object",
+      "properties": {
+        "age_range": {
+          "type": "object",
+          "properties": {
+            "min": {
+              "type": "integer"
+            },
+            "max": {
+              "type": "integer"
+            }
+          },
+          "additionalProperties": false
+        },
+        "special_populations": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "children",
+              "elderly",
+              "pregnant",
+              "immunocompromised",
+              "rare_disease",
+              "healthy_volunteers"
+            ]
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "timeline": {
+      "type": "object",
+      "properties": {
+        "total_duration_months": {
+          "type": "integer"
+        },
+        "key_milestones": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "month": {
+                "type": "integer"
+              }
+            },
+            "required": [
+              "name",
+              "month"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
     }
+  },
+  "additionalProperties": false
 }

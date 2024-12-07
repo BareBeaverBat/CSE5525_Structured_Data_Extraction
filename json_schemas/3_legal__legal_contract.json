@@ -1,20 +1,35 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "type": "object",
-    "properties": {
-        "signing_date": { "type": "string", "format": "date" },
-        "parties": {
-            "type": "array",
-            "items": { "type": "string" }
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "signing_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "parties": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "governing_law": {
+      "type": "string"
+    },
+    "clauses": {
+      "type": "object",
+      "properties": {
+        "termination_clause_verbatim": {
+          "type": "string"
         },
-        "governing_law": { "type": "string" },
-        "clauses": {
-            "type": "object",
-            "properties": {
-                "termination_clause": { "type": "string" },
-                "confidentiality_clause": { "type": "string" },
-                "payment_amount": { "type": "number" }
-            }
+        "confidentiality_clause_verbatim": {
+          "type": "string"
+        },
+        "payment_amount": {
+          "type": "number"
         }
+      },
+      "additionalProperties": false
     }
+  },
+  "additionalProperties": false
 }

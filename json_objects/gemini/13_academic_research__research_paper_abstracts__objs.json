@@ -42,7 +42,7 @@
                 "type": "public"
             }
         ],
-        "funding_sources": [
+        "funding_sources_verbatim": [
             "Space agency grant"
         ]
     },
@@ -59,7 +59,7 @@
     {
         "research_area": "social_sciences",
         "methodology": "qualitative",
-        "funding_sources": [
+        "funding_sources_verbatim": [
             "Social science research council"
         ]
     },

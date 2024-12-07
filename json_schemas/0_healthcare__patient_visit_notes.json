@@ -1,56 +1,80 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "type": "object",
-    "properties": {
-        "symptoms": {
-            "type": "array",
-            "items": {
-                "type": "object",
-                "properties": {
-                    "name": { "type": "string" },
-                    "duration_days": { "type": "integer" },
-                    "severity": {
-                        "type": "integer",
-                        "minimum": 1,
-                        "maximum": 10
-                    },
-                    "frequency": {
-                        "type": "string",
-                        "enum": ["constant", "intermittent", "occasional", "first_occurrence"]
-                    }
-                },
-                "required": ["name"]
-            }
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "symptoms": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "duration_days": {
+            "type": "integer"
+          },
+          "severity": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 10
+          },
+          "frequency": {
+            "type": "string",
+            "enum": [
+              "constant",
+              "intermittent",
+              "occasional",
+              "first_occurrence"
+            ]
+          }
         },
-        "medications": {
-            "type": "array",
-            "items": {
-                "type": "object",
-                "properties": {
-                    "name": { "type": "string" },
-                    "dosage": { "type": "string" },
-                    "frequency": { "type": "string" }
-                },
-                "required": ["name"]
-            }
+        "required": [
+          "name"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "medications": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "dosage": {
+            "type": "string"
+          },
+          "frequency": {
+            "type": "string"
+          }
         },
-        "allergies": {
-            "type": "array",
-            "items": { "type": "string" }
-        },
-        "family_history_flags": {
-            "type": "array",
-            "items": {
-                "type": "string",
-                "enum": [
-                    "diabetes",
-                    "heart_disease",
-                    "cancer",
-                    "asthma",
-                    "hypertension",
-                    "other"
-                ]
-            }
-        }
+        "required": [
+          "name"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "allergies": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "family_history_flags": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "diabetes",
+          "heart_disease",
+          "cancer",
+          "asthma",
+          "hypertension",
+          "other"
+        ]
+      }
     }
+  },
+  "additionalProperties": false
 }

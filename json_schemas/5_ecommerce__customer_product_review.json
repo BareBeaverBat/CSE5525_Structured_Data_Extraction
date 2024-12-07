@@ -1,17 +1,43 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "type": "object",
-    "properties": {
-        "product_features": {
-            "type": "object",
-            "properties": {
-                "positive": { "type": "array", "items": { "type": "string" } },
-                "negative": { "type": "array", "items": { "type": "string" } }
-            }
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "product_features": {
+      "type": "object",
+      "properties": {
+        "positive": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         },
-        "star_rating": { "type": "integer", "minimum": 1, "maximum": 5 },
-        "purchase_date": { "type": ["string", "null"], "format": "date" },
-        "product_name": {"type": "string" },
-        "product_id": {"type": "string"}
+        "negative": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "star_rating": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 5
+    },
+    "purchase_date": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date"
+    },
+    "product_name": {
+      "type": "string"
+    },
+    "product_id": {
+      "type": "string"
     }
+  },
+  "additionalProperties": false
 }

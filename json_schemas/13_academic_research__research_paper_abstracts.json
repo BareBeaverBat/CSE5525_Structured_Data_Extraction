@@ -1,51 +1,69 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "type": "object",
-    "properties": {
-        "research_area": {
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "research_area": {
+      "type": "string",
+      "enum": [
+        "computer_science",
+        "biology",
+        "physics",
+        "chemistry",
+        "engineering",
+        "social_sciences",
+        "humanities",
+        "mathematics",
+        "medicine",
+        "other"
+      ]
+    },
+    "methodology": {
+      "type": "string",
+      "enum": [
+        "experimental",
+        "theoretical",
+        "computational",
+        "qualitative",
+        "quantitative",
+        "mixed_methods"
+      ]
+    },
+    "key_findings_verbatim": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "data_sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "type": {
             "type": "string",
             "enum": [
-                "computer_science",
-                "biology",
-                "physics",
-                "chemistry",
-                "engineering",
-                "social_sciences",
-                "humanities",
-                "mathematics",
-                "medicine",
-                "other"
+              "public",
+              "private",
+              "simulated"
             ]
-        },
-        "methodology": {
+          },
+          "url": {
             "type": "string",
-            "enum": [
-                "experimental",
-                "theoretical",
-                "computational",
-                "qualitative",
-                "quantitative",
-                "mixed_methods"
-            ]
+            "format": "uri"
+          }
         },
-        "key_findings": {
-            "type": "array",
-            "items": { "type": "string" }
-        },
-        "data_sources": {
-            "type": "array",
-            "items": {
-                "type": "object",
-                "properties": {
-                    "name": { "type": "string" },
-                    "type": { "type": "string", "enum": ["public", "private", "simulated"] },
-                    "url": { "type": "string", "format": "uri" }
-                }
-            }
-        },
-        "funding_sources": {
-            "type": "array",
-            "items": { "type": "string" }
-        }
+        "additionalProperties": false
+      }
+    },
+    "funding_sources_verbatim": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
     }
+  },
+  "additionalProperties": false
 }

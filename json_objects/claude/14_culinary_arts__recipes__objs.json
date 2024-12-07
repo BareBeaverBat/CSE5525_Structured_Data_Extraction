@@ -28,7 +28,7 @@
                 "unit": "teaspoon"
             }
         ],
-        "instructions": [
+        "instructions_verbatim": [
             "Marinate salmon in olive oil, lemon juice, and herbs",
             "Preheat grill to medium-high heat",
             "Grill salmon for 4-5 minutes per side",
@@ -68,7 +68,7 @@
                 "unit": "tablespoon"
             }
         ],
-        "instructions": [
+        "instructions_verbatim": [
             "Marinate beef in bulgogi sauce",
             "Grill beef until caramelized",
             "Warm tortillas",
@@ -153,7 +153,7 @@
                 "unit": "milliliters"
             }
         ],
-        "instructions": [
+        "instructions_verbatim": [
             "Mix ingredients and autolyse for 30 minutes",
             "Perform 4 sets of stretch and folds",
             "Bulk ferment for 4-6 hours",
@@ -273,7 +273,7 @@
                 "unit": "tablespoons"
             }
         ],
-        "instructions": [
+        "instructions_verbatim": [
             "Cream butter and sugar until fluffy",
             "Add eggs one at a time",
             "Alternate adding flour and milk",
