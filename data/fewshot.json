@@ -1,0 +1,1178 @@
+[
+  {
+    "text_passage": "**Resume**\n\n**Summary**\n\nA highly motivated professional with 5 years of experience seeking a challenging and rewarding opportunity.\n\n**Skills**\n\n* Project Management\n* Agile\n* Scrum\n\nI am not including contact details in this resume due to privacy reasons. I am happy to provide them upon request during an interview.\n",
+    "object": {
+      "skills": [
+        "Project Management",
+        "Agile",
+        "Scrum"
+      ],
+      "experience_years": 5
+    },
+    "scenario_id": "4_job recruiting__resume or cv",
+    "was_claude_vs_gemini_generated": false
+  },
+  {
+    "text_passage": "This study employs a quantitative methodology to investigate the effectiveness of a novel treatment for type 2 diabetes. Patient records from a private healthcare provider, data from a registered clinical trial (https://clinicaltrials.gov), and a publicly available health survey dataset will be analyzed to assess treatment outcomes and identify potential predictors of success.  This research aims to determine the long-term efficacy and safety of the treatment compared to standard care.",
+    "object": {
+      "research_area": "medicine",
+      "methodology": "quantitative",
+      "data_sources": [
+        {
+          "name": "Patient records",
+          "type": "private"
+        },
+        {
+          "name": "Clinical trial data",
+          "type": "public",
+          "url": "https://clinicaltrials.gov"
+        },
+        {
+          "name": "Health survey dataset",
+          "type": "public"
+        }
+      ]
+    },
+    "scenario_id": "13_academic research__research paper abstracts",
+    "was_claude_vs_gemini_generated": false
+  },
+  {
+    "text_passage": "Luxurious 2-bed, 2-bath Condo in the Heart of Boston! Located in one of Boston's most desirable neighborhoods, this beautifully maintained 1,200 square foot condominium offers the perfect blend of comfort and sophistication. The open concept living space features hardwood floors and large windows that flood the home with natural light. The modern kitchen includes stainless steel appliances and granite countertops. Both bedrooms are generously sized with ample closet space. The bathrooms have been tastefully updated with contemporary fixtures. Situated in the coveted 02116 zip code, you'll be steps away from Boston's finest dining, shopping, and cultural attractions. Offered at $449,000.",
+    "object": {
+      "bedrooms": 2,
+      "bathrooms": 2,
+      "square_footage": 1200,
+      "property_type": "condo",
+      "listing_price": 449000,
+      "location": {
+        "city": "Boston",
+        "state": "MA",
+        "zip_code": "02116"
+      }
+    },
+    "scenario_id": "2_real estate__property listing",
+    "was_claude_vs_gemini_generated": true
+  },
+  {
+    "text_passage": "**John Doe**\n\n\n**Summary**\n\nA highly motivated and results-oriented software engineer with 10 years of experience delivering high-quality software solutions in demanding environments. Proven ability to thrive in fast-paced settings and contribute significantly to team success. Seeking a challenging and impactful role where I can leverage my expertise in software development.\n\n\n**Professional Experience**\n\n**Amazon** - Senior Software Engineer, June 2013 \u2013 December 2020\n\n* Developed and maintained critical software components for high-traffic web services.\n* Collaborated with cross-functional teams to deliver seamless user experiences.\n* Consistently exceeded performance expectations, contributing to key product launches.\n\n**Microsoft** - Software Engineer II, January 2021 \u2013 Present\n\n* Leading the design and development of a new cloud-based platform.\n* Mentoring junior engineers and fostering a collaborative team environment.\n* Driving innovation through the adoption of cutting-edge technologies and best practices.\n",
+    "object": {
+      "experience_years": 10,
+      "previous_roles": [
+        {
+          "title": "Senior Software Engineer",
+          "company": "Amazon",
+          "start_month": 6,
+          "start_year": 2013,
+          "end_month": 12,
+          "end_year": 2020
+        },
+        {
+          "title": "Software Engineer II",
+          "company": "Microsoft",
+          "start_month": 1,
+          "start_year": 2021,
+          "end_month": null,
+          "end_year": null
+        }
+      ]
+    },
+    "scenario_id": "4_job recruiting__resume or cv",
+    "was_claude_vs_gemini_generated": false
+  },
+  {
+    "text_passage": "Rice Cakes\n\nThis recipe is as simple as it gets, perfect for a quick and easy snack or light meal.\n\nIngredients:\n* 2 Rice Cakes\n\nThis recipe is:\n* Vegan\n* Vegetarian\n* Gluten-Free\n* Dairy-Free\n* Nut-Free\n\nNutritional Information (per serving, based on 2 rice cakes):\n* Calories: 70\n* Protein: 1g\n* Carbohydrates: 15g\n* Fat: 0.5g\n\nServing suggestion:  Enjoy plain or top with your favorite spread! You can try them with avocado, hummus, tomato, everything bagel seasoning, etc. They pair well with a glass of juice!\n",
+    "object": {
+      "dish_name": "Rice Cakes",
+      "ingredients": [
+        {
+          "name": "Rice Cakes",
+          "quantity": 2,
+          "unit": "cakes"
+        }
+      ],
+      "dietary_restrictions": [
+        "vegan",
+        "vegetarian",
+        "gluten-free",
+        "dairy-free",
+        "nut-free"
+      ],
+      "nutritional_information": {
+        "calories": 70,
+        "protein_grams": 1,
+        "carbohydrates_grams": 15,
+        "fat_grams": 0.5
+      }
+    },
+    "scenario_id": "14_culinary arts__recipes",
+    "was_claude_vs_gemini_generated": false
+  },
+  {
+    "text_passage": "Wire transfer payment processed from the Department of Defense to Advanced Defense Systems Inc in the amount of $1,750,000.00 USD. Payment relates to procurement of defense-related goods and services under existing contract terms. Transfer executed through standard wire processing channels following established governmental procurement procedures. Documentation verified and payment authorized through appropriate channels.",
+    "object": {
+      "transaction": {
+        "category": "payment",
+        "method": "wire",
+        "amount_usd": 1750000.0
+      },
+      "parties": [
+        {
+          "name": "Department of Defense",
+          "role": "originator",
+          "entity_type": "government"
+        },
+        {
+          "name": "Advanced Defense Systems Inc",
+          "role": "beneficiary",
+          "entity_type": "business"
+        }
+      ],
+      "purpose_indicators": [
+        "goods_services"
+      ]
+    },
+    "scenario_id": "10_financial compliance__transaction notes and description",
+    "was_claude_vs_gemini_generated": true
+  },
+  {
+    "text_passage": "I'm experiencing a minor issue with TabGuard Privacy Extension version 1.2.0. Sometimes when browsing certain websites, I notice that the extension's privacy features don't activate immediately. While this isn't severely impacting my browsing experience, I'd like to understand if this is expected behavior. I can reliably reproduce this behavior on my system, which is running Windows 11 with Chrome version 114.0.5735.198. The delay usually lasts about 2-3 seconds before the privacy features kick in. I've already tried disabling and re-enabling the extension, but the occasional delay persists.",
+    "object": {
+      "product": {
+        "name": "TabGuard Privacy Extension",
+        "version": "1.2.0"
+      },
+      "impact_level": "minor",
+      "system_state": {
+        "os": "Windows 11",
+        "browser": "Chrome 114.0.5735.198"
+      },
+      "reproduction": {
+        "reproducible": true,
+        "frequency": "sometimes"
+      }
+    },
+    "scenario_id": "1_customer service__support ticket description",
+    "was_claude_vs_gemini_generated": true
+  },
+  {
+    "text_passage": "Case Worker Notes - March 8, 2024\n\nClient contacted the agency today to discuss ongoing mental health support. They expressed feelings of isolation and a desire to connect with resources that can provide ongoing emotional and psychological well-being. The client's current isolation is impacting their overall well-being, and they would benefit from connecting with community resources and support networks.  We discussed potential referrals to local mental health providers and support groups.  A follow-up call is scheduled for next week to check in on their progress.",
+    "object": {
+      "assistance_needs": [
+        {
+          "category": "mental_health",
+          "urgency": "ongoing"
+        }
+      ],
+      "risk_factors": [
+        {
+          "type": "isolation",
+          "timeframe": "current"
+        }
+      ]
+    },
+    "scenario_id": "9_social services__case worker notes",
+    "was_claude_vs_gemini_generated": false
+  },
+  {
+    "text_passage": "Memorandum of Understanding\n\nThis Memorandum of Understanding (MOU) is made and effective as of January 5, 2024,\n\nBETWEEN:\n\nEta Solutions, (hereinafter referred to as \u201cEta\u201d)\n\nWITNESSETH THAT:\n\nWHEREAS, Eta desires to document certain intentions;\n\nNOW, THEREFORE, in consideration of the mutual covenants contained herein, Eta agrees as follows:\n\n1. Purpose. This MOU outlines the intentions of Eta.  Further details will be provided in a subsequent, more definitive agreement.\n\n2. Continued Discussions.  Eta intends to engage in further discussions regarding the specific terms and conditions of the ultimate agreement.\n\nIN WITNESS WHEREOF, the party has caused this Memorandum of Understanding to be executed as of the date first written above.\n",
+    "object": {
+      "signing_date": "2024-01-05",
+      "parties": [
+        "Eta Solutions"
+      ]
+    },
+    "scenario_id": "3_legal__legal contract",
+    "was_claude_vs_gemini_generated": false
+  },
+  {
+    "text_passage": "My Smart Thermostat is showing multiple error codes and not working correctly. The error codes displayed are ST-E001, ST-E003, and ST-COMM-ERR. This is a minor inconvenience, as the main thermostat functions are still working, but some smart features seem to be unavailable. I am using an Android 12 device to control the thermostat. Earlier today, I noticed that some settings, like \"eco mode\" weren't available in the app.",
+    "object": {
+      "product": {
+        "name": "Smart Thermostat"
+      },
+      "error_codes": [
+        "ST-E001",
+        "ST-E003",
+        "ST-COMM-ERR"
+      ],
+      "impact_level": "minor",
+      "system_state": {
+        "os": "Android 12"
+      }
+    },
+    "scenario_id": "1_customer service__support ticket description",
+    "was_claude_vs_gemini_generated": false
+  },
+  {
+    "text_passage": "Exceptional opportunity to own 50,000 sq ft of prime land in Boise, ID, 83702! Listed at $250,000, this expansive property offers endless possibilities. Build your dream home, establish a thriving business, or hold onto this valuable investment. Don't miss out\u2014contact us today for more information!",
+    "object": {
+      "square_footage": 50000,
+      "property_type": "land",
+      "listing_price": 250000,
+      "location": {
+        "city": "Boise",
+        "state": "ID",
+        "zip_code": "83702"
+      }
+    },
+    "scenario_id": "2_real estate__property listing",
+    "was_claude_vs_gemini_generated": false
+  },
+  {
+    "text_passage": "On July 15, 2024, I was involved in a car accident in the 90210 zip code.  The other driver ran a red light and hit my vehicle. Fortunately, both of us were wearing seatbelts and airbags deployed as expected.  I'm a bit shaken up, but otherwise okay.  I've been in touch with the other driver's insurance company, but they are not being very helpful, therefore, I am submitting this claim to my insurance company. I would appreciate a prompt review of my claim and a speedy resolution.",
+    "object": {
+      "incident_date": "2024-07-15",
+      "incident_type": "accident",
+      "location": {
+        "zip_code": "90210"
+      }
+    },
+    "scenario_id": "6_insurance__insurance claim description from policy holder",
+    "was_claude_vs_gemini_generated": false
+  },
+  {
+    "text_passage": "PATIENT VISIT NOTES\n\nChief Complaint: Headache\n\nHistory of Present Illness: The patient reports a headache.  They arrived at the clinic complaining of head pain.  Further details regarding the nature of the headache could not be ascertained at this time due to the patient's limited communication skills.",
+    "object": {
+      "symptoms": [
+        {
+          "name": "Headache"
+        }
+      ]
+    },
+    "scenario_id": "0_healthcare__patient visit notes",
+    "was_claude_vs_gemini_generated": false
+  },
+  {
+    "text_passage": "This permit application concerns a mixed-use residential and commercial development totaling 3,000 square feet. The proposed two-story structure will have an estimated occupancy of 10 people and will cover 50% of the lot.  The project will require connection to the municipal water supply, with an estimated daily usage of 500 gallons. Access to sufficient parking will be provided on-site, adhering to city regulations.  Details regarding the landscaping plan will be submitted in a separate document.",
+    "object": {
+      "project_specs": {
+        "total_square_feet": 3000,
+        "floors": 2,
+        "occupancy_count": 10,
+        "lot_coverage_percentage": 50
+      },
+      "usage": [
+        "residential",
+        "commercial"
+      ],
+      "utilities": {
+        "water": {
+          "required": true,
+          "gallons_per_day": 500
+        }
+      }
+    },
+    "scenario_id": "8_government permitting__project description in permit application",
+    "was_claude_vs_gemini_generated": false
+  },
+  {
+    "text_passage": "Hedge Fund Alpha initiated a wire withdrawal for $500,000.00 as part of their regular investment operations. The timing and size of this transaction triggered a medium-risk velocity alert due to rapid fund movement patterns observed in recent activity. Standard wire documentation was collected from the fund's authorized representatives, and the transaction was processed through our standard wire desk protocols. The fund's relationship manager has been notified to conduct appropriate follow-up regarding the transaction pattern.",
+    "object": {
+      "transaction": {
+        "category": "withdrawal",
+        "method": "wire",
+        "amount_usd": 500000.0
+      },
+      "parties": [
+        {
+          "name": "Hedge Fund Alpha",
+          "role": "originator",
+          "entity_type": "business"
+        }
+      ],
+      "risk_flags": [
+        {
+          "type": "rapid_movement",
+          "severity": "medium"
+        }
+      ],
+      "purpose_indicators": [
+        "investment"
+      ]
+    },
+    "scenario_id": "10_financial compliance__transaction notes and description",
+    "was_claude_vs_gemini_generated": true
+  },
+  {
+    "text_passage": "I am writing to report a theft that occurred on July 23, 2024, at my residence located at 101 Pine St, San Francisco, CA 94107. Several items were stolen from my apartment, resulting in an estimated $3,000 in damages. I have attached photos of the damaged lock and list of the missing items with purchase receipts.  I discovered the theft upon returning from work. I would appreciate it if you could process my claim as soon as possible.\n",
+    "object": {
+      "incident_date": "2024-07-23",
+      "incident_type": "theft",
+      "location": {
+        "street_address": "101 Pine St",
+        "city": "San Francisco",
+        "state": "CA",
+        "zip_code": "94107"
+      },
+      "estimated_damages": 3000
+    },
+    "scenario_id": "6_insurance__insurance claim description from policy holder",
+    "was_claude_vs_gemini_generated": false
+  },
+  {
+    "text_passage": "DAVID CHEN\ndavid.chen@gmail.com | 206-555-0123\n\nPROFESSIONAL SUMMARY\nSoftware engineer with 2 years of experience building web applications and maintaining production systems. Strong foundation in full-stack development with expertise in Python, JavaScript, React, and Git.\n\nPROFESSIONAL EXPERIENCE\n\nJunior Software Engineer\nCascade Technologies\nJune 2021 - Present\n- Contributing to development and maintenance of web applications\n- Collaborating with cross-functional teams on software projects\n- Participating in code reviews and technical documentation\n\nSoftware Engineering Intern\nBluefin Solutions\nMay 2020 - August 2020\n- Assisted in development tasks under senior engineer supervision\n- Participated in daily stand-ups and team meetings\n- Gained hands-on experience with professional software development practices\n\nEDUCATION\n\nBachelor of Science in Computer Science\nUniversity of Washington\n\nTECHNICAL SKILLS\nLanguages & Tools: Python, JavaScript, React, Git",
+    "object": {
+      "skills": [
+        "Python",
+        "JavaScript",
+        "React",
+        "Git"
+      ],
+      "experience_years": 2,
+      "education": [
+        {
+          "degree_type": "BS",
+          "major": "Computer Science",
+          "institution": "University of Washington"
+        }
+      ],
+      "previous_roles": [
+        {
+          "title": "Junior Software Engineer",
+          "company": "Cascade Technologies",
+          "start_month": 6,
+          "start_year": 2021,
+          "end_month": null,
+          "end_year": null
+        },
+        {
+          "title": "Software Engineering Intern",
+          "company": "Bluefin Solutions",
+          "start_month": 5,
+          "start_year": 2020,
+          "end_month": 8,
+          "end_year": 2020
+        }
+      ],
+      "contact_info": {
+        "email": "david.chen@gmail.com",
+        "phone": "206-555-0123"
+      }
+    },
+    "scenario_id": "4_job recruiting__resume or cv",
+    "was_claude_vs_gemini_generated": true
+  },
+  {
+    "text_passage": "Patient presents with severe lower back pain that began yesterday. Patient rates the pain as 9/10 and reports this is the first time experiencing pain of this nature. Physical examination reveals significant paraspinal muscle tension and limited range of motion in the lumbar spine. Currently taking cyclobenzaprine 10mg three times daily for muscle relaxation. Patient was educated on proper body mechanics and advised to use ice/heat therapy as needed. Demonstrated proper lifting techniques and provided handout on back exercises. Will follow up in one week if symptoms don't improve, or sooner if pain worsens or new symptoms develop.",
+    "object": {
+      "symptoms": [
+        {
+          "name": "lower back pain",
+          "duration_days": 1,
+          "severity": 9,
+          "frequency": "first_occurrence"
+        }
+      ],
+      "medications": [
+        {
+          "name": "cyclobenzaprine",
+          "dosage": "10mg",
+          "frequency": "three times daily"
+        }
+      ]
+    },
+    "scenario_id": "0_healthcare__patient visit notes",
+    "was_claude_vs_gemini_generated": true
+  },
+  {
+    "text_passage": "On July 22, 2024, my property located at 222 Maple St experienced significant flooding. Heavy rainfall throughout the day overwhelmed the drainage systems in the area. By late afternoon, water began to seep into my home, quickly rising several inches.  I attempted to salvage some belongings by moving them to higher ground, but the water level continued to increase.  I did not file a police report as they were overwhelmed with calls from the widespread flooding. David Brown, whose email address is david.brown@example.com witnessed the flooding. He lives across the street and saw the water entering my home. He even helped me move some furniture upstairs.",
+    "object": {
+      "incident_date": "2024-07-22",
+      "incident_type": "flood",
+      "location": {
+        "street_address": "222 Maple St"
+      },
+      "police_report_filed": false,
+      "witnesses": [
+        {
+          "name": "David Brown",
+          "email": "david.brown@example.com"
+        }
+      ]
+    },
+    "scenario_id": "6_insurance__insurance claim description from policy holder",
+    "was_claude_vs_gemini_generated": false
+  },
+  {
+    "text_passage": "INCIDENT REPORT\n\nIncident Number: 20231027-0042\nDate: 2023-10-27\nTime: 21:35\n\nIncident Type: Assault\n\nLocation: The incident occurred inside a residence located at 123 Main Street.\n\nNarrative:\nOfficers responded to a report of an assault at 123 Main Street. Upon arrival, officers made contact with the victim, Ms. Jane Doe, who stated she had been assaulted by a known suspect, Mr. John Smith. Ms. Doe reported that Mr. Smith had threatened her with firearms and brandished knives during the altercation.  Ms. Doe sustained minor injuries and declined medical attention. Mr. Smith fled the scene before officers arrived and his current whereabouts are unknown. A search of the premises was conducted, but the weapons involved have not been recovered yet.",
+    "object": {
+      "incident_type": [
+        "assault"
+      ],
+      "location": {
+        "type": "residence",
+        "indoor_outdoor": "indoor"
+      },
+      "weapons": [
+        {
+          "type": "firearm"
+        },
+        {
+          "type": "knife"
+        }
+      ]
+    },
+    "scenario_id": "7_law enforcement__incident report",
+    "was_claude_vs_gemini_generated": false
+  },
+  {
+    "text_passage": "On October 26th at 2145 hours, I responded to a call regarding suspicious activity at a residential address on Cedar Street. Upon arrival, I observed movement both inside and outside the residence. The homeowner reported seeing an unknown individual moving between their backyard and front porch area, occasionally peering through windows. The subject appeared to have also attempted to access the side gate of the property. After conducting a thorough search of the premises, no suspect was located. The area was secured and homeowner was advised on security measures.",
+    "object": {
+      "location": {
+        "type": "residence",
+        "indoor_outdoor": "both"
+      },
+      "incident_type": [
+        "suspicious_activity"
+      ]
+    },
+    "scenario_id": "7_law enforcement__incident report",
+    "was_claude_vs_gemini_generated": true
+  },
+  {
+    "text_passage": "Kimchi Tacos\n\nThese Korean-Mexican fusion Kimchi Tacos bring together the bold flavors of Korean cuisine with the beloved format of Mexican street food. The combination of spicy kimchi and savory bulgogi beef creates an unforgettable taste experience.\n\nIngredients:\n- 8 corn tortillas\n- 2 cups kimchi\n- 1 pound bulgogi beef\n- 1 tablespoon sesame oil\n\nInstructions:\n1. Marinate beef in bulgogi sauce\n2. Grill beef until caramelized\n3. Warm tortillas\n4. Assemble tacos with beef and kimchi\n5. Drizzle with sesame oil\n\nThese tacos are perfect for a unique weeknight dinner or your next fusion-inspired gathering.",
+    "object": {
+      "dish_name": "Kimchi Tacos",
+      "ingredients": [
+        {
+          "name": "corn tortillas",
+          "quantity": 8,
+          "unit": "pieces"
+        },
+        {
+          "name": "kimchi",
+          "quantity": 2,
+          "unit": "cups"
+        },
+        {
+          "name": "bulgogi beef",
+          "quantity": 1,
+          "unit": "pound"
+        },
+        {
+          "name": "sesame oil",
+          "quantity": 1,
+          "unit": "tablespoon"
+        }
+      ],
+      "instructions": [
+        "Marinate beef in bulgogi sauce",
+        "Grill beef until caramelized",
+        "Warm tortillas",
+        "Assemble tacos with beef and kimchi",
+        "Drizzle with sesame oil"
+      ],
+      "cuisine": "Korean-Mexican Fusion"
+    },
+    "scenario_id": "14_culinary arts__recipes",
+    "was_claude_vs_gemini_generated": true
+  },
+  {
+    "text_passage": "Welcome to this stunning townhouse in the heart of Charlotte! This beautiful 3-bedroom, 2.5-bathroom home offers modern living with classic charm. Stay cozy year-round with central air conditioning and gather around the elegant fireplace on cool evenings. The private balcony provides a perfect spot for morning coffee or evening relaxation. The attached garage offers convenient parking and storage. Located in the desirable 28205 area of Charlotte, NC, this property provides easy access to dining, shopping, and entertainment. This turnkey home can be yours for $525,000.",
+    "object": {
+      "bedrooms": 3,
+      "bathrooms": "2.5",
+      "property_type": "townhouse",
+      "amenities": [
+        "garage",
+        "fireplace",
+        "central_ac",
+        "balcony"
+      ],
+      "listing_price": 525000,
+      "location": {
+        "city": "Charlotte",
+        "state": "NC",
+        "zip_code": "28205"
+      }
+    },
+    "scenario_id": "2_real estate__property listing",
+    "was_claude_vs_gemini_generated": true
+  },
+  {
+    "text_passage": "This study investigates quantum system behaviors through computational physics methods. Our research leverages two complementary data sources: a comprehensive quantum computing simulator platform, accessible through quantum-sim.org, which enables extensive theoretical explorations, alongside private experimental error rate measurements obtained from our laboratory's quantum computing infrastructure (quantum-lab.org/data). The computational methodology enables us to analyze quantum mechanical phenomena under controlled conditions, comparing simulated predictions with real-world observations. This approach facilitates the investigation of quantum systems across various parameter spaces and environmental conditions, while maintaining precise control over system variables.",
+    "object": {
+      "research_area": "physics",
+      "methodology": "computational",
+      "data_sources": [
+        {
+          "name": "Quantum Computing Simulator",
+          "type": "simulated",
+          "url": "https://quantum-sim.org"
+        },
+        {
+          "name": "Error Rate Measurements",
+          "type": "private",
+          "url": "https://quantum-lab.org/data"
+        }
+      ]
+    },
+    "scenario_id": "13_academic research__research paper abstracts",
+    "was_claude_vs_gemini_generated": true
+  },
+  {
+    "text_passage": "Chocolate Avocado Mousse\n\nThis rich, creamy dessert is a healthy twist on traditional chocolate mousse that's naturally vegan, gluten-free, and dairy-free. The smooth, decadent texture comes from perfectly ripe avocados, while cocoa powder provides deep chocolate flavor and maple syrup adds natural sweetness.\n\nIngredients:\n- 2 large avocados\n- 1/2 cup cocoa powder\n- 1/4 cup maple syrup\n\nNutritional Information (per serving):\nCalories: 180\nProtein: 3.2g\nCarbohydrates: 19.5g\nFat: 12.3g",
+    "object": {
+      "dish_name": "Chocolate Avocado Mousse",
+      "ingredients": [
+        {
+          "name": "avocado",
+          "quantity": 2,
+          "unit": "large"
+        },
+        {
+          "name": "cocoa powder",
+          "quantity": 0.5,
+          "unit": "cup"
+        },
+        {
+          "name": "maple syrup",
+          "quantity": 0.25,
+          "unit": "cup"
+        }
+      ],
+      "dietary_restrictions": [
+        "vegan",
+        "gluten-free",
+        "dairy-free"
+      ],
+      "nutritional_information": {
+        "calories": 180,
+        "protein_grams": 3.2,
+        "carbohydrates_grams": 19.5,
+        "fat_grams": 12.3
+      }
+    },
+    "scenario_id": "14_culinary arts__recipes",
+    "was_claude_vs_gemini_generated": true
+  },
+  {
+    "text_passage": "I am a seasoned technology professional with 15 years of experience specializing in distributed systems and cloud architecture. Currently serving as Principal Engineer at Netflix since January 2015, where I architect and implement scalable solutions for streaming infrastructure. Previously, I worked as a Senior Software Engineer at LinkedIn from March 2010 to December 2014, where I contributed to the development of their professional networking platform. My technical expertise includes Distributed Systems, Kubernetes, Go programming, System Design, Cloud Architecture, and Microservices. I have led numerous initiatives to modernize legacy systems and implement microservices architectures.",
+    "object": {
+      "skills": [
+        "Distributed Systems",
+        "Kubernetes",
+        "Go programming",
+        "System Design",
+        "Cloud Architecture",
+        "Microservices"
+      ],
+      "experience_years": 15,
+      "previous_roles": [
+        {
+          "title": "Principal Engineer",
+          "company": "Netflix",
+          "start_month": 1,
+          "start_year": 2015,
+          "end_month": null,
+          "end_year": null
+        },
+        {
+          "title": "Senior Software Engineer",
+          "company": "LinkedIn",
+          "start_month": 3,
+          "start_year": 2010,
+          "end_month": 12,
+          "end_year": 2014
+        }
+      ]
+    },
+    "scenario_id": "4_job recruiting__resume or cv",
+    "was_claude_vs_gemini_generated": true
+  },
+  {
+    "text_passage": "**Case Worker Notes - [Date: Current Date, Time: Current Time]**\n\nSpoke with client today who reported an urgent need for healthcare assistance. The client is currently experiencing a medical crisis.  We discussed options for immediate medical care. Client will call the clinic tomorrow morning and provide me an update by noon.",
+    "object": {
+      "assistance_needs": [
+        {
+          "category": "healthcare",
+          "urgency": "immediate"
+        }
+      ],
+      "risk_factors": [
+        {
+          "type": "medical_crisis",
+          "timeframe": "current"
+        }
+      ]
+    },
+    "scenario_id": "9_social services__case worker notes",
+    "was_claude_vs_gemini_generated": false
+  },
+  {
+    "text_passage": "Project Description:\n\nThis project aims to construct a new public library.  The library will be a valuable community resource, offering a variety of services to residents of all ages. We envision this space as a central hub for learning, community engagement, and access to information.  Key design elements include a dedicated children\u2019s area, computer labs, and community meeting rooms.\n\n\nUtilities:\n\nThe project will require water service with an estimated daily usage of 750 gallons. Gas service will also be required.  Connection to existing city infrastructure will be necessary.\n\nProject Timeline:\n\nThe project is anticipated to take 12 months to complete, divided into 4 phases. These phases encompass design, site preparation, construction, and final fit-out.\n",
+    "object": {
+      "usage": [
+        "public"
+      ],
+      "utilities": {
+        "water": {
+          "required": true,
+          "gallons_per_day": 750
+        },
+        "gas": true
+      },
+      "timeline": {
+        "duration_months": 12,
+        "phases": 4
+      }
+    },
+    "scenario_id": "8_government permitting__project description in permit application",
+    "was_claude_vs_gemini_generated": false
+  },
+  {
+    "text_passage": "I am writing to report a theft. A police report has been filed.  A witness, Matthew Taylor (matthew.taylor@example.com, 555-654-3210), was present during the incident. I'd be happy to provide any further information as needed by the insurance company.  Please contact me if you require any additional details.\n",
+    "object": {
+      "incident_type": "theft",
+      "police_report_filed": true,
+      "witnesses": [
+        {
+          "name": "Matthew Taylor",
+          "phone": "555-654-3210",
+          "email": "matthew.taylor@example.com"
+        }
+      ]
+    },
+    "scenario_id": "6_insurance__insurance claim description from policy holder",
+    "was_claude_vs_gemini_generated": false
+  },
+  {
+    "text_passage": "This permit application concerns the construction of a single-story building totaling 2,500 square feet. The proposed structure will have an occupancy of 5 people and will cover 40% of the lot. The building will be located on 123 Main Street in Anytown, USA. The design incorporates sustainable building practices with energy-efficient windows and insulation, and we are excited to bring this project to the community. Further details regarding specific aspects of the project will be provided upon request.",
+    "object": {
+      "project_specs": {
+        "total_square_feet": 2500,
+        "floors": 1,
+        "occupancy_count": 5,
+        "lot_coverage_percentage": 40
+      }
+    },
+    "scenario_id": "8_government permitting__project description in permit application",
+    "was_claude_vs_gemini_generated": false
+  },
+  {
+    "text_passage": "This permit application is for a new commercial building. The project will require connections to both water and electrical utilities.  The site is located within city limits and currently zoned for commercial use.  Adequate access for construction vehicles and personnel will be maintained throughout the project. We are committed to meeting all local regulations and ensuring the project is completed safely and efficiently.",
+    "object": {
+      "usage": [
+        "commercial"
+      ],
+      "utilities": {
+        "water": {
+          "required": true
+        },
+        "electrical": {
+          "required": true
+        }
+      }
+    },
+    "scenario_id": "8_government permitting__project description in permit application",
+    "was_claude_vs_gemini_generated": false
+  },
+  {
+    "text_passage": "TRIPARTITE BUSINESS AGREEMENT\n\nThis AGREEMENT (the \"Agreement\") is made and entered into this 15th day of November, 2023, by and between:\n\nEuropean Imports GmbH, a German corporation;\nAmerican Distribution Corp, an American corporation; and\nPacific Logistics Ltd, a Pacific region corporation;\n(collectively referred to as the \"Parties\")\n\nWHEREAS, the Parties desire to establish a business relationship for their mutual benefit;\n\nWHEREAS, the Parties wish to set forth the terms and conditions of their agreement;\n\nNOW, THEREFORE, for and in consideration of the mutual promises herein contained, the Parties hereby agree as follows:\n\n1. PAYMENT\nThe total payment amount under this Agreement shall be Four Hundred Fifty Thousand Dollars ($450,000.00), payable according to the schedule set forth in Exhibit A.\n\n2. TERMINATION\nAny Party may terminate this Agreement by providing sixty (60) days prior written notice to the other Parties.\n\n3. GOVERNING LAW\nThis Agreement shall be governed by and construed in accordance with the laws of the State of New York, without giving effect to any choice of law or conflict of law provisions.\n\nIN WITNESS WHEREOF, the Parties have executed this Agreement as of the date first above written.\n\nEuropean Imports GmbH\n\nBy: _________________\nName:\nTitle:\n\nAmerican Distribution Corp\n\nBy: _________________\nName:\nTitle:\n\nPacific Logistics Ltd\n\nBy: _________________\nName:\nTitle:",
+    "object": {
+      "signing_date": "2023-11-15",
+      "parties": [
+        "European Imports GmbH",
+        "American Distribution Corp",
+        "Pacific Logistics Ltd"
+      ],
+      "governing_law": "State of New York",
+      "clauses": {
+        "termination_clause": "60 days notice required for termination",
+        "payment_amount": 450000.0
+      }
+    },
+    "scenario_id": "3_legal__legal contract",
+    "was_claude_vs_gemini_generated": true
+  },
+  {
+    "text_passage": "Met with the Martinez family today for routine check-in. The household consists of 7 members living together in a stable housing arrangement. The family includes 4 working-age adults, 2 school-age children, and one grandmother. The household maintains multiple income streams, including employment income from working adults, social security benefits, pension payments, and SNAP assistance for food expenses. The home appeared well-maintained, and family members seemed comfortable and settled. The children were doing homework at the kitchen table during our meeting. Family reports satisfaction with current living arrangements and demonstrates good resource management across multiple income sources.",
+    "object": {
+      "household": {
+        "total_members": 7,
+        "composition": {
+          "adults": 4,
+          "children_under_18": 2,
+          "seniors_over_65": 1
+        },
+        "housing_status": "stable"
+      },
+      "income_sources": [
+        "employment",
+        "social_security",
+        "pension",
+        "snap"
+      ]
+    },
+    "scenario_id": "9_social services__case worker notes",
+    "was_claude_vs_gemini_generated": true
+  },
+  {
+    "text_passage": "INCIDENT REPORT\n\nDate: 2024-03-08\nTime: 14:35\n\nIncident Summary:\nTraffic incident involving a car with damage to the front, driver side, and rear.\n\nIncident Type: Traffic\n\nVehicle Information:\n- Type: Car\n- Damage: Front, driver side, and rear.\n\nOfficer's Narrative:\nResponded to a traffic incident at approximately 14:35 today.  One vehicle was involved, a car with visible damage to its front, driver's side, and rear. The driver stated they were attempting a three-point turn and misjudged the distance. There were no other vehicles or persons involved and the driver refused medical treatment on the scene. No further information was collected.",
+    "object": {
+      "incident_type": [
+        "traffic"
+      ],
+      "vehicles": [
+        {
+          "type": "car",
+          "damage": [
+            "front",
+            "driver_side",
+            "rear"
+          ]
+        }
+      ]
+    },
+    "scenario_id": "7_law enforcement__incident report",
+    "was_claude_vs_gemini_generated": false
+  },
+  {
+    "text_passage": "Case Worker Notes - 2024-07-20\n\nClient Meeting Summary:\n\nMet with the client today to discuss their current needs. Client's income sources include employment, child support payments, and social security benefits. The client expressed a need for assistance with childcare. Further assessment is needed to explore the client's situation fully and develop an appropriate action plan.  A follow-up meeting will be scheduled to gather more information and discuss available childcare resources.",
+    "object": {
+      "income_sources": [
+        "employment",
+        "child_support",
+        "social_security"
+      ],
+      "assistance_needs": [
+        {
+          "category": "childcare"
+        }
+      ]
+    },
+    "scenario_id": "9_social services__case worker notes",
+    "was_claude_vs_gemini_generated": false
+  },
+  {
+    "text_passage": "This permit application concerns the construction of a new residential building. The project will not require a gas connection.  The anticipated water usage is estimated at 250 gallons per day, and the electrical service needs to provide 100 amperes. The architectural plans, submitted separately, detail the building's footprint, height, and other relevant specifications. We look forward to receiving your approval to proceed with this project.\n",
+    "object": {
+      "usage": [
+        "residential"
+      ],
+      "utilities": {
+        "water": {
+          "required": true,
+          "gallons_per_day": 250
+        },
+        "electrical": {
+          "required": true,
+          "amperage": 100
+        },
+        "gas": false
+      }
+    },
+    "scenario_id": "8_government permitting__project description in permit application",
+    "was_claude_vs_gemini_generated": false
+  },
+  {
+    "text_passage": "Welcome to this stunning 4-bedroom, 2-bathroom home in the heart of Scottsdale, Arizona. This spacious 2,850 square foot residence offers luxury living with resort-style amenities. Enjoy the sparkling pool perfect for Arizona summers, and cozy up to the elegant fireplace during winter evenings. The home features a private balcony, perfect for enjoying morning coffee or evening sunsets. Stay comfortable year-round with central air conditioning, and take advantage of the attached garage for protected parking and storage. Located in the desirable 85254 zip code, this exceptional property is offered at $789,000.",
+    "object": {
+      "bedrooms": 4,
+      "bathrooms": 2,
+      "square_footage": 2850,
+      "property_type": "house",
+      "amenities": [
+        "pool",
+        "garage",
+        "fireplace",
+        "balcony",
+        "central_ac"
+      ],
+      "listing_price": 789000,
+      "location": {
+        "city": "Scottsdale",
+        "state": "Arizona",
+        "zip_code": "85254"
+      }
+    },
+    "scenario_id": "2_real estate__property listing",
+    "was_claude_vs_gemini_generated": true
+  },
+  {
+    "text_passage": "We propose to construct an agricultural facility totaling 8,500 square feet in size. The structure will occupy 28.3% of the available lot area and will be dedicated exclusively to agricultural use. The construction project will be completed in a single phase with an anticipated duration of 4 months. The design prioritizes efficient use of space for agricultural operations while maintaining compliance with local building codes and setback requirements. The layout has been optimized to accommodate seasonal agricultural activities and provide adequate circulation space.",
+    "object": {
+      "project_specs": {
+        "total_square_feet": 8500,
+        "lot_coverage_percentage": 28.3
+      },
+      "usage": [
+        "agricultural"
+      ],
+      "timeline": {
+        "duration_months": 4,
+        "phases": 1
+      }
+    },
+    "scenario_id": "8_government permitting__project description in permit application",
+    "was_claude_vs_gemini_generated": true
+  },
+  {
+    "text_passage": "Stunning 4-Bedroom House in the Heart of Portland, OR - $2,200,000\n\nThis beautifully maintained 4-bedroom, 3-bathroom house offers 2,200 square feet of comfortable living space in the desirable Pearl District of Portland, Oregon (97201).  Built in 1920, this classic home seamlessly blends original charm with modern updates.  The spacious layout provides ample room for family and entertaining. Enjoy easy access to the city's best restaurants, shops, and parks. This home is zoned for award-winning Portland Public Schools.\n\nDon't miss this exceptional opportunity! Contact us today to schedule a showing.",
+    "object": {
+      "bedrooms": 4,
+      "bathrooms": 3,
+      "square_footage": 2200,
+      "property_type": "house",
+      "listing_price": 2200000,
+      "location": {
+        "city": "Portland",
+        "state": "OR",
+        "zip_code": "97201"
+      }
+    },
+    "scenario_id": "2_real estate__property listing",
+    "was_claude_vs_gemini_generated": false
+  },
+  {
+    "text_passage": "This research project aims to understand the lived experiences of street food vendors in Mumbai. We will conduct in-depth interviews and ethnographic field studies to explore the social, economic, and cultural factors influencing their livelihoods.  Audio recorders will be required to document the interviews conducted during the fieldwork. Interview data will be gathered and analyzed qualitatively. Our findings will provide valuable insights into the informal economy and the challenges faced by street food vendors, informing policy recommendations for urban development and economic empowerment. This study is anticipated to contribute to the broader understanding of informal economic practices and contribute to development economics.\n",
+    "object": {
+      "research_methods": [
+        "interviews",
+        "field_study"
+      ],
+      "equipment_needs": [
+        {
+          "name": "Audio Recorders"
+        }
+      ]
+    },
+    "scenario_id": "11_research administration__research project abstract or summary in grant application",
+    "was_claude_vs_gemini_generated": false
+  },
+  {
+    "text_passage": "Luxurious 5-Bedroom Estate in Prime Los Angeles Location\n\nThis stunning 5-bedroom, 4-bathroom house boasts 4,000 square feet of exquisite living space and is located in the heart of Los Angeles, CA 90001.  Enjoy the California sunshine in your private pool or cozy up by the fireplace on cooler evenings.  This home is perfect for entertaining and features a spacious garage, central AC, and a host of other amenities. Listed at $4,500,000, this exceptional property won't last long. Contact us today to schedule a showing!",
+    "object": {
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "square_footage": 4000,
+      "property_type": "house",
+      "amenities": [
+        "pool",
+        "garage",
+        "fireplace",
+        "central_ac"
+      ],
+      "listing_price": 4500000,
+      "location": {
+        "city": "Los Angeles",
+        "state": "CA",
+        "zip_code": "90001"
+      }
+    },
+    "scenario_id": "2_real estate__property listing",
+    "was_claude_vs_gemini_generated": false
+  },
+  {
+    "text_passage": "We propose construction of a 12,000 square foot single-story public facility designed to accommodate up to 400 occupants. The building will serve as a community center with flexible spaces for various public programs and gatherings. Construction will be executed in two phases over an 8-month period, with the initial phase focusing on core structure and the second phase handling interior finishing and systems installation. The design emphasizes accessibility and efficient crowd flow patterns appropriate for public assembly spaces.",
+    "object": {
+      "project_specs": {
+        "total_square_feet": 12000,
+        "floors": 1,
+        "occupancy_count": 400
+      },
+      "usage": [
+        "public"
+      ],
+      "timeline": {
+        "duration_months": 8,
+        "phases": 2
+      }
+    },
+    "scenario_id": "8_government permitting__project description in permit application",
+    "was_claude_vs_gemini_generated": true
+  },
+  {
+    "text_passage": "Highly motivated and results-oriented software engineer with 20 years of experience. Possesses a strong understanding of various programming languages, including Go, Rust, C++, Assembly, and COBOL. Seeking a challenging and rewarding opportunity to contribute to a dynamic team.  Eager to leverage expertise in diverse technologies to solve complex problems and deliver innovative solutions.",
+    "object": {
+      "skills": [
+        "Go",
+        "Rust",
+        "C++",
+        "Assembly",
+        "COBOL"
+      ],
+      "experience_years": 20
+    },
+    "scenario_id": "4_job recruiting__resume or cv",
+    "was_claude_vs_gemini_generated": false
+  },
+  {
+    "text_passage": "**Jane Doe**\n\n\n**Summary**\n\nHighly motivated backend engineer with 6 years of experience in developing and maintaining robust, scalable applications. Proven ability to collaborate effectively within cross-functional teams to deliver high-quality software solutions. Expertise in Java and Spring Boot, specializing in building RESTful APIs and microservices.\n\n\n**Experience**\n\n**Backend Engineer**\nTech Company\n* Contributed to the development of a high-throughput e-commerce platform.\n* Implemented key performance optimizations, resulting in a 20% reduction in latency.\n* Collaborated with QA and DevOps teams to ensure seamless deployments.\n\n\n**Skills**\n\nJava, Spring Boot",
+    "object": {
+      "skills": [
+        "Java",
+        "Spring Boot"
+      ],
+      "experience_years": 6,
+      "previous_roles": [
+        {
+          "title": "Backend Engineer",
+          "company": "Tech Company"
+        }
+      ]
+    },
+    "scenario_id": "4_job recruiting__resume or cv",
+    "was_claude_vs_gemini_generated": false
+  },
+  {
+    "text_passage": "We propose to construct a new commercial building with a total area of 15,600 square feet. The structure will occupy 55.8% of the lot area. The project requires full utility services, including water service calculated at 3,500 gallons per day, 300-amp electrical service, and gas connection. The building will serve retail and office tenants with modern amenities and energy-efficient systems. The design incorporates adequate parking and landscaping in compliance with local zoning requirements. The exterior will feature a contemporary design with durable materials selected for long-term maintenance efficiency.",
+    "object": {
+      "project_specs": {
+        "total_square_feet": 15600,
+        "lot_coverage_percentage": 55.8
+      },
+      "usage": [
+        "commercial"
+      ],
+      "utilities": {
+        "water": {
+          "required": true,
+          "gallons_per_day": 3500
+        },
+        "electrical": {
+          "required": true,
+          "amperage": 300
+        },
+        "gas": true
+      }
+    },
+    "scenario_id": "8_government permitting__project description in permit application",
+    "was_claude_vs_gemini_generated": true
+  },
+  {
+    "text_passage": "I am proposing to construct a new two-story residential home with a total floor area of 2,400 square feet. The design features an open-concept main living space and will require connection to municipal water service, with an estimated daily water usage of 450 gallons. The home will include living areas distributed across both floors, with careful attention to natural lighting and ventilation throughout the structure. The exterior design incorporates traditional architectural elements to maintain neighborhood character, including pitched roofs and craftsman-style details. The property will feature drought-resistant landscaping and permeable walkways to manage stormwater runoff effectively.",
+    "object": {
+      "project_specs": {
+        "total_square_feet": 2400,
+        "floors": 2
+      },
+      "usage": [
+        "residential"
+      ],
+      "utilities": {
+        "water": {
+          "required": true,
+          "gallons_per_day": 450
+        }
+      }
+    },
+    "scenario_id": "8_government permitting__project description in permit application",
+    "was_claude_vs_gemini_generated": true
+  },
+  {
+    "text_passage": "PATIENT VISIT NOTES\n\nReason for Visit:\nRoutine annual check-up.\n\nReview of Systems:\nPatient reports generally feeling well.\n\nAllergies:\nPenicillin, Latex, Shellfish.\n\nPhysical Examination:\nNo abnormal findings noted. Vital signs are within normal limits.\n\nAssessment:\nHealthy individual presenting for routine check-up.\n\nPlan:\nDiscussed importance of maintaining healthy lifestyle choices.  Scheduled follow-up appointment for next year.\n",
+    "object": {
+      "allergies": [
+        "Penicillin",
+        "Latex",
+        "Shellfish"
+      ]
+    },
+    "scenario_id": "0_healthcare__patient visit notes",
+    "was_claude_vs_gemini_generated": false
+  },
+  {
+    "text_passage": "A seasoned product management professional with 6 years of experience driving product strategy and execution in leading technology companies. Proven track record in agile methodologies and cross-functional team leadership.\n\nPROFESSIONAL EXPERIENCE\n\nSenior Product Manager\nSpotify\nApril 2020 - Present\n- Leading product initiatives through stakeholder alignment and data-driven decision making\n- Implementing agile frameworks for product development and delivery\n\nProduct Manager\nMicrosoft\nJuly 2017 - March 2020\n- Managed product lifecycle from conception to launch\n- Collaborated with engineering teams to deliver user-centric solutions\n\nEDUCATION\n\nMaster of Science in Information Systems\nCarnegie Mellon University\n\nSKILLS\n- Product Management\n- Agile\n- Stakeholder Management\n- Technical Communication\n- Data Analysis",
+    "object": {
+      "skills": [
+        "Product Management",
+        "Agile",
+        "Stakeholder Management",
+        "Technical Communication",
+        "Data Analysis"
+      ],
+      "experience_years": 6,
+      "education": [
+        {
+          "degree_type": "MS",
+          "major": "Information Systems",
+          "institution": "Carnegie Mellon University"
+        }
+      ],
+      "previous_roles": [
+        {
+          "title": "Senior Product Manager",
+          "company": "Spotify",
+          "start_month": 4,
+          "start_year": 2020,
+          "end_month": null,
+          "end_year": null
+        },
+        {
+          "title": "Product Manager",
+          "company": "Microsoft",
+          "start_month": 7,
+          "start_year": 2017,
+          "end_month": 3,
+          "end_year": 2020
+        }
+      ]
+    },
+    "scenario_id": "4_job recruiting__resume or cv",
+    "was_claude_vs_gemini_generated": true
+  },
+  {
+    "text_passage": "International wire transfer of USD 2,750,000 initiated by Global Ventures AG, routed through CitiFirst Bank, with Asia Trading Corporation as the beneficiary. Transaction flagged for review due to destination jurisdiction risk profile and the unusually quick movement of funds through multiple accounts. Compliance team has assigned medium severity to jurisdictional concerns and high severity to the velocity pattern. All parties are registered business entities. Standard documentation has been collected and verified for all involved parties, including certified business registrations and authorized signatory information. Transaction monitoring protocols are active.",
+    "object": {
+      "transaction": {
+        "category": "transfer",
+        "method": "wire",
+        "amount_usd": 2750000.0,
+        "cross_border": true
+      },
+      "parties": [
+        {
+          "name": "Global Ventures AG",
+          "role": "originator",
+          "entity_type": "business"
+        },
+        {
+          "name": "CitiFirst Bank",
+          "role": "intermediary",
+          "entity_type": "business"
+        },
+        {
+          "name": "Asia Trading Corporation",
+          "role": "beneficiary",
+          "entity_type": "business"
+        }
+      ],
+      "risk_flags": [
+        {
+          "type": "high_risk_jurisdiction",
+          "severity": "medium"
+        },
+        {
+          "type": "rapid_movement",
+          "severity": "high"
+        }
+      ]
+    },
+    "scenario_id": "10_financial compliance__transaction notes and description",
+    "was_claude_vs_gemini_generated": true
+  },
+  {
+    "text_passage": "On arrival at the scene, I observed a traffic incident that occurred on the street. A silver passenger vehicle sustained significant damage to its front end and along the driver's side. The incident took place entirely outdoors. Weather conditions were clear with good visibility. Driver was conscious and able to provide information. Tow truck was called to remove the vehicle from the scene. Traffic was temporarily diverted around the incident location until the roadway was cleared.",
+    "object": {
+      "location": {
+        "type": "street",
+        "indoor_outdoor": "outdoor"
+      },
+      "incident_type": [
+        "traffic"
+      ],
+      "vehicles": [
+        {
+          "type": "car",
+          "color": "silver",
+          "damage": [
+            "front",
+            "driver_side"
+          ]
+        }
+      ]
+    },
+    "scenario_id": "7_law enforcement__incident report",
+    "was_claude_vs_gemini_generated": true
+  },
+  {
+    "text_passage": "I propose to renovate an existing 1,200 square foot space for commercial use as a retail store. The project requires electrical service with 100 amp capacity to support standard retail operations including lighting, point-of-sale systems, and climate control. The space will be updated with modern fixtures and finishes appropriate for retail display and customer service areas.",
+    "object": {
+      "project_specs": {
+        "total_square_feet": 1200
+      },
+      "usage": [
+        "commercial"
+      ],
+      "utilities": {
+        "electrical": {
+          "required": true,
+          "amperage": 100
+        }
+      }
+    },
+    "scenario_id": "8_government permitting__project description in permit application",
+    "was_claude_vs_gemini_generated": true
+  },
+  {
+    "text_passage": "Stunning 4-Bedroom House with Pool in Dallas!\n\n$2,500,000\n\nThis beautifully appointed 4-bedroom, 3-bathroom house is located in the heart of Dallas, TX (75201).  Offering 2,500 sq ft of living space, this home features a sparkling pool, an attached garage, and a cozy fireplace perfect for chilly evenings. Schedule a tour today!\n",
+    "object": {
+      "bedrooms": 4,
+      "bathrooms": 3,
+      "square_footage": 2500,
+      "property_type": "house",
+      "amenities": [
+        "pool",
+        "garage",
+        "fireplace"
+      ],
+      "listing_price": 2500000,
+      "location": {
+        "city": "Dallas",
+        "state": "TX",
+        "zip_code": "75201"
+      }
+    },
+    "scenario_id": "2_real estate__property listing",
+    "was_claude_vs_gemini_generated": false
+  },
+  {
+    "text_passage": "PATIENT VISIT NOTES\n\nChief Complaint:\nPatient presents with migraine headache and nausea.\n\nHistory of Present Illness:\nPatient reports experiencing intermittent migraine headaches for the past 3 days, rating pain intensity as 8/10. Associated symptoms include occasional nausea for the past 2 days, with severity rated at 6/10. Patient appears uncomfortable but is in no acute distress.\n\nCurrent Medications:\n- Sumatriptan 100mg as needed for migraine\n- Ondansetron 4mg twice daily for nausea\n\nAllergies:\nPatient has known allergies to:\n- Penicillin\n- Sulfa drugs\n- Latex\n\nFamily History:\nSignificant family history of:\n- Diabetes\n- Hypertension\n- Cancer\n\nPhysical Examination:\nPatient is alert and oriented. Demonstrates mild photophobia and tenderness in temporal region. Vital signs within normal limits. Neurological examination grossly intact.\n\nAssessment/Plan:\nWill continue current medication regimen. Patient advised to maintain headache diary and follow up in one week if symptoms persist or worsen.",
+    "object": {
+      "symptoms": [
+        {
+          "name": "migraine headache",
+          "duration_days": 3,
+          "severity": 8,
+          "frequency": "intermittent"
+        },
+        {
+          "name": "nausea",
+          "duration_days": 2,
+          "severity": 6,
+          "frequency": "occasional"
+        }
+      ],
+      "medications": [
+        {
+          "name": "sumatriptan",
+          "dosage": "100mg",
+          "frequency": "as needed"
+        },
+        {
+          "name": "ondansetron",
+          "dosage": "4mg",
+          "frequency": "twice daily"
+        }
+      ],
+      "allergies": [
+        "penicillin",
+        "sulfa drugs",
+        "latex"
+      ],
+      "family_history_flags": [
+        "diabetes",
+        "hypertension",
+        "cancer"
+      ]
+    },
+    "scenario_id": "0_healthcare__patient visit notes",
+    "was_claude_vs_gemini_generated": true
+  },
+  {
+    "text_passage": "Patient presented on October 26, 2024, complaining of a headache and fatigue. The patient denies any recent illness or injury.  She appears otherwise healthy and in reasonably good spirits. No further information is available at this time.",
+    "object": {
+      "symptoms": [
+        {
+          "name": "Headache"
+        },
+        {
+          "name": "Fatigue"
+        }
+      ]
+    },
+    "scenario_id": "0_healthcare__patient visit notes",
+    "was_claude_vs_gemini_generated": false
+  }
+]
