@@ -68,7 +68,7 @@
           }
         },
         "required": [
-          "time_remaining",
+          "time_remaining_mm_ss",
           "quarter",
           "player",
           "play_type"
