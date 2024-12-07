@@ -3,11 +3,6 @@ Evaluating and improving smallish language models for the purpose of extracting 
 
 agenda
 - fix some dataset issues
-  - models apparently interpreted "termination clause" field for legal contract as something to be summarized/approximated, but imo it should be marked somehow as verbatim
-    - maybe the system prompts can explain a special flag/suffix for json fields that should be treated that way
-    - maybe simply the suffix "_verbatim"
-    - update system prompts to explain how this flag should affect behavior in text passage generation and object extraction
-    - review all previously-accepted records for scenario ids 3/13/14 and a) update field names in JSON plus b) double check that the text passage contains the exact text string from the verbatim-marked JSON field
   - at least gemini-produced data has a lot of obviously-fake and/or insufficiently-diverse data (e.g. "Jane Doe" or "John Doe" being used as a name and being used repeatedly, phone numbers starting with 555-, "email.com" as an email domain name, etc.)
     - ?experiment with effects of increasing gemini generation temperature to 1.5 or 2?
     - ?try tweaking object generation prompt
