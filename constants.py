@@ -15,6 +15,11 @@ texts_path = Path("text_passages")
 claude_texts_path = texts_path / claude_folder_nm
 gemini_texts_path = texts_path / gemini_folder_nm
 
+split_data_folder_path = Path("split_data")
+fewshot_examples_path = split_data_folder_path / "fewshot_examples.json"
+validation_set_path = split_data_folder_path / "validation_set.json"
+test_set_path = split_data_folder_path / "test_set.json"
+
 google_api_key_env = "GOOGLE_DEEPMIND_API_KEY"
 is_google_api_key_using_free_tier = True#change this to False in local copy of code when using a paid API key, b/c otherwise activities with Gemini will be very slow
 anthropic_api_key_env = "ANTHROPIC_API_KEY"
