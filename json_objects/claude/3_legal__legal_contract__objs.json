@@ -8,8 +8,8 @@
         ],
         "governing_law": "State of Delaware",
         "clauses": {
-            "termination_clause": "30 days written notice required",
-            "confidentiality_clause": "5 year non-disclosure period",
+            "termination_clause_verbatim": "Any Party may terminate this Agreement by providing thirty (30) days written notice to the other Parties.",
+            "confidentiality_clause_verbatim": "All Parties shall maintain strict confidentiality of any proprietary information shared under this Agreement for a period of five (5) years from the date of disclosure.",
             "payment_amount": 250000.0
         }
     },
@@ -28,13 +28,13 @@
         ],
         "governing_law": "State of California",
         "clauses": {
-            "confidentiality_clause": "Perpetual confidentiality requirement"
+            "confidentiality_clause_verbatim": "The parties agree that all information shared between them, including but not limited to technical specifications, patient data, business processes, and proprietary methodologies, shall be kept strictly confidential. This confidentiality obligation shall survive the termination or expiration of this Agreement and shall remain in effect in perpetuity."
         }
     },
     {
         "governing_law": "Province of Ontario",
         "clauses": {
-            "termination_clause": "Immediate termination for material breach"
+            "termination_clause_verbatim": "Either party may terminate this Agreement immediately upon written notice in the event of a material breach by the other party."
         }
     },
     {
@@ -57,12 +57,12 @@
             "Valley Architecture"
         ],
         "clauses": {
-            "termination_clause": "Termination upon mutual agreement"
+            "termination_clause_verbatim": "This Agreement shall commence on the date of signing and continue until modified or terminated by mutual agreement of both parties."
         }
     },
     {
         "clauses": {
-            "confidentiality_clause": "10 year non-disclosure period",
+            "confidentiality_clause_verbatim": "All parties shall maintain strict confidentiality of all information disclosed under this Agreement for a period of ten (10) years from the date of disclosure. This includes, but is not limited to, all proprietary information, trade secrets, technical specifications, customer data, business strategies, and other confidential materials shared in the course of this engagement. Any breach of this confidentiality provision shall constitute grounds for immediate legal action and monetary damages.",
             "payment_amount": 75000.0
         }
     },
@@ -89,8 +89,8 @@
         ],
         "governing_law": "State of Washington",
         "clauses": {
-            "termination_clause": "90 days notice required",
-            "confidentiality_clause": "3 year non-disclosure period"
+            "termination_clause_verbatim": "Either Party may terminate this Agreement by providing ninety (90) days written notice to the other Party. Such notice shall be provided in writing and delivered via certified mail to the address specified herein.",
+            "confidentiality_clause_verbatim": "All confidential information shared between the Parties shall be kept strictly confidential for a period of three (3) years from the date of disclosure. This includes, but is not limited to, trade secrets, customer lists, pricing information, and technical specifications."
         }
     },
     {
@@ -99,7 +99,7 @@
             "City Planning Associates"
         ],
         "clauses": {
-            "termination_clause": "60 days written notice required"
+            "termination_clause_verbatim": "Either Party may terminate this Agreement by providing sixty (60) days written notice to the other Party."
         }
     },
     {
@@ -108,7 +108,7 @@
             "Neural Networks Inc"
         ],
         "clauses": {
-            "confidentiality_clause": "7 year non-disclosure period"
+            "confidentiality_clause_verbatim": "The Parties agree to maintain strict confidentiality of all information exchanged under this Agreement for a period of seven (7) years from disclosure. During this non-disclosure period, neither party shall disclose any confidential information to any third party without prior written consent."
         }
     },
     {
@@ -125,8 +125,8 @@
             "Data Storage Solutions"
         ],
         "clauses": {
-            "termination_clause": "45 days notice required",
-            "confidentiality_clause": "2 year non-disclosure period",
+            "termination_clause_verbatim": "Either party may terminate this Agreement by providing forty-five (45) days written notice to the other party.",
+            "confidentiality_clause_verbatim": "Both parties agree to maintain the confidentiality of all information exchanged under this Agreement for a period of two (2) years from the date of disclosure.",
             "payment_amount": 125000.0
         }
     },
@@ -138,7 +138,7 @@
             "Bay Area Transport"
         ],
         "clauses": {
-            "termination_clause": "Termination upon mutual agreement"
+            "termination_clause_verbatim": "This Agreement may be terminated upon mutual agreement of all parties."
         }
     },
     {
@@ -148,7 +148,7 @@
             "John Martinez"
         ],
         "clauses": {
-            "confidentiality_clause": "Employee shall maintain strict confidentiality of all proprietary information for 5 years post-employment"
+            "confidentiality_clause_verbatim": "Employee shall maintain strict confidentiality of all proprietary information for 5 years post-employment. This includes but is not limited to trade secrets, customer lists, technical specifications, and business strategies."
         }
     },
     {
@@ -161,8 +161,8 @@
         ],
         "governing_law": "State of Delaware",
         "clauses": {
-            "termination_clause": "Agreement may be terminated with 90 days written notice",
-            "confidentiality_clause": "All transaction details to remain confidential for 10 years",
+            "termination_clause_verbatim": "Any Party may terminate this Agreement by providing ninety (90) days written notice to all other Parties.",
+            "confidentiality_clause_verbatim": "All transaction details related to this Agreement shall remain strictly confidential for a period of ten (10) years from the date of execution.",
             "payment_amount": 8500000.0
         }
     },
@@ -173,7 +173,7 @@
             "DataTech Solutions"
         ],
         "clauses": {
-            "termination_clause": "Either party may terminate with 30 days notice; immediate termination allowed for material breach",
+            "termination_clause_verbatim": "Either party may terminate this Agreement upon providing thirty (30) days prior written notice to the other party. In the event of a material breach of this Agreement by either party, the non-breaching party may terminate this Agreement immediately upon written notice to the breaching party.",
             "payment_amount": 75000.0
         }
     },
@@ -194,7 +194,7 @@
         ],
         "governing_law": "State of New York",
         "clauses": {
-            "termination_clause": "60 days notice required for termination",
+            "termination_clause_verbatim": "Any Party may terminate this Agreement by providing sixty (60) days prior written notice to the other Parties.",
             "payment_amount": 450000.0
         }
     }

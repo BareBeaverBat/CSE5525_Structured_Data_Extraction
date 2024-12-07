@@ -13,8 +13,8 @@
             "Zeta Holdings"
         ],
         "clauses": {
-            "termination_clause": "Termination upon mutual agreement.",
-            "confidentiality_clause": "Standard confidentiality applies.",
+            "termination_clause_verbatim": "This Agreement may be terminated upon mutual agreement of the parties.",
+            "confidentiality_clause_verbatim": "Standard confidentiality applies. Both parties agree not to disclose any confidential information obtained during the course of this agreement to any third party.",
             "payment_amount": 50000
         }
     },
@@ -36,8 +36,8 @@
         ],
         "governing_law": "New York",
         "clauses": {
-            "termination_clause": "Termination for breach of contract.",
-            "confidentiality_clause": "Strict confidentiality agreement."
+            "termination_clause_verbatim": "This Agreement may be terminated for breach of contract.",
+            "confidentiality_clause_verbatim": "The Parties agree to maintain strict confidentiality regarding the terms and conditions of this Agreement and the nature of their collaborative venture."
         }
     },
     {
@@ -47,7 +47,7 @@
         ],
         "governing_law": "Florida",
         "clauses": {
-            "termination_clause": "60 days notice required for termination.",
+            "termination_clause_verbatim": "This Agreement may be terminated by either party with 60 days notice.",
             "payment_amount": 25000
         }
     },
@@ -67,7 +67,7 @@
             "Xi Corp"
         ],
         "clauses": {
-            "termination_clause": "Termination subject to arbitration."
+            "termination_clause_verbatim": "This agreement may be terminated subject to arbitration."
         }
     },
     {
@@ -82,8 +82,8 @@
     {
         "signing_date": "2024-06-21",
         "clauses": {
-            "termination_clause": "Immediate termination for cause.",
-            "confidentiality_clause": "Information is confidential and proprietary.",
+            "termination_clause_verbatim": "This Agreement may be terminated immediately for cause. Specific events constituting \"cause\" will be defined in an appendix to this Agreement.",
+            "confidentiality_clause_verbatim": "Information shared between the parties during the term of this agreement is confidential and proprietary.",
             "payment_amount": 75000
         }
     },
@@ -93,7 +93,7 @@
             "Sigma Systems"
         ],
         "clauses": {
-            "confidentiality_clause": "Non-disclosure agreement in effect."
+            "confidentiality_clause_verbatim": "Non-disclosure agreement in effect."
         }
     },
     {
@@ -110,7 +110,7 @@
             "Psi Psychology"
         ],
         "clauses": {
-            "termination_clause": "Termination with 90 days notice."
+            "termination_clause_verbatim": "This Agreement shall remain in effect until completion of the Project or until terminated as provided herein. Either party may terminate this Agreement for any reason with ninety (90) days' written notice to the other parties."
         }
     },
     {
@@ -120,7 +120,7 @@
             "Beta Biotech"
         ],
         "clauses": {
-            "confidentiality_clause": "Standard NDA applies."
+            "confidentiality_clause_verbatim": "Standard NDA applies."
         }
     }
 ]
