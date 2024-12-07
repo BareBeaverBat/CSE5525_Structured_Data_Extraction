@@ -33,9 +33,8 @@ for i in range(len(scenario_domains)):
     objects_claude.append(load_objects_for_one_model_and_scenario(claude_objs_path, schemas[i], i))
     objects_gemini.append(load_objects_for_one_model_and_scenario(gemini_objs_path, schemas[i], i))
 
-    scenario_id_claude.append([f"{i}_{scenario_domains[i]}__{scenario_text_passage_descriptions[i]}"]*len(text_passages_claude[i]))
-   
-    scenario_id_gemini.append([f"{i}_{scenario_domains[i]}__{scenario_text_passage_descriptions[i]}"]*len(text_passages_gemini[i]))
+    scenario_id_claude.append([i]*len(text_passages_claude[i]))
+    scenario_id_gemini.append([i]*len(text_passages_gemini[i]))
 
 
 flattened_text_passages_claude = [item for sublist in text_passages_claude for item in sublist]
@@ -52,11 +51,10 @@ dataset = []
 
 for i in range(len(flattened_text_passages_claude)):
     # Add the claude vs gemini generated flag(True for claude, False for gemini)
-    
-    dataset.append({"text_passage": flattened_text_passages_claude[i], "object": flattened_objects_claude[i], "scenario_id": flattened_scenario_id_claude[i], "was_claude_vs_gemini_generated": True})
+    dataset.append({"text_passage": flattened_text_passages_claude[i], "object": flattened_objects_claude[i], "scenario_id": flattened_scenario_id_claude[i], "scenario_name":scenario_text_passage_descriptions[flattened_scenario_id_claude[i]], "was_claude_vs_gemini_generated": True})
 
 for i in range(len(flattened_text_passages_gemini)):
-    dataset.append({"text_passage": flattened_text_passages_gemini[i], "object": flattened_objects_gemini[i], "scenario_id": flattened_scenario_id_gemini[i], "was_claude_vs_gemini_generated": False})
+    dataset.append({"text_passage": flattened_text_passages_gemini[i], "object": flattened_objects_gemini[i], "scenario_id": flattened_scenario_id_gemini[i], "scenario_name":scenario_text_passage_descriptions[flattened_scenario_id_gemini[i]], "was_claude_vs_gemini_generated": False})
 
 
 
