@@ -1,5 +1,5 @@
-from utils_and_defs.constants import claude_texts_path, gemini_texts_path, claude_objs_path, gemini_objs_path, schemas_path, \
-    split_data_folder_path, fewshot_examples_path, validation_set_path, test_set_path
+from data_processing.data_mngmt_defs import schemas_path, claude_objs_path, gemini_objs_path, claude_texts_path, \
+    gemini_texts_path, split_data_folder_path, fewshot_examples_path, validation_set_path, test_set_path
 
 import random
 import json

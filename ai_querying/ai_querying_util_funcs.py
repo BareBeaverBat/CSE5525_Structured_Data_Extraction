@@ -9,8 +9,9 @@ from anthropic import Anthropic
 import google.generativeai as google_genai
 from google.generativeai import GenerativeModel
 
-from utils_and_defs.constants import ModelProvider, is_google_api_key_using_free_tier, \
-    max_num_api_calls_for_anthropic_overloaded_retry_logic, max_num_api_calls_for_google_refusals_retry_logic
+from ai_querying.ai_querying_defs import is_google_api_key_using_free_tier, \
+    max_num_api_calls_for_anthropic_overloaded_retry_logic, max_num_api_calls_for_google_refusals_retry_logic, \
+    ModelProvider
 from utils_and_defs.logging_setup import create_logger
 from utils_and_defs.trivial_util_funcs import find_last_re_match
 

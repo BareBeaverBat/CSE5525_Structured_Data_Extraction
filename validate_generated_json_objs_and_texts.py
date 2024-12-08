@@ -9,16 +9,18 @@ from anthropic import Anthropic
 from google.generativeai.generative_models import safety_types, GenerativeModel
 from jsonschema.validators import Draft202012Validator
 
-from utils_and_defs.constants import schemas_path, claude_objs_path, gemini_objs_path, claude_texts_path, google_api_key_env, \
-    anthropic_api_key_env, google_model_specifier, anthropic_model_specifier, \
-    google_object_reconstruction_sys_prompt, anthropic_object_reconstruction_sys_prompt, \
-    anthropic_reconstruction_temp, google_reconstruction_temp, \
-    max_num_api_calls_for_schema_validation_retry_logic, ModelProvider, gemini_texts_path
+from ai_querying.ai_querying_defs import google_api_key_env, anthropic_api_key_env, google_model_specifier, \
+    anthropic_model_specifier, anthropic_reconstruction_temp, google_reconstruction_temp, \
+    max_num_api_calls_for_schema_validation_retry_logic, ModelProvider
+from ai_querying.system_prompts import anthropic_object_reconstruction_sys_prompt, \
+    google_object_reconstruction_sys_prompt
+from data_processing.data_mngmt_defs import schemas_path, claude_objs_path, gemini_objs_path, claude_texts_path, \
+    gemini_texts_path
 from data_processing.data_loading import load_scenarios, load_objects_for_one_model_and_scenario, \
     load_text_passages_for_one_model_and_scenario
 from data_processing.json_obj_comparison import evaluate_extraction
 from utils_and_defs.logging_setup import create_logger
-from utils_and_defs.ai_querying_util_funcs import extract_json_doc_from_output, generate_with_model
+from ai_querying.ai_querying_util_funcs import extract_json_doc_from_output, generate_with_model
 from utils_and_defs.trivial_util_funcs import d
 
 logger = create_logger(__name__)

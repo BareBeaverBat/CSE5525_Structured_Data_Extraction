@@ -15,16 +15,17 @@ from jsonschema import Draft202012Validator
 
 from data_processing.data_loading import load_scenarios, load_objects_for_one_model_and_scenario, \
     load_text_passages_for_one_model_and_scenario
-from utils_and_defs.ai_querying_util_funcs import extract_text_passage_from_output, extract_json_doc_from_output, \
+from ai_querying.ai_querying_util_funcs import extract_text_passage_from_output, extract_json_doc_from_output, \
     generate_with_model
-from utils_and_defs.constants import schemas_path, anthropic_api_key_env, google_model_specifier, \
-    anthropic_model_specifier, \
-    anthropic_object_generation_sys_prompt, google_object_generation_sys_prompt, \
-    google_text_passage_generation_sys_prompt, \
-    anthropic_text_passage_generation_sys_prompt, anthropic_obj_gen_group_size, google_obj_gen_group_size, \
-    google_generation_temp, anthropic_generation_temp, google_reconstruction_temp, \
-    google_object_reconstruction_sys_prompt, claude_objs_path, gemini_objs_path, gemini_texts_path, claude_texts_path, \
-    google_api_key_env, max_num_api_calls_for_schema_validation_retry_logic, ModelProvider
+from ai_querying.ai_querying_defs import google_api_key_env, anthropic_api_key_env, google_model_specifier, \
+    anthropic_model_specifier, anthropic_generation_temp, google_generation_temp, google_reconstruction_temp, \
+    anthropic_obj_gen_group_size, google_obj_gen_group_size, max_num_api_calls_for_schema_validation_retry_logic, \
+    ModelProvider
+from ai_querying.system_prompts import anthropic_object_generation_sys_prompt, google_object_generation_sys_prompt, \
+    anthropic_text_passage_generation_sys_prompt, google_text_passage_generation_sys_prompt, \
+    google_object_reconstruction_sys_prompt
+from data_processing.data_mngmt_defs import schemas_path, claude_objs_path, gemini_objs_path, claude_texts_path, \
+    gemini_texts_path
 from utils_and_defs.logging_setup import create_logger
 from utils_and_defs.trivial_util_funcs import d
 from validate_generated_json_objs_and_texts import validate_generated_objects_texts
