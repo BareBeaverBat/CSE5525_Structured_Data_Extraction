@@ -8,15 +8,15 @@ claude_folder_nm = "claude"
 gemini_folder_nm = "gemini"
 
 
-schemas_path = Path("json_schemas")
-objects_path = Path("json_objects")
+schemas_path = Path("../json_schemas")
+objects_path = Path("../json_objects")
 claude_objs_path = objects_path / claude_folder_nm
 gemini_objs_path = objects_path / gemini_folder_nm
-texts_path = Path("text_passages")
+texts_path = Path("../text_passages")
 claude_texts_path = texts_path / claude_folder_nm
 gemini_texts_path = texts_path / gemini_folder_nm
 
-split_data_folder_path = Path("split_data")
+split_data_folder_path = Path("../split_data")
 fewshot_examples_path = split_data_folder_path / "fewshot_examples.json"
 validation_set_path = split_data_folder_path / "validation_set.json"
 test_set_path = split_data_folder_path / "test_set.json"
@@ -24,6 +24,8 @@ test_set_path = split_data_folder_path / "test_set.json"
 google_api_key_env = "GOOGLE_DEEPMIND_API_KEY"
 is_google_api_key_using_free_tier = os.environ.get("GOOGLE_DEEPMIND_API_KEY_IS_FREE_TIER") == "True"
 anthropic_api_key_env = "ANTHROPIC_API_KEY"
+openai_api_key_env = "OPENAI_API_KEY"
+deepinfra_api_key_env = "DEEPINFRA_API_KEY"
 
 google_model_specifier = "gemini-1.5-pro-002"
 anthropic_model_specifier = "claude-3-5-sonnet-20241022"

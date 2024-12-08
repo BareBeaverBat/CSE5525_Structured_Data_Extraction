@@ -7,7 +7,7 @@ from typing import Tuple, List, Any, Optional
 
 from jsonschema.validators import Draft202012Validator
 
-from logging_setup import create_logger
+from utils_and_defs.logging_setup import create_logger
 
 logger = create_logger(__name__)
 

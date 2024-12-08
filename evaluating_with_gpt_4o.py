@@ -1,6 +1,5 @@
 import json
-import os
-from json_obj_comparison import evaluate_extraction
+from data_processing.json_obj_comparison import evaluate_extraction
 
 
 def load_json(file_path):

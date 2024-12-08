@@ -1,12 +1,12 @@
-from constants import claude_texts_path, gemini_texts_path, claude_objs_path, gemini_objs_path, schemas_path, \
+from utils_and_defs.constants import claude_texts_path, gemini_texts_path, claude_objs_path, gemini_objs_path, schemas_path, \
     split_data_folder_path, fewshot_examples_path, validation_set_path, test_set_path
 
 import random
 import json
 
-from data_loading import load_scenarios, load_text_passages_for_one_model_and_scenario, \
+from data_processing.data_loading import load_scenarios, load_text_passages_for_one_model_and_scenario, \
     load_objects_for_one_model_and_scenario
-from logging_setup import create_logger
+from utils_and_defs.logging_setup import create_logger
 
 logger = create_logger(__name__)
 

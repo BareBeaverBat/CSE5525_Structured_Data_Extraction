@@ -2,7 +2,8 @@ import os
 import json
 import glob
 from openai import OpenAI
-from logging_setup import create_logger
+
+from utils_and_defs.logging_setup import create_logger
 
 # this is the code that will be used to generate the objects for evaluation using GPT-4o-mini model in zero-shot setting
 
