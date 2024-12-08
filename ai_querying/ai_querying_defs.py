@@ -1,5 +1,8 @@
 import os
+from dataclasses import dataclass
 from enum import Enum
+
+from anthropic import Anthropic
 
 google_api_key_env = "GOOGLE_DEEPMIND_API_KEY"
 is_google_api_key_using_free_tier = os.environ.get("GOOGLE_DEEPMIND_API_KEY_IS_FREE_TIER") == "True"
@@ -22,3 +25,11 @@ max_num_api_calls_for_google_refusals_retry_logic = 5
 class ModelProvider(Enum):
     ANTHROPIC = "claude"
     GOOGLE_DEEPMIND = "gemini"
+
+@dataclass
+class AnthropicClientBundle:
+    client: Anthropic
+    sys_prompt: str
+    max_tokens: int
+    temp: float
+    model_spec: str

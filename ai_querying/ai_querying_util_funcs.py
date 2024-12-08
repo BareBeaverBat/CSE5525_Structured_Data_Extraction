@@ -11,7 +11,7 @@ from google.generativeai import GenerativeModel
 
 from ai_querying.ai_querying_defs import is_google_api_key_using_free_tier, \
     max_num_api_calls_for_anthropic_overloaded_retry_logic, max_num_api_calls_for_google_refusals_retry_logic, \
-    ModelProvider
+    ModelProvider, AnthropicClientBundle
 from utils_and_defs.logging_setup import create_logger
 from utils_and_defs.trivial_util_funcs import find_last_re_match
 
@@ -134,13 +134,13 @@ def extract_text_passage_from_output(model_output: str) -> (str|None, str):
     return text_passage, rest_of_output
 
 #if the user prompts get much bigger, can break initial prompt into "initial_prompt_cacheable" and "initial_prompt_noncacheable"
-def generate_with_model(model_choice: ModelProvider, initial_prompt: str, ai_responses: list[str],
-                        followup_prompts: list[str], google_client: GenerativeModel, anthropic_client: Anthropic,
-                        anthropic_sys_prompt: str, anthropic_max_tokens: int, anthropic_temp: float,
-                        anthropic_model_choice: str) -> str:
+def generate_with_model(
+        model_choice: ModelProvider, initial_prompt: str, ai_responses: list[str], followup_prompts: list[str],
+        google_client: GenerativeModel = None, anthropic_client_bundle: AnthropicClientBundle= None) -> str:
     resp_text: str = "Model failed to generate a response"
     
     if model_choice == ModelProvider.ANTHROPIC:
+        assert anthropic_client_bundle is not None
         chat_msgs = [{"role": "user", "content": initial_prompt}]
         for ai_resp, followup_prompt in zip(ai_responses, followup_prompts):
             chat_msgs.append({"role": "assistant", "content": ai_resp})
@@ -149,15 +149,15 @@ def generate_with_model(model_choice: ModelProvider, initial_prompt: str, ai_res
         for attempt_idx in range(max_num_api_calls_for_anthropic_overloaded_retry_logic):
             
             try:
-                anthropic_resp = anthropic_client.beta.prompt_caching.messages.create(
+                anthropic_resp = anthropic_client_bundle.client.beta.prompt_caching.messages.create(
                     system=[
                         {
                             "type": "text",
-                            "text": anthropic_sys_prompt,
+                            "text": anthropic_client_bundle.sys_prompt,
                             "cache_control": {"type": "ephemeral"}
                         }
-                    ], max_tokens=anthropic_max_tokens, temperature=anthropic_temp,
-                    model= anthropic_model_choice, messages=chat_msgs)
+                    ], max_tokens=anthropic_client_bundle.max_tokens, temperature=anthropic_client_bundle.temp,
+                    model= anthropic_client_bundle.model_spec, messages=chat_msgs)
                 resp_text = anthropic_resp.content[0].text
                 logger.debug(f"Anthropic API call cache stats: {anthropic_resp.usage.cache_creation_input_tokens} "
                              f"tokens written, {anthropic_resp.usage.cache_read_input_tokens} tokens read")

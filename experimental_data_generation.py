@@ -20,7 +20,7 @@ from ai_querying.ai_querying_util_funcs import extract_text_passage_from_output,
 from ai_querying.ai_querying_defs import google_api_key_env, anthropic_api_key_env, google_model_specifier, \
     anthropic_model_specifier, anthropic_generation_temp, google_generation_temp, google_reconstruction_temp, \
     anthropic_obj_gen_group_size, google_obj_gen_group_size, max_num_api_calls_for_schema_validation_retry_logic, \
-    ModelProvider
+    ModelProvider, AnthropicClientBundle
 from ai_querying.system_prompts import anthropic_object_generation_sys_prompt, google_object_generation_sys_prompt, \
     anthropic_text_passage_generation_sys_prompt, google_text_passage_generation_sys_prompt, \
     google_object_reconstruction_sys_prompt
@@ -54,6 +54,8 @@ def generate_json_objs(google_client: Optional[GenerativeModel], anthropic_clien
     assert (google_client is not None) ^ (anthropic_client is not None)#XOR- exactly one of them should be defined
     should_use_claude: bool = google_client is None
     model_nm = "Claude" if should_use_claude else "Gemini"
+    bundled_anthropic_client = AnthropicClientBundle(anthropic_client, anthropic_object_generation_sys_prompt,
+                                                     4096, anthropic_generation_temp, anthropic_model_specifier)
     logger.info(f"Generating {target_num_objs} objects with {model_nm} for scenario {scenario_domain} - {scenario_texts_label}")
     
     generated_objects: list[Optional[dict[str,Any]]] = []
@@ -63,7 +65,7 @@ def generate_json_objs(google_client: Optional[GenerativeModel], anthropic_clien
     user_prompt = d(f"""
     Here is such a JSON schema for the domain "{scenario_domain}":
     ```json
-    {json.dumps(schema)}
+    {json.dumps(schema, indent=2)}
     ```
     This describes the pieces of information that someone might want to extract in a structured way from "{scenario_texts_label}" text passages.
     Please generate a JSON array containing {target_num_objs} diverse JSON objects conforming to that schema, following the above instructions while doing so.
@@ -82,8 +84,7 @@ def generate_json_objs(google_client: Optional[GenerativeModel], anthropic_clien
         
         resp_text = generate_with_model(
             ModelProvider.ANTHROPIC if should_use_claude else ModelProvider.GOOGLE_DEEPMIND, user_prompt, ai_responses,
-            followup_prompts, google_client, anthropic_client, anthropic_object_generation_sys_prompt, 4096,
-            anthropic_generation_temp, anthropic_model_specifier)
+            followup_prompts, google_client, bundled_anthropic_client)
         
         curr_generated_objects, obj_gen_analysis, json_doc_problem_explanation = \
             extract_json_doc_from_output(resp_text, is_obj_vs_arr=False)
@@ -148,12 +149,14 @@ def generate_text_passages(google_client: Optional[GenerativeModel], anthropic_c
     assert (google_client is not None) ^ (anthropic_client is not None)#XOR- exactly one of them should be defined
     should_use_claude: bool = google_client is None
     model_nm = "Claude" if should_use_claude else "Gemini"
+    bundled_anthropic_client = AnthropicClientBundle(anthropic_client, anthropic_text_passage_generation_sys_prompt,
+                                                     4096, anthropic_generation_temp, anthropic_model_specifier)
     logger.info(f"Generating text passages with {model_nm} for scenario {scenario_domain} - {scenario_texts_label}")
     
     user_prompt_template = Template(d(f"""
     Here is a JSON schema for the domain "{scenario_domain}":
     ```json
-    {json.dumps(schema)}
+    {json.dumps(schema, indent=2)}
     ```
     
     This describes the pieces of information that someone might want to extract in a structured way from "{scenario_texts_label}" text passages.
@@ -177,8 +180,7 @@ def generate_text_passages(google_client: Optional[GenerativeModel], anthropic_c
         user_prompt = user_prompt_template.safe_substitute(schema_generated_json_instance=(json.dumps(obj)))
         resp_text: str = generate_with_model(
             ModelProvider.ANTHROPIC if should_use_claude else ModelProvider.GOOGLE_DEEPMIND, user_prompt, [], [],
-            google_client, anthropic_client, anthropic_text_passage_generation_sys_prompt, 4096,
-            anthropic_generation_temp, anthropic_model_specifier)
+            google_client, bundled_anthropic_client)
         
         text_passage, text_gen_analysis = extract_text_passage_from_output(resp_text)
         if text_passage is None:

@@ -11,7 +11,7 @@ from jsonschema.validators import Draft202012Validator
 
 from ai_querying.ai_querying_defs import google_api_key_env, anthropic_api_key_env, google_model_specifier, \
     anthropic_model_specifier, anthropic_reconstruction_temp, google_reconstruction_temp, \
-    max_num_api_calls_for_schema_validation_retry_logic, ModelProvider
+    max_num_api_calls_for_schema_validation_retry_logic, ModelProvider, AnthropicClientBundle
 from ai_querying.system_prompts import anthropic_object_reconstruction_sys_prompt, \
     google_object_reconstruction_sys_prompt
 from data_processing.data_mngmt_defs import schemas_path, claude_objs_path, gemini_objs_path, claude_texts_path, \
@@ -119,10 +119,12 @@ def reconstruct_obj_from_passage_with_retry(
         anthropic_client: Anthropic, google_client: GenerativeModel, passage: str, passage_idx: int,
         reconstructor_model: str, scenario_domain: str, scenario_texts_label: str, schema: dict[str, Any],
         schema_idx: int, src_model_nm: str, was_claude_generated: bool) -> tuple[Optional[dict[str, Any]], str]:
+    bundled_anthropic_client = AnthropicClientBundle(anthropic_client, anthropic_object_reconstruction_sys_prompt,
+                                                     4096, anthropic_reconstruction_temp, anthropic_model_specifier)
     user_prompt = d(f"""
         Here is a JSON schema for the domain "{scenario_domain}":
         ```json
-        {json.dumps(schema)}
+        {json.dumps(schema, indent=2)}
         ```
         
         Here is the "{scenario_texts_label}" text passage.
@@ -143,8 +145,7 @@ def reconstruct_obj_from_passage_with_retry(
         
         resp_text = generate_with_model(
             ModelProvider.GOOGLE_DEEPMIND if was_claude_generated else ModelProvider.ANTHROPIC, user_prompt,
-            ai_responses, followup_prompts, google_client, anthropic_client, anthropic_object_reconstruction_sys_prompt,
-            4096, anthropic_reconstruction_temp, anthropic_model_specifier)
+            ai_responses, followup_prompts, google_client, bundled_anthropic_client)
         
         curr_extracted_obj, obj_gen_analysis, json_doc_problem_explanation = \
             extract_json_doc_from_output(resp_text, is_obj_vs_arr=True)
