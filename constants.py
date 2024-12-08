@@ -1,3 +1,4 @@
+import os
 from enum import Enum
 from pathlib import Path
 
@@ -15,8 +16,13 @@ texts_path = Path("text_passages")
 claude_texts_path = texts_path / claude_folder_nm
 gemini_texts_path = texts_path / gemini_folder_nm
 
+split_data_folder_path = Path("split_data")
+fewshot_examples_path = split_data_folder_path / "fewshot_examples.json"
+validation_set_path = split_data_folder_path / "validation_set.json"
+test_set_path = split_data_folder_path / "test_set.json"
+
 google_api_key_env = "GOOGLE_DEEPMIND_API_KEY"
-is_google_api_key_using_free_tier = True#change this to False in local copy of code when using a paid API key, b/c otherwise activities with Gemini will be very slow
+is_google_api_key_using_free_tier = os.environ.get("GOOGLE_DEEPMIND_API_KEY_IS_FREE_TIER") == "True"
 anthropic_api_key_env = "ANTHROPIC_API_KEY"
 
 google_model_specifier = "gemini-1.5-pro-002"
@@ -49,6 +55,8 @@ Start by brainstorming a markdown list of descriptions for the different cases/o
 Check whether they're diverse enough in terms of how-many/which optional fields they would fill in and how many things they put in array-type fields.
 If there are any diversity problems with the original list of descriptions, revise it.
 Finally, convert the last list of descriptions into a JSON array of JSON objects that obey the given schema. The JSON array of JSON objects should be in a json-labelled markdown code block (i.e. with 'json' after the first triplet of back ticks, like "```json").
+
+When a schema field name ends with `_verbatim`, you should ensure that the corresponding JSON object field contains a string that would naturally show up in exactly that form in one of the current scenario's text passages.
 
 Partial examples of good responses with JSON objects (omitting CoT analysis and full list of JSON objects for brevity):
 --------------------
@@ -305,6 +313,8 @@ Check whether they're diverse enough in terms of how-many/which optional fields 
 If there are any diversity problems with the original list of descriptions, revise it.
 Finally, convert the last list of descriptions into a JSON array of JSON objects that obey the given schema. The JSON array of JSON objects should be in a json-labelled markdown code block (i.e. with 'json' after the first triplet of back ticks, like "```json").
 
+When a schema field name ends with `_verbatim`, you should ensure that the corresponding JSON object field contains a string that would naturally show up in exactly that form in one of the current scenario's text passages.
+
 Partial examples of good responses with JSON objects (omitting CoT analysis and full list of JSON objects for brevity):
 --------------------
 ## Request 1
@@ -543,7 +553,9 @@ You should then analyze what fields from the schema are missing from the given o
 You would then write a first draft of the text document (NOT in a markdown code block).
 Please then review it to double check for any details that are relevant to the schema but not present in the json object. This includes cases where the text document says something that implies the value for a schema key is `null` or `[]` while the json object simply didn't mention that key from the schema.
 Please also review it to ensure that every detail in the json object is included without loss of information in the text passage.
-Finally, you would provide the final (possibly revised) free-text document inside a markdown code block to separate it from your analysis of the problem.
+Finally, if a filled schema field's name ended in `_verbatim`, you should ensure that the corresponding text passage includes the exact value from the json object for that field.
+
+After those checks, you would provide the final (possibly revised) free-text document inside a markdown code block to separate it from your analysis of the problem.
 
 Partial examples of good responses (omitting CoT analysis for brevity):
 --------------------
@@ -722,7 +734,9 @@ You should then analyze what fields from the schema are missing from the given o
 You would then write a first draft of the text document (NOT in a markdown code block).
 Please then review it to double check for any details that are relevant to the schema but not present in the json object. This includes cases where the text document says something that implies the value for a schema key is `null` or `[]` while the json object simply didn't mention that key from the schema.
 Please also review it to ensure that every detail in the json object is included without loss of information in the text passage.
-Finally, you would provide the final (possibly revised) free-text document inside a markdown code block to separate it from your analysis of the problem.
+Finally, if a filled schema field's name ended in `_verbatim`, you should ensure that the corresponding text passage includes the exact value from the json object for that field.
+
+After those checks, you would provide the final (possibly revised) free-text document inside a markdown code block to separate it from your analysis of the problem.
 
 Partial examples of good responses (omitting CoT analysis for brevity):
 --------------------
@@ -945,7 +959,6 @@ My Smart Thermostat is showing multiple error codes and not working correctly. T
 --------------------
 """)
 
-
 anthropic_object_reconstruction_sys_prompt = d("""
 You will be given a JSON schema that describes the pieces of information that someone might want to extract in a structured way from text passages in a particular scenario. You will also be given a text passage of that scenario’s type, and you will be asked to create a JSON object that follows the given schema and captures all schema-relevant information that is in the text passage.
 If there is no mention of anything related to a given schema key in the text, don't include that schema key in the JSON object. For example, if the schema has an array-type key and the text actually indicates that the correct number of entries for that array-type field is 0, then include that key, but simply omit that key if the text says nothing at all that's related to that array-type key.
@@ -953,6 +966,7 @@ Please start any response by analyzing each schema field in turn to see what in 
 Watch out for cases where a phrase in the text passage could all be assigned to one key in the schema but the most reasonable fit is actually to split that phrase between two keys.
 You should conclude the response with a json document containing a single JSON object that obeys the given schema and captures all schema-relevant information that is actually present in or that is definitely implied by the text passage.
 Any string values in the JSON object should be rendered in a manner that is as concise as possible without losing any specific information that couldn't be inferred from context and general world knowledge.
+However, if the relevant schema field's name ends in `_verbatim`, you should ensure that the corresponding JSON object value includes the exact value from the text passage for that field.
 This json document should be in a json-labelled markdown code block (i.e. with 'json' after the first triplet of back ticks, like "```json").
 
 Partial examples of good responses (omitting CoT analysis for brevity):
@@ -1143,6 +1157,7 @@ Please start any response by analyzing each schema field in turn to see what in 
 Watch out for cases where a phrase in the text passage could all be assigned to one key in the schema but the most reasonable fit is actually to split that phrase between two keys.
 You should conclude the response with a json document containing a single JSON object that obeys the given schema and captures all schema-relevant information that is actually present in or that is definitely implied by the text passage.
 Any string values in the JSON object should be rendered in a manner that is as concise as possible without losing any specific information that couldn't be inferred from context and general world knowledge.
+However, if the relevant schema field's name ends in `_verbatim`, you should ensure that the corresponding JSON object value includes the exact value from the text passage for that field.
 This json document should be in a json-labelled markdown code block (i.e. with 'json' after the first triplet of back ticks, like "```json").
 
 Partial examples of good responses (omitting CoT analysis for brevity):

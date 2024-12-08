@@ -1,70 +1,109 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "type": "object",
-    "properties": {
-        "location": {
-            "type": "object",
-            "properties": {
-                "type": {
-                    "type": "string",
-                    "enum": ["street", "residence", "business", "public_space", "vehicle", "other"]
-                },
-                "indoor_outdoor": {
-                    "type": "string",
-                    "enum": ["indoor", "outdoor", "both"]
-                },
-                "floor_level": { "type": "integer" }
-            }
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "location": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "street",
+            "residence",
+            "business",
+            "public_space",
+            "vehicle",
+            "other"
+          ]
         },
-        "incident_type": {
-            "type": "array",
-            "items": {
-                "type": "string",
-                "enum": [
-                    "theft",
-                    "assault",
-                    "burglary",
-                    "vandalism",
-                    "traffic",
-                    "domestic",
-                    "noise",
-                    "suspicious_activity",
-                    "other"
-                ]
-            }
+        "indoor_outdoor": {
+          "type": "string",
+          "enum": [
+            "indoor",
+            "outdoor",
+            "both"
+          ]
         },
-        "weapons": {
-            "type": "array",
-            "items": {
-                "type": "object",
-                "properties": {
-                    "type": {
-                        "type": "string",
-                        "enum": ["firearm", "knife", "blunt_object", "other"]
-                    },
-                    "quantity": { "type": "integer" }
-                }
-            }
-        },
-        "vehicles": {
-            "type": "array",
-            "items": {
-                "type": "object",
-                "properties": {
-                    "type": {
-                        "type": "string",
-                        "enum": ["car", "truck", "motorcycle", "van", "suv", "other"]
-                    },
-                    "color": { "type": "string" },
-                    "damage": {
-                        "type": "array",
-                        "items": {
-                            "type": "string",
-                            "enum": ["front", "rear", "driver_side", "passenger_side", "none"]
-                        }
-                    }
-                }
-            }
+        "floor_level": {
+          "type": "integer"
         }
+      },
+      "additionalProperties": false
+    },
+    "incident_type": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "theft",
+          "assault",
+          "burglary",
+          "vandalism",
+          "traffic",
+          "domestic",
+          "noise",
+          "suspicious_activity",
+          "other"
+        ]
+      }
+    },
+    "weapons": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "firearm",
+              "knife",
+              "blunt_object",
+              "other"
+            ]
+          },
+          "quantity": {
+            "type": "integer"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "vehicles": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "car",
+              "truck",
+              "motorcycle",
+              "van",
+              "suv",
+              "other"
+            ]
+          },
+          "color": {
+            "type": "string"
+          },
+          "damage": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "front",
+                "rear",
+                "driver_side",
+                "passenger_side",
+                "none"
+              ]
+            }
+          }
+        },
+        "additionalProperties": false
+      }
     }
+  },
+  "additionalProperties": false
 }

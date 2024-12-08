@@ -23,7 +23,6 @@
         ]
     },
     {
-        "experience_years": 10,
         "previous_roles": [
             {
                 "title": "Senior Software Engineer",
@@ -68,8 +67,7 @@
             "Project Management",
             "Agile",
             "Scrum"
-        ],
-        "experience_years": 5
+        ]
     },
     {
         "skills": [
@@ -90,7 +88,6 @@
         }
     },
     {
-        "experience_years": 2,
         "previous_roles": [
             {
                 "title": "Junior Developer",
@@ -113,7 +110,6 @@
             "Java",
             "Spring Boot"
         ],
-        "experience_years": 6,
         "previous_roles": [
             {
                 "title": "Backend Engineer",
@@ -172,7 +168,6 @@
             "C++",
             "Assembly",
             "COBOL"
-        ],
-        "experience_years": 20
+        ]
     }
 ]

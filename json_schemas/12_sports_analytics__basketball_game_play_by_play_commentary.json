@@ -1,31 +1,85 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "type": "object",
-    "properties": {
-        "teams": {
-            "type": "object",
-            "properties": {
-                "home": { "type": "string" },
-                "away": { "type": "string" }
-            },
-            "required": ["home", "away"]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "teams": {
+      "type": "object",
+      "properties": {
+        "home": {
+          "type": "string"
         },
-        "plays": {
-            "type": "array",
-            "items": {
-                "type": "object",
-                "properties": {
-                    "time_remaining_mm_ss": { "type": "string", "pattern": "^[0-9]{1,2}:[0-5][0-9]$" },
-                    "quarter": { "type": "integer", "minimum": 1, "maximum": 4 },
-                    "player": { "type": "string" },
-                    "play_type": { "type": "string", "enum": ["shot", "rebound", "foul", "turnover", "steal", "assist", "block"] },
-                    "outcome": { "type": "string", "enum": ["made", "missed"] },
-                    "court_location": { "type": "string", "enum": ["2pt", "3pt", "freethrow", "paint"] },
-                    "assist_by": { "type": "string" }
-                },
-                "required": ["time_remaining", "quarter", "player", "play_type"]
-            }
+        "away": {
+          "type": "string"
         }
+      },
+      "required": [
+        "home",
+        "away"
+      ],
+      "additionalProperties": false
     },
-    "required": ["teams", "plays"]
+    "plays": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "time_remaining_mm_ss": {
+            "type": "string",
+            "pattern": "^[0-9]{1,2}:[0-5][0-9]$"
+          },
+          "quarter": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 4
+          },
+          "player": {
+            "type": "string"
+          },
+          "play_type": {
+            "type": "string",
+            "enum": [
+              "shot",
+              "rebound",
+              "foul",
+              "turnover",
+              "steal",
+              "assist",
+              "block"
+            ]
+          },
+          "outcome": {
+            "type": "string",
+            "enum": [
+              "made",
+              "missed"
+            ]
+          },
+          "court_location": {
+            "type": "string",
+            "enum": [
+              "2pt",
+              "3pt",
+              "freethrow",
+              "paint"
+            ]
+          },
+          "assist_by": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "time_remaining_mm_ss",
+          "quarter",
+          "player",
+          "play_type"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "teams",
+    "plays"
+  ],
+  "additionalProperties": false
 }

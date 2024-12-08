@@ -6,7 +6,7 @@
         },
         "plays": [
             {
-                "time_remaining": "4:15",
+                "time_remaining_mm_ss": "4:15",
                 "quarter": 3,
                 "player": "Giannis Antetokounmpo",
                 "play_type": "shot",
@@ -22,13 +22,13 @@
         },
         "plays": [
             {
-                "time_remaining": "9:55",
+                "time_remaining_mm_ss": "9:55",
                 "quarter": 1,
                 "player": "Aaron Gordon",
                 "play_type": "steal"
             },
             {
-                "time_remaining": "9:52",
+                "time_remaining_mm_ss": "9:52",
                 "quarter": 1,
                 "player": "Aaron Gordon",
                 "play_type": "shot",
@@ -44,13 +44,13 @@
         },
         "plays": [
             {
-                "time_remaining": "6:45",
+                "time_remaining_mm_ss": "6:45",
                 "quarter": 2,
                 "player": "Luka Doncic",
                 "play_type": "turnover"
             },
             {
-                "time_remaining": "6:43",
+                "time_remaining_mm_ss": "6:43",
                 "quarter": 2,
                 "player": "Paul George",
                 "play_type": "steal"
@@ -64,7 +64,7 @@
         },
         "plays": [
             {
-                "time_remaining": "5:20",
+                "time_remaining_mm_ss": "5:20",
                 "quarter": 3,
                 "player": "Damian Lillard",
                 "play_type": "shot",
@@ -81,7 +81,7 @@
         },
         "plays": [
             {
-                "time_remaining": "6:15",
+                "time_remaining_mm_ss": "6:15",
                 "quarter": 3,
                 "player": "LaMelo Ball",
                 "play_type": "turnover"
@@ -95,7 +95,7 @@
         },
         "plays": [
             {
-                "time_remaining": "0:05",
+                "time_remaining_mm_ss": "0:05",
                 "quarter": 4,
                 "player": "LeBron James",
                 "play_type": "foul"
@@ -109,7 +109,7 @@
         },
         "plays": [
             {
-                "time_remaining": "9:15",
+                "time_remaining_mm_ss": "9:15",
                 "quarter": 2,
                 "player": "Klay Thompson",
                 "play_type": "shot",
