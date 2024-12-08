@@ -1,6 +1,7 @@
 import json
 import os
 import statistics
+from pathlib import Path
 from string import Template
 from typing import Any, Optional, Callable
 from datetime import datetime as dt
@@ -246,12 +247,14 @@ def main():
     extraction_qualities_for_gemini_generated_texts: dict[int, float] = {}
     extraction_qualities_for_claude_generated_texts: dict[int, float] = {}
     
-    #teammates- you can temporarily edit these 2 numbers if you only want to work on certain schemas
+    # teammates - you can temporarily edit these 2 numbers if you only want to work on certain schemas
     first_scenario_idx = 0
     schema_idx_excl_bound = len(schemas)
-    validation_report_filenm = f"validation_failures_report_{run_start_ts.isoformat()
+    validation_reports_folder_path = Path("validation_reports")
+    validation_reports_folder_path.mkdir(exist_ok=True)
+    validation_report_filepath = validation_reports_folder_path / f"validation_failures_report_{run_start_ts.isoformat()
                                     .replace(":", "_").replace(".", "_")}.md"
-    with open(validation_report_filenm, "w") as validation_failures_file:
+    with open(validation_report_filepath, "w") as validation_failures_file:
         validation_failures_file.write(f"Validation failures report for data generation run starting at {run_start_ts.isoformat()}  \n"
                                        f"Going from scenario {first_scenario_idx} ({scenario_domains[first_scenario_idx]} - {scenario_text_passage_descriptions[first_scenario_idx]})  \n"
                                        f"through scenario {schema_idx_excl_bound-1} ({scenario_domains[schema_idx_excl_bound-1]} - {scenario_text_passage_descriptions[schema_idx_excl_bound-1]})  \n"
@@ -342,7 +345,7 @@ def main():
             else:
                 num_valid_objs_generated_with_gemini_by_scenario[scenario_idx] = len(validation_passed_new_json_objs)
             
-            with open(validation_report_filenm, "a", encoding="utf-8") as validation_failures_file:
+            with open(validation_report_filepath, "a", encoding="utf-8") as validation_failures_file:
                 for failed_obj_idx in val_failed_objs:
                     validation_failures_file.write("\n----------------------------\n----------------------------\n\n"
                         f"# Object {failed_obj_idx} for scenario {scenario_idx} \"{scenario_domain}\" - \"{scenario_texts_label}\" failed validation:\n"
