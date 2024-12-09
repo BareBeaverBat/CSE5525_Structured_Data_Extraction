@@ -1,9 +1,10 @@
 import json
 import os
 import statistics
+from datetime import datetime as dt
+from pathlib import Path
 from string import Template
 from typing import Any, Optional, Callable
-from datetime import datetime as dt
 
 import anthropic
 import google.generativeai as google_genai
@@ -12,18 +13,21 @@ from google.generativeai import GenerativeModel
 from google.generativeai.types import safety_types
 from jsonschema import Draft202012Validator
 
-from constants import schemas_path, anthropic_api_key_env, google_model_specifier, anthropic_model_specifier, \
-    anthropic_object_generation_sys_prompt, google_object_generation_sys_prompt, \
-    google_text_passage_generation_sys_prompt, \
-    anthropic_text_passage_generation_sys_prompt, anthropic_obj_gen_group_size, google_obj_gen_group_size, \
-    google_generation_temp, anthropic_generation_temp, google_reconstruction_temp, \
-    google_object_reconstruction_sys_prompt, claude_objs_path, gemini_objs_path, gemini_texts_path, claude_texts_path, \
-    google_api_key_env, max_num_api_calls_for_schema_validation_retry_logic, ModelProvider
-from data_loading import load_scenarios, load_objects_for_one_model_and_scenario, \
+from data_processing.data_loading import load_scenarios, load_objects_for_one_model_and_scenario, \
     load_text_passages_for_one_model_and_scenario
-from logging_setup import create_logger
-from misc_util_funcs import extract_text_passage_from_output, extract_json_doc_from_output, generate_with_model
-from trivial_util_funcs import d
+from ai_querying.ai_querying_util_funcs import extract_text_passage_from_output, extract_json_doc_from_output, \
+    generate_with_model
+from ai_querying.ai_querying_defs import google_api_key_env, anthropic_api_key_env, google_model_specifier, \
+    anthropic_model_specifier, anthropic_generation_temp, google_generation_temp, google_reconstruction_temp, \
+    anthropic_obj_gen_group_size, google_obj_gen_group_size, max_num_api_calls_for_schema_validation_retry_logic, \
+    ModelProvider, AnthropicClientBundle
+from ai_querying.system_prompts import anthropic_object_generation_sys_prompt, google_object_generation_sys_prompt, \
+    anthropic_text_passage_generation_sys_prompt, google_text_passage_generation_sys_prompt, \
+    google_object_reconstruction_sys_prompt
+from data_processing.data_mngmt_defs import schemas_path, claude_objs_path, gemini_objs_path, claude_texts_path, \
+    gemini_texts_path
+from utils_and_defs.logging_setup import create_logger
+from utils_and_defs.trivial_util_funcs import d
 from validate_generated_json_objs_and_texts import validate_generated_objects_texts
 
 logger = create_logger(__name__)
@@ -50,20 +54,23 @@ def generate_json_objs(google_client: Optional[GenerativeModel], anthropic_clien
     assert (google_client is not None) ^ (anthropic_client is not None)#XOR- exactly one of them should be defined
     should_use_claude: bool = google_client is None
     model_nm = "Claude" if should_use_claude else "Gemini"
+    bundled_anthropic_client = AnthropicClientBundle(anthropic_client, anthropic_object_generation_sys_prompt,
+                                                     4096, anthropic_generation_temp, anthropic_model_specifier)
     logger.info(f"Generating {target_num_objs} objects with {model_nm} for scenario {scenario_domain} - {scenario_texts_label}")
     
     generated_objects: list[Optional[dict[str,Any]]] = []
     obj_gen_analysis_strs: list[str] = []
     obj_idx_to_analysis_idx: dict[int, int] = {}
     
-    user_prompt = d(f"""
+    user_prompt_template = Template(d(f"""
     Here is such a JSON schema for the domain "{scenario_domain}":
     ```json
-    {json.dumps(schema)}
+    ${{curr_scenario_schema}}
     ```
     This describes the pieces of information that someone might want to extract in a structured way from "{scenario_texts_label}" text passages.
     Please generate a JSON array containing {target_num_objs} diverse JSON objects conforming to that schema, following the above instructions while doing so.
-    """)
+    """))
+    user_prompt = user_prompt_template.safe_substitute(curr_scenario_schema=json.dumps(schema, indent=2))
     
     ai_responses: list[str] = []
     followup_prompts: list[str] = []
@@ -78,8 +85,7 @@ def generate_json_objs(google_client: Optional[GenerativeModel], anthropic_clien
         
         resp_text = generate_with_model(
             ModelProvider.ANTHROPIC if should_use_claude else ModelProvider.GOOGLE_DEEPMIND, user_prompt, ai_responses,
-            followup_prompts, google_client, anthropic_client, anthropic_object_generation_sys_prompt, 4096,
-            anthropic_generation_temp, anthropic_model_specifier)
+            followup_prompts, google_client, bundled_anthropic_client)
         
         curr_generated_objects, obj_gen_analysis, json_doc_problem_explanation = \
             extract_json_doc_from_output(resp_text, is_obj_vs_arr=False)
@@ -144,12 +150,14 @@ def generate_text_passages(google_client: Optional[GenerativeModel], anthropic_c
     assert (google_client is not None) ^ (anthropic_client is not None)#XOR- exactly one of them should be defined
     should_use_claude: bool = google_client is None
     model_nm = "Claude" if should_use_claude else "Gemini"
+    bundled_anthropic_client = AnthropicClientBundle(anthropic_client, anthropic_text_passage_generation_sys_prompt,
+                                                     4096, anthropic_generation_temp, anthropic_model_specifier)
     logger.info(f"Generating text passages with {model_nm} for scenario {scenario_domain} - {scenario_texts_label}")
     
     user_prompt_template = Template(d(f"""
     Here is a JSON schema for the domain "{scenario_domain}":
     ```json
-    {json.dumps(schema)}
+    ${{curr_scenario_schema}}
     ```
     
     This describes the pieces of information that someone might want to extract in a structured way from "{scenario_texts_label}" text passages.
@@ -170,11 +178,10 @@ def generate_text_passages(google_client: Optional[GenerativeModel], anthropic_c
             logger.debug(f"With {model_nm}, skipping text passage generation for {obj_idx}th of {len(json_objs)} objects for schema index {schema_idx} because that object's generation seems to have gone awry")
             continue
         
-        user_prompt = user_prompt_template.safe_substitute(schema_generated_json_instance=(json.dumps(obj)))
+        user_prompt = user_prompt_template.safe_substitute(curr_scenario_schema= json.dumps(schema, indent=2), schema_generated_json_instance=(json.dumps(obj, indent=2)))
         resp_text: str = generate_with_model(
             ModelProvider.ANTHROPIC if should_use_claude else ModelProvider.GOOGLE_DEEPMIND, user_prompt, [], [],
-            google_client, anthropic_client, anthropic_text_passage_generation_sys_prompt, 4096,
-            anthropic_generation_temp, anthropic_model_specifier)
+            google_client, bundled_anthropic_client)
         
         text_passage, text_gen_analysis = extract_text_passage_from_output(resp_text)
         if text_passage is None:
@@ -246,12 +253,14 @@ def main():
     extraction_qualities_for_gemini_generated_texts: dict[int, float] = {}
     extraction_qualities_for_claude_generated_texts: dict[int, float] = {}
     
-    #teammates- you can temporarily edit these 2 numbers if you only want to work on certain schemas
+    # teammates - you can temporarily edit these 2 numbers if you only want to work on certain schemas
     first_scenario_idx = 0
     schema_idx_excl_bound = len(schemas)
-    validation_report_filenm = f"validation_failures_report_{run_start_ts.isoformat()
+    validation_reports_folder_path = Path("validation_reports")
+    validation_reports_folder_path.mkdir(exist_ok=True)
+    validation_report_filepath = validation_reports_folder_path / f"validation_failures_report_{run_start_ts.isoformat()
                                     .replace(":", "_").replace(".", "_")}.md"
-    with open(validation_report_filenm, "w") as validation_failures_file:
+    with open(validation_report_filepath, "w") as validation_failures_file:
         validation_failures_file.write(f"Validation failures report for data generation run starting at {run_start_ts.isoformat()}  \n"
                                        f"Going from scenario {first_scenario_idx} ({scenario_domains[first_scenario_idx]} - {scenario_text_passage_descriptions[first_scenario_idx]})  \n"
                                        f"through scenario {schema_idx_excl_bound-1} ({scenario_domains[schema_idx_excl_bound-1]} - {scenario_text_passage_descriptions[schema_idx_excl_bound-1]})  \n"
@@ -342,7 +351,7 @@ def main():
             else:
                 num_valid_objs_generated_with_gemini_by_scenario[scenario_idx] = len(validation_passed_new_json_objs)
             
-            with open(validation_report_filenm, "a", encoding="utf-8") as validation_failures_file:
+            with open(validation_report_filepath, "a", encoding="utf-8") as validation_failures_file:
                 for failed_obj_idx in val_failed_objs:
                     validation_failures_file.write("\n----------------------------\n----------------------------\n\n"
                         f"# Object {failed_obj_idx} for scenario {scenario_idx} \"{scenario_domain}\" - \"{scenario_texts_label}\" failed validation:\n"

@@ -1,0 +1,3373 @@
+[
+  {
+    "scenario_id": 3,
+    "scenario_name": "legal contract",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 0,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "signing_date": "2023-10-15",
+      "parties": [
+        "Acme Industries Ltd",
+        "GlobalTech Solutions",
+        "Midwest Distribution Co"
+      ],
+      "governing_law": "State of Delaware",
+      "clauses": {
+        "termination_clause_verbatim": "Any Party may terminate this Agreement by providing thirty (30) days written notice to the other Parties.",
+        "confidentiality_clause_verbatim": "All Parties shall maintain strict confidentiality of any proprietary information shared under this Agreement for a period of five (5) years from the date of disclosure.",
+        "payment_amount": 250000.0
+      }
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 0,
+    "scenario_name": "patient visit notes",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 1,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "symptoms": [
+        {
+          "name": "dizziness",
+          "frequency": "occasional"
+        }
+      ],
+      "medications": [
+        {
+          "name": "Hydrochlorothiazide"
+        }
+      ],
+      "allergies": [
+        "peanuts"
+      ],
+      "family_history_flags": [
+        "asthma"
+      ]
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 11,
+    "scenario_name": "research project abstract or summary in grant application",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 2,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "research_methods": [
+        "survey",
+        "interviews"
+      ],
+      "data_collection": {
+        "data_types": [
+          "survey_responses"
+        ],
+        "sample_size": 2500,
+        "data_frequency": "quarterly"
+      },
+      "timeline": {
+        "total_duration_months": 24,
+        "key_milestones": [
+          {
+            "name": "initial survey deployment",
+            "month": 1
+          },
+          {
+            "name": "comprehensive interim analysis",
+            "month": 12
+          },
+          {
+            "name": "completion of final data collection",
+            "month": 20
+          }
+        ]
+      }
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 12,
+    "scenario_name": "basketball game play by play commentary",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 3,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "teams": {
+        "home": "Clippers",
+        "away": "Mavericks"
+      },
+      "plays": [
+        {
+          "time_remaining_mm_ss": "6:45",
+          "quarter": 2,
+          "player": "Doncic",
+          "play_type": "turnover"
+        },
+        {
+          "time_remaining_mm_ss": "6:43",
+          "quarter": 2,
+          "player": "Paul George",
+          "play_type": "steal"
+        }
+      ]
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 2,
+    "scenario_name": "property listing",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 4,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "bedrooms": 4,
+      "bathrooms": 3,
+      "square_footage": 2500,
+      "property_type": "house",
+      "amenities": [
+        "pool",
+        "garage",
+        "fireplace"
+      ],
+      "listing_price": 2500000,
+      "location": {
+        "city": "Dallas",
+        "state": "TX",
+        "zip_code": "75201"
+      }
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 4,
+    "scenario_name": "resume or cv",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 5,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "skills": [
+        "Strategy Consulting",
+        "Financial Analysis",
+        "Change Management",
+        "Presentations"
+      ],
+      "education": [
+        {
+          "degree_type": "MBA",
+          "institution": "Columbia Business School"
+        }
+      ],
+      "previous_roles": [
+        {
+          "title": "Management Consultant",
+          "company": "McKinsey & Company",
+          "start_month": 8,
+          "start_year": 2019,
+          "end_month": null,
+          "end_year": null
+        },
+        {
+          "title": "Associate Consultant",
+          "company": "Bain & Company",
+          "start_month": 9,
+          "start_year": 2016,
+          "end_month": 7,
+          "end_year": 2019
+        }
+      ]
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 8,
+    "scenario_name": "project description in permit application",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 6,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "project_specs": {
+        "total_square_feet": 6000,
+        "floors": 3,
+        "occupancy_count": 25,
+        "lot_coverage_percentage": 0.7
+      },
+      "usage": [
+        "commercial"
+      ],
+      "utilities": {
+        "water": {
+          "required": true,
+          "gallons_per_day": 800
+        },
+        "electrical": {
+          "required": true,
+          "amperage": 400
+        }
+      },
+      "timeline": {
+        "duration_months": 18,
+        "phases": 6
+      }
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 3,
+    "scenario_name": "legal contract",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 7,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "signing_date": "2023-12-01",
+      "parties": [
+        "Kappa Kreations"
+      ],
+      "governing_law": "State of Florida",
+      "clauses": {
+        "termination_clause_verbatim": "This Agreement may be terminated by either party with 60 days notice.",
+        "payment_amount": 25000.0
+      }
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 1,
+    "scenario_name": "support ticket description",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 8,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "product": {
+        "name": "HP Smart"
+      },
+      "impact_level": "minor",
+      "reproduction": {
+        "reproducible": true,
+        "frequency": "always"
+      }
+    },
+    "model_output_text": "AI:\n{\"product\": {\"name\": \"HP Smart\"}, \"impact_level\": \"minor\", \"system_state\": {\"os\": null}, \"reproduction\": {\"reproducible\": true, \"frequency\": \"always\"}}\n\n\nFeedback:\nThere were problems with that output:\nThe created object did not conform to the schema. Details:\nNone is not of type 'string'\n\nFailed validating 'type' in schema['properties']['system_state']['properties']['os']:\n    {'type': 'string'}\n\nOn instance['system_state']['os']:\n    None\nPlease try again, following the system-prompt and original-user-prompt instructions.\nAI final turn:",
+    "num_retries_used": 1
+  },
+  {
+    "scenario_id": 6,
+    "scenario_name": "insurance claim description from policy holder",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 9,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "incident_type": "fire",
+      "location": {
+        "street_address": "123 Main St",
+        "city": "Austin",
+        "state": "TX",
+        "zip_code": "78704"
+      },
+      "police_report_filed": true
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 1,
+    "scenario_name": "support ticket description",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 10,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "product": {
+        "name": "Workspace Portal",
+        "version": "2.4.1"
+      },
+      "impact_level": "minor",
+      "system_state": {
+        "os": "macOS Ventura",
+        "browser": "Chrome version 114.0.5735.198"
+      },
+      "reproduction": {
+        "reproducible": true,
+        "frequency": "always"
+      }
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 3,
+    "scenario_name": "legal contract",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 11,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "parties": [
+        "Service Provider"
+      ],
+      "governing_law": "Province of Ontario",
+      "clauses": {
+        "termination_clause_verbatim": "Either party may terminate this Agreement immediately upon written notice in the event of a material breach by the other party."
+      }
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 1,
+    "scenario_name": "support ticket description",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 12,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "product": {
+        "name": "VPN Service",
+        "model": "Premium",
+        "version": "3.2.0"
+      },
+      "error_codes": [
+        "CONN-ERR"
+      ],
+      "impact_level": "cosmetic",
+      "system_state": {
+        "os": "macOS",
+        "browser": "Safari"
+      },
+      "reproduction": {
+        "reproducible": false,
+        "frequency": "sometimes"
+      }
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 0,
+    "scenario_name": "patient visit notes",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 13,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "symptoms": [
+        {
+          "name": "migraines",
+          "duration_days": 3,
+          "severity": 8,
+          "frequency": "intermittent"
+        },
+        {
+          "name": "nausea",
+          "duration_days": 2,
+          "frequency": "occasional"
+        },
+        {
+          "name": "photophobia",
+          "severity": 7,
+          "frequency": "intermittent"
+        }
+      ]
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 8,
+    "scenario_name": "project description in permit application",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 14,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "project_specs": {
+        "total_square_feet": 45000,
+        "floors": 1
+      },
+      "usage": [
+        "industrial"
+      ],
+      "utilities": {
+        "water": {
+          "required": true,
+          "gallons_per_day": 2000
+        },
+        "electrical": {
+          "required": true,
+          "amperage": 400
+        },
+        "gas": false
+      }
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 10,
+    "scenario_name": "transaction notes and description",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 15,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "transaction": {
+        "category": "payment",
+        "method": "check",
+        "amount_usd": 5000
+      },
+      "parties": [
+        {
+          "name": "Robert Wilson",
+          "role": "originator",
+          "entity_type": "individual"
+        },
+        {
+          "name": "Children's Hope Foundation",
+          "role": "beneficiary",
+          "entity_type": "ngo"
+        }
+      ],
+      "purpose_indicators": [
+        "charity"
+      ]
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 4,
+    "scenario_name": "resume or cv",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 16,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "previous_roles": [
+        {
+          "title": "Project Manager",
+          "company": "Project Company",
+          "start_month": 1,
+          "start_year": 2020,
+          "end_month": 12,
+          "end_year": 2022
+        }
+      ]
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 2,
+    "scenario_name": "property listing",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 17,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "square_footage": 4000,
+      "property_type": "house",
+      "amenities": [
+        "pool",
+        "garage",
+        "fireplace",
+        "central_ac"
+      ],
+      "listing_price": 4500000,
+      "location": {
+        "city": "Los Angeles",
+        "state": "CA",
+        "zip_code": "90001"
+      }
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 11,
+    "scenario_name": "research project abstract or summary in grant application",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 18,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "research_methods": [
+        "data_analysis"
+      ],
+      "timeline": {
+        "total_duration_months": 6,
+        "key_milestones": [
+          {
+            "name": "final analysis",
+            "month": 6
+          }
+        ]
+      }
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 9,
+    "scenario_name": "case worker notes",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 19,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "assistance_needs": [
+        {
+          "category": "housing",
+          "urgency": "immediate"
+        },
+        {
+          "category": "employment",
+          "urgency": "short_term"
+        },
+        {
+          "category": "education",
+          "urgency": "ongoing"
+        }
+      ],
+      "household": {
+        "total_members": 1,
+        "composition": {
+          "adults": 1
+        },
+        "housing_status": "temporary"
+      },
+      "income_sources": [
+        "none"
+      ],
+      "risk_factors": [
+        {
+          "type": "eviction_risk",
+          "timeframe": "imminent"
+        }
+      ]
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 0,
+    "scenario_name": "patient visit notes",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 20,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "medications": [
+        {
+          "name": "metformin",
+          "dosage": "1000mg",
+          "frequency": "twice daily"
+        },
+        {
+          "name": "glipizide",
+          "dosage": "5mg",
+          "frequency": "before breakfast"
+        },
+        {
+          "name": "januvia",
+          "dosage": "100mg",
+          "frequency": "daily"
+        },
+        {
+          "name": "jardiance",
+          "dosage": "25mg",
+          "frequency": "daily"
+        }
+      ],
+      "allergies": [
+        "contrast dye"
+      ],
+      "family_history_flags": [
+        "diabetes"
+      ]
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 10,
+    "scenario_name": "transaction notes and description",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 21,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "transaction": {
+        "category": "payment",
+        "method": "wire",
+        "amount_usd": 1750000.0,
+        "cross_border": false
+      },
+      "parties": [
+        {
+          "name": "Department of Defense",
+          "role": "originator",
+          "entity_type": "government"
+        },
+        {
+          "name": "Advanced Defense Systems Inc",
+          "role": "beneficiary",
+          "entity_type": "business"
+        }
+      ],
+      "purpose_indicators": [
+        "goods_services"
+      ],
+      "risk_flags": [
+        {
+          "type": "structured",
+          "severity": "low"
+        }
+      ]
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 4,
+    "scenario_name": "resume or cv",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 22,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "skills": [
+        "Product Management",
+        "Agile",
+        "Stakeholder Management",
+        "Technical Communication",
+        "Data Analysis"
+      ],
+      "education": [
+        {
+          "degree_type": "MS",
+          "institution": "Carnegie Mellon University",
+          "major": "Information Systems"
+        }
+      ],
+      "previous_roles": [
+        {
+          "title": "Senior Product Manager",
+          "company": "Spotify",
+          "start_month": 4,
+          "start_year": 2020,
+          "end_month": null,
+          "end_year": null
+        },
+        {
+          "title": "Product Manager",
+          "company": "Microsoft",
+          "start_month": 7,
+          "start_year": 2017,
+          "end_month": 3,
+          "end_year": 2020
+        }
+      ]
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 0,
+    "scenario_name": "patient visit notes",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 23,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "medications": [
+        {
+          "name": "levothyroxine",
+          "dosage": "75mcg",
+          "frequency": "daily"
+        },
+        {
+          "name": "sertraline",
+          "dosage": "50mg",
+          "frequency": "daily"
+        },
+        {
+          "name": "lisinopril",
+          "dosage": "10mg",
+          "frequency": "daily"
+        }
+      ],
+      "family_history_flags": [
+        "hypertension",
+        "diabetes",
+        "cancer"
+      ]
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 2,
+    "scenario_name": "property listing",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 24,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "property_type": "land",
+      "square_footage": 12000,
+      "listing_price": 185000,
+      "location": {
+        "city": "Bend",
+        "state": "Oregon",
+        "zip_code": "97701"
+      }
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 14,
+    "scenario_name": "recipes",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 25,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "dish_name": "Mediterranean Grilled Salmon",
+      "ingredients": [
+        {
+          "name": "salmon fillet",
+          "quantity": 6,
+          "unit": "ounces"
+        },
+        {
+          "name": "olive oil",
+          "quantity": 2,
+          "unit": "tablespoons"
+        },
+        {
+          "name": "lemon juice",
+          "quantity": 1,
+          "unit": "tablespoon"
+        },
+        {
+          "name": "garlic",
+          "quantity": 2,
+          "unit": "cloves"
+        },
+        {
+          "name": "oregano",
+          "quantity": 1,
+          "unit": "teaspoon"
+        }
+      ],
+      "instructions_verbatim": [
+        "Marinate salmon in olive oil, lemon juice, and herbs",
+        "Preheat grill to medium-high heat",
+        "Grill salmon for 4-5 minutes per side",
+        "Rest for 5 minutes before serving"
+      ],
+      "cuisine": "Mediterranean",
+      "preparation_time_minutes": 10,
+      "cooking_time_minutes": 12,
+      "nutritional_information": {
+        "calories": 320,
+        "protein_grams": 34.5,
+        "carbohydrates_grams": 2.1,
+        "fat_grams": 21.3
+      }
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 6,
+    "scenario_name": "insurance claim description from policy holder",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 26,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "incident_type": "theft",
+      "location": {
+        "street_address": "1584 Pine Street",
+        "city": "Seattle",
+        "state": "Washington",
+        "zip_code": "98101"
+      },
+      "police_report_filed": true
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 8,
+    "scenario_name": "project description in permit application",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 27,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "project_specs": {
+        "total_square_feet": 42000,
+        "floors": 1
+      },
+      "usage": [
+        "industrial"
+      ],
+      "utilities": {
+        "electrical": {
+          "required": true,
+          "amperage": 200
+        }
+      }
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 2,
+    "scenario_name": "property listing",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 28,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "bedrooms": 3,
+      "bathrooms": "2.5",
+      "square_footage": 1850,
+      "property_type": "townhouse",
+      "amenities": [
+        "garage"
+      ],
+      "listing_price": 575000,
+      "location": {
+        "city": "Arlington",
+        "state": "VA",
+        "zip_code": "22201"
+      }
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 2,
+    "scenario_name": "property listing",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 29,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "bedrooms": 3,
+      "bathrooms": 2,
+      "square_footage": 1400,
+      "property_type": "townhouse",
+      "amenities": [
+        "garage",
+        "central_ac"
+      ],
+      "location": {
+        "city": "Phoenix",
+        "state": "Arizona",
+        "zip_code": "85001"
+      }
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 6,
+    "scenario_name": "insurance claim description from policy holder",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 30,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "incident_date": "2024-07-19",
+      "incident_type": "accident",
+      "location": {
+        "street_address": "Elm and Main"
+      },
+      "estimated_damages": 7500,
+      "police_report_filed": true
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 3,
+    "scenario_name": "legal contract",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 31,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "signing_date": "2023-09-22",
+      "parties": [
+        "Party 1",
+        "Party 2"
+      ],
+      "governing_law": "State of Delaware"
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 7,
+    "scenario_name": "incident report",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 32,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "location": {
+        "type": "business",
+        "indoor_outdoor": "indoor",
+        "floor_level": 5
+      },
+      "incident_type": [
+        "theft",
+        "vandalism"
+      ],
+      "weapons": [
+        {
+          "type": "blunt_object",
+          "quantity": 1
+        }
+      ]
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 12,
+    "scenario_name": "basketball game play by play commentary",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 33,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "teams": {
+        "home": "Hornets",
+        "away": "Timberwolves"
+      },
+      "plays": [
+        {
+          "time_remaining_mm_ss": "6:15",
+          "quarter": 3,
+          "player": "LaMelo Ball",
+          "play_type": "turnover"
+        }
+      ]
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 9,
+    "scenario_name": "case worker notes",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 34,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "assistance_needs": [
+        {
+          "category": "healthcare",
+          "urgency": "ongoing"
+        },
+        {
+          "category": "transportation",
+          "urgency": "ongoing"
+        }
+      ],
+      "household": {
+        "total_members": 1,
+        "composition": {
+          "adults": 1,
+          "seniors_over_65": 1
+        },
+        "housing_status": "stable"
+      },
+      "risk_factors": [
+        {
+          "type": "isolation",
+          "timeframe": "current"
+        },
+        {
+          "type": "transport_barrier",
+          "timeframe": "current"
+        }
+      ]
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 9,
+    "scenario_name": "case worker notes",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 35,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "assistance_needs": [
+        {
+          "category": "housing",
+          "urgency": "immediate"
+        },
+        {
+          "category": "food",
+          "urgency": "immediate"
+        }
+      ],
+      "household": {
+        "total_members": 3,
+        "composition": {
+          "adults": 1,
+          "children_under_18": 2
+        },
+        "housing_status": "at_risk"
+      },
+      "income_sources": [
+        "employment",
+        "snap"
+      ],
+      "risk_factors": [
+        {
+          "type": "eviction_risk",
+          "timeframe": "imminent"
+        },
+        {
+          "type": "food_insecurity",
+          "timeframe": "current"
+        }
+      ]
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 13,
+    "scenario_name": "research paper abstracts",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 36,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "research_area": "physics",
+      "methodology": "computational",
+      "key_findings_verbatim": [
+        "quantum system behaviors"
+      ],
+      "data_sources": [
+        {
+          "name": "quantum computing simulator platform",
+          "type": "simulated",
+          "url": "https://quantum-sim.org"
+        },
+        {
+          "name": "private experimental error rate measurements",
+          "type": "private",
+          "url": "https://quantum-lab.org/data"
+        }
+      ]
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 8,
+    "scenario_name": "project description in permit application",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 37,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "project_specs": {
+        "total_square_feet": 9000,
+        "floors": 4,
+        "occupancy_count": 40,
+        "lot_coverage_percentage": 80
+      },
+      "usage": [
+        "mixed"
+      ],
+      "utilities": {
+        "water": {
+          "required": true,
+          "gallons_per_day": 1000
+        },
+        "electrical": {
+          "required": true,
+          "amperage": 600
+        },
+        "gas": false
+      },
+      "timeline": {
+        "phases": 5
+      }
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 11,
+    "scenario_name": "research project abstract or summary in grant application",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 38,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "research_methods": [
+        "survey"
+      ],
+      "data_collection": {
+        "data_types": [
+          "survey_responses"
+        ],
+        "sample_size": 50,
+        "data_frequency": "once"
+      },
+      "study_population": {
+        "special_populations": [
+          "rare_disease"
+        ]
+      }
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 0,
+    "scenario_name": "patient visit notes",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 39,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "symptoms": [
+        {
+          "name": "joint pain",
+          "severity": 7,
+          "frequency": "constant"
+        },
+        {
+          "name": "fatigue",
+          "duration_days": 14
+        },
+        {
+          "name": "fever",
+          "frequency": "intermittent",
+          "severity": 4
+        }
+      ],
+      "family_history_flags": [
+        "diabetes",
+        "heart_disease"
+      ]
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 8,
+    "scenario_name": "project description in permit application",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 40,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "project_specs": {
+        "total_square_feet": 15600,
+        "lot_coverage_percentage": 55.8
+      },
+      "usage": [
+        "commercial"
+      ],
+      "utilities": {
+        "water": {
+          "required": true,
+          "gallons_per_day": 3500
+        },
+        "electrical": {
+          "required": true,
+          "amperage": 300
+        },
+        "gas": true
+      }
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 4,
+    "scenario_name": "resume or cv",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 41,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "skills": [
+        "SQL",
+        "Python",
+        "Tableau",
+        "Excel"
+      ],
+      "education": [
+        {
+          "degree_type": "BS",
+          "major": "Statistics",
+          "institution": "University of California, Davis"
+        }
+      ],
+      "previous_roles": [
+        {
+          "title": "Data Analyst",
+          "company": "HealthTech Solutions",
+          "start_month": 7,
+          "start_year": 2020,
+          "end_month": null,
+          "end_year": null
+        }
+      ],
+      "contact_info": {
+        "email": "michael.zhang@healthtech.com"
+      }
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 3,
+    "scenario_name": "legal contract",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 42,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "signing_date": "2023-09-30",
+      "parties": [
+        "Eastern Electronics",
+        "Western Wholesale",
+        "Northern Networks",
+        "Southern Systems",
+        "Central Computing"
+      ],
+      "clauses": {
+        "payment_amount": 1750000.0
+      }
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 1,
+    "scenario_name": "support ticket description",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 43,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "product": {
+        "name": "Arctis Nova Pro headset",
+        "model": "61486",
+        "version": "2.4.3"
+      },
+      "error_codes": [
+        "AUD-442",
+        "DRV-891",
+        "USB-127"
+      ],
+      "system_state": {
+        "os": "Windows 11",
+        "browser": "Chrome",
+        "connected_devices": [
+          "Arctis Nova Pro headset",
+          "Logitech G502 mouse",
+          "Dell U2719D monitor"
+        ]
+      },
+      "impact_level": "blocking",
+      "reproduction": {
+        "reproducible": true,
+        "frequency": "always"
+      }
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 2,
+    "scenario_name": "property listing",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 44,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "property_type": "land",
+      "square_footage": 50000,
+      "listing_price": 250000,
+      "location": {
+        "city": "Boise",
+        "state": "ID",
+        "zip_code": "83702"
+      }
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 0,
+    "scenario_name": "patient visit notes",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 45,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "symptoms": [
+        {
+          "name": "joint pain",
+          "duration_days": 14,
+          "severity": 7,
+          "frequency": "constant"
+        },
+        {
+          "name": "fatigue",
+          "severity": 5,
+          "frequency": "intermittent"
+        }
+      ],
+      "medications": [
+        {
+          "name": "naproxen",
+          "dosage": "500mg",
+          "frequency": "twice daily"
+        },
+        {
+          "name": "vitamin D3",
+          "dosage": "2000 IU",
+          "frequency": "daily"
+        }
+      ],
+      "allergies": [
+        "shellfish",
+        "ibuprofen"
+      ],
+      "family_history_flags": [
+        "diabetes",
+        "heart_disease"
+      ]
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 0,
+    "scenario_name": "patient visit notes",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 46,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "medications": [
+        {
+          "name": "Ibuprofen",
+          "dosage": "200mg",
+          "frequency": "every 6 hours"
+        },
+        {
+          "name": "Loratadine",
+          "dosage": "10mg",
+          "frequency": "once daily"
+        }
+      ]
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 1,
+    "scenario_name": "support ticket description",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 47,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "product": {
+        "name": "Wireless Headphones"
+      },
+      "impact_level": "blocking",
+      "reproduction": {
+        "reproducible": true,
+        "frequency": "always"
+      }
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 9,
+    "scenario_name": "case worker notes",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 48,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "assistance_needs": [
+        {
+          "category": "healthcare",
+          "urgency": "immediate"
+        }
+      ],
+      "risk_factors": [
+        {
+          "type": "medical_crisis",
+          "timeframe": "current"
+        }
+      ]
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 9,
+    "scenario_name": "case worker notes",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 49,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "assistance_needs": [
+        {
+          "category": "employment",
+          "urgency": "short_term"
+        },
+        {
+          "category": "food",
+          "urgency": "ongoing"
+        }
+      ],
+      "household": {
+        "total_members": 5,
+        "composition": {
+          "adults": 2,
+          "children_under_18": 3
+        },
+        "housing_status": "stable"
+      },
+      "income_sources": [
+        "snap",
+        "tanf"
+      ],
+      "risk_factors": [
+        {
+          "type": "food_insecurity",
+          "timeframe": "current"
+        }
+      ]
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 1,
+    "scenario_name": "support ticket description",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 50,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "product": {
+        "name": "NetGear Orbi RBK752",
+        "version": "3.6.7.3"
+      },
+      "error_codes": [
+        "NW_DISCONNECT",
+        "AUTH_FAILURE",
+        "DHCP_ERROR",
+        "DNS_TIMEOUT"
+      ],
+      "impact_level": "blocking",
+      "system_state": {
+        "os": "Windows 11",
+        "connected_devices": [
+          "iPhone 13",
+          "MacBook Pro",
+          "Samsung TV",
+          "Ring Doorbell",
+          "Nest Thermostat"
+        ]
+      },
+      "reproduction": {
+        "reproducible": true,
+        "frequency": "always"
+      }
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 3,
+    "scenario_name": "legal contract",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 51,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "signing_date": "2023-07-18",
+      "parties": [
+        "Sigma Systems"
+      ],
+      "clauses": {
+        "confidentiality_clause_verbatim": "Non-disclosure agreement in effect."
+      }
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 8,
+    "scenario_name": "project description in permit application",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 52,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "project_specs": {
+        "total_square_feet": 8500,
+        "lot_coverage_percentage": 28.3
+      },
+      "usage": [
+        "agricultural"
+      ],
+      "timeline": {
+        "duration_months": 4,
+        "phases": 1
+      }
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 0,
+    "scenario_name": "patient visit notes",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 53,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "medications": [
+        {
+          "name": "Lisinopril",
+          "dosage": "10mg",
+          "frequency": "daily"
+        },
+        {
+          "name": "Metformin",
+          "dosage": "500mg"
+        },
+        {
+          "name": "Aspirin",
+          "frequency": "daily"
+        }
+      ],
+      "allergies": [
+        "Shellfish",
+        "Iodine"
+      ]
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 1,
+    "scenario_name": "support ticket description",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 54,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "product": {
+        "name": "SecureView Camera"
+      },
+      "error_codes": [
+        "CAM-552"
+      ],
+      "impact_level": "major",
+      "system_state": {
+        "connected_devices": [
+          "physical connections"
+        ]
+      },
+      "reproduction": {
+        "reproducible": true,
+        "frequency": "always"
+      }
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 8,
+    "scenario_name": "project description in permit application",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 55,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "project_specs": {
+        "total_square_feet": 18000,
+        "floors": 1,
+        "occupancy_count": 120
+      },
+      "usage": [
+        "commercial"
+      ],
+      "utilities": {
+        "water": {
+          "required": true,
+          "gallons_per_day": 2500
+        },
+        "electrical": {
+          "required": true,
+          "amperage": 300
+        },
+        "gas": true
+      }
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 1,
+    "scenario_name": "support ticket description",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 56,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "product": {
+        "name": "AirFlow Pro TWS",
+        "model": "AF-200",
+        "version": "2.1.3"
+      },
+      "error_codes": [
+        "BT-404",
+        "CONN-201",
+        "SYNC-102"
+      ],
+      "impact_level": "major",
+      "system_state": {
+        "os": "iOS 16.5",
+        "browser": "Safari 16.5",
+        "connected_devices": [
+          "iPhone 13",
+          "MacBook Pro",
+          "Apple Watch"
+        ]
+      },
+      "reproduction": {
+        "reproducible": true,
+        "frequency": "often"
+      }
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 8,
+    "scenario_name": "project description in permit application",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 57,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "usage": [
+        "residential"
+      ],
+      "utilities": {
+        "water": {
+          "required": true,
+          "gallons_per_day": 250
+        },
+        "electrical": {
+          "required": true,
+          "amperage": 100
+        },
+        "gas": false
+      }
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 7,
+    "scenario_name": "incident report",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 58,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "location": {
+        "type": "residence",
+        "indoor_outdoor": "indoor"
+      },
+      "incident_type": [
+        "assault"
+      ],
+      "weapons": [
+        {
+          "type": "firearm"
+        },
+        {
+          "type": "knife"
+        }
+      ]
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 9,
+    "scenario_name": "case worker notes",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 59,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "assistance_needs": [
+        {
+          "category": "mental_health",
+          "urgency": "ongoing"
+        }
+      ],
+      "risk_factors": [
+        {
+          "type": "isolation",
+          "timeframe": "current"
+        }
+      ]
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 2,
+    "scenario_name": "property listing",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 60,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "bedrooms": 4,
+      "bathrooms": 3,
+      "square_footage": 2200,
+      "property_type": "townhouse",
+      "amenities": [
+        "pool",
+        "garage"
+      ],
+      "listing_price": 600000,
+      "location": {
+        "city": "San Diego",
+        "state": "CA",
+        "zip_code": "92101"
+      }
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 3,
+    "scenario_name": "legal contract",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 61,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "signing_date": "2023-08-12",
+      "parties": [
+        "Mu Materials",
+        "Nu Networks"
+      ],
+      "clauses": {
+        "payment_amount": 100000
+      }
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 4,
+    "scenario_name": "resume or cv",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 62,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "skills": [
+        "Project Management",
+        "Content Strategy",
+        "Digital Marketing",
+        "Sales"
+      ],
+      "previous_roles": [
+        {
+          "title": "Digital Marketing Manager",
+          "company": "TechStart Solutions",
+          "start_month": 1,
+          "start_year": 2021,
+          "end_month": null,
+          "end_year": null
+        },
+        {
+          "title": "Sales Representative",
+          "company": "Medical Supplies Co",
+          "start_month": 6,
+          "start_year": 2015,
+          "end_month": 12,
+          "end_year": 2020
+        }
+      ]
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 2,
+    "scenario_name": "property listing",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 63,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "bedrooms": 2,
+      "bathrooms": 1,
+      "square_footage": 900,
+      "property_type": "condo",
+      "amenities": [
+        "pool",
+        "garage"
+      ],
+      "listing_price": 1600000,
+      "location": {
+        "city": "Boulder",
+        "state": "Colorado",
+        "zip_code": "80301"
+      }
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 1,
+    "scenario_name": "support ticket description",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 64,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "product": {
+        "name": "Cloud Storage Sync"
+      }
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 7,
+    "scenario_name": "incident report",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 65,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "location": {
+        "type": "residence",
+        "indoor_outdoor": "indoor",
+        "floor_level": 2
+      },
+      "incident_type": [
+        "burglary"
+      ],
+      "weapons": [
+        {
+          "type": "knife",
+          "quantity": 2
+        },
+        {
+          "type": "blunt_object",
+          "quantity": 1
+        }
+      ]
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 4,
+    "scenario_name": "resume or cv",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 66,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "skills": [
+        "Machine Learning",
+        "Statistical Analysis",
+        "Python",
+        "Research Design",
+        "Grant Writing",
+        "Publication"
+      ],
+      "education": [
+        {
+          "degree_type": "PhD",
+          "institution": "Massachusetts Institute of Technology",
+          "major": "Computer Science"
+        },
+        {
+          "degree_type": "BS",
+          "institution": "California Institute of Technology",
+          "major": "Mathematics"
+        }
+      ],
+      "previous_roles": [
+        {
+          "title": "Research Scientist",
+          "company": "Google Research",
+          "start_month": 1,
+          "start_year": 2022,
+          "end_month": null,
+          "end_year": null
+        },
+        {
+          "title": "Research Assistant",
+          "company": "MIT Computer Science and Artificial Intelligence Laboratory (CSAIL)",
+          "start_month": 9,
+          "start_year": 2017,
+          "end_month": 12,
+          "end_year": 2021
+        }
+      ]
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 1,
+    "scenario_name": "support ticket description",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 67,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "product": {
+        "name": "File Backup Utility",
+        "version": "1.0.5"
+      },
+      "impact_level": "minor",
+      "reproduction": {
+        "reproducible": false,
+        "frequency": "once"
+      }
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 3,
+    "scenario_name": "legal contract",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 68,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "signing_date": "2023-10-01",
+      "parties": [
+        "Service Provider"
+      ],
+      "clauses": {
+        "payment_amount": 42500.0
+      }
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 0,
+    "scenario_name": "patient visit notes",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 69,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "allergies": [
+        "Penicillin",
+        "Pollen",
+        "Dust mites"
+      ],
+      "family_history_flags": [
+        "diabetes",
+        "heart_disease"
+      ],
+      "medications": [
+        {
+          "name": "None reported"
+        }
+      ]
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 4,
+    "scenario_name": "resume or cv",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 70,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "skills": [
+        "Project Management",
+        "Agile",
+        "Scrum"
+      ]
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 2,
+    "scenario_name": "property listing",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 71,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "bedrooms": 2,
+      "bathrooms": "1.5",
+      "square_footage": 1050,
+      "property_type": "apartment",
+      "amenities": [
+        "central_ac"
+      ],
+      "location": {
+        "city": "Denver",
+        "state": "Colorado",
+        "zip_code": "80202"
+      }
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 6,
+    "scenario_name": "insurance claim description from policy holder",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 72,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "incident_date": "2023-10-30",
+      "incident_type": "theft",
+      "witnesses": [
+        {
+          "name": "Emma Davis",
+          "phone": "303-555-2345"
+        }
+      ]
+    },
+    "model_output_text": "AI:\n{\"incident_date\": \"2023-10-30\", \"incident_type\": \"theft\", \"location\": {\"street_address\": \"not specified\"}, \"estimated_damages\": \"not specified\", \"police_report_filed\": \"not specified\", \"witnesses\": [{\"name\": \"Emma Davis\", \"phone\": \"303-555-2345\"}]}\r\n\nFeedback:\nThere were problems with that output:\nThe created object did not conform to the schema. Details:\n'not specified' is not of type 'number'\n\nFailed validating 'type' in schema['properties']['estimated_damages']:\n    {'type': 'number'}\n\nOn instance['estimated_damages']:\n    'not specified'; 'not specified' is not of type 'boolean'\n\nFailed validating 'type' in schema['properties']['police_report_filed']:\n    {'type': 'boolean'}\n\nOn instance['police_report_filed']:\n    'not specified'\nPlease try again, following the system-prompt and original-user-prompt instructions.\nAI final turn:",
+    "num_retries_used": 1
+  },
+  {
+    "scenario_id": 11,
+    "scenario_name": "research project abstract or summary in grant application",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 73,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "research_methods": [
+        "survey",
+        "interviews",
+        "field_study"
+      ],
+      "data_collection": {
+        "data_types": [
+          "survey_responses"
+        ],
+        "sample_size": 800,
+        "data_frequency": "monthly"
+      }
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 2,
+    "scenario_name": "property listing",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 74,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "bedrooms": 2,
+      "bathrooms": 2,
+      "square_footage": 1200,
+      "property_type": "condo",
+      "listing_price": 449000,
+      "location": {
+        "city": "Boston",
+        "state": "Massachusetts",
+        "zip_code": "02116"
+      }
+    },
+    "model_output_text": "AI:\n{\"bedrooms\": 2, \"bathrooms\": 2, \"square_footage\": 1200, \"property_type\": \"condo\", \"amenities\": [\"hardwood floors\"], \"listing_price\": 449000, \"location\": {\"city\": \"Boston\", \"state\": \"Massachusetts\", \"zip_code\": \"02116\"}}\r\n\nFeedback:\nThere were problems with that output:\nThe created object did not conform to the schema. Details:\n'hardwood floors' is not one of ['pool', 'garage', 'fireplace', 'central_ac', 'balcony']\n\nFailed validating 'enum' in schema['properties']['amenities']['items']:\n    {'type': 'string',\n     'enum': ['pool', 'garage', 'fireplace', 'central_ac', 'balcony']}\n\nOn instance['amenities'][0]:\n    'hardwood floors'\nPlease try again, following the system-prompt and original-user-prompt instructions.\nAI final turn:",
+    "num_retries_used": 1
+  },
+  {
+    "scenario_id": 6,
+    "scenario_name": "insurance claim description from policy holder",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 75,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "incident_type": "flood",
+      "police_report_filed": true
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 11,
+    "scenario_name": "research project abstract or summary in grant application",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 76,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "research_methods": [
+        "survey"
+      ],
+      "data_collection": {
+        "data_types": [
+          "survey_responses"
+        ],
+        "sample_size": 1000,
+        "data_frequency": "once"
+      }
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 4,
+    "scenario_name": "resume or cv",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 77,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "skills": [
+        "B2B Sales",
+        "Account Management",
+        "CRM"
+      ],
+      "education": [
+        {
+          "degree_type": "BA",
+          "institution": "Michigan State University",
+          "major": "Business Administration"
+        }
+      ],
+      "previous_roles": [
+        {
+          "title": "Regional Sales Manager",
+          "company": "Enterprise Solutions Ltd",
+          "start_month": 9,
+          "start_year": 2020,
+          "end_month": null,
+          "end_year": null
+        },
+        {
+          "title": "Account Executive",
+          "company": "DataTech Systems",
+          "start_month": 3,
+          "start_year": 2018,
+          "end_month": 8,
+          "end_year": 2020
+        },
+        {
+          "title": "Sales Representative",
+          "company": "Office Solutions Inc",
+          "start_month": 6,
+          "start_year": 2016,
+          "end_month": 2,
+          "end_year": 2018
+        }
+      ]
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 4,
+    "scenario_name": "resume or cv",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 78,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "skills": [
+        "Python",
+        "JavaScript",
+        "React",
+        "Docker",
+        "Git"
+      ],
+      "education": [
+        {
+          "degree_type": "BS",
+          "major": "Computer Science",
+          "institution": "University of Washington"
+        }
+      ],
+      "previous_roles": [
+        {
+          "title": "Junior Software Engineer",
+          "company": "Tableau",
+          "start_month": 6,
+          "start_year": 2021,
+          "end_month": null,
+          "end_year": null
+        }
+      ],
+      "contact_info": {
+        "email": "sarah.chen@domain.net",
+        "phone": "206-555-0199"
+      }
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 11,
+    "scenario_name": "research project abstract or summary in grant application",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 79,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "research_methods": [
+        "experiment",
+        "data_analysis"
+      ],
+      "data_collection": {
+        "data_types": [
+          "sensor",
+          "clinical_measurements"
+        ],
+        "data_frequency": "continuous"
+      },
+      "study_population": {
+        "age_range": {
+          "min": 20,
+          "max": 60
+        }
+      }
+    },
+    "model_output_text": "AI:\n{\"research_methods\": [\"experiment\", \"data_analysis\"], \"data_collection\": {\"data_types\": [\"sensor\", \"clinical_measurements\"], \"sample_size\": null, \"data_frequency\": \"continuous\"}, \"study_population\": {\"age_range\": {\"min\": 20, \"max\": 60}, \"special_populations\": null}}\r\n\n\nFeedback:\nThere were problems with that output:\nThe created object did not conform to the schema. Details:\nNone is not of type 'integer'\n\nFailed validating 'type' in schema['properties']['data_collection']['properties']['sample_size']:\n    {'type': 'integer'}\n\nOn instance['data_collection']['sample_size']:\n    None; None is not of type 'array'\n\nFailed validating 'type' in schema['properties']['study_population']['properties']['special_populations']:\n    {'type': 'array',\n     'items': {'type': 'string',\n               'enum': ['children',\n                        'elderly',\n                        'pregnant',\n                        'immunocompromised',\n                        'rare_disease',\n                        'healthy_volunteers']}}\n\nOn instance['study_population']['special_populations']:\n    None\nPlease try again, following the system-prompt and original-user-prompt instructions.\nAI final turn:",
+    "num_retries_used": 1
+  },
+  {
+    "scenario_id": 6,
+    "scenario_name": "insurance claim description from policy holder",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 80,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "incident_type": "fire",
+      "location": {
+        "street_address": "935 Oak Lane",
+        "city": "Sacramento",
+        "state": "California",
+        "zip_code": "95814"
+      },
+      "estimated_damages": 45600
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 3,
+    "scenario_name": "legal contract",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 81,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "parties": [
+        "Quantum Computing Ltd",
+        "Neural Networks Inc"
+      ],
+      "clauses": {
+        "confidentiality_clause_verbatim": "The Parties agree to maintain strict confidentiality of all information exchanged under this Agreement for a period of seven (7) years from disclosure. During this non-disclosure period, neither party shall disclose any confidential information to any third party without prior written consent."
+      }
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 8,
+    "scenario_name": "project description in permit application",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 82,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "project_specs": {
+        "total_square_feet": 180000,
+        "floors": 25,
+        "occupancy_count": 2200,
+        "lot_coverage_percentage": 72.5
+      },
+      "usage": [
+        "residential",
+        "commercial"
+      ],
+      "utilities": {
+        "water": {
+          "required": true,
+          "gallons_per_day": 25000
+        },
+        "electrical": {
+          "required": true,
+          "amperage": 1500
+        },
+        "gas": true
+      },
+      "timeline": {
+        "duration_months": 36,
+        "phases": 4
+      }
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 11,
+    "scenario_name": "research project abstract or summary in grant application",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 83,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "research_methods": [
+        "clinical_trial",
+        "experiment"
+      ],
+      "data_collection": {
+        "data_types": [
+          "genomic",
+          "clinical_measurements"
+        ],
+        "sample_size": 450,
+        "data_frequency": "weekly"
+      },
+      "study_population": {
+        "age_range": {
+          "min": 40,
+          "max": 75
+        }
+      }
+    },
+    "model_output_text": "AI:\n{\"research_methods\": [\"clinical_trial\", \"experiment\"], \"data_collection\": {\"data_types\": [\"genomic\", \"clinical_measurements\"], \"sample_size\": 450, \"data_frequency\": \"weekly\"}, \"study_population\": {\"age_range\": {\"min\": 40, \"max\": 75}}, \"timeline\": {\"total_duration_months\": null, \"key_milestones\": null}}\n\n\nFeedback:\nThere were problems with that output:\nThe created object did not conform to the schema. Details:\nNone is not of type 'integer'\n\nFailed validating 'type' in schema['properties']['timeline']['properties']['total_duration_months']:\n    {'type': 'integer'}\n\nOn instance['timeline']['total_duration_months']:\n    None; None is not of type 'array'\n\nFailed validating 'type' in schema['properties']['timeline']['properties']['key_milestones']:\n    {'type': 'array',\n     'items': {'type': 'object',\n               'properties': {'name': {'type': 'string'},\n                              'month': {'type': 'integer'}},\n               'required': ['name', 'month'],\n               'additionalProperties': False}}\n\nOn instance['timeline']['key_milestones']:\n    None\nPlease try again, following the system-prompt and original-user-prompt instructions.\nAI final turn:",
+    "num_retries_used": 1
+  },
+  {
+    "scenario_id": 1,
+    "scenario_name": "support ticket description",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 84,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "product": {
+        "name": "Smart Thermostat"
+      },
+      "error_codes": [
+        "TH-001",
+        "TH-003",
+        "NET-ERR"
+      ]
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 3,
+    "scenario_name": "legal contract",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 85,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "signing_date": "2023-08-15",
+      "parties": [
+        "Acme Software Inc.",
+        "John Martinez"
+      ],
+      "clauses": {
+        "confidentiality_clause_verbatim": "Employee shall maintain strict confidentiality of all proprietary information for 5 years post-employment. This includes but is not limited to trade secrets, customer lists, technical specifications, and business strategies."
+      }
+    },
+    "model_output_text": "AI:\n{\"signing_date\": \"2023-08-15\", \"parties\": [\"Acme Software Inc.\", \"John Martinez\"], \"governing_law\": null, \"clauses\": {\"confidentiality_clause_verbatim\": \"Employee shall maintain strict confidentiality of all proprietary information for 5 years post-employment. This includes but is not limited to trade secrets, customer lists, technical specifications, and business strategies.\"}}\r\n\nFeedback:\nThere were problems with that output:\nThe created object did not conform to the schema. Details:\nNone is not of type 'string'\n\nFailed validating 'type' in schema['properties']['governing_law']:\n    {'type': 'string'}\n\nOn instance['governing_law']:\n    None\nPlease try again, following the system-prompt and original-user-prompt instructions.\nAI final turn:",
+    "num_retries_used": 1
+  },
+  {
+    "scenario_id": 7,
+    "scenario_name": "incident report",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 86,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "location": {
+        "type": "public_space",
+        "indoor_outdoor": "outdoor"
+      },
+      "vehicles": [
+        {
+          "type": "car",
+          "color": "green"
+        },
+        {
+          "type": "suv",
+          "color": "silver"
+        }
+      ]
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 3,
+    "scenario_name": "legal contract",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 87,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "signing_date": "2023-11-01",
+      "parties": [
+        "Riverside Healthcare",
+        "MedTech Solutions"
+      ],
+      "governing_law": "California",
+      "clauses": {
+        "confidentiality_clause_verbatim": "The parties agree that all information shared between them, including but not limited to technical specifications, patient data, business processes, and proprietary methodologies, shall be kept strictly confidential. This confidentiality obligation shall survive the termination or expiration of this Agreement and shall remain in effect in perpetuity."
+      }
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 10,
+    "scenario_name": "transaction notes and description",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 88,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "transaction": {
+        "category": "transfer",
+        "method": "wire",
+        "amount_usd": 250000,
+        "cross_border": true
+      },
+      "parties": [
+        {
+          "name": "Middle East Trading Co",
+          "role": "originator"
+        }
+      ],
+      "risk_flags": [
+        {
+          "type": "sanctions_program",
+          "severity": "high"
+        },
+        {
+          "type": "high_risk_jurisdiction",
+          "severity": "high"
+        }
+      ]
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 0,
+    "scenario_name": "patient visit notes",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 89,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "medications": [
+        {
+          "name": "Ibuprofen"
+        }
+      ],
+      "allergies": [
+        "No known drug allergies"
+      ]
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 1,
+    "scenario_name": "support ticket description",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 90,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "product": {
+        "name": "Razer DeathAdder Elite mouse",
+        "model": "RZ01-02010100",
+        "version": "Firmware 1.03"
+      },
+      "error_codes": [
+        "DRV_ERR_456",
+        "CONN_TIMEOUT",
+        "USB_DETECT_FAIL"
+      ],
+      "impact_level": "major",
+      "system_state": {
+        "os": "Windows 11 Pro",
+        "connected_devices": [
+          "Razer BlackWidow Keyboard",
+          "Dell P2419H Monitor",
+          "Logitech HD Webcam"
+        ]
+      },
+      "reproduction": {
+        "reproducible": true,
+        "frequency": "often"
+      }
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 6,
+    "scenario_name": "insurance claim description from policy holder",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 91,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "incident_date": "2023-10-15",
+      "incident_type": "accident",
+      "location": {
+        "city": "Miami",
+        "state": "Florida"
+      },
+      "witnesses": [
+        {
+          "name": "Maria Rodriguez",
+          "email": "mrodriguez@yahoo.com"
+        }
+      ]
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 2,
+    "scenario_name": "property listing",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 92,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "property_type": "land",
+      "listing_price": 85000,
+      "location": {
+        "city": "Prescott",
+        "state": "Arizona",
+        "zip_code": "86301"
+      }
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 9,
+    "scenario_name": "case worker notes",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 93,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "assistance_needs": [
+        {
+          "category": "housing",
+          "urgency": "immediate"
+        }
+      ],
+      "household": {
+        "housing_status": "homeless"
+      }
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 0,
+    "scenario_name": "patient visit notes",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 94,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "symptoms": [
+        {
+          "name": "acid reflux",
+          "frequency": "occasional"
+        }
+      ],
+      "medications": [
+        {
+          "name": "omeprazole",
+          "dosage": "20mg",
+          "frequency": "daily"
+        },
+        {
+          "name": "ranitidine",
+          "frequency": "as needed"
+        },
+        {
+          "name": "calcium carbonate",
+          "dosage": "500mg"
+        }
+      ]
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 11,
+    "scenario_name": "research project abstract or summary in grant application",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 95,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "research_methods": [
+        "data_analysis"
+      ],
+      "data_collection": {
+        "data_types": [
+          "clinical_measurements"
+        ]
+      }
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 2,
+    "scenario_name": "property listing",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 96,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "bedrooms": 5,
+      "bathrooms": "4.5",
+      "square_footage": 4250,
+      "property_type": "house",
+      "amenities": [
+        "pool",
+        "garage",
+        "fireplace",
+        "central_ac",
+        "balcony"
+      ],
+      "listing_price": 1250000,
+      "location": {
+        "city": "Westport",
+        "state": "CT",
+        "zip_code": "06880"
+      }
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 6,
+    "scenario_name": "insurance claim description from policy holder",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 97,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "incident_date": "2023-11-15",
+      "incident_type": "fire",
+      "location": {
+        "street_address": "742 Maple Grove",
+        "city": "Burlington",
+        "state": "Vermont",
+        "zip_code": "05401"
+      },
+      "estimated_damages": 157000,
+      "police_report_filed": true,
+      "witnesses": [
+        {
+          "name": "Marcus Chen",
+          "phone": "802-555-0123",
+          "email": "mchen@vermontu.edu"
+        },
+        {
+          "name": "Sarah O'Brien",
+          "phone": "802-555-0145",
+          "email": "sarahob@gmail.com"
+        }
+      ]
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 3,
+    "scenario_name": "legal contract",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 98,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "signing_date": "2024-06-21",
+      "parties": [
+        "Party 1",
+        "Party 2"
+      ],
+      "clauses": {
+        "payment_amount": 75000.0,
+        "confidentiality_clause_verbatim": "Information shared between the parties during the term of this agreement is confidential and proprietary.",
+        "termination_clause_verbatim": "This Agreement may be terminated immediately for cause. Specific events constituting 'cause' will be defined in an appendix to this Agreement."
+      }
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 3,
+    "scenario_name": "legal contract",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 99,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "signing_date": "2023-11-30",
+      "parties": [
+        "Harbor Shipping",
+        "Coastal Logistics",
+        "Bay Area Transport"
+      ],
+      "clauses": {
+        "termination_clause_verbatim": "This Agreement may be terminated upon mutual agreement of all parties."
+      }
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 3,
+    "scenario_name": "legal contract",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 100,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "parties": [
+        "the Parties"
+      ],
+      "clauses": {
+        "payment_amount": 75000.0,
+        "confidentiality_clause_verbatim": "All parties shall maintain strict confidentiality of all information disclosed under this Agreement for a period of ten (10) years from the date of disclosure. This includes, but is not limited to, all proprietary information, trade secrets, technical specifications, customer data, business strategies, and other confidential materials shared in the course of this engagement. Any breach of this confidentiality provision shall constitute grounds for immediate legal action and monetary damages."
+      }
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 8,
+    "scenario_name": "project description in permit application",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 101,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "project_specs": {
+        "total_square_feet": 7500,
+        "floors": 3,
+        "occupancy_count": 20,
+        "lot_coverage_percentage": 75
+      },
+      "usage": [
+        "residential",
+        "mixed"
+      ],
+      "timeline": {
+        "duration_months": 24
+      }
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 4,
+    "scenario_name": "resume or cv",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 102,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "skills": [
+        "Business Development",
+        "Fundraising",
+        "Product Strategy",
+        "Leadership"
+      ],
+      "education": [
+        {
+          "degree_type": "MBA",
+          "institution": "Harvard Business School"
+        },
+        {
+          "degree_type": "BS",
+          "major": "Engineering",
+          "institution": "Cornell University"
+        }
+      ],
+      "previous_roles": [
+        {
+          "title": "Founder & CEO",
+          "company": "InnovateTech",
+          "start_month": 1,
+          "start_year": 2019,
+          "end_month": null,
+          "end_year": null
+        },
+        {
+          "title": "Product Manager",
+          "company": "Amazon",
+          "start_month": 6,
+          "start_year": 2015,
+          "end_month": 12,
+          "end_year": 2018
+        }
+      ]
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 3,
+    "scenario_name": "legal contract",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 103,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "signing_date": "2023-07-12",
+      "parties": [
+        "Green Valley Farms",
+        "Natural Foods Cooperative",
+        "Organic Distribution Inc."
+      ]
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 2,
+    "scenario_name": "property listing",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 104,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "bedrooms": 3,
+      "bathrooms": 2,
+      "square_footage": 1500,
+      "property_type": "house",
+      "listing_price": 350000,
+      "location": {
+        "city": "Austin",
+        "state": "TX",
+        "zip_code": "78704"
+      }
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 1,
+    "scenario_name": "support ticket description",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 105,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "product": {
+        "name": "HomeSense Hub",
+        "model": "HS-500",
+        "version": "3.2.1"
+      },
+      "error_codes": [
+        "HUB_CONN_LOST",
+        "DEVICE_SYNC_ERR",
+        "AUTH_FAILURE"
+      ],
+      "impact_level": "major",
+      "system_state": {
+        "os": "Windows 11",
+        "browser": "Chrome version 114",
+        "connected_devices": [
+          "Smart Lock",
+          "Thermostat",
+          "Motion Sensor",
+          "Door Bell"
+        ]
+      },
+      "reproduction": {
+        "reproducible": true,
+        "frequency": "often"
+      }
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 0,
+    "scenario_name": "patient visit notes",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 106,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "symptoms": [
+        {
+          "name": "headache"
+        },
+        {
+          "name": "fatigue"
+        }
+      ]
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 2,
+    "scenario_name": "property listing",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 107,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "bedrooms": 3,
+      "bathrooms": "2.5",
+      "property_type": "townhouse",
+      "amenities": [
+        "garage",
+        "balcony"
+      ],
+      "listing_price": 679000,
+      "location": {
+        "city": "Seattle",
+        "state": "Washington",
+        "zip_code": "98112"
+      }
+    },
+    "model_output_text": "AI:\n{\"bedrooms\": 3, \"bathrooms\": \"2.5\", \"property_type\": \"townhouse\", \"amenities\": [\"garage\", \"balcony\"], \"listing_price\": 679000, \"location\": {\"city\": \"Seattle\", \"state\": \"Washington\", \"zip_code\": \"98112\"}, \"square_footage\": null}\r\n\nFeedback:\nThere were problems with that output:\nThe created object did not conform to the schema. Details:\nNone is not of type 'integer'\n\nFailed validating 'type' in schema['properties']['square_footage']:\n    {'type': 'integer'}\n\nOn instance['square_footage']:\n    None\nPlease try again, following the system-prompt and original-user-prompt instructions.\nAI final turn:",
+    "num_retries_used": 1
+  },
+  {
+    "scenario_id": 12,
+    "scenario_name": "basketball game play by play commentary",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 108,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "teams": {
+        "home": "Bucks",
+        "away": "Warriors"
+      },
+      "plays": [
+        {
+          "time_remaining_mm_ss": "9:15",
+          "quarter": 2,
+          "player": "Thompson",
+          "play_type": "shot",
+          "outcome": "missed",
+          "court_location": "3pt"
+        }
+      ]
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 2,
+    "scenario_name": "property listing",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 109,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "bedrooms": 3,
+      "bathrooms": "2.5",
+      "property_type": "townhouse",
+      "amenities": [
+        "central_ac",
+        "fireplace",
+        "garage",
+        "balcony"
+      ],
+      "listing_price": 525000,
+      "location": {
+        "city": "Charlotte",
+        "state": "NC",
+        "zip_code": "28205"
+      }
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 6,
+    "scenario_name": "insurance claim description from policy holder",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 110,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "incident_date": "2024-07-20",
+      "incident_type": "fire"
+    },
+    "model_output_text": "AI:\n{\"incident_date\": \"2024-07-20\", \"incident_type\": \"fire\", \"location\": {\"street_address\": \"my house\"}, \"estimated_damages\": null, \"police_report_filed\": false, \"witnesses\": null}\r\n\nFeedback:\nThere were problems with that output:\nThe created object did not conform to the schema. Details:\nNone is not of type 'number'\n\nFailed validating 'type' in schema['properties']['estimated_damages']:\n    {'type': 'number'}\n\nOn instance['estimated_damages']:\n    None; None is not of type 'array'\n\nFailed validating 'type' in schema['properties']['witnesses']:\n    {'type': 'array',\n     'items': {'type': 'object',\n               'properties': {'name': {'type': 'string'},\n                              'phone': {'type': 'string'},\n                              'email': {'type': 'string',\n                                        'format': 'email'}},\n               'additionalProperties': False}}\n\nOn instance['witnesses']:\n    None\nPlease try again, following the system-prompt and original-user-prompt instructions.\nAI final turn:",
+    "num_retries_used": 1
+  },
+  {
+    "scenario_id": 8,
+    "scenario_name": "project description in permit application",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 111,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "usage": [
+        "residential"
+      ],
+      "project_specs": {
+        "floors": 1
+      }
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 2,
+    "scenario_name": "property listing",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 112,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "bedrooms": 1,
+      "bathrooms": 1,
+      "property_type": "condo",
+      "location": {
+        "city": "Portland",
+        "state": "Oregon",
+        "zip_code": "97209"
+      }
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 2,
+    "scenario_name": "property listing",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 113,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "bedrooms": 4,
+      "bathrooms": 3,
+      "square_footage": 2200,
+      "property_type": "house",
+      "listing_price": 2200000,
+      "location": {
+        "city": "Portland",
+        "state": "OR",
+        "zip_code": "97201"
+      }
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 2,
+    "scenario_name": "property listing",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 114,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "bedrooms": 1,
+      "bathrooms": 1,
+      "square_footage": 750,
+      "property_type": "condo",
+      "amenities": [
+        "pool",
+        "garage",
+        "fireplace",
+        "central_ac",
+        "balcony"
+      ],
+      "listing_price": 299000,
+      "location": {
+        "city": "Tampa",
+        "state": "Florida",
+        "zip_code": "33609"
+      }
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 7,
+    "scenario_name": "incident report",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 115,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "location": {
+        "type": "street",
+        "indoor_outdoor": "outdoor"
+      },
+      "incident_type": [
+        "traffic"
+      ],
+      "vehicles": [
+        {
+          "type": "truck",
+          "color": "white",
+          "damage": [
+            "front"
+          ]
+        }
+      ]
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 6,
+    "scenario_name": "insurance claim description from policy holder",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 116,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "incident_date": "2023-11-02",
+      "incident_type": "theft",
+      "location": {
+        "street_address": "467 Elm Street",
+        "city": "Chicago",
+        "state": "IL",
+        "zip_code": "60601"
+      },
+      "estimated_damages": 8900,
+      "police_report_filed": true
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 0,
+    "scenario_name": "patient visit notes",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 117,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "symptoms": [
+        {
+          "name": "migraine headache",
+          "duration_days": 3,
+          "severity": 8,
+          "frequency": "intermittent"
+        },
+        {
+          "name": "nausea",
+          "duration_days": 2,
+          "severity": 6,
+          "frequency": "occasional"
+        }
+      ],
+      "medications": [
+        {
+          "name": "Sumatriptan",
+          "dosage": "100mg",
+          "frequency": "as needed"
+        },
+        {
+          "name": "Ondansetron",
+          "dosage": "4mg",
+          "frequency": "twice daily"
+        }
+      ],
+      "allergies": [
+        "Penicillin",
+        "Sulfa drugs",
+        "Latex"
+      ],
+      "family_history_flags": [
+        "diabetes",
+        "heart_disease",
+        "cancer",
+        "hypertension"
+      ]
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 12,
+    "scenario_name": "basketball game play by play commentary",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 118,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "teams": {
+        "home": "Blazers",
+        "away": "Kings"
+      },
+      "plays": [
+        {
+          "time_remaining_mm_ss": "5:20",
+          "quarter": 3,
+          "player": "Damian Lillard",
+          "play_type": "shot",
+          "outcome": "made",
+          "court_location": "3pt",
+          "assist_by": "Anfernee Simons"
+        }
+      ]
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 14,
+    "scenario_name": "recipes",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 119,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "dish_name": "Matcha Latte",
+      "ingredients": [
+        {
+          "name": "matcha powder",
+          "quantity": 1.5,
+          "unit": "teaspoons"
+        },
+        {
+          "name": "oat milk",
+          "quantity": 8,
+          "unit": "ounces"
+        }
+      ],
+      "dietary_restrictions": [
+        "vegan",
+        "dairy-free"
+      ],
+      "cuisine": "plant-based"
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 7,
+    "scenario_name": "incident report",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 120,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "location": {
+        "type": "residence",
+        "indoor_outdoor": "both"
+      },
+      "incident_type": [
+        "domestic"
+      ],
+      "vehicles": [
+        {
+          "type": "car",
+          "color": "red",
+          "damage": [
+            "none"
+          ]
+        }
+      ]
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 11,
+    "scenario_name": "research project abstract or summary in grant application",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 121,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "research_methods": [
+        "clinical_trial",
+        "survey"
+      ],
+      "data_collection": {
+        "data_types": [
+          "clinical_measurements",
+          "survey_responses"
+        ],
+        "sample_size": 300,
+        "data_frequency": "weekly"
+      },
+      "study_population": {
+        "age_range": {
+          "min": 5,
+          "max": 17
+        },
+        "special_populations": [
+          "children"
+        ]
+      },
+      "timeline": {
+        "total_duration_months": 48,
+        "key_milestones": [
+          {
+            "name": "study completion",
+            "month": 48
+          }
+        ]
+      }
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 6,
+    "scenario_name": "insurance claim description from policy holder",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 122,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "incident_date": "2024-07-22",
+      "incident_type": "flood",
+      "location": {
+        "street_address": "222 Maple St",
+        "city": "*",
+        "state": "*",
+        "zip_code": "*",
+        "estimated_damages": null
+      },
+      "police_report_filed": false,
+      "witnesses": [
+        {
+          "name": "David Brown",
+          "phone": "*",
+          "email": "david.brown@example.com"
+        }
+      ]
+    },
+    "model_output_text": "AI:\n{\"incident_date\": \"2024-07-22\", \"incident_type\": \"flood\", \"location\": {\"street_address\": \"222 Maple St\", \"city\": null, \"state\": null, \"zip_code\": null}, \"estimated_damages\": null, \"police_report_filed\": false, \"witnesses\": [{\"name\": \"David Brown\", \"phone\": null, \"email\": \"david.brown@example.com\"}]}\r\n\nFeedback:\nThere were problems with that output:\nThe created object did not conform to the schema. Details:\nNone is not of type 'string'\n\nFailed validating 'type' in schema['properties']['location']['properties']['city']:\n    {'type': 'string'}\n\nOn instance['location']['city']:\n    None; None is not of type 'string'\n\nFailed validating 'type' in schema['properties']['location']['properties']['state']:\n    {'type': 'string'}\n\nOn instance['location']['state']:\n    None; None is not of type 'string'\n\nFailed validating 'type' in schema['properties']['location']['properties']['zip_code']:\n    {'type': 'string'}\n\nOn instance['location']['zip_code']:\n    None; None is not of type 'number'\n\nFailed validating 'type' in schema['properties']['estimated_damages']:\n    {'type': 'number'}\n\nOn instance['estimated_damages']:\n    None; None is not of type 'string'\n\nFailed validating 'type' in schema['properties']['witnesses']['items']['properties']['phone']:\n    {'type': 'string'}\n\nOn instance['witnesses'][0]['phone']:\n    None\nPlease try again, following the system-prompt and original-user-prompt instructions.\nAI:\n{\"incident_date\": \"2024-07-22\", \"incident_type\": \"flood\", \"location\": {\"street_address\": \"222 Maple St\", \"city\": \"*\", \"state\": \"*\", \"zip_code\": \"*\", \"estimated_damages\": null}, \"police_report_filed\": false, \"witnesses\": [{\"name\": \"David Brown\", \"phone\": \"*\", \"email\": \"david.brown@example.com\"}]}\r\n\nFeedback:\nThere were problems with that output:\nThe created object did not conform to the schema. Details:\nAdditional properties are not allowed ('estimated_damages' was unexpected)\n\nFailed validating 'additionalProperties' in schema['properties']['location']:\n    {'type': 'object',\n     'properties': {'street_address': {'type': 'string'},\n                    'city': {'type': 'string'},\n                    'state': {'type': 'string'},\n                    'zip_code': {'type': 'string'}},\n     'additionalProperties': False}\n\nOn instance['location']:\n    {'street_address': '222 Maple St',\n     'city': '*',\n     'state': '*',\n     'zip_code': '*',\n     'estimated_damages': None}\nPlease try again, following the system-prompt and original-user-prompt instructions.\nAI:\n{\"incident_date\": \"2024-07-22\", \"incident_type\": \"flood\", \"location\": {\"street_address\": \"222 Maple St\", \"city\": \"*\", \"state\": \"*\", \"zip_code\": \"*\", \"estimated_damages\": null}, \"police_report_filed\": false, \"witnesses\": [{\"name\": \"David Brown\", \"phone\": \"*\", \"email\": \"david.brown@example.com\"}]}\r\n\nFeedback:\nThere were problems with that output:\nThe created object did not conform to the schema. Details:\nAdditional properties are not allowed ('estimated_damages' was unexpected)\n\nFailed validating 'additionalProperties' in schema['properties']['location']:\n    {'type': 'object',\n     'properties': {'street_address': {'type': 'string'},\n                    'city': {'type': 'string'},\n                    'state': {'type': 'string'},\n                    'zip_code': {'type': 'string'}},\n     'additionalProperties': False}\n\nOn instance['location']:\n    {'street_address': '222 Maple St',\n     'city': '*',\n     'state': '*',\n     'zip_code': '*',\n     'estimated_damages': None}\nPlease try again, following the system-prompt and original-user-prompt instructions.",
+    "num_retries_used": 2
+  },
+  {
+    "scenario_id": 7,
+    "scenario_name": "incident report",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 123,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "location": {
+        "type": "public_space"
+      },
+      "incident_type": [
+        "traffic"
+      ],
+      "vehicles": [
+        {
+          "type": "car",
+          "damage": [
+            "front",
+            "driver_side",
+            "rear"
+          ]
+        }
+      ]
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 8,
+    "scenario_name": "project description in permit application",
+    "is_validation_vs_test": false,
+    "src_record_idx_in_split": 124,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "project_specs": {
+        "total_square_feet": 4000,
+        "floors": 2,
+        "occupancy_count": 15,
+        "lot_coverage_percentage": 60
+      },
+      "usage": [
+        "residential"
+      ],
+      "utilities": {
+        "water": {
+          "required": true,
+          "gallons_per_day": 600
+        },
+        "electrical": {
+          "required": true,
+          "amperage": 300
+        },
+        "gas": true
+      },
+      "timeline": {
+        "duration_months": 15
+      }
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  }
+]

@@ -1,50 +1,4 @@
-import os
-from enum import Enum
-from pathlib import Path
-
-from trivial_util_funcs import d
-
-claude_folder_nm = "claude"
-gemini_folder_nm = "gemini"
-
-
-schemas_path = Path("json_schemas")
-objects_path = Path("json_objects")
-claude_objs_path = objects_path / claude_folder_nm
-gemini_objs_path = objects_path / gemini_folder_nm
-texts_path = Path("text_passages")
-claude_texts_path = texts_path / claude_folder_nm
-gemini_texts_path = texts_path / gemini_folder_nm
-
-split_data_folder_path = Path("split_data")
-fewshot_examples_path = split_data_folder_path / "fewshot_examples.json"
-validation_set_path = split_data_folder_path / "validation_set.json"
-test_set_path = split_data_folder_path / "test_set.json"
-
-google_api_key_env = "GOOGLE_DEEPMIND_API_KEY"
-is_google_api_key_using_free_tier = os.environ.get("GOOGLE_DEEPMIND_API_KEY_IS_FREE_TIER") == "True"
-anthropic_api_key_env = "ANTHROPIC_API_KEY"
-
-google_model_specifier = "gemini-1.5-pro-002"
-anthropic_model_specifier = "claude-3-5-sonnet-20241022"
-
-anthropic_generation_temp = 1.0
-google_generation_temp = anthropic_generation_temp
-anthropic_reconstruction_temp = 0.0
-google_reconstruction_temp = anthropic_reconstruction_temp
-
-anthropic_obj_gen_group_size = 20
-google_obj_gen_group_size = anthropic_obj_gen_group_size
-
-max_num_api_calls_for_schema_validation_retry_logic = 3
-
-max_num_api_calls_for_anthropic_overloaded_retry_logic = 5
-max_num_api_calls_for_google_refusals_retry_logic = 5
-
-class ModelProvider(Enum):
-    ANTHROPIC = "claude"
-    GOOGLE_DEEPMIND = "gemini"
-
+from utils_and_defs.trivial_util_funcs import d
 
 anthropic_object_generation_sys_prompt = d("""
 You will be given a JSON schema that describes the pieces of information that someone might want to extract in a structured way from text passages in a particular scenario.
@@ -302,7 +256,6 @@ Please generate a JSON array containing diverse JSON objects conforming to that 
 
 --------------------
 """)
-
 google_object_generation_sys_prompt = d("""
 You will be given a JSON schema that describes the pieces of information that someone might want to extract in a structured way from text passages in a particular scenario.
 You will then be asked to generate diverse JSON objects following that schema. The objects should fill in different numbers of the non-required fields: some top-level array entries should fill in all optional fields while others fill only 1-2. They should largely make different choices about which optional fields to fill in (and, in the case of array-type fields, they should vary in how many things they put in that array type field). Meanwhile, each entry in the top-level array should contain no more than 20 pieces of information in total.
@@ -544,7 +497,6 @@ Please generate a JSON array containing diverse JSON objects conforming to that 
 
 --------------------
 """)
-
 anthropic_text_passage_generation_sys_prompt = d("""
 You will be given a JSON schema that describes the pieces of information that someone might want to extract in a structured way from text passages in a particular scenario. You will also be given a JSON object that follows that schema, and you will be asked to create a free-text document of the appropriate type from that JSON object. The free-text document must a) contain all information from the given object, b) contain no information that is relevant to the given schema but is not in the given object, and c) is otherwise filled out with plausible and coherent content. It should contain at least a few details that are context-appropriate, not relevant to the given schema, and not found in the given object.
 It should NOT contain any obviously-fake, placeholder, or subtly-but-detectably-fake data like [Customer Name]
@@ -725,7 +677,6 @@ Patient presented on October 26, 2024, for a routine check-up and discussion of 
 
 --------------------
 """)
-
 google_text_passage_generation_sys_prompt = ("""
 You will be given a JSON schema that describes the pieces of information that someone might want to extract in a structured way from text passages in a particular scenario. You will also be given a JSON object that follows that schema, and you will be asked to create a free-text document of the appropriate type from that JSON object. The free-text document must a) contain all information from the given object, b) contain no information that is relevant to the given schema but is not in the given object, and c) is otherwise filled out with plausible and coherent content. It should contain at least a few details that are context-appropriate, not relevant to the given schema, and not found in the given object.
 It should NOT contain any obviously-fake, placeholder, or subtly-but-detectably-fake data like [Customer Name]
@@ -958,7 +909,6 @@ My Smart Thermostat is showing multiple error codes and not working correctly. T
 
 --------------------
 """)
-
 anthropic_object_reconstruction_sys_prompt = d("""
 You will be given a JSON schema that describes the pieces of information that someone might want to extract in a structured way from text passages in a particular scenario. You will also be given a text passage of that scenario’s type, and you will be asked to create a JSON object that follows the given schema and captures all schema-relevant information that is in the text passage.
 If there is no mention of anything related to a given schema key in the text, don't include that schema key in the JSON object. For example, if the schema has an array-type key and the text actually indicates that the correct number of entries for that array-type field is 0, then include that key, but simply omit that key if the text says nothing at all that's related to that array-type key.
@@ -1118,7 +1068,7 @@ Here is a JSON schema for the domain "customer service":
 
 Here is the "support ticket description" text passage.
 ```
-I am experiencing significant issues with my Dell Precision Touchpad (Model DL4872, version 10.3.302.13). The touchpad periodically becomes completely unresponsive, which is severely impacting my ability to work effectively. When this occurs, the system logs error code TPD-1044. 
+I am experiencing significant issues with my Dell Precision Touchpad (Model DL4872, version 10.3.302.13). The touchpad periodically becomes completely unresponsive, which is severely impacting my ability to work effectively. When this occurs, the system logs error code TPD-1044.
 
 I've been able to reproduce this issue, though it doesn't happen every time I use the computer. The problem seems to occur sometimes without any clear pattern. I've noticed it tends to happen more during extended work sessions, though I haven't identified any specific triggers.
 ```
@@ -1149,7 +1099,6 @@ Please create a JSON object that obeys the given schema and captures all schema-
 
 --------------------
 """)
-
 google_object_reconstruction_sys_prompt = d("""
 You will be given a JSON schema that describes the pieces of information that someone might want to extract in a structured way from text passages in a particular scenario. You will also be given a text passage of that scenario’s type, and you will be asked to create a JSON object that follows the given schema and captures all schema-relevant information that is in the text passage.
 If there is no mention of anything related to a given schema key in the text, don't include that schema key in the JSON object. For example, if the schema has an array-type key and the text actually indicates that the correct number of entries for that array-type field is 0, then include that key, but simply omit that key if the text says nothing at all that's related to that array-type key.
@@ -1354,4 +1303,24 @@ Please create a JSON object that obeys the given schema and captures all schema-
 ```
 
 --------------------
+""")
+
+model_evaluation_with_cot_system_prompt_prefix = d("""
+You will be given a JSON schema that describes the pieces of information that someone might want to extract in a structured way from text passages in a particular scenario. You will also be given a text passage of that scenario’s type, and you will be asked to create a JSON object that follows the given schema and captures all schema-relevant information that is in the text passage.
+If there is no mention of anything related to a given schema key in the text, don't include that schema key in the JSON object. For example, if the schema has an array-type key and the text actually indicates that the correct number of entries for that array-type field is 0, then include that key, but simply omit that key if the text says nothing at all that's related to that array-type key.
+Please start any response by analyzing each schema field in turn to see what in the text passage might be relevant to it. If nothing in the text is directly relevant for a schema field, you should note that (because such fields’ keys should be entirely omitted from the JSON object).
+Watch out for cases where a phrase in the text passage could all be assigned to one key in the schema but the most reasonable fit is actually to split that phrase between two keys.
+You should conclude the response with a json document containing a single JSON object that obeys the given schema and captures all schema-relevant information that is actually present in or that is definitely implied by the text passage.
+Any string values in the JSON object should be rendered in a manner that is as concise as possible without losing any specific information that couldn't be inferred from context and general world knowledge.
+However, if the relevant schema field's name ends in `_verbatim`, you should ensure that the corresponding JSON object value includes the exact value from the text passage for that field.
+This json document should be in a json-labelled markdown code block (i.e. with 'json' after the first triplet of back ticks, like "```json").
+""")
+
+model_evaluation_without_cot_system_prompt_prefix = d("""
+You will be given a JSON schema that describes the pieces of information that someone might want to extract in a structured way from text passages in a particular scenario. You will also be given a text passage of that scenario’s type, and you will be asked to create a JSON object that follows the given schema and captures all schema-relevant information that is in the text passage.
+If there is no mention of anything related to a given schema key in the text, don't include that schema key in the JSON object. For example, if the schema has an array-type key and the text actually indicates that the correct number of entries for that array-type field is 0, then include that key, but simply omit that key if the text says nothing at all that's related to that array-type key.
+Watch out for cases where a phrase in the text passage could all be assigned to one key in the schema but the most reasonable fit is actually to split that phrase between two keys.
+Your entire response should be a valid JSON document consisting of a single JSON object that obeys the given schema and captures all schema-relevant information that is actually present in or that is definitely implied by the text passage.
+Any string values in the JSON object should be rendered in a manner that is as concise as possible without losing any specific information that couldn't be inferred from context and general world knowledge.
+However, if the relevant schema field's name ends in `_verbatim`, you should ensure that the corresponding JSON object value includes the exact value from the text passage for that field.
 """)

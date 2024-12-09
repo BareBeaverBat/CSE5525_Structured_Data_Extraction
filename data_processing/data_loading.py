@@ -7,12 +7,11 @@ from typing import Tuple, List, Any, Optional
 
 from jsonschema.validators import Draft202012Validator
 
-from logging_setup import create_logger
+from data_processing.data_mngmt_defs import DataSplitRecord, scenario_details_regex, scenario_idx_regex, \
+    EvaluationModelOutputRecord
+from utils_and_defs.logging_setup import create_logger
 
 logger = create_logger(__name__)
-
-scenario_details_regex = r"^(\d+)_([a-zA-Z0-9]+(_[a-zA-Z0-9]+)*)__(\w+).json"
-scenario_idx_regex = r"^(\d+)_"
 
 
 def load_scenarios(scenarios_schemas_path: Path, scenario_dtls_regex: Pattern = scenario_details_regex) -> Tuple[List[str], List[str], List[dict[str, Any]]]:
@@ -91,3 +90,33 @@ def load_text_passages_for_one_model_and_scenario(path_of_one_models_texts: Path
     
     logger.info(f"Failed to find a file of text passages for scenario {target_scenario_idx} from the model-specific folder {path_of_one_models_texts}")
     return None
+
+
+def load_data_split(split_path: Path, schemas: List[dict[str, Any]]) -> List[DataSplitRecord]:
+    assert split_path.exists()
+    assert split_path.is_file()
+    assert split_path.suffix == ".json"
+    with open(split_path) as split_file:
+        split_data = json.load(split_file)
+    assert isinstance(split_data, list)
+    validators: list[Draft202012Validator] = [Draft202012Validator(schema, format_checker=Draft202012Validator.FORMAT_CHECKER) for schema in schemas]
+    
+    validated_records: list[DataSplitRecord] = []
+    for record in split_data:
+        data_record = DataSplitRecord(**record)
+        validators[data_record.scenario_id].validate(data_record.object)
+        validated_records.append(data_record)
+    
+    return validated_records
+
+def load_evaluation_model_outputs(model_outputs_path: Path) -> list[EvaluationModelOutputRecord]:
+    assert model_outputs_path.exists()
+    assert model_outputs_path.is_file()
+    assert model_outputs_path.suffix == ".json"
+    with open(model_outputs_path) as model_outputs_file:
+        model_outputs = json.load(model_outputs_file)
+    assert isinstance(model_outputs, list)
+    evaluation_model_output_records: list[EvaluationModelOutputRecord] = \
+        [EvaluationModelOutputRecord(**model_output) for model_output in model_outputs]
+    
+    return evaluation_model_output_records
