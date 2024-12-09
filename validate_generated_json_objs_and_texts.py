@@ -83,7 +83,7 @@ def validate_generated_objects_texts(
         passage_description = (f"the {obj_idx}'th {src_model_nm}-generated text passage for scenario {schema_idx} "
                                f"{scenario_domain} - {scenario_texts_label}")
         case_id = f"{src_model_nm}-{schema_idx}-{obj_idx}"
-        extracted_obj, extracted_obj_analysis = extract_obj_from_passage_with_retry(
+        extracted_obj, extracted_obj_analysis, was_schema_compliant = extract_obj_from_passage_with_retry(
             ModelProvider.GOOGLE_DEEPMIND if was_claude_generated else ModelProvider.ANTHROPIC, reconstructor_model,
             passage, scenario_domain, scenario_texts_label, schema, passage_description, case_id, google_client,
             bundled_anthropic_client)
@@ -91,7 +91,7 @@ def validate_generated_objects_texts(
         expected_fact_recall=0.0
         hallucination_count=0
         differences: list[str]=[]
-        if extracted_obj is not None:            
+        if extracted_obj is not None and was_schema_compliant:
             extraction_quality, expected_fact_recall, hallucination_count, differences = evaluate_extraction(
                 ground_truth_obj, extracted_obj)
         if (1.0-extraction_quality) > 1e-8:#floating point effective-equality comparison

@@ -27,6 +27,10 @@ class EvaluationModelOutputRecord:
     src_record_idx_in_split: int # i.e. the index of the source record in the validation_set.json or test_set.json split file
     fewshot_example_idxs: List[int]
     model_output_object: dict[str, Any]
+    # in cases where automated-validation-and-retry logic was enabled for querying the model being evaluated
+    #  or where the model's output was not in the expected format, this may contain not simply a single round of the
+    #  model's output text but rather one or more rounds of the model's output text followed by a feedback message from
+    #  the automatic validation logic
     model_output_text: str
 
 
