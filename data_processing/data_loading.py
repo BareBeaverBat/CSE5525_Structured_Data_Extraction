@@ -7,7 +7,8 @@ from typing import Tuple, List, Any, Optional
 
 from jsonschema.validators import Draft202012Validator
 
-from data_processing.data_mngmt_defs import DataSplitRecord, scenario_details_regex, scenario_idx_regex
+from data_processing.data_mngmt_defs import DataSplitRecord, scenario_details_regex, scenario_idx_regex, \
+    EvaluationModelOutputRecord
 from utils_and_defs.logging_setup import create_logger
 
 logger = create_logger(__name__)
@@ -108,4 +109,15 @@ def load_data_split(split_path: Path, schemas: List[dict[str, Any]]) -> List[Dat
     
     return validated_records
 
-
+def load_evaluation_model_outputs(model_outputs_path: Path) -> list[EvaluationModelOutputRecord]:
+    assert model_outputs_path.exists()
+    assert model_outputs_path.is_file()
+    assert model_outputs_path.suffix == ".json"
+    with open(model_outputs_path) as model_outputs_file:
+        model_outputs = json.load(model_outputs_file)
+    assert isinstance(model_outputs, list)
+    evaluation_model_output_records: list[EvaluationModelOutputRecord] = []
+    for model_output in model_outputs:
+        evaluation_model_output_records.append(EvaluationModelOutputRecord(**model_output))
+    
+    return evaluation_model_output_records

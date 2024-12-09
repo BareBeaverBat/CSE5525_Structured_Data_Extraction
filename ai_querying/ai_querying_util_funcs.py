@@ -7,6 +7,7 @@ from typing import Optional, Any
 
 import anthropic
 import google.generativeai as google_genai
+import openai
 from google.generativeai import GenerativeModel
 from jsonschema import Draft202012Validator
 
@@ -235,12 +236,18 @@ def generate_with_model(
         
         temp_to_use = openai_client_bundle.temp
         for attempt_idx in range(max_num_api_calls_for_openai_failures_retry_logic):
-            openai_client_resp = openai_client_bundle.client.chat.completions.create(
-                model=openai_client_bundle.model_spec, messages=chat_msgs, temperature=temp_to_use,
-                max_completion_tokens=openai_client_bundle.max_tokens,
-                response_format={ "type": "json_object" } if openai_client_bundle.is_response_forced_json
-                else { "type": "text" }
-            )
+            try:
+                openai_client_resp = openai_client_bundle.client.chat.completions.create(
+                    model=openai_client_bundle.model_spec, messages=chat_msgs, temperature=temp_to_use,
+                    max_completion_tokens=openai_client_bundle.max_tokens,
+                    response_format={ "type": "json_object" } if openai_client_bundle.is_response_forced_json
+                    else { "type": "text" }
+                )
+            except openai.RateLimitError as e:
+                logger.info(f"hit openai rate limit on {attempt_idx+1}'th (1-based) attempt; waiting 30 seconds before retrying")
+                logger.debug(f"openai rate limit error details: {e}")
+                time.sleep(30)
+                continue
             actual_resp = openai_client_resp.choices[0]
             msg = actual_resp.message
             finish_reason = actual_resp.finish_reason

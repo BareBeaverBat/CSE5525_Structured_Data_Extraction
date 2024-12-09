@@ -120,17 +120,19 @@ def main():
     llama_3_1_405b_model_spec = "meta-llama/Meta-Llama-3.1-405B-Instruct"
     
     evaluation_configs: list[ModelEvaluationConfig] = \
-        ([
-             ModelEvaluationConfig(llama_provider_client, ModelProvider.DEEPINFRA, model_choice, fewshot_count,
-                                   cot_choice)
-             for fewshot_count in [0, 5, 10, 50] for model_choice in
-             [llama_3_3_70b_model_spec, llama_3_1_405b_model_spec] for cot_choice in [False, True]
-         ] + [
-             ModelEvaluationConfig(openai_client, ModelProvider.OPENAI, model_choice, fewshot_count, cot_choice)
-             for fewshot_count in [0, 5, 10, 50] for model_choice in [gpt_4o_mini_model_spec, gpt_4o_model_spec] for
-             cot_choice in [False, True]
-         ]
-         )
+    [ModelEvaluationConfig(openai_client, ModelProvider.OPENAI, gpt_4o_model_spec, 50, cot_choice)
+     for cot_choice in [False, True]]
+        # ([
+        #      ModelEvaluationConfig(llama_provider_client, ModelProvider.DEEPINFRA, model_choice, fewshot_count,
+        #                            cot_choice)
+        #      for fewshot_count in [0, 5, 10, 50] for model_choice in
+        #      [llama_3_3_70b_model_spec, llama_3_1_405b_model_spec] for cot_choice in [False, True]
+        #  ] + [
+        #      ModelEvaluationConfig(openai_client, ModelProvider.OPENAI, model_choice, fewshot_count, cot_choice)
+        #      for fewshot_count in [0, 5, 10, 50] for model_choice in [gpt_4o_mini_model_spec, gpt_4o_model_spec] for
+        #      cot_choice in [False, True]
+        #  ]
+        #  )
     
     for eval_config in evaluation_configs:
         logger.info(f"starting evaluation for model config {eval_config.label()}")

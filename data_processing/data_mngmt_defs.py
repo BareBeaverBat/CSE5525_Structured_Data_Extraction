@@ -33,10 +33,24 @@ class EvaluationModelOutputRecord:
     #  the automatic validation logic
     model_output_text: str
     num_retries_used: int
+    
+    def __post_init__(self):
+        assert isinstance(self.scenario_id, int)
+        assert isinstance(self.scenario_name, str)
+        assert isinstance(self.is_validation_vs_test, bool)
+        assert isinstance(self.src_record_idx_in_split, int)
+        assert isinstance(self.fewshot_example_idxs, list)
+        assert isinstance(self.model_output_object, dict)
+        assert isinstance(self.model_output_text, str)
+        assert isinstance(self.num_retries_used, int)
 
 
 scenario_details_regex = r"^(\d+)_([a-zA-Z0-9]+(_[a-zA-Z0-9]+)*)__(\w+).json"
 scenario_idx_regex = r"^(\d+)_"
+
+evaluation_config_regex = r"^Model__([-\w]+(_[-\w]+)*)__Fewshot__(\d+)__CoT__(True|False).json"
+
+
 
 claude_folder_nm = "claude"
 gemini_folder_nm = "gemini"
@@ -54,3 +68,5 @@ validation_set_path = split_data_folder_path / "validation_set.json"
 test_set_path = split_data_folder_path / "test_set.json"
 
 evaluation_models_output_path = Path("evaluation_models_outputs")
+
+evaluation_reports_path = Path("evaluation_reports")
