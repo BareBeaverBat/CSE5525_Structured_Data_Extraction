@@ -1,36 +1,22 @@
-Scott's proposals for some next steps:
+Scott's ideas for possible next steps after the course is done:
 
 - fix some dataset issues
     - at least gemini-produced data has a lot of obviously-fake and/or insufficiently-diverse data (e.g. "Jane Doe" or "John Doe" being used as a name and being used repeatedly, phone numbers starting with 555-, "email.com" as an email domain name, etc.)
+        - ?look more closely at claude and gemini data to see how widespread this is and whether there are other such problems
         - ?experiment with effects of increasing gemini generation temperature to 1.5 or 2?
         - ?try tweaking object generation prompt
-        - ?look more closely at claude and gemini data to see how widespread this is and whether there are other such problems
-- ??process the examples from the big (260ish) review file
+- ?process the examples from the big (260ish) review file
     - need to watch out for (tweaking both json object and text passage as necessary)
         - scenario id 4: 'experience_years' in flagged-for-review records
         - scenario ids 3/13/14: the addition of "_verbatim" suffix to some field names
-- ?maybe another round of data generation?
+- another round of data generation
 - update/upgrade the dataset splitting code to
-    - use existing data loading/checking code,
     - reserve some scenarios for only validation/test or only test sets,
-    - ~~maybe include training split in addition to fewshot/validation/test~~
+    - maybe include training split in addition to fewshot/validation/test
     - double check whether the split is evenly including gemini-vs-claude-generated data in each partition
-    - ideally, restructure how it stores the splits so that it
-        - doesn't repeat each schema string dozens of times and
-        - makes it easy to figure out which model generated a given record (and which scenario index it was associated with)
-            - this latter desideratum would be useful for the data analysis and the report, breaking down how a given model's performance varied across different scenarios and source models
-- upgrade/update the evaluation code to
-    - check whether evaluation prompt could use some tweaking to match the original generation prompt, and whether the evaluation setting should be allowing CoT like the synthesis setting
-    - get evaluation of gpt-4o working
-    - set up testing of llama 3.3 70b and 3.1 405b using deep infra to ensure reasonable costs
-    - record full results (per-record, extraction-quality/fact-recall/hallucination-count) from an evaluation run in addition to computing/printing the summary statistics
-    - jupyter notebook(s) to analyze the results
-        - gpt-4o vs gpt-4o-mini vs llama 3.3 70b vs llama 3.1 405b
-          - o1-mini would also be very interesting and is only slightly more expensive than gpt-4o, but that would require some annoying hacks because e.g. it doesn't support the "system" role in its prompt messages and would need higher limit on output tokens than other models and so on
-        - 0 shot vs 1 shot vs 3 shot vs 5 shot vs 10 shot vs 20 shot vs 50 shot prompting
-        - whether different models struggled with different scenarios
-        - whether source model (gemini vs claude) was a significant factor for some or all models, and if so whether they all had the same preference
-    - if we have time, test how much of a difference it makes for the evaluation code to (first 2 are already implemented in generation code and would be easy to add):
-        - allow CoT (extracting from a json-type markdown code block)
-        - automatically validate the response for json-schema-compliance and reprompt if it fails that check
-        - make several queries (3? 5? 10?) and use self-consistency to assemble a final result object field by field
+    - evenly distribute a scenario's records across the partitions that that scenario is allowed to be a part of
+- test out fine-tuning of gpt-4o-mini or Llama 3.3 70B
+- upgrade/update the evaluation code
+  - o1-mini would be very interesting and is only slightly more expensive than gpt-4o, but that would require some annoying hacks because e.g. it doesn't support the "system" role in its prompt messages and would need higher limit on output tokens than other models and so on
+  - test how much of a difference it makes for the evaluation code to
+    - make several queries (3? 5? 10?) and use self-consistency to assemble a final result object field by field
