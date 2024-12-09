@@ -2,6 +2,7 @@ import json
 import re
 import time
 from json import JSONDecodeError
+from string import Template
 from typing import Optional, Any
 
 import anthropic
@@ -268,19 +269,20 @@ def generate_with_model(
 
 def create_query_prompt_for_model_evaluation(
         scenario_domain: str, scenario_texts_label: str, schema: dict[str, Any], passage: str) -> str:
-    user_prompt = d(f"""
+    user_prompt_template = Template(d(f"""
         Here is a JSON schema for the domain "{scenario_domain}":
         ```json
-        {json.dumps(schema, indent=2)}
+        ${{curr_scenario_schema}}
         ```
         
         Here is the "{scenario_texts_label}" text passage.
         ```
-        {passage}
+        ${{curr_passage}}
         ```
         
         Please create a JSON object that obeys the given schema and captures all schema-relevant information that is actually present in or that is definitely implied by the text passage, following the above instructions while doing so.
-        """)
+        """))
+    user_prompt = user_prompt_template.safe_substitute(curr_scenario_schema=json.dumps(schema, indent=2), curr_passage=passage)
     return user_prompt
 
 
@@ -290,7 +292,28 @@ def extract_obj_from_passage_with_retry(
         google_client: GenerativeModel = None, anthropic_client_bundle: AnthropicClientBundle= None,
         openai_client_bundle: OpenAiClientBundle = None, is_cot_enabled = True,
         max_num_attempts=max_num_api_calls_for_schema_validation_retry_logic
-) -> tuple[Optional[dict[str, Any]], str, bool]:
+) -> tuple[Optional[dict[str, Any]], str, bool, int]:
+    """
+    Extracts a JSON object from a passage of text, retrying the extraction process if necessary
+    :param model_choice:
+    :param extractor_model:
+    :param passage:
+    :param scenario_domain:
+    :param scenario_texts_label:
+    :param schema:
+    :param passage_description:
+    :param case_id:
+    :param google_client:
+    :param anthropic_client_bundle:
+    :param openai_client_bundle:
+    :param is_cot_enabled:
+    :param max_num_attempts:
+    :return: a tuple of
+    1) the extracted JSON object (None if not extracted),
+    2) a string containing the analysis of the extraction process,
+    3) a boolean indicating whether the final extracted object was fully compliant with the json schema,
+    4) the number of retries that were used
+    """
     user_prompt = create_query_prompt_for_model_evaluation(scenario_domain, scenario_texts_label, schema, passage)
     ai_responses: list[str] = []
     followup_prompts: list[str] = []
@@ -319,7 +342,7 @@ def extract_obj_from_passage_with_retry(
                 logger.debug(f"Using {extractor_model}, extracted an object of structured data from {passage_description} (case id {case_id}):\n{json.dumps(curr_extracted_obj, indent=4)}\nAnalysis:\n{obj_gen_analysis}")
                 all_attempts_analysis = ("\n".join([f"AI:\n{prior_ai_resp}\n\nFeedback:\n{prior_followup_prompt}" for prior_ai_resp, prior_followup_prompt in zip(ai_responses, followup_prompts)])
                                           + ("\nAI final turn:" if ai_responses else "") + obj_gen_analysis)
-                return curr_extracted_obj, all_attempts_analysis, True
+                return curr_extracted_obj, all_attempts_analysis, True, attempt_idx
             else:
                 latest_imperfect_obj = curr_extracted_obj
                 latest_imperfect_obj_attempt_idx = attempt_idx
@@ -336,5 +359,5 @@ def extract_obj_from_passage_with_retry(
                                         ai_resp, followup_prompt in zip(ai_responses, followup_prompts)]))
     if latest_imperfect_obj is not None and latest_imperfect_obj_attempt_idx != max_num_attempts-1:
         all_attempts_analysis += f"\nUsing the object from the {latest_imperfect_obj_attempt_idx+1}'th (1-based) API call because each later API call's response didn't contain a valid json object"
-    return latest_imperfect_obj, all_attempts_analysis, False
+    return latest_imperfect_obj, all_attempts_analysis, False, max_num_attempts-1
 

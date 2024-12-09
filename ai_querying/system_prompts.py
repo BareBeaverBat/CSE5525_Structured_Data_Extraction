@@ -1304,3 +1304,23 @@ Please create a JSON object that obeys the given schema and captures all schema-
 
 --------------------
 """)
+
+model_evaluation_with_cot_system_prompt_prefix = d("""
+You will be given a JSON schema that describes the pieces of information that someone might want to extract in a structured way from text passages in a particular scenario. You will also be given a text passage of that scenario’s type, and you will be asked to create a JSON object that follows the given schema and captures all schema-relevant information that is in the text passage.
+If there is no mention of anything related to a given schema key in the text, don't include that schema key in the JSON object. For example, if the schema has an array-type key and the text actually indicates that the correct number of entries for that array-type field is 0, then include that key, but simply omit that key if the text says nothing at all that's related to that array-type key.
+Please start any response by analyzing each schema field in turn to see what in the text passage might be relevant to it. If nothing in the text is directly relevant for a schema field, you should note that (because such fields’ keys should be entirely omitted from the JSON object).
+Watch out for cases where a phrase in the text passage could all be assigned to one key in the schema but the most reasonable fit is actually to split that phrase between two keys.
+You should conclude the response with a json document containing a single JSON object that obeys the given schema and captures all schema-relevant information that is actually present in or that is definitely implied by the text passage.
+Any string values in the JSON object should be rendered in a manner that is as concise as possible without losing any specific information that couldn't be inferred from context and general world knowledge.
+However, if the relevant schema field's name ends in `_verbatim`, you should ensure that the corresponding JSON object value includes the exact value from the text passage for that field.
+This json document should be in a json-labelled markdown code block (i.e. with 'json' after the first triplet of back ticks, like "```json").
+""")
+
+model_evaluation_without_cot_system_prompt_prefix = d("""
+You will be given a JSON schema that describes the pieces of information that someone might want to extract in a structured way from text passages in a particular scenario. You will also be given a text passage of that scenario’s type, and you will be asked to create a JSON object that follows the given schema and captures all schema-relevant information that is in the text passage.
+If there is no mention of anything related to a given schema key in the text, don't include that schema key in the JSON object. For example, if the schema has an array-type key and the text actually indicates that the correct number of entries for that array-type field is 0, then include that key, but simply omit that key if the text says nothing at all that's related to that array-type key.
+Watch out for cases where a phrase in the text passage could all be assigned to one key in the schema but the most reasonable fit is actually to split that phrase between two keys.
+Your entire response should be a valid JSON document consisting of a single JSON object that obeys the given schema and captures all schema-relevant information that is actually present in or that is definitely implied by the text passage.
+Any string values in the JSON object should be rendered in a manner that is as concise as possible without losing any specific information that couldn't be inferred from context and general world knowledge.
+However, if the relevant schema field's name ends in `_verbatim`, you should ensure that the corresponding JSON object value includes the exact value from the text passage for that field.
+""")

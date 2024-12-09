@@ -32,6 +32,7 @@ class EvaluationModelOutputRecord:
     #  model's output text but rather one or more rounds of the model's output text followed by a feedback message from
     #  the automatic validation logic
     model_output_text: str
+    num_retries_used: int
 
 
 scenario_details_regex = r"^(\d+)_([a-zA-Z0-9]+(_[a-zA-Z0-9]+)*)__(\w+).json"
@@ -39,17 +40,17 @@ scenario_idx_regex = r"^(\d+)_"
 
 claude_folder_nm = "claude"
 gemini_folder_nm = "gemini"
-schemas_path = Path("../json_schemas")
-objects_path = Path("../json_objects")
+schemas_path = Path("json_schemas")
+objects_path = Path("json_objects")
 claude_objs_path = objects_path / claude_folder_nm
 gemini_objs_path = objects_path / gemini_folder_nm
-texts_path = Path("../text_passages")
+texts_path = Path("text_passages")
 claude_texts_path = texts_path / claude_folder_nm
 gemini_texts_path = texts_path / gemini_folder_nm
 
-split_data_folder_path = Path("../split_data")
+split_data_folder_path = Path("split_data")
 fewshot_examples_path = split_data_folder_path / "fewshot_examples.json"
 validation_set_path = split_data_folder_path / "validation_set.json"
 test_set_path = split_data_folder_path / "test_set.json"
 
-evaluation_models_output_path = Path("../evaluation_models_outputs")
+evaluation_models_output_path = Path("evaluation_models_outputs")

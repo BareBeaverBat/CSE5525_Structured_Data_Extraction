@@ -1,0 +1,491 @@
+[
+  {
+    "scenario_id": 1,
+    "scenario_name": "support ticket description",
+    "is_validation_vs_test": true,
+    "src_record_idx_in_split": 0,
+    "fewshot_example_idxs": [
+      35,
+      27,
+      0,
+      20,
+      9
+    ],
+    "model_output_object": {
+      "product": {
+        "name": "MusicStreamer+"
+      },
+      "error_codes": [
+        "MS-PLAYBACK-ERR"
+      ],
+      "impact_level": "blocking",
+      "system_state": {
+        "browser": "Chrome 114"
+      },
+      "reproduction": {
+        "reproducible": true,
+        "frequency": "sometimes"
+      }
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 2,
+    "scenario_name": "property listing",
+    "is_validation_vs_test": true,
+    "src_record_idx_in_split": 1,
+    "fewshot_example_idxs": [
+      35,
+      27,
+      0,
+      20,
+      9
+    ],
+    "model_output_object": {
+      "bedrooms": 2,
+      "bathrooms": 1,
+      "square_footage": 850,
+      "property_type": "apartment",
+      "listing_price": 1200000,
+      "location": {
+        "city": "Miami",
+        "state": "FL",
+        "zip_code": "33131"
+      }
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 2,
+    "scenario_name": "property listing",
+    "is_validation_vs_test": true,
+    "src_record_idx_in_split": 2,
+    "fewshot_example_idxs": [
+      35,
+      27,
+      0,
+      20,
+      9
+    ],
+    "model_output_object": {
+      "bedrooms": 1,
+      "bathrooms": 1,
+      "square_footage": 700,
+      "property_type": "apartment",
+      "amenities": [
+        "balcony"
+      ],
+      "location": {
+        "city": "Seattle",
+        "state": "WA",
+        "zip_code": "98101"
+      }
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 3,
+    "scenario_name": "legal contract",
+    "is_validation_vs_test": true,
+    "src_record_idx_in_split": 3,
+    "fewshot_example_idxs": [
+      35,
+      27,
+      0,
+      20,
+      9
+    ],
+    "model_output_object": {
+      "signing_date": "2023-09-15",
+      "parties": [
+        "Cloud Services Pro",
+        "Data Storage Solutions"
+      ],
+      "clauses": {
+        "termination_clause_verbatim": "Either party may terminate this Agreement by providing forty-five (45) days written notice to the other party.",
+        "confidentiality_clause_verbatim": "Both parties agree to maintain the confidentiality of all information exchanged under this Agreement for a period of two (2) years from the date of disclosure.",
+        "payment_amount": 125000.0
+      }
+    },
+    "model_output_text": "AI:\n{\n    \"signing_date\": \"2023-09-15\",\n    \"parties\": [\n     \"Cloud Services Pro\",\n        \"Data Storage Solutions\"\n    ],\n \"governing_law\": null,\n    \"clauses\": {\n     \"termination_clause_verbatim\": \"Either party may terminate this Agreement by providing forty-five (45) days written notice to the other party.\",\n        \"confidentiality_clause_verbatim\": \"Both parties agree to maintain the confidentiality of all information exchanged under this Agreement for a period of two (2) years from the date of disclosure.\",\n        \"payment_amount\": 125000.00\n    }\n}\n\n\nFeedback:\nThere were problems with that output:\nThe created object did not conform to the schema. Details:\nNone is not of type 'string'\n\nFailed validating 'type' in schema['properties']['governing_law']:\n    {'type': 'string'}\n\nOn instance['governing_law']:\n    None\nPlease try again, following the system-prompt and original-user-prompt instructions.\nAI final turn:",
+    "num_retries_used": 1
+  },
+  {
+    "scenario_id": 2,
+    "scenario_name": "property listing",
+    "is_validation_vs_test": true,
+    "src_record_idx_in_split": 4,
+    "fewshot_example_idxs": [
+      35,
+      27,
+      0,
+      20,
+      9
+    ],
+    "model_output_object": {
+      "property_type": "land",
+      "square_footage": 8500,
+      "location": {
+        "city": "Sedona",
+        "state": "Arizona",
+        "zip_code": "86336"
+      }
+    },
+    "model_output_text": "AI:\n{\n    \"property_type\": \"land\",\n    \"square_footage\": 8500,\n    \"listing_price\": null,\n    \"location\": {\n     \"city\": \"Sedona\",\n        \"state\": \"Arizona\",\n        \"zip_code\": \"86336\"\n    }\n}\n\n\nFeedback:\nThere were problems with that output:\nThe created object did not conform to the schema. Details:\nNone is not of type 'integer'\n\nFailed validating 'type' in schema['properties']['listing_price']:\n    {'type': 'integer'}\n\nOn instance['listing_price']:\n    None\nPlease try again, following the system-prompt and original-user-prompt instructions.\nAI final turn:",
+    "num_retries_used": 1
+  },
+  {
+    "scenario_id": 6,
+    "scenario_name": "insurance claim description from policy holder",
+    "is_validation_vs_test": true,
+    "src_record_idx_in_split": 5,
+    "fewshot_example_idxs": [
+      35,
+      27,
+      0,
+      20,
+      9
+    ],
+    "model_output_object": {
+      "incident_date": "2023-11-14",
+      "incident_type": "other",
+      "location": {
+        "street_address": "445 Mountain View",
+        "city": "Denver",
+        "state": "Colorado",
+        "zip_code": "80202"
+      },
+      "estimated_damages": 9800,
+      "police_report_filed": false
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 4,
+    "scenario_name": "resume or cv",
+    "is_validation_vs_test": true,
+    "src_record_idx_in_split": 6,
+    "fewshot_example_idxs": [
+      35,
+      27,
+      0,
+      20,
+      9
+    ],
+    "model_output_object": {
+      "education": [
+        {
+          "degree_type": "MBA",
+          "major": "Marketing",
+          "institution": "NYU Stern School of Business"
+        },
+        {
+          "degree_type": "BA",
+          "major": "Communications",
+          "institution": "Boston University"
+        }
+      ],
+      "skills": [
+        "Brand Strategy",
+        "Social Media Marketing",
+        "Content Creation",
+        "Analytics",
+        "Team Leadership"
+      ],
+      "previous_roles": [
+        {
+          "title": "Marketing Director",
+          "company": "Urban Lifestyle Brands",
+          "start_month": 3,
+          "start_year": 2019
+        }
+      ],
+      "contact_info": {
+        "email": "emma.thompson@urbanbrands.com"
+      }
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 4,
+    "scenario_name": "resume or cv",
+    "is_validation_vs_test": true,
+    "src_record_idx_in_split": 7,
+    "fewshot_example_idxs": [
+      35,
+      27,
+      0,
+      20,
+      9
+    ],
+    "model_output_object": {
+      "skills": [
+        "Web Development",
+        "HTML",
+        "CSS",
+        "JavaScript"
+      ],
+      "education": [
+        {
+          "degree_type": "BS",
+          "institution": "California State University, Long Beach"
+        }
+      ],
+      "contact_info": {
+        "email": "peter.pan@email.com",
+        "phone": "555-111-2222"
+      }
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 14,
+    "scenario_name": "recipes",
+    "is_validation_vs_test": true,
+    "src_record_idx_in_split": 8,
+    "fewshot_example_idxs": [
+      35,
+      27,
+      0,
+      20,
+      9
+    ],
+    "model_output_object": {
+      "dish_name": "One-Pot Chicken Rice",
+      "ingredients": [
+        {
+          "name": "chicken thighs",
+          "quantity": 1.5,
+          "unit": "pounds"
+        },
+        {
+          "name": "rice",
+          "quantity": 2,
+          "unit": "cups"
+        },
+        {
+          "name": "chicken broth",
+          "quantity": 4,
+          "unit": "cups"
+        }
+      ],
+      "instructions_verbatim": [
+        "This family-friendly meal creates minimal dishes to wash and fills your kitchen with wonderful aromas as it cooks. Garnish with fresh herbs if desired, and serve hot."
+      ],
+      "dietary_restrictions": [
+        "gluten-free"
+      ],
+      "preparation_time_minutes": 10,
+      "cooking_time_minutes": 45
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 7,
+    "scenario_name": "incident report",
+    "is_validation_vs_test": true,
+    "src_record_idx_in_split": 9,
+    "fewshot_example_idxs": [
+      35,
+      27,
+      0,
+      20,
+      9
+    ],
+    "model_output_object": {
+      "location": {
+        "type": "residence",
+        "indoor_outdoor": "indoor",
+        "floor_level": 3
+      },
+      "incident_type": [
+        "domestic",
+        "noise"
+      ]
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 3,
+    "scenario_name": "legal contract",
+    "is_validation_vs_test": true,
+    "src_record_idx_in_split": 10,
+    "fewshot_example_idxs": [
+      35,
+      27,
+      0,
+      20,
+      9
+    ],
+    "model_output_object": {
+      "signing_date": "2023-11-15",
+      "parties": [
+        "European Imports GmbH",
+        "American Distribution Corp",
+        "Pacific Logistics Ltd"
+      ],
+      "governing_law": "the laws of the State of New York",
+      "clauses": {
+        "termination_clause_verbatim": "Any Party may terminate this Agreement by providing sixty (60) days prior written notice to the other Parties.",
+        "payment_amount": 450000.0
+      }
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 4,
+    "scenario_name": "resume or cv",
+    "is_validation_vs_test": true,
+    "src_record_idx_in_split": 11,
+    "fewshot_example_idxs": [
+      35,
+      27,
+      0,
+      20,
+      9
+    ],
+    "model_output_object": {
+      "education": [
+        {
+          "degree_type": "BS",
+          "major": "Computer Science",
+          "institution": "University of Washington"
+        }
+      ],
+      "skills": [
+        "Python",
+        "JavaScript",
+        "React",
+        "Git"
+      ],
+      "previous_roles": [
+        {
+          "title": "Junior Software Engineer",
+          "company": "Cascade Technologies",
+          "start_month": 6,
+          "start_year": 2021
+        },
+        {
+          "title": "Software Engineering Intern",
+          "company": "Bluefin Solutions",
+          "start_month": 5,
+          "start_year": 2020,
+          "end_month": 8,
+          "end_year": 2020
+        }
+      ],
+      "contact_info": {
+        "email": "david.chen@gmail.com",
+        "phone": "206-555-0123"
+      }
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 8,
+    "scenario_name": "project description in permit application",
+    "is_validation_vs_test": true,
+    "src_record_idx_in_split": 12,
+    "fewshot_example_idxs": [
+      35,
+      27,
+      0,
+      20,
+      9
+    ],
+    "model_output_object": {
+      "project_specs": {
+        "total_square_feet": 500,
+        "floors": 1,
+        "lot_coverage_percentage": 25
+      },
+      "usage": [
+        "residential"
+      ],
+      "utilities": {
+        "water": {
+          "required": true,
+          "gallons_per_day": 100
+        },
+        "electrical": {
+          "required": true,
+          "amperage": 50
+        },
+        "gas": true
+      },
+      "timeline": {
+        "duration_months": 3,
+        "phases": 1
+      }
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 14,
+    "scenario_name": "recipes",
+    "is_validation_vs_test": true,
+    "src_record_idx_in_split": 13,
+    "fewshot_example_idxs": [
+      35,
+      27,
+      0,
+      20,
+      9
+    ],
+    "model_output_object": {
+      "dish_name": "Classic Italian Bruschetta",
+      "ingredients": [
+        {
+          "name": "tomatoes",
+          "quantity": 4,
+          "unit": "medium"
+        },
+        {
+          "name": "basil",
+          "quantity": 0.25,
+          "unit": "cup"
+        },
+        {
+          "name": "garlic",
+          "quantity": 2,
+          "unit": "cloves"
+        }
+      ],
+      "cuisine": "Italian"
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 4,
+    "scenario_name": "resume or cv",
+    "is_validation_vs_test": true,
+    "src_record_idx_in_split": 14,
+    "fewshot_example_idxs": [
+      35,
+      27,
+      0,
+      20,
+      9
+    ],
+    "model_output_object": {
+      "contact_info": {
+        "email": "john.doe@email.com",
+        "phone": "555-123-4567"
+      }
+    },
+    "model_output_text": "",
+    "num_retries_used": 0
+  }
+]

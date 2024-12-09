@@ -62,14 +62,15 @@ def generate_json_objs(google_client: Optional[GenerativeModel], anthropic_clien
     obj_gen_analysis_strs: list[str] = []
     obj_idx_to_analysis_idx: dict[int, int] = {}
     
-    user_prompt = d(f"""
+    user_prompt_template = Template(d(f"""
     Here is such a JSON schema for the domain "{scenario_domain}":
     ```json
-    {json.dumps(schema, indent=2)}
+    ${{curr_scenario_schema}}
     ```
     This describes the pieces of information that someone might want to extract in a structured way from "{scenario_texts_label}" text passages.
     Please generate a JSON array containing {target_num_objs} diverse JSON objects conforming to that schema, following the above instructions while doing so.
-    """)
+    """))
+    user_prompt = user_prompt_template.safe_substitute(curr_scenario_schema=json.dumps(schema, indent=2))
     
     ai_responses: list[str] = []
     followup_prompts: list[str] = []
@@ -156,7 +157,7 @@ def generate_text_passages(google_client: Optional[GenerativeModel], anthropic_c
     user_prompt_template = Template(d(f"""
     Here is a JSON schema for the domain "{scenario_domain}":
     ```json
-    {json.dumps(schema, indent=2)}
+    ${{curr_scenario_schema}}
     ```
     
     This describes the pieces of information that someone might want to extract in a structured way from "{scenario_texts_label}" text passages.
@@ -177,7 +178,7 @@ def generate_text_passages(google_client: Optional[GenerativeModel], anthropic_c
             logger.debug(f"With {model_nm}, skipping text passage generation for {obj_idx}th of {len(json_objs)} objects for schema index {schema_idx} because that object's generation seems to have gone awry")
             continue
         
-        user_prompt = user_prompt_template.safe_substitute(schema_generated_json_instance=(json.dumps(obj)))
+        user_prompt = user_prompt_template.safe_substitute(curr_scenario_schema= json.dumps(schema, indent=2), schema_generated_json_instance=(json.dumps(obj, indent=2)))
         resp_text: str = generate_with_model(
             ModelProvider.ANTHROPIC if should_use_claude else ModelProvider.GOOGLE_DEEPMIND, user_prompt, [], [],
             google_client, bundled_anthropic_client)

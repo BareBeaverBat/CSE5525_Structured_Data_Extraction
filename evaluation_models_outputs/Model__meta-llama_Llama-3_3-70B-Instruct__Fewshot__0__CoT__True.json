@@ -1,0 +1,401 @@
+[
+  {
+    "scenario_id": 1,
+    "scenario_name": "support ticket description",
+    "is_validation_vs_test": true,
+    "src_record_idx_in_split": 0,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "product": {
+        "name": "MusicStreamer+"
+      },
+      "error_codes": [
+        "MS-PLAYBACK-ERR"
+      ],
+      "impact_level": "blocking",
+      "system_state": {
+        "browser": "Chrome version 114"
+      },
+      "reproduction": {
+        "reproducible": true,
+        "frequency": "sometimes"
+      }
+    },
+    "model_output_text": "To create a JSON object that follows the given schema and captures all schema-relevant information from the text passage, let's analyze each schema field in turn:\n\n1. **product**: The text mentions \"MusicStreamer+\", which directly relates to the \"name\" property within the \"product\" object. There's no mention of a model or version, so those properties will be omitted.\n\n2. **error_codes**: The text passage mentions an error code \"MS-PLAYBACK-ERR\", which is relevant to this field. This will be included as an array with one string item.\n\n3. **impact_level**: The issue is described as \"blocking\", which matches one of the enum values for \"impact_level\". This will be included.\n\n4. **system_state**: The text mentions using \"Chrome version 114\", which relates to the \"browser\" property within \"system_state\". There's no mention of the operating system (os) or connected devices, so those properties will be omitted.\n\n5. **reproduction**: The text indicates that the error can be reproduced but doesn't happen every time. This relates to the \"reproducible\" and \"frequency\" properties within \"reproduction\". The frequency is described as happening \"sometimes\", which matches one of the enum values.\n\nGiven this analysis, the JSON object that captures all schema-relevant information from the text passage is:\n\n```json\n\nJSON document was here\n\n```",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 2,
+    "scenario_name": "property listing",
+    "is_validation_vs_test": true,
+    "src_record_idx_in_split": 1,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "bedrooms": 2,
+      "bathrooms": 1,
+      "square_footage": 850,
+      "property_type": "apartment",
+      "listing_price": 1200000,
+      "location": {
+        "city": "Miami",
+        "state": "Florida",
+        "zip_code": "33131"
+      }
+    },
+    "model_output_text": "To create a JSON object that follows the given schema and captures all schema-relevant information from the text passage, let's analyze each schema field in turn:\n\n1. **bedrooms**: The text passage mentions \"2-bedroom apartment\", which directly corresponds to this field. So, the value for \"bedrooms\" is 2.\n\n2. **bathrooms**: The passage mentions \"1 bathroom\", making the value for \"bathrooms\" 1.\n\n3. **square_footage**: The text indicates the apartment is \"850 sq ft\", which means the \"square_footage\" is 850.\n\n4. **property_type**: The passage describes the property as an \"apartment\", which matches one of the enum values for \"property_type\".\n\n5. **amenities**: There is no mention of any specific amenities like \"pool\", \"garage\", \"fireplace\", \"central_ac\", or \"balcony\" in the text passage. Therefore, this field should not be included in the JSON object.\n\n6. **listing_price**: The passage states the apartment is \"Priced at $1,200,000\", which corresponds to the \"listing_price\" field. However, the schema defines this field as an integer, and the price includes a dollar sign and a comma. For the purpose of fitting the schema, we'll consider the numeric value only, which is 1200000.\n\n7. **location**: The text mentions \"Miami\" as the city, and it's located in the \"33131 zip code\". Although the state is not explicitly mentioned, given that Miami is a well-known city in Florida, we can infer the state as \"Florida\" (or \"FL\" in abbreviation, but since the schema asks for a string, we'll use the full name for clarity). Thus, we have enough information to fill out the \"location\" object.\n\nGiven this analysis, the JSON object that captures all the schema-relevant information from the text passage is:\n\n```json\n\nJSON document was here\n\n```",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 2,
+    "scenario_name": "property listing",
+    "is_validation_vs_test": true,
+    "src_record_idx_in_split": 2,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "bedrooms": 1,
+      "bathrooms": 1,
+      "square_footage": 700,
+      "property_type": "apartment",
+      "amenities": [
+        "balcony"
+      ],
+      "location": {
+        "city": "Seattle",
+        "state": "WA",
+        "zip_code": "98101"
+      }
+    },
+    "model_output_text": "Analyzing each schema field in turn to see what in the text passage might be relevant to it:\n\n* `bedrooms`: The text passage mentions \"1-bedroom\", which directly corresponds to this field.\n* `bathrooms`: The text passage mentions \"1-bathroom\", which directly corresponds to this field.\n* `square_footage`: The text passage mentions \"700 square feet\", which directly corresponds to this field.\n* `property_type`: The text passage mentions \"Apartment\", which directly corresponds to this field.\n* `amenities`: The text passage mentions \"balcony\", which is one of the allowed values for this field.\n* `listing_price`: There is no mention of the listing price in the text passage, so this field should be omitted.\n* `location`: The text passage mentions \"Seattle, WA 98101\", which directly corresponds to the `city`, `state`, and `zip_code` fields within this object.\n\nBased on this analysis, the JSON object that captures all schema-relevant information from the text passage is:\n\n```json\n\nJSON document was here\n\n```",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 3,
+    "scenario_name": "legal contract",
+    "is_validation_vs_test": true,
+    "src_record_idx_in_split": 3,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "signing_date": "2023-09-15",
+      "parties": [
+        "Cloud Services Pro",
+        "Data Storage Solutions"
+      ],
+      "clauses": {
+        "termination_clause_verbatim": "Either party may terminate this Agreement by providing forty-five (45) days written notice to the other party.",
+        "confidentiality_clause_verbatim": "Both parties agree to maintain the confidentiality of all information exchanged under this Agreement for a period of two (2) years from the date of disclosure.",
+        "payment_amount": 125000.0
+      }
+    },
+    "model_output_text": "Analyzing each schema field in turn:\n\n1. `signing_date`: The text passage mentions \"this 15th day of September, 2023\" as the date when the agreement was made and entered into. This information is relevant to the `signing_date` field.\n\n2. `parties`: The text passage mentions \"Cloud Services Pro\" and \"Data Storage Solutions\" as the parties involved in the agreement. This information is relevant to the `parties` field.\n\n3. `governing_law`: There is no mention of governing law in the text passage. Therefore, this field should be omitted from the JSON object.\n\n4. `clauses`: The text passage contains several clauses, including termination, confidentiality, and payment. \n   - `termination_clause_verbatim`: The text passage mentions \"Either party may terminate this Agreement by providing forty-five (45) days written notice to the other party.\" This information is relevant to the `termination_clause_verbatim` field.\n   - `confidentiality_clause_verbatim`: The text passage mentions \"Both parties agree to maintain the confidentiality of all information exchanged under this Agreement for a period of two (2) years from the date of disclosure.\" This information is relevant to the `confidentiality_clause_verbatim` field.\n   - `payment_amount`: The text passage mentions \"One Hundred Twenty-Five Thousand Dollars ($125,000.00)\" as the payment amount. This information is relevant to the `payment_amount` field.\n\nBased on the analysis, the JSON object should include the `signing_date`, `parties`, `clauses` fields. The `clauses` field should include the `termination_clause_verbatim`, `confidentiality_clause_verbatim`, and `payment_amount` fields.\n\nHere is the JSON object that obeys the given schema and captures all schema-relevant information:\n```json\n\nJSON document was here\n\n```",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 2,
+    "scenario_name": "property listing",
+    "is_validation_vs_test": true,
+    "src_record_idx_in_split": 4,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "property_type": "land",
+      "location": {
+        "city": "Sedona",
+        "state": "Arizona",
+        "zip_code": "86336"
+      }
+    },
+    "model_output_text": "Analyzing each schema field in turn to see what in the text passage might be relevant to it:\n\n* `bedrooms`: There is no mention of bedrooms in the text passage, so this field should be omitted.\n* `bathrooms`: There is no mention of bathrooms in the text passage, so this field should be omitted.\n* `square_footage`: The text passage mentions an \"8,500 square foot lot\", which refers to the size of the land, not the building. However, since the schema does not have a separate field for land size, and the text implies that the land is intended for building a home, we can infer that the `square_footage` field is not directly relevant. But, considering the context, it might be reasonable to include this information under `square_footage` if we interpret it as the potential size of the building that could be constructed on the lot. However, given the schema's focus on existing properties, it's more accurate to omit this field.\n* `property_type`: The text passage mentions a \"parcel of land\", which implies that the `property_type` is \"land\".\n* `amenities`: There is no mention of specific amenities like \"pool\", \"garage\", \"fireplace\", etc. in the text passage, so this field should be omitted.\n* `listing_price`: There is no mention of the listing price in the text passage, so this field should be omitted.\n* `location`: The text passage mentions \"Sedona, Arizona\" and \"86336 zip code area\", which provides enough information to fill in the `location` field.\n\nBased on the analysis, the JSON object that captures all schema-relevant information that is actually present in or that is definitely implied by the text passage is:\n\n```json\n\nJSON document was here\n\n```",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 6,
+    "scenario_name": "insurance claim description from policy holder",
+    "is_validation_vs_test": true,
+    "src_record_idx_in_split": 5,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "incident_date": "2023-11-14",
+      "incident_type": "other",
+      "location": {
+        "street_address": "445 Mountain View",
+        "city": "Denver",
+        "state": "Colorado",
+        "zip_code": "80202"
+      },
+      "estimated_damages": 9800,
+      "police_report_filed": false
+    },
+    "model_output_text": "Analyzing each schema field in turn to see what in the text passage might be relevant to it:\n\n* `incident_date`: The text passage mentions \"November 14, 2023\" as the date when the incident occurred, which is relevant to this field.\n* `incident_type`: Although the text passage does not explicitly mention one of the enum values, it describes \"significant wind damage\" caused by a \"severe windstorm\", which can be reasonably inferred as an \"other\" type of incident, as wind damage is not explicitly listed in the enum.\n* `location`: The text passage mentions \"445 Mountain View\" as the street address, \"Denver\" as the city, \"Colorado\" as the state, and \"80202\" as the zip code, which are all relevant to this field.\n* `estimated_damages`: The text passage mentions an estimated total damage of \"$9,800\", which is relevant to this field.\n* `police_report_filed`: The text passage explicitly states that a police report was not filed, which is relevant to this field.\n* `witnesses`: There is no mention of any witnesses in the text passage, so this field should be omitted from the JSON object.\n\nBased on the analysis, the JSON object that obeys the given schema and captures all schema-relevant information that is actually present in or that is definitely implied by the text passage is:\n\n```json\n\nJSON document was here\n\n```",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 4,
+    "scenario_name": "resume or cv",
+    "is_validation_vs_test": true,
+    "src_record_idx_in_split": 6,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "skills": [
+        "Brand Strategy",
+        "Social Media Marketing",
+        "Content Creation",
+        "Analytics",
+        "Team Leadership"
+      ],
+      "education": [
+        {
+          "degree_type": "MBA",
+          "major": "Marketing",
+          "institution": "NYU Stern School of Business"
+        },
+        {
+          "degree_type": "BA",
+          "major": "Communications",
+          "institution": "Boston University"
+        }
+      ],
+      "previous_roles": [
+        {
+          "title": "Marketing Director",
+          "company": "Urban Lifestyle Brands",
+          "start_month": 3,
+          "start_year": 2019,
+          "end_month": null,
+          "end_year": null
+        }
+      ],
+      "contact_info": {
+        "email": "emma.thompson@urbanbrands.com"
+      }
+    },
+    "model_output_text": "Analyzing each schema field in turn:\n\n* `skills`: The text passage has a \"SKILLS\" section that lists several skills, including \"Brand Strategy\", \"Social Media Marketing\", \"Content Creation\", \"Analytics\", and \"Team Leadership\". These skills can be directly mapped to the `skills` array in the schema.\n* `education`: The text passage has an \"EDUCATION\" section that lists two educational experiences: an MBA in Marketing from NYU Stern School of Business and a Bachelor of Arts in Communications from Boston University. These can be directly mapped to the `education` array in the schema.\n* `previous_roles`: The text passage has a \"PROFESSIONAL EXPERIENCE\" section that lists one professional experience: Marketing Director at Urban Lifestyle Brands from March 2019 to Present. This can be directly mapped to the `previous_roles` array in the schema.\n* `contact_info`: The text passage lists an email address \"emma.thompson@urbanbrands.com\" which can be mapped to the `email` field in the `contact_info` object. There is no phone number listed, so the `phone` field will be omitted.\n\nCreating a JSON object that captures all schema-relevant information:\n\n```json\n\nJSON document was here\n\n```",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 4,
+    "scenario_name": "resume or cv",
+    "is_validation_vs_test": true,
+    "src_record_idx_in_split": 7,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "skills": [
+        "Web Development",
+        "HTML",
+        "CSS",
+        "JavaScript"
+      ],
+      "education": [
+        {
+          "degree_type": "BS",
+          "institution": "California State University, Long Beach"
+        }
+      ],
+      "contact_info": {
+        "email": "peter.pan@email.com",
+        "phone": "555-111-2222"
+      }
+    },
+    "model_output_text": "Analyzing each schema field in turn:\n\n* `skills`: The text passage mentions \"Web Development, HTML, CSS, JavaScript\" as skills, which can be directly mapped to this field.\n* `education`: The text passage mentions \"California State University, Long Beach - BS\", which can be broken down into degree type (\"BS\"), institution (\"California State University, Long Beach\"), and no major is mentioned.\n* `previous_roles`: There is no mention of previous roles in the text passage, so this field should be omitted.\n* `contact_info`: The text passage mentions \"peter.pan@email.com\" as an email address and \"555-111-2222\" as a phone number, which can be directly mapped to this field.\n\nBased on the analysis, the JSON object that captures all schema-relevant information is:\n\n```json\n\nJSON document was here\n\n```",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 14,
+    "scenario_name": "recipes",
+    "is_validation_vs_test": true,
+    "src_record_idx_in_split": 8,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "dish_name": "One-Pot Chicken Rice",
+      "ingredients": [
+        {
+          "name": "chicken thighs",
+          "quantity": 1.5,
+          "unit": "pounds"
+        },
+        {
+          "name": "rice",
+          "quantity": 2,
+          "unit": "cups"
+        },
+        {
+          "name": "chicken broth",
+          "quantity": 4,
+          "unit": "cups"
+        }
+      ],
+      "dietary_restrictions": [
+        "gluten-free"
+      ],
+      "preparation_time_minutes": 10,
+      "cooking_time_minutes": 45
+    },
+    "model_output_text": "Analyzing each schema field in turn to see what in the text passage might be relevant to it:\n\n* `dish_name`: The text passage mentions \"One-Pot Chicken Rice\", which seems to be the name of the dish.\n* `ingredients`: The text passage lists \"1.5 pounds chicken thighs\", \"2 cups rice\", and \"4 cups chicken broth\" as ingredients. Each ingredient has a name and a quantity, and some have a unit.\n* `instructions_verbatim`: There are no explicit instructions in the text passage, but there are some general descriptions of the cooking process. However, since the field is `_verbatim`, it's likely that the instructions should be exact quotes from the text. In this case, there are no explicit instructions to quote.\n* `cuisine`: There is no mention of a specific cuisine in the text passage.\n* `dietary_restrictions`: The text passage mentions that the recipe is \"naturally gluten-free\", which implies that it has a dietary restriction.\n* `preparation_time_minutes` and `cooking_time_minutes`: The text passage mentions \"Prep Time: 10 minutes\" and \"Cook Time: 45 minutes\", which correspond to these fields.\n* `nutritional_information`: There is no mention of nutritional information in the text passage.\n\nBased on this analysis, the JSON object that captures all schema-relevant information is:\n\n```json\n\nJSON document was here\n\n```",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 7,
+    "scenario_name": "incident report",
+    "is_validation_vs_test": true,
+    "src_record_idx_in_split": 9,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "location": {
+        "type": "residence",
+        "indoor_outdoor": "indoor",
+        "floor_level": 3
+      },
+      "incident_type": [
+        "domestic",
+        "noise"
+      ]
+    },
+    "model_output_text": "Analyzing each schema field in turn to see what in the text passage might be relevant to it:\n\n* `location`: The text passage mentions \"Maple Grove Apartments\" and \"third floor of the building\" and \"apartment 304\", which suggests that the location is a residence. The fact that loud shouting could be heard from inside the apartment and that officers were invited inside the residence implies that the incident occurred indoors.\n* `incident_type`: The text passage mentions a \"domestic disturbance\", which corresponds to the \"domestic\" incident type in the schema. It also mentions \"multiple neighbors had called to complain about the noise level\", which could be related to the \"noise\" incident type.\n* `weapons`: There is no mention of any weapons in the text passage.\n* `vehicles`: There is no mention of any vehicles in the text passage.\n\nBased on this analysis, the JSON object should include the `location` and `incident_type` fields. The `location` field should have a `type` of \"residence\", an `indoor_outdoor` value of \"indoor\", and a `floor_level` value of 3. The `incident_type` field should include both \"domestic\" and \"noise\" incident types.\n\nHere is the resulting JSON object:\n```json\n\nJSON document was here\n\n```",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 3,
+    "scenario_name": "legal contract",
+    "is_validation_vs_test": true,
+    "src_record_idx_in_split": 10,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "signing_date": "2023-11-15",
+      "parties": [
+        "European Imports GmbH",
+        "American Distribution Corp",
+        "Pacific Logistics Ltd"
+      ],
+      "governing_law": "laws of the State of New York",
+      "clauses": {
+        "termination_clause_verbatim": "Any Party may terminate this Agreement by providing sixty (60) days prior written notice to the other Parties.",
+        "payment_amount": 450000.0
+      }
+    },
+    "model_output_text": "Analyzing each schema field in turn:\n\n* `signing_date`: The text passage mentions \"this 15th day of November, 2023\" as the date when the agreement was made and entered into, which can be inferred as the signing date.\n* `parties`: The text passage lists three parties: \"European Imports GmbH\", \"American Distribution Corp\", and \"Pacific Logistics Ltd\".\n* `governing_law`: The text passage states that the agreement shall be governed by and construed in accordance with the laws of the State of New York.\n* `clauses`: \n  * `termination_clause_verbatim`: The text passage states \"Any Party may terminate this Agreement by providing sixty (60) days prior written notice to the other Parties.\"\n  * `confidentiality_clause_verbatim`: There is no mention of a confidentiality clause in the text passage.\n  * `payment_amount`: The text passage states that the total payment amount under the agreement shall be $450,000.00.\n\nSince there is no mention of a confidentiality clause, the `confidentiality_clause_verbatim` key will be omitted from the JSON object.\n\nHere is the resulting JSON object:\n```json\n\nJSON document was here\n\n```",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 4,
+    "scenario_name": "resume or cv",
+    "is_validation_vs_test": true,
+    "src_record_idx_in_split": 11,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "skills": [
+        "Python",
+        "JavaScript",
+        "React",
+        "Git"
+      ],
+      "education": [
+        {
+          "degree_type": "BS",
+          "major": "Computer Science",
+          "institution": "University of Washington"
+        }
+      ],
+      "previous_roles": [
+        {
+          "title": "Junior Software Engineer",
+          "company": "Cascade Technologies",
+          "start_month": 6,
+          "start_year": 2021,
+          "end_month": null,
+          "end_year": null
+        },
+        {
+          "title": "Software Engineering Intern",
+          "company": "Bluefin Solutions",
+          "start_month": 5,
+          "start_year": 2020,
+          "end_month": 8,
+          "end_year": 2020
+        }
+      ],
+      "contact_info": {
+        "email": "david.chen@gmail.com",
+        "phone": "206-555-0123"
+      }
+    },
+    "model_output_text": "Analyzing each schema field in turn to see what in the text passage might be relevant to it:\n\n* `skills`: The text passage mentions \"Python, JavaScript, React, Git\" under the \"TECHNICAL SKILLS\" section, which seems to be relevant to this field.\n* `education`: The text passage mentions \"Bachelor of Science in Computer Science\" and \"University of Washington\" under the \"EDUCATION\" section, which seems to be relevant to this field.\n* `previous_roles`: The text passage mentions two work experiences: \"Junior Software Engineer\" at \"Cascade Technologies\" and \"Software Engineering Intern\" at \"Bluefin Solutions\", which seems to be relevant to this field.\n* `contact_info`: The text passage mentions \"david.chen@gmail.com\" and \"206-555-0123\" at the top, which seems to be relevant to this field.\n\nNow, let's create a JSON object that captures all schema-relevant information that is actually present in or that is definitely implied by the text passage:\n\n```json\n\nJSON document was here\n\n```",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 8,
+    "scenario_name": "project description in permit application",
+    "is_validation_vs_test": true,
+    "src_record_idx_in_split": 12,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "project_specs": {
+        "total_square_feet": 500,
+        "floors": 1,
+        "lot_coverage_percentage": 0.25
+      },
+      "usage": [
+        "residential"
+      ],
+      "utilities": {
+        "water": {
+          "required": true,
+          "gallons_per_day": 100
+        },
+        "electrical": {
+          "required": true,
+          "amperage": 50
+        },
+        "gas": true
+      },
+      "timeline": {
+        "duration_months": 3,
+        "phases": 1
+      }
+    },
+    "model_output_text": "Analyzing each schema field in turn to see what in the text passage might be relevant to it:\n\n* `project_specs`: The text passage mentions a \"total floor area of 500 square feet\", which corresponds to the `total_square_feet` field. It also mentions a \"single-story\" building, which implies a value of 1 for the `floors` field. Additionally, it mentions that the building will \"cover 25% of the lot\", which corresponds to the `lot_coverage_percentage` field. However, there is no mention of `occupancy_count`.\n* `usage`: The text passage mentions a \"single-family residential building\", which implies a value of \"residential\" for this field.\n* `utilities`: The text passage mentions \"water service with an estimated usage of 100 gallons per day\", which corresponds to the `water` field. It also mentions \"electrical service with a 50 amp connection\", which corresponds to the `electrical` field. Additionally, it mentions \"gas service\", which corresponds to the `gas` field.\n* `timeline`: The text passage mentions that the project is \"expected to be completed within 3 months\", which corresponds to the `duration_months` field. It also mentions that the project will be \"executed in a single phase\", which corresponds to the `phases` field.\n\nBased on this analysis, the JSON object that obeys the given schema and captures all schema-relevant information that is actually present in or that is definitely implied by the text passage is:\n\n```json\n\nJSON document was here\n\n```",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 14,
+    "scenario_name": "recipes",
+    "is_validation_vs_test": true,
+    "src_record_idx_in_split": 13,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "dish_name": "Classic Italian Bruschetta",
+      "ingredients": [
+        {
+          "name": "tomatoes",
+          "quantity": 4,
+          "unit": "medium"
+        },
+        {
+          "name": "basil",
+          "quantity": 0.25,
+          "unit": "cup"
+        },
+        {
+          "name": "garlic",
+          "quantity": 2,
+          "unit": "cloves"
+        }
+      ],
+      "cuisine": "Italian"
+    },
+    "model_output_text": "Analyzing each schema field in turn to see what in the text passage might be relevant to it:\n\n* `dish_name`: The text passage mentions \"Classic Italian Bruschetta\", which seems to be the name of the dish.\n* `ingredients`: The text passage lists \"4 medium tomatoes\", \"1/4 cup basil\", and \"2 cloves garlic\" as ingredients. This information can be used to populate the `ingredients` array.\n* `instructions_verbatim`: There are no instructions provided in the text passage, so this field will be omitted.\n* `cuisine`: The text passage mentions \"Italian\" and \"Mediterranean cuisine\", which suggests that the cuisine is Italian.\n* `dietary_restrictions`: There is no mention of dietary restrictions in the text passage, so this field will be omitted.\n* `preparation_time_minutes` and `cooking_time_minutes`: There is no mention of preparation or cooking time in the text passage, so these fields will be omitted.\n* `nutritional_information`: There is no mention of nutritional information in the text passage, so this field will be omitted.\n\nBased on the analysis, the JSON object that captures all schema-relevant information that is actually present in or that is definitely implied by the text passage is:\n\n```json\n\nJSON document was here\n\n```",
+    "num_retries_used": 0
+  },
+  {
+    "scenario_id": 4,
+    "scenario_name": "resume or cv",
+    "is_validation_vs_test": true,
+    "src_record_idx_in_split": 14,
+    "fewshot_example_idxs": [],
+    "model_output_object": {
+      "contact_info": {
+        "email": "john.doe@email.com",
+        "phone": "555-123-4567"
+      }
+    },
+    "model_output_text": "Analyzing each schema field in turn to see what in the text passage might be relevant to it:\n\n* `skills`: The text passage mentions \"a strong work ethic\" and \"a commitment to continuous learning\", but these are not specific skills. However, it does not provide any specific skills that can be extracted.\n* `education`: The text passage mentions \"Completed relevant coursework and training\", but it does not provide any specific information about the degree type, major, or institution.\n* `previous_roles`: The text passage does not mention any previous roles or work experience.\n* `contact_info`: The text passage mentions a phone number (\"555-123-4567\") and an email address (\"john.doe@email.com\"), which can be extracted as contact information.\n\nBased on the analysis, the JSON object that obeys the given schema and captures all schema-relevant information that is actually present in or that is definitely implied by the text passage is:\n\n```json\n\nJSON document was here\n\n```\n\nNote that the `skills`, `education`, and `previous_roles` fields are not included in the JSON object because the text passage does not provide any relevant information for these fields.",
+    "num_retries_used": 0
+  }
+]

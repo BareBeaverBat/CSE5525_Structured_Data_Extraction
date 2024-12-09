@@ -83,7 +83,7 @@ def validate_generated_objects_texts(
         passage_description = (f"the {obj_idx}'th {src_model_nm}-generated text passage for scenario {schema_idx} "
                                f"{scenario_domain} - {scenario_texts_label}")
         case_id = f"{src_model_nm}-{schema_idx}-{obj_idx}"
-        extracted_obj, extracted_obj_analysis, was_schema_compliant = extract_obj_from_passage_with_retry(
+        extracted_obj, extracted_obj_analysis, was_schema_compliant, _ = extract_obj_from_passage_with_retry(
             ModelProvider.GOOGLE_DEEPMIND if was_claude_generated else ModelProvider.ANTHROPIC, reconstructor_model,
             passage, scenario_domain, scenario_texts_label, schema, passage_description, case_id, google_client,
             bundled_anthropic_client)
