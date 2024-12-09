@@ -116,8 +116,7 @@ def load_evaluation_model_outputs(model_outputs_path: Path) -> list[EvaluationMo
     with open(model_outputs_path) as model_outputs_file:
         model_outputs = json.load(model_outputs_file)
     assert isinstance(model_outputs, list)
-    evaluation_model_output_records: list[EvaluationModelOutputRecord] = []
-    for model_output in model_outputs:
-        evaluation_model_output_records.append(EvaluationModelOutputRecord(**model_output))
+    evaluation_model_output_records: list[EvaluationModelOutputRecord] = \
+        [EvaluationModelOutputRecord(**model_output) for model_output in model_outputs]
     
     return evaluation_model_output_records

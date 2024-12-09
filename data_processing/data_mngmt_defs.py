@@ -25,7 +25,7 @@ class EvaluationModelOutputRecord:
     scenario_name: str
     is_validation_vs_test: bool # True if the source record is from the validation set, False if from the test set
     src_record_idx_in_split: int # i.e. the index of the source record in the validation_set.json or test_set.json split file
-    fewshot_example_idxs: List[int]
+    fewshot_example_idxs: list[int]
     model_output_object: dict[str, Any]
     # in cases where automated-validation-and-retry logic was enabled for querying the model being evaluated
     #  or where the model's output was not in the expected format, this may contain not simply a single round of the

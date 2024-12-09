@@ -1,5 +1,20 @@
-from data_processing.data_loading import load_scenarios, load_data_split
-from data_processing.data_mngmt_defs import schemas_path, fewshot_examples_path, validation_set_path, test_set_path
+import re
+from dataclasses import dataclass
+
+from data_processing.data_loading import load_scenarios, load_data_split, load_evaluation_model_outputs
+from data_processing.data_mngmt_defs import schemas_path, fewshot_examples_path, validation_set_path, test_set_path, \
+    EvaluationModelOutputRecord, evaluation_models_output_path, evaluation_config_regex
+from utils_and_defs.logging_setup import create_logger
+
+logger = create_logger(__name__)
+
+
+@dataclass
+class ResultsForModelEvaluationConfig:
+    model_spec: str
+    fewshot_count: int
+    is_cot_enabled: bool
+    eval_model_outputs: list[EvaluationModelOutputRecord]
 
 
 #TODO function that takes a given folder of evaluation output/result records and analyzes it, accumulating statistics
@@ -16,6 +31,27 @@ def main():
     validation_set = load_data_split(validation_set_path, schemas)
     test_set = load_data_split(test_set_path, schemas)
     
+    evaluation_configs_results: list[ResultsForModelEvaluationConfig] = []
+    
+    for eval_config_outputs_path in evaluation_models_output_path.iterdir():
+        if eval_config_outputs_path.is_dir():
+            logger.warning(f"Skipping directory {eval_config_outputs_path} in {evaluation_models_output_path}")
+            continue
+        if eval_config_outputs_path.suffix != ".json":
+            logger.warning(f"Skipping non-JSON file {eval_config_outputs_path} in {evaluation_models_output_path}")
+            continue
+        eval_config_details_match = re.match(evaluation_config_regex, eval_config_outputs_path.name)
+        if not eval_config_details_match:
+            logger.warning(f"Skipping evaluation output file {eval_config_outputs_path} that doesn't match the expected naming convention")
+            continue
+        eval_config_model_spec = eval_config_details_match.group(1)
+        eval_config_fewshot_count = int(eval_config_details_match.group(3))
+        eval_config_cot_enabled = eval_config_details_match.group(4) == "True"
+        
+        eval_config_model_outputs = load_evaluation_model_outputs(eval_config_outputs_path)
+        evaluation_configs_results.append(ResultsForModelEvaluationConfig(
+            eval_config_model_spec, eval_config_fewshot_count, eval_config_cot_enabled, eval_config_model_outputs
+        ))
     
     
     pass
