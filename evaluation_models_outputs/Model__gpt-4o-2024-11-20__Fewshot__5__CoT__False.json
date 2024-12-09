@@ -5,11 +5,11 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 0,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "signing_date": "2023-10-15",
@@ -18,11 +18,11 @@
         "GlobalTech Solutions",
         "Midwest Distribution Co"
       ],
-      "governing_law": "State of Delaware",
+      "governing_law": "Delaware",
       "clauses": {
         "termination_clause_verbatim": "Any Party may terminate this Agreement by providing thirty (30) days written notice to the other Parties.",
         "confidentiality_clause_verbatim": "All Parties shall maintain strict confidentiality of any proprietary information shared under this Agreement for a period of five (5) years from the date of disclosure.",
-        "payment_amount": 250000.0
+        "payment_amount": 250000
       }
     },
     "model_output_text": "",
@@ -34,11 +34,11 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 1,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "symptoms": [
@@ -68,11 +68,11 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 2,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "research_methods": [
@@ -94,11 +94,11 @@
             "month": 1
           },
           {
-            "name": "Interim analysis",
+            "name": "Comprehensive interim analysis",
             "month": 12
           },
           {
-            "name": "Final data collection",
+            "name": "Completion of final data collection",
             "month": 20
           }
         ]
@@ -113,11 +113,11 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 3,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "teams": {
@@ -148,11 +148,11 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 4,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "bedrooms": 4,
@@ -180,11 +180,11 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 5,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "skills": [
@@ -225,11 +225,11 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 6,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "project_specs": {
@@ -265,18 +265,18 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 7,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "signing_date": "2023-12-01",
       "parties": [
         "Kappa Kreations"
       ],
-      "governing_law": "State of Florida",
+      "governing_law": "Florida",
       "clauses": {
         "termination_clause_verbatim": "This Agreement may be terminated by either party with 60 days notice.",
         "payment_amount": 25000
@@ -291,11 +291,11 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 8,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "product": {
@@ -316,11 +316,11 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 9,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "incident_type": "fire",
@@ -341,11 +341,11 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 10,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "product": {
@@ -355,7 +355,7 @@
       "impact_level": "minor",
       "system_state": {
         "os": "macOS Ventura",
-        "browser": "Chrome version 114.0.5735.198"
+        "browser": "Chrome 114.0.5735.198"
       },
       "reproduction": {
         "reproducible": true,
@@ -371,14 +371,14 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 11,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
-      "governing_law": "laws of the Province of Ontario",
+      "governing_law": "Ontario",
       "clauses": {
         "termination_clause_verbatim": "Either party may terminate this Agreement immediately upon written notice in the event of a material breach by the other party."
       }
@@ -392,11 +392,11 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 12,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "product": {
@@ -426,36 +426,34 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 13,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "symptoms": [
         {
-          "name": "Migraines",
+          "name": "migraines",
           "duration_days": 3,
           "severity": 8,
           "frequency": "intermittent"
         },
         {
-          "name": "Nausea",
+          "name": "nausea",
           "duration_days": 2,
-          "severity": 1,
           "frequency": "occasional"
         },
         {
-          "name": "Photophobia",
-          "duration_days": 3,
+          "name": "sensitivity to light (photophobia)",
           "severity": 7,
           "frequency": "intermittent"
         }
       ]
     },
-    "model_output_text": "AI:\n{\n    \"symptoms\": [\n     {\n         \"name\": \"Migraines\",\n            \"duration_days\": 3,\n            \"severity\": 8,\n            \"frequency\": \"intermittent\"\n        },\n    {\n         \"name\": \"Nausea\",\n            \"duration_days\": 2,\n            \"severity\": null,\n            \"frequency\": \"occasional\"\n        },\n    {\n         \"name\": \"Photophobia\",\n            \"duration_days\": null,\n            \"severity\": 7,\n            \"frequency\": \"intermittent\"\n        }\n ]\n}\r\n\nFeedback:\nThere were problems with that output:\nThe created object did not conform to the schema. Details:\nNone is not of type 'integer'\n\nFailed validating 'type' in schema['properties']['symptoms']['items']['properties']['severity']:\n    {'type': 'integer', 'minimum': 1, 'maximum': 10}\n\nOn instance['symptoms'][1]['severity']:\n    None; None is not of type 'integer'\n\nFailed validating 'type' in schema['properties']['symptoms']['items']['properties']['duration_days']:\n    {'type': 'integer'}\n\nOn instance['symptoms'][2]['duration_days']:\n    None\nPlease try again, following the system-prompt and original-user-prompt instructions.\nAI final turn:",
-    "num_retries_used": 1
+    "model_output_text": "",
+    "num_retries_used": 0
   },
   {
     "scenario_id": 8,
@@ -463,11 +461,11 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 14,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "project_specs": {
@@ -498,18 +496,17 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 15,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "transaction": {
         "category": "payment",
         "method": "check",
-        "amount_usd": 5000,
-        "cross_border": false
+        "amount_usd": 5000
       },
       "parties": [
         {
@@ -536,11 +533,11 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 16,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "previous_roles": [
@@ -563,11 +560,11 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 17,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "bedrooms": 5,
@@ -576,8 +573,8 @@
       "property_type": "house",
       "amenities": [
         "pool",
-        "garage",
         "fireplace",
+        "garage",
         "central_ac"
       ],
       "listing_price": 4500000,
@@ -596,11 +593,11 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 18,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "research_methods": [
@@ -610,7 +607,7 @@
         "total_duration_months": 6,
         "key_milestones": [
           {
-            "name": "Final analysis",
+            "name": "final analysis",
             "month": 6
           }
         ]
@@ -625,11 +622,11 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 19,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "assistance_needs": [
@@ -649,9 +646,7 @@
       "household": {
         "total_members": 1,
         "composition": {
-          "adults": 1,
-          "children_under_18": 0,
-          "seniors_over_65": 0
+          "adults": 1
         },
         "housing_status": "temporary"
       }
@@ -665,45 +660,37 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 20,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
-      "symptoms": [
-        {
-          "name": "Diabetes"
-        }
-      ],
       "medications": [
         {
-          "name": "Metformin",
+          "name": "metformin",
           "dosage": "1000mg",
           "frequency": "twice daily with meals"
         },
         {
-          "name": "Glipizide",
+          "name": "glipizide",
           "dosage": "5mg",
           "frequency": "before breakfast"
         },
         {
-          "name": "Januvia",
+          "name": "januvia",
           "dosage": "100mg",
           "frequency": "daily"
         },
         {
-          "name": "Jardiance",
+          "name": "jardiance",
           "dosage": "25mg",
           "frequency": "daily"
         }
       ],
       "allergies": [
         "contrast dye"
-      ],
-      "family_history_flags": [
-        "diabetes"
       ]
     },
     "model_output_text": "",
@@ -715,11 +702,11 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 21,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "transaction": {
@@ -742,6 +729,12 @@
       ],
       "purpose_indicators": [
         "goods_services"
+      ],
+      "risk_flags": [
+        {
+          "type": "restricted_goods",
+          "severity": "medium"
+        }
       ]
     },
     "model_output_text": "",
@@ -753,11 +746,11 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 22,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "skills": [
@@ -779,9 +772,7 @@
           "title": "Senior Product Manager",
           "company": "Spotify",
           "start_month": 4,
-          "start_year": 2020,
-          "end_month": null,
-          "end_year": null
+          "start_year": 2020
         },
         {
           "title": "Product Manager",
@@ -802,11 +793,11 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 23,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "medications": [
@@ -841,15 +832,15 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 24,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
-      "property_type": "land",
       "square_footage": 12000,
+      "property_type": "land",
       "listing_price": 185000,
       "location": {
         "city": "Bend",
@@ -866,11 +857,11 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 25,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "dish_name": "Mediterranean Grilled Salmon",
@@ -926,11 +917,11 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 26,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "incident_type": "theft",
@@ -951,11 +942,11 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 27,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "project_specs": {
@@ -981,11 +972,11 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 28,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "bedrooms": 3,
@@ -1011,15 +1002,15 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 29,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "bedrooms": 3,
-      "bathrooms": "2",
+      "bathrooms": 2,
       "square_footage": 1400,
       "property_type": "townhouse",
       "amenities": [
@@ -1028,7 +1019,7 @@
       ],
       "location": {
         "city": "Phoenix",
-        "state": "AZ",
+        "state": "Arizona",
         "zip_code": "85001"
       }
     },
@@ -1041,11 +1032,11 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 30,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "incident_date": "2024-07-19",
@@ -1062,19 +1053,15 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 31,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "signing_date": "2023-09-22",
-      "parties": [
-        "Party 1",
-        "Party 2"
-      ],
-      "governing_law": "the laws of the State of Delaware"
+      "governing_law": "Delaware"
     },
     "model_output_text": "",
     "num_retries_used": 0
@@ -1085,11 +1072,11 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 32,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "location": {
@@ -1099,8 +1086,7 @@
       },
       "incident_type": [
         "theft",
-        "vandalism",
-        "burglary"
+        "vandalism"
       ]
     },
     "model_output_text": "",
@@ -1112,11 +1098,11 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 33,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "teams": {
@@ -1141,11 +1127,11 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 34,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "assistance_needs": [
@@ -1187,11 +1173,11 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 35,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "assistance_needs": [
@@ -1205,6 +1191,7 @@
         }
       ],
       "household": {
+        "total_members": 3,
         "composition": {
           "adults": 1,
           "children_under_18": 2
@@ -1235,11 +1222,11 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 36,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "research_area": "physics",
@@ -1247,11 +1234,11 @@
       "data_sources": [
         {
           "name": "quantum computing simulator platform",
-          "type": "public",
+          "type": "simulated",
           "url": "https://quantum-sim.org"
         },
         {
-          "name": "private experimental error rate measurements",
+          "name": "experimental error rate measurements",
           "type": "private",
           "url": "https://quantum-lab.org/data"
         }
@@ -1266,11 +1253,11 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 37,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "project_specs": {
@@ -1306,11 +1293,11 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 38,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "research_methods": [
@@ -1338,25 +1325,25 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 39,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "symptoms": [
         {
-          "name": "Joint pain",
+          "name": "joint pain",
           "severity": 7,
           "frequency": "constant"
         },
         {
-          "name": "Fatigue",
+          "name": "fatigue",
           "duration_days": 14
         },
         {
-          "name": "Fever",
+          "name": "fever",
           "severity": 4,
           "frequency": "intermittent"
         }
@@ -1366,8 +1353,8 @@
         "heart_disease"
       ]
     },
-    "model_output_text": "AI:\n{\n    \"symptoms\": [\n     {\n         \"name\": \"Joint pain\",\n            \"duration_days\": null,\n            \"severity\": 7,\n            \"frequency\": \"constant\"\n        },\n    {\n         \"name\": \"Fatigue\",\n            \"duration_days\": 14,\n            \"severity\": null,\n            \"frequency\": null\n        },\n    {\n         \"name\": \"Fever\",\n            \"duration_days\": null,\n            \"severity\": 4,\n            \"frequency\": \"intermittent\"\n        }\n ],\n \"family_history_flags\": [\n     \"diabetes\",\n        \"heart_disease\"\n    ]\n}\r\n\nFeedback:\nThere were problems with that output:\nThe created object did not conform to the schema. Details:\nNone is not of type 'integer'\n\nFailed validating 'type' in schema['properties']['symptoms']['items']['properties']['duration_days']:\n    {'type': 'integer'}\n\nOn instance['symptoms'][0]['duration_days']:\n    None; None is not of type 'integer'\n\nFailed validating 'type' in schema['properties']['symptoms']['items']['properties']['severity']:\n    {'type': 'integer', 'minimum': 1, 'maximum': 10}\n\nOn instance['symptoms'][1]['severity']:\n    None; None is not of type 'string'\n\nFailed validating 'type' in schema['properties']['symptoms']['items']['properties']['frequency']:\n    {'type': 'string',\n     'enum': ['constant', 'intermittent', 'occasional', 'first_occurrence']}\n\nOn instance['symptoms'][1]['frequency']:\n    None; None is not one of ['constant', 'intermittent', 'occasional', 'first_occurrence']\n\nFailed validating 'enum' in schema['properties']['symptoms']['items']['properties']['frequency']:\n    {'type': 'string',\n     'enum': ['constant', 'intermittent', 'occasional', 'first_occurrence']}\n\nOn instance['symptoms'][1]['frequency']:\n    None; None is not of type 'integer'\n\nFailed validating 'type' in schema['properties']['symptoms']['items']['properties']['duration_days']:\n    {'type': 'integer'}\n\nOn instance['symptoms'][2]['duration_days']:\n    None\nPlease try again, following the system-prompt and original-user-prompt instructions.\nAI final turn:",
-    "num_retries_used": 1
+    "model_output_text": "",
+    "num_retries_used": 0
   },
   {
     "scenario_id": 8,
@@ -1375,11 +1362,11 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 40,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "project_specs": {
@@ -1410,11 +1397,11 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 41,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "skills": [
@@ -1435,7 +1422,9 @@
           "title": "Data Analyst",
           "company": "HealthTech Solutions",
           "start_month": 7,
-          "start_year": 2020
+          "start_year": 2020,
+          "end_month": null,
+          "end_year": null
         }
       ],
       "contact_info": {
@@ -1451,11 +1440,11 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 42,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "signing_date": "2023-09-30",
@@ -1479,11 +1468,11 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 43,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "product": {
@@ -1520,11 +1509,11 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 44,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "square_footage": 50000,
@@ -1545,11 +1534,11 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 45,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "symptoms": [
@@ -1595,11 +1584,11 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 46,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "medications": [
@@ -1624,11 +1613,11 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 47,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "product": {
@@ -1649,11 +1638,11 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 48,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "assistance_needs": [
@@ -1678,29 +1667,28 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 49,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "assistance_needs": [
         {
-          "category": "food",
+          "category": "employment",
           "urgency": "ongoing"
         },
         {
-          "category": "employment",
-          "urgency": "short_term"
+          "category": "food",
+          "urgency": "ongoing"
         }
       ],
       "household": {
         "total_members": 5,
         "composition": {
           "adults": 2,
-          "children_under_18": 3,
-          "seniors_over_65": 0
+          "children_under_18": 3
         },
         "housing_status": "stable"
       },
@@ -1718,11 +1706,11 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 50,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "product": {
@@ -1752,8 +1740,8 @@
         "frequency": "always"
       }
     },
-    "model_output_text": "AI:\n{\n    \"product\": {\n     \"name\": \"NetGear Orbi\",\n        \"model\": \"RBK752\",\n        \"version\": \"3.6.7.3\"\n    },\n \"error_codes\": [\n     \"NW_DISCONNECT\",\n        \"AUTH_FAILURE\",\n        \"DHCP_ERROR\",\n        \"DNS_TIMEOUT\"\n    ],\n \"impact_level\": \"blocking\",\n    \"system_state\": {\n     \"os\": \"Windows 11\",\n        \"browser\": null,\n        \"connected_devices\": [\n         \"iPhone 13\",\n            \"MacBook Pro\",\n            \"Samsung TV\",\n            \"Ring Doorbell\",\n            \"Nest Thermostat\"\n        ]\n },\n \"reproduction\": {\n     \"reproducible\": true,\n        \"frequency\": \"always\"\n    }\n}\n\n\nFeedback:\nThere were problems with that output:\nThe created object did not conform to the schema. Details:\nNone is not of type 'string'\n\nFailed validating 'type' in schema['properties']['system_state']['properties']['browser']:\n    {'type': 'string'}\n\nOn instance['system_state']['browser']:\n    None\nPlease try again, following the system-prompt and original-user-prompt instructions.\nAI final turn:",
-    "num_retries_used": 1
+    "model_output_text": "",
+    "num_retries_used": 0
   },
   {
     "scenario_id": 3,
@@ -1761,23 +1749,24 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 51,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "signing_date": "2023-07-18",
       "parties": [
-        "Sigma Systems"
+        "Sigma Systems",
+        "Participant"
       ],
       "clauses": {
         "confidentiality_clause_verbatim": "Non-disclosure agreement in effect."
       }
     },
-    "model_output_text": "AI:\n{\n    \"signing_date\": \"2023-07-18\",\n    \"parties\": [\n     \"Sigma Systems\"\n    ],\n \"clauses\": {\n     \"termination_clause_verbatim\": null,\n        \"confidentiality_clause_verbatim\": \"Non-disclosure agreement in effect.\"\n    }\n}\n\n\nFeedback:\nThere were problems with that output:\nThe created object did not conform to the schema. Details:\nNone is not of type 'string'\n\nFailed validating 'type' in schema['properties']['clauses']['properties']['termination_clause_verbatim']:\n    {'type': 'string'}\n\nOn instance['clauses']['termination_clause_verbatim']:\n    None\nPlease try again, following the system-prompt and original-user-prompt instructions.\nAI final turn:",
-    "num_retries_used": 1
+    "model_output_text": "",
+    "num_retries_used": 0
   },
   {
     "scenario_id": 8,
@@ -1785,11 +1774,11 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 52,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "project_specs": {
@@ -1813,11 +1802,11 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 53,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "medications": [
@@ -1849,11 +1838,11 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 54,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "product": {
@@ -1877,11 +1866,11 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 55,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "project_specs": {
@@ -1913,11 +1902,11 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 56,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "product": {
@@ -1954,11 +1943,11 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 57,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "usage": [
@@ -1985,11 +1974,11 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 58,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "location": {
@@ -2019,11 +2008,11 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 59,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "assistance_needs": [
@@ -2048,11 +2037,11 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 60,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "bedrooms": 4,
@@ -2079,11 +2068,11 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 61,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "signing_date": "2023-08-12",
@@ -2104,11 +2093,11 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 62,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "skills": [
@@ -2122,7 +2111,9 @@
           "title": "Digital Marketing Manager",
           "company": "TechStart Solutions",
           "start_month": 1,
-          "start_year": 2021
+          "start_year": 2021,
+          "end_month": null,
+          "end_year": null
         },
         {
           "title": "Sales Representative",
@@ -2143,15 +2134,15 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 63,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "bedrooms": 2,
-      "bathrooms": "1",
+      "bathrooms": 1,
       "square_footage": 900,
       "property_type": "condo",
       "amenities": [
@@ -2161,7 +2152,7 @@
       "listing_price": 1600000,
       "location": {
         "city": "Boulder",
-        "state": "CO",
+        "state": "Colorado",
         "zip_code": "80301"
       }
     },
@@ -2174,11 +2165,11 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 64,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "product": {
@@ -2195,11 +2186,11 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 65,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "location": {
@@ -2230,11 +2221,11 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 66,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "skills": [
@@ -2285,11 +2276,11 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 67,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "product": {
@@ -2311,17 +2302,14 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 68,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "signing_date": "2023-10-01",
-      "parties": [
-        "Service Provider"
-      ],
       "clauses": {
         "payment_amount": 42500
       }
@@ -2335,11 +2323,11 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 69,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "allergies": [
@@ -2350,11 +2338,6 @@
       "family_history_flags": [
         "diabetes",
         "heart_disease"
-      ],
-      "medications": [
-        {
-          "name": "None"
-        }
       ]
     },
     "model_output_text": "",
@@ -2366,11 +2349,11 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 70,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "skills": [
@@ -2388,11 +2371,11 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 71,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "bedrooms": 2,
@@ -2417,11 +2400,11 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 72,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "incident_date": "2023-10-30",
@@ -2433,8 +2416,8 @@
         }
       ]
     },
-    "model_output_text": "AI:\n{\n    \"incident_date\": \"2023-10-30\",\n    \"incident_type\": \"theft\",\n    \"location\": {\n     \"street_address\": null,\n        \"city\": null,\n        \"state\": null,\n        \"zip_code\": null\n    },\n \"estimated_damages\": null,\n    \"police_report_filed\": null,\n    \"witnesses\": [\n     {\n         \"name\": \"Emma Davis\",\n            \"phone\": \"303-555-2345\",\n            \"email\": null\n        }\n ]\n}\n\n\nFeedback:\nThere were problems with that output:\nThe created object did not conform to the schema. Details:\nNone is not of type 'string'\n\nFailed validating 'type' in schema['properties']['location']['properties']['street_address']:\n    {'type': 'string'}\n\nOn instance['location']['street_address']:\n    None; None is not of type 'string'\n\nFailed validating 'type' in schema['properties']['location']['properties']['city']:\n    {'type': 'string'}\n\nOn instance['location']['city']:\n    None; None is not of type 'string'\n\nFailed validating 'type' in schema['properties']['location']['properties']['state']:\n    {'type': 'string'}\n\nOn instance['location']['state']:\n    None; None is not of type 'string'\n\nFailed validating 'type' in schema['properties']['location']['properties']['zip_code']:\n    {'type': 'string'}\n\nOn instance['location']['zip_code']:\n    None; None is not of type 'number'\n\nFailed validating 'type' in schema['properties']['estimated_damages']:\n    {'type': 'number'}\n\nOn instance['estimated_damages']:\n    None; None is not of type 'boolean'\n\nFailed validating 'type' in schema['properties']['police_report_filed']:\n    {'type': 'boolean'}\n\nOn instance['police_report_filed']:\n    None; None is not of type 'string'\n\nFailed validating 'type' in schema['properties']['witnesses']['items']['properties']['email']:\n    {'type': 'string', 'format': 'email'}\n\nOn instance['witnesses'][0]['email']:\n    None\nPlease try again, following the system-prompt and original-user-prompt instructions.\nAI final turn:",
-    "num_retries_used": 1
+    "model_output_text": "",
+    "num_retries_used": 0
   },
   {
     "scenario_id": 11,
@@ -2442,17 +2425,17 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 73,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "research_methods": [
         "survey",
-        "field_study",
-        "interviews"
+        "interviews",
+        "field_study"
       ],
       "data_collection": {
         "data_types": [
@@ -2471,11 +2454,11 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 74,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "bedrooms": 2,
@@ -2498,11 +2481,11 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 75,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "incident_type": "flood",
@@ -2517,11 +2500,11 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 76,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "research_methods": [
@@ -2544,11 +2527,11 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 77,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "skills": [
@@ -2568,7 +2551,9 @@
           "title": "Regional Sales Manager",
           "company": "Enterprise Solutions Ltd",
           "start_month": 9,
-          "start_year": 2020
+          "start_year": 2020,
+          "end_month": null,
+          "end_year": null
         },
         {
           "title": "Account Executive",
@@ -2597,11 +2582,11 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 78,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "skills": [
@@ -2640,11 +2625,11 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 79,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "research_methods": [
@@ -2655,7 +2640,8 @@
         "data_types": [
           "sensor",
           "clinical_measurements"
-        ]
+        ],
+        "data_frequency": "continuous"
       },
       "study_population": {
         "age_range": {
@@ -2664,8 +2650,8 @@
         }
       }
     },
-    "model_output_text": "AI:\n{\n    \"research_methods\": [\n     \"experiment\",\n        \"data_analysis\"\n    ],\n \"data_collection\": {\n     \"data_types\": [\n         \"sensor\",\n            \"clinical_measurements\"\n        ]\n },\n \"study_population\": {\n     \"age_range\": {\n         \"min\": 20,\n            \"max\": 60\n        }\n },\n \"timeline\": {\n     \"total_duration_months\": null\n    }\n}\n\n\nFeedback:\nThere were problems with that output:\nThe created object did not conform to the schema. Details:\nNone is not of type 'integer'\n\nFailed validating 'type' in schema['properties']['timeline']['properties']['total_duration_months']:\n    {'type': 'integer'}\n\nOn instance['timeline']['total_duration_months']:\n    None\nPlease try again, following the system-prompt and original-user-prompt instructions.\nAI final turn:",
-    "num_retries_used": 1
+    "model_output_text": "",
+    "num_retries_used": 0
   },
   {
     "scenario_id": 6,
@@ -2673,11 +2659,11 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 80,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "incident_type": "fire",
@@ -2698,11 +2684,11 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 81,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "parties": [
@@ -2722,11 +2708,11 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 82,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "project_specs": {
@@ -2764,11 +2750,11 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 83,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "research_methods": [
@@ -2790,8 +2776,8 @@
         }
       }
     },
-    "model_output_text": "AI:\n{\n    \"research_methods\": [\n     \"clinical_trial\",\n        \"experiment\"\n    ],\n \"data_collection\": {\n     \"data_types\": [\n         \"genomic\",\n            \"clinical_measurements\"\n        ],\n    \"sample_size\": 450,\n        \"data_frequency\": \"weekly\"\n    },\n \"study_population\": {\n     \"age_range\": {\n         \"min\": 40,\n            \"max\": 75\n        }\n },\n \"timeline\": {\n     \"total_duration_months\": null\n    }\n}\n\n\nFeedback:\nThere were problems with that output:\nThe created object did not conform to the schema. Details:\nNone is not of type 'integer'\n\nFailed validating 'type' in schema['properties']['timeline']['properties']['total_duration_months']:\n    {'type': 'integer'}\n\nOn instance['timeline']['total_duration_months']:\n    None\nPlease try again, following the system-prompt and original-user-prompt instructions.\nAI final turn:",
-    "num_retries_used": 1
+    "model_output_text": "",
+    "num_retries_used": 0
   },
   {
     "scenario_id": 1,
@@ -2799,11 +2785,11 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 84,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "product": {
@@ -2824,11 +2810,11 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 85,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "signing_date": "2023-08-15",
@@ -2849,11 +2835,11 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 86,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "location": {
@@ -2880,11 +2866,11 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 87,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "signing_date": "2023-11-01",
@@ -2892,7 +2878,7 @@
         "Riverside Healthcare",
         "MedTech Solutions"
       ],
-      "governing_law": "State of California",
+      "governing_law": "California",
       "clauses": {
         "confidentiality_clause_verbatim": "The parties agree that all information shared between them, including but not limited to technical specifications, patient data, business processes, and proprietary methodologies, shall be kept strictly confidential. This confidentiality obligation shall survive the termination or expiration of this Agreement and shall remain in effect in perpetuity."
       }
@@ -2906,11 +2892,11 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 88,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "transaction": {
@@ -2946,17 +2932,20 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 89,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "medications": [
         {
           "name": "Ibuprofen"
         }
+      ],
+      "allergies": [
+        "No known drug allergies"
       ]
     },
     "model_output_text": "",
@@ -2968,17 +2957,17 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 90,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "product": {
-        "name": "Razer DeathAdder Elite mouse",
+        "name": "Razer DeathAdder Elite",
         "model": "RZ01-02010100",
-        "version": "Firmware 1.03"
+        "version": "1.03"
       },
       "error_codes": [
         "DRV_ERR_456",
@@ -2999,8 +2988,8 @@
         "frequency": "often"
       }
     },
-    "model_output_text": "AI:\n{\n    \"product\": {\n     \"name\": \"Razer DeathAdder Elite mouse\",\n        \"model\": \"RZ01-02010100\",\n        \"version\": \"Firmware 1.03\"\n    },\n \"error_codes\": [\n     \"DRV_ERR_456\",\n        \"CONN_TIMEOUT\",\n        \"USB_DETECT_FAIL\"\n    ],\n \"impact_level\": \"major\",\n    \"system_state\": {\n     \"os\": \"Windows 11 Pro\",\n        \"browser\": null,\n        \"connected_devices\": [\n         \"Razer BlackWidow Keyboard\",\n            \"Dell P2419H Monitor\",\n            \"Logitech HD Webcam\"\n        ]\n },\n \"reproduction\": {\n     \"reproducible\": true,\n        \"frequency\": \"often\"\n    }\n}\n\n\nFeedback:\nThere were problems with that output:\nThe created object did not conform to the schema. Details:\nNone is not of type 'string'\n\nFailed validating 'type' in schema['properties']['system_state']['properties']['browser']:\n    {'type': 'string'}\n\nOn instance['system_state']['browser']:\n    None\nPlease try again, following the system-prompt and original-user-prompt instructions.\nAI final turn:",
-    "num_retries_used": 1
+    "model_output_text": "",
+    "num_retries_used": 0
   },
   {
     "scenario_id": 6,
@@ -3008,11 +2997,11 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 91,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "incident_date": "2023-10-15",
@@ -3037,11 +3026,11 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 92,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "property_type": "land",
@@ -3061,11 +3050,11 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 93,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "assistance_needs": [
@@ -3087,11 +3076,11 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 94,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "symptoms": [
@@ -3125,11 +3114,11 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 95,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "research_methods": [
@@ -3150,11 +3139,11 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 96,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "bedrooms": 5,
@@ -3184,11 +3173,11 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 97,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "incident_date": "2023-11-15",
@@ -3223,11 +3212,11 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 98,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "signing_date": "2024-06-21",
@@ -3246,11 +3235,11 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 99,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "signing_date": "2023-11-30",
@@ -3272,16 +3261,13 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 100,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
-      "parties": [
-        "receiving party"
-      ],
       "clauses": {
         "payment_amount": 75000,
         "confidentiality_clause_verbatim": "All parties shall maintain strict confidentiality of all information disclosed under this Agreement for a period of ten (10) years from the date of disclosure. This includes, but is not limited to, all proprietary information, trade secrets, technical specifications, customer data, business strategies, and other confidential materials shared in the course of this engagement. Any breach of this confidentiality provision shall constitute grounds for immediate legal action and monetary damages."
@@ -3296,11 +3282,11 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 101,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "project_specs": {
@@ -3326,11 +3312,11 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 102,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "skills": [
@@ -3376,11 +3362,11 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 103,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "signing_date": "2023-07-12",
@@ -3399,15 +3385,15 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 104,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "bedrooms": 3,
-      "bathrooms": "2",
+      "bathrooms": 2,
       "square_footage": 1500,
       "property_type": "house",
       "listing_price": 350000,
@@ -3426,11 +3412,11 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 105,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "product": {
@@ -3446,7 +3432,7 @@
       "impact_level": "major",
       "system_state": {
         "os": "Windows 11",
-        "browser": "Chrome",
+        "browser": "Chrome 114",
         "connected_devices": [
           "Smart Lock",
           "Thermostat",
@@ -3468,19 +3454,19 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 106,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "symptoms": [
         {
-          "name": "Headache"
+          "name": "headache"
         },
         {
-          "name": "Fatigue"
+          "name": "fatigue"
         }
       ]
     },
@@ -3493,11 +3479,11 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 107,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "bedrooms": 3,
@@ -3523,16 +3509,16 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 108,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "teams": {
-        "home": "Bucks",
-        "away": "Warriors"
+        "home": "Warriors",
+        "away": "Bucks"
       },
       "plays": [
         {
@@ -3554,11 +3540,11 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 109,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "bedrooms": 3,
@@ -3586,11 +3572,11 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 110,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "incident_date": "2024-07-20",
@@ -3605,11 +3591,11 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 111,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "usage": [
@@ -3625,15 +3611,15 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 112,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "bedrooms": 1,
-      "bathrooms": "1",
+      "bathrooms": 1,
       "property_type": "condo",
       "location": {
         "city": "Portland",
@@ -3650,11 +3636,11 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 113,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "bedrooms": 4,
@@ -3677,15 +3663,15 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 114,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "bedrooms": 1,
-      "bathrooms": "1",
+      "bathrooms": 1,
       "square_footage": 750,
       "property_type": "condo",
       "amenities": [
@@ -3698,7 +3684,7 @@
       "listing_price": 299000,
       "location": {
         "city": "Tampa",
-        "state": "FL",
+        "state": "Florida",
         "zip_code": "33609"
       }
     },
@@ -3711,11 +3697,11 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 115,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "location": {
@@ -3744,11 +3730,11 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 116,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "incident_date": "2023-11-02",
@@ -3771,22 +3757,22 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 117,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "symptoms": [
         {
-          "name": "Migraine headache",
+          "name": "migraine headache",
           "duration_days": 3,
           "severity": 8,
           "frequency": "intermittent"
         },
         {
-          "name": "Nausea",
+          "name": "nausea",
           "duration_days": 2,
           "severity": 6,
           "frequency": "occasional"
@@ -3796,12 +3782,12 @@
         {
           "name": "Sumatriptan",
           "dosage": "100mg",
-          "frequency": "as needed"
+          "frequency": "as needed for migraine"
         },
         {
           "name": "Ondansetron",
           "dosage": "4mg",
-          "frequency": "twice daily"
+          "frequency": "twice daily for nausea"
         }
       ],
       "allergies": [
@@ -3824,11 +3810,11 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 118,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "teams": {
@@ -3856,11 +3842,11 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 119,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "dish_name": "Matcha Latte",
@@ -3890,11 +3876,11 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 120,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "location": {
@@ -3923,11 +3909,11 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 121,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "research_methods": [
@@ -3964,11 +3950,11 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 122,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "incident_date": "2024-07-22",
@@ -3993,13 +3979,17 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 123,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
+      "location": {
+        "type": "street",
+        "indoor_outdoor": "outdoor"
+      },
       "incident_type": [
         "traffic"
       ],
@@ -4023,11 +4013,11 @@
     "is_validation_vs_test": false,
     "src_record_idx_in_split": 124,
     "fewshot_example_idxs": [
-      34,
-      42,
-      23,
-      9,
-      21
+      5,
+      27,
+      43,
+      40,
+      46
     ],
     "model_output_object": {
       "project_specs": {

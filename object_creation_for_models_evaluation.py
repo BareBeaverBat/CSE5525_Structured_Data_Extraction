@@ -13,7 +13,7 @@ from ai_querying.system_prompts import model_evaluation_with_cot_system_prompt_p
     model_evaluation_without_cot_system_prompt_prefix
 from data_processing.data_loading import load_scenarios, load_data_split
 from data_processing.data_mngmt_defs import DataSplitRecord, EvaluationModelOutputRecord, schemas_path, \
-    fewshot_examples_path, validation_set_path, evaluation_models_output_path
+    fewshot_examples_path, validation_set_path, evaluation_models_output_path, test_set_path
 from ai_querying.ai_querying_defs import openai_api_key_env, deepinfra_api_key_env, OpenAiClientBundle, ModelProvider
 from utils_and_defs.logging_setup import create_logger
 
@@ -110,6 +110,7 @@ def main():
     
     fewshot_examples = load_data_split(fewshot_examples_path, schemas)
     validation_set = load_data_split(validation_set_path, schemas)
+    test_set = load_data_split(test_set_path, schemas)
     
     evaluation_models_output_path.mkdir(exist_ok=True)
     
@@ -119,28 +120,24 @@ def main():
     llama_3_1_405b_model_spec = "meta-llama/Meta-Llama-3.1-405B-Instruct"
     
     evaluation_configs: list[ModelEvaluationConfig] = \
-        (
-            [
-             ModelEvaluationConfig(llama_provider_client, ModelProvider.DEEPINFRA, llama_3_3_70b_model_spec, 0, True),
-             ModelEvaluationConfig(llama_provider_client, ModelProvider.DEEPINFRA, llama_3_1_405b_model_spec, 5, False),
-             ModelEvaluationConfig(openai_client, ModelProvider.OPENAI, gpt_4o_mini_model_spec, 10, True),
-             ModelEvaluationConfig(openai_client, ModelProvider.OPENAI, gpt_4o_model_spec, 0, False),
+        ([
+             ModelEvaluationConfig(llama_provider_client, ModelProvider.DEEPINFRA, model_choice, fewshot_count,
+                                   cot_choice)
+             for fewshot_count in [0, 5, 10, 50] for model_choice in
+             [llama_3_3_70b_model_spec, llama_3_1_405b_model_spec] for cot_choice in [False, True]
+         ] + [
+             ModelEvaluationConfig(openai_client, ModelProvider.OPENAI, model_choice, fewshot_count, cot_choice)
+             for fewshot_count in [0, 5, 10, 50] for model_choice in [gpt_4o_mini_model_spec, gpt_4o_model_spec] for
+             cot_choice in [False, True]
          ]
-         
-         #    [
-         #     ModelEvaluationConfig(llama_provider_client, ModelProvider.DEEPINFRA, model_choice, fewshot_count, cot_choice)
-         #     for fewshot_count in [0, 5, 10, 50] for model_choice in [llama_3_3_70b_model_spec, llama_3_1_405b_model_spec]  for cot_choice in [False, True]
-         # ] + [
-         #     ModelEvaluationConfig(openai_client, ModelProvider.OPENAI, model_choice, fewshot_count, cot_choice)
-         #     for fewshot_count in [0, 5, 10, 50] for model_choice in [gpt_4o_mini_model_spec, gpt_4o_model_spec] for cot_choice in [False, True]
-         # ]
          )
     
     for eval_config in evaluation_configs:
         logger.info(f"starting evaluation for model config {eval_config.label()}")
         eval_outputs = generate_outputs_for_evaluation(
             eval_config, scenario_domains, scenario_text_passage_descriptions, schemas, fewshot_examples,
-            validation_set, "validation")
+            test_set, "test")
+            # validation_set, "validation")
         
         with open(eval_config.output_path(), "w") as output_file:
             json.dump(list(map(asdict, eval_outputs)), output_file, indent=2)
