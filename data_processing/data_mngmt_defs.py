@@ -67,6 +67,8 @@ fewshot_examples_path = split_data_folder_path / "fewshot_examples.json"
 validation_set_path = split_data_folder_path / "validation_set.json"
 test_set_path = split_data_folder_path / "test_set.json"
 
+validation_eval_set_name = "validation"
+test_eval_set_name = "test"
 evaluation_models_output_path = Path("evaluation_models_outputs")
 
 evaluation_reports_path = Path("evaluation_reports")

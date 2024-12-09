@@ -13,7 +13,8 @@ from ai_querying.system_prompts import model_evaluation_with_cot_system_prompt_p
     model_evaluation_without_cot_system_prompt_prefix
 from data_processing.data_loading import load_scenarios, load_data_split
 from data_processing.data_mngmt_defs import DataSplitRecord, EvaluationModelOutputRecord, schemas_path, \
-    fewshot_examples_path, validation_set_path, evaluation_models_output_path, test_set_path
+    fewshot_examples_path, validation_set_path, evaluation_models_output_path, test_set_path, validation_eval_set_name, \
+    test_eval_set_name
 from ai_querying.ai_querying_defs import openai_api_key_env, deepinfra_api_key_env, OpenAiClientBundle, ModelProvider
 from utils_and_defs.logging_setup import create_logger
 
@@ -91,7 +92,7 @@ def generate_outputs_for_evaluation(
         )
         
         eval_model_outputs.append(EvaluationModelOutputRecord(
-            scenario_id, src_record.scenario_name, src_set_nm == "validation", src_record_idx, chosen_fewshot_indices,
+            scenario_id, src_record.scenario_name, src_set_nm == validation_eval_set_name, src_record_idx, chosen_fewshot_indices,
             extracted_obj, extraction_analysis_output, num_retries_used
         ))
         if (src_record_idx + 1) % 25 == 0:
@@ -134,12 +135,15 @@ def main():
         #  ]
         #  )
     
+    should_use_validation_vs_test_set = False
+    source_set_for_evaluation = validation_set if should_use_validation_vs_test_set else test_set
+    src_set_nm: Literal["validation", "test"] = validation_eval_set_name if should_use_validation_vs_test_set else test_eval_set_name
+    
     for eval_config in evaluation_configs:
         logger.info(f"starting evaluation for model config {eval_config.label()}")
         eval_outputs = generate_outputs_for_evaluation(
             eval_config, scenario_domains, scenario_text_passage_descriptions, schemas, fewshot_examples,
-            test_set, "test")
-            # validation_set, "validation")
+            source_set_for_evaluation, src_set_nm)
         
         with open(eval_config.output_path(), "w") as output_file:
             json.dump(list(map(asdict, eval_outputs)), output_file, indent=2)
