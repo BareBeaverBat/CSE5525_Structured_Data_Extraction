@@ -26,6 +26,7 @@ Scott's proposals for some next steps:
     - record full results (per-record, extraction-quality/fact-recall/hallucination-count) from an evaluation run in addition to computing/printing the summary statistics
     - jupyter notebook(s) to analyze the results
         - gpt-4o vs gpt-4o-mini vs llama 3.3 70b vs llama 3.1 405b
+          - o1-mini would also be very interesting and is only slightly more expensive than gpt-4o, but that would require some annoying hacks because e.g. it doesn't support the "system" role in its prompt messages and would need higher limit on output tokens than other models and so on
         - 0 shot vs 1 shot vs 3 shot vs 5 shot vs 10 shot vs 20 shot vs 50 shot prompting
         - whether different models struggled with different scenarios
         - whether source model (gemini vs claude) was a significant factor for some or all models, and if so whether they all had the same preference

@@ -2,7 +2,7 @@ import json
 import re
 import time
 from json import JSONDecodeError
-from typing import Optional
+from typing import Optional, Any
 
 import anthropic
 from anthropic import Anthropic
@@ -11,13 +11,14 @@ from google.generativeai import GenerativeModel
 
 from ai_querying.ai_querying_defs import is_google_api_key_using_free_tier, \
     max_num_api_calls_for_anthropic_overloaded_retry_logic, max_num_api_calls_for_google_refusals_retry_logic, \
-    ModelProvider, AnthropicClientBundle
+    ModelProvider, AnthropicClientBundle, OpenAiClientBundle, max_num_api_calls_for_openai_failures_retry_logic
 from utils_and_defs.logging_setup import create_logger
-from utils_and_defs.trivial_util_funcs import find_last_re_match
+from utils_and_defs.trivial_util_funcs import find_last_re_match, d
 
 logger = create_logger(__name__)
 
 
+#todo add flag is_cot
 def extract_json_doc_from_output(model_output: str, is_obj_vs_arr: bool)-> (list | dict | None, str, str):
     """
     Extracts the single JSON document from the model output (which might also contain other text like CoT analysis)
@@ -136,7 +137,8 @@ def extract_text_passage_from_output(model_output: str) -> (str|None, str):
 #if the user prompts get much bigger, can break initial prompt into "initial_prompt_cacheable" and "initial_prompt_noncacheable"
 def generate_with_model(
         model_choice: ModelProvider, initial_prompt: str, ai_responses: list[str], followup_prompts: list[str],
-        google_client: GenerativeModel = None, anthropic_client_bundle: AnthropicClientBundle= None) -> str:
+        google_client: GenerativeModel = None, anthropic_client_bundle: AnthropicClientBundle= None,
+        openai_client_bundle: OpenAiClientBundle = None) -> str:
     resp_text: str = "Model failed to generate a response"
     
     if model_choice == ModelProvider.ANTHROPIC:
@@ -146,8 +148,8 @@ def generate_with_model(
             chat_msgs.append({"role": "assistant", "content": ai_resp})
             chat_msgs.append({"role": "user", "content": followup_prompt})
         
+        reason_for_latest_attempt_failure = ""
         for attempt_idx in range(max_num_api_calls_for_anthropic_overloaded_retry_logic):
-            
             try:
                 anthropic_resp = anthropic_client_bundle.client.beta.prompt_caching.messages.create(
                     system=[
@@ -167,9 +169,12 @@ def generate_with_model(
                     num_min_delay = 2**attempt_idx
                     logger.info(f"Anthropic API call failed with an internal server error (saying that they're overloaded); retrying in {num_min_delay} minutes (attempt {attempt_idx+1}/{max_num_api_calls_for_anthropic_overloaded_retry_logic})")
                     time.sleep(60*num_min_delay)
+                    reason_for_latest_attempt_failure = "server overloaded"
                 else:
                     logger.error(f"Anthropic API call failed with an internal server error; status code: {e.status_code}; error message: {e.message}; prompts used in this call: {json.dumps(chat_msgs)}")
                     raise
+        else:
+            resp_text += " because " + reason_for_latest_attempt_failure
         
     elif model_choice == ModelProvider.GOOGLE_DEEPMIND:
         chat_msgs = [{"role": "user", "parts": initial_prompt}]
@@ -179,6 +184,7 @@ def generate_with_model(
         
         temp_to_use: Optional[float] = None
         
+        reason_for_latest_attempt_failure = ""
         for attempt_idx in range(max_num_api_calls_for_google_refusals_retry_logic):
             google_resp = google_client.generate_content(
                 chat_msgs, generation_config=None if temp_to_use is None else google_genai.GenerationConfig(temperature=temp_to_use))
@@ -186,18 +192,84 @@ def generate_with_model(
                 resp_text = google_resp.text
                 break
             else:
-                logger.warning(f"Google API call failed to return any parts; finish reason was "
-                               f"{google_resp.candidates[0].finish_reason if google_resp.candidates else "not provided because no candidate completion"}; "
-                               f"prompt was rejected for reason {google_resp.prompt_feedback.block_reason}; safety ratings: "
-                               f"{"; ".join([f"(categ={safety_rating.category}, harm_prob={safety_rating.probability}, caused_block={safety_rating.blocked})" for safety_rating in google_resp.prompt_feedback.safety_ratings])}; "
+                finish_reason = google_resp.candidates[0].finish_reason if google_resp.candidates else "not provided because no candidate completion"
+                safety_ratings_str = "; ".join([
+                                     f"(categ={safety_rating.category}, harm_prob={safety_rating.probability}, caused_block={safety_rating.blocked})"
+                                     for safety_rating in google_resp.prompt_feedback.safety_ratings])
+                logger.warning(f"Google API call failed to return any parts; finish reason was {finish_reason}; "
+                               f"prompt was rejected for reason {google_resp.prompt_feedback.block_reason}; "
+                               f"safety ratings: {safety_ratings_str}; "
                                f"retrying (attempt {attempt_idx+1}/{max_num_api_calls_for_google_refusals_retry_logic})")
+                reason_for_latest_attempt_failure = (f"prompt rejected for reason {google_resp.prompt_feedback.block_reason}"
+                                                     f" and finish reason was {finish_reason}; safety ratings: {safety_ratings_str}")
+                
                 if temp_to_use is None:
                     temp_to_use = 0.3
                 else:
                     temp_to_use+=0.2
             if is_google_api_key_using_free_tier:
                 time.sleep(30)#on free tier, gemini api is rate-limited to 2 requests per 60 seconds
+        else:
+            resp_text += " because " + reason_for_latest_attempt_failure
+    elif model_choice == ModelProvider.OPENAI or model_choice == ModelProvider.DEEPINFRA:
+        assert openai_client_bundle is not None
+        chat_msgs = [
+            {"role": "system", "content": openai_client_bundle.sys_prompt},
+            {"role": "user", "content": initial_prompt}
+        ]
+        for ai_resp, followup_prompt in zip(ai_responses, followup_prompts):
+            chat_msgs.append({"role": "assistant", "content": ai_resp})
+            chat_msgs.append({"role": "user", "content": followup_prompt})
+        
+        reason_for_latest_attempt_failure = ""
+        
+        temp_to_use = openai_client_bundle.temp
+        for attempt_idx in range(max_num_api_calls_for_openai_failures_retry_logic):
+            openai_client_resp = openai_client_bundle.client.chat.completions.create(
+                model=openai_client_bundle.model_spec, messages=chat_msgs, temperature=temp_to_use,
+                max_completion_tokens=openai_client_bundle.max_tokens,
+                response_format={ "type": "json_object" } if openai_client_bundle.is_response_forced_json
+                else { "type": "text" }
+            )
+            actual_resp = openai_client_resp.choices[0]
+            msg = actual_resp.message
+            finish_reason = actual_resp.finish_reason
+            if finish_reason == "stop":
+                resp_text = msg.content
+                assert resp_text is not None
+                break
+            elif finish_reason == "length":
+                logger.warning(f"{model_choice} API call failed to return a completion because it reached the max tokens limit; retrying (attempt {attempt_idx+1}/{max_num_api_calls_for_openai_failures_retry_logic})")
+                reason_for_latest_attempt_failure = "max tokens limit reached"
+            elif finish_reason == "content_filter":
+                logger.warning(f"{model_choice} API call failed to return a completion because of content filtering complaint \"{msg.refusal}\"; retrying (attempt {attempt_idx + 1}/{max_num_api_calls_for_openai_failures_retry_logic})")
+                reason_for_latest_attempt_failure = f"content filtering, reason: {msg.refusal}"
+                temp_to_use += 0.2
+            else:
+                logger.error(f"{model_choice} API call failed to return a completion; finish reason was {finish_reason}")
+                raise RuntimeError(f"{model_choice} API call failed to return a completion; finish reason was unexpected value {finish_reason}")
+        else:
+            resp_text += " because " + reason_for_latest_attempt_failure
+        
     else:
         raise ValueError(f"model_choice must be a value from the ModelProvider enum, but it was {model_choice}")
     
     return resp_text
+
+
+def create_query_prompt_for_model_evaluation(
+        scenario_domain: str, scenario_texts_label: str, schema: dict[str, Any], passage: str) -> str:
+    user_prompt = d(f"""
+        Here is a JSON schema for the domain "{scenario_domain}":
+        ```json
+        {json.dumps(schema, indent=2)}
+        ```
+        
+        Here is the "{scenario_texts_label}" text passage.
+        ```
+        {passage}
+        ```
+        
+        Please create a JSON object that obeys the given schema and captures all schema-relevant information that is actually present in or that is definitely implied by the text passage, following the above instructions while doing so.
+        """)
+    return user_prompt

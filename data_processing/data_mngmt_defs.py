@@ -28,11 +28,6 @@ class EvaluationModelOutputRecord:
     fewshot_example_idxs: List[int]
     model_output_object: dict[str, Any]
     model_output_text: str
-    # fields for prior responses and follow-up prompts are usually empty, just here for the evaluation case where the
-    # evaluating code automatically reprompts the model if it produced a response that contained a schema-noncompliant
-    # json object or that was otherwise invalid.
-    model_prior_responses: List[str]
-    followup_prompts: List[str]
 
 
 scenario_details_regex = r"^(\d+)_([a-zA-Z0-9]+(_[a-zA-Z0-9]+)*)__(\w+).json"
