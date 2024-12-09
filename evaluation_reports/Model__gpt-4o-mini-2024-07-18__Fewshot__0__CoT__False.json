@@ -352,8 +352,8 @@
       "differences": [
         "Excess key 'lot_coverage_percentage' in actual output at path project_specs",
         "Excess key 'occupancy_count' in actual output at path project_specs",
-        "Excess key 'water' in actual output at path utilities",
         "Excess key 'gas' in actual output at path utilities",
+        "Excess key 'water' in actual output at path utilities",
         "Excess key 'timeline' in actual output at path "
       ]
     },
@@ -691,8 +691,8 @@
       "hallucinated_info_count": 6,
       "differences": [
         "Excess key 'witnesses' in actual output at path ",
-        "Excess key 'location' in actual output at path ",
-        "Excess key 'police_report_filed' in actual output at path "
+        "Excess key 'police_report_filed' in actual output at path ",
+        "Excess key 'location' in actual output at path "
       ]
     },
     {
@@ -753,10 +753,10 @@
       "correct_fact_inclusion_rate": 1.0,
       "hallucinated_info_count": 5,
       "differences": [
-        "Excess key 'instructions_verbatim' in actual output at path ",
-        "Excess key 'preparation_time_minutes' in actual output at path ",
         "Excess key 'cuisine' in actual output at path ",
         "Excess key 'cooking_time_minutes' in actual output at path ",
+        "Excess key 'instructions_verbatim' in actual output at path ",
+        "Excess key 'preparation_time_minutes' in actual output at path ",
         "Excess key 'nutritional_information' in actual output at path "
       ]
     }
@@ -1034,9 +1034,9 @@
       "correct_fact_inclusion_rate": 1.0,
       "hallucinated_info_count": 3,
       "differences": [
-        "Excess key 'medications' in actual output at path ",
+        "Excess key 'allergies' in actual output at path ",
         "Excess key 'family_history_flags' in actual output at path ",
-        "Excess key 'allergies' in actual output at path "
+        "Excess key 'medications' in actual output at path "
       ]
     },
     {
@@ -1283,8 +1283,8 @@
       "correct_fact_inclusion_rate": 1.0,
       "hallucinated_info_count": 2,
       "differences": [
-        "Excess key 'vehicles' in actual output at path ",
-        "Excess key 'weapons' in actual output at path "
+        "Excess key 'weapons' in actual output at path ",
+        "Excess key 'vehicles' in actual output at path "
       ]
     },
     {
@@ -1460,8 +1460,8 @@
       "correct_fact_inclusion_rate": 0.7857142857142857,
       "hallucinated_info_count": 3,
       "differences": [
-        "Missed values in system_state.connected_devices (which weren't supposed to be duplicated): ['logitech g502', 'arctis nova pro', 'dell u2719d']",
-        "Excess values in system_state.connected_devices (which at least didn't show up multiple times in the actual array): ['logitech g502 mouse', 'arctis nova pro headset', 'dell u2719d monitor']"
+        "Missed values in system_state.connected_devices (which weren't supposed to be duplicated): ['arctis nova pro', 'logitech g502', 'dell u2719d']",
+        "Excess values in system_state.connected_devices (which at least didn't show up multiple times in the actual array): ['arctis nova pro headset', 'dell u2719d monitor', 'logitech g502 mouse']"
       ]
     },
     {
@@ -1707,8 +1707,8 @@
       "correct_fact_inclusion_rate": 1.0,
       "hallucinated_info_count": 2,
       "differences": [
-        "Excess key 'medications' in actual output at path ",
-        "Excess key 'symptoms' in actual output at path "
+        "Excess key 'symptoms' in actual output at path ",
+        "Excess key 'medications' in actual output at path "
       ]
     },
     {
@@ -2192,9 +2192,9 @@
       "correct_fact_inclusion_rate": 1.0,
       "hallucinated_info_count": 3,
       "differences": [
-        "Excess key 'zip_code' in actual output at path location",
+        "Excess key 'state' in actual output at path location",
         "Excess key 'city' in actual output at path location",
-        "Excess key 'state' in actual output at path location"
+        "Excess key 'zip_code' in actual output at path location"
       ]
     },
     {

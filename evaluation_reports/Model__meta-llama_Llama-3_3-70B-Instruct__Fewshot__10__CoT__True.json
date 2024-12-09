@@ -416,8 +416,8 @@
       "correct_fact_inclusion_rate": 1.0,
       "hallucinated_info_count": 2,
       "differences": [
-        "Excess key 'children_under_18' in actual output at path household.composition",
-        "Excess key 'seniors_over_65' in actual output at path household.composition"
+        "Excess key 'seniors_over_65' in actual output at path household.composition",
+        "Excess key 'children_under_18' in actual output at path household.composition"
       ]
     },
     {
@@ -579,8 +579,8 @@
       "correct_fact_inclusion_rate": 0.7857142857142857,
       "hallucinated_info_count": 3,
       "differences": [
-        "Missed values in system_state.connected_devices (which weren't supposed to be duplicated): ['logitech g502', 'arctis nova pro', 'dell u2719d']",
-        "Excess values in system_state.connected_devices (which at least didn't show up multiple times in the actual array): ['logitech g502 mouse', 'arctis nova pro headset', 'dell u2719d monitor']"
+        "Missed values in system_state.connected_devices (which weren't supposed to be duplicated): ['arctis nova pro', 'logitech g502', 'dell u2719d']",
+        "Excess values in system_state.connected_devices (which at least didn't show up multiple times in the actual array): ['arctis nova pro headset', 'dell u2719d monitor', 'logitech g502 mouse']"
       ]
     },
     {
@@ -973,7 +973,7 @@
       "correct_fact_inclusion_rate": 0.8571428571428571,
       "hallucinated_info_count": 0,
       "differences": [
-        "Missed values in usage (which weren't supposed to be duplicated): ['residential', 'commercial']"
+        "Missed values in usage (which weren't supposed to be duplicated): ['commercial', 'residential']"
       ]
     },
     {
@@ -1106,7 +1106,7 @@
       "correct_fact_inclusion_rate": 0.8461538461538461,
       "hallucinated_info_count": 0,
       "differences": [
-        "Missed values in amenities (which weren't supposed to be duplicated): ['pool', 'garage']"
+        "Missed values in amenities (which weren't supposed to be duplicated): ['garage', 'pool']"
       ]
     }
   ],

@@ -1,5 +1,6 @@
 import json
 import re
+from collections import Counter
 from dataclasses import dataclass, asdict
 from statistics import mean
 from typing import Optional, Any
@@ -48,6 +49,21 @@ class OutputsGroupingAggregateGrade:
     avg_num_retries_used: float
     fraction_of_records_where_retries_used: float
     num_outputs_in_grouping: int
+
+    @classmethod
+    def combine(cls, *aggregates: 'OutputsGroupingAggregateGrade') -> 'OutputsGroupingAggregateGrade':
+        num_records = sum([aggregate.num_outputs_in_grouping for aggregate in aggregates])
+        return OutputsGroupingAggregateGrade(np.nan, np.nan, np.nan, np.nan, np.nan, np.nan, 0) \
+            if num_records == 0 else \
+            OutputsGroupingAggregateGrade(
+            sum([aggregate.avg_extraction_quality * aggregate.num_outputs_in_grouping for aggregate in aggregates]) / num_records,
+            sum([aggregate.avg_correct_fact_inclusion_rate * aggregate.num_outputs_in_grouping for aggregate in aggregates]) / num_records,
+            sum([aggregate.avg_hallucinated_info_count * aggregate.num_outputs_in_grouping for aggregate in aggregates]) / num_records,
+            sum([aggregate.avg_differences_count * aggregate.num_outputs_in_grouping for aggregate in aggregates]) / num_records,
+            sum([aggregate.avg_num_retries_used * aggregate.num_outputs_in_grouping for aggregate in aggregates]) / num_records,
+            sum([aggregate.fraction_of_records_where_retries_used * aggregate.num_outputs_in_grouping for aggregate in aggregates]) / num_records,
+            num_records
+        )
 
 
 class OutputsGroupingMetricsAggregator:
@@ -130,15 +146,57 @@ class ModelEvaluationConfigAssessment:
     
     def label(self) -> str:
         return f"Model__{self.model_spec}__Fewshot__{self.fewshot_count}__CoT__{self.is_cot_enabled}"
+    
+    @classmethod
+    def combine_into_summary_report(cls, scenario_domains: list[str], scenario_text_passage_descriptions: list[str],
+                                    *assessments: 'ModelEvaluationConfigAssessment') -> dict[str, Any]:
+        model_spec_freqs = Counter(assessment.model_spec for assessment in assessments)
+        fewshot_count_freqs = Counter(assessment.fewshot_count for assessment in assessments)
+        is_cot_enabled_freqs = Counter(assessment.is_cot_enabled for assessment in assessments)
+        assert len(model_spec_freqs) == 1 or len(fewshot_count_freqs) == 1 or len(is_cot_enabled_freqs) == 1
+        model_spec_desc = "+".join(f"{freq}x{model_spec}" for model_spec, freq in model_spec_freqs.items())
+        fewshot_count_desc = "+".join(f"{freq}x{fewshot_count}" for fewshot_count, freq in fewshot_count_freqs.items())
+        is_cot_enabled_desc = "+".join(f"{freq}x{'enabled' if is_cot_enabled else 'disabled'}" for is_cot_enabled, freq
+                                       in is_cot_enabled_freqs.items())
+        
+        overall_metrics = OutputsGroupingAggregateGrade.combine(
+            *[assessment.overall_metrics for assessment in assessments])
+        claude_metrics = OutputsGroupingAggregateGrade.combine(
+            *[assessment.claude_generated_data_metrics for assessment in assessments])
+        gemini_metrics = OutputsGroupingAggregateGrade.combine(
+            *[assessment.gemini_generated_data_metrics for assessment in assessments])
+        scenario_metrics = [OutputsGroupingAggregateGrade.combine(
+            *[assessment.scenario_metrics[scenario_id] for assessment in assessments])
+                            for scenario_id in range(len(assessments[0].scenario_metrics))]
+        eval_model_outputs_gradings = [grading for assessment in assessments
+                                       for grading in assessment.eval_model_outputs_gradings]
+        combined_assessment= ModelEvaluationConfigAssessment(
+            assessments[0].model_spec, assessments[0].fewshot_count, assessments[0].is_cot_enabled,
+            eval_model_outputs_gradings, overall_metrics, claude_metrics, gemini_metrics, scenario_metrics
+        )
+        report = combined_assessment.to_saveable_report(scenario_domains, scenario_text_passage_descriptions)
+        report["model_spec"] = model_spec_desc
+        report["fewshot_count"] = fewshot_count_desc
+        report["is_cot_enabled"] = is_cot_enabled_desc
+        
+        return {
+            report_key: report_val for report_key, report_val in report.items()
+            if not report_key.startswith("gradings_of_")
+        }
+        
 
 def main():
     scenario_domains, scenario_text_passage_descriptions, schemas = load_scenarios(schemas_path)
     
-    fewshot_examples = load_data_split(fewshot_examples_path, schemas)
+    # fewshot_examples = load_data_split(fewshot_examples_path, schemas)
     validation_set = load_data_split(validation_set_path, schemas)
     test_set = load_data_split(test_set_path, schemas)
     
     evaluation_configs_assessments: list[ModelEvaluationConfigAssessment] = []
+    
+    assessments_by_model_spec: dict[str, list[ModelEvaluationConfigAssessment]] = {}
+    assessments_by_fewshot_count: dict[int, list[ModelEvaluationConfigAssessment]] = {}
+    assessments_by_cot_enabled: dict[bool, list[ModelEvaluationConfigAssessment]] = {}
     
     is_validation_vs_test: Optional[bool] = None
     for eval_config_outputs_path in evaluation_models_output_path.iterdir():
@@ -156,6 +214,13 @@ def main():
         eval_config_fewshot_count = int(eval_config_details_match.group(3))
         eval_config_cot_enabled = eval_config_details_match.group(4) == "True"
         
+        if eval_config_model_spec not in assessments_by_model_spec:
+            assessments_by_model_spec[eval_config_model_spec] = []
+        if eval_config_fewshot_count not in assessments_by_fewshot_count:
+            assessments_by_fewshot_count[eval_config_fewshot_count] = []
+        if eval_config_cot_enabled not in assessments_by_cot_enabled:
+            assessments_by_cot_enabled[eval_config_cot_enabled] = []
+        
         eval_config_model_outputs = load_evaluation_model_outputs(eval_config_outputs_path)
         logger.info(f"Loaded {len(eval_config_model_outputs)} evaluation records from path {eval_config_outputs_path} for model {eval_config_model_spec} with {eval_config_fewshot_count} fewshot examples and CoT {'enabled' if eval_config_cot_enabled else 'disabled'}")
         assert len(eval_config_model_outputs) > 0
@@ -168,6 +233,9 @@ def main():
         assessment = assess_model_eval_config_outputs(eval_config_cot_enabled, eval_config_fewshot_count,
                                                       eval_config_model_outputs, eval_config_model_spec, schemas,
                                                       src_evaluation_set)
+        assessments_by_model_spec[eval_config_model_spec].append(assessment)
+        assessments_by_fewshot_count[eval_config_fewshot_count].append(assessment)
+        assessments_by_cot_enabled[eval_config_cot_enabled].append(assessment)
         evaluation_configs_assessments.append(assessment)
     
     # model_specs_to_judge = set([eval_config_outputs.model_spec for eval_config_outputs in evaluation_configs_outputs])
@@ -178,6 +246,22 @@ def main():
         with open(evaluation_reports_path / f"{eval_config_assessment.label()}.json", "w") as report_file:
             json.dump(eval_config_assessment.to_saveable_report(scenario_domains, scenario_text_passage_descriptions),
                       report_file, indent=2)
+    for model_spec, model_spec_assessments in assessments_by_model_spec.items():
+        with open(evaluation_reports_path / f"Model__{model_spec}__summary.json", "w") as model_summary_file:
+            json.dump(ModelEvaluationConfigAssessment.combine_into_summary_report(
+                scenario_domains, scenario_text_passage_descriptions, *model_spec_assessments),
+                      model_summary_file, indent=2)
+    for fewshot_count, fewshot_count_assessments in assessments_by_fewshot_count.items():
+        with open(evaluation_reports_path / f"Fewshot__{fewshot_count}__summary.json", "w") as fewshot_count_summary_file:
+            json.dump(ModelEvaluationConfigAssessment.combine_into_summary_report(
+                scenario_domains, scenario_text_passage_descriptions, *fewshot_count_assessments),
+                      fewshot_count_summary_file, indent=2)
+    for cot_enabled, cot_enabled_assessments in assessments_by_cot_enabled.items():
+        with open(evaluation_reports_path / f"CoT__{'enabled' if cot_enabled else 'disabled'}__summary.json", "w") as cot_enabled_summary_file:
+            json.dump(ModelEvaluationConfigAssessment.combine_into_summary_report(
+                scenario_domains, scenario_text_passage_descriptions, *cot_enabled_assessments),
+                      cot_enabled_summary_file, indent=2)
+    
 
 
 def assess_model_eval_config_outputs(

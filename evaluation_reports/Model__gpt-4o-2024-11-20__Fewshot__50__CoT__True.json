@@ -776,8 +776,8 @@
       "correct_fact_inclusion_rate": 0.7857142857142857,
       "hallucinated_info_count": 3,
       "differences": [
-        "Missed values in system_state.connected_devices (which weren't supposed to be duplicated): ['logitech g502', 'arctis nova pro', 'dell u2719d']",
-        "Excess values in system_state.connected_devices (which at least didn't show up multiple times in the actual array): ['logitech g502 mouse', 'arctis nova pro headset', 'dell u2719d monitor']"
+        "Missed values in system_state.connected_devices (which weren't supposed to be duplicated): ['arctis nova pro', 'logitech g502', 'dell u2719d']",
+        "Excess values in system_state.connected_devices (which at least didn't show up multiple times in the actual array): ['arctis nova pro headset', 'dell u2719d monitor', 'logitech g502 mouse']"
       ]
     },
     {
