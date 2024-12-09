@@ -7,11 +7,10 @@ import anthropic
 import google.generativeai as google_genai
 from anthropic import Anthropic
 from google.generativeai.generative_models import safety_types, GenerativeModel
-from jsonschema.validators import Draft202012Validator
 
 from ai_querying.ai_querying_defs import google_api_key_env, anthropic_api_key_env, google_model_specifier, \
     anthropic_model_specifier, anthropic_reconstruction_temp, google_reconstruction_temp, \
-    max_num_api_calls_for_schema_validation_retry_logic, ModelProvider, AnthropicClientBundle, OpenAiClientBundle
+    ModelProvider, AnthropicClientBundle
 from ai_querying.system_prompts import anthropic_object_reconstruction_sys_prompt, \
     google_object_reconstruction_sys_prompt
 from data_processing.data_mngmt_defs import schemas_path, claude_objs_path, gemini_objs_path, claude_texts_path, \
@@ -20,9 +19,7 @@ from data_processing.data_loading import load_scenarios, load_objects_for_one_mo
     load_text_passages_for_one_model_and_scenario
 from data_processing.json_obj_comparison import evaluate_extraction
 from utils_and_defs.logging_setup import create_logger
-from ai_querying.ai_querying_util_funcs import extract_json_doc_from_output, generate_with_model, \
-    create_query_prompt_for_model_evaluation
-from utils_and_defs.trivial_util_funcs import d
+from ai_querying.ai_querying_util_funcs import extract_obj_from_passage_with_retry
 
 logger = create_logger(__name__)
 
@@ -121,55 +118,6 @@ def validate_generated_objects_texts(
     
     return (statistics.mean(extraction_qualities), val_failed_extracted_objs, val_failed_extraction_analyses, 
             val_failed_extraction_qualities, val_failed_fact_recall, val_failed_hallucination_count, val_failed_differences)
-
-
-def extract_obj_from_passage_with_retry(
-        model_choice: ModelProvider, extractor_model: str, passage: str, scenario_domain: str,
-        scenario_texts_label: str, schema: dict[str, Any], passage_description: str, case_id: str,
-        google_client: GenerativeModel = None, anthropic_client_bundle: AnthropicClientBundle= None,
-        openai_client_bundle: OpenAiClientBundle = None) -> tuple[Optional[dict[str, Any]], str]:
-    #todo flag for disabling the automatic validation/retry logic
-    #todo flag for disabling cot (i.e. just interpret the response text as a json string)
-    user_prompt = create_query_prompt_for_model_evaluation(scenario_domain, scenario_texts_label, schema, passage)
-    ai_responses: list[str] = []
-    followup_prompts: list[str] = []
-    
-    for retry_idx in range(max_num_api_calls_for_schema_validation_retry_logic):
-        assert len(ai_responses) == len(followup_prompts)
-        
-        if retry_idx > 0:
-            logger.debug(f"Retrying extraction of JSON object from {passage_description} ({retry_idx} prior attempts)")
-        
-        resp_text = generate_with_model(model_choice, user_prompt, ai_responses, followup_prompts, google_client,
-                                        anthropic_client_bundle, openai_client_bundle)
-        
-        curr_extracted_obj, obj_gen_analysis, json_doc_problem_explanation = \
-            extract_json_doc_from_output(resp_text, is_obj_vs_arr=True)
-        error_feedback: str
-        
-        if curr_extracted_obj is None:
-            logger.warning(f"Failed to extract an object of structured data from {passage_description}\nPassage:\n{passage}\nResponse:\n{resp_text}")
-            error_feedback = f"The response was not formatted as instructed, and so the JSON document could not be extracted from it. Details:\n{json_doc_problem_explanation}"
-        else:
-            schema_validator = Draft202012Validator(schema, format_checker=Draft202012Validator.FORMAT_CHECKER)
-            if schema_validator.is_valid(curr_extracted_obj):
-                logger.debug(f"Using {extractor_model}, extracted an object of structured data from {passage_description} (case id {case_id}):\n{json.dumps(curr_extracted_obj, indent=4)}\nAnalysis:\n{obj_gen_analysis}")
-                all_attempts_analysis = ("\n".join([f"AI:\n{prior_ai_resp}\n\nFeedback:\n{prior_followup_prompt}" for prior_ai_resp, prior_followup_prompt in zip(ai_responses, followup_prompts)])
-                                          + ("\nAI final turn:" if ai_responses else "") + obj_gen_analysis)
-                return curr_extracted_obj, all_attempts_analysis
-            else:
-                schema_validation_errs = "; ".join(
-                    [str(err) for err in schema_validator.iter_errors(curr_extracted_obj)])
-                logger.warning(f"The object reconstructed with {extractor_model} from {passage_description} failed schema validation\nSchema:{json.dumps(schema, indent=4)}\nObject:{json.dumps(curr_extracted_obj, indent=4)}\nErrors:{schema_validation_errs};\nAnalysis:\n{obj_gen_analysis}")
-                error_feedback = f"The created object did not conform to the schema. Details:\n{schema_validation_errs}"
-        
-        ai_responses.append(resp_text)
-        followup_prompts.append(f"There were problems with that output:\n{error_feedback}\nPlease try again, following the system-prompt and original-user-prompt instructions.")
-    
-    logger.error(f"Failed to extract a schema-compliant object of structured data from {passage_description}, even after {max_num_api_calls_for_schema_validation_retry_logic} tries\nPassage:\n{passage}")
-    all_attempts_analysis = ("\n".join([f"AI:\n{ai_resp}\n\nFeedback:\n{followup_prompt}" for
-                                        ai_resp, followup_prompt in zip(ai_responses, followup_prompts)]))
-    return None, all_attempts_analysis
 
 
 def main():
