@@ -27,7 +27,7 @@ def evaluate_all_samples(validation_set, gpt_output):
 
     for i in range(len(validation_set)):
         overall_quality, inclusion_rate, hallucinations, differences = evaluate_extraction(
-            gpt_output[i], validation_set[i]
+            gpt_output[i], validation_set[i] # this is passing the arguments in in the wrong order; I made this mistake myself for a bit when I was first implementing/testing this method
         )
 
         # Record results
