@@ -443,8 +443,8 @@
       "hallucinated_info_count": 4,
       "differences": [
         "Excess key 'duration_days' in actual output at path symptoms[0]",
-        "Excess key 'frequency' in actual output at path symptoms[1]",
         "Excess key 'severity' in actual output at path symptoms[1]",
+        "Excess key 'frequency' in actual output at path symptoms[1]",
         "Excess key 'duration_days' in actual output at path symptoms[2]"
       ]
     },
@@ -1126,8 +1126,8 @@
       "correct_fact_inclusion_rate": 1.0,
       "hallucinated_info_count": 3,
       "differences": [
-        "Excess key 'equipment_needs' in actual output at path ",
-        "Excess key 'study_population' in actual output at path "
+        "Excess key 'study_population' in actual output at path ",
+        "Excess key 'equipment_needs' in actual output at path "
       ]
     },
     {
@@ -2079,8 +2079,8 @@
       "correct_fact_inclusion_rate": 0.7857142857142857,
       "hallucinated_info_count": 3,
       "differences": [
-        "Missed values in system_state.connected_devices (which weren't supposed to be duplicated): ['logitech g502', 'arctis nova pro', 'dell u2719d']",
-        "Excess values in system_state.connected_devices (which at least didn't show up multiple times in the actual array): ['logitech g502 mouse', 'arctis nova pro headset', 'dell u2719d monitor']"
+        "Missed values in system_state.connected_devices (which weren't supposed to be duplicated): ['arctis nova pro', 'logitech g502', 'dell u2719d']",
+        "Excess values in system_state.connected_devices (which at least didn't show up multiple times in the actual array): ['arctis nova pro headset', 'dell u2719d monitor', 'logitech g502 mouse']"
       ]
     },
     {
@@ -2744,8 +2744,8 @@
       "correct_fact_inclusion_rate": 1.0,
       "hallucinated_info_count": 2,
       "differences": [
-        "Excess key 'medications' in actual output at path ",
-        "Excess key 'symptoms' in actual output at path "
+        "Excess key 'symptoms' in actual output at path ",
+        "Excess key 'medications' in actual output at path "
       ]
     },
     {
