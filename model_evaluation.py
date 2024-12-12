@@ -8,11 +8,14 @@ from typing import Optional, Any
 import numpy as np
 
 from data_processing.data_loading import load_scenarios, load_data_split, load_evaluation_model_outputs
-from data_processing.data_mngmt_defs import schemas_path, fewshot_examples_path, validation_set_path, test_set_path, \
+from data_processing.data_mngmt_defs import schemas_path, validation_set_path, test_set_path, \
     EvaluationModelOutputRecord, evaluation_models_output_path, evaluation_config_regex, evaluation_reports_path, \
     DataSplitRecord
 from data_processing.json_obj_comparison import evaluate_extraction
 from utils_and_defs.logging_setup import create_logger
+
+# Credit- some bits of this script's logic/design were inspired by a prior script evaluating_with_gpt_4o.py
+# (by Kaveen Hiniduma). However, this script is a more general-purpose and feature-rich version
 
 logger = create_logger(__name__)
 

@@ -20,6 +20,10 @@ from utils_and_defs.logging_setup import create_logger
 
 logger = create_logger(__name__)
 
+# Credit- some bits of this script (including the very idea of initially just generating objects with the models to be
+#  evaluated and then evaluating them later) were inspired by a prior script object_creation_for_evaluation_gpt.py
+#  (by Kaveen Hiniduma). However, this script is a more general-purpose and feature-rich version
+
 
 @dataclass
 class ModelEvaluationConfig:
